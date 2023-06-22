@@ -24,9 +24,16 @@ Vera C. Rubin Observatory Documentation for Data Preview 0.3 (DP0.3)
     This documentation area is under heavy development and only in the very early stages of design.
     It should not be used nor consulted for a place of information at this time.
 
-    The currently active documentation is available for `Data Preview 0.2 (DP0.2) <https://dp0-2.lsst.io>`_.
-
 This site provides information about the Rubin Observatory's Data Preview 0.3 (DP0.3).
+
+.. Important::
+
+    Documentation for Data Preview 0.2 (DP0.2) and DP0.3 shall be used concurrently.
+	See `Documentation for DP0.2 <https://dp0-2.lsst.io>`_ for:
+	  - getting started with DP0 (becoming a DP0 delegate),
+	  - account creation for the Rubin Science Platform (RSP),
+	  - getting help with issues and report bugs, and
+	  - collaborating with others and joining virtual seminars.
 
 .. toctree::
     :maxdepth: 2
