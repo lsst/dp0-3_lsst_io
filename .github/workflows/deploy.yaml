@@ -28,5 +28,5 @@ jobs:
         with:
           project: "dp0-3"
           dir: "_build/html"
-          username: ${{ secrets.LTD_PASSWORD }}
-          password: ${{ secrets.LTD_USERNAME }}
+          username: ${{ secrets.LTD_USERNAME }}
+          password: ${{ secrets.LTD_PASSWORD }}
