@@ -23,8 +23,10 @@ jobs:
       - name: Build site
         run: make html
 
-      - name: Upload documentation
-        env:
+      - name: Upload to LSST the Docs
+        uses: lsst-sqre/ltd-upload@v1
+        with:
+          project: "dp0-3"
+          dir: "_build/html"
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
           LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
-        run: ltd upload --product dp0-3 --gh --dir _build/html
