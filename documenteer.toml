@@ -11,5 +11,4 @@ version = "Current"
 ignore = [
     "https://arxiv.org/pdf/.*#",
     "http://localhost",
-	"https://dp0-3.lsst.io/v/",
 ]
