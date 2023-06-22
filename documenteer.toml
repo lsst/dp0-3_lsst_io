@@ -5,6 +5,7 @@ author = "Vera C. Rubin Observatory"
 base_url = "https://dp0-3.lsst.io"
 github_url = "https://github.com/lsst/dp0-3"
 github_default_branch = "main"
+version = "Current"
 
 [sphinx.linkcheck]
 ignore = [
