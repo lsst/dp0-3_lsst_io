@@ -27,11 +27,11 @@ which only contains simulated Solar System objects.
 
     This page describes only the DP0.3 data products and tutorials. 
     Visit the `documentation for DP0.2 <https://dp0-2.lsst.io>`_ pages for:
-        - getting started with DP0 (becoming a DP0 delegate),
-	- creating and using your account in the Rubin Science Platform (RSP),
-        - accessing Galactic and extragalactic simulated data products,
-	- requesting help with issues and reporting bugs, and
-	- collaborating with others and joining virtual seminars.
+     - getting started with DP0 (becoming a DP0 delegate),
+     - creating and using your account in the Rubin Science Platform (RSP),
+     - accessing Galactic and extragalactic simulated data products,
+     - requesting help with issues and reporting bugs, and
+     - collaborating with others and joining virtual seminars.
 
 .. toctree::
     :maxdepth: 2
