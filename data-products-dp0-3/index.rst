@@ -1,0 +1,98 @@
+.. Review the README on instructions to contribute.
+.. Review the style guide to keep a consistent approach to the documentation.
+.. Static objects, such as figures, should be stored in the _static directory. Review the _static/README on instructions to contribute.
+.. Do not remove the comments that describe each section. They are included to provide guidance to contributors.
+.. Do not remove other content provided in the templates, such as a section. Instead, comment out the content and include comments to explain the situation. For example:
+	- If a section within the template is not needed, comment out the section title and label reference. Do not delete the expected section title, reference or related comments provided from the template.
+    - If a file cannot include a title (surrounded by ampersands (#)), comment out the title from the template and include a comment explaining why this is implemented (in addition to applying the ``title`` directive).
+
+.. This is the label that can be used for cross referencing this file.
+.. Recommended title label format is "Directory Name"-"Title Name" -- Spaces should be replaced by hyphens.
+.. _Data-Products-DP0-3-Data-Products:
+.. Each section should include a label for cross referencing to a given area.
+.. Recommended format for all labels is "Title Name"-"Section Name" -- Spaces should be replaced by hyphens.
+.. To reference a label that isn't associated with an reST object such as a title or figure, you must include the link and explicit title using the syntax :ref:`link text <label-name>`.
+.. A warning will alert you of identical labels during the linkcheck process.
+
+###################
+DP0.3 Data Products
+###################
+
+.. This section should provide a brief, top-level description of the page.
+
+
+.. _DP0-3-Data-Products-Introduction:
+
+
+The SSSC Simulated Data Set
+===========================
+
+The LSST Solar System Science Collaboration (SSSC) created the simulated data set which
+is being used for DP0.3.
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    data-simulation-dp0-3
+
+
+
+.. _DP0-3-Data-Products-DPDD:
+
+DP0.3 Data Products Definition Document (DPDD)
+==============================================
+
+Future data previews and Operations-era LSST data releases will produce images and catalogs that more closely 
+resemble the plan laid out in the `Data Products Definitions Document <https://ls.st/dpdd/>`_ (DPDD).
+Several of the future data products (e.g., specific table columns) that are listed in the DPDD are not available 
+for DP0.
+
+*Mention how these DP0.3 tables would be Prompt (i.e., updated daily) in the future with real data but are otherwise for DP0.3 simulation are "frozen" at 10 years (any maybe we will have a 1 year too).*
+
+*Mention how this simulation is completely distinct from DP0.2.*
+
+
+.. _DP0-3-Data-Products-DPDD-Schema-Browser:
+
+Schema browser
+--------------
+
+*Provide a link to schema browser, and mention how the Portal aspect serves as schema browser too.*
+
+
+
+.. _DP0-3-Data-Products-DPDD-Catalogs:
+
+Catalogs
+--------
+
+*Explain TAP endpoint.*
+
+.. list-table:: Catalog data available for DP0.3.
+   :widths: 150 440
+   :header-rows: 1
+
+   * - TAP Name
+     - Description
+   * - DiaSource
+     - Astrometric and photometric measurements for sources detected above 5-sigma in difference images (X columns).
+   * - SSObject
+     - Associations of moving objects detected as DiaSources (X columns).
+   * - SSSource
+     - LSST-computed quantities for moving objects at the time of each DiaSource detection (X columns).
+   * - MPCORB
+     - Orbit catalog produced by the Minor Planet Center (MPC; X columns).
+
+|
+
+
+
+
+.. _DP0-3-Data-Products-DPDD-ADQL Recipies:
+
+ADQL Recipes
+------------
+
+*Provide advice, recommendations, best practices, and recipes.*
+
