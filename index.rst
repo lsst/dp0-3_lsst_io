@@ -19,21 +19,19 @@ Vera C. Rubin Observatory Documentation for Data Preview 0.3 (DP0.3)
 ####################################################################
 
 .. This section should provide a brief, top-level description of the page.
-.. Important::
 
-    This documentation area is under heavy development and only in the very early stages of design.
-    It should not be used nor consulted for a place of information at this time.
-
-This site provides information about the Rubin Observatory's Data Preview 0.3 (DP0.3).
+This site provides information about the Rubin Observatory's Data Preview 0.3 (DP0.3),
+which only contains simulated Solar System objects.
 
 .. Important::
 
-    Documentation for Data Preview 0.2 (DP0.2) and DP0.3 shall be used concurrently.
-	See `Documentation for DP0.2 <https://dp0-2.lsst.io>`_ for:
-	  - getting started with DP0 (becoming a DP0 delegate),
-	  - account creation for the Rubin Science Platform (RSP),
-	  - getting help with issues and report bugs, and
-	  - collaborating with others and joining virtual seminars.
+    This page describes only the DP0.3 data products and tutorials. 
+    Visit the `documentation for DP0.2 <https://dp0-2.lsst.io>`_ pages for:
+        - getting started with DP0 (becoming a DP0 delegate),
+	- creating and using your account in the Rubin Science Platform (RSP),
+        - accessing Galactic and extragalactic simulated data products,
+	- requesting help with issues and reporting bugs, and
+	- collaborating with others and joining virtual seminars.
 
 .. toctree::
     :maxdepth: 2
@@ -48,9 +46,9 @@ This site provides information about the Rubin Observatory's Data Preview 0.3 (D
 DP0.3 data products
 ===================
 
-The data set used for Phase 3 of DP0 (DP0.3) contains Solar System catalog data products only.
-It was created by LSST Solar System Science Collaboration members.
-For simulated extragalactic data products, see the `Documentation for DP0.2 <https://dp0-2.lsst.io>`_ instead.
+The DP0.3 simulation was created by LSST Solar System Science Collaboration members,
+and only contains catalog data products for Solar System objects.
+For simulated Galactic and extragalactic data products, see the `documentation for DP0.2 <https://dp0-2.lsst.io>`_.
 
 .. toctree::
     :maxdepth: 2
@@ -61,7 +59,7 @@ For simulated extragalactic data products, see the `Documentation for DP0.2 <htt
 
 .. _Rubin-Observatory-Documentation-DP0-3-Tutorials:
 
-DP0.3 Tutorials
+DP0.3 tutorials
 ===============
 
 Tutorials include hands-on executable tutorials and demonstrations based on science use-cases to 
