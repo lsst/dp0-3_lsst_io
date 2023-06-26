@@ -49,6 +49,15 @@ which only contains simulated Solar System objects.
 
     *
 
+.. _Rubin-Observatory-Documentation-DP0-2-Quick-Links:
+
+DP0.2 Quick Links
+===================
+
+- `how to get help <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-support>`_
+- `report bugs <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#inform-and-improve-the-rsp>`_
+- `how to access the RSP <https://dp0-2.lsst.io/data-access-analysis-tools/index.html#rubin-science-platform-rsp>`_
+- `DPO virtual seminar schedule <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#dp0-virtual-seminars>`_
 
 .. _Rubin-Observatory-Documentation-DP0-3-Data-Products:
 
