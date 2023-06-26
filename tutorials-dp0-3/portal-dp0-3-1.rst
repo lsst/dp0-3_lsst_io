@@ -15,20 +15,27 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-#################
-01. Title (level)
-#################
+##############################################################
+01. Introduction to the DP0.3 in the RST Portal (Beginner)
+##############################################################
 
 .. This section should provide a brief, top-level description of the page.
 
-**Contact authors:**
+**Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:**
+**Last verified to run:** June 26, 2023
 
-**Targeted learning level:**
+**Targeted learning level:** Beginner
 
-**Introduction:**
+**Introduction:** This tutorial provides an introduction to the content of the sumulated Rubin Observatory Solar System data accessible via the Rubin Data Preview DP0.3.  
 
+The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3.  First part demonstrates how to extract absolute magnitudes of objects in a region of the sky where DP0.3 data are present, and correlate those with the phase of the Specifically, it starts with a query...
+
+This tutorial assumes the successful completion of the beginner-level Portal tutorial 01, and uses the 
+Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
+
+For more information about the DP0.3 catalogs, tables, and columns, visit the DP0.3 Data Products Definition Document (DPDD) 
+:ref:`DP0-3-Data-Products-DPDD` or the DP0.3 Catalog Schema Browser (it is at https://dm.lsst.org/sdm_schemas/browser/dp03.html ).  
 
 .. _DP0-3-Portal-1-Step-1:
 
