@@ -33,6 +33,15 @@ which only contains simulated Solar System objects.
      - requesting help with issues and reporting bugs, and
      - collaborating with others and joining virtual seminars.
 
+.. Important::
+
+    Documentation for Data Preview 0.2 (DP0.2) and DP0.3 shall be used concurrently.
+	See `Documentation for DP0.2 <https://dp0-2.lsst.io>`_ for:
+	  - getting started with DP0 (becoming a DP0 delegate),
+	  - account creation for the Rubin Science Platform (RSP),
+	  - getting help with issues and report bugs, and
+	  - collaborating with others and joining virtual seminars.
+
 .. toctree::
     :maxdepth: 2
     :titlesonly:
