@@ -50,7 +50,7 @@ for DP0.
 
 *Mention how these DP0.3 tables would be Prompt (i.e., updated daily) in the future with real data but are otherwise for DP0.3 simulation are "frozen" at 10 years (any maybe we will have a 1 year too).*
 
-*Mention how this simulation is completely distinct from DP0.2.*
+The DP0.3 solar system simulation is completely distinct from the `DESC DC2 <https://arxiv.org/abs/2010.05926>`_ simulated data set used for DP0.2. You will not, for instance, be able to see a DP0.3 simulated asteroid detection in a DESC DC2 simulated image.
 
 
 .. _DP0-3-Data-Products-DPDD-Schema-Browser:
