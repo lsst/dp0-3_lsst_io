@@ -21,6 +21,8 @@ DP0.3 Table Schema
 .. This section should provide a brief, top-level description of the page.
 
 
+This schema page will eventually be replaced with `official schema from LSST Data Management <https://dm.lsst.org/sdm_schemas/browser/>`_.
+
 .. _DP0-3-Table-Schema:
 
 .. list-table:: SSObject DP0.3 table.
