@@ -34,6 +34,8 @@ The tutorial consists of several parts, with all parts aiming to illustrate vari
 This tutorial assumes the successful completion of the beginner-level Portal tutorial 01, and uses the 
 Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
 
+Note that you _cannot_ execute a 
+
 For more information about the DP0.3 catalogs, tables, and columns, visit the DP0.3 Data Products Definition Document (DPDD) 
 :ref:`DP0-3-Data-Products-DPDD` or the DP0.3 Catalog Schema Browser (it is at https://dm.lsst.org/sdm_schemas/browser/dp03.html ).  
 
@@ -42,5 +44,9 @@ For more information about the DP0.3 catalogs, tables, and columns, visit the DP
 Step 1. Here
 ============
 
-1.1. TBD
+1.1. First idea:  plot the topocentric distance of objects with more than 10,000 observations.  
+1.2. Second idea:  plot the history of flux of a selected object 
+1.3. Third idea:  plot the phase of an object as a function of time
+
+
 
