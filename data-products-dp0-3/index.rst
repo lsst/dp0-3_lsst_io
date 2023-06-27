@@ -44,7 +44,7 @@ DP0.3 Data Products Definition Document (DPDD)
 ==============================================
 
 Future data previews and Operations-era LSST data releases will produce images and catalogs that more closely 
-resemble the plan laid out in the `Data Products Definitions Document <https://ls.st/dpdd/>`_ (DPDD).
+resemble the plan laid out in the `Data Products Definition Document <https://ls.st/dpdd/>`_ (DPDD).
 Several of the future data products (e.g., specific table columns) that are listed in the DPDD are not available 
 for DP0.
 
