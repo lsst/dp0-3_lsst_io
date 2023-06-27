@@ -67,7 +67,12 @@ Schema browser
 Catalogs
 --------
 
-*Explain TAP endpoint.*
+Table Access Procotol (TAP) provides standardized access to the catalog data for discovery, search, and retrieval.
+`Full documentation for TAP <https://www.ivoa.net/documents/TAP/>`_ is provided by the International Virtual Observatory Alliance (IVOA).
+The TAP service uses a query language similar to SQL (Structured Query Langage) called ADQL (Astronomical Data Query Language).
+The `documentation for ADQL <https://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
+
+Notice: Not all ADQL functionality is supported by the RSP for Data Preview 0.
 
 .. list-table:: SSObject DP0.3 table.
    :widths: 100 200 390
