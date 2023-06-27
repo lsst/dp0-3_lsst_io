@@ -58,8 +58,9 @@ The DP0.3 solar system simulation is completely distinct from the `DESC DC2 <htt
 Schema browser
 --------------
 
-*Provide a link to schema browser, and mention how the Portal aspect serves as schema browser too.*
+*Provide a link to schema browser*
 
+The RSP Portal aspect includes lists of column names and their descriptions for DP0.3 tables, and so can also be used as a schema browser.
 
 
 .. _DP0-3-Data-Products-DPDD-Catalogs:
