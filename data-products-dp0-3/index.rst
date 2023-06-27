@@ -508,5 +508,5 @@ Catalogs
 ADQL Recipes
 ------------
 
-*Provide advice, recommendations, best practices, and recipes.*
+`Astronomical Data Query Language <https://www.ivoa.net/documents/ADQL/20180112/PR-ADQL-2.1-20180112.html>`_ (ADQL) advice, recommendations, best practices, and recipes, can be found in the `DP0.2 documentation <https://dp0-2.lsst.io/data-access-analysis-tools/adql-recipes.html>`_.
 
