@@ -52,16 +52,14 @@ In the future, for real LSST survey data, the tables that DP0.3 is meant to emul
 
 The DP0.3 solar system simulation is completely distinct from the `DESC DC2 <https://arxiv.org/abs/2010.05926>`_ simulated data set used for DP0.2. You will not, for instance, be able to see a DP0.3 simulated asteroid detection in a DESC DC2 simulated image.
 
-
 .. _DP0-3-Data-Products-DPDD-Schema-Browser:
 
 Schema browser
 --------------
 
-*Provide a link to schema browser*
+A :ref:`schema browser <schema>`. for the four DP0.3 solar system tables (DiaObject, SSSource, SSObject, MPCORB) is available.
 
-The RSP Portal aspect includes lists of column names and their descriptions for DP0.3 tables, and so can also be used as a schema browser.
-
+The `RSP Portal aspect <https://data.lsst.cloud>`_ includes lists of column names and their descriptions for DP0.3 tables, and so can also be used as a schema browser.
 
 .. _DP0-3-Data-Products-DPDD-Catalogs:
 
