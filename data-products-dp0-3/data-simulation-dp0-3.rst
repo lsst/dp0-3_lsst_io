@@ -21,7 +21,10 @@ The DP0.3 Simulation
 
 .. This section should provide a brief, top-level description of the page.
 
-*TBD*.
+The DP0.3 catalog is a simulated 10-year Rubin detection and object catalog of real and simulated solar system and interstellar objects using the 
+baseline v3.0 cadence (page 44). ObjectsInField was used to generate an ephemeris, from which source detection and measurement were simulated using 
+SurveySimPostProcessing. The catalog includes hundreds of millions of detections of millions of simulated objects. 
+Catalog data are accessible with the Table Access Protocol (TAP) service via the Rubin Science Platform’s Portal [or Notebook?] Aspect.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Real-Objects:
@@ -29,17 +32,29 @@ The DP0.3 Simulation
 Real objects from the MPC
 =========================
 
-*The entire MPC as of May X 2023.*
-
+The DP0.3 simulation includes all objects from the May 1 2023 MPCORB except for the ~400 without listed absolute magnitudes. Of those objects, 
+97% (1.2 million) are detected by Rubin in the 10-year simulated survey and appear in the DP0.3 catalog. 
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Fake-Objects:
 
-Fake object populations
-=======================
+Synthetic object populations
+============================
 
-*Describe and characterize the simulated objects.*
+We include 91% of the S3M catalog (see below for details) and 12,148 simulated interstellar objects in the simulation. 24% (3.2 million) 
+of the S3M objects and 20% (2,429) of the ISOs are detected and appear in the catalog. 
+Objects were simulated in two color classes: S and C, with colors and slope parameters as shown in table 1. [You can find object color class at X]. 
 
+
++-------+------+------+-----+-----+-----+-----+-----+
+| Color | V-u  | V-g  | V-r | V-i | V-z | V-y | GS  |
++=======+======+======+=====+=====+=====+=====+=====+
+|     c |-1.614|-0.302|0.172|0.291|0.298|0.303|0.15 |
++-------+------+------+-----+-----+-----+-----+-----+
+|     s |-1.927|-0.395|0.255|0.455|0.401|0.406|0.15 |
++-------+------+------+-----+-----+-----+-----+-----+
+
+[Veres https://arxiv.org/pdf/1706.09398.pdf]
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Combo:
@@ -47,10 +62,10 @@ Fake object populations
 Combining real and fake moving objects
 ======================================
 
-*Describe the replacement process and property distribution preservations.*
-
-
-
+To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, 
+we use the Hybrid Solar System Catalogue Creator (Hybridcat). Hybridcat removes the closest-matching synthetic object to each real object, 
+leaving S3M’s orbital distribution minimally changed while including all known solar system objects. 
+Hybridcat is available by pip install or on github.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Truth-Data:
@@ -58,5 +73,6 @@ Combining real and fake moving objects
 Truth data
 ==========
 
-*Do users have truth data for comparisons?*
+The full set of simulated objects, along with their orbital and physical parameters, can be found here: [link]. 
+The true (no-scatter) astrometry is provided in the “AstRATrue” and “AstDecTrue” columns. 
 
