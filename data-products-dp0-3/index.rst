@@ -152,7 +152,7 @@ For this use-case, it is recommended to use the ``SELECT TOP`` statement, like i
 
 .. code-block:: SQL
 
-    SELECT TOP 100 * FROM dp02_dc2_catalogs.Object
+    SELECT TOP 100 * FROM dp03_catalogs.SSObject
 
 
 
