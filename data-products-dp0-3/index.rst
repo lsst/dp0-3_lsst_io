@@ -82,16 +82,16 @@ Notice: Not all ADQL functionality is supported by the RSP for Data Preview 0.
      - description
    * - DIASource
      - DIASource
-     - Astrometric and photometric measurements for solar system objects detected in difference images (XX columns).
+     - Astrometric and photometric measurements for solar system objects detected in difference images (20 columns).
    * - SSSource
      - SSSource
-     - Single-epoch solar system source information corresponding to a specific difference image detection.
+     - Single-epoch solar system source information corresponding to a specific difference image detection (29 columns).
    * - SSObject
      - SSObject
-     - Table of linked solar system objects (groupings of difference image detections).
+     - Table of linked solar system objects (groupings of difference image detections; 55 columns).
    * - MPCORB
      - MPCORB
-     - MPC-style information for linked solar system objects.
+     - MPC-style information for linked solar system objects (27 columns).
 
 |
 
