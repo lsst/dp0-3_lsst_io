@@ -29,7 +29,7 @@
 
 **Introduction:** This tutorial provides an introduction to the content of the sumulated Rubin Observatory Solar System data accessible via the Rubin Data Preview DP0.3.  
 
-The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3.  First part demonstrates how to plot the celestial posiition of a single, pre-selected Solar system object on the sky as a funtion of time.  The object, with the ssObjectId of -735085100561880491 happens to be well-observed, with about 14,000 observations.  The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
+The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3.  First part demonstrates how to plot the celestial posiition of a single, pre-selected Solar system object on the sky as a funtion of time.  The object, with the ``ssObjectId`` of ``-735085100561880491`` happens to be well-observed, with about 14,000 observations.  The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
 
 This tutorial assumes the successful completion of the beginner-level Portal tutorial 01, and uses the 
 Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
@@ -42,11 +42,11 @@ For more information about the DP0.3 catalogs, tables, and columns, visit the DP
 Step 1. Plot the position of a single object on the sky as a function of time
 =============================================================================
 
-1.1.  Log on to the Rubin Science Platform, and select the Portal option.  In order to access the DP0.3 Tap Service, you need to click on the "Show" button on the upper right side of the screen (see the screenshot below).  In the "Select TAP Service" box, you should click on the down-arrow, and choose the "LSST DP0.3 SSO" entry.  In the "Output Column Selection and Constraints" select the "decl", "midPointTai", and "ra" entries by clicking the respective boxes next to the "Name" column.  Since you want to plot the celestial position of a single object, also click the box next to the "ssObjectId" line, and enter "= -735085100561880491" in the "constraints" box.  Make sure the boxes by "Spatial" and "Temporal" constraints (under "Enter Constraints") are unchecked.  
+1.1.  Log on to the Rubin Science Platform, and select the Portal option.  In order to access the DP0.3 Tap Service, you need to click on the "Show" button on the upper right side of the screen (see the screenshot below).  In the "Select TAP Service" box, you should click on the down-arrow, and choose the "LSST DP0.3 SSO" entry.  In the "Output Column Selection and Constraints" select the ``decl``, ``midPointTai``, and ``ra`` entries by clicking the respective boxes next to the ``Name`` column.  Since you want to plot the celestial position of a single object, also click the box next to the ``ssObjectId`` line, and enter ``= -735085100561880491`` in the ``constraints`` box.  Make sure the boxes by ``Spatial`` and ``Temporal`` constraints (under ``Enter Constraints``) are unchecked.  
 
 ** Screenshot **
 
-1.2.  Execute the search by clicking the "Search" button on lower left.  This will generate the plot as below.  Click the "Bi-view Tables" button on the upper right to display only the scatter plot and the table.  
+1.2.  Execute the search by clicking the "Search" button on lower left.  This will generate the plot as below.  Click the ``Bi-view Tables`` button on the upper right to display only the scatter plot and the table.  
 
 ** Screenshot **
 
@@ -63,7 +63,7 @@ Step 2. Plot the magnitude of a single object on the sky as a function of time
 
 ** screenshot **
 
-2.2.  To make sure you are plotting the magnitude as measured in the same filter (band), you need to enter "= i" in the box just below the "Filter" column heading, and hit "Enter."  This should result in a plot as below.  
+2.2.  To make sure you are plotting the magnitude as measured in the same filter (band), you need to enter ``= i`` in the box just below the "Filter" column heading, and hit "Enter."  This should result in a plot as below.  
 
 ** Screenshot **
 
