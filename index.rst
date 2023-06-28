@@ -30,7 +30,6 @@ which only contains simulated Solar System objects.
      - `getting started with DP0 (becoming a DP0 delegate) <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-started-with-dp0-checklist>`_,
      - `creating and using your account in the Rubin Science Platform (RSP) <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_,
      - accessing Galactic and extragalactic simulated data products,
-     - requesting help with issues and reporting bugs, and
      - `collaborating with others and joining virtual seminars <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#dp0-virtual-seminars>`_.
 
 .. toctree::
