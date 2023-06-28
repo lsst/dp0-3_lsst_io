@@ -75,7 +75,7 @@ As part of the absolute magnitude fitting process, let's define some flags for f
 - $H_i$ fit failure ``FLAG = 16`` : the i band absolute magnitude fit failed due to poor phase coverage or not enough data
 - $H_z$ fit failure ``FLAG = 32`` : the z band absolute magnitude fit failed due to poor phase coverage or not enough data
 - $H_y$ fit failure ``FLAG = 64`` : the y band absolute magnitude fit failed due to poor phase coverage or not enough data
-- Linking failure: ``FLAG = 2048`` : the detections in diaSource were not successfully linked. Note that this will only exist for simulated objects, as a real object that is not linked will not be in `SSObject`! This is being simulated using difi (https://github.com/moeyensj/difi/tree/main)
+- Linking failure: ``FLAG = 2048`` : the detections in diaSource were not successfully linked. Note that this will only exist for simulated objects, as a real object that is not linked will not be in `SSObject`! This is being simulated using `difi <https://github.com/moeyensj/difi/tree/main>`_.
 
 Example: an object whose photometry failed in u and y band will have `FLAG = 66` (in binary, `1000010`). 
 
