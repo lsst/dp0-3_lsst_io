@@ -29,8 +29,7 @@
 
 **Introduction:** This tutorial provides an introduction to the content of the sumulated Rubin Observatory Solar System data accessible via the Rubin Data Preview DP0.3.  
 
-The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3.  First part demonstrates how to plot the celestial posiition of a single, pre-selected Solar system object on the sky as a funtion of time.  The second part extract absolute magnitudes of objects in a region of the sky where DP0.3 data are present, and correlate those with the phase of the 
-
+The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3.  First part demonstrates how to plot the celestial posiition of a single, pre-selected Solar system object on the sky as a funtion of time.  The object, with the ssObjectId of -735085100561880491happens to be well-observed, with  The second part extract absolute magnitudes of objects in a region of the sky where DP0.3 data are present, and correlate those with the phase of the 
 
 This tutorial assumes the successful completion of the beginner-level Portal tutorial 01, and uses the 
 Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
@@ -51,10 +50,21 @@ Step 1. Plot the position of a single object on the sky as a function of time
 
 ** Screenshot **
 
-1.3.  The plot below does not give you the information about the epochs of individual pointings.  You can use the color of individual points to illustrate the time evolution of the object's position.  To do so, click on the two gears on the upper right, which will bring the box below.  There, enter "ra" and "decl" respectively for the x and y axis.  Enter "midPointTai" in the "Color Map" box.  You can enter any choice for the "Color Scale" box, but one easy to visualize choice is "Rainbow" since 
+1.3.  The plot below does not give you the information about the epochs of individual pointings.  You can use the color of individual points to illustrate the time evolution of the object's position.  To do so, click on the two gears on the upper right, which will bring the box below.  There, enter "ra" and "decl" respectively for the x and y axis.  Enter "midPointTai" in the "Color Map" box.  You can enter any choice for the "Color Scale" box, but an easy to visualize choice is "Rainbow" since the order of colors is likely familiar to anyone.  Feel free to select another color scale!  
+
+Note the loop-like structure in the plot.  This is of course expected - you are plotting the position of the object as seen from the Earth, resulting in epicycle-like behavior.  
+
+.. _DP0-3-Portal-1-Step-2:
+==============================================================================
+Step 2. Plot the magnitude of a single object on the sky as a function of time
+==============================================================================
+
+2.1.  Return to the "chart options and tools" box by clicking the two-gear icon on the upper right.   Now select "midPointTai" for x, and "mag" for y axis, as in the screenshot below.  You can also restrict the range of observation times, to examine the behsvior of the object
+
+-- Screenshot **
 
 1.1. First idea:  plot the RA vs. Dec of a selected object, SSObjectId =   
-1.2. Second idea:  plot the history of flux of a selected object 
+1.2. Second idea:  plot the history of magnitude (light curve) of a selected object 
 1.3. Third idea:  plot the phase of an object as a function of time
 
 
