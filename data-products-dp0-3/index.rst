@@ -165,11 +165,9 @@ Retrieve the ``coord_dec`` and ``coord_ra`` columns from the ``Object`` table fo
 
 .. code-block:: SQL
 
-   SELECT coord_dec, coord_ra 
-   FROM dp02_dc2_catalogs.Object 
-   WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec), 
-   CIRCLE('ICRS', 62, -37, 0.05)) = 1
-
+   SELECT * 
+   FROM dp03_catalogs.DiaSource 
+   WHERE CONTAINS(POINT('ICRS', ra, decl),CIRCLE('ICRS', 100, -10, 0.027777777777777776))=1
 
 
 .. _Adql-Recipes-FluxToMags:
