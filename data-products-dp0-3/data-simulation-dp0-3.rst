@@ -60,3 +60,23 @@ Truth data
 
 *Do users have truth data for comparisons?*
 
+.. _Data-Products-DP0-3-Flags:
+
+DP0.3 Flags
+===========
+
+As part of the absolute magnitude fitting process, let's define some flags for failure cases. These will be bitwise flags, so that the combinations of multiple flags are unique. 
+
+- Success! `FLAG = 0` 
+- Orbit fitting failure `FLAG = 1`: the diaSource detections do not fit a sensible orbit for a moving object (eg unusually high chi2/dof) 
+- $H_u$ fit failure ``FLAG = 2`` : the u band absolute magnitude fit failed due to poor phase coverage or not enough data
+- $H_g$ fit failure ``FLAG = 4`` : the g band absolute magnitude fit failed due to poor phase coverage or not enough data
+- $H_r$ fit failure ``FLAG = 8`` : the r band absolute magnitude fit failed due to poor phase coverage or not enough data
+- $H_i$ fit failure ``FLAG = 16`` : the i band absolute magnitude fit failed due to poor phase coverage or not enough data
+- $H_z$ fit failure ``FLAG = 32`` : the z band absolute magnitude fit failed due to poor phase coverage or not enough data
+- $H_y$ fit failure ``FLAG = 64`` : the y band absolute magnitude fit failed due to poor phase coverage or not enough data
+- Linking failure: ``FLAG = 2048`` : the detections in diaSource were not successfully linked. Note that this will only exist for simulated objects, as a real object that is not linked will not be in `SSObject`! This is being simulated using difi (https://github.com/moeyensj/difi/tree/main)
+
+Example: an object whose photometry failed in u and y band will have `FLAG = 66` (in binary, `1000010`). 
+
+Note that ``bool(flag & reference)`` is ``True`` if ``reference`` is part of the ``flag``. So, for example, ``bool(66 & 64) = True`` and ``bool(66 & 4) = False``.
