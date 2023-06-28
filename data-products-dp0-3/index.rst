@@ -28,7 +28,11 @@ The SSSC Simulated Data Set
 ===========================
 
 The LSST Solar System Science Collaboration (SSSC) created the simulated data set which
-is being used for DP0.3.
+is being used for DP0.3. The catalog is a simulated 10-year Rubin detection and object catalog of real and simulated solar 
+system and interstellar objects using the baseline v3.0 cadence (page 44). ObjectsInField was used to generate an ephemeris, 
+from which source detection and measurement were simulated using SurveySimPostProcessing. 
+The catalog includes 652,964,345 detections of 4,441,172 observed objects out of a total population of [#] simulated objects. 
+Catalog data are accessible with the Table Access Protocol (TAP) service via the Portal or Notebook Aspect, and with the Butler via the Notebook Aspect.
 
 .. toctree::
     :maxdepth: 2
