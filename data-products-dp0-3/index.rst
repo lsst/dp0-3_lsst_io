@@ -80,16 +80,16 @@ Notice: Not all ADQL functionality is supported by the RSP for Data Preview 0.
    * - TAP Name
      - table name
      - description
-   * - ???
+   * - DIASource
      - DIASource
      - Astrometric and photometric measurements for solar system objects detected in difference images (XX columns).
-   * - ???
+   * - SSSource
      - SSSource
      - Single-epoch solar system source information corresponding to a specific difference image detection.
-   * - ???
+   * - SSObject
      - SSObject
      - Table of linked solar system objects (groupings of difference image detections).
-   * - ???
+   * - MPCORB
      - MPCORB
      - MPC-style information for linked solar system objects.
 
