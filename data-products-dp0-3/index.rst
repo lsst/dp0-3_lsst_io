@@ -102,8 +102,6 @@ ADQL Recipes
 
 `Astronomical Data Query Language <https://www.ivoa.net/documents/ADQL/20180112/PR-ADQL-2.1-20180112.html>`_ (ADQL) advice, recommendations, best practices, and recipes:
 
-.. This section should provide a brief, top-level description of the page.
-
 ADQL is the `Astronomical Data Query Language <https://www.ivoa.net/documents/ADQL/>`_.
 The language is used by the `IVOA <https://ivoa.net>`_ to represent astronomy queries posted to Virtual Observatory (VO) services, such as the Rubin LSST Table Access Protocol (TAP) service.
 ADQL is based on the Structured Query Language (SQL).
@@ -112,7 +110,7 @@ ADQL can be used in both the Notebook and Portal aspects:
  - :ref:`Data-Access-Analysis-Tools-TAP-NB`
  - how to :ref:`Portal-Intro-ADQL-Queries` in the Portal aspect
 
-Learn more about the `TAP-accessible DP0.2 catalogs <https://dp0-2.lsst.io/data-products-dp0-2/index.html#catalogs>`__ which are used in the examples below.
+Learn more about the `TAP-accessible DP0.3 catalogs <https://dp0-2.lsst.io/data-products-dp0-2/index.html#catalogs>`__ which are used in the examples below.
 
 .. Important::
     If a query takes longer than you expect, please submit a `GitHub Issue <https://github.com/rubin-dp0/Support>`__
@@ -124,9 +122,6 @@ Learn more about the `TAP-accessible DP0.2 catalogs <https://dp0-2.lsst.io/data-
 
 General Advice
 ==============
-
-LSST Query Services (Qserv) provides access to the LSST Database Catalogs.
-Users can query the catalogs using standard SQL query language with a few `restrictions <https://qserv.lsst.io/user/index.html#restrictions>`__.
 
 **Use spatial constraints on RA and Dec.**
 It is recommended to always start with spatial constraints for a small radius and then expand the search area.
@@ -144,7 +139,6 @@ it will not include detections in the overlapping patch edge regions (only the n
 Additional external resources for learning about SQL, ADQL, and Qserv include:
  - `W3 School's SQL Tutorial <https://www.w3schools.com/sql/default.asp>`__
  - `IVOA's ADQL Documentation <https://www.ivoa.net/documents/ADQL/20180112/PR-ADQL-2.1-20180112.html>`__
- - `LSST Qserv User Guide <https://qserv.lsst.io/user/index.html>`__
 
 
 .. _Adql-Recipes-Explore-Tables:
@@ -231,44 +225,6 @@ Additional external resources on SQL table joins:
    AND src.psfFlux > 10000 
    AND cv.obsStartMJD > 60925 
    AND cv.obsStartMJD < 60955
-
-
-
-.. _Adql-Recipes-Truth-Summary:
-
-TruthSummary and MatchesTruth table joins
-=========================================
-
-The query below demonstrates how to retrieve the truth table identifier (``id_truth_type`` from the ``MatchesTruth`` table)
-and true redshift (from the ``TruthSummary`` table) for a particular detected object with ``ObjectId`` = 1486698050427598336 (from the ``Object`` table)
-using a triple table join.
-
-**Director vs. ref match tables:** 
-Note that the restriction for the given ``Object`` is written in the query below specifically as ``WHERE obj.objectId=1486698050427598336``.
-If we were to write ``WHERE mt.match_objectId=1486698050427598336`` instead, the query could take orders of magnitude longer to execute.
-This subtle difference exists because the ``TruthSummary`` and ``Object`` tables are stored in Qserv as what are known as `director tables <https://qserv.lsst.io/user/index.html#director-table>`__,
-while the ``MatchesTruth`` table used to join them is stored as a somewhat more restricted "ref match" table.
-Qserv has special mechanics to optimize queries with ``WHERE`` restrictions expressed in terms of director tables,
-and can often dispatch these queries to just a few involved data shards.
-These same mechanics, however, cannot be applied in general to "ref match" tables so the seemingly same restriction,
-if expressed in terms of the "ref match" table, would necessitate a full scan of the entire catalog which could be quite time-consuming.
-
-.. code-block:: SQL
-
-    SELECT mt.id_truth_type AS mt_id_truth_type, 
-    mt.match_objectId AS mt_match_objectId, 
-    obj.objectId AS obj_objectId, 
-    ts.redshift AS ts_redshift 
-    FROM dp02_dc2_catalogs.MatchesTruth AS mt 
-    JOIN dp02_dc2_catalogs.TruthSummary AS ts 
-    ON mt.id_truth_type=ts.id_truth_type 
-    JOIN dp02_dc2_catalogs.Object AS obj 
-    ON mt.match_objectId=obj.objectId 
-    WHERE obj.objectId=1486698050427598336 
-    AND ts.truth_type=1 
-    AND obj.detect_isPrimary=1 
-    ORDER BY obj_objectId DESC
-
 
 .. _Adql-Recipes-ObjectIds:
 
