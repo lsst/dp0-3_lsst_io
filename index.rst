@@ -47,7 +47,6 @@ DP0.2 quick links
 - `How to get help <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-support>`_
 - `Report bugs <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#inform-and-improve-the-rsp>`_
 - `How to access the RSP <https://dp0-2.lsst.io/data-access-analysis-tools/index.html#rubin-science-platform-rsp>`_
-- `The DESC DC2 DP0.2 static sky simulation <https://dp0-2.lsst.io/data-products-dp0-2/index.html#the-desc-dc2-data-set>`_
 
 .. _Rubin-Observatory-Documentation-DP0-3-Data-Products:
 
