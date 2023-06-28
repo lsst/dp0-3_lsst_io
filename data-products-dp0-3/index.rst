@@ -73,6 +73,28 @@ The `documentation for ADQL <https://www.ivoa.net/documents/latest/ADQL.html>`_ 
 
 Notice: Not all ADQL functionality is supported by the RSP for Data Preview 0.
 
+.. list-table:: Catalog data available for DP0.2.
+   :widths: 100 100 390
+   :header-rows: 1
+
+   * - TAP Name
+     - table name
+     - description
+   * - ???
+     - DIASource
+     - Astrometric and photometric measurements for solar system objects detected in difference images (XX columns).
+   * - ???
+     - SSSource
+     - Single-epoch solar system source information corresponding to a specific difference image detection.
+   * - ???
+     - SSObject
+     - Table of linked solar system objects (groupings of difference image detections).
+   * - ???
+     - MPCORB
+     - MPC-style information for linked solar system objects.
+
+|
+
 .. _DP0-3-Data-Products-DPDD-ADQL Recipies:
 
 ADQL Recipes
