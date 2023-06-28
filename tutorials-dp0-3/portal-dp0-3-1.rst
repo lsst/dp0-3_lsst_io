@@ -51,9 +51,9 @@ Step 1. Plot the position of a single object on the sky as a function of time
 
 ** Screenshot **
 
-1.3.  The plot below does not give you the information about the epochs of individual pointings.  You can use the color of individual points to illustrate the time evolution of the object's position.  To do so, click on the two gears on the upper right, which will bring the box below.  There, enter 
+1.3.  The plot below does not give you the information about the epochs of individual pointings.  You can use the color of individual points to illustrate the time evolution of the object's position.  To do so, click on the two gears on the upper right, which will bring the box below.  There, enter "ra" and "decl" respectively for the x and y axis.  Enter "midPointTai" in the "Color Map" box.  You can enter any choice for the "Color Scale" box, but one easy to visualize choice is "Rainbow" since 
 
-1.1. First idea:  plot the RA vs. Dec of a selected object, SSObjectId = -735085100561880491  
+1.1. First idea:  plot the RA vs. Dec of a selected object, SSObjectId =   
 1.2. Second idea:  plot the history of flux of a selected object 
 1.3. Third idea:  plot the phase of an object as a function of time
 
