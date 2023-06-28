@@ -29,7 +29,7 @@
 
 **Introduction:** This tutorial provides an introduction to the content of the sumulated Rubin Observatory Solar System data accessible via the Rubin Data Preview DP0.3.  
 
-The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3.  First part demonstrates how to plot the celestial posiition of a single, pre-selected Solar system object on the sky as a funtion of time.  The object, with the ssObjectId of -735085100561880491happens to be well-observed, with  The second part extract absolute magnitudes of objects in a region of the sky where DP0.3 data are present, and correlate those with the phase of the 
+The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3.  First part demonstrates how to plot the celestial posiition of a single, pre-selected Solar system object on the sky as a funtion of time.  The object, with the ssObjectId of -735085100561880491 happens to be well-observed, with about 14,000 observations.  The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
 
 This tutorial assumes the successful completion of the beginner-level Portal tutorial 01, and uses the 
 Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
@@ -59,12 +59,14 @@ Note the loop-like structure in the plot.  This is of course expected - you are 
 Step 2. Plot the magnitude of a single object on the sky as a function of time
 ==============================================================================
 
-2.1.  Return to the "chart options and tools" box by clicking the two-gear icon on the upper right.   Now select "midPointTai" for x, and "mag" for y axis, as in the screenshot below.  You can also restrict the range of observation times, to examine the behsvior of the object
+2.1.  Return to the "chart options and tools" box by clicking the two-gear icon on the upper right.   Now select "midPointTai" for x, and "mag" for y axis, as in the screenshot below.  You can also restrict the range of observation times, to examine the behavior of the object during, say, one year.  
 
--- Screenshot **
+** screenshot **
 
-1.1. First idea:  plot the RA vs. Dec of a selected object, SSObjectId =   
-1.2. Second idea:  plot the history of magnitude (light curve) of a selected object 
+2.2.  To make sure you are plotting the magnitude as measured in the same filter (band), you need to enter "= i" in the box just below the "Filter" column heading, and hit "Enter."  This should result in a plot as below.  
+
+** Screenshot **
+
 1.3. Third idea:  plot the phase of an object as a function of time
 
 
