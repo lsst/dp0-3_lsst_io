@@ -29,7 +29,7 @@ which only contains simulated Solar System objects.
     Visit the `documentation for DP0.2 <https://dp0-2.lsst.io>`_ pages for:
      - `getting started with DP0 (becoming a DP0 delegate) <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-started-with-dp0-checklist>`_,
      - `creating and using your account in the Rubin Science Platform (RSP) <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_,
-     - accessing Galactic and extragalactic simulated data products,
+     - `accessing Galactic and extragalactic simulated data products <https://dp0-2.lsst.io/data-products-dp0-2/index.html>`_,
      - `collaborating with others and joining virtual seminars <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#dp0-virtual-seminars>`_.
 
 .. toctree::
