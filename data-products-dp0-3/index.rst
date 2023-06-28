@@ -57,7 +57,7 @@ The DP0.3 solar system simulation is completely distinct from the `DESC DC2 <htt
 Schema browser
 --------------
 
-A :ref:`schema browser <schema>`. for the four DP0.3 solar system tables (DiaObject, SSSource, SSObject, MPCORB) is available.
+A  :doc:`schema browser </data-products-dp0-3/schema>` for the four DP0.3 solar system tables (DiaObject, SSSource, SSObject, MPCORB) is available.
 
 The `RSP Portal aspect <https://data.lsst.cloud>`_ includes lists of column names and their descriptions for DP0.3 tables, and so can also be used as a schema browser.
 
