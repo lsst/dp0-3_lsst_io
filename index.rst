@@ -27,19 +27,10 @@ which only contains simulated Solar System objects.
 
     This page describes only the DP0.3 data products and tutorials. 
     Visit the `documentation for DP0.2 <https://dp0-2.lsst.io>`_ pages for:
-     - getting started with DP0 (becoming a DP0 delegate),
-     - creating and using your account in the Rubin Science Platform (RSP),
-     - accessing Galactic and extragalactic simulated data products,
-     - requesting help with issues and reporting bugs, and
-     - collaborating with others and joining virtual seminars.
-
-.. Important::
-
-    Documentation for Data Preview 0.2 (DP0.2) and DP0.3 shall be used concurrently.
-	See `Documentation for DP0.2 <https://dp0-2.lsst.io>`_ for:
-	  - `getting started with DP0 (becoming a DP0 delegate) <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-started-with-dp0-checklist>`_,
-	  - `account creation for the Rubin Science Platform (RSP) <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_,
-	  - `collaborating with others and joining virtual seminars <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#dp0-virtual-seminars>`_.
+     - `getting started with DP0 (becoming a DP0 delegate) <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-started-with-dp0-checklist>`_,
+     - `creating and using your account in the Rubin Science Platform (RSP) <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_,
+     - `accessing Galactic and extragalactic simulated data products <https://dp0-2.lsst.io/data-products-dp0-2/index.html>`_,
+     - `collaborating with others and joining virtual seminars <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#dp0-virtual-seminars>`_.
 
 .. toctree::
     :maxdepth: 2
@@ -56,7 +47,6 @@ DP0.2 quick links
 - `How to get help <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-support>`_
 - `Report bugs <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#inform-and-improve-the-rsp>`_
 - `How to access the RSP <https://dp0-2.lsst.io/data-access-analysis-tools/index.html#rubin-science-platform-rsp>`_
-- `The DESC DC2 DP0.2 static sky simulation <https://dp0-2.lsst.io/data-products-dp0-2/index.html#the-desc-dc2-data-set>`_
 
 .. _Rubin-Observatory-Documentation-DP0-3-Data-Products:
 
