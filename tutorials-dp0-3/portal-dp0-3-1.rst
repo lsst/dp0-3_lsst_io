@@ -67,7 +67,23 @@ Step 2. Plot the magnitude of a single object on the sky as a function of time
 
 ** Screenshot **
 
-1.3. Third idea:  plot the phase of an object as a function of time
+===========================================================================
+Step 3. Plot various derived parameters single object as a function of time
+===========================================================================
+
+3.1. In this part, we will plot various parameters of an object as a function of time.  This requires joining multiple tables because not all tables contain the observation epoch, ``midPointTai``.  Specifically, 
+
+Need to do a JOINT ADQL search:  
+
+.. code-block:: SQL 
+
+   SELECT
+   diasrc.ra, diasrc.decl, diasrc.diaObjectId, diasrc.diaSourceId, diasrc.midPointTai, diasrc.ccdVisitId, 
+    sss.phaseAngle, sss.topocentricDist, sss.heliocentricDist, sss.ssObjectId
+   FROM dp03_catalogs.DiaSource AS diasrc 
+   JOIN dp03_catalogs.SSSource AS sss 
+   ON diasrc.diaSourceId = sss.diaSourceId
+   WHERE sss.ssObjectId = -735085100561880491
 
 
 
