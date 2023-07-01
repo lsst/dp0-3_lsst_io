@@ -52,7 +52,11 @@ Step 1. Plot the position of a single object on the sky as a function of time
 
 1.3.  The plot below does not give you the information about the epochs of individual pointings.  You can use the color of individual points to illustrate the time evolution of the object's position.  To do so, click on the two gears on the upper right, which will bring the box below.  There, enter ``ra`` and ``decl`` respectively for the x and y axis.  Enter ``midPointTai`` in the ``Color Map`` box.  Note that entering the first one or two characters in that box will return a choice of entries matching those characters.  You can enter any choice for the ``Color Scale`` box, but an easy to visualize choice is ``Rainbow`` since the order of colors is likely familiar to anyone.  Feel free to select another color scale!  
 
-Note the loop-like structure in the plot.  This is of course expected - you are plotting the position of the object as seen from the Earth, resulting in epicycle-like behavior.  
+** Screenshot **
+
+Note the loop-like structure in the resulting plot as below.  This is of course expected - you are plotting the position of an object as seen from the Earth, revolving around the Sun, resulting in epicycle-like behavior.  
+
+** Screenshot **
 
 .. _DP0-3-Portal-1-Step-2:
 ==============================================================================
@@ -61,7 +65,7 @@ Step 2. Plot the magnitude of a single object on the sky as a function of time
 
 2.1.  Return to the "chart options and tools" box by clicking the two-gear icon on the upper right.   Now select "midPointTai" for x, and "mag" for y axis, as in the screenshot below.  You can also restrict the range of observation times, to examine the behavior of the object during, say, one year.  
 
-** screenshot **
+** Screenshot **
 
 2.2.  To make sure you are plotting the magnitude as measured in the same filter (band), you need to enter ``= i`` in the box just below the "Filter" column heading, and hit "Enter."  This should result in a plot as below.  
 
