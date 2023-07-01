@@ -31,7 +31,7 @@
 
 The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3.  First part demonstrates how to plot the celestial posiition of a single, pre-selected Solar system object on the sky as a funtion of time.  The object, with the ``ssObjectId`` of ``-735085100561880491`` happens to be well-observed, with about 14,000 observations.  The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
 
-This tutorial assumes the successful completion of the beginner-level Portal tutorial 01, and uses the 
+This tutorial assumes the successful completion of the beginner-level Portal tutorial 01 (prepared for the Data Previews 02), and uses the 
 Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
 
 For more information about the DP0.3 catalogs, tables, and columns, visit the DP0.3 Data Products Definition Document (DPDD) 
@@ -42,15 +42,15 @@ For more information about the DP0.3 catalogs, tables, and columns, visit the DP
 Step 1. Plot the position of a single object on the sky as a function of time
 =============================================================================
 
-1.1.  Log on to the Rubin Science Platform, and select the Portal option.  In order to access the DP0.3 Tap Service, you need to click on the "Show" button on the upper right side of the screen (see the screenshot below).  In the "Select TAP Service" box, you should click on the down-arrow, and choose the "LSST DP0.3 SSO" entry.  In the "Output Column Selection and Constraints" select the ``decl``, ``midPointTai``, and ``ra`` entries by clicking the respective boxes next to the ``Name`` column.  Since you want to plot the celestial position of a single object, also click the box next to the ``ssObjectId`` line, and enter ``= -735085100561880491`` in the ``constraints`` box.  Make sure the boxes by ``Spatial`` and ``Temporal`` constraints (under ``Enter Constraints``) are unchecked.  
+1.1.  Log on to the Rubin Science Platform, and select the Portal option.  In order to access the DP0.3 Tap Service, you need to click on the ``Show`` button on the upper right side of the screen (marked as (1) on the screenshot below).  In the "Select TAP Service" box, you should click on the down-arrow, and choose the ``LSST DP0.3 SSO`` entry.  In the box below that, for ``Table Collection``, you need to select ``dp03_caalogs``, and for ``Table``, select ``dp03_catalogs.DiaSurce``.  In the ``Output Column Selection and Constraints`` select the ``decl``, ``midPointTai``, and ``ra`` entries by clicking the respective boxes next to the ``Name`` column.  Since you want to plot the celestial position of a single object, also click the box next to the ``ssObjectId`` line, and enter ``= -735085100561880491`` in the ``constraints`` box.  Make sure the boxes by ``Spatial`` and ``Temporal`` constraints (under ``Enter Constraints``) are unchecked.  Also make sure that the ``Row limit`` box is set to ``50000`` (should default to this value).  
 
 ** Screenshot **
 
-1.2.  Execute the search by clicking the "Search" button on lower left.  This will generate the plot as below.  Click the ``Bi-view Tables`` button on the upper right to display only the scatter plot and the table.  
+1.2.  Execute the search by clicking the ``Search`` button on lower left, marked as (2) on the screenshot above.  This will generate the plot as below.  Click the ``Bi-view Tables`` button on the upper right to display only the scatter plot and the table.  
 
 ** Screenshot **
 
-1.3.  The plot below does not give you the information about the epochs of individual pointings.  You can use the color of individual points to illustrate the time evolution of the object's position.  To do so, click on the two gears on the upper right, which will bring the box below.  There, enter "ra" and "decl" respectively for the x and y axis.  Enter "midPointTai" in the "Color Map" box.  You can enter any choice for the "Color Scale" box, but an easy to visualize choice is "Rainbow" since the order of colors is likely familiar to anyone.  Feel free to select another color scale!  
+1.3.  The plot below does not give you the information about the epochs of individual pointings.  You can use the color of individual points to illustrate the time evolution of the object's position.  To do so, click on the two gears on the upper right, which will bring the box below.  There, enter ``ra`` and ``decl`` respectively for the x and y axis.  Enter ``midPointTai`` in the ``Color Map`` box.  Note that entering the first one or two characters in that box will return a choice of entries matching those characters.  You can enter any choice for the ``Color Scale`` box, but an easy to visualize choice is ``Rainbow`` since the order of colors is likely familiar to anyone.  Feel free to select another color scale!  
 
 Note the loop-like structure in the plot.  This is of course expected - you are plotting the position of the object as seen from the Earth, resulting in epicycle-like behavior.  
 
