@@ -106,9 +106,7 @@ ADQL is the `Astronomical Data Query Language <https://www.ivoa.net/documents/AD
 The language is used by the `IVOA <https://ivoa.net>`_ to represent astronomy queries posted to Virtual Observatory (VO) services, such as the Rubin LSST Table Access Protocol (TAP) service.
 ADQL is based on the Structured Query Language (SQL).
 
-ADQL can be used in both the Notebook and Portal aspects:
- - :ref:`Data-Access-Analysis-Tools-TAP-NB`
- - how to :ref:`Portal-Intro-ADQL-Queries` in the Portal aspect
+ADQL can be used in both the Notebook and Portal aspects.
 
 Learn more about the `TAP-accessible DP0.3 catalogs <https://dp0-2.lsst.io/data-products-dp0-2/index.html#catalogs>`__ which are used in the examples below.
 
