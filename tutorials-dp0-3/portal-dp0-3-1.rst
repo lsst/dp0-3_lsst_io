@@ -27,9 +27,9 @@
 
 **Targeted learning level:** Beginner
 
-**Introduction:** This tutorial provides an introduction to the content of the sumulated Rubin Observatory Solar System data accessible via the Rubin Data Preview DP0.3.  
+**Introduction:** This tutorial provides an introduction to the content of the sumulated Rubin Observatory Solar System data accessible in the Rubin Data Preview DP0.3, by using the Portal aspect of the Rubin Science Platform.  It will use the Table Collection (Schema) ``dp03_catalogs``.  This schema contains 4 tables:  ``dp03_catalogs.DiaSource``, ``dp03_catalogs.MPCORB``, ``dp03_catalogs.SSSObject``, and ``dp03_catalogs.SSSource``.  The description and the purpose of these tables are in the XXX.  
 
-The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3.  First part demonstrates how to plot the celestial posiition of a single, pre-selected Solar system object on the sky as a funtion of time.  The object, with the ``ssObjectId`` of ``-735085100561880491`` happens to be well-observed, with about 14,000 observations.  The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
+The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3 data, and a few use cases.  First part demonstrates how to plot the celestial posiition of a single well-observed Solar system object on the sky as a funtion of time.  First, it identifies a few well-observed Solar system objects, and selects one for further study.  The object, with the ``ssObjectId`` of ``-735085100561880491`` happens to be well-observed, with about 14,000 observations.  The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
 
 This tutorial assumes the successful completion of the beginner-level Portal tutorial 01 (prepared for the Data Previews 02), and uses the 
 Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
@@ -38,11 +38,15 @@ For more information about the DP0.3 catalogs, tables, and columns, visit the DP
 :ref:`DP0-3-Data-Products-DPDD` or the DP0.3 Catalog Schema Browser (it is at https://dm.lsst.org/sdm_schemas/browser/dp03.html ).  
 
 .. _DP0-3-Portal-1-Step-1:
-=============================================================================
-Step 1. Plot the position of a single object on the sky as a function of time
-=============================================================================
+===========================================================================================
+Step 1. Plot the position of a single well-observed object on the sky as a function of time
+===========================================================================================
 
-1.1.  Log on to the Rubin Science Platform, and select the Portal option.  In order to access the DP0.3 Tap Service, you need to click on the ``Show`` button on the upper right side of the screen (marked as (1) on the screenshot below).  In the "Select TAP Service" box, you should click on the down-arrow, and choose the ``LSST DP0.3 SSO`` entry.  In the box below that, for ``Table Collection``, you need to select ``dp03_caalogs``, and for ``Table``, select ``dp03_catalogs.DiaSurce``.  In the ``Output Column Selection and Constraints`` select the ``decl``, ``midPointTai``, and ``ra`` entries by clicking the respective boxes next to the ``Name`` column.  Since you want to plot the celestial position of a single object, also click the box next to the ``ssObjectId`` line, and enter ``= -735085100561880491`` in the ``constraints`` box.  Make sure the boxes by ``Spatial`` and ``Temporal`` constraints (under ``Enter Constraints``) are unchecked.  Also make sure that the ``Row limit`` box is set to ``50000`` (should default to this value).  
+1.1.  Log on to the Rubin Science Platform, and select the Portal option.  In order to access the DP0.3 Tap Service, you need to click on the ``Show`` button on the upper right side of the screen (marked as (1) on the screenshot below).  In the ``Select TAP Service`` box, you should click on the down-arrow, and choose the ``LSST DP0.3 SSO`` entry.  In the box below that, for ``Table Collection``, you need to select ``dp03_catalogs``, and for ``Table``, `` select ``dp03_catalogs.SSObject`` - this table contains the number of observations containing the flux meaasurement of a given SS object (with ``ssObjectId``).  Select ``ssObjectId`` in the rightmost column of the ``Output Column Selection and Constraints``.  Also select ``numObs`` row, and in the constraints, put ``> 10000`` - this will select extremely well-observed objects.  Make sure the ``Spatial`` and ``temporal`` boxes on the left-hand side of the screen are unchecked, as in the screenshot below.  
+
+** Screenshot **
+
+select ``dp03_catalogs.DiaSurce``.  In the ``Output Column Selection and Constraints`` select the ``decl``, ``midPointTai``, and ``ra`` entries by clicking the respective boxes next to the ``Name`` column.  Since you want to plot the celestial position of a single object, also click the box next to the ``ssObjectId`` line, and enter ``= -735085100561880491`` in the ``constraints`` box.  Make sure the boxes by ``Spatial`` and ``Temporal`` constraints (under ``Enter Constraints``) are unchecked.  Also make sure that the ``Row limit`` box is set to ``50000`` (should default to this value).  
 
 ** Screenshot **
 
