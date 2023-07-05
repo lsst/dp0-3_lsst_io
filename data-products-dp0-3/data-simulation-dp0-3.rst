@@ -22,9 +22,9 @@ The DP0.3 Simulation
 .. This section should provide a brief, top-level description of the page.
 
 The DP0.3 catalog is a simulated 10-year Rubin detection and object catalog of real and simulated solar system and interstellar objects using the 
-baseline v3.0 cadence (page 44). ObjectsInField was used to generate an ephemeris, from which source detection and measurement were simulated using 
-SurveySimPostProcessing. The catalog includes hundreds of millions of detections of millions of simulated objects. 
-Catalog data are accessible with the Table Access Protocol (TAP) service via the Rubin Science Platform’s Portal [or Notebook?] Aspect.
+baseline v3.0 cadence `(see page 44) <https://pstn-055.lsst.io/PSTN-055.pdf>`_. `ObjectsInField <https://github.com/eggls6/objectsInField>`_ was used to generate an ephemeris, from which source detection and measurement were simulated using 
+`SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_. The catalog includes hundreds of millions of detections of millions of simulated objects. 
+Instructions for accessing the simulation can be found in the tutorial section.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Real-Objects:
@@ -62,7 +62,7 @@ Objects were simulated in two color classes: S and C, with colors and slope para
 Combining real and fake moving objects
 ======================================
 
-To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, 
+(Get update from JK)To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, 
 we use the Hybrid Solar System Catalogue Creator (Hybridcat). Hybridcat removes the closest-matching synthetic object to each real object, 
 leaving S3M’s orbital distribution minimally changed while including all known solar system objects. 
 Hybridcat is available by pip install or on github.
