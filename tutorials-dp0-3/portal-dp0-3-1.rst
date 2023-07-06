@@ -60,6 +60,10 @@ Make sure the ``Spatial`` and ``Temporal`` boxes on the left-hand side of the sc
 
 ** Screenshot1 **
 
+.. figure:: /_static/portal_tut05_step01a.png
+    :name: portal_tut05_step01a
+    :alt: A screenshot of the ADQL Query view of the Portal user interface.
+
 Pressing "Search" (marked with (2)) will return three rows as below.  
 Those are the three objects with the largest number of observations.  
 The table will reveal their ssObjectIDs.  
