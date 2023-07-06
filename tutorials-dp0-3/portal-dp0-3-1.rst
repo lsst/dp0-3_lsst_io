@@ -28,7 +28,7 @@
 **Targeted learning level:** Beginner
 
 **Introduction:** This tutorial provides an introduction to the content of the sumulated Rubin Observatory Solar System data accessible in the Rubin Data Preview DP0.3, as well as the tools available for data analysis via the Portal aspect of the Rubin Science Platform.  
-An important point to know is that the DP0.3 (Solar System objects) contains only catalogs, and _does not_ have any imaging data.  
+An important point to know is that the DP0.3 (Solar System objects) contains only catalogs, and does not have any imaging data.  
 Also, in contrast to the simulations contained in DP0.2, the objects in the catalogs often will have different locations on the sky:  the DP0.3 catalogs contain moving objects.  
 This Tutorial will use the Table Collection (Schema) ``dp03_catalogs``.  
 This schema contains 4 tables:  ``dp03_catalogs.DiaSource``, ``dp03_catalogs.MPCORB``, ``dp03_catalogs.SSObject``, and ``dp03_catalogs.SSSource``.  
