@@ -120,9 +120,10 @@ You can also restrict the range of observation times, to examine the behavior of
 Step 3. Plot various derived parameters single object as a function of time
 ===========================================================================
 
-3.1. In this part, we will plot various parameters of an object as a function of time.  This requires joining multiple tables because not all tables contain the observation epoch, ``midPointTai``.  Specifically, 
-
-Need to do a JOINT ADQL search:  
+3.1. In this part, we will plot various parameters of an object as a function of time.  
+This requires joining multiple tables because not all tables contain the observation epoch, ``midPointTai``.  
+Specifically, we will be joining the ``dp03_catalogs.DiaSource`` table (from which we get the time of the observaton, ``midPointTai``) with the ``dp03_catalogs.SSSource`` table, using the ``diaSourceId`` column present in both tables.  
+This can be done via the following ADQL search:  
 
 .. code-block:: SQL 
 
