@@ -122,7 +122,8 @@ Step 3. Plot various derived parameters of a single object as a function of time
 
 3.1. In this part, we will plot various parameters of an object as a function of time.  
 This requires joining multiple tables because not all tables contain the observation epoch, ``midPointTai``.  
-Specifically, we will be joining the ``dp03_catalogs.DiaSource`` table (from which we get the time of the observaton, ``midPointTai``) with the ``dp03_catalogs.SSSource`` table, using the ``diaSourceId`` column present in both tables.  As an example, we can add the phase angle of the object, as well as the topocentric and heliocentric distance to the object so we can plot those quantities as a functon of time
+Specifically, we will be joining the ``dp03_catalogs.DiaSource`` table (from which we get the time of the observaton, ``midPointTai``) with the ``dp03_catalogs.SSSource`` table, using the ``diaSourceId`` column present in both tables.  
+As an example, we can add the phase angle of the object, as well as the topocentric and heliocentric distance to the object so we can plot those quantities as a functon of time
 This can be done via the following ADQL search:  
 
 .. code-block:: SQL 
@@ -136,14 +137,18 @@ This can be done via the following ADQL search:
    WHERE sss.ssObjectId = -735085100561880491
 
 3.2.  Executing this search resulted in additional columns beyond the RA, Dec, and magnitude in the previous Step.  
+This is shown on the screenshot below.  
+Note that the plot on the right, by default, is the first two columns of the table on the left.  
 
 ** Screenshot9 **
 
-Now, we can plot those against time:  two obvious plots would be the topocentric and heliocentric distance, both as a function of MJD time:  
+Now, we can plot those newly retrieved quantities against time:  two obvious plots would be the topocentric and heliocentric distance, both as a function of MJD time.  
 In both cases, we need to appropriately change the "Chart Options and Tools" - probably straightforward, similar to what we've done previously.  
 
 ** Screenshot10 **
 
 
-Exercise for the learner:  Plot the histogram of the number of visits to the solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
+Exercise for the learner:  
+(1) Plot the histogram of the number of visits to the solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
+(2) Repeat the steps above for another object with a large number of observations (say another one with ``numObs`` > 10,000
 
