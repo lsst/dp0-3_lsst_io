@@ -116,9 +116,9 @@ You can also restrict the range of observation times, to examine the behavior of
 
 ** Screenshot8 **
 
-===========================================================================
-Step 3. Plot various derived parameters single object as a function of time
-===========================================================================
+================================================================================
+Step 3. Plot various derived parameters of a single object as a function of time
+================================================================================
 
 3.1. In this part, we will plot various parameters of an object as a function of time.  
 This requires joining multiple tables because not all tables contain the observation epoch, ``midPointTai``.  
