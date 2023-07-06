@@ -29,7 +29,7 @@
 
 **Introduction:** This tutorial provides an introduction to the content of the sumulated Rubin Observatory Solar System data accessible in the Rubin Data Preview DP0.3, as well as the tools available for data analysis via the Portal aspect of the Rubin Science Platform.  
 It will use the Table Collection (Schema) ``dp03_catalogs``.  
-This schema contains 4 tables:  ``dp03_catalogs.DiaSource``, ``dp03_catalogs.MPCORB``, ``dp03_catalogs.SSSObject``, and ``dp03_catalogs.SSSource``.  
+This schema contains 4 tables:  ``dp03_catalogs.DiaSource``, ``dp03_catalogs.MPCORB``, ``dp03_catalogs.SSObject``, and ``dp03_catalogs.SSSource``.  
 See the link below for the description and the purpose of these tables.  
 
 The tutorial consists of several parts, with all parts aiming to illustrate varius features of the DP0.3 data, and a few use cases.  
