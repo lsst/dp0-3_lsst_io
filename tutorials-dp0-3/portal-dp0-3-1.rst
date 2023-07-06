@@ -137,7 +137,7 @@ Step 3. Plot various derived parameters of a single object as a function of time
 This requires joining multiple tables because not all tables contain the observation epoch, ``midPointTai``.  
 Specifically, we will be joining the ``dp03_catalogs.DiaSource`` table (from which we get the time of the observation, ``midPointTai``) with the ``dp03_catalogs.SSSource`` table, using the ``diaSourceId`` column present in both tables.  
 As an example, we can add the phase angle of the object, as well as the topocentric and heliocentric distance to the object so we can plot those quantities as a function of time.  
-This can be done via the following ADQL search:  
+This can be done via an ADQL search.  To execute it, click on the ``RSP TAP Search`` and then on ``Edit ADQL`` button, and enter the following ADQL commands:  
 
 .. code-block:: SQL 
 
