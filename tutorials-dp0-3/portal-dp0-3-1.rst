@@ -28,7 +28,9 @@
 **Targeted learning level:** Beginner
 
 **Introduction:** This tutorial provides an introduction to the content of the sumulated Rubin Observatory Solar System data accessible in the Rubin Data Preview DP0.3, as well as the tools available for data analysis via the Portal aspect of the Rubin Science Platform.  
-It will use the Table Collection (Schema) ``dp03_catalogs``.  
+An important point to know is that the DP0.3 (Solar System objects) contains only catalogs, and _does not_ have any imaging data.  
+Also, in contrast to the simulations contained in DP0.2, the objects in the catalogs often will have different locations on the sky:  the DP0.3 catalogs contain moving objects.  
+This Tutorial will use the Table Collection (Schema) ``dp03_catalogs``.  
 This schema contains 4 tables:  ``dp03_catalogs.DiaSource``, ``dp03_catalogs.MPCORB``, ``dp03_catalogs.SSObject``, and ``dp03_catalogs.SSSource``.  
 See the link below for the description and the purpose of these tables.  
 
@@ -36,8 +38,9 @@ The tutorial consists of several parts, with all parts aiming to illustrate vari
 First part demonstrates how to plot the celestial posiition on the sky of a single well-observed Solar system object as a funtion of time.  
 First, it identifies a few well-observed Solar system objects, and selects one for further study.  
 The object, with the ``ssObjectId`` of ``-735085100561880491`` happens to have many (about 14,000) observations.  
-The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
 (Please don't be alarmed by the negative value of ``ssObjectId`` - this is a non-fatal bug, will be fixed in future releases.)  
+The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
+The third part of the tutorial uses an ADQL query to join two tables, allowing, among others, to plot other quantities contained in more than one table.  
 
 This tutorial assumes the successful completion of the beginner-level Portal tutorial 01 (prepared for the Data Previews 02), and uses the 
 Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
