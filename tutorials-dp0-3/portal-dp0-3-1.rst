@@ -162,8 +162,11 @@ In both cases, we need to appropriately change the "Chart Options and Tools" - p
 .. figure:: /_static/portal_tut01_step03b.png
     :name: portal_tut01_step03b
 
+===================================
+Step 4.  Exercises for the learner: 
+===================================
 
-Exercise for the learner:  
 (1) Plot the histogram of the number of visits to the solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
+
 (2) Repeat the steps above for another object with a large number of observations (say another one with ``numObs`` > 10,000).  
 
