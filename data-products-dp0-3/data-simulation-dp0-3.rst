@@ -26,14 +26,17 @@ baseline v3.0 cadence `(see page 44) <https://pstn-055.lsst.io/PSTN-055.pdf>`_. 
 `SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_. The catalog includes hundreds of millions of detections of millions of simulated objects. 
 Instructions for accessing the simulation can be found in the tutorial section.
 
+The simulated detections include astrometric scatter and the photometry is based on objects’ color class [one of two point populations], 
+the exposure’s telescope filter, and the object’s phase angle. However, we do not include rotation curves or complex geometry. Effectively, 
+each DP0.3 object is a uniform, textured sphere in one of two color classes. 
 
 .. _Data-Products-DP0-3-Data-Simulation-Real-Objects:
 
 Real objects from the MPC
 =========================
 
-The DP0.3 simulation includes all objects from the May 1 2023 MPCORB except for the ~400 without listed absolute magnitudes. Of those objects, 
-97% (1.2 million) are detected by Rubin in the 10-year simulated survey and appear in the DP0.3 catalog. 
+The DP0.3 simulation includes all objects from the May 1 2023 MPCORB except for the ~400 without listed absolute magnitudes. 
+Of those objects, 97% (1.2 million) are detected by Rubin in the 10-year simulated survey and appear in the DP0.3 catalog.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Fake-Objects:
@@ -41,9 +44,11 @@ The DP0.3 simulation includes all objects from the May 1 2023 MPCORB except for 
 Synthetic object populations
 ============================
 
-We include 91% of the S3M catalog (see below for details) and 12,148 simulated interstellar objects in the simulation. 24% (3.2 million) 
-of the S3M objects and 20% (2,429) of the ISOs are detected and appear in the catalog. 
-Objects were simulated in two color classes: S and C, with colors and slope parameters as shown in table 1. [You can find object color class at X]. 
+We include 91% of the S3M catalog (see “Combining real and synthetic moving objects” for details) and 12,148 simulated interstellar objects in the simulation. 
+24% (3.2 million) of the S3M objects and 20% (2,429) of the ISOs are detected and appear in the catalog. 
+
+Objects were simulated in two color classes: S and C (silicaceous and carbonaceous, see [] for more details), with colors and slope parameters as shown in table 1. 
+
 
 
 +-------+------+------+-----+-----+-----+-----+-----+
@@ -62,10 +67,8 @@ Objects were simulated in two color classes: S and C, with colors and slope para
 Combining real and fake moving objects
 ======================================
 
-(Get update from JK)To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, 
-we use the Hybrid Solar System Catalogue Creator (Hybridcat). Hybridcat removes the closest-matching synthetic object to each real object, 
-leaving S3M’s orbital distribution minimally changed while including all known solar system objects. 
-Hybridcat is available by pip install or on github.
+To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, we use the Hybrid Solar System Catalogue Creator (Hybridcat). 
+Hybridcat removes the closest-matching synthetic object to each real object, creating a population with all of MPCORB and most of S3M that closely matches S3M’s orbital distributions.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Truth-Data:
@@ -73,6 +76,6 @@ Hybridcat is available by pip install or on github.
 Truth data
 ==========
 
-The full set of simulated objects, along with their orbital and physical parameters, can be found here: [link]. 
-The true (no-scatter) astrometry is provided in the “AstRATrue” and “AstDecTrue” columns. 
+**Truth Objects**: The full set of simulated objects, along with their orbital and physical parameters, can be found in the [truth table]. 
+The true (no-scatter) astrometry is provided in the “AstRATrue” and “AstDecTrue” columns. . 
 
