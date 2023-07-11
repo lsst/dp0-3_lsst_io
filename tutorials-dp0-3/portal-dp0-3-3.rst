@@ -62,16 +62,16 @@ Select ``ssObjectId`` in the rightmost column of the ``Output Column Selection a
 Also select ``numObs`` row, and in the corresponding constraints box, put ``> 10000`` - this will select extremely well-observed objects.  
 Make sure the ``Spatial`` and ``Temporal`` boxes on the left-hand side of the screen are unchecked, as in the screenshot below.  
 
-.. figure:: /_static/portal_tut01_step01a.png
-    :name: portal_tut01_step01a
+.. figure:: /_static/portal_tut03_step01a.png
+    :name: portal_tut03_step01a
 
 Pressing "Search" (marked with (2)) will return three rows as below.  
 Those are the three objects with the largest number of observations.  
 The table will reveal their ssObjectIDs.  
 For now, let's work with the one with ``ssObjectId`` of ``-735085100561880491``.  
 
-.. figure:: /_static/portal_tut01_step01b.png
-    :name: portal_tut01_step01b
+.. figure:: /_static/portal_tut03_step01b.png
+    :name: portal_tut03_step01b
 
 1.2.  To get the position on the sky of an object selected by you, you will need to work with a different table than above.  
 Return to the screen where you can select a table to work with by pressing the ``RSP TAP Search`` tab on the upper left of the screen.  
@@ -84,15 +84,15 @@ If this box contains a number less than the number of observations returned in t
 You should be executing a query as on the screenshot below.  
 Note that the box next to the `ssObjectId`` row is not checked - we don't need to generate that column in the outpot table.  
 
-.. figure:: /_static/portal_tut01_step01c.png
-    :name: portal_tut01_step01c
+.. figure:: /_static/portal_tut03_step01c.png
+    :name: portal_tut03_step01c
 
 1.3.  Execute the search by clicking the ``Search`` button on lower left.  
 This will generate the plot as below.  
 Click the ``Bi-view Tables`` button on the upper right to display only the scatter plot and the table.  
 
-.. figure:: /_static/portal_tut01_step01d.png
-    :name: portal_tut01_step01d
+.. figure:: /_static/portal_tut03_step01d.png
+    :name: portal_tut03_step01d
 
 1.4.  The plot above does not give you the information about the epochs of individual pointings.  
 You can use the color of individual points to illustrate the time evolution of the object's position.  
@@ -103,13 +103,13 @@ Note that entering the first one or two characters in that box will return a cho
 You can enter any choice for the ``Color Scale`` box, but an easy to visualize choice is ``Rainbow`` since the order of colors is likely familiar to anyone.  
 Feel free to select another color scale!  
 
-.. figure:: /_static/portal_tut01_step01e.png
-    :name: portal_tut01_step01e
+.. figure:: /_static/portal_tut03_step01e.png
+    :name: portal_tut03_step01e
 
 Note the loop-like structure in the resulting plot as below.  This is of course expected - you are plotting the position of an object as seen from the Earth, revolving around the Sun, resulting in epicycle-like behavior.  
 
-.. figure:: /_static/portal_tut01_step01f.png
-    :name: portal_tut01_step01f
+.. figure:: /_static/portal_tut03_step01f.png
+    :name: portal_tut03_step01f
 
 .. _DP0-3-Portal-1-Step-2:
 ==============================================================================
@@ -120,13 +120,13 @@ Step 2. Plot the magnitude of a single object on the sky as a function of time
 Now select "midPointTai" for x, and "mag" for y axis, as in the screenshot below.  
 You can also restrict the range of observation times, to examine the behavior of the object during, say, one year.  
 
-.. figure:: /_static/portal_tut01_step02a.png
-    :name: portal_tut01_step02a
+.. figure:: /_static/portal_tut03_step02a.png
+    :name: portal_tut03_step02a
 
 2.2.  To make sure you are plotting the magnitude as measured in the same filter (band), you need to enter ``= i`` in the box just below the "Filter" column heading, and hit "Enter."  This should result in a plot as below.  
 
-.. figure:: /_static/portal_tut01_step02b.png
-    :name: portal_tut01_step02b
+.. figure:: /_static/portal_tut03_step02b.png
+    :name: portal_tut03_step02b
 
 
 
@@ -154,14 +154,14 @@ This can be done via an ADQL search.  To execute it, click on the ``RSP TAP Sear
 This is shown on the screenshot below.  
 Note that the plot on the right, by default, is the first two columns of the table on the left.  
 
-.. figure:: /_static/portal_tut01_step03a.png
-    :name: portal_tut01_step03a
+.. figure:: /_static/portal_tut03_step03a.png
+    :name: portal_tut03_step03a
 
 Now, we can plot those newly retrieved quantities against time:  two obvious plots would be the topocentric and heliocentric distance, both as a function of MJD time.  
 In both cases, we need to appropriately change the "Chart Options and Tools" - probably straightforward, similar to what we've done previously.  
 
-.. figure:: /_static/portal_tut01_step03b.png
-    :name: portal_tut01_step03b
+.. figure:: /_static/portal_tut03_step03b.png
+    :name: portal_tut03_step03b
 
 ===================================
 Step 4.  Exercises for the learner: 
