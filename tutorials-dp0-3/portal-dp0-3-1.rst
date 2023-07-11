@@ -27,6 +27,8 @@
 
 **Targeted learning level:** Beginner
 
+**Credits:** This tutorial incorporates material from the introductory DP0.3 tutorial notebook by Douglas Tucker and Bob Abel.
+
 
 .. _DP0-3-Portal-1-Intro:
 
