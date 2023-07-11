@@ -62,7 +62,7 @@ The MPC will calculate the orbital parameters and these results will be passed b
 and made available to users as the ``MPCORB`` table 
 (the other derived properties are stored in the other three tables explored below).
 Wikipedia provides a decent
-`beginner-level guide to orbital elements <https://en.wikipedia.org/wiki/Orbital_elementshttps://en.wikipedia.org/wiki/Orbital_elements>`_.
+`beginner-level guide to orbital elements <https://en.wikipedia.org/wiki/Orbital_elements>`_.
 The DP0.3 ``MPCORB`` table is a simulation of what this data product will be like after 10 years of LSST.
 
 The MPC contains all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
