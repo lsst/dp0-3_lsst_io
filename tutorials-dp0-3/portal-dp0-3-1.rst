@@ -296,6 +296,7 @@ table at left shows that absolute magnitudes (and thus colors) could not be deri
 Set the "Color Scale" to Earth.
 
 .. figure:: /_static/portal_tut01_step02d.png
+    :width: 400
     :name: portal_tut01_step02d
     :alt: A screenshot of the plot parameters pop-up window set to make a color-color diagram.
 
@@ -304,6 +305,7 @@ Set the "Color Scale" to Earth.
 2.9. Click "Apply" and view the color-color diagram.
 
 .. figure:: /_static/portal_tut01_step02e.png
+    :width: 600
     :name: portal_tut01_step02e
     :alt: A screenshot of the color-color diagram.
 
