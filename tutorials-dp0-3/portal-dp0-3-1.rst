@@ -15,9 +15,9 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-##############################################################
-01. Introduction to the DP0.3 in the RST Portal (Beginner)
-##############################################################
+##################################################################
+Introduction to DP0.3: the MPCORB and SSObject catalogs (beginner)
+##################################################################
 
 .. This section should provide a brief, top-level description of the page.
 
@@ -27,146 +27,120 @@
 
 **Targeted learning level:** Beginner
 
-**Introduction:** This tutorial provides an introduction to the content of the simulated Rubin Observatory Solar System data accessible in the Rubin Data Preview DP0.3, as well as the tools available for data analysis via the Portal aspect of the Rubin Science Platform.  
-An important point to know is that the DP0.3 (Solar System objects) contains only catalogs, and does not have any imaging data.  
-Also, in contrast to the simulations contained in DP0.2, the objects in the catalogs often will have different locations on the sky:  the DP0.3 catalogs contain moving objects.  
-This Tutorial will use the Table Collection (Schema) ``dp03_catalogs``.  
-This schema contains 4 tables:  ``dp03_catalogs.DiaSource``, ``dp03_catalogs.MPCORB``, ``dp03_catalogs.SSObject``, and ``dp03_catalogs.SSSource``.  
-See the link below for the description and the purpose of these tables.  
 
-The tutorial consists of several parts, with all parts aiming to illustrate various features of the DP0.3 data, and a few use cases.  
-First part demonstrates how to plot the celestial position on the sky of a single well-observed Solar system object as a function of time.  
-First, it identifies a few well-observed Solar system objects, and selects one for further study.  
-The object, with the ``ssObjectId`` of ``-735085100561880491`` happens to have many (about 14,000) observations.  
-(Please don't be alarmed by the negative value of ``ssObjectId`` - this is a non-fatal bug, will be fixed in future releases.)  
-The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
-The third part of the tutorial uses an ADQL query to join two tables, allowing, among others, to plot other quantities contained in more than one table.  
+.. _DP0-3-Portal-1-Intro:
 
-This tutorial assumes the successful completion of the beginner-level Portal tutorial 01 (prepared for the Data Previews 02), and uses the 
-Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
+Introduction
+============
 
-For more information about the DP0.3 catalogs, tables, and columns, visit the DP0.3 Data Products Definition Document (DPDD) 
-:ref:`DP0-3-Data-Products-DPDD` or the DP0.3 Catalog Schema Browser (it is at https://dm.lsst.org/sdm_schemas/browser/dp03.html ).  
+This tutorial demonstrates how to access the simulated Data Preview 0.3 (DP0.3) data set in the Rubin Science Platform's Portal Aspect.
+
+For the DP0.3 simulation, only moving objects were simulated, and only catalogs were created (there are no images). 
+The DP0.3 simulation is entirely independent of and separate from the DP0.2 simulation.
+DP0.3 is a hybrid catalog that contains both real and simulated Solar System objects 
+(asteroids, near-earth objects, Trojans, trans-Neptunian objects, and even a simulated spaceship... but no comets, major planets, or the Moon). 
+See :ref:`DP0-3-Data-Products-Introduction` for more information about how the hybrid catalog was created.
+
+The DP0.3 catalog data contains four tables: ``MPCORB``, ``SSObject``, ``SSSource``, and ``DiaSource``.
+Their contents are described in the :ref:`DP0-3-Data-Products-DPDD`.
+In Rubin Operations, these tables would be constantly changing, updated every day with the results of the previous night's observations. 
+However, for DP0.3, a static 10-year catalog has been simulated.
+
+This tutorial focuses on the first two tables, ``MPCORB`` and ``SSObject``, and 
+:ref:`Tutorials-Examples-DP0-3-Portal-2` will focus on ``SSSource`` and ``DiaSource``.
+
+
+The ``MPCORB`` table
+--------------------
+
+During Rubin Operations, Solar System Processing will occur in the daytime, after a night of observing.
+It will link together the difference-image detections of moving objects and report discoveries
+to the `Minor Planet Center <https://minorplanetcenter.net>`_ (MPC),
+as well as compute derived properties (magnitudes, phase-curve fits, coordinates in various systems).
+
+The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored
+and made available to users as the ``MPCORB`` table 
+(the other derived properties are stored in the other three tables explored below).
+The DP0.3 ``MPCORB`` table is a simulation of what this data product will be like after 10 years of LSST.
+
+The MPC contains all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
+Thus, the ``MPCORB`` table will have more rows than the ``SSObject`` table.
+
+For more information about Rubin's plans for Solar System Processing, see Section 3.2.2 of the 
+`Data Products Definitions Document <https://docushare.lsstcorp.org/docushare/dsweb/Get/LSE-163/LSE-163_DataProductsDefinitionDocumentDPDD.pdf>`_.
+Note that there remain differences between Table 4 of the DPDD, which contain the anticipated schema 
+for the moving object tables, and the DP0.3 table schemas.
+
+
+The ``SSObject`` table
+----------------------
+
+During Rubin Operations, Prompt Processing will occur during the night, detecting sources in 
+difference images (``DiaSources``, see Section 6) and associating them into static-sky transients
+and variables (``DiaObjects``, not included in DP0.3).
+
+The Solar System Processing which occurs in the daytime, after a night of observing,
+links together the ``DiaSources`` for moving objects into ``SSObjects``.
+Whereas the ``MPCORB`` table contains the orbital elements for these moving objects,
+the ``SSObjects`` contains the Rubin-measured properties such as phase curve fits and absolute magnitudes.
+
+Note that no artifacts or spurious difference-image sources have been injected into the DP0.3 catalogs.
+
+
+TAP and ADQL
+------------
+
+The DP0.3 data sets are available via the Table Access Protocol (TAP) service via the Portal Aspect,
+and can be queried via either the "UI Assisted" table interface, 
+or via the ADQL (Astronomical Data Query Language) interface.
+This tutorial will demonstrate both interfaces.
+TAP provides standardized access to catalog data for discovery, search, and retrieval.
+Full `documentation for TAP <http://www.ivoa.net/documents/TAP>`_ is provided by the International Virtual Observatory Alliance (IVOA).
+ADQL is similar to SQL (Structured Query Langage).
+The `documentation for ADQL <http://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
+
+
 
 .. _DP0-3-Portal-1-Step-1:
-===========================================================================================
-Step 1. Plot the position of a single well-observed object on the sky as a function of time
-===========================================================================================
 
-1.1.  Log on to the Rubin Science Platform, and select the Portal option.  
-In order to access the DP0.3 TAP Service, you need to click on the ``Show`` button on the upper right side of the screen (marked as (1) on the screenshot below).  
-In the ``Select TAP Service`` box, you should click on the down-arrow, and choose the ``LSST DP0.3 SSO`` entry.  
-In the box below that, for ``Table Collection``, you need to select ``dp03_catalogs``, and for ``Table``, select ``dp03_catalogs.SSObject`` - this table contains the number of observations containing the flux measurement of a given SS object (with ``ssObjectId``).  
-Select ``ssObjectId`` in the rightmost column of the ``Output Column Selection and Constraints``.  
-Also select ``numObs`` row, and in the corresponding constraints box, put ``> 10000`` - this will select extremely well-observed objects.  
-Make sure the ``Spatial`` and ``Temporal`` boxes on the left-hand side of the screen are unchecked, as in the screenshot below.  
+Step 1. Plot histograms of orbital elements in the ``MPCORB`` table
+===================================================================
+
+1.1. Log in to the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 
 .. figure:: /_static/portal_tut01_step01a.png
     :name: portal_tut01_step01a
+    :alt: The default view of the Portal Aspect.
 
-Pressing "Search" (marked with (2)) will return three rows as below.  
-Those are the three objects with the largest number of observations.  
-The table will reveal their ssObjectIDs.  
-For now, let's work with the one with ``ssObjectId`` of ``-735085100561880491``.  
+    Fig 1. The default view of the Portal Aspect.
+
+1.2. To access the DP0.3 TAP Service (DP0.2 is the default), in the upper right corner next to "TAP Services" click "Show". 
+A new option will appear at the top, called "Select TAP Service".
+Click on where it says "Using LSST DP0.2 DC2", and select "LSST DP0.3 SSO" from the drop-down menu.
+In the upper right corner next to "TAP Services" click "Hide".
+
+1.3. The top of the page now displays "LSST DP0.3 SSO Tables".
+The default "Table Collection (Schema)" will be "dp03_catalogs" and the default "Table" will be "dp03_catalogs.DiaSource".
+Change the "Table" to be "dp03_catalogs.MPCORB". 
+Notice how the area under "Enter Constraints" automatically un-checks the "Spatial Constraints" box, as the 
+``MPCORB`` table does not contain sky coordinates, and how the table under "Output Column Selection and Constraints"
+automatically updates to display the columns of the ``MPCORB`` table.
 
 .. figure:: /_static/portal_tut01_step01b.png
     :name: portal_tut01_step01b
+    :alt: The Portal interface when it is prepared to query the ``MPCORB`` table.
 
-1.2.  To get the position on the sky of an object selected by you, you will need to work with a different table than above.  
-Return to the screen where you can select a table to work with by pressing the ``RSP TAP Search`` tab on the upper left of the screen.  
-On the right hand side, select ``dp03_catalogs.DiaSurce`` table.  
-In the ``Output Column Selection and Constraints`` select the ``decl``, ``ra``, ``mag``, ``filter`` (magnitude and filter - you will use those in Step 2 below), and ``midPointTai`` (time of the observation in MJD) entries by clicking the respective boxes next to the ``Name`` column.  
-Since you want to plot the celestial position of a single object, also click the box next to the ``ssObjectId`` line, and enter ``= -735085100561880491`` in the ``constraints`` box.  
-Make sure the boxes by ``Spatial`` and ``Temporal`` constraints (under ``Enter Constraints``) on the left hand side stay unchecked.  
-Also make sure that the ``Row limit`` box is set to ``50000`` (should default to this value).  
-If this box contains a number less than the number of observations returned in the step above (~ 14,000) - your search will be missing some of the observations.  
-You should be executing a query as on the screenshot below.  
-Note that the box next to the `ssObjectId`` row is not checked - we don't need to generate that column in the outpot table.  
-
-.. figure:: /_static/portal_tut01_step01c.png
-    :name: portal_tut01_step01c
-
-1.3.  Execute the search by clicking the ``Search`` button on lower left.  
-This will generate the plot as below.  
-Click the ``Bi-view Tables`` button on the upper right to display only the scatter plot and the table.  
-
-.. figure:: /_static/portal_tut01_step01d.png
-    :name: portal_tut01_step01d
-
-1.4.  The plot above does not give you the information about the epochs of individual pointings.  
-You can use the color of individual points to illustrate the time evolution of the object's position.  
-To do so, click on the two gears on the upper right, which will bring the box below.  
-There, enter ``ra`` and ``decl`` respectively for the x and y axis.  
-Enter ``midPointTai`` in the ``Color Map`` box.  
-Note that entering the first one or two characters in that box will return a choice of entries matching those characters.  
-You can enter any choice for the ``Color Scale`` box, but an easy to visualize choice is ``Rainbow`` since the order of colors is likely familiar to anyone.  
-Feel free to select another color scale!  
-
-.. figure:: /_static/portal_tut01_step01e.png
-    :name: portal_tut01_step01e
-
-Note the loop-like structure in the resulting plot as below.  This is of course expected - you are plotting the position of an object as seen from the Earth, revolving around the Sun, resulting in epicycle-like behavior.  
-
-.. figure:: /_static/portal_tut01_step01f.png
-    :name: portal_tut01_step01f
-
-.. _DP0-3-Portal-1-Step-2:
-==============================================================================
-Step 2. Plot the magnitude of a single object on the sky as a function of time
-==============================================================================
-
-2.1.  Return to the "chart options and tools" box by clicking the two-gear icon on the upper right.   
-Now select "midPointTai" for x, and "mag" for y axis, as in the screenshot below.  
-You can also restrict the range of observation times, to examine the behavior of the object during, say, one year.  
-
-.. figure:: /_static/portal_tut01_step02a.png
-    :name: portal_tut01_step02a
-
-2.2.  To make sure you are plotting the magnitude as measured in the same filter (band), you need to enter ``= i`` in the box just below the "Filter" column heading, and hit "Enter."  This should result in a plot as below.  
-
-.. figure:: /_static/portal_tut01_step02b.png
-    :name: portal_tut01_step02b
+    Fig 2. The Portal interface is prepared to query the ``MPCORB`` table.
 
 
 
-================================================================================
-Step 3. Plot various derived parameters of a single object as a function of time
-================================================================================
 
-3.1. In this part, we will plot various parameters of an object as a function of time.  
-This requires joining multiple tables because not all tables contain the observation epoch, ``midPointTai``.  
-Specifically, we will be joining the ``dp03_catalogs.DiaSource`` table (from which we get the time of the observation, ``midPointTai``) with the ``dp03_catalogs.SSSource`` table, using the ``diaSourceId`` column present in both tables.  
-As an example, we can add the phase angle of the object, as well as the topocentric and heliocentric distance to the object so we can plot those quantities as a function of time.  
-This can be done via an ADQL search.  To execute it, click on the ``RSP TAP Search`` and then on ``Edit ADQL`` button, and enter the following ADQL commands:  
 
-.. code-block:: SQL 
+Step 2. Create a color-color diagram from the ``SSObject`` table 
+================================================================
 
-   SELECT
-   diasrc.ra, diasrc.decl, diasrc.diaObjectId, diasrc.diaSourceId, diasrc.midPointTai, diasrc.ccdVisitId, 
-   sss.phaseAngle, sss.topocentricDist, sss.heliocentricDist, sss.ssObjectId
-   FROM dp03_catalogs.DiaSource AS diasrc 
-   JOIN dp03_catalogs.SSSource AS sss 
-   ON diasrc.diaSourceId = sss.diaSourceId
-   WHERE sss.ssObjectId = -735085100561880491
 
-3.2.  Executing this search resulted in additional columns beyond the RA, Dec, and magnitude in the previous Step.  
-This is shown on the screenshot below.  
-Note that the plot on the right, by default, is the first two columns of the table on the left.  
 
-.. figure:: /_static/portal_tut01_step03a.png
-    :name: portal_tut01_step03a
-
-Now, we can plot those newly retrieved quantities against time:  two obvious plots would be the topocentric and heliocentric distance, both as a function of MJD time.  
-In both cases, we need to appropriately change the "Chart Options and Tools" - probably straightforward, similar to what we've done previously.  
-
-.. figure:: /_static/portal_tut01_step03b.png
-    :name: portal_tut01_step03b
-
-===================================
-Step 4.  Exercises for the learner: 
-===================================
-
-(1) Plot the histogram of the number of visits to the solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
-
-(2) Repeat the steps above for another object with a large number of observations (say another one with ``numObs`` > 10,000).  
+Step 3. Exercises for the learner 
+=================================
 
