@@ -271,15 +271,13 @@ that is contains no more than 1% of the total number can be returned by applying
 2.5. As in step 1.11 above, delete the results of this query and return to the Portal's search interface.
 Clear the past query from the ADQL box.
 
-2.6. Enter the following query to retrieve the g, r, i, and z absolute magnitudes, and calculate the
-g-r and i-z colors, for a random subset of the ``SSObject`` table. 
+2.6. Enter the following query to retrieve the g, r, i, and z absolute magnitudes 
+for a random subset of the ``SSObject`` table. 
 Before clicking "Search", increase the row limit to 200000.
 
 .. code-block:: SQL 
     
-    SELECT gH, rH, iH, zH, 
-    gH - rH AS gr_color, 
-    iH - zH AS iz_color 
+    SELECT gH, rH, iH, zH 
     FROM dp03_catalogs.ssObject 
     WHERE ssObjectId > 9000000000000000000
 
@@ -293,7 +291,28 @@ table at left shows that absolute magnitudes (and thus colors) could not be deri
 
     The default results view for the retrived subset of 123854 random ``SSObjects``.
 
-2.8. 
+2.8. In the plot panel, click on the "Settings" icon at upper right (the double gears) and in the
+"Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``gH - rH`` and "Y" be ``iH - zH``.
+Set the "Color Scale" to Earth.
+
+.. figure:: /_static/portal_tut01_step02d.png
+    :name: portal_tut01_step02d
+    :alt: A screenshot of the plot parameters pop-up window set to make a color-color diagram.
+
+    Adjust the "Plot Parameters" to create a color-color diagram.
+
+2.9. Click "Apply" and view the color-color diagram.
+
+.. figure:: /_static/portal_tut01_step02e.png
+    :name: portal_tut01_step02e
+    :alt: A screenshot of the color-color diagram.
+
+    The color-color diagram for a random subset of ``SSObjects``.
+
+
+2.10. View the plot, and notice that there are only two populations of colors in the simulation.
+This is not the case for real Solar System objects.
+These plots will look very different in the future, when they are made with real Rubin data.
 
 
 Step 3. Exercises for the learner 
@@ -305,5 +324,8 @@ by anyone, based on observations from any survey, whereas the ``SSObject`` table
 detected by LSST. 
 Which populations of moving objects does LSST not detect?
 
-
-
+3.2. Explore and adjust the color-color plot.
+To zoom in, click on the the magnifying glass with the + symbol above the plot panel, then click-and-drag in the plot.
+Reopen the plot parameter pop-up window and use 200 bins instead of 100. 
+Try different color scales.
+Try plotting different color combinations or create a color-magnitude diagram.
