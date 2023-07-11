@@ -118,9 +118,9 @@ Step 1. Plot histograms of orbital elements in the ``MPCORB`` table
 
 .. figure:: /_static/portal_tut01_step01a.png
     :name: portal_tut01_step01a
-    :alt: The default view of the Portal Aspect.
+    :alt: A screenshot of the default view of the Portal Aspect.
 
-    Fig 1. The default view of the Portal Aspect.
+    The default view of the Portal Aspect.
 
 1.2. To access the DP0.3 TAP Service (DP0.2 is the default), in the upper right corner next to "TAP Services" click "Show". 
 A new option will appear at the top, called "Select TAP Service".
@@ -136,9 +136,9 @@ automatically updates to display the columns of the ``MPCORB`` table.
 
 .. figure:: /_static/portal_tut01_step01b.png
     :name: portal_tut01_step01b
-    :alt: The Portal interface when it is prepared to query the ``MPCORB`` table.
+    :alt: A screenshot of the Portal interface when it is prepared to query the MPCORB table.
 
-    Fig 2. The Portal interface is prepared to query the ``MPCORB`` table.
+    The Portal interface is prepared to query the ``MPCORB`` table.
 
 1.4. Set up a query to retrieve the eccentricity, inclination, and absolution magnitude H for 
 50000 bright objects in the ``MPCORB`` table.
@@ -158,9 +158,9 @@ Step 2 will demonstrate a way of obtaining a random sample of DP0.3 objects.
 .. figure:: /_static/portal_tut01_step01c.png
     :width: 600
     :name: portal_tut01_step01c
-    :alt: The Portal's table interface showing the query set up.
+    :alt: A screenshot of the Portal's table interface showing the query set up.
 
-    Fig 3. The Portal interface with the described query set up.
+    The Portal interface with the described query set up.
 
 1.5. At lower left, click on "Search", and the Portal will execute the query and display
 the default results view.
@@ -168,9 +168,9 @@ The default plot is a 2-d histogram for the first two columns, eccentricity and 
 
 .. figure:: /_static/portal_tut01_step01d.png
     :name: portal_tut01_step01d
-    :alt: The Portal's default results view for the query submitted.
+    :alt: A screenshot of the Portal's default results view for the query submitted.
 
-    Fig 4. The default results view, with a plot at left and the table of results at right.
+    The default results view, with a plot at left and the table of results at right.
 
 1.6. Create a histogram of the eccentricity values.
 In the plot panel, click on the "Settings" icon (double gears) to get the "Plot Parameters" pop-up window.
@@ -181,9 +181,9 @@ Next to "Column or expression" enter "e", the column name containing the eccentr
 .. figure:: /_static/portal_tut01_step01e.png
     :width: 400
     :name: portal_tut01_step01e
-    :alt: The Plot Parameters pop-up window set to create a histogram of eccentricities.
+    :alt: A screenshot of the Plot Parameters pop-up window set to create a histogram of eccentricities.
 
-    Fig 5. The "Plot Parameters" pop-up window set to create a histogram of eccentricities.
+    The "Plot Parameters" pop-up window set to create a histogram of eccentricities.
 
 1.7. Click "OK" and a new plot panel containing the eccentricity histogram will appear next to the default plot panel.
 To get rid of the default histogram, click on the blue cross in the upper right corner of that plot to close it.
@@ -195,9 +195,9 @@ making more room for the three plots.
 
 .. figure:: /_static/portal_tut01_step01f.png
     :name: portal_tut01_step01f
-    :alt: The Portal view with three histograms on the right and a narrow table on the left.
+    :alt: A screenshot of the Portal view with three histograms on the right and a narrow table on the left.
 
-    Fig 6. The adjusted Portal results viewer, with three histograms and a narrow table.
+    The adjusted Portal results viewer, with three histograms and a narrow table.
 
 1.9. With the absolute magnitude plot selected (it will have an orange boundary), click on the "Settings" icon
 and adjust the "Plot Parameters".
@@ -208,9 +208,9 @@ Under "Chart Options", set the title to "H Histogram" and select box to log the 
 .. figure:: /_static/portal_tut01_step01g.png
     :width: 400
     :name: portal_tut01_step01g
-    :alt: The Plot Parameters and Color Picker pop-up windows.
+    :alt: A screenshot of the Plot Parameters and Color Picker pop-up windows.
 
-    Fig 7. Use the "Plot Parameters" and "Color Picker" pop-up windows to adjust the appearance.
+    Use the "Plot Parameters" and "Color Picker" pop-up windows to adjust the appearance.
 
 1.10. Click "Apply", and close the pop-up windows.
 The absolute magnitude histogram will have the changes applied.
@@ -226,6 +226,74 @@ Refreshing the browser window is another way to return the Portal to its default
 Step 2. Create a color-color diagram from the ``SSObject`` table 
 ================================================================
 
+**A random sample of DP0.3 ``SSObjects``:** 
+As mentioned under step 1.4 above, subsets returned by applying a row limit to Portal queries are not random.
+To retrieve a random subset, make use of the fact that ``ssObjectId`` is a randomly assigned 64-bit long unsigned integer. 
+Since ADQL interprets a 64-bit long unsigned integer as a 63-bit _signed_ integer, 
+these range from a very large negative integer value to a very large positive integer value.
+This will be fixed in the future so that all identifiers are positive numbers.
+
+2.1. Follow steps 1.1 and 1.2 above, and then at upper right, next to "View" click on "Edit ADQL".
+Enter the following ADQL statement into the "ADQL Query" box in order to return a count of the number of rows
+and the minimum and maximum values of the ``ssObjectId``.
+Click "Search" in the lower left corner.
+
+.. code-block:: SQL 
+
+    SELECT COUNT(ssObjectId), MIN(ssObjectId), MAX(ssObjectId) 
+    FROM dp03_catalogs.SSObject
+
+.. figure:: /_static/portal_tut01_step02a.png
+    :width: 600
+    :name: portal_tut01_step02a
+    :alt: A screenshot of the ADQL query to obtain table information.
+
+    Note that there has to be a space after ``MAX(ssObjectId) ``.
+
+
+2.2. The results view will look similar that in step 1.5 above, but for this query the default plot is not helpful.
+Obtaining the values in the table were the only objective of this first query.
+
+.. figure:: /_static/portal_tut01_step02b.png
+    :width: 400
+    :name: portal_tut01_step02b
+    :alt: A screenshot of the results showing count, minimum, and maximum for ssObjectId.
+
+    The results view table of the counts, minimum, and maximum values of ``ssObjectId``.
+
+2.3. Notice that the ``SSObject`` table contains 10.2 million moving objects. 
+Comparing this to the size of the ``MPCORB`` table is left as an exercise for the learner, below.
+
+2.4. As the maximum value of the ``ssObjectId`` is ``9223370875126069107``, a random subset of ``SSObjects`` 
+that is contains no more than 1% of the total number can be returned by applying a constraint that 
+``ssObjectId`` must be greater than ``9000000000000000000`` (i.e., because ``922 - 0.02*922 ~ 900``).
+
+2.5. As in step 1.11 above, delete the results of this query and return to the Portal's search interface.
+Clear the past query from the ADQL box.
+
+2.6. Enter the following query to retrieve the g, r, i, and z absolute magnitudes, and calculate the
+g-r and i-z colors, for a random subset of the ``SSObject`` table. 
+Before clicking "Search", increase the row limit to 200000.
+
+.. code-block:: SQL 
+    
+    SELECT gH, rH, iH, zH, 
+    gH - rH AS gr_color, 
+    iH - zH AS iz_color 
+    FROM dp03_catalogs.ssObject 
+    WHERE ssObjectId > 9000000000000000000
+
+
+2.7. The default results view displays a plot of the r- vs. the g-band magnitude at right, and the
+table at left shows that absolute magnitudes (and thus colors) could not be derived for all objects.
+
+.. figure:: /_static/portal_tut01_step02c.png
+    :name: portal_tut01_step02c
+    :alt: A screenshot of the default results view for the SSObject table query.
+
+    The default results view for the retrived subset of 123854 random ``SSObjects``.
+
+2.8. 
 
 
 Step 3. Exercises for the learner 
