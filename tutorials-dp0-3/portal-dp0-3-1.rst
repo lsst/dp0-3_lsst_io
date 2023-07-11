@@ -165,7 +165,7 @@ Next to "Plot Type", select "Histogram" from the drop-down menu.
 Next to "Column or expression" enter "e", the column name containing the eccentricity values.
 
 .. figure:: /_static/portal_tut01_step01e.png
-    :width: 600
+    :width: 400
     :name: portal_tut01_step01e
     :alt: The Plot Parameters pop-up window set to create a histogram of eccentricities.
 
@@ -192,12 +192,14 @@ Under "Trace Options", next to "Color", click on the magnifying glass to select 
 Under "Chart Options", set the title to "H Histogram" and select box to log the y-axis.
 
 .. figure:: /_static/portal_tut01_step01g.png
+    :width: 400
     :name: portal_tut01_step01g
     :alt: The Plot Parameters and Color Picker pop-up windows.
 
-    Fig 7. Use the "Plot Parameters" and "Color Picker" pop-up windows to adjust the appearance of the plots.
+    Fig 7. Use the "Plot Parameters" and "Color Picker" pop-up windows to adjust the appearance.
 
 1.10. Click "Apply", and close the pop-up windows.
+The absolute magnitude histogram will have the changes applied.
 Follow step 1.9 to adjust the appearance of the other two histograms.
 
 1.11. To delete these search results and return to the query interface, click on the 'x' in the tab in the table,
