@@ -142,7 +142,7 @@ moving objects with absolute magnitudes "H < 20" mag.
 At the bottom, leave the "Row Limit" set at the default of "50000".
 
 .. figure:: /_static/portal_tut01_step01c.png
-    :width: 400
+    :width: 600
     :name: portal_tut01_step01c
     :alt: The Portal's table interface showing the query set up.
 
@@ -158,7 +158,53 @@ The default plot is a 2-d histogram for the first two columns, eccentricity and 
 
     Fig 4. The default results view, with a plot at left and the table of results at right.
 
-1.6. *histograms*
+1.6. Create a histogram of the eccentricity values.
+In the plot panel, click on the "Settings" icon (double gears) to get the "Plot Parameters" pop-up window.
+Click on "Add New Chart".
+Next to "Plot Type", select "Histogram" from the drop-down menu.
+Next to "Column or expression" enter "e", the column name containing the eccentricity values.
+
+.. figure:: /_static/portal_tut01_step01e.png
+    :width: 600
+    :name: portal_tut01_step01e
+    :alt: The Plot Parameters pop-up window set to create a histogram of eccentricities.
+
+    Fig 5. The "Plot Parameters" pop-up window set to create a histogram of eccentricities.
+
+1.7. Click "OK" and a new plot panel containing the eccentricity histogram will appear next to the default plot panel.
+To get rid of the default histogram, click on the blue cross in the upper right corner of that plot to close it.
+Now only the eccentricity histogram appears.
+
+1.8. Repeat steps 1.6 and 1.7 to add new plots containing the histograms for inclination and absolute magnitude.
+Shrink the table horizontally by clicking on the left-hand edge of the table and sliding it over to the right,
+making more room for the three plots.
+
+.. figure:: /_static/portal_tut01_step01f.png
+    :name: portal_tut01_step01f
+    :alt: The Portal view with three histograms on the right and a narrow table on the left.
+
+    Fig 6. The adjusted Portal results viewer, with three histograms and a narrow table.
+
+1.9. With the absolute magnitude plot selected (it will have an orange boundary), click on the "Settings" icon
+and adjust the "Plot Parameters".
+Change the number of bins to 30.
+Under "Trace Options", next to "Color", click on the magnifying glass to select a new hue from the Color Picker pop-up window.
+Under "Chart Options", set the title to "H Histogram" and select box to log the y-axis.
+
+.. figure:: /_static/portal_tut01_step01g.png
+    :name: portal_tut01_step01g
+    :alt: The Plot Parameters and Color Picker pop-up windows.
+
+    Fig 7. Use the "Plot Parameters" and "Color Picker" pop-up windows to adjust the appearance of the plots.
+
+1.10. Click "Apply", and close the pop-up windows.
+Follow step 1.9 to adjust the appearance of the other two histograms.
+
+1.11. To delete these search results and return to the query interface, click on the 'x' in the tab in the table,
+next to where it says "dp03_catalogs.MPCORB".
+The Portal will return to the query interface.
+Click on "Reset Column Selections & Constraints" above the table interface to remove the previous query.
+Refreshing the browser window is another way to return the Portal to its default, pre-query state.
 
 
 Step 2. Create a color-color diagram from the ``SSObject`` table 
