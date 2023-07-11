@@ -55,6 +55,7 @@ Objects were simulated in two color classes: S and C (silicaceous and carbonaceo
 with colors and slope parameters as shown in table 1. 
 
 
+
 +-------+------+------+-----+-----+-----+-----+-----+
 | Color | V-u  | V-g  | V-r | V-i | V-z | V-y | GS  |
 +=======+======+======+=====+=====+=====+=====+=====+
