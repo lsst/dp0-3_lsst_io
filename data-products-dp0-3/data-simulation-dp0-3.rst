@@ -21,22 +21,25 @@ The DP0.3 Simulation
 
 .. This section should provide a brief, top-level description of the page.
 
-The DP0.3 catalog is a simulated 10-year Rubin detection and object catalog of real and simulated solar system and interstellar objects using the 
-baseline v3.0 cadence `(see page 44) <https://pstn-055.lsst.io/PSTN-055.pdf>`_. `ObjectsInField <https://github.com/eggls6/objectsInField>`_ was used to generate an ephemeris, from which source detection and measurement were simulated using 
-`SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_. The catalog includes hundreds of millions of detections of millions of simulated objects. 
-Instructions for accessing the simulation can be found in the tutorial section.
+The DP0.3 Simulation is a catalog of real and simulated solar system and interstellar objects, hosted on the Rubin Science Platform (RSP). 
+It simulates a 10-year Rubin survey using the LSST baseline v3.0 cadence `(see page 44) <https://pstn-055.lsst.io/PSTN-055.pdf>`_ and covers
+hundreds of millions of detections of millions of objects.  
+`ObjectsInField <https://github.com/eggls6/objectsInField>`_ was used to generate an ephemeris, 
+from which source detection and measurement were simulated using 
+`SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_. 
 
-The simulated detections include astrometric scatter and the photometry is based on objects’ color class [one of two point populations], 
-the exposure’s telescope filter, and the object’s phase angle. However, we do not include rotation curves or complex geometry. Effectively, 
-each DP0.3 object is a uniform, textured sphere in one of two color classes. 
+The simulation accounts for astrometric scatter and photometric variations based on the objects's color class [one of two point populations], 
+the exposure’s telescope filter, and the object’s phase angle. However, we do not include rotation curves or complex geometry. In other words,  
+each DP0.3 object is a uniform, textured sphere in one of two color classes. You can access the simulation by following the instructions in the tutorial section.
 
 .. _Data-Products-DP0-3-Data-Simulation-Real-Objects:
 
 Real objects from the MPC
 =========================
 
-The DP0.3 simulation includes all objects from the May 1 2023 MPCORB except for the ~400 without listed absolute magnitudes. 
-Of those objects, 97% (1.2 million) are detected by Rubin in the 10-year simulated survey and appear in the DP0.3 catalog.
+The DP0.3 simulation contains all objects in the `Minor Planet Center Orbit (MPCORB) Database <https://www.minorplanetcenter.net/iau/MPCORB.html>`_
+as of May 1 2023, except for the ~400 objects that have no absolute magnitudes. 
+Out of these objects, Rubin detects 97% (1.2 million) of them in the simulated 10-year survey and includes them in the DP0.3 catalog.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Fake-Objects:
@@ -44,10 +47,11 @@ Of those objects, 97% (1.2 million) are detected by Rubin in the 10-year simulat
 Synthetic object populations
 ============================
 
-We include 91% of the S3M catalog (see “Combining real and synthetic moving objects” for details) and 12,148 simulated interstellar objects in the simulation. 
+We include 91% of the `Synthetic Solar System Model (S3M) catalog <https://iopscience.iop.org/article/10.1086/659833/pdf>`_ 
+(see “Combining real and synthetic moving objects” for details) and 12,148 simulated interstellar objects. 
 24% (3.2 million) of the S3M objects and 20% (2,429) of the ISOs are detected and appear in the catalog. 
 
-Objects were simulated in two color classes: S and C (silicaceous and carbonaceous, see [] for more details), with colors and slope parameters as shown in table 1. 
+Objects were simulated in two color classes: S and C (silicaceous and carbonaceous, see `https://arxiv.org/pdf/1706.09398.pdf <https://arxiv.org/pdf/1706.09398.pdf>`_ for more details), with colors and slope parameters as shown in table 1. 
 
 
 
@@ -59,13 +63,13 @@ Objects were simulated in two color classes: S and C (silicaceous and carbonaceo
 |     s |-1.927|-0.395|0.255|0.455|0.401|0.406|0.15 |
 +-------+------+------+-----+-----+-----+-----+-----+
 
-[Veres https://arxiv.org/pdf/1706.09398.pdf]
+Table 1 - dp0-3 color classes [Veres https://arxiv.org/pdf/1706.09398.pdf]
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Combo:
 
-Combining real and fake moving objects
-======================================
+Combining real and synthetic moving objects
+===========================================
 
 To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, we use the Hybrid Solar System Catalogue Creator (Hybridcat). 
 Hybridcat removes the closest-matching synthetic object to each real object, creating a population with all of MPCORB and most of S3M that closely matches S3M’s orbital distributions.
