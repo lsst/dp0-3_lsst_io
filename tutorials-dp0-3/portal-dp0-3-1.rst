@@ -228,7 +228,7 @@ Refreshing the browser window is another way to return the Portal to its default
 Step 2. Create a color-color diagram from the ``SSObject`` table 
 ================================================================
 
-**A random sample of DP0.3 ``SSObjects``:** 
+**A random sample of DP0.3 SSObjects:** 
 As mentioned under step 1.4 above, subsets returned by applying a row limit to Portal queries are not random.
 To retrieve a random subset, make use of the fact that ``ssObjectId`` is a randomly assigned 64-bit long unsigned integer. 
 Since ADQL interprets a 64-bit long unsigned integer as a 63-bit _signed_ integer, 
@@ -317,6 +317,7 @@ Set the "Color Scale" to Earth.
 2.10. View the plot, and notice that there are only two populations of colors in the simulation.
 This is not the case for real Solar System objects.
 These plots will look very different in the future, when they are made with real Rubin data.
+Adjusting the plot parameters is left as an exercise for the learner.
 
 
 Step 3. Exercises for the learner 
