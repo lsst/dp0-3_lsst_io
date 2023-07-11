@@ -15,19 +15,24 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-#################
-02. Title (level)
-#################
+####################################################################
+02. Introduction to DP0.3: the ``SSSource`` and ``DiaSource`` tables
+####################################################################
 
 .. This section should provide a brief, top-level description of the page.
 
-**Contact authors:**
+**Contact authors:** Greg Madejski
 
-**Last verified to run:**
+**Last verified to run:** 
 
-**Targeted learning level:**
+**Targeted learning level:** beginner
 
-**Introduction:**
+
+.. _DP0-3-Portal-2-Intro:
+
+Introduction
+============
+
 
 
 .. _DP0-3-Portal-2-Step-1:
