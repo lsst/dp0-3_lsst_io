@@ -15,9 +15,9 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-##################################################################
-Introduction to DP0.3: the MPCORB and SSObject catalogs (beginner)
-##################################################################
+######################################################################
+01. Introduction to DP0.3: the MPCORB and SSObject catalogs (beginner)
+######################################################################
 
 .. This section should provide a brief, top-level description of the page.
 
@@ -132,8 +132,33 @@ automatically updates to display the columns of the ``MPCORB`` table.
 
     Fig 2. The Portal interface is prepared to query the ``MPCORB`` table.
 
+1.4. Set up a query to retrieve the eccentricity, inclination, and absolution magnitude H for 
+50000 bright objects in the ``MPCORB`` table.
+First, click the selection box next to each column name to be returned: 
+eccentricity (``e``), inclination (``incl``), and absolute magnitude H (``mpcH``).
+Click the funnel icon at the top of the column of selection boxes to view only selected columns.
+In the "constraints" box in the row for the ``mpcH`` column, enter "< 20" to return only 
+moving objects with absolute magnitudes "H < 20" mag.
+At the bottom, leave the "Row Limit" set at the default of "50000".
 
+.. figure:: /_static/portal_tut01_step01c.png
+    :width: 400
+    :name: portal_tut01_step01c
+    :alt: The Portal's table interface showing the query set up.
 
+    Fig 3. The Portal interface with the described query set up.
+
+1.5. At lower left, click on "Search", and the Portal will execute the query and display
+the default results view.
+The default plot is a 2-d histogram for the first two columns, eccentricity and inclination.
+
+.. figure:: /_static/portal_tut01_step01d.png
+    :name: portal_tut01_step01d
+    :alt: The Portal's default results view for the query submitted.
+
+    Fig 4. The default results view, with a plot at left and the table of results at right.
+
+1.6. *histograms*
 
 
 Step 2. Create a color-color diagram from the ``SSObject`` table 
