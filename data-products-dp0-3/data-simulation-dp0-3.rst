@@ -22,7 +22,7 @@ The DP0.3 Simulation
 .. This section should provide a brief, top-level description of the page.
 
 The DP0.3 data set is a catalog of real and simulated solar system and interstellar objects, hosted on the Rubin Science Platform (RSP). 
-It simulates a 10-year Rubin survey using the LSST baseline v3.0 cadence `(see page 44) <https://pstn-055.lsst.io/PSTN-055.pdf>`_ and covers
+It simulates a 10-year Rubin survey using the LSST baseline v3.0 cadence (see page 44 of the `Survey Cadence Optimization Committee's Phase 2 Recommendations) <https://pstn-055.lsst.io/PSTN-055.pdf>`_ and covers
 hundreds of millions of detections of millions of objects.  
 `ObjectsInField <https://github.com/eggls6/objectsInField>`_ was used to generate an ephemeris, 
 from which source detection and measurement were simulated using 
