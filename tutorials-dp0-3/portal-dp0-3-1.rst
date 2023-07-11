@@ -141,6 +141,12 @@ In the "constraints" box in the row for the ``mpcH`` column, enter "< 20" to ret
 moving objects with absolute magnitudes "H < 20" mag.
 At the bottom, leave the "Row Limit" set at the default of "50000".
 
+**WARNING:** The 50000 objects returned will not be a truly random sample, they will
+be any 50000 objects in the table that match the query conditions.
+Tables are typically sorted on some axis, and so this kind of query can preferentially
+return objects in a region of parameter space. 
+Step 2 will demonstrate a way of obtaining a random sample of DP0.3 objects.
+
 .. figure:: /_static/portal_tut01_step01c.png
     :width: 600
     :name: portal_tut01_step01c
@@ -216,4 +222,12 @@ Step 2. Create a color-color diagram from the ``SSObject`` table
 
 Step 3. Exercises for the learner 
 =================================
+
+3.1. How big is the ``MPCORB`` table? 
+It is larger than the ``SSObject`` table because the MPC contains all of the moving objects ever reported
+by anyone, based on observations from any survey, whereas the ``SSObject`` table contains only moving objects
+detected by LSST. 
+Which populations of moving objects does LSST not detect?
+
+
 
