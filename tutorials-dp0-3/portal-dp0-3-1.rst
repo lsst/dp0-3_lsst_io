@@ -61,6 +61,8 @@ as well as compute derived properties (magnitudes, phase-curve fits, coordinates
 The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored
 and made available to users as the ``MPCORB`` table 
 (the other derived properties are stored in the other three tables explored below).
+Wikipedia provides a decent
+`beginner-level guide to orbital elements <https://en.wikipedia.org/wiki/Orbital_elementshttps://en.wikipedia.org/wiki/Orbital_elements>`_.
 The DP0.3 ``MPCORB`` table is a simulation of what this data product will be like after 10 years of LSST.
 
 The MPC contains all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
@@ -85,6 +87,12 @@ Whereas the ``MPCORB`` table contains the orbital elements for these moving obje
 the ``SSObjects`` contains the Rubin-measured properties such as phase curve fits and absolute magnitudes.
 
 Note that no artifacts or spurious difference-image sources have been injected into the DP0.3 catalogs.
+
+**Absolute magnitudes:** For Solar System objects, absolute magnitudes are defined to be for an object 1 AU from the Sun and 1 AU 
+from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
+Absolute magnitudes are derived by correcting for distance, fitting a function to the relationship between 
+absolute magnitude and phase, and evaluating the function at a phase of 0 deg.
+The results of phase-curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.
 
 
 TAP and ADQL
