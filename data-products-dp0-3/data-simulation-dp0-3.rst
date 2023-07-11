@@ -21,14 +21,14 @@ The DP0.3 Simulation
 
 .. This section should provide a brief, top-level description of the page.
 
-The DP0.3 Simulation is a catalog of real and simulated solar system and interstellar objects, hosted on the Rubin Science Platform (RSP). 
+The DP0.3 data set is a catalog of real and simulated solar system and interstellar objects, hosted on the Rubin Science Platform (RSP). 
 It simulates a 10-year Rubin survey using the LSST baseline v3.0 cadence `(see page 44) <https://pstn-055.lsst.io/PSTN-055.pdf>`_ and covers
 hundreds of millions of detections of millions of objects.  
 `ObjectsInField <https://github.com/eggls6/objectsInField>`_ was used to generate an ephemeris, 
 from which source detection and measurement were simulated using 
 `SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_. 
 
-The simulation accounts for astrometric scatter and photometric variations based on the objects's color class [one of two point populations], 
+The catalog accounts for astrometric scatter and photometric variations based on the objects's color class [one of two point populations], 
 the exposure’s telescope filter, and the object’s phase angle. However, we do not include rotation curves or complex geometry. In other words,  
 each DP0.3 object is a uniform, textured sphere in one of two color classes. You can access the simulation by following the instructions in the tutorial section.
 
@@ -51,8 +51,8 @@ We include 91% of the `Synthetic Solar System Model (S3M) catalog <https://iopsc
 (see “Combining real and synthetic moving objects” for details) and 12,148 simulated interstellar objects. 
 24% (3.2 million) of the S3M objects and 20% (2,429) of the ISOs are detected and appear in the catalog. 
 
-Objects were simulated in two color classes: S and C (silicaceous and carbonaceous, see `https://arxiv.org/pdf/1706.09398.pdf <https://arxiv.org/pdf/1706.09398.pdf>`_ for more details), with colors and slope parameters as shown in table 1. 
-
+Objects were simulated in two color classes: S and C (silicaceous and carbonaceous, see `Veres <https://arxiv.org/pdf/1706.09398.pdf>`_ for more details), 
+with colors and slope parameters as shown in table 1. 
 
 
 +-------+------+------+-----+-----+-----+-----+-----+
@@ -63,7 +63,7 @@ Objects were simulated in two color classes: S and C (silicaceous and carbonaceo
 |     s |-1.927|-0.395|0.255|0.455|0.401|0.406|0.15 |
 +-------+------+------+-----+-----+-----+-----+-----+
 
-Table 1 - dp0-3 color classes [Veres https://arxiv.org/pdf/1706.09398.pdf]
+Table 1 - dp0-3 color classes
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Combo:
@@ -81,5 +81,5 @@ Truth data
 ==========
 
 **Truth Objects**: The full set of simulated objects, along with their orbital and physical parameters, can be found in the [truth table]. 
-The true (no-scatter) astrometry is provided in the “AstRATrue” and “AstDecTrue” columns. . 
+The true (no-scatter) astrometry is provided in the “AstRATrue” and “AstDecTrue” columns.
 
