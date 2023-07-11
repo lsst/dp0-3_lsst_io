@@ -32,9 +32,8 @@ Notebook tutorials
 A full history for all tutorial notebooks can be accessed in GitHub via this `direct link to the commit log for the
 tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/commits/main>`_.
 
-The full history for any given tutorial notebook can be accessed via GitHub by going to the notebook of interest in the repo
-(e.g., the `introduction to DP0.2 notebook <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/01_Introduction_to_DP02.ipynb>`_),
-and clicking on "history" (near upper-right).
+The full history for any given tutorial notebook can be accessed via GitHub by going to the notebook of interest in 
+`the repo tutorial-notebooks repo <https://github.com/rubin-dp0/tutorial-notebooks>`_ and clicking on "history" (near upper-right).
 
 
 Portal and command line tutorials
