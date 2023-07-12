@@ -95,177 +95,100 @@ _MLG: placeholder for the descriptions similar to intro NB_
 
 |
 
-.. _DP0-3-Data-Products-DPDD-ADQL Recipies:
+.. _DP0-3-Data-Products-DPDD-Access:
 
-Accessing and Querying the DP0.3 Tables
----------------------------------------
+Table Access and Queries
+------------------------
 
-_MLG: placeholder for the details_
+The DP0.3 tables are available via the Table Access Procotol (TAP) service in the Rubin Science Platform. 
+TAP provides standardized access to the catalog data for discovery, search, and retrieval.
+`Full documentation for TAP <https://www.ivoa.net/documents/TAP/>`_ is provided by the 
+`International Virtual Observatory Alliance <https://ivoa.net>`_ (IVOA).
 
-Table Access Procotol (TAP) provides standardized access to the catalog data for discovery, search, and retrieval.
-`Full documentation for TAP <https://www.ivoa.net/documents/TAP/>`_ is provided by the International Virtual Observatory Alliance (IVOA).
-The TAP service uses a query language similar to SQL (Structured Query Langage) called ADQL (Astronomical Data Query Language).
+The TAP service uses a query language similar to SQL (Structured Query Langage) called 
+the `Astronomical Data Query Language <https://www.ivoa.net/documents/ADQL/20180112/PR-ADQL-2.1-20180112.html>`_ (ADQL).
+The language is used by the IVOA to represent astronomy queries posted to Virtual Observatory (VO) services (such as TAP).
 The `documentation for ADQL <https://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
 
-Notice: Not all ADQL functionality is supported by the RSP for Data Preview 0.
-
-`Astronomical Data Query Language <https://www.ivoa.net/documents/ADQL/20180112/PR-ADQL-2.1-20180112.html>`_ (ADQL) advice, recommendations, best practices, and recipes:
-
-ADQL is the `Astronomical Data Query Language <https://www.ivoa.net/documents/ADQL/>`_.
-The language is used by the `IVOA <https://ivoa.net>`_ to represent astronomy queries posted to Virtual Observatory (VO) services, such as the Rubin LSST Table Access Protocol (TAP) service.
-ADQL is based on the Structured Query Language (SQL).
-
-ADQL can be used in both the Notebook and Portal aspects.
-
-Learn more about the `TAP-accessible DP0.3 catalogs <https://dp0-2.lsst.io/data-products-dp0-2/index.html#catalogs>`__ which are used in the examples below.
+Note that not all ADQL functionality is supported by the RSP for Data Preview 0.
+TAP and ADQL can be used in both the Notebook and Portal aspects.
 
 .. Important::
     If a query takes longer than you expect, please submit a `GitHub Issue <https://github.com/rubin-dp0/Support>`__
-    or post in the "DP0 RSP Service Issues" category of the Rubin Community Forum.
+    or post in the "Support - Data Preview 0" category of the `Rubin Community Forum <https://community.lsst.org/>`_.
     Rubin staff are happy to investigate and to help tweak queries for optimal execution.
 
 
-.. _Adql-Recipes-General-Advice:
+ADQL Recipes and Advice
+~~~~~~~~~~~~~~~~~~~~~~~
 
-General Advice
-==============
+**Table sizes**
 
-**Use spatial constraints on RA and Dec.**
-It is recommended to always start with spatial constraints for a small radius and then expand the search area.
-Qserv stores catalog data sharded by coordinate (RA, Dec).
-ADQL query statements that include constraints by coordinate do not requre a whole-catalog search,
-and are typically faster (and can be *much* faster) than ADQL query statements which only include constraints for other columns.
+The ``DiaSource`` and ``SSSource`` tables are the same size, and each contains over a billion rows:
+one for every detection of every moving object in the ``SSObject`` table.
 
-**Use ``dectect_isPrimary`` = True.**
-It is recommended to include ``detect_isPrimary = True`` in queries for the ``Object``, ``Source``, and ``ForcedSource`` catalogs.
-This parameter is ``True`` if a source has no children, is in the inner region of a coadd patch, is in the inner region of a coadd tract, and is not detected in a pseudo-filter.
-Including this constraint will remove any duplicates:
-it will not include the parent *and* its deblended children (only deblended children), and
-it will not include detections in the overlapping patch edge regions (only the non-overlapping inner regions).
-
-Additional external resources for learning about SQL, ADQL, and Qserv include:
- - `W3 School's SQL Tutorial <https://www.w3schools.com/sql/default.asp>`__
- - `IVOA's ADQL Documentation <https://www.ivoa.net/documents/ADQL/20180112/PR-ADQL-2.1-20180112.html>`__
+The ``SSObject`` table has 10.2 million rows and the ``MPCORB`` table has 14.6 million rows.
+The ``SSObject`` table is a subset of all objects in ``MPCORB`` which were detected by LSST
+in the simulation.
 
 
-.. _Adql-Recipes-Explore-Tables:
+**Column summary values**
 
-Exploring tables
-================
+ADQL has functions that can return quantitative properties of the columns. 
+The following ADQL functionality (at least) is available with the RSP TAP Service:
 
-When learning about the contents of a table, it can be handy to simply retrieve all columns for "a bunch" (hundreds to thousands) of rows
-and take a look at the results.
-For this use-case, it is recommended to use the ``SELECT TOP`` statement, like in the example below that just retrieves the first 100 rows of the ``Object`` table.
+.. code-block:: SQL
+
+    SELECT COUNT(numObs), MIN(numObs), MAX(numObs), AVG(numObs), SUM(numObs) 
+    FROM dp03_catalogs.SSObject
+
+
+**Table joins**
+
+The ``DiaSource`` and ``SSSource`` tables are 1:1 and can be joined on ``diaSourceId`` column.
+
+All rows of the ``SSObject`` table have a match with ``MPCORB`` (but not vice versa),
+and the two tables can be joined on that ``ssObjectId`` column.
+
+The ``DiaSource`` and ``SSSource`` tables are N:1 with both the ``SSObject`` and ``MPCORB`` tables.
+They _can_ be joined on the ``ssObjectId`` column, but caution and testing should be used here.
+The N:1 nature of these joins means that the data retrieved can contain columns of repeated values,
+be larger than exepcted, and take a long time to execute.
+
+
+**Non-random subsets**
+
+When exploring, if a small but not necessarily random subset of objects is all you need,
+use the ``SELECT TOP`` and provide a small number, like 100.
 
 .. code-block:: SQL
 
     SELECT TOP 100 * FROM dp03_catalogs.SSObject
 
 
+**Random subsets**
 
-.. _Adql-Recipes-Cone-Search:
+Due to how the DP0.3 tables are stored, retreiving the first N objects that meet a
+query's constraints might not be a truly random subset.
 
-Cone Search
-===========
-
-Retrieve the ``coord_dec`` and ``coord_ra`` columns from the ``Object`` table for objects within a 0.05 degree radius of RA = 62, Dec = -37.
-
-.. code-block:: SQL
-
-   SELECT * 
-   FROM dp03_catalogs.DiaSource 
-   WHERE CONTAINS(POINT('ICRS', ra, decl),CIRCLE('ICRS', 100, -10, 0.027777777777777776))=1
-
-
-.. _Adql-Recipes-FluxToMags:
-
-Convert fluxes to magnitudes
-============================
-
-As above, retrieve the ``coord_dec`` and ``coord_ra`` columns from the ``Object`` table for objects within a 0.05 degree radius of RA = 62, Dec = -37,
-and also retrieve the g-band AB magnitude and magnitude error.
-The ``scisql`` functions used below can be applied to any flux column.
+To retrieve a random subset, make use of the fact that the ``ssObjectId`` column is a 
+randomly assigned 64-bit long unsigned integer. 
+Since ADQL interprets a 64-bit long unsigned integer as a 63-bit _signed_ integer, 
+these range from about -922e16 to 922e16, but this will be fixed in the future so 
+that all identifiers are positive numbers.
+Until then, for example, to retrive the _griz_ absolute magnitudes (``H``) 
+for ~1.2e5 random ``SSObjects``, use:
 
 .. code-block:: SQL
 
-   SELECT coord_dec, coord_ra, 
-   scisql_nanojanskyToAbMag(g_calibFlux) AS g_calibMag, 
-   scisql_nanojanskyToAbMagSigma(g_calibFlux, g_calibFluxErr) as g_calibMagErr 
-   FROM dp02_dc2_catalogs.Object 
-   WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec), 
-   CIRCLE('ICRS', 62, -37, 0.05)) = 1
+    SELECT gH, rH, iH, zH
+    FROM dp03_catalogs.SSObject
+    WHERE ssObjectId > 9000000000000000000
 
 
-.. _Adql-Recipes-Table-Joins:
+**Unpopulated rows and columns**
 
-Table joins
-===========
+DP0.3 has been simulated and provided on a best-effort basis.
+Some of the columns or rows may be unpopulated, or populated with ``NaN` (not-a-number) values.
 
-Below, the Source and CcdVisit table are joined in order to obtain the date and seeing from the CcdVisit table.
-Any two tables can be joined so long as they have an index in common.
-
-This query also renames (nicknames) columns and tables using ``AS``,
-and applies a spatial constraint, a temporal constraint (using ``obsStartMJD``), 
-and constraints on the band, extendedness, and flux value.
-
-Additional external resources on SQL table joins:
- - `W2 School's SQL tutorial: joins <https://www.w3schools.com/sql/sql_join.asp>`__
- - `The Data School: SQL Joins Explained Visually <https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/>`__
-
-.. code-block:: SQL
-
-   SELECT src.ccdVisitId AS src_ccdVisitId, 
-   src.extendedness AS src_extendedness, 
-   src.band AS src_band, 
-   scisql_nanojanskyToAbMag(src.psfFlux) AS src_psfAbMag, 
-   cv.obsStartMJD AS cv_obsStartMJD, 
-   cv.seeing AS cv_seeing 
-   FROM dp02_dc2_catalogs.Source AS src 
-   JOIN dp02_dc2_catalogs.CcdVisit AS cv 
-   ON src.ccdVisitId = cv.ccdVisitId 
-   WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec), 
-   CIRCLE('ICRS', 62.0, -37, 1)) = 1 
-   AND src.band = 'i' 
-   AND src.extendedness = 0 
-   AND src.psfFlux > 10000 
-   AND cv.obsStartMJD > 60925 
-   AND cv.obsStartMJD < 60955
-
-.. _Adql-Recipes-ObjectIds:
-
-Individual objects
-==================
-
-**Searches for individual objects can take a surprisingly long time.**
-Recall that the TAP tables are sharded by RA,Dec, and when RA,Dec constraints are not provided (as in the example below),
-the entire table must be searched, and this can take a long time despite the small amount of data returned.
-
-In the above example, a single object was desired, and a statement like ``WHERE objectId=1486`` was used.
-However, if more than a few single objects are desired and their ``objectId`` are known, a query built up of, e.g.,
-``OR objectId=1487 OR objectId=1488 OR objectId=1489`` and so on would work, but there's a better way: ``WHERE objectId IN ()``.
-
-Below, a list of just 12 ``objectId`` is put in a string called ``my_list``, formatted as a python tuple (with round brackets). 
-This list could contain many more objects and be generated programmatically (e.g., from a different query, or by user analysis),
-and then be included in the ADQL query statement and the TAP service would treat it the same way.
-The number of results returned will equal the length of the list of ``objectId`` passed.
-
-For this example, the 12 were selected to be bright stars with similar *g-r* and *i-z* colors,
-so the query retrieves the *g*, *r*, *i*, and *z* band fluxes, but users should modify this to their own needs.
-
-.. code-block:: python
-
-    from lsst.rsp import get_tap_service, retrieve_query
-    service = get_tap_service()
-    
-    my_list = "(1249537790362809267, 1252528461990360512, 1248772530269893180, "\
-              "1251728017525343554, 1251710425339299404, 1250030371572068167, "\
-              "1253443255664678173, 1251807182362538413, 1252607626827575504, "\
-              "1249784080967440401, 1253065023664713612, 1325835101237446771)"
-    
-    query = "SELECT objectId, g_calibFlux, r_calibFlux, i_calibFlux, z_calibFlux "\
-            "FROM dp02_dc2_catalogs.Object "\
-            "WHERE objectId IN "+my_list
-	    
-    results = service.search(query)
-    results.to_table()
 
