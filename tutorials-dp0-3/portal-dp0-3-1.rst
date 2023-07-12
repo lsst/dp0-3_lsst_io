@@ -250,7 +250,7 @@ Click "Search" in the lower left corner.
     :name: portal_tut01_step02a
     :alt: A screenshot of the ADQL query to obtain table information.
 
-    Note that there has to be a space after ``MAX(ssObjectId) ``.
+    Note that there has to be a space after ``MAX(ssObjectId)``.
 
 
 2.2. The results view will look similar that in step 1.5 above, but for this query the default plot is not helpful.
