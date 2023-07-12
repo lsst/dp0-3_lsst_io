@@ -115,9 +115,9 @@ whereas ``SSObject`` and ``MPCORB`` contains data per object.
 
 ``DiaSource``:
 This table is the first to be generated in real time, as it is updated during the night by the Prompt Processing pipeline.
-_In the future_, with real data, the ``DiaSource`` table will contain measurements for _all_ sources detected with a 
+*In the future*, with real data, the ``DiaSource`` table will contain measurements for *all* sources detected with a 
 signal-to-noise ratio of at least 5 in a difference image.
-_For DP0.3_, the ``DiaSource`` table only contains the simulated detections of moving objects (no static-sky time-domain
+*For DP0.3*, the ``DiaSource`` table only contains the simulated detections of moving objects (no static-sky time-domain
 objects, and no artifacts).
 
 
