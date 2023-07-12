@@ -15,17 +15,17 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-######################################################
-03. Explore a well-sampled TNO in a DDF (Intermediate)
-######################################################
+#######################################
+04. Phase curve fit analysis (Advanced)
+#######################################
 
 .. This section should provide a brief, top-level description of the page.
 
-**Contact authors:** Greg Madejski and Melissa Graham
+**Contact authors:** Melissa Graham
 
-**Last verified to run:** July 6, 2023
+**Last verified to run:** 
 
-**Targeted learning level:** Intermediate
+**Targeted learning level:** Advanced
 
 
 .. _DP0-3-Portal-3-Intro:
@@ -33,28 +33,7 @@
 Introduction
 ============
 
-This tutorial demonstrates how to identify a population of `Trans-Neptunian Objects <https://en.wikipedia.org/wiki/Trans-Neptunian_object>`_ 
-(TNOs) in the simulated DP0.3 catalogs.
-TNOs are defined by having orbits with semi-major axes beyond the orbit of Neputne (> 30.1 AU).
-As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) as
-``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
-a sample of TNOs can be identified in the DP0.3 data set (see Step 1).
-
-Compared to Solar System objects closer to Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs),
-TNOs move relatively slowly across the sky.
-This relatively slow movement means that TNOs that fall within an LSST Deep Drilling Field (DDF) can stay within that
-field, and LSST can accumulate thousands of observations of them.
-This tutorial explores one such TNO (see Step 2).
-
-More information about the LSST DDFs can be found on the `LSST DDF webpage <https://www.lsst.org/scientists/survey-design/ddf>`_
-and in Section 2.6 of the Survey Cadence Optimization Committee's Phase 2 Recommendations report 
-(`PSTN-055 <https://pstn-055.lsst.io/>`_).
-Note that DP0.2 did not include DDF observations, so the ability to explore science with a DDF-like cadence this is unique to the DP0.3 simulation.
-
-This tutorial assumes the successful completion of the beginner-level DP0.3 Portal tutorials,
-and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
-For more information about the DP0.3 catalogs, tables, and columns, see the :ref:`DP0-3-Data-Products-DPDD`.  
-
+_TBD_
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
@@ -105,165 +84,15 @@ However, it is important to understand that there are other options for fitting 
 
 
 
-.. _DP0-3-Portal-3-Step-1:
-
-Step 1. Identify a population of TNOs
-=====================================
-
-1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
-At upper right, next to "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top.
-
-1.2. At upper right, next to "View" choose "Edit ADQL".
-Enter the following ADQL statement into the ADQL Query box.
-It will return the ellipticiety (``e``), perihelion distance (``q``), and inclination (``incl``) for a
-random subset of objects in the ``MPCORB`` table.
-For an explanation of why this constraint on ``ssObjectId`` returns a random sample, see Step 2 of
-DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables".
-
-.. code-block:: SQL 
-
-    SELECT e, q, incl 
-    FROM dp03_catalogs.MPCORB 
-    WHERE ssObjectId > 9000000000000000000 
-
-1.3. Set the "Row Limit" to be 200000 and click "Search".
-
-1.4. The default results view will show a heatmap plot of ``q`` vs. ``e`` at left, and the table view at right.
-
-.. figure:: /_static/MLG_portal_tut03_step01a.png
-    :name: MLG_portal_tut03_step01a
-    :alt: A screenshot of the default results view for the query.
-
-    The default results view for the query, with heatmap at left and table at right.
-
-1.5. Create a column of semi-major axis, ``a``.
-In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
-In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" to "q/(1-e)", the "Units" to "AU",
-and the "Description" to "semi-major axis".
-Click "Add Column", and see the new column appear in the table.
-
-.. figure:: /_static/MLG_portal_tut03_step01b.png
-    :width: 400
-    :name: MLG_portal_tut03_step01b
-    :alt: A screenshot of the pop-up window to add a column.
-
-    The "Add a column" pop-up window.
-
-1.6. Create a scatter plot of inclination vs. semi-major axis.
-In the plot panel, click the "Settings" icon (double gears), and select "Add New Chart".
-Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
-Set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.
-Set the axis labels as shown in the figure below.
-Click "OK".
-
-.. figure:: /_static/MLG_portal_tut03_step01c.png
-    :width: 400
-    :name: MLG_portal_tut03_step01c
-    :alt: A screenshot of the plot parameters pop-up window.
-
-    Create a new plot with these parameters.
-
-1.7. Delete the default plot by clicking on the blue cross in the upper right corner, so that only
-the newly-created plot appears (it should look like the plot below).
-TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter space.
-
-.. figure:: /_static/MLG_portal_tut03_step01d.png
-    :width: 600
-    :name: MLG_portal_tut03_step01d
-    :alt: A screenshot of the inclination versus semi-major axis showing a clear population of TNOs.
-
-    The population of TNOs has x-values greater than 30 AU.
-
-1.8. Clear the query and results and return to the RSP TAP Search form.
-
-
-.. _DP0-3-Portal-3-Step-2:
-
-Step 2. Find and explore a well-observed TNO
-============================================
-
-2.1. Follow steps 1.1 and 1.2 above to navigate to the ADQL query interface, and enter the query below.
-This query has the same basis as the one used above in step 1.2, with three changes.
-One, it joins with the ``DiaSource`` table to retrive the number of ``DiaSources`` (i.e., detections) associated with each object.
-Two, it applies a constraint that the semi-major axis be between 30 and 100 AU.
-Three, it uses a different constraint on ``ssObjectId`` to return a different random subset.
-
-.. code-block:: SQL 
-
-    SELECT mpc.ssObjectId, COUNT(ds.ssObjectId), mpc.e, mpc.q 
-    FROM dp03_catalogs.MPCORB AS mpc 
-    JOIN dp03_catalogs.DiaSource AS ds ON mpc.ssObjectId = ds.ssObjectId 
-    WHERE mpc.ssObjectId < -7000000000000000000 
-    AND mpc.q > 30 * (1 - mpc.e) 
-    AND mpc.q < 100 * (1 - mpc.e) 
-    GROUP BY mpc.ssObjectId, mpc.e, mpc.q 
-
-
-2.2. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
-which is not particularly useful but it does show the number of detections for the most oft-detected TNOs 
-is in the thousands.
-Click twice on the ``COUNT`` in the table to short descending by count.
-
-.. figure:: /_static/MLG_portal_tut03_step02a.png
-    :name: MLG_portal_tut03_step02a
-    :alt: A screenshot of the default results view with the table sorted by count.
-
-    The default results view from the ADQL query above.
-
-
-**WHY DOES THIS QUERY NOT CONTAIN ``ssObjectId`` = -735085100561880491 ????**
-
-**IT SHOULD CONTAIN IT. IT'S HOW I WAS GOING TO SEGUAY FROM STEP 1 TO 2!! :(**
-
-2.3. **SKIP THIS STEP FOR NOW; FIGURE OUT HOW TO GO FROM THE ABOVE TO BELOW LATER**
-
-
-2.4. Return to the ADQL query interface and use the following statement to retrieve the
-sky coordinates, magnitudes, filter, and time of observations (``midPointTai``) for 
-the oft-observed TNO with ``ssObjectId`` = -735085100561880491.
-
-.. code-block:: SQL 
-
-    SELECT ra, decl, mag, filter, midPointTai 
-    FROM dp03_catalogs.DiaSource 
-    WHERE ssObjectId = -735085100561880491
-
-
-2.5. The default results view will show the "Coverage" map at upper left.
-In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
-Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is
-redundant with the default plot.
-At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
-
-.. figure:: /_static/MLG_portal_tut03_step02b.png
-    :name: MLG_portal_tut03_step02b
-    :alt: The default results view after clicking on bi-view tables.
-
-    The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
-
-
-2.6. Set the color of individual points to represent the time of the observation to 
-better illustrate how the object moves across the sky.
-In the plot panel, click on the "Settings" icon (double gears) to open the "Plot Parameters"
-pop-up window.
-Under "Trace Options", for "Color Map" enter ``midPointTai`` and for "Color Scale" enter "Rainbow".
-Then click "Apply".
-
-.. figure:: /_static/MLG_portal_tut03_step02c.png
-    :width: 600
-    :name: MLG_portal_tut03_step02c
-    :alt: A screenshot of the plot of sky coordinates colored as a function of time.
-
-    The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
-
-2.7. Clear the query and results and return to the RSP TAP Search form.
-
-
 
 .. _DP0-3-Portal-3-Step-3:
 
 Step 3. Plot the phase curve for the TNO
 ========================================
+
+**CANNOT BE DONE WITH SSOBJECTID = -735085100561880491**
+
+**DO NOT USE TNO; USE MBA WITH A GOOD PHASE-CURVE FIT.**
 
 3.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
 heliocentric and topocentric distances, and time of the observations for the TNO.
@@ -306,15 +135,4 @@ _The right side of that equation is now just based on phase angle and the fit H 
 3.9. _Overplot :math:`H_{fit}(\alpha)` as a new trace on the existing :math:`H(\alpha)` vs. phase angle plot._
 _All the points should look line a "line". Does it look like a "fit" to the data?_
 
-
-
-
-.. _DP0-3-Portal-3-Step-4:
-
-Step 4.  Exercises for the learner: 
-===================================
-
-(1) Plot the histogram of the number of visits to the solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
-
-(2) Repeat the steps above for another object with a large number of observations (say another one with ``numObs`` > 10,000).  
 
