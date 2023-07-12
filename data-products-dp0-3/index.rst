@@ -97,8 +97,11 @@ _MLG: placeholder for the descriptions similar to intro NB_
 
 .. _DP0-3-Data-Products-DPDD-Access:
 
-Table Access and Queries
+Table access and queries
 ------------------------
+
+The best way to learn about accessing and querying the DP0.3 tables is to work through
+the set of :ref:`Tutorials-DP0-3-Tutorials`.
 
 The DP0.3 tables are available via the Table Access Procotol (TAP) service in the Rubin Science Platform. 
 TAP provides standardized access to the catalog data for discovery, search, and retrieval.
@@ -119,10 +122,8 @@ TAP and ADQL can be used in both the Notebook and Portal aspects.
     Rubin staff are happy to investigate and to help tweak queries for optimal execution.
 
 
-ADQL Recipes and Advice
-~~~~~~~~~~~~~~~~~~~~~~~
-
-**Table sizes**
+Table sizes
+~~~~~~~~~~~
 
 The ``DiaSource`` and ``SSSource`` tables are the same size, and each contains over a billion rows:
 one for every detection of every moving object in the ``SSObject`` table.
@@ -132,7 +133,8 @@ The ``SSObject`` table is a subset of all objects in ``MPCORB`` which were detec
 in the simulation.
 
 
-**Column summary values**
+Column summary values
+~~~~~~~~~~~~~~~~~~~~~
 
 ADQL has functions that can return quantitative properties of the columns. 
 The following ADQL functionality (at least) is available with the RSP TAP Service:
@@ -143,7 +145,8 @@ The following ADQL functionality (at least) is available with the RSP TAP Servic
     FROM dp03_catalogs.SSObject
 
 
-**Table joins**
+Table joins
+~~~~~~~~~~~
 
 The ``DiaSource`` and ``SSSource`` tables are 1:1 and can be joined on ``diaSourceId`` column.
 
@@ -156,7 +159,8 @@ The N:1 nature of these joins means that the data retrieved can contain columns 
 be larger than exepcted, and take a long time to execute.
 
 
-**Non-random subsets**
+Non-random subsets
+~~~~~~~~~~~~~~~~~~
 
 When exploring, if a small but not necessarily random subset of objects is all you need,
 use the ``SELECT TOP`` and provide a small number, like 100.
@@ -166,7 +170,8 @@ use the ``SELECT TOP`` and provide a small number, like 100.
     SELECT TOP 100 * FROM dp03_catalogs.SSObject
 
 
-**Random subsets**
+Random subsets
+~~~~~~~~~~~~~~
 
 Due to how the DP0.3 tables are stored, retreiving the first N objects that meet a
 query's constraints might not be a truly random subset.
@@ -186,7 +191,8 @@ for ~1.2e5 random ``SSObjects``, use:
     WHERE ssObjectId > 9000000000000000000
 
 
-**Unpopulated rows and columns**
+Unpopulated rows and columns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 DP0.3 has been simulated and provided on a best-effort basis.
 Some of the columns or rows may be unpopulated, or populated with ``NaN` (not-a-number) values.
