@@ -45,12 +45,17 @@ DP0.3 Data Products Definition Document (DPDD)
 
 Future data previews and Operations-era LSST data releases will produce images and catalogs that more closely 
 resemble the plan laid out in the `Data Products Definition Document <https://ls.st/dpdd/>`_ (DPDD).
-Several of the future data products (e.g., specific table columns) that are listed in the DPDD are not available 
-for DP0.
+Several of the future data products that are listed in the DPDD are not available for DP0
+(e.g., columns in the planned moving object tables in Section 3.3.3 of the DPDD).
 
-In the future, for real LSST survey data, the tables that DP0.3 is meant to emulate will be Prompt products (updated nightly). For DP0.3, it is as if you are seeing these Prompt products frozen at the end of the LSST 10-year survey.
+In the future, for real LSST survey data, the tables that DP0.3 is meant to emulate will be Prompt products 
+that are updated nightly (``DiaSource`` and ``SSObject``) 
+or products of the moving object pipeline that are updated daily (``SSSource`` and ``MPCORB``).
+However, for DP0.3 these data products are static, and created as they would be at the end of the LSST 10-year survey.
 
-The DP0.3 solar system simulation is completely distinct from the `DESC DC2 <https://arxiv.org/abs/2010.05926>`_ simulated data set used for DP0.2. You will not, for instance, be able to see a DP0.3 simulated asteroid detection in a DESC DC2 simulated image.
+The DP0.3 solar system simulation is completely distinct from the `DESC DC2 <https://arxiv.org/abs/2010.05926>`_ simulated data set used for DP0.2.
+The two simulations use different observing strategy simulations, different object truth simulations, and cover different areas.
+There is no way to, for instance, see a DP0.3 simulated asteroid detection in a DESC DC2 simulated image.
 
 .. _DP0-3-Data-Products-DPDD-Schema-Browser:
 
@@ -66,12 +71,7 @@ The `RSP Portal aspect <https://data.lsst.cloud>`_ includes lists of column name
 Catalogs
 --------
 
-Table Access Procotol (TAP) provides standardized access to the catalog data for discovery, search, and retrieval.
-`Full documentation for TAP <https://www.ivoa.net/documents/TAP/>`_ is provided by the International Virtual Observatory Alliance (IVOA).
-The TAP service uses a query language similar to SQL (Structured Query Langage) called ADQL (Astronomical Data Query Language).
-The `documentation for ADQL <https://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
-
-Notice: Not all ADQL functionality is supported by the RSP for Data Preview 0.
+_MLG: placeholder for the descriptions similar to intro NB_
 
 .. list-table:: Catalog data available for DP0.2.
    :widths: 100 100 390
@@ -97,8 +97,17 @@ Notice: Not all ADQL functionality is supported by the RSP for Data Preview 0.
 
 .. _DP0-3-Data-Products-DPDD-ADQL Recipies:
 
-ADQL Recipes
-------------
+Accessing and Querying the DP0.3 Tables
+---------------------------------------
+
+_MLG: placeholder for the details_
+
+Table Access Procotol (TAP) provides standardized access to the catalog data for discovery, search, and retrieval.
+`Full documentation for TAP <https://www.ivoa.net/documents/TAP/>`_ is provided by the International Virtual Observatory Alliance (IVOA).
+The TAP service uses a query language similar to SQL (Structured Query Langage) called ADQL (Astronomical Data Query Language).
+The `documentation for ADQL <https://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
+
+Notice: Not all ADQL functionality is supported by the RSP for Data Preview 0.
 
 `Astronomical Data Query Language <https://www.ivoa.net/documents/ADQL/20180112/PR-ADQL-2.1-20180112.html>`_ (ADQL) advice, recommendations, best practices, and recipes:
 
