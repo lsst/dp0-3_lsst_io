@@ -81,8 +81,8 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
 
 1.4. The default results view will show a heatmap plot of ``q`` vs. ``e`` at left, and the table view at right.
 
-.. figure:: /_static/portal_tut03_step01a.png
-    :name: portal_tut03_step01a
+.. figure:: /_static/MLG_portal_tut03_step01a.png
+    :name: MLG_portal_tut03_step01a
     :alt: A screenshot of the default results view for the query.
 
     The default results view for the query, with heatmap at left and table at right.
@@ -93,9 +93,9 @@ In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" 
 and the "Description" to "semi-major axis".
 Click "Add Column", and see the new column appear in the table.
 
-.. figure:: /_static/portal_tut03_step01b.png
+.. figure:: /_static/MLG_portal_tut03_step01b.png
     :width: 400
-    :name: portal_tut03_step01b
+    :name: MLG_portal_tut03_step01b
     :alt: A screenshot of the pop-up window to add a column.
 
     The "Add a column" pop-up window.
@@ -107,9 +107,9 @@ Set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 
 Set the axis labels as shown in the figure below.
 Click "OK".
 
-.. figure:: /_static/portal_tut03_step01c.png
+.. figure:: /_static/MLG_portal_tut03_step01c.png
     :width: 400
-    :name: portal_tut03_step01c
+    :name: MLG_portal_tut03_step01c
     :alt: A screenshot of the plot parameters pop-up window.
 
     Create a new plot with these parameters.
@@ -118,9 +118,9 @@ Click "OK".
 the newly-created plot appears.
 TNOs appear as a distinct population with ``a`` > 30 AU in this parameter space.
 
-.. figure:: /_static/portal_tut03_step01d.png
+.. figure:: /_static/MLG_portal_tut03_step01d.png
     :width: 600
-    :name: portal_tut03_step01d
+    :name: MLG_portal_tut03_step01d
     :alt: A screenshot of the inclination versus semi-major axis showing a clear population of TNOs.
 
     The population of TNOs has x-values greater than 30 AU.
