@@ -56,6 +56,55 @@ and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Stru
 For more information about the DP0.3 catalogs, tables, and columns, see the :ref:`DP0-3-Data-Products-DPDD`.  
 
 
+Phase curve fits and absolute magnitudes
+----------------------------------------
+
+For Solar System objects, absolute magnitudes (`H`) are defined to be for an object 1 AU from the Sun and 1 AU 
+from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
+Absolute magnitudes are derived by correcting for distance, fitting a function (the `G` parameter) to the relationship between 
+absolute magnitude and phase (i.e., the phase curve), and evaluating the function at a phase of 0 deg.
+The results of phase curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.
+
+A suitable beginner-level reference to the H and G magnitude system for asteroids is
+`Dymock 2007 <https://adsabs.harvard.edu/full/2007JBAA..117..342D>`_. 
+This paper describes the "reduced magnitude", which is corrected for distance, :math:`H(\alpha)`, as:
+
+.. math::
+
+    H(\alpha) = V - 5 log(r \Delta),
+
+where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric distance, 
+`r` is the heliocentric distance, and `V` is the apparent magnitude.
+
+The absolute magnitude `H` can be derived by fitting a function, where the choice of 
+form for this function has several options.
+Dymock (2007) presents a simpler version with a single parameter `G`, using the equation:
+
+.. math::
+
+    H = H(\alpha) + 2.5 log((1-G)\phi_1(\alpha) +G \phi_2(\alpha)),
+
+where:
+
+.. math::
+    \phi_i (\alpha) = exp(-A_i tan(0.5 \alpha)^{Bi}).
+
+In the above equation, 
+:math:`A_1` = 3.33, 
+:math:`B_1` = 0.63, 
+:math:`A_2` = 1.87, and 
+:math:`B_2` = 1.22.
+
+However, it is important to understand that there are other options for fitting phase curves.
+
+**MENTION WHAT WAS USED TO GET THE FIT RESULTS IN SSOBJECT, WHICH IS G12 NOT G. DESCRIBE HOW DIFFERENT.**
+**IF THEY'RE REALLY DIFFERENT, REPLACE THE ABOVE WITH A DESCRIPTION OF G12, NOT JUST G.**
+
+**Note** that no time domain evolution in object brightness was included in the DP0.3 simulation
+(e.g., rotation curves for non-spherical objects, outgassing events).
+
+
+
 .. _DP0-3-Portal-3-Step-1:
 
 Step 1. Identify a population of TNOs
@@ -216,50 +265,6 @@ Then click "Apply".
 Step 3. Plot the phase curve for the TNO
 ========================================
 
-For Solar System objects, absolute magnitudes (`H`) are defined to be for an object 1 AU from the Sun and 1 AU 
-from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
-Absolute magnitudes are derived by correcting for distance, fitting a function (the `G` parameter) to the relationship between 
-absolute magnitude and phase (i.e., the phase curve), and evaluating the function at a phase of 0 deg.
-The results of phase curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.
-
-A suitable beginner-level reference to the H and G magnitude system for asteroids is
-`Dymock 2007 <https://adsabs.harvard.edu/full/2007JBAA..117..342D>`_. 
-This paper describes the "reduced magnitude", which is corrected for distance, :math:`H(\alpha)`, as:
-
-.. math::
-
-    H(\alpha) = V - 5 log(r \Delta),
-
-where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric distance, 
-`r` is the heliocentric distance, and `V` is the apparent magnitude.
-
-The absolute magnitude `H` can be derived by fitting a function, where the choice of 
-form for this function has several options.
-Dymock (2007) presents a simpler version with a single parameter `G`, using the equation:
-
-.. math::
-
-    H = H(\alpha) + 2.5 log((1-G)\phi_1(\alpha) +G \phi_2(\alpha)),
-
-where:
-
-.. math::
-    \phi_i (\alpha) = exp(-A_i tan(0.5 \alpha)^{Bi}).
-
-In the above equation, 
-:math:`A_1` = 3.33, 
-:math:`B_1` = 0.63, 
-:math:`A_2` = 1.87, and 
-:math:`B_2` = 1.22.
-
-However, it is important to understand that there are other options for fitting phase curves.
-
-**MENTION WHAT WAS USED TO GET THE FIT RESULTS IN SSOBJECT**
-
-**Note** that no time domain evolution in object brightness was included in the DP0.3 simulation
-(e.g., rotation curves for non-spherical objects, outgassing events).
-
-
 3.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
 heliocentric and topocentric distances, and time of the observations for the TNO.
 
@@ -289,14 +294,18 @@ In the table panel, click on the icon to add a new column (the narrow rectangle 
 In the pop-up window, set the "Name" to "reduced_mag" and the "Expression" to be ``mag - 5 * log10(topocentricDist * heliocentricDist)``.
 Click "Add Column".
 
+3.5. Use the plot "Settings" funtion to plot reduced magnitude as a function of phase angle.
 
-**Explain how to correct mag for distance to get corrected mag.**
+3.6. _Create new columns to hold :math:`\phi_1(\alpha)` and :math:`\phi_2(\alpha)`._
 
-**Then plot corrected mag vs. phase and explain that how gets fit, and with what functions.**
+3.7. _Get the G and H parametrs for r-band from the ``SSObject`` table._
 
-**Make new columns that evaluate the function for the values already calculated in SSObject.**
+3.8. _Create another new column that is :math:`H_{fit}(\alpha) = H - 2.5 log((1-G)\phi_1(\alpha) +G \phi_2(\alpha))`._
+_The right side of that equation is now just based on phase angle and the fit H and G from ``SSObject``._
 
-**Overplot the evaluated function with connected lines so it "looks like" a fit.**
+3.9. _Overplot :math:`H_{fit}(\alpha)` as a new trace on the existing :math:`H(\alpha)` vs. phase angle plot._
+_All the points should look line a "line". Does it look like a "fit" to the data?_
+
 
 
 
