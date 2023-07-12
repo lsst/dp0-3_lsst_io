@@ -93,27 +93,27 @@ Catalogs
 
 |
 
-**``MPCORB``:**
+``MPCORB``:
 During Rubin Operations, Solar System Processing will occur in the daytime, after a night of observing.
 It will link together the difference-image detections of moving objects and report discoveries to the Minor Planet Center (MPC), 
 as well as compute derived properties (magnitudes, phase-curve fits, coordinates in various systems).
 The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored and made available to 
 users as the MPCORB table (the other derived properties are stored in the other three tables explored below).
 
-**``SSObject``:**
+``SSObject``:
 During Rubin Operations, Prompt Processing will occur during the night, detecting sources in difference images 
 (``DiaSources``) and associating them into static-sky transients and variables (``DiaObjects``, not included in DP0.3).
 The Solar System Processing which occurs in the daytime links together the ``DiaSources`` 
 for moving objects into ``SSObjects``, and measures properties such as phase curve fits and absolute magnitudes,
 which are stored in the ``SSObject`` table.
 
-**``SSSource``:**
+``SSSource``:
 This table contains the 2-d (sky) coordinates and 3-d distances and velocities for every ``SSObject`` at the time of every LSST
 observation of that ``SSObject``. 
 The ``SSSource`` and ``DiaSource`` tables are 1:1, as they each contain data per observation, 
 whereas ``SSObject`` and ``MPCORB`` contains data per object.
 
-**``DiaSource``:**
+``DiaSource``:
 This table is the first to be generated in real time, as it is updated during the night by the Prompt Processing pipeline.
 _In the future_, with real data, the ``DiaSource`` table will contain measurements for _all_ sources detected with a 
 signal-to-noise ratio of at least 5 in a difference image.
