@@ -224,3 +224,41 @@ DP0.3 has been simulated and provided on a best-effort basis.
 Some of the columns or rows may be unpopulated, or populated with ``NaN` (not-a-number) values.
 
 
+Flagged rows
+~~~~~~~~~~~~
+
+The process to derive absolute magnitudes (``H``) with phase curve fits produces failure flags.
+These are bitwise flags, so that the combinations of multiple flags are unique.
+They are stored in the ``flags`` column of the ``SSObject`` table.
+
+.. list-table:: ``SSobjects`` ``flags`` column.
+   :widths: 50 540
+   :header-rows: 1
+
+   * - Value
+     - Meaning
+   * - 0
+     - Success!
+   * - 1
+     - Orbit fitting failure: the ``diaSource`` detections do not fit a sensible orbit for a moving object (e.g., they have an unusually high chi2/dof).
+   * - 2
+     - $H_u$ fit failure: the u-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+   * - 4
+     - $H_g$ fit failure: the g-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+   * - 8
+     - $H_r$ fit failure: the r-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+   * - 16
+     - $H_i$ fit failure: the i-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+   * - 32
+     - $H_z$ fit failure: the z-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+   * - 64
+     - $H_y$ fit failure: the y-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+   * - 2048
+     - Linking failure: the detections in ``diaSource`` were not successfully linked.
+
+|
+
+Note that the linking failure flag will only exist for simulated objects, 
+as a real object that is not linked will not be in the ``SSObject`` table.
+
+Example: an object whose photometry failed in u and y band will have ``flags`` value of 66 (in binary, 1000010).
