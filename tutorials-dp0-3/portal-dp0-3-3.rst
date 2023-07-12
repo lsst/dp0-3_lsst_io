@@ -35,7 +35,7 @@ Introduction
 
 This tutorial demonstrates how to identify a population of `Trans-Neptunian Objects <https://en.wikipedia.org/wiki/Trans-Neptunian_object>`_ 
 (TNOs) in the simulated DP0.3 catalogs.
-TNOs are defined by having orbits with semi-major axes beyond the orbit of Neputne (> 30 AU).
+TNOs are defined by having orbits with semi-major axes beyond the orbit of Neputne (> 30.1 AU).
 As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) as
 ``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
 a sample of TNOs can be identified in the DP0.3 data set (see Step 1).
@@ -115,8 +115,8 @@ Click "OK".
     Create a new plot with these parameters.
 
 1.7. Delete the default plot by clicking on the blue cross in the upper right corner, so that only
-the newly-created plot appears.
-TNOs appear as a distinct population with ``a`` > 30 AU in this parameter space.
+the newly-created plot appears (it should look like the plot below).
+TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter space.
 
 .. figure:: /_static/MLG_portal_tut03_step01d.png
     :width: 600
@@ -125,59 +125,72 @@ TNOs appear as a distinct population with ``a`` > 30 AU in this parameter space.
 
     The population of TNOs has x-values greater than 30 AU.
 
+1.8. Clear the query and results, and return to the RSP TAP Search form.
+
+
+.. _DP0-3-Portal-3-Step-2:
+
+Step 2. Find and explore a well-observed TNO
+============================================
+
+2.1. Follow steps 1.1 and 1.2 above to navigate to the ADQL query interface, and enter the query below.
+This query has the same basis as the one used above in step 1.2, with three changes.
+One, it joins with the ``DiaSource`` table to retrive the number of ``DiaSources`` (i.e., detections) associated with each object.
+Two, it applies a constraint that the semi-major axis be between 30 and 100 AU.
+Three, it uses a different constraint on ``ssObjectId`` to return a different random subset.
+
+.. code-block:: SQL 
+
+    SELECT mpc.ssObjectId, COUNT(ds.ssObjectId), mpc.e, mpc.q 
+    FROM dp03_catalogs.MPCORB AS mpc 
+    JOIN dp03_catalogs.DiaSource AS ds ON mpc.ssObjectId = ds.ssObjectId 
+    WHERE mpc.ssObjectId < -7000000000000000000 
+    AND mpc.q > 30 * (1 - mpc.e) 
+    AND mpc.q < 100 * (1 - mpc.e) 
+    GROUP BY mpc.ssObjectId, mpc.e, mpc.q 
+
+
+2.2. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
+which is not particularly useful but it does show the number of detections for the most oft-detected TNOs 
+is in the thousands.
+Click twice on the ``COUNT`` in the table to short descending by count.
+
+
+.. figure:: /_static/MLG_portal_tut03_step01e.png
+    :name: MLG_portal_tut03_step01e
+    :alt: A screenshot of the default results view with the table sorted by count.
+
+    The default results view from the ADQL query above.
+
+
+**WHY DOES THIS QUERY NOT CONTAIN ``ssObjectId`` = -735085100561880491 ????**
+
+**IT SHOULD CONTAIN IT. IT'S HOW I WAS GOING TO SEGUAY FROM STEP 1 TO 2!! :(**
+
+2.3. **OK SKIP A FEW STEPS AND FIGURE IT OUT LATER**
+
+
+2.4. Return to the ADQL query interface and use the following statement to retrieve the
+sky coordinates, magnitudes, filter, and time of observations (``midPointTai``) for 
+the oft-observed TNO with ``ssObjectId`` = -735085100561880491.
+
+.. code-block:: SQL 
+
+    SELECT ra, decl, mag, filter, midPointTai 
+    FROM dp03_catalogs.DiaSource 
+    WHERE ssObjectId = -735085100561880491
 
 
 
+**GREG THIS IS WHERE YOU CAN PICK THINGS UP**
 
-Step 2. Explore a well-observed TNO
-===================================
-
-
-
-Step 1. Plot the position of a single well-observed object on the sky as a function of time
-===========================================================================================
-
-1.1.  Log on to the Rubin Science Platform, and select the Portal option.  
-In order to access the DP0.3 TAP Service, you need to click on the ``Show`` button on the upper right side of the screen (marked as (1) on the screenshot below).  
-In the ``Select TAP Service`` box, you should click on the down-arrow, and choose the ``LSST DP0.3 SSO`` entry.  
-In the box below that, for ``Table Collection``, you need to select ``dp03_catalogs``, and for ``Table``, select ``dp03_catalogs.SSObject`` - this table contains the number of observations containing the flux measurement of a given SS object (with ``ssObjectId``).  
-Select ``ssObjectId`` in the rightmost column of the ``Output Column Selection and Constraints``.  
-Also select ``numObs`` row, and in the corresponding constraints box, put ``> 10000`` - this will select extremely well-observed objects.  
-Make sure the ``Spatial`` and ``Temporal`` boxes on the left-hand side of the screen are unchecked, as in the screenshot below.  
-
-.. figure:: /_static/portal_tut03_step01a.png
-    :name: portal_tut03_step01a
-
-Pressing "Search" (marked with (2)) will return three rows as below.  
-Those are the three objects with the largest number of observations.  
-The table will reveal their ssObjectIDs.  
-For now, let's work with the one with ``ssObjectId`` of ``-735085100561880491``.  
-
-.. figure:: /_static/portal_tut03_step01b.png
-    :name: portal_tut03_step01b
-
-1.2.  To get the position on the sky of an object selected by you, you will need to work with a different table than above.  
-Return to the screen where you can select a table to work with by pressing the ``RSP TAP Search`` tab on the upper left of the screen.  
-On the right hand side, select ``dp03_catalogs.DiaSurce`` table.  
-In the ``Output Column Selection and Constraints`` select the ``decl``, ``ra``, ``mag``, ``filter`` (magnitude and filter - you will use those in Step 2 below), and ``midPointTai`` (time of the observation in MJD) entries by clicking the respective boxes next to the ``Name`` column.  
-Since you want to plot the celestial position of a single object, also click the box next to the ``ssObjectId`` line, and enter ``= -735085100561880491`` in the ``constraints`` box.  
-Make sure the boxes by ``Spatial`` and ``Temporal`` constraints (under ``Enter Constraints``) on the left hand side stay unchecked.  
-Also make sure that the ``Row limit`` box is set to ``50000`` (should default to this value).  
-If this box contains a number less than the number of observations returned in the step above (~ 14,000) - your search will be missing some of the observations.  
-You should be executing a query as on the screenshot below.  
-Note that the box next to the `ssObjectId`` row is not checked - we don't need to generate that column in the outpot table.  
-
-.. figure:: /_static/portal_tut03_step01c.png
-    :name: portal_tut03_step01c
-
-1.3.  Execute the search by clicking the ``Search`` button on lower left.  
 This will generate the plot as below.  
 Click the ``Bi-view Tables`` button on the upper right to display only the scatter plot and the table.  
 
 .. figure:: /_static/portal_tut03_step01d.png
     :name: portal_tut03_step01d
 
-1.4.  The plot above does not give you the information about the epochs of individual pointings.  
+X.X.  The plot above does not give you the information about the epochs of individual pointings.  
 You can use the color of individual points to illustrate the time evolution of the object's position.  
 To do so, click on the two gears on the upper right, which will bring the box below.  
 There, enter ``ra`` and ``decl`` respectively for the x and y axis.  
@@ -194,26 +207,17 @@ Note the loop-like structure in the resulting plot as below.  This is of course 
 .. figure:: /_static/portal_tut03_step01f.png
     :name: portal_tut03_step01f
 
-.. _DP0-3-Portal-1-Step-2:
-==============================================================================
-Step 2. Plot the magnitude of a single object on the sky as a function of time
-==============================================================================
 
-2.1.  Return to the "chart options and tools" box by clicking the two-gear icon on the upper right.   
-Now select "midPointTai" for x, and "mag" for y axis, as in the screenshot below.  
-You can also restrict the range of observation times, to examine the behavior of the object during, say, one year.  
 
-.. figure:: /_static/portal_tut03_step02a.png
-    :name: portal_tut03_step02a
+**GREG, DO NOT PLOT MAG vs TIME. IT IS NOT MEANINGFUL IN DP0.3. ONLY MAG VS PHASE.**
 
-2.2.  To make sure you are plotting the magnitude as measured in the same filter (band), you need to enter ``= i`` in the box just below the "Filter" column heading, and hit "Enter."  This should result in a plot as below.  
-
-.. figure:: /_static/portal_tut03_step02b.png
-    :name: portal_tut03_step02b
+**BELOW, SPLIT STEP 3 INTO 3. PLOTTING ORBIT FROM SSSOURCE AND 4. PLOTTING PHASE CURVE FROM DIASOURCE+SSOBJECT JOIN**
+**FOR 4. see what Yumi and Christina are doing for phase curve fits. I've hacked out a way to overplot a phase curve funtion and can tell you later.**
 
 
 
-================================================================================
+.. _DP0-3-Portal-3-Step-3:
+
 Step 3. Plot various derived parameters of a single object as a function of time
 ================================================================================
 
