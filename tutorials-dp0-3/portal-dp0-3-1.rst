@@ -15,9 +15,9 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-######################################################################
-01. Introduction to DP0.3: the MPCORB and SSObject catalogs (beginner)
-######################################################################
+##############################################################################
+01. Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` catalogs (beginner)
+##############################################################################
 
 .. This section should provide a brief, top-level description of the page.
 
