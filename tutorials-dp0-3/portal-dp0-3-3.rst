@@ -119,7 +119,7 @@ the newly-created plot appears (it should look like the plot below).
 TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter space.
 
 .. figure:: /_static/MLG_portal_tut03_step01d.png
-    :width: 600
+    :width: 400
     :name: MLG_portal_tut03_step01d
     :alt: A screenshot of the inclination versus semi-major axis showing a clear population of TNOs.
 
@@ -167,7 +167,7 @@ Click twice on the ``COUNT`` in the table to short descending by count.
 
 **IT SHOULD CONTAIN IT. IT'S HOW I WAS GOING TO SEGUAY FROM STEP 1 TO 2!! :(**
 
-2.3. **OK SKIP A FEW STEPS AND FIGURE IT OUT LATER**
+2.3. **SKIP THIS STEP FOR NOW; FIGURE OUT HOW TO GO FROM THE ABOVE TO BELOW LATER**
 
 
 2.4. Return to the ADQL query interface and use the following statement to retrieve the
@@ -184,7 +184,7 @@ the oft-observed TNO with ``ssObjectId`` = -735085100561880491.
 
 **GREG THIS IS WHERE YOU CAN PICK THINGS UP**
 
-This will generate the plot as below.  
+X.X. View the default results for the above query. 
 Click the ``Bi-view Tables`` button on the upper right to display only the scatter plot and the table.  
 
 .. figure:: /_static/portal_tut03_step01d.png
@@ -209,7 +209,7 @@ Note the loop-like structure in the resulting plot as below.  This is of course 
 
 
 
-**GREG, DO NOT PLOT MAG vs TIME. IT IS NOT MEANINGFUL IN DP0.3. ONLY MAG VS PHASE.**
+**DO NOT PLOT MAG vs TIME. IT IS NOT MEANINGFUL IN DP0.3. ONLY MAG VS PHASE.**
 
 **BELOW, SPLIT STEP 3 INTO 3. PLOTTING ORBIT FROM SSSOURCE AND 4. PLOTTING PHASE CURVE FROM DIASOURCE+SSOBJECT JOIN**
 **FOR 4. see what Yumi and Christina are doing for phase curve fits. I've hacked out a way to overplot a phase curve funtion and can tell you later.**
