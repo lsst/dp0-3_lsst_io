@@ -27,30 +27,113 @@
 
 **Targeted learning level:** Intermediate
 
-**Introduction:** This tutorial provides an introduction to the content of the simulated Rubin Observatory Solar System data accessible in the Rubin Data Preview DP0.3, 
-as well as the tools available for data analysis via the Portal aspect of the Rubin Science Platform.  
-An important point to know is that the DP0.3 (Solar System objects) contains only catalogs, and does not have any imaging data.  
-Also, in contrast to the simulations contained in DP0.2, the objects in the catalogs often will have different locations on the sky:  the DP0.3 catalogs contain moving objects.  
-This Tutorial will use the Table Collection (Schema) ``dp03_catalogs``.  
-This schema contains 4 tables:  ``dp03_catalogs.DiaSource``, ``dp03_catalogs.MPCORB``, ``dp03_catalogs.SSObject``, and ``dp03_catalogs.SSSource``.  
-See the link below for the description and the purpose of these tables.  
 
-The tutorial consists of several parts, with all parts aiming to illustrate various features of the DP0.3 data, and a few use cases.  
-First part demonstrates how to plot the celestial position on the sky of a single well-observed Solar system object as a function of time.  
-First, it identifies a few well-observed Solar system objects, and selects one for further study.  
-The object, with the ``ssObjectId`` of ``-735085100561880491`` happens to have many (about 14,000) observations.  
-(Please don't be alarmed by the negative value of ``ssObjectId`` - this is a non-fatal bug, will be fixed in future releases.)  
-The second part illustrates how to extract the apparent magnitude of object as a function of time (the light curve).  
-The third part of the tutorial uses an ADQL query to join two tables, allowing, among others, to plot other quantities contained in more than one table.  
+.. _DP0-3-Portal-3-Intro:
 
-This tutorial assumes the successful completion of the beginner-level Portal tutorial 01 (prepared for the Data Previews 02), and uses the 
-Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
+Introduction
+============
 
-For more information about the DP0.3 catalogs, tables, and columns, visit the DP0.3 Data Products Definition Document (DPDD) 
-:ref:`DP0-3-Data-Products-DPDD` which has a link to the DP0.3 Catalog Schema Browser.  
+This tutorial demonstrates how to identify a population of `Trans-Neptunian Objects <https://en.wikipedia.org/wiki/Trans-Neptunian_object>`_ 
+(TNOs) in the simulated DP0.3 catalogs.
+TNOs are defined by having orbits with semi-major axes beyond the orbit of Neputne (> 30 AU).
+As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) as
+``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
+a sample of TNOs can be identified in the DP0.3 data set (see Step 1).
 
-.. _DP0-3-Portal-1-Step-1:
-===========================================================================================
+Compared to Solar System objects closer to Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs),
+TNOs move relatively slowly across the sky.
+This relatively slow movement means that TNOs that fall within an LSST Deep Drilling Field (DDF) can stay within that
+field, and LSST can accumulate thousands of observations of them.
+This tutorial explores one such TNO (see Step 2).
+
+More information about the LSST DDFs can be found on the `LSST DDF webpage <https://www.lsst.org/scientists/survey-design/ddf>`_
+and in Section 2.6 of the Survey Cadence Optimization Committee's Phase 2 Recommendations report 
+(`PSTN-055 <https://pstn-055.lsst.io/>`_).
+Note that DP0.2 did not include DDF observations, so the ability to explore science with a DDF-like cadence this is unique to the DP0.3 simulation.
+
+This tutorial assumes the successful completion of the beginner-level DP0.3 Portal tutorials,
+and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
+For more information about the DP0.3 catalogs, tables, and columns, see the :ref:`DP0-3-Data-Products-DPDD`.  
+
+
+.. _DP0-3-Portal-3-Step-1:
+
+Step 1. Identify a population of TNOs
+=====================================
+
+1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
+At upper right, next to "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top.
+
+1.2. At upper right, next to "View" choose "Edit ADQL".
+Enter the following ADQL statement into the ADQL Query box.
+It will return the ellipticiety (``e``), perihelion distance (``q``), and inclination (``incl``) for a
+random subset of objects in the ``MPCORB`` table.
+For an explanation of why this constraint on ``ssObjectId`` returns a random sample, see Step 2 of
+DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables".
+
+.. code-block:: SQL 
+
+    SELECT e, q, incl 
+    FROM dp03_catalogs.MPCORB 
+    WHERE ssObjectId > 9000000000000000000 
+
+1.3. Set the "Row Limit" to be 200000 and click "Search".
+
+1.4. The default results view will show a heatmap plot of ``q`` vs. ``e`` at left, and the table view at right.
+
+.. figure:: /_static/portal_tut03_step01a.png
+    :name: portal_tut03_step01a
+    :alt: A screenshot of the default results view for the query.
+
+    The default results view for the query, with heatmap at left and table at right.
+
+1.5. Create a column of semi-major axis, ``a``.
+In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
+In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" to "q/(1-e)", the "Units" to "AU",
+and the "Description" to "semi-major axis".
+Click "Add Column", and see the new column appear in the table.
+
+.. figure:: /_static/portal_tut03_step01b.png
+    :width: 400
+    :name: portal_tut03_step01b
+    :alt: A screenshot of the pop-up window to add a column.
+
+    The "Add a column" pop-up window.
+
+1.6. Create a scatter plot of inclination vs. semi-major axis.
+In the plot panel, click the "Settings" icon (double gears), and select "Add New Chart".
+Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
+Set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.
+Set the axis labels as shown in the figure below.
+Click "OK".
+
+.. figure:: /_static/portal_tut03_step01c.png
+    :width: 400
+    :name: portal_tut03_step01c
+    :alt: A screenshot of the plot parameters pop-up window.
+
+    Create a new plot with these parameters.
+
+1.7. Delete the default plot by clicking on the blue cross in the upper right corner, so that only
+the newly-created plot appears.
+TNOs appear as a distinct population with ``a`` > 30 AU in this parameter space.
+
+.. figure:: /_static/portal_tut03_step01d.png
+    :width: 600
+    :name: portal_tut03_step01d
+    :alt: A screenshot of the inclination versus semi-major axis showing a clear population of TNOs.
+
+    The population of TNOs has x-values greater than 30 AU.
+
+
+
+
+
+Step 2. Explore a well-observed TNO
+===================================
+
+
+
 Step 1. Plot the position of a single well-observed object on the sky as a function of time
 ===========================================================================================
 
