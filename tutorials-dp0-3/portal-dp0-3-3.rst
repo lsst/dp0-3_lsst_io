@@ -119,7 +119,7 @@ the newly-created plot appears (it should look like the plot below).
 TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter space.
 
 .. figure:: /_static/MLG_portal_tut03_step01d.png
-    :width: 400
+    :width: 600
     :name: MLG_portal_tut03_step01d
     :alt: A screenshot of the inclination versus semi-major axis showing a clear population of TNOs.
 
@@ -155,8 +155,8 @@ which is not particularly useful but it does show the number of detections for t
 is in the thousands.
 Click twice on the ``COUNT`` in the table to short descending by count.
 
-.. figure:: /_static/MLG_portal_tut03_step01e.png
-    :name: MLG_portal_tut03_step01e
+.. figure:: /_static/MLG_portal_tut03_step02a.png
+    :name: MLG_portal_tut03_step02a
     :alt: A screenshot of the default results view with the table sorted by count.
 
     The default results view from the ADQL query above.
@@ -179,17 +179,19 @@ the oft-observed TNO with ``ssObjectId`` = -735085100561880491.
     FROM dp03_catalogs.DiaSource 
     WHERE ssObjectId = -735085100561880491
 
+
 2.5. The default results view will show the "Coverage" map at upper left.
 In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
 Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is
 redundant with the default plot.
 At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
 
-.. figure:: /_static/portal_tut03_step01d.png
-    :name: portal_tut03_step01d
+.. figure:: /_static/MLG_portal_tut03_step02b.png
+    :name: MLG_portal_tut03_step02b
     :alt: The default results view after clicking on bi-view tables.
 
     The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
+
 
 2.6. Set the color of individual points to represent the time of the observation to 
 better illustrate how the object moves across the sky.
@@ -198,9 +200,9 @@ pop-up window.
 Under "Trace Options", for "Color Map" enter ``midPointTai`` and for "Color Scale" enter "Rainbow".
 Then click "Apply".
 
-.. figure:: /_static/portal_tut03_step01e.png
+.. figure:: /_static/MLG_portal_tut03_step02c.png
     :width: 600
-    :name: portal_tut03_step01e
+    :name: MLG_portal_tut03_step02c
     :alt: A screenshot of the plot of sky coordinates colored as a function of time.
 
     The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
