@@ -216,26 +216,45 @@ Then click "Apply".
 Step 3. Plot the phase curve for the TNO
 ========================================
 
-For Solar System objects, absolute magnitudes are defined to be for an object 1 AU from the Sun and 1 AU 
+For Solar System objects, absolute magnitudes (`H`) are defined to be for an object 1 AU from the Sun and 1 AU 
 from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
-Absolute magnitudes are derived by correcting for distance, fitting a function to the relationship between 
+Absolute magnitudes are derived by correcting for distance, fitting a function (the `G` parameter) to the relationship between 
 absolute magnitude and phase (i.e., the phase curve), and evaluating the function at a phase of 0 deg.
 The results of phase curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.
 
 A suitable beginner-level reference to the H and G magnitude system for asteroids is
 `Dymock 2007 <https://adsabs.harvard.edu/full/2007JBAA..117..342D>`_. 
+This paper describes the "reduced magnitude", which is corrected for distance, :math:`H(\alpha)`, as:
 
 .. math::
 
-    H(\alpha) = V - 5 log(r \Delta)
+    H(\alpha) = V - 5 log(r \Delta),
 
-Where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric distance, 
-`r` is the heliocentric distance, and `V` is the apparent magnitude
+where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric distance, 
+`r` is the heliocentric distance, and `V` is the apparent magnitude.
+
+The absolute magnitude `H` can be derived by fitting a function, where the choice of 
+form for this function has several options.
+Dymock (2007) presents a simpler version with a single parameter `G`, using the equation:
 
 .. math::
 
-    H = H(\alpha) + 2.5 log((1-G)\phi_1(\alpha) +G \phi_2(\alpha))
+    H = H(\alpha) + 2.5 log((1-G)\phi_1(\alpha) +G \phi_2(\alpha)),
 
+where:
+
+.. math::
+    \phi_i (\alpha) = exp(-A_i tan(0.5 \alpha)^{Bi}).
+
+In the above equation, 
+:math:`A_1` = 3.33, 
+:math:`B_1` = 0.63, 
+:math:`A_2` = 1.87, and 
+:math:`B_2` = 1.22.
+
+However, it is important to understand that there are other options for fitting phase curves.
+
+**MENTION WHAT WAS USED TO GET THE FIT RESULTS IN SSOBJECT**
 
 **Note** that no time domain evolution in object brightness was included in the DP0.3 simulation
 (e.g., rotation curves for non-spherical objects, outgassing events).
