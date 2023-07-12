@@ -15,9 +15,9 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-######################################################################
-03. Analyze a well-sampled TNO in a Deep Drilling Field (Intermediate)
-######################################################################
+######################################################
+03. Explore a well-sampled TNO in a DDF (Intermediate)
+######################################################
 
 .. This section should provide a brief, top-level description of the page.
 
@@ -207,49 +207,82 @@ Then click "Apply".
 
     The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
 
+2.7. Clear the query and results and return to the RSP TAP Search form.
 
 
-**BELOW, SPLIT STEP 3 INTO 3. PLOTTING ORBIT FROM SSSOURCE AND 4. PLOTTING PHASE CURVE FROM DIASOURCE+SSOBJECT JOIN**
-
-**DO NOT PLOT MAG vs TIME. IT IS NOT MEANINGFUL IN DP0.3. ONLY MAG VS PHASE.**
-
-**FOR 4. see what Yumi and Christina are doing for phase curve fits. I've hacked out a way to overplot a phase curve funtion and can tell you later.**
 
 .. _DP0-3-Portal-3-Step-3:
 
-Step 3. Plot various derived parameters of a single object as a function of time
-================================================================================
+Step 3. Plot the phase curve for the TNO
+========================================
 
-3.1. In this part, we will plot various parameters of an object as a function of time.  
-This requires joining multiple tables because not all tables contain the observation epoch, ``midPointTai``.  
-Specifically, we will be joining the ``dp03_catalogs.DiaSource`` table (from which we get the time of the observation, ``midPointTai``) with the ``dp03_catalogs.SSSource`` table, using the ``diaSourceId`` column present in both tables.  
-As an example, we can add the phase angle of the object, as well as the topocentric and heliocentric distance to the object so we can plot those quantities as a function of time.  
-This can be done via an ADQL search.  To execute it, click on the ``RSP TAP Search`` and then on ``Edit ADQL`` button, and enter the following ADQL commands:  
+For Solar System objects, absolute magnitudes are defined to be for an object 1 AU from the Sun and 1 AU 
+from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
+Absolute magnitudes are derived by correcting for distance, fitting a function to the relationship between 
+absolute magnitude and phase (i.e., the phase curve), and evaluating the function at a phase of 0 deg.
+The results of phase curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.
+
+A suitable beginner-level reference to the H and G magnitude system for asteroids is
+`Dymock 2007 <https://adsabs.harvard.edu/full/2007JBAA..117..342D>`_. 
+
+.. math::
+
+    H(\alpha) = V - 5 log(r \Delta)
+
+Where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric distance, 
+`r` is the heliocentric distance, and `V` is the apparent magnitude
+
+.. math::
+
+    H = H(\alpha) + 2.5 log((1-G)\phi_1(\alpha) +G \phi_2(\alpha))
+
+
+**Note** that no time domain evolution in object brightness was included in the DP0.3 simulation
+(e.g., rotation curves for non-spherical objects, outgassing events).
+
+
+3.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
+heliocentric and topocentric distances, and time of the observations for the TNO.
 
 .. code-block:: SQL 
 
-   SELECT
-   diasrc.ra, diasrc.decl, diasrc.diaObjectId, diasrc.diaSourceId, diasrc.midPointTai, diasrc.ccdVisitId, 
-   sss.phaseAngle, sss.topocentricDist, sss.heliocentricDist, sss.ssObjectId
-   FROM dp03_catalogs.DiaSource AS diasrc 
-   JOIN dp03_catalogs.SSSource AS sss 
-   ON diasrc.diaSourceId = sss.diaSourceId
-   WHERE sss.ssObjectId = -735085100561880491
+    SELECT ds.mag, ds.filter, ds.midPointTai, 
+    ss.phaseAngle, ss.topocentricDist, ss.heliocentricDist 
+    FROM dp03_catalogs.DiaSource AS ds 
+    JOIN dp03_catalogs.SSSource AS ss ON ds.diaSourceId = ss.diaSourceId
+    WHERE ss.ssObjectId = -735085100561880491
+    AND ds.filter = 'r'
 
-3.2.  Executing this search resulted in additional columns beyond the RA, Dec, and magnitude in the previous Step.  
-This is shown on the screenshot below.  
-Note that the plot on the right, by default, is the first two columns of the table on the left.  
+3.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
+as a function of time (right two plots, below), and see that these quantities are not correlated with time.
+Add a new scatter plot showing the r-band magnitude as a function of phase angle, which are correlated.
 
-.. figure:: /_static/portal_tut03_step03a.png
+.. figure:: /_static/MLG_portal_tut03_step03a.png
     :name: portal_tut03_step03a
+    :alt: A screenshot of three plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle.
 
-Now, we can plot those newly retrieved quantities against time:  two obvious plots would be the topocentric and heliocentric distance, both as a function of MJD time.  
-In both cases, we need to appropriately change the "Chart Options and Tools" - probably straightforward, similar to what we've done previously.  
+    Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
 
-.. figure:: /_static/portal_tut03_step03b.png
-    :name: portal_tut03_step03b
+3.3. Delete the two plots with time on the x-axis, leaving only the magnitude vs. phase angle plot.
 
-===================================
+3.4. Create a new column to hold the distance-corrected r-band magnitudes.
+In the table panel, click on the icon to add a new column (the narrow rectangle to the left of a + sign).
+In the pop-up window, set the "Name" to "reduced_mag" and the "Expression" to be ``mag - 5 * log10(topocentricDist * heliocentricDist)``.
+Click "Add Column".
+
+
+**Explain how to correct mag for distance to get corrected mag.**
+
+**Then plot corrected mag vs. phase and explain that how gets fit, and with what functions.**
+
+**Make new columns that evaluate the function for the values already calculated in SSObject.**
+
+**Overplot the evaluated function with connected lines so it "looks like" a fit.**
+
+
+
+.. _DP0-3-Portal-3-Step-4:
+
 Step 4.  Exercises for the learner: 
 ===================================
 
