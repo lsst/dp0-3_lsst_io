@@ -125,7 +125,7 @@ TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter spac
 
     The population of TNOs has x-values greater than 30 AU.
 
-1.8. Clear the query and results, and return to the RSP TAP Search form.
+1.8. Clear the query and results and return to the RSP TAP Search form.
 
 
 .. _DP0-3-Portal-3-Step-2:
@@ -155,7 +155,6 @@ which is not particularly useful but it does show the number of detections for t
 is in the thousands.
 Click twice on the ``COUNT`` in the table to short descending by count.
 
-
 .. figure:: /_static/MLG_portal_tut03_step01e.png
     :name: MLG_portal_tut03_step01e
     :alt: A screenshot of the default results view with the table sorted by count.
@@ -180,41 +179,39 @@ the oft-observed TNO with ``ssObjectId`` = -735085100561880491.
     FROM dp03_catalogs.DiaSource 
     WHERE ssObjectId = -735085100561880491
 
-
-
-**GREG THIS IS WHERE YOU CAN PICK THINGS UP**
-
-X.X. View the default results for the above query. 
-Click the ``Bi-view Tables`` button on the upper right to display only the scatter plot and the table.  
+2.5. The default results view will show the "Coverage" map at upper left.
+In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
+Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is
+redundant with the default plot.
+At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
 
 .. figure:: /_static/portal_tut03_step01d.png
     :name: portal_tut03_step01d
+    :alt: The default results view after clicking on bi-view tables.
 
-X.X.  The plot above does not give you the information about the epochs of individual pointings.  
-You can use the color of individual points to illustrate the time evolution of the object's position.  
-To do so, click on the two gears on the upper right, which will bring the box below.  
-There, enter ``ra`` and ``decl`` respectively for the x and y axis.  
-Enter ``midPointTai`` in the ``Color Map`` box.  
-Note that entering the first one or two characters in that box will return a choice of entries matching those characters.  
-You can enter any choice for the ``Color Scale`` box, but an easy to visualize choice is ``Rainbow`` since the order of colors is likely familiar to anyone.  
-Feel free to select another color scale!  
+    The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
+
+2.6. Set the color of individual points to represent the time of the observation to 
+better illustrate how the object moves across the sky.
+In the plot panel, click on the "Settings" icon (double gears) to open the "Plot Parameters"
+pop-up window.
+Under "Trace Options", for "Color Map" enter ``midPointTai`` and for "Color Scale" enter "Rainbow".
+Then click "Apply".
 
 .. figure:: /_static/portal_tut03_step01e.png
+    :width: 600
     :name: portal_tut03_step01e
+    :alt: A screenshot of the plot of sky coordinates colored as a function of time.
 
-Note the loop-like structure in the resulting plot as below.  This is of course expected - you are plotting the position of an object as seen from the Earth, revolving around the Sun, resulting in epicycle-like behavior.  
-
-.. figure:: /_static/portal_tut03_step01f.png
-    :name: portal_tut03_step01f
+    The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
 
 
+
+**BELOW, SPLIT STEP 3 INTO 3. PLOTTING ORBIT FROM SSSOURCE AND 4. PLOTTING PHASE CURVE FROM DIASOURCE+SSOBJECT JOIN**
 
 **DO NOT PLOT MAG vs TIME. IT IS NOT MEANINGFUL IN DP0.3. ONLY MAG VS PHASE.**
 
-**BELOW, SPLIT STEP 3 INTO 3. PLOTTING ORBIT FROM SSSOURCE AND 4. PLOTTING PHASE CURVE FROM DIASOURCE+SSOBJECT JOIN**
 **FOR 4. see what Yumi and Christina are doing for phase curve fits. I've hacked out a way to overplot a phase curve funtion and can tell you later.**
-
-
 
 .. _DP0-3-Portal-3-Step-3:
 
