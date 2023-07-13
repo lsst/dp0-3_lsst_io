@@ -14,9 +14,9 @@
 .. To reference a label that isn't associated with an reST object such as a title or figure, you must include the link and explicit title using the syntax :ref:`link text <label-name>`.
 .. A warning will alert you of identical labels during the linkcheck process.
 
-#############################
-DP0.3 Data Access and Queries
-#############################
+##############################
+DP0.3 Table Access and Queries
+##############################
 
 .. This section should provide a brief, top-level description of the page.
 
