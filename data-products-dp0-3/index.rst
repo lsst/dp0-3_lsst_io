@@ -78,8 +78,8 @@ Catalogs
    * - TAP Name
      - table name
      - description
-   * - DIASource
-     - DIASource
+   * - DiaSource
+     - DiaSource
      - Astrometric and photometric measurements for solar system objects detected in difference images (20 columns).
    * - SSSource
      - SSSource
