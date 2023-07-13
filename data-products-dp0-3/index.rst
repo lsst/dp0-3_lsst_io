@@ -127,7 +127,7 @@ Table access and queries
 ------------------------
 
 The best way to learn about accessing and querying the DP0.3 tables is to work through
-the set of `DP0.3 Tutorials`_.
+the set of :doc:`DP0.3 tutorials </tutorials-dp0-3/index>`.
 
 The DP0.3 tables are available via the Table Access Procotol (TAP) service in the Rubin Science Platform. 
 TAP provides standardized access to the catalog data for discovery, search, and retrieval.
