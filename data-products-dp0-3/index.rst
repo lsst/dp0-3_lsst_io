@@ -129,12 +129,12 @@ Table access and queries
 The best way to learn about accessing and querying the DP0.3 tables is to work through
 the set of :doc:`DP0.3 tutorials </tutorials-dp0-3/index>`.
 
-The DP0.3 tables are available via the Table Access Procotol (TAP) service in the Rubin Science Platform. 
+The DP0.3 tables are available via the Table Access Protocol (TAP) service in the Rubin Science Platform. 
 TAP provides standardized access to the catalog data for discovery, search, and retrieval.
 `Full documentation for TAP <https://www.ivoa.net/documents/TAP/>`_ is provided by the 
 `International Virtual Observatory Alliance <https://ivoa.net>`_ (IVOA).
 
-The TAP service uses a query language similar to SQL (Structured Query Langage) called 
+The TAP service uses a query language similar to SQL (Structured Query Language) called 
 the `Astronomical Data Query Language <https://www.ivoa.net/documents/ADQL/20180112/PR-ADQL-2.1-20180112.html>`_ (ADQL).
 The language is used by the IVOA to represent astronomy queries posted to Virtual Observatory (VO) services (such as TAP).
 The `documentation for ADQL <https://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
@@ -182,7 +182,7 @@ and the two tables can be joined on that ``ssObjectId`` column.
 The ``DiaSource`` and ``SSSource`` tables are N:1 with both the ``SSObject`` and ``MPCORB`` tables.
 They *can* be joined on the ``ssObjectId`` column, but caution and testing should be used here.
 The N:1 nature of these joins means that the data retrieved can contain columns of repeated values,
-be larger than exepcted, and take a long time to execute.
+be larger than expected, and take a long time to execute.
 
 
 Non-random subsets
@@ -207,7 +207,7 @@ randomly assigned 64-bit long unsigned integer.
 Since ADQL interprets a 64-bit long unsigned integer as a 63-bit *signed* integer, 
 these range from about -922e16 to 922e16, but this will be fixed in the future so 
 that all identifiers are positive numbers.
-Until then, for example, to retrive the *griz* absolute magnitudes (``H``) 
+Until then, for example, to retrieve the *griz* absolute magnitudes (``H``) 
 for ~1.2e5 random ``SSObjects``, use:
 
 .. code-block:: SQL
