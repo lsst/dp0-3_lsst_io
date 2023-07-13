@@ -62,7 +62,7 @@ There is no way to, for instance, see a DP0.3 simulated asteroid detection in a 
 Schema browser
 --------------
 
-A  :doc:`schema browser </data-products-dp0-3/schema>` for the four DP0.3 solar system tables (DiaObject, SSSource, SSObject, MPCORB) is available.
+A  :doc:`schema browser </data-products-dp0-3/schema>` for the four DP0.3 solar system tables (``DiaSource``, ``SSSource``, ``SSObject``, ``MPCORB``) is available.
 
 The `RSP Portal aspect <https://data.lsst.cloud>`_ includes lists of column names and their descriptions for DP0.3 tables, and so can also be used as a schema browser.
 
@@ -180,7 +180,7 @@ All rows of the ``SSObject`` table have a match with ``MPCORB`` (but not vice ve
 and the two tables can be joined on that ``ssObjectId`` column.
 
 The ``DiaSource`` and ``SSSource`` tables are N:1 with both the ``SSObject`` and ``MPCORB`` tables.
-They _can_ be joined on the ``ssObjectId`` column, but caution and testing should be used here.
+They *can* be joined on the ``ssObjectId`` column, but caution and testing should be used here.
 The N:1 nature of these joins means that the data retrieved can contain columns of repeated values,
 be larger than exepcted, and take a long time to execute.
 
@@ -204,7 +204,7 @@ query's constraints might not be a truly random subset.
 
 To retrieve a random subset, make use of the fact that the ``ssObjectId`` column is a 
 randomly assigned 64-bit long unsigned integer. 
-Since ADQL interprets a 64-bit long unsigned integer as a 63-bit _signed_ integer, 
+Since ADQL interprets a 64-bit long unsigned integer as a 63-bit *signed* integer, 
 these range from about -922e16 to 922e16, but this will be fixed in the future so 
 that all identifiers are positive numbers.
 Until then, for example, to retrive the *griz* absolute magnitudes (``H``) 
