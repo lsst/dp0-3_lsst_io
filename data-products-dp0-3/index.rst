@@ -207,7 +207,7 @@ randomly assigned 64-bit long unsigned integer.
 Since ADQL interprets a 64-bit long unsigned integer as a 63-bit _signed_ integer, 
 these range from about -922e16 to 922e16, but this will be fixed in the future so 
 that all identifiers are positive numbers.
-Until then, for example, to retrive the _griz_ absolute magnitudes (``H``) 
+Until then, for example, to retrive the *griz* absolute magnitudes (``H``) 
 for ~1.2e5 random ``SSObjects``, use:
 
 .. code-block:: SQL
@@ -221,7 +221,7 @@ Unpopulated rows and columns
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 DP0.3 has been simulated and provided on a best-effort basis.
-Some of the columns or rows may be unpopulated, or populated with ``NaN` (not-a-number) values.
+Some of the columns or rows may be unpopulated, or populated with ``NaN`` (not-a-number) values.
 
 
 Flagged rows
@@ -231,7 +231,7 @@ The process to derive absolute magnitudes (``H``) with phase curve fits produces
 These are bitwise flags, so that the combinations of multiple flags are unique.
 They are stored in the ``flags`` column of the ``SSObject`` table.
 
-.. list-table:: ``SSobjects`` ``flags`` column.
+.. list-table:: ``SSObject`` ``flags`` column.
    :widths: 50 540
    :header-rows: 1
 
