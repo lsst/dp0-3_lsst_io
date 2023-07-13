@@ -199,7 +199,7 @@ use the ``SELECT TOP`` and provide a small number, like 100.
 Random subsets
 ~~~~~~~~~~~~~~
 
-Due to how the DP0.3 tables are stored, retreiving the first N objects that meet a
+Due to how the DP0.3 tables are stored, retrieving the first N objects that meet a
 query's constraints might not be a truly random subset.
 
 To retrieve a random subset, make use of the fact that the ``ssObjectId`` column is a 
