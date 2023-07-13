@@ -158,3 +158,8 @@ Note that the linking failure flag will only exist for simulated objects,
 as a real object that is not linked will not be in the ``SSObject`` table.
 
 Example: an object whose photometry failed in u and y band will have ``flags`` value of 66 (in binary, 1000010).
+
+Truth data
+~~~~~~~~~~
+
+Truth information is embedded within the DP0.3 ``DiaSource`` table in the following five columns: ``_raTrue`` (true RA i.e., without simulated measurement noise), ``_decTrue`` (true Dec i.e., without simulated measurement noise), ``_magTrue`` (true magnitude in the relevant band i.e., without simulated measurement noise), ``_name``, and ``_V``.
