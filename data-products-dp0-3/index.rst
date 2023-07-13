@@ -116,9 +116,9 @@ which are stored in the ``SSObject`` table.
 ``MPCORB``:
 During Rubin Operations, Solar System Processing will occur in the daytime, after a night of observing.
 It will link together the difference-image detections of moving objects and report discoveries to the Minor Planet Center (MPC), 
-as well as compute derived properties (magnitudes, phase-curve fits, coordinates in various systems).
+as well as compute derived properties (magnitudes, phase curve fits, coordinates in various systems).
 The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored and made available to 
-users as the MPCORB table (the other derived properties are stored in the other three tables explored below).
+users as the MPCORB table (the other derived properties are stored in the other three tables described above).
 
 
 .. _DP0-3-Data-Products-DPDD-Access:
