@@ -138,17 +138,17 @@ They are stored in the ``flags`` column of the ``SSObject`` table.
    * - 1
      - Orbit fitting failure: the ``diaSource`` detections do not fit a sensible orbit for a moving object (e.g., they have an unusually high chi-squared per degree of freedom).
    * - 2
-     - $H_u$ fit failure: the u-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+     - :math:`H_u` fit failure: the u-band absolute magnitude fit failed due to poor phase coverage or not enough data.
    * - 4
-     - $H_g$ fit failure: the g-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+     - :math:`H_g` fit failure: the g-band absolute magnitude fit failed due to poor phase coverage or not enough data.
    * - 8
-     - $H_r$ fit failure: the r-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+     - :math:`H_r` fit failure: the r-band absolute magnitude fit failed due to poor phase coverage or not enough data.
    * - 16
-     - $H_i$ fit failure: the i-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+     - :math:`H_i` fit failure: the i-band absolute magnitude fit failed due to poor phase coverage or not enough data.
    * - 32
-     - $H_z$ fit failure: the z-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+     - :math:`H_z` fit failure: the z-band absolute magnitude fit failed due to poor phase coverage or not enough data.
    * - 64
-     - $H_y$ fit failure: the y-band absolute magnitude fit failed due to poor phase coverage or not enough data.
+     - :math:`H_y` fit failure: the y-band absolute magnitude fit failed due to poor phase coverage or not enough data.
    * - 2048
      - Linking failure: the detections in ``diaSource`` were not successfully linked.
 
