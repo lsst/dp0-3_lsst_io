@@ -23,14 +23,17 @@ The DP0.3 Simulation
 
 The DP0.3 data set is a catalog of real and simulated solar system and interstellar objects, hosted on the Rubin Science Platform (RSP). 
 It simulates a 10-year Rubin survey using the LSST baseline v3.0 cadence (see page 44 of the `Survey Cadence Optimization Committee's Phase 2 Recommendations) <https://pstn-055.lsst.io/PSTN-055.pdf>`_ and covers
-hundreds of millions of detections of millions of objects.  
-`ObjectsInField <https://github.com/eggls6/objectsInField>`_ was used to generate an ephemeris, 
+hundreds of millions of detections of millions of objects.  The baseline v3.0 cadence includes the North Ecliptic Spur and deep drilling fields, two of which are close to the equator
+with low declination, so solar system objects will be observed. Revisit rates are driven by the need for solar system science with visits being 33 min apart.  
+Also contained is a NEO microsurvey at sunset and runrise.  The simulation has a population of TNO (#), MBA (#), Interstellar objects (#), and NEO (#). 
+`ObjectsInField <https://github.com/eggls6/objectsInField>`_ was used to generate an ephemeris by [add explanation from documenation - JAKE?], 
 from which source detection and measurement were simulated using 
-`SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_. 
+`SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_ by [add explanation from documentation - JAKE?]. 
 
 The catalog accounts for astrometric scatter and photometric variations based on the objects's color class [one of two point populations], 
 the exposure’s telescope filter, and the object’s phase angle. However, we do not include rotation curves or complex geometry. In other words,  
-each DP0.3 object is a uniform, textured sphere in one of two color classes. You can access the simulation by following the instructions in the tutorial section.
+each DP0.3 object is a uniform, textured sphere in one of two color classes. Object's magnitude change is from the distance and phase angle. 
+You can access the simulation by following the instructions in the tutorial section.
 
 .. _Data-Products-DP0-3-Data-Simulation-Real-Objects:
 
@@ -83,4 +86,12 @@ Truth data
 
 **Truth Objects**: The full set of simulated objects, along with their orbital and physical parameters, can be found in the [truth table]. 
 The true (no-scatter) astrometry is provided in the “AstRATrue” and “AstDecTrue” columns.
+
+UPDATE! 
+**_decTrue**: information
+**_magTrue**: information
+**_name**: information
+**_raTrue**: information
+**_V**: information
+
 
