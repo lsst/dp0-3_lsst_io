@@ -25,7 +25,7 @@ The DP0.3 data set is a catalog of real and simulated solar system and interstel
 It simulates a 10-year Rubin survey using the LSST baseline v3.0 cadence (see page 44 of the `Survey Cadence Optimization Committee's Phase 2 Recommendations) <https://pstn-055.lsst.io/PSTN-055.pdf>`_ and covers
 hundreds of millions of detections of millions of objects.  The baseline v3.0 cadence includes the North Ecliptic Spur and deep drilling fields, two of which are close to the equator
 with low declination, so solar system objects will be observed. Revisit rates are driven by the need for solar system science with visits being 33 min apart.  
-Also contained is a NEO microsurvey at sunset and runrise.  The simulation has a population of TNO (#), MBA (#), Interstellar objects (#), and NEO (#). 
+Also contained is a NEO microsurvey at sunset and sunrise.  The simulation has a population of TNO (#), MBA (#), Interstellar objects (#), and NEO (#). 
 `ObjectsInField <https://github.com/eggls6/objectsInField>`_ was used to generate an ephemeris by [add explanation from documenation - JAKE?], 
 from which source detection and measurement were simulated using 
 `SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_ by [add explanation from documentation - JAKE?]. 
