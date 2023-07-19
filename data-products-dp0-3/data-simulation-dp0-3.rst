@@ -88,10 +88,15 @@ Truth data
 The true (no-scatter) astrometry is provided in the “AstRATrue” and “AstDecTrue” columns.
 
 UPDATE! 
-**_decTrue**: information
-**_magTrue**: information
-**_name**: information
-**_raTrue**: information
-**_V**: information
+
+**_decTrue**: 
+
+**_magTrue**: 
+
+**_name**: 
+
+**_raTrue**: 
+
+**_V**: 
 
 
