@@ -284,8 +284,8 @@ Before clicking "Search", increase the row limit to 200000.
     WHERE ssObjectId > 9000000000000000000
 
 
-2.7. The default results view displays a plot of the r- vs. the g-band magnitude at right, and the
-table at left shows that absolute magnitudes (and thus colors) could not be derived for all objects.
+2.7. The default results view displays a plot of the r- vs. the g-band magnitude at left, and the
+table at right shows that absolute magnitudes (and thus colors) could not be derived for all objects.
 
 .. figure:: /_static/portal_tut01_step02c.png
     :name: portal_tut01_step02c
