@@ -127,3 +127,9 @@ Table access and queries
 ------------------------
 
 For information and advice about accessing and querying the DP0.3 tables, please see the :doc:`table access and queries page </data-products-dp0-3/table-access-and-queries>`.
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    table-access-and-queries
