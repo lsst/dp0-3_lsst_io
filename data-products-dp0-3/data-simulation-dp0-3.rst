@@ -26,7 +26,7 @@ It simulates a 10-year Rubin survey using the LSST baseline v3.0 cadence (see pa
 hundreds of millions of detections of millions of objects.  The baseline v3.0 cadence includes the North Ecliptic Spur and deep drilling fields, two of which are close to the equator
 with low declination, so solar system objects will be observed. Revisit rates are driven by the need for solar system science with visits being 33 min apart.  
 Also contained is a NEO microsurvey at sunset and sunrise.  The simulation has a population of Trans Neptunian Objects (TNO) (26k), Main Belt Asteroids (MBA) (4m), Interstellar objects (ISOs) (2k), 
-Hildas and Trojean Asteroids (100k), and Near Earth Objects (NEO) (37k). 
+Hildas and Trojan Asteroids (100k), and Near Earth Objects (NEO) (37k). 
 `ObjectsInField <https://github.com/eggls6/objectsInField>`_ was used to generate an ephemeris from an object catalog and the Rubin cadence,  
 from which source detection and measurement were simulated using 
 `SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_. 
@@ -85,19 +85,19 @@ Hybridcat removes the closest-matching synthetic object to each real object, cre
 Truth data
 ==========
 
-**Truth Objects**: The full set of simulated objects, along with their orbital and physical parameters, can be found in the [truth table]. 
-The true (no-scatter) astrometry is provided in the “AstRATrue” and “AstDecTrue” columns.
+The following truth parameters can be found in dp03_catalogs_1yr.DiaSource and dp03_catalogs_10yr.DiaSource.
 
-**UPDATE!** 
+**nameTrue**: name of the object that generated the detection
 
-**_decTrue**: declination scatter-less astrometry for each detection
+**raTrue**: right ascension scatter-less astrometry for each detection
 
-**_magTrue**: magnitude scatter-less astrometry for each detection
+**decTrue**: declination scatter-less astrometry for each detection
 
-**_name**: name of object that generated the detection
+**magTrueVband**: magnitude scatter-less astrometry for each detection
 
-**_raTrue**: right ascension scatter-less astrometry for each detection
 
-**_V**: V magnitude scatter-less astrometry for each detection
+
+
+
 
 
