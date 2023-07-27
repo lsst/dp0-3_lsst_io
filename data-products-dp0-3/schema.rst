@@ -59,130 +59,130 @@ This schema page will eventually be replaced with `official schema from LSST Dat
    * - MOIDDeltaV
      - float
      - DeltaV at the MOID point
-   * - uH
+   * - u_H
      - float
      - Best fit absolute magnitude (u band)
-   * - uG12
+   * - u_G12
      - float
      - Best fit G12 slope parameter (u band)
-   * - uHErr
+   * - u_HErr
      - float
      - Uncertainty of H (u band)
-   * - uG12Err
+   * - u_G12Err
      - float
      - Uncertainty of G12 (u band)
-   * - uH_uG12_Cov
+   * - u_H_uG12_Cov
      - float
      - H-G12 covariance (u band)
-   * - uChi2
+   * - u_Chi2
      - float
      - Chi^2 statistic of the phase curve fit (u band)
-   * - uNdata
+   * - u_Ndata
      - int
      - The number of data points used to fit the phase curve (u band)
-   * - gH
+   * - g_H
      - float
      - Best fit absolute magnitude (g band)
-   * - gG12
+   * - g_G12
      - float
      - Best fit G12 slope parameter (g band)
-   * - gHErr
+   * - g_HErr
      - float
      - Uncertainty of H (g band)
-   * - gG12Err
+   * - g_G12Err
      - float
      - Uncertainty of G12 (g band)
-   * - gH_gG12_Cov
+   * - g_H_gG12_Cov
      - float
      - H-G12 covariance (g band)
-   * - gChi2
+   * - g_Chi2
      - float
      - Chi^2 statistic of the phase curve fit (g band)
-   * - gNdata
+   * - g_Ndata
      - int
      - The number of data points used to fit the phase curve (g band)
-   * - rH
+   * - r_H
      - float
      - Best fit absolute magnitude (r band)
-   * - rG12
+   * - r_G12
      - float
      - Best fit G12 slope parameter (r band)
-   * - rHErr
+   * - r_HErr
      - float
      - Uncertainty of H (r band)
-   * - rG12Err
+   * - r_G12Err
      - float
      - Uncertainty of G12 (r band)
-   * - rH_rG12_Cov
+   * - r_H_rG12_Cov
      - float
      - H-G12 covariance (r band)
-   * - rChi2
+   * - r_Chi2
      - float
      - Chi^2 statistic of the phase curve fit (r band)
-   * - rNdata
+   * - r_Ndata
      - int
      - The number of data points used to fit the phase curve (r band)
-   * - iH
+   * - i_H
      - float
      - Best fit absolute magnitude (i band)
-   * - iG12
+   * - i_G12
      - float
      - Best fit G12 slope parameter (i band)
-   * - iHErr
+   * - i_HErr
      - float
      - Uncertainty of H (i band)
-   * - iG12Err
+   * - i_G12Err
      - float
      - Uncertainty of G12 (i band)
-   * - iH_iG12_Cov
+   * - i_H_iG12_Cov
      - float
      - H-G12 covariance (i band)
-   * - iChi2
+   * - i_Chi2
      - float
      - Chi^2 statistic of the phase curve fit (i band)
-   * - iNdata
+   * - i_Ndata
      - int
      - The number of data points used to fit the phase curve (i band)
-   * - zH
+   * - z_H
      - float
      - Best fit absolute magnitude (z band)
-   * - zG12
+   * - z_G12
      - float
      - Best fit G12 slope parameter (z band)
-   * - zHErr
+   * - z_HErr
      - float
      - Uncertainty of H (z band)
-   * - zG12Err
+   * - z_G12Err
      - float
      - Uncertainty of G12 (z band)
-   * - zH_zG12_Cov
+   * - z_H_zG12_Cov
      - float
      - H-G12 covariance (z band)
-   * - zChi2
+   * - z_Chi2
      - float
      - Chi^2 statistic of the phase curve fit (z band)
-   * - zNdata
+   * - z_Ndata
      - int
      - The number of data points used to fit the phase curve (z band)
-   * - yH
+   * - y_H
      - float
      - Best fit absolute magnitude (y band)
-   * - yG12
+   * - y_G12
      - float
      - Best fit G12 slope parameter (y band)
-   * - yHErr
+   * - y_HErr
      - float
      - Uncertainty of H (y band)
-   * - yG12Err
+   * - y_G12Err
      - float
      - Uncertainty of G12 (y band)
-   * - yH_yG12_Cov
+   * - y_H_yG12_Cov
      - float
      - H-G12 covariance (y band)
-   * - yChi2
+   * - y_Chi2
      - float
      - Chi^2 statistic of the phase curve fit (y band)
-   * - yNdata
+   * - y_Ndata
      - int
      - The number of data points used to fit the phase curve (y band)
    * - maxExtendedness
@@ -218,52 +218,49 @@ This schema page will eventually be replaced with `official schema from LSST Dat
    * - ssObjectId
      - long
      - Id of the ssObject this source was associated with, if any. If not, it is set to NULL (each diaSource will be associated with either a diaObject or ssObject).
-   * - _name
+   * - nameTrue
      - char
      - 
    * - ssObjectReassocTime
      - timestamp
      - Time when this diaSource was reassociated from diaObject to ssObject (if such reassociation happens, otherwise NULL).
-   * - midPointTai
+   * - midPointMjdTai
      - double
      - Effective mid-exposure time for this diaSource.
    * - ra
      - double
      - RA-coordinate of the center of this diaSource.
-   * - raSigma
+   * - raErr
      - float
      - Uncertainty of ra.
-   * - decl
+   * - dec
      - double
-     - Decl-coordinate of the center of this diaSource.
-   * - declSigma
+     - Dec-coordinate of the center of this diaSource.
+   * - decErr
      - float
-     - Uncertainty of decl.
-   * - ra_decl_Cov
+     - Uncertainty of dec.
+   * - ra_dec_Cov
      - float
-     - Covariance between ra and decl.
+     - Covariance between ra and dec.
    * - snr
      - float
      - The signal-to-noise ratio at which this source was detected in the difference image.
-   * - filter
+   * - band
      - char
      - 
    * - mag
      - float
      - Magnitude. This is a placeholder and should be replaced by flux.
-   * - magSigma
+   * - magErr
      - float
-     - Magnitude. This is a placeholder and should be replaced by flux.
-   * - _V
-     - float
-     - 
-   * - _magTrue
+     - Magnitude error. This is a placeholder and should be replaced by flux error.
+   * - magTrueVband
      - float
      - 
-   * - _raTrue
+   * - raTrue
      - double
      - 
-   * - _decTrue
+   * - decTrue
      - double
      - 
 
@@ -308,7 +305,7 @@ This schema page will eventually be replaced with `official schema from LSST Dat
    * - predictedMagnitude
      - float
      - Predicted magnitude
-   * - predictedMagnitudeSigma
+   * - predictedMagnitudeErr
      - float
      - Prediction uncertainty (1-sigma)
    * - residualRa
@@ -317,10 +314,10 @@ This schema page will eventually be replaced with `official schema from LSST Dat
    * - residualDec
      - double
      - Residual Dec vs. ephemeris
-   * - predictedRaSigma
+   * - predictedRaErr
      - float
      - Predicted R.A. uncertainty
-   * - predictedDecSigma
+   * - predictedDecErr
      - float
      - Predicted Dec uncertainty
    * - predictedRaDecCov
@@ -454,3 +451,4 @@ This schema page will eventually be replaced with `official schema from LSST Dat
      - MPCORB: Date of last observation included in orbit solution
 
 |
+
