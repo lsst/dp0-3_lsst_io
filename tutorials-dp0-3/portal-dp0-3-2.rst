@@ -15,9 +15,9 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-#################
+###############################################################################
 02. Introduction to DP0.3: the ``SSSource`` and ``DiaSource`` tables (beginner)
-#################
+###############################################################################
 
 .. This section should provide a brief, top-level description of the page.
 
@@ -27,7 +27,8 @@
 
 **Targeted learning level:** beginner
 
-**Introduction:**
+Introduction
+============
 
 This tutorial is a direct sequel to Portal tutorial 01: Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables.
 Those two tables contain derived parameters for individial simulated Solar System objects.
@@ -72,8 +73,47 @@ every difference-image detection.
 
 .. _DP0-3-Portal-2-Step-1:
 
-Step 1. Here
-============
+Step 1. Identify an object to explore
+=====================================
 
-1.1. TBD
+1.1. Log in to the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
+
+1.2. To access the DP0.3 TAP Service (DP0.2 is the default), in the upper right corner next to "TAP Services" click "Show". 
+A new option will appear at the top, called "Select TAP Service".
+Click on where it says "Using LSST DP0.2 DC2", and select "LSST DP0.3 SSO" from the drop-down menu.
+In the upper right corner next to "TAP Services" click "Hide".
+The top of the page now displays "LSST DP0.3 SSO Tables".
+The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the default "Table" will be "dp03_catalogs_10yr.DiaSource".
+
+1.3. At upper right, click "Edit ADQL", and enter the following query into the box. 
+This query retrieves a random subset of ``SSObjects`` that were observed between 100 and 300 times
+over the 10-year LSST survey simulation, are bright and in the inner Solar System,
+and have orbits that are inclined by at least 20 degrees and eccentricities between 0.1 and 0.5.
+
+.. code-block:: SQL 
+
+    SELECT sso.numObs, sso.g_H, sso.ssObjectId, mpc.e, mpc.incl, mpc.q 
+    FROM dp03_catalogs_10yr.ssObject AS sso
+    JOIN dp03_catalogs_10yr.MPCORB AS mpc ON sso.ssObjectId = mpc.ssObjectId 
+    WHERE (sso.ssObjectId BETWEEN 7500000000000000000 AND 8500000000000000000) 
+    AND (sso.numObs > 100) AND (sso.numObs < 300) 
+    AND (sso.g_H > 17) AND (sso.g_H < 20) 
+    AND (mpc.q < 3) AND (mpc.incl > 20) AND (mpc.e > 0.1) AND (mpc.e < 0.5)
+
+
+1.4. The default results view will plot the g-band absolute H magnitude versus the number of observations for the 4150 objects.
+
+1.5. In the upper-right corner of the plot panel, click the settings icon (double gears) to open the plot parameters pop-up window.
+Change the y-axis column to eccentricity (``e``).
+Click on an object of interest and the point will turn orange and it will be highlighted in the table.
+
+.. figure:: /_static/portal_tut02_step01a.png
+    :name: portal_tut02_step01a
+    :alt: A screenshot of the results view plotting eccentricity versus number of observations.
+
+    A screenshot of the results view, with the plot altered to show eccentricy versus number of observations.
+
+
+1.6. 
+
 
