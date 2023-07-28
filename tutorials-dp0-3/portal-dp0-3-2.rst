@@ -141,7 +141,7 @@ to the x and y axis to more easily identify the Sun's location at (0, 0).
 Click "Apply" and "Close".
 
 .. figure:: /_static/portal_tut02_step02a.png
-    :width: 600
+    :width: 400
     :name: portal_tut02_step02a
     :alt: A screenshot showing the plot of heliocentricX versus heliocentricY with grid lines.
 
@@ -164,6 +164,32 @@ so this is just a regular asteroid and not a hazardous one!
     A visualization of the object's orbits in heliocentric and topocentric distances.
 
 
+.. _DP0-3-Portal-2-Step-3:
+
+Step 3. Visualize the object's time-domain characteristics
+==========================================================
+
+3.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+Submit the following query, using the same ``ssObjectId`` as above (or one of your choosing).
+This query returns the right ascension (``ra``), declination (``dec``), and modified julian date 
+(``midPointMjdTai``) of every observation.
+
+.. code-block:: SQL 
+
+   SELECT ra, dec, midPointMjdTai 
+   FROM dp03_catalogs_10yr.DiaSource 
+   WHERE ssObjectId = 8416929992792689125
+
+
+3.2. The default results view will probably include a sky image, but since there were no
+images simulated for DP0.3 (catalogs only), it will be all black.
+At upper right, click on "Bi-View Tables" to display only the default xy plot and the results table.
+
+3.3. The plot of declination versus right ascension shows how the object moves on the sky over the 10-year LSST.
+Click on the settings icon in the plot panel and in the plot parameters pop-up window, 
+under "Trace Options" next to "Color Map" enter ``midPointMjdTai``, and from the drop-down menu for 
+"Color Scale" choose "Rainbow".
+Click "Apply" and then "Close".
 
 
 
