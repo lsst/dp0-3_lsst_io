@@ -70,6 +70,10 @@ The DP0.3 ``MPCORB`` table is a simulation of what this data product will be lik
 The MPC contains all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
 Thus, the ``MPCORB`` table will have more rows than the ``SSObject`` table.
 
+For DP0.3, the MPC did not actually recompute orbital elements by incorporating on the simulated LSST data, but rather
+vice versa: LSST observations were simulated based on the MPC's orbital elements.
+Thus, the ``MPCORB`` table can be considered a truth table.
+
 For more information about Rubin's plans for Solar System Processing, see Section 3.2.2 of the 
 `Data Products Definitions Document <https://docushare.lsstcorp.org/docushare/dsweb/Get/LSE-163/LSE-163_DataProductsDefinitionDocumentDPDD.pdf>`_.
 Note that there remain differences between Table 4 of the DPDD, which contain the anticipated schema 
