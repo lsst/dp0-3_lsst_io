@@ -51,15 +51,15 @@ Simulated objects and detections
 ================================
 
 The DP0.3 simulation includes hundreds of millions of detections of millions of objects, real and synthetic (see below),
-including trans-Neptunian objects (TNO) (26k), main belt asteroids (MBA) (4m), interstellar objects (ISOs) (2k), 
-Hildas and Trojan asteroids (100k), and near-Earth objects (NEO) (37k). 
+including trans-Neptunian objects (TNO), main belt asteroids (MBA), interstellar objects (ISOs), 
+Hildas and Trojan asteroids, long-period comets, and near-Earth objects (NEO). 
 
 The `ObjectsInField <https://github.com/eggls6/objectsInField>`_ package was used to generate an 
 ephemeris from an object catalog and the Rubin cadence,  
 from which source detection and measurement were simulated using the 
 `SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_ package. 
 
-The simulation include astrometric scatter and photometric variations based on the objects's color class 
+The simulation includes astrometric scatter and photometric variations based on the objects' color class 
 (silicaceous and carbonaceous, see below), 
 the exposure’s telescope filter, and the object’s phase angle. 
 However, rotation curves or complex geometry are not included.
@@ -95,11 +95,11 @@ The DP0.3 simulation includes 91% of the objects in the
 `Synthetic Solar System Model (S3M) catalog <https://iopscience.iop.org/article/10.1086/659833/pdf>`_ 
 and 12,148 simulated ISOs.
 Of the S3M objects, Rubin detects 24% (3.2 million) of them in the simulated 10-year survey,
-and of the simulated ISOs Rubin detects 20% (2,429). 
+and of the simulated ISOs, Rubin detects 20% (2,429). 
 
 Objects were simulated in two color classes: S and C 
 (silicaceous and carbonaceous, see `Veres <https://arxiv.org/pdf/1706.09398.pdf>`_ for more details), 
-with colors and slope parameters as shown in Table 1. 
+with colors and slope parameters, as shown in Table 1. 
 
 .. table:: Table 1: The C and S color classes used for DP0.3.
    
@@ -120,7 +120,7 @@ Combining real and synthetic moving objects
 To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, 
 the Hybrid Solar System Catalogue Creator (Hybridcat) was used. 
 Hybridcat removes the closest-matching synthetic object to each real object, creating a population with all 
-of MPCORB and most of S3M that closely matches S3M’s orbital distributions.
+of MPCORB and most of S3M that closely match S3M’s orbital distributions.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Truth-Data:
