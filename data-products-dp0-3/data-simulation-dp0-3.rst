@@ -138,6 +138,7 @@ The following truth parameters *per observation* can be found in the ``DiaSource
 **decTrue**: The true declination for each observation.
 
 **magTrueVband**: The true V-band apparent magnitude for each observation.
+Use the color terms in Table 1 to recover the true apparent magnitude in the band of the observation.
 
 
 
