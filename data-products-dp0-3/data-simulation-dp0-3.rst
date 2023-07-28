@@ -47,11 +47,11 @@ The baseline v3.0 observing strategy also contains a twilight survey for near-Ea
 
 .. _Data-Products-DP0-3-Data-Simulation-Objects:
 
-Simulated Objects
-=================
+Simulated objects and detections
+================================
 
-The DP0.3 simulation includes hundreds of millions of detections of millions of objects including 
-trans-Neptunian objects (TNO) (26k), main belt asteroids (MBA) (4m), interstellar objects (ISOs) (2k), 
+The DP0.3 simulation includes hundreds of millions of detections of millions of objects, real and synthetic (see below),
+including trans-Neptunian objects (TNO) (26k), main belt asteroids (MBA) (4m), interstellar objects (ISOs) (2k), 
 Hildas and Trojan asteroids (100k), and near-Earth objects (NEO) (37k). 
 
 The `ObjectsInField <https://github.com/eggls6/objectsInField>`_ package was used to generate an 
@@ -59,36 +59,38 @@ ephemeris from an object catalog and the Rubin cadence,
 from which source detection and measurement were simulated using the 
 `SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_ package. 
 
-The catalog accounts for astrometric scatter and photometric variations based on the objects's color class [one of two point populations], 
-the exposure’s telescope filter, and the object’s phase angle. However, we do not include rotation curves or complex geometry.
-
-In other words, each DP0.3 object is a uniform, textured sphere in one of two color classes. Object's magnitude change is from the distance and phase angle. 
-You can access the simulation by following the instructions in the tutorial section.
+The simulation include astrometric scatter and photometric variations based on the objects's color class 
+(silicaceous and carbonaceous, see below), 
+the exposure’s telescope filter, and the object’s phase angle. 
+However, rotation curves or complex geometry are not included.
+In other words, each DP0.3 object is a uniform, textured sphere in one of two colors.
+Any changes over time in an object's apparent magnitude are due only to changes in its distance and phase angle. 
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Real-Objects:
 
 Real objects from the MPC
-=========================
+-------------------------
 
 The DP0.3 simulation contains all objects in the `Minor Planet Center Orbit (MPCORB) Database <https://www.minorplanetcenter.net/iau/MPCORB.html>`_
 as of May 1 2023, except for the ~400 objects that have no absolute magnitudes. 
-Out of these objects, Rubin detects 97% (1.2 million) of them in the simulated 10-year survey and includes them in the DP0.3 catalog.
+Out of these objects, the Rubin detects 97% (1.2 million) of them in the simulated 10-year survey.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Fake-Objects:
 
 Synthetic object populations
-============================
+----------------------------
 
-We include 91% of the `Synthetic Solar System Model (S3M) catalog <https://iopscience.iop.org/article/10.1086/659833/pdf>`_ 
-(see “Combining real and synthetic moving objects” for details) and 12,148 simulated interstellar objects. 
-24% (3.2 million) of the S3M objects and 20% (2,429) of the ISOs are detected and appear in the catalog. 
+The DP0.3 simulation includes 91% of the objects in the
+`Synthetic Solar System Model (S3M) catalog <https://iopscience.iop.org/article/10.1086/659833/pdf>`_ 
+and 12,148 simulated ISOs.
+Of the S3M objects, Rubin detects 24% (3.2 million) of them in the simulated 10-year survey,
+and of the simulated ISOs Rubin detects 20% (2,429). 
 
-Objects were simulated in two color classes: S and C (silicaceous and carbonaceous, see `Veres <https://arxiv.org/pdf/1706.09398.pdf>`_ for more details), 
-with colors and slope parameters as shown in table 1. 
-
-
+Objects were simulated in two color classes: S and C 
+(silicaceous and carbonaceous, see `Veres <https://arxiv.org/pdf/1706.09398.pdf>`_ for more details), 
+with colors and slope parameters as shown in Table 1. 
 
 +-------+------+------+-----+-----+-----+-----+-----+
 | Color | V-u  | V-g  | V-r | V-i | V-z | V-y | GS  |
@@ -104,10 +106,12 @@ Table 1 - dp0-3 color classes
 .. _Data-Products-DP0-3-Data-Simulation-Combo:
 
 Combining real and synthetic moving objects
-===========================================
+-------------------------------------------
 
-To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, we use the Hybrid Solar System Catalogue Creator (Hybridcat). 
-Hybridcat removes the closest-matching synthetic object to each real object, creating a population with all of MPCORB and most of S3M that closely matches S3M’s orbital distributions.
+To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, 
+the Hybrid Solar System Catalogue Creator (Hybridcat) was used. 
+Hybridcat removes the closest-matching synthetic object to each real object, creating a population with all 
+of MPCORB and most of S3M that closely matches S3M’s orbital distributions.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Truth-Data:
@@ -115,15 +119,16 @@ Hybridcat removes the closest-matching synthetic object to each real object, cre
 Truth data
 ==========
 
-The following truth parameters can be found in dp03_catalogs_1yr.DiaSource and dp03_catalogs_10yr.DiaSource.
+The following truth parameters *per observation* can be found in the ``DiaSource`` tables for both the
+1-year and 10-year DP0.3 catalogs.
 
-**nameTrue**: name of the object that generated the detection
+**nameTrue**: The true MPC name of the object that generated the detection (for real objects).
 
-**raTrue**: right ascension scatter-less astrometry for each detection
+**raTrue**: The true right ascension for each observation.
 
-**decTrue**: declination scatter-less astrometry for each detection
+**decTrue**: The true declination for each observation.
 
-**magTrueVband**: magnitude scatter-less astrometry for each detection
+**magTrueVband**: The true V-band apparent magnitude for each observation.
 
 
 
