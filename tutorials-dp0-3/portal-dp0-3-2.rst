@@ -87,7 +87,9 @@ The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the def
 
 1.3. At upper right, click "Edit ADQL", and enter the following query into the box. 
 This query retrieves a random subset of ``SSObjects`` that were observed between 100 and 300 times
-over the 10-year LSST survey simulation, are bright and in the inner Solar System,
+over the 10-year LSST survey simulation, 
+are bright (``g_H`` < 20 mag) but would never saturate with LSST (``g_H`` > 17 mag),
+are in the inner Solar System (``q`` < 3),
 and have orbits that are inclined by at least 20 degrees and eccentricities between 0.1 and 0.5.
 
 .. code-block:: SQL 
@@ -104,8 +106,9 @@ and have orbits that are inclined by at least 20 degrees and eccentricities betw
 1.4. The default results view will plot the g-band absolute H magnitude versus the number of observations for the 4150 objects.
 
 1.5. In the upper-right corner of the plot panel, click the settings icon (double gears) to open the plot parameters pop-up window.
-Change the y-axis column to eccentricity (``e``).
+Change the y-axis column to eccentricity (``e``), click "Apply" and then "Close".
 Click on an object of interest and the point will turn orange and it will be highlighted in the table.
+Record the ``ssObjectID`` of the chosen object.
 
 .. figure:: /_static/portal_tut02_step01a.png
     :name: portal_tut02_step01a
@@ -114,6 +117,54 @@ Click on an object of interest and the point will turn orange and it will be hig
     A screenshot of the results view, with the plot altered to show eccentricy versus number of observations.
 
 
-1.6. 
+.. _DP0-3-Portal-2-Step-2:
+
+Step 2. Visualize the object's orbit
+====================================
+
+2.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+Submit the following query, using the ``ssObjectId`` as below (or one of your choosing).
+This query returns the heliocentric (sun-centered) and topocentric (Earth-centered) 3D distances
+of the object at the time of every simulated LSST observation from the ``SSSource`` table.
+
+.. code-block:: SQL 
+
+    SELECT heliocentricX, heliocentricY, heliocentricZ, 
+    topocentricX, topocentricY, topocentricZ, ssObjectId 
+    FROM dp03_catalogs_10yr.SSSource 
+    WHERE ssObjectId = 8416929992792689125
+
+
+2.2. View the default results view, which plots the sun-centered orbit of heliocentricY versus heliocentricX.
+Click on the plot settings icon and in the pop-up window, select "Chart Options" and then add a grid
+to the x and y axis to more easily identify the Sun's location at (0, 0).
+Click "Apply" and "Close".
+
+.. figure:: /_static/portal_tut02_step02a.png
+    :width: 600
+    :name: portal_tut02_step02a
+    :alt: A screenshot showing the plot of heliocentricX versus heliocentricY with grid lines.
+
+    A visualization of the object's orbit projected onto the plane of the Solar System.
+
+
+2.3. Click again on the plot settings icon and in the pop-up window, select "Add New Chart". 
+Create a plot of the heliocentricZ verus heliocentricX to see how this object travels out of 
+the plane of the Solar System due to its orbital inclination.
+
+2.4. Add two more charts for the topocentric distances.
+Notice that in the topocentric distance, the object does not come near Earth (0, 0),
+so this is just a regular asteroid and not a hazardous one!
+
+.. figure:: /_static/portal_tut02_step02b.png
+    :width: 600
+    :name: portal_tut02_step02b
+    :alt: A screenshot showing a grid of plots of the object's distance from the Sun and Earth over time.
+
+    A visualization of the object's orbits in heliocentric and topocentric distances.
+
+
+
+
 
 
