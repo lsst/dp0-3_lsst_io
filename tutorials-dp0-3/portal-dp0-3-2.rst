@@ -71,6 +71,18 @@ and true values (true sky coordinates, true V-band apparent magnitude) for
 every difference-image detection.
 
 
+TAP and ADQL
+------------
+
+The DP0.3 data sets are available via the Table Access Protocol (TAP) service via the Portal Aspect,
+and can be queried via either the "UI Assisted" table interface, 
+or via the ADQL (Astronomical Data Query Language) interface.
+This tutorial assumes completion of Portal Tutorial 01 and only demonstrates
+the ADQL interface.
+ADQL is similar to SQL (Structured Query Langage).
+The `documentation for ADQL <http://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
+
+
 .. _DP0-3-Portal-2-Step-1:
 
 Step 1. Identify an object to explore
@@ -166,8 +178,8 @@ so this is just a regular asteroid and not a hazardous one!
 
 .. _DP0-3-Portal-2-Step-3:
 
-Step 3. Visualize the object's time-domain characteristics
-==========================================================
+Step 3. Visualize the object's 2d sky motion
+============================================
 
 3.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
 Submit the following query, using the same ``ssObjectId`` as above (or one of your choosing).
@@ -190,6 +202,77 @@ Click on the settings icon in the plot panel and in the plot parameters pop-up w
 under "Trace Options" next to "Color Map" enter ``midPointMjdTai``, and from the drop-down menu for 
 "Color Scale" choose "Rainbow".
 Click "Apply" and then "Close".
+
+.. figure:: /_static/portal_tut02_step03a.png
+    :width: 400
+    :name: portal_tut02_step03a
+    :alt: A screenshot showing a plot of right ascension versus declination, with points colored by date.
+
+    A visualization of the object's motion across the sky and LSST's detections.
+
+3.4. In the plot above, notice how the points are in four clusters of RA, Dec, and color.
+This demonstrates how the LSST observing strategy covers the moving object's location in four
+years out of the ten.
+
+
+.. _DP0-3-Portal-2-Step-4:
+
+Step 4. Visualize the object's photometry
+=========================================
+
+4.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+Submit the following query, using the same ``ssObjectId`` as above (or one of your choosing).
+This query returns the magnitude, filter, and modified julian date (``midPointMjdTai``) of every 
+observation that was obtained in the r-band from the ``DiaSource`` table, 
+and the phase angle from the ``SSSource`` table. 
+The two tables are joined on the ``diaSourceId`` column.
+
+.. code-block:: SQL 
+
+   SELECT dia.mag, dia.band, dia.midPointMjdTai, ss.phaseAngle 
+   FROM dp03_catalogs_10yr.DiaSource AS dia 
+   JOIN dp03_catalogs_10yr.SSSource AS ss ON dia.diaSourceId = ss.diaSourceId 
+   WHERE dia.ssObjectId = 8416929992792689125
+   AND dia.band = 'r'
+
+4.2. Use the plot settings icon to open the plot parameters pop-up window, and modify the trace to
+plot ``mag`` versus ``midPointMjdTai``.
+Click "Apply" but not "Close", and instead choose to "Add New Chart" and plot the ``mag`` as a function
+of ``phaseAngle``.
+
+.. figure:: /_static/portal_tut02_step04a.png
+    :width: 600
+    :name: portal_tut02_step04a
+    :alt: A screenshot showing two plots, one of magnitude versus time and one versus phaseAngle.
+
+    A visualization of the object's magnitude changes versus time (left) and phase angle (right).
+
+4.3. Notice there is no trend in the magnitude as a function of time, and recall that the DP0.3
+simulation does not include any time-domain changes in the photometry (e.g., rotation curves). 
+The magnitude only depends on the distance from Earth, and the phase angle as seen from Earth.
+Thus, a trend emerges in the right plot, and would be clearer if the apparent magnitudes were 
+corrected for distance.
+Doing this will be covered in a future tutorial.
+
+
+.. _DP0-3-Portal-2-Step-5:
+
+Step 5. Exercises for the learner
+=================================
+
+5.1. If you used ``ssObjectId`` 8416929992792689125, repeat the exercise for a different object.
+
+5.2. The ``SSSource`` table contains instantaneous xyz velocities in addition to xyz distance.
+Plot the heliocentric velocities as a function of heliocentric distance, and see the object
+move slower when it is further from the Sun.
+
+5.3. The ``DiaSource`` table contains four truth columns: ``raTrue``, ``decTrue``, ``magTrueVband``, 
+and ``nameTrue``. 
+Make a plot of the astrometric scatter in the observations (e.g., ``decTrue``-``dec`` versus
+``raTrue``-``ra``). 
+
+5.4. Did the object with ``ssObjectId`` 8416929992792689125 have a designation or proper name in the MPC?
+
 
 
 
