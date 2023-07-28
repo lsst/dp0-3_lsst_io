@@ -57,7 +57,8 @@ Hildas and Trojan asteroids, long-period comets, and near-Earth objects (NEO).
 The `ObjectsInField <https://github.com/eggls6/objectsInField>`_ package was used to generate an 
 ephemeris from an object catalog and the Rubin cadence,  
 from which source detection and measurement were simulated using the 
-`SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_ package. 
+`SurveySimPostProcessing <https://github.com/dirac-institute/survey_simulator_post_processing/tree/master>`_ package 
+(Merritt et al. 2023, in prep). 
 
 The simulation includes astrometric scatter and photometric variations based on the objects' color class 
 (silicaceous and carbonaceous, see below), 
