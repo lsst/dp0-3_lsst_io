@@ -82,7 +82,7 @@ The following ADQL functionality (at least) is available with the RSP TAP Servic
 Table joins
 ~~~~~~~~~~~
 
-The ``DiaSource`` and ``SSSource`` tables are 1:1 and can be joined on ``diaSourceId`` column.
+The ``DiaSource`` and ``SSSource`` tables are 1:1 and can be joined on the ``diaSourceId`` column.
 
 All rows of the ``SSObject`` table have a match with ``MPCORB`` (but not vice versa),
 and the two tables can be joined on that ``ssObjectId`` column.
