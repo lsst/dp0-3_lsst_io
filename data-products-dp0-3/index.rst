@@ -57,7 +57,7 @@ The DP0.3 solar system simulation is completely distinct from the `DESC DC2 <htt
 The two simulations use different observing strategy simulations, different object truth simulations, and cover different areas.
 There is no way to, for instance, see a DP0.3 simulated asteroid detection in a DESC DC2 simulated image.
 
-Due to time constraints, DP0.3 does not contain u- or y-band detections. This decision was made in part because the majority of objects will have very low signal-to-noise ratio in u and y, and object discoverability is driven by the gri bands. Similarly, :doc:`a subset of DP0.3 columns </data-products-dp0-3/table-access-and-queries>` are unpopulated at present.
+Due to time constraints, DP0.3 does not contain u- or y-band detections. This decision was made in part because the majority of objects will have very low signal-to-noise ratio in u and y, and object discoverability is driven by the gri bands. Also, :doc:`a subset of DP0.3 columns </data-products-dp0-3/table-access-and-queries>` are unpopulated at present.
 
 
 .. _DP0-3-Data-Products-DPDD-Schema-Browser:
