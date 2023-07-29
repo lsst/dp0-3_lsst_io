@@ -87,7 +87,7 @@ Catalogs
    * - SSObject
      - Table of linked solar system objects (groupings of difference image detections; 55 columns).
    * - MPCORB
-     - MPC-style information for linked solar system objects (27 columns).
+     - MPC-style information for injected solar system objects (27 columns).
 
 |
 
