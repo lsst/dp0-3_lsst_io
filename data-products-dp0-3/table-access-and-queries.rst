@@ -65,9 +65,8 @@ Table sizes
 The ``DiaSource`` and ``SSSource`` tables are the same size, and each contains over a billion rows:
 one for every detection of every moving object in the ``SSObject`` table.
 
-The ``SSObject`` table has ~2.0 million (~4.4 million) rows in the 1-year (10-year) DP0.3 dataset. The ``MPCORB`` table has 14.6 million rows.
-The ``SSObject`` table is a subset of all objects in ``MPCORB`` which were detected by LSST
-in the simulation.
+The ``SSObject`` table has ~2.0 million (~4.4 million) rows in the 1-year (10-year) DP0.3 dataset. The ``MPCORB`` table has ~14.5 million rows, regardless of whether the 1-year or 10-year data set is used.
+The ``SSObject`` table is a subset of all objects in ``MPCORB`` which were detected by LSST in the simulation.
 
 Column summary values
 ~~~~~~~~~~~~~~~~~~~~~
