@@ -118,7 +118,7 @@ as well as compute derived properties (magnitudes, phase curve fits, coordinates
 The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored and made available to 
 users as the MPCORB table (the other derived properties are stored in the other three tables described above).
 
-Note that the 1-year and 10-year versions of each DP0.3 table have the same :doc:`schema </data-products-dp0-3/schema>`
+Note that the 1-year and 10-year versions of each DP0.3 table have the same :doc:`schema </data-products-dp0-3/schema>`.
 
 .. _DP0-3-Data-Products-DPDD-Access:
 
