@@ -116,11 +116,11 @@ Since ADQL interprets a 64-bit long unsigned integer as a 63-bit *signed* intege
 these range from about -922e16 to 922e16, but this will be fixed in the future so 
 that all identifiers are positive numbers.
 Until then, for example, to retrieve the *griz* absolute magnitudes (``H``) 
-for ~1.2e5 random ``SSObjects``, use:
+for ~24,000 random ``SSObjects``, use:
 
 .. code-block:: SQL
 
-    SELECT gH, rH, iH, zH
+    SELECT g_H, r_H, i_H, z_H
     FROM dp03_catalogs_1yr.SSObject
     WHERE ssObjectId > 9000000000000000000
 
