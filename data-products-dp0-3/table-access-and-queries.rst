@@ -44,6 +44,19 @@ TAP and ADQL can be used in both the Notebook and Portal aspects.
     Rubin staff are happy to investigate and to help tweak queries for optimal execution.
 
 
+Unpopulated columns
+~~~~~~~~~~~~~~~~~~~
+
+At present, there are a number of unpopulated columns in the DP0.3 tables, as listed here:
+
+`DiaSource` : ``ra_dec_Cov``
+
+`SSSource` : ``mpcUniqueId``, ``predictedDecErr``, ``predictedMagnitude``, ``predictedMagnitudeErr``, ``predictedRaDecCov``, ``predictedRaErr``, ``residualDec``, ``residualRa``
+
+`MPCORB` : ``arc``, ``arcEnd``, ``arcStart``, ``computer``, ``flags``, ``lastIncludedObservation``, ``mpcNumber``, ``n``, ``nobs``, ``nopp``, ``pertsLong``, ``pertsShort``, ``reference``, ``rms``, ``uncertaintyParameter``
+
+These columns may be updated in the future to fill in their values.
+
 Table sizes
 ~~~~~~~~~~~
 
@@ -53,7 +66,6 @@ one for every detection of every moving object in the ``SSObject`` table.
 The ``SSObject`` table has 10.2 million rows and the ``MPCORB`` table has 14.6 million rows.
 The ``SSObject`` table is a subset of all objects in ``MPCORB`` which were detected by LSST
 in the simulation.
-
 
 Column summary values
 ~~~~~~~~~~~~~~~~~~~~~
@@ -65,20 +77,6 @@ The following ADQL functionality (at least) is available with the RSP TAP Servic
 
     SELECT COUNT(numObs), MIN(numObs), MAX(numObs), AVG(numObs), SUM(numObs) 
     FROM dp03_catalogs.SSObject
-
-Unpopulated columns
-~~~~~~~~~~~~~~~~~~~
-
-At present, there are a number of unpopulated columns in the DP0.3 tables, as listed here:
-
-
-`DiaSource` : ``ra_dec_Cov``
-
-`SSSource` : ``mpcUniqueId``, ``predictedDecErr``, ``predictedMagnitude``, ``predictedMagnitudeErr``, ``predictedRaDecCov``, ``predictedRaErr``, ``residualDec``, ``residualRa``
-
-`MPCORB` : ``arc``, ``arcEnd``, ``arcStart``, ``computer``, ``flags``, ``lastIncludedObservation``, ``mpcNumber``, ``n``, ``nobs``, ``nopp``, ``pertsLong``, ``pertsShort``, ``reference``, ``rms``, ``uncertaintyParameter``
-
-These columns may be updated in the future to fill in their values.
 
 Table joins
 ~~~~~~~~~~~
@@ -179,4 +177,4 @@ Truth information is embedded within the DP0.3 ``DiaSource`` tables in the follo
 
 Regarding ``nameTrue``: a value starting with 'S' or 'CEN' indicates that the source is a simulated ("fake") minor body. Otherwise, ``nameTrue`` provides the designation of the relevant real minor body.
 
-The MPCORB tables contain injected rather than measured orbital parameters, so in this sense the MPCORB tables can be thought of as "truth tables".
+The ``MPCORB`` tables contain injected rather than measured orbital parameters, so in this sense the MPCORB tables can be thought of as "truth tables".
