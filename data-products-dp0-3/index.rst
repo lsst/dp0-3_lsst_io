@@ -74,7 +74,7 @@ The `RSP Portal aspect <https://data.lsst.cloud>`_ includes lists of column name
 Catalogs
 --------
 
-.. list-table:: Catalog data available for DP0.2.
+.. list-table:: Catalog data available for DP0.3.
    :widths: 100 390
    :header-rows: 1
 
