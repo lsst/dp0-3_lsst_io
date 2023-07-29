@@ -75,23 +75,18 @@ Catalogs
 --------
 
 .. list-table:: Catalog data available for DP0.2.
-   :widths: 100 100 390
+   :widths: 100 390
    :header-rows: 1
 
    * - TAP Name
-     - table name
      - description
    * - DiaSource
-     - DiaSource
      - Astrometric and photometric measurements for solar system objects detected in difference images (20 columns).
    * - SSSource
-     - SSSource
      - Single-epoch solar system source information corresponding to a specific difference image detection (29 columns).
    * - SSObject
-     - SSObject
      - Table of linked solar system objects (groupings of difference image detections; 55 columns).
    * - MPCORB
-     - MPCORB
      - MPC-style information for linked solar system objects (27 columns).
 
 |
