@@ -161,7 +161,7 @@ They are stored in the ``flags`` column of the ``SSObject`` table.
 Note that the linking failure flag will only exist for simulated objects, 
 as a real object that is not linked will not be in the ``SSObject`` table.
 
-Example: an object whose photometry failed in u and y band will have ``flags`` value of 66 (in binary, 1000010).
+Example: an object whose absolute magnitude fit failed in the g and r bands will have a ``flags`` value of 12 (in binary, 1100).
 
 Truth data
 ~~~~~~~~~~
