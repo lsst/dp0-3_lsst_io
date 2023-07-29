@@ -66,6 +66,19 @@ The following ADQL functionality (at least) is available with the RSP TAP Servic
     SELECT COUNT(numObs), MIN(numObs), MAX(numObs), AVG(numObs), SUM(numObs) 
     FROM dp03_catalogs.SSObject
 
+Unpopulated columns
+~~~~~~~~~~~~~~~~~~~
+
+At present, there are a number of unpopulated columns in the DP0.3 tables, as listed here:
+
+
+``DiaSource`` : ``ra_dec_Cov``
+
+`SSSource` : ``mpcUniqueId``, ``predictedDecErr``, ``predictedMagnitude``, ``predictedMagnitudeErr``, ``predictedRaDecCov``, ``predictedRaErr``, ``residualDec``, ``residualRa``
+
+``MPCORB`` : ``arc``, ``arcEnd``, ``arcStart``, ``computer``, ``flags``, ``lastIncludedObservation``, ``mpcNumber``, ``n``, ``nobs``, ``nopp``, ``pertsLong``, ``pertsShort``, ``reference``, ``rms``, ``uncertaintyParameter``
+
+These columns may be updated in the future to fill in their values.
 
 Table joins
 ~~~~~~~~~~~
