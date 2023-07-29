@@ -77,7 +77,7 @@ The following ADQL functionality (at least) is available with the RSP TAP Servic
 .. code-block:: SQL
 
     SELECT COUNT(numObs), MIN(numObs), MAX(numObs), AVG(numObs), SUM(numObs) 
-    FROM dp03_catalogs.SSObject
+    FROM dp03_catalogs_1yr.SSObject
 
 Table joins
 ~~~~~~~~~~~
@@ -101,7 +101,7 @@ use the ``SELECT TOP`` and provide a small number, like 100.
 
 .. code-block:: SQL
 
-    SELECT TOP 100 * FROM dp03_catalogs.SSObject
+    SELECT TOP 100 * FROM dp03_catalogs_1yr.SSObject
 
 
 Random subsets
@@ -121,7 +121,7 @@ for ~1.2e5 random ``SSObjects``, use:
 .. code-block:: SQL
 
     SELECT gH, rH, iH, zH
-    FROM dp03_catalogs.SSObject
+    FROM dp03_catalogs_1yr.SSObject
     WHERE ssObjectId > 9000000000000000000
 
 
