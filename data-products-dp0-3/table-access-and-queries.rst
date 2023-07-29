@@ -47,7 +47,7 @@ TAP and ADQL can be used in both the Notebook and Portal aspects.
 Unpopulated columns
 ~~~~~~~~~~~~~~~~~~~
 
-Due to time constraints, there are at present a number of unpopulated columns in the DP0.3 tables, as listed here:
+DP0.3 has been simulated and provided on a best-effort basis. There are at present a number of unpopulated columns in the DP0.3 tables, as listed here:
 
 `DiaSource` : ``ra_dec_Cov``
 
@@ -123,14 +123,6 @@ for ~24,000 random ``SSObjects``, use:
     SELECT g_H, r_H, i_H, z_H
     FROM dp03_catalogs_1yr.SSObject
     WHERE ssObjectId > 9000000000000000000
-
-
-Unpopulated rows and columns
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-DP0.3 has been simulated and provided on a best-effort basis.
-Some of the columns or rows may be unpopulated, or populated with ``NaN`` (not-a-number) values.
-
 
 Flagged rows
 ~~~~~~~~~~~~
