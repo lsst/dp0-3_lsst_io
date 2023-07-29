@@ -51,7 +51,7 @@ Several of the future data products that are listed in the DPDD are not availabl
 In the future, for real LSST survey data, the tables that DP0.3 is meant to emulate will be Prompt products 
 that are updated nightly (``DiaSource`` and ``SSObject``) 
 or products of the moving object pipeline that are updated daily (``SSSource`` and ``MPCORB``).
-However, for DP0.3 these data products are static, and created as they would be after 1 year of LSST, and at the end of the 10-year survey.
+However, for DP0.3 these data products are static, created as they would be after 1 year of LSST, and at the end of the 10-year survey.
 
 The DP0.3 solar system simulation is completely distinct from the `DESC DC2 <https://arxiv.org/abs/2010.05926>`_ simulated data set used for DP0.2.
 The two simulations use different observing strategy simulations, different object truth simulations, and cover different areas.
