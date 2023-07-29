@@ -47,7 +47,7 @@ TAP and ADQL can be used in both the Notebook and Portal aspects.
 Unpopulated columns
 ~~~~~~~~~~~~~~~~~~~
 
-At present, there are a number of unpopulated columns in the DP0.3 tables, as listed here:
+Due to time constraints, there are at present a number of unpopulated columns in the DP0.3 tables, as listed here:
 
 `DiaSource` : ``ra_dec_Cov``
 
