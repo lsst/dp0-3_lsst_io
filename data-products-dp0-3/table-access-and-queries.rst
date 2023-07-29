@@ -162,6 +162,8 @@ Example: an object whose photometry failed in u and y band will have ``flags`` v
 Truth data
 ~~~~~~~~~~
 
-Truth information is embedded within the DP0.3 ``DiaSource`` table in the following five columns: ``_raTrue`` (true RA i.e., without simulated measurement noise), ``_decTrue`` (true Dec i.e., without simulated measurement noise), ``_magTrue`` (true magnitude in the relevant band i.e., without simulated measurement noise), ``_name``, and ``_V``.
+Truth information is embedded within the DP0.3 ``DiaSource`` tables in the following five columns: ``_raTrue`` (true RA i.e., without simulated measurement noise), ``_decTrue`` (true Dec i.e., without simulated measurement noise), ``_magTrue`` (true magnitude in the relevant band i.e., without simulated measurement noise), ``_name``, and ``_V``.
 
 Regarding ``_name``: a value starting with 'S' or 'CEN' indicates that the source is a simulated ("fake") minor body. Otherwise, ``_name`` provides the designation of the relevant real minor body.
+
+The MPCORB tables contain injected rather than measured orbital parameters, so in this sense the MPCORB tables can be thought of as "truth tables".
