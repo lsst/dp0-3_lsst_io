@@ -81,7 +81,7 @@ Catalogs
    * - TAP Name
      - description
    * - DiaSource
-     - Astrometric and photometric measurements for solar system objects detected in difference images (20 columns).
+     - Astrometric and photometric measurements for solar system objects detected in difference images (19 columns).
    * - SSSource
      - Single-epoch solar system source information corresponding to a specific difference image detection (29 columns).
    * - SSObject
