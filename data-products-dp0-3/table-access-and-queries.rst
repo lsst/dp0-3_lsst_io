@@ -85,7 +85,7 @@ Table joins
 The ``DiaSource`` and ``SSSource`` tables are 1:1 and can be joined on the ``diaSourceId`` column.
 
 All rows of the ``SSObject`` table have a match with ``MPCORB`` (but not vice versa),
-and the two tables can be joined on that ``ssObjectId`` column.
+and the two tables can be joined on the ``ssObjectId`` column.
 
 The ``DiaSource`` and ``SSSource`` tables are N:1 with both the ``SSObject`` and ``MPCORB`` tables.
 They *can* be joined on the ``ssObjectId`` column, but caution and testing should be used here.
