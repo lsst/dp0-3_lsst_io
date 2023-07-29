@@ -102,7 +102,7 @@ objects, and no artifacts).
 This table contains the 2-d (sky) coordinates and 3-d distances and velocities for every ``SSObject`` at the time of every LSST
 observation of that ``SSObject``. 
 The ``SSSource`` and ``DiaSource`` tables are 1:1, as they each contain data per observation, 
-whereas ``SSObject`` and ``MPCORB`` contains data per object.
+whereas ``SSObject`` and ``MPCORB`` contain data per object.
 
 `SSObject`:
 During Rubin Operations, Prompt Processing will occur during the night, detecting sources in difference images 
