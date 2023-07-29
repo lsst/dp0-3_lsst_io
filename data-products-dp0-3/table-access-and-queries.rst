@@ -53,6 +53,8 @@ At present, there are a number of unpopulated columns in the DP0.3 tables, as li
 
 `SSSource` : ``mpcUniqueId``, ``predictedDecErr``, ``predictedMagnitude``, ``predictedMagnitudeErr``, ``predictedRaDecCov``, ``predictedRaErr``, ``residualDec``, ``residualRa``
 
+`SSObject` : ``maxExtendedness``, ``medianExtendedness``, ``minExtendedness``, ``MOID``, ``MOIDDeltaV``, ``MOIDEclipticLongitude``, ``MOIDTrueAnomaly``, ``u_Chi2``, ``u_G12``, ``u_G12Err``, ``u_H``, ``u_H_uG12_Cov``, ``u_HErr``, ``u_Ndata``, ``y_Chi2``, ``y_G12``, ``y_G12Err``, ``y_H``, ``y_H_yG12_Cov``, ``y_HErr``, ``y_Ndata``
+
 `MPCORB` : ``arc``, ``arcEnd``, ``arcStart``, ``computer``, ``flags``, ``lastIncludedObservation``, ``mpcNumber``, ``n``, ``nobs``, ``nopp``, ``pertsLong``, ``pertsShort``, ``reference``, ``rms``, ``uncertaintyParameter``
 
 These columns may be updated in the future to fill in their values.
