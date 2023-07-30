@@ -23,6 +23,8 @@ DP0.3 Table Schema
 
 This schema page will eventually be replaced with `official schema from LSST Data Management <https://dm.lsst.org/sdm_schemas/browser/>`_. Note that the `1yr` and `10yr` versions of each DP0.3 table have the same schema in the sense that all column names and descriptions are identical for the `1yr` and `10yr` versions.
 
+The `RSP Portal aspect <https://data.lsst.cloud>`_ includes lists of column names and their descriptions for DP0.3 tables, and so can also be used as a schema browser.
+
 .. _DP0-3-Table-Schema:
 
 .. list-table:: SSObject DP0.3 table.
