@@ -43,23 +43,6 @@ TAP and ADQL can be used in both the Notebook and Portal aspects.
     or post in the "Support - Data Preview 0" category of the `Rubin Community Forum <https://community.lsst.org/>`_.
     Rubin staff are happy to investigate and to help tweak queries for optimal execution.
 
-.. _Unpopulated-Columns:
-
-Unpopulated columns
-~~~~~~~~~~~~~~~~~~~
-
-DP0.3 has been simulated and provided on a best-effort basis. There are at present a number of unpopulated columns in the DP0.3 tables, as listed here:
-
-`DiaSource` : ``ra_dec_Cov``
-
-`SSSource` : ``mpcUniqueId``, ``predictedDecErr``, ``predictedMagnitude``, ``predictedMagnitudeErr``, ``predictedRaDecCov``, ``predictedRaErr``, ``residualDec``, ``residualRa``
-
-`SSObject` : ``maxExtendedness``, ``medianExtendedness``, ``minExtendedness``, ``MOID``, ``MOIDDeltaV``, ``MOIDEclipticLongitude``, ``MOIDTrueAnomaly``, ``u_Chi2``, ``u_G12``, ``u_G12Err``, ``u_H``, ``u_H_uG12_Cov``, ``u_HErr``, ``u_Ndata``, ``y_Chi2``, ``y_G12``, ``y_G12Err``, ``y_H``, ``y_H_yG12_Cov``, ``y_HErr``, ``y_Ndata``
-
-`MPCORB` : ``arc``, ``arcEnd``, ``arcStart``, ``computer``, ``flags``, ``lastIncludedObservation``, ``mpcNumber``, ``n``, ``nobs``, ``nopp``, ``pertsLong``, ``pertsShort``, ``reference``, ``rms``, ``uncertaintyParameter``
-
-These columns may be updated in the future to fill in their values.
-
 Table sizes
 ~~~~~~~~~~~
 
@@ -79,6 +62,23 @@ The following ADQL functionality (at least) is available with the RSP TAP Servic
 
     SELECT COUNT(numObs), MIN(numObs), MAX(numObs), AVG(numObs), SUM(numObs) 
     FROM dp03_catalogs_1yr.SSObject
+
+.. _Unpopulated-Columns:
+
+Unpopulated columns
+~~~~~~~~~~~~~~~~~~~
+
+DP0.3 has been simulated and provided on a best-effort basis. There are at present a number of unpopulated columns in the DP0.3 tables, as listed here:
+
+`DiaSource` : ``ra_dec_Cov``
+
+`SSSource` : ``mpcUniqueId``, ``predictedDecErr``, ``predictedMagnitude``, ``predictedMagnitudeErr``, ``predictedRaDecCov``, ``predictedRaErr``, ``residualDec``, ``residualRa``
+
+`SSObject` : ``maxExtendedness``, ``medianExtendedness``, ``minExtendedness``, ``MOID``, ``MOIDDeltaV``, ``MOIDEclipticLongitude``, ``MOIDTrueAnomaly``, ``u_Chi2``, ``u_G12``, ``u_G12Err``, ``u_H``, ``u_H_uG12_Cov``, ``u_HErr``, ``u_Ndata``, ``y_Chi2``, ``y_G12``, ``y_G12Err``, ``y_H``, ``y_H_yG12_Cov``, ``y_HErr``, ``y_Ndata``
+
+`MPCORB` : ``arc``, ``arcEnd``, ``arcStart``, ``computer``, ``flags``, ``lastIncludedObservation``, ``mpcNumber``, ``n``, ``nobs``, ``nopp``, ``pertsLong``, ``pertsShort``, ``reference``, ``rms``, ``uncertaintyParameter``
+
+These columns may be updated in the future to fill in their values.
 
 Table joins
 ~~~~~~~~~~~
