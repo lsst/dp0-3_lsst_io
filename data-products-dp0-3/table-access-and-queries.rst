@@ -43,6 +43,7 @@ TAP and ADQL can be used in both the Notebook and Portal aspects.
     or post in the "Support - Data Preview 0" category of the `Rubin Community Forum <https://community.lsst.org/>`_.
     Rubin staff are happy to investigate and to help tweak queries for optimal execution.
 
+.. _Unpopulated-Columns:
 
 Unpopulated columns
 ~~~~~~~~~~~~~~~~~~~
