@@ -1,17 +1,7 @@
 # See the documenteer.toml for overrides of the Rubin user guide presets
 
-from documenteer.conf.guide import *
+from documenteer.conf.guide import *  # noqa: F403
 
-html_theme = "pydata_sphinx_theme"
-
-exclude_patterns = [
-    r"_build",
-    r"README.rst",
-    r"README.md",
-    r".venv",
-    r"venv",
-    r"requirements.txt",
-    r".github",
-    r".tox",
+exclude_patterns.append(  # noqa: F405
     r"project/templates/template-folder",
-]
+)
