@@ -51,7 +51,7 @@ Simulated objects and detections
 ================================
 
 The DP0.3 simulation includes hundreds of millions of detections of millions of objects, real and synthetic (see below),
-including trans-Neptunian objects (TNO), main belt asteroids (MBA), interstellar objects (ISOs), 
+including trans-Neptunian objects (TNOs), main belt asteroids (MBAs), interstellar objects (ISOs), 
 Hildas and Trojan asteroids, long-period comets, and near-Earth objects (NEOs). 
 
 The `ObjectsInField <https://github.com/eggls6/objectsInField>`_ package was used to generate an 
