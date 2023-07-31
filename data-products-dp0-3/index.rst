@@ -44,13 +44,20 @@ DP0.3 Data Products Definition Document (DPDD)
 ==============================================
 
 Future data previews and Operations-era LSST data releases will produce images and catalogs that more closely 
-resemble the plan laid out in the `Data Products Definitions Document <https://ls.st/dpdd/>`_ (DPDD).
-Several of the future data products (e.g., specific table columns) that are listed in the DPDD are not available 
-for DP0.
+resemble the plan laid out in the `Data Products Definition Document <https://ls.st/dpdd/>`_ (DPDD).
+Several of the future data products that are listed in the DPDD are not available for DP0
+(e.g., columns in the planned moving object tables in Section 3.3.3 of the DPDD).
 
-*Mention how these DP0.3 tables would be Prompt (i.e., updated daily) in the future with real data but are otherwise for DP0.3 simulation are "frozen" at 10 years (any maybe we will have a 1 year too).*
+In the future, for real LSST survey data, the tables that DP0.3 is meant to emulate will be Prompt products 
+that are updated nightly (``DiaSource`` and ``SSObject``) 
+or products of the moving object pipeline that are updated daily (``SSSource`` and ``MPCORB``).
+However, for DP0.3 these data products are static, created as they would be after 1 year of LSST, and at the end of the 10-year survey.
 
-*Mention how this simulation is completely distinct from DP0.2.*
+The DP0.3 solar system simulation is completely distinct from the `DESC DC2 <https://arxiv.org/abs/2010.05926>`_ simulated data set used for DP0.2.
+The two simulations use different observing strategy simulations, different object truth simulations, and cover different areas.
+There is no way to, for instance, see a DP0.3 simulated asteroid detection in a DESC DC2 simulated image.
+
+Due to time constraints, DP0.3 does not contain u- or y-band detections. This decision was made in part because the majority of objects will have very low signal-to-noise ratio in u and y, and object discoverability is driven by the gri bands. Also, :ref:`a subset of DP0.3 columns <Unpopulated-Columns>` are unpopulated at present.
 
 
 .. _DP0-3-Data-Products-DPDD-Schema-Browser:
@@ -58,41 +65,70 @@ for DP0.
 Schema browser
 --------------
 
-*Provide a link to schema browser, and mention how the Portal aspect serves as schema browser too.*
+A  :doc:`schema browser </data-products-dp0-3/schema>` for the four DP0.3 solar system tables (``DiaSource``, ``SSSource``, ``SSObject``, ``MPCORB``) is available.
 
-
+The `RSP Portal aspect <https://data.lsst.cloud>`_ includes lists of column names and their descriptions for DP0.3 tables, and so can also be used as a schema browser.
 
 .. _DP0-3-Data-Products-DPDD-Catalogs:
 
 Catalogs
 --------
 
-*Explain TAP endpoint.*
-
 .. list-table:: Catalog data available for DP0.3.
-   :widths: 150 440
+   :widths: 100 390
    :header-rows: 1
 
    * - TAP Name
-     - Description
+     - description
    * - DiaSource
-     - Astrometric and photometric measurements for sources detected above 5-sigma in difference images (X columns).
-   * - SSObject
-     - Associations of moving objects detected as DiaSources (X columns).
+     - Astrometric and photometric measurements for solar system objects detected in difference images (19 columns).
    * - SSSource
-     - LSST-computed quantities for moving objects at the time of each DiaSource detection (X columns).
+     - Single-epoch solar system source information corresponding to a specific difference image detection (29 columns).
+   * - SSObject
+     - Table of linked solar system objects (groupings of difference image detections; 55 columns).
    * - MPCORB
-     - Orbit catalog produced by the Minor Planet Center (MPC; X columns).
+     - MPC-style information for injected solar system objects (27 columns).
 
 |
 
+`DiaSource`:
+This table is the first to be generated in real time, as it is updated during the night by the Prompt Processing pipeline.
+*In the future*, with real data, the ``DiaSource`` table will contain measurements for *all* sources detected with a 
+signal-to-noise ratio of at least 5 in a difference image.
+*For DP0.3*, the ``DiaSource`` table only contains the simulated detections of moving objects (no static-sky time-domain
+objects, and no artifacts).
 
+`SSSource`:
+This table contains the 2-d (sky) coordinates and 3-d distances and velocities for every ``SSObject`` at the time of every LSST
+observation of that ``SSObject``. 
+The ``SSSource`` and ``DiaSource`` tables are 1:1, as they each contain data per observation, 
+whereas ``SSObject`` and ``MPCORB`` contain data per object.
 
+`SSObject`:
+During Rubin Operations, Prompt Processing will occur during the night, detecting sources in difference images 
+(``DiaSources``) and associating them into static-sky transients and variables (``DiaObjects``, not included in DP0.3).
+The Solar System Processing which occurs in the daytime links together the ``DiaSources`` 
+for moving objects into ``SSObjects``, and measures properties such as phase curve fits and absolute magnitudes,
+which are stored in the ``SSObject`` table.
 
-.. _DP0-3-Data-Products-DPDD-ADQL Recipies:
+`MPCORB`:
+During Rubin Operations, Solar System Processing will occur in the daytime, after a night of observing.
+It will link together the difference-image detections of moving objects and report discoveries to the Minor Planet Center (MPC), 
+as well as compute derived properties (magnitudes, phase curve fits, coordinates in various systems).
+The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored and made available to 
+users as the MPCORB table (the other derived properties are stored in the other three tables described above).
 
-ADQL Recipes
-------------
+Note that the 1-year and 10-year versions of each DP0.3 table have the same :doc:`schema </data-products-dp0-3/schema>`.
 
-*Provide advice, recommendations, best practices, and recipes.*
+.. _DP0-3-Data-Products-DPDD-Access:
 
+Table access and queries
+------------------------
+
+For information and advice about accessing and querying the DP0.3 tables, please see the :doc:`table access and queries page </data-products-dp0-3/table-access-and-queries>`.
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    table-access-and-queries
