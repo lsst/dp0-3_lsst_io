@@ -43,10 +43,13 @@ DP0.3 is a hybrid catalog that contains both real and simulated Solar System obj
 (asteroids, near-earth objects, Trojans, trans-Neptunian objects, and even a simulated spaceship... but no comets, major planets, or the Moon). 
 See :ref:`DP0-3-Data-Products-Introduction` for more information about how the hybrid catalog was created.
 
-The DP0.3 catalog data contains four tables: ``MPCORB``, ``SSObject``, ``SSSource``, and ``DiaSource``.
+Note that there are actually two distinct catalog products in the DP0.3 - one is for the 1-year simulation, and the other - for the 10-year simulation.  
+Here, we will be working with the 10-year simulation, namely ``dp03_catalogs_10yr.`` 
+
+Both (1-yr and 10-yr) DP0.3 catalog data contain four tables: ``MPCORB``, ``SSObject``, ``SSSource``, and ``DiaSource``.
 Their contents are described in the :ref:`DP0-3-Data-Products-DPDD`.
 In Rubin Operations, these tables would be constantly changing, updated every day with the results of the previous night's observations. 
-However, for DP0.3, a static 10-year catalog has been simulated.
+However, for DP0.3, a static 10-year catalog (as well as a 1-year catalog) has been simulated.  
 
 This tutorial focuses on the first two tables, ``MPCORB`` and ``SSObject``, and 
 :ref:`Tutorials-Examples-DP0-3-Portal-2` will focus on ``SSSource`` and ``DiaSource``.
@@ -87,9 +90,9 @@ During Rubin Operations, Prompt Processing will occur during the night, detectin
 difference images (``DiaSources``, see Section 6) and associating them into static-sky transients
 and variables (``DiaObjects``, not included in DP0.3).
 
-The Solar System Processing which occurs in the daytime, after a night of observing,
+The Solar System Processing which occurs in the daytime, after a night of observing, 
 links together the ``DiaSources`` for moving objects into ``SSObjects``.
-Whereas the ``MPCORB`` table contains the orbital elements for these moving objects,
+Whereas the ``MPCORB`` table contains the orbital elements for these moving objects, 
 the ``SSObjects`` contains the Rubin-measured properties such as phase curve fits and absolute magnitudes.
 
 Note that no artifacts or spurious difference-image sources have been injected into the DP0.3 catalogs.
@@ -114,7 +117,6 @@ ADQL is similar to SQL (Structured Query Langage).
 The `documentation for ADQL <http://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
 
 
-
 .. _DP0-3-Portal-1-Step-1:
 
 Step 1. Plot histograms of orbital elements in the ``MPCORB`` table
@@ -134,8 +136,8 @@ Click on where it says "Using LSST DP0.2 DC2", and select "LSST DP0.3 SSO" from 
 In the upper right corner next to "TAP Services" click "Hide".
 
 1.3. The top of the page now displays "LSST DP0.3 SSO Tables".
-The default "Table Collection (Schema)" will be "dp03_catalogs" and the default "Table" will be "dp03_catalogs.DiaSource".
-Change the "Table" to be "dp03_catalogs.MPCORB". 
+The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the default "Table" will be "dp03_catalogs_10yr.DiaSource".
+Change the "Table" to be "dp03_catalogs_10yr.MPCORB". 
 Notice how the area under "Enter Constraints" automatically un-checks the "Spatial Constraints" box, as the 
 ``MPCORB`` table does not contain sky coordinates, and how the table under "Output Column Selection and Constraints"
 automatically updates to display the columns of the ``MPCORB`` table.
