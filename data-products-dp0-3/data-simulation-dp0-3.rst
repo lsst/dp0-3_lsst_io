@@ -21,7 +21,7 @@ The DP0.3 Simulation
 
 .. This section should provide a brief, top-level description of the page.
 
-The DP0.3 data set is composed of two catalogs of real and simulated solar system and interstellar objects:
+The DP0.3 data set is composed of two sets of catalogs containing real and simulated solar system and interstellar objects:
 one that represents LSST results after one year, and one that represents LSST results at the end of the 10 year survey.
 The DP0.3 data set is hosted on the Rubin Science Platform (RSP) and available to all DP0 delegates.
 
