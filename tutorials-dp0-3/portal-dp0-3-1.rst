@@ -225,7 +225,7 @@ The absolute magnitude histogram will have the changes applied.
 Follow step 1.9 to adjust the appearance of the other two histograms.
 
 1.11. To delete these search results and return to the query interface, click on the 'x' in the tab in the table,
-next to where it says "dp03_catalogs.MPCORB".
+next to where it says "dp03_catalogs_10yr.MPCORB".
 The Portal will return to the query interface.
 Click on "Reset Column Selections & Constraints" above the table interface to remove the previous query.
 Refreshing the browser window is another way to return the Portal to its default, pre-query state.
@@ -249,7 +249,7 @@ Click "Search" in the lower left corner.
 .. code-block:: SQL 
 
     SELECT COUNT(ssObjectId), MIN(ssObjectId), MAX(ssObjectId) 
-    FROM dp03_catalogs.SSObject
+    FROM dp03_catalogs_10yr.SSObject
 
 .. figure:: /_static/portal_tut01_step02a.png
     :width: 600
@@ -269,12 +269,12 @@ Obtaining the values in the table were the only objective of this first query.
 
     The results view table of the counts, minimum, and maximum values of ``ssObjectId``.
 
-2.3. Notice that the ``SSObject`` table contains 10.2 million moving objects. 
+2.3. Notice that the ``SSObject`` table contains roughly 4.4 million moving objects. 
 Comparing this to the size of the ``MPCORB`` table is left as an exercise for the learner, below.
 
-2.4. As the maximum value of the ``ssObjectId`` is ``9223370875126069107``, a random subset of ``SSObjects`` 
-that is contains no more than 1% of the total number can be returned by applying a constraint that 
-``ssObjectId`` must be greater than ``9000000000000000000`` (i.e., because ``922 - 0.02*922 ~ 900``).
+2.4. As the maximum value of the ``ssObjectId`` is ``9223370430250665087``, a random subset of ``SSObjects`` 
+that contains no more than 3% of the total number (about 120,000) can be returned by applying a constraint that 
+``ssObjectId`` must be greater than ``8660000000000000000`` (i.e., because ``922 - 0.06*922 ~ 866``).
 
 2.5. As in step 1.11 above, delete the results of this query and return to the Portal's search interface.
 Clear the past query from the ADQL box.
@@ -285,9 +285,9 @@ Before clicking "Search", increase the row limit to 200000.
 
 .. code-block:: SQL 
     
-    SELECT gH, rH, iH, zH 
-    FROM dp03_catalogs.ssObject 
-    WHERE ssObjectId > 9000000000000000000
+    SELECT g_H, r_H, i_H, z_H 
+    FROM dp03_catalogs_10yr.SSObject 
+    WHERE ssObjectId > 8660000000000000000
 
 
 2.7. The default results view displays a plot of the r- vs. the g-band magnitude at left, and the
@@ -297,11 +297,14 @@ table at right shows that absolute magnitudes (and thus colors) could not be der
     :name: portal_tut01_step02c
     :alt: A screenshot of the default results view for the SSObject table query.
 
-    The default results view for the retrived subset of 123854 random ``SSObjects``.
+    The default results view for the retrived subset of 136,134 random ``SSObjects``.
 
 2.8. In the plot panel, click on the "Settings" icon at upper right (the double gears) and in the
-"Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``gH - rH`` and "Y" be ``iH - zH``.
-Set the "Color Scale" to Earth.
+"Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``g_H - r_H`` and "Y" be ``i_H - z_H``.
+Set the "Color Scale" to Earth.  
+The examination of the entries in the table on the right-hand side suggests that most of the g-r colors hover between 0 and 1.5, while the i-z colors hover between -2 and 1.  
+To see the distribution of colors in more detail, when you are selecting the "Plot Parameters" you need to restrict the range of X and Y on the plot, such that 0.0 < x < 1.5 and -2 < Y < 1.0.  
+Do this by clicking on the "Chart Options" arrow, and entering the respective X Min, X Max, Y Min and Y Max values as in the screenshot below.  
 
 .. figure:: /_static/portal_tut01_step02d.png
     :width: 400
@@ -320,7 +323,7 @@ Set the "Color Scale" to Earth.
     The color-color diagram for a random subset of ``SSObjects``.
 
 
-2.10. View the plot, and notice that there are only two populations of colors in the simulation.
+2.10. View the plot, and notice that there are only two predominant populations of colors in the simulation.
 This is not the case for real Solar System objects.
 These plots will look very different in the future, when they are made with real Rubin data.
 Adjusting the plot parameters is left as an exercise for the learner.
