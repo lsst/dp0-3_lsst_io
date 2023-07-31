@@ -39,7 +39,7 @@ Observing Strategy
 The DP0.3 simulation uses the LSST baseline v3.0 cadence 
 (see page 44 of the `Survey Cadence Optimization Committee's Phase 2 Recommendations) <https://pstn-055.lsst.io/PSTN-055.pdf>`_.
 This observing strategy includes the North Ecliptic Spur and deep drilling fields (DDFs).
-Two of the DDFs are close to the celestial equator (have low declination), 
+Two of the DDFs are close to the celestial equator (have declinations near zero), 
 and so are particularly beneficial for the detection of Solar System objects.
 Field revisit rates, which are driven by the needs of Solar System science, are on average 33 minutes apart.
 The baseline v3.0 observing strategy also contains a twilight survey for near-Earth asteroids (NEOs). 
