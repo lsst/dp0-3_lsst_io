@@ -72,7 +72,7 @@ This decision was made in part because the majority of objects will have very lo
 signal-to-noise ratio in *u* and *y*, and object discoverability is driven by the *gri* bands.
 
 While neither the two-color nor the missing *u*/*y* band simplifications should prevent testing and 
-exploration of the simulated Rubin dataset, 
+exploration of the simulated Rubin data set, 
 there is a plan to provide a more realistic simulation in an upcoming update.
 
 
