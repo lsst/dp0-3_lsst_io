@@ -281,7 +281,7 @@ that contains no more than 3% of the total number (about 120,000) can be returne
 2.5. As in step 1.11 above, delete the results of this query and return to the Portal's search interface.
 Clear the past query from the ADQL box.
 
-2.6. Enter the following query to retrieve the g, r, i, and z absolute magnitudes 
+2.6. Enter the following query to retrieve the g, r, i, and z absolute H magnitudes 
 for a random subset of the ``SSObject`` table. 
 Before clicking "Search", increase the row limit to 200000.
 
@@ -292,8 +292,8 @@ Before clicking "Search", increase the row limit to 200000.
     WHERE ssObjectId > 8660000000000000000
 
 
-2.7. The default results view displays a plot of the r- vs. the g-band magnitude at left, and the
-table at right shows that absolute magnitudes (and thus colors) could not be derived for all objects.
+2.7. The default results view displays a plot of the r- vs. the g-band absolute H magnitude at left.
+At right, the table shows that absolute H magnitudes were not derived for all objects.
 
 .. figure:: /_static/portal_tut01_step02c.png
     :name: portal_tut01_step02c
@@ -304,7 +304,8 @@ table at right shows that absolute magnitudes (and thus colors) could not be der
 2.8. In the plot panel, click on the "Settings" icon at upper right (the double gears) and in the
 "Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``g_H - r_H`` and "Y" be ``i_H - z_H``.
 Set the "Color Scale" to Earth.
-Set the "X Min", "X Max", "Y Min", and "Y Max" values as in the screenshot below.  
+Set the "Number of X-Bins" and "Number of Y-Bins" to be 200.
+Under "Chart Options", set the "X Label", "Y Label", "X Min", "X Max", "Y Min", and "Y Max" values as in the screenshot below.  
 
 .. figure:: /_static/portal_tut01_step02d.png
     :width: 400
