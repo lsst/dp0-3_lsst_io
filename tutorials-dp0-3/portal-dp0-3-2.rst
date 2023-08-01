@@ -40,7 +40,7 @@ values for individial simulated Solar System objects on a per-observation basis.
 The ``SSSource`` table
 ----------------------
 
-The daytime Solar System Processing willalso report discoveries and data for moving objects
+The daytime Solar System Processing will also report discoveries and data for moving objects
 to the Minor Planet Center (MPC; minorplanetcenter.net), which computes the orbital elements
 (eccentricity, inclination, etc.).
 These orbital elements are then used to compute the instantaneous 3D sky location, distances, and velocities
@@ -52,7 +52,7 @@ The ``DiaSource`` table
 -----------------------
 
 During Rubin Operations, Prompt Processing will occur during the night, detecting sources in 
-difference images with signal-to-noise ratio > 5 (``DiaSources``, see Section 6).
+difference images with signal-to-noise ratio > 5 (``DiaSources``).
 DIA stands for difference image analysis.
 After detection, the Prompt pipelines associate them into static-sky transients
 and variables (``DiaObjects``, not included in DP0.3).
@@ -147,7 +147,7 @@ of the object at the time of every simulated LSST observation from the ``SSSourc
     WHERE ssObjectId = 8416929992792689125
 
 
-2.2. View the default results view, which plots the sun-centered orbit of heliocentricY versus heliocentricX.
+2.2. View the default results view, which plots the sun-centered orbit of ``heliocentricY`` versus ``heliocentricX``.
 Click on the plot settings icon and in the pop-up window, select "Chart Options" and then add a grid
 to the x and y axis to more easily identify the Sun's location at (0, 0).
 Click "Apply" and "Close".
@@ -161,7 +161,7 @@ Click "Apply" and "Close".
 
 
 2.3. Click again on the plot settings icon and in the pop-up window, select "Add New Chart". 
-Create a plot of the heliocentricZ verus heliocentricX to see how this object travels out of 
+Create a plot of the ``heliocentricZ`` verus ``heliocentricX`` to see how this object travels out of 
 the plane of the Solar System due to its orbital inclination.
 
 2.4. Add two more charts for the topocentric distances.
