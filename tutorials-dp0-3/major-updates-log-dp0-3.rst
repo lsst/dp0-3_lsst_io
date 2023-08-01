@@ -50,8 +50,8 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
-July X 2023
------------
+July 31 2023
+------------
 
-First release of all DP0.3 tutorials.
+First release of DP0.3 introductory tutorials: Portal tutorials 01 and 02, and Notebook tutorial 01.
 
