@@ -100,7 +100,7 @@ and of the simulated ISOs, Rubin detects 20% (2,429).
 
 Objects were simulated in two color classes: S and C 
 (silicaceous and carbonaceous, see `Veres <https://arxiv.org/pdf/1706.09398.pdf>`_ for more details), 
-with colors and slope parameters, as shown in Table 1. 
+with colors and slope parameters (GS) as shown in Table 1. 
 
 .. table:: Table 1: The C and S color classes used for DP0.3.
    
