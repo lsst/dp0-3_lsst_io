@@ -276,7 +276,7 @@ Comparing this to the size of the ``MPCORB`` table is left as an exercise for th
 
 2.4. As the maximum value of the ``ssObjectId`` is ``9223370430250665087``, a random subset of ``SSObjects`` 
 that contains no more than 3% of the total number (about 120,000) can be returned by applying a constraint that 
-``ssObjectId`` must be greater than ``8660000000000000000`` (i.e., because ``922 - 0.06*922 ~ 866``).
+``ssObjectId`` must be greater than ``8660000000000000000`` (i.e., because :math:`922 - 0.06 \times 922 \approx 866`).
 
 2.5. As in step 1.11 above, delete the results of this query and return to the Portal's search interface.
 Clear the past query from the ADQL box.
