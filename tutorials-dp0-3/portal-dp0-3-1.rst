@@ -44,7 +44,7 @@ DP0.3 is a hybrid catalog that contains both real and simulated Solar System obj
 See :ref:`DP0-3-Data-Products-Introduction` for more information about how the hybrid catalog was created.
 
 Note that there are actually two distinct catalog products in the DP0.3 - one is for the 1-year simulation, and the other - for the 10-year simulation.  
-Here, we will be working with the 10-year simulation, namely ``dp03_catalogs_10yr.`` 
+Here, we will be working with the 10-year simulation, namely ``dp03_catalogs_10yr``. 
 
 Both (1-yr and 10-yr) DP0.3 catalog data contain four tables: ``MPCORB``, ``SSObject``, ``SSSource``, and ``DiaSource``.
 Their contents are described in the :ref:`DP0-3-Data-Products-DPDD`.
@@ -61,7 +61,7 @@ The ``MPCORB`` table
 During Rubin Operations, Solar System Processing will occur in the daytime, after a night of observing.
 It will link together the difference-image detections of moving objects and report discoveries
 to the Minor Planet Center (MPC; minorplanetcenter.net),
-as well as compute derived properties (magnitudes, phase-curve fits, coordinates in various systems).
+as well as computer-derived properties (magnitudes, phase-curve fits, coordinates in various systems).
 
 The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored
 and made available to users as the ``MPCORB`` table 
@@ -304,7 +304,7 @@ table at right shows that absolute magnitudes (and thus colors) could not be der
 Set the "Color Scale" to Earth.  
 The examination of the entries in the table on the right-hand side suggests that most of the g-r colors hover between 0 and 1.5, while the i-z colors hover between -2 and 1.  
 To see the distribution of colors in more detail, when you are selecting the "Plot Parameters" you need to restrict the range of X and Y on the plot, such that 0.0 < x < 1.5 and -2 < Y < 1.0.  
-Do this by clicking on the "Chart Options" arrow, and entering the respective X Min, X Max, Y Min and Y Max values as in the screenshot below.  
+Do this by clicking on the "Chart Options" arrow, and entering the respective ``X Min``, ``X Max``, ``Y Min`` and ``Y Max`` values as in the screenshot below.  
 
 .. figure:: /_static/portal_tut01_step02d.png
     :width: 400
@@ -340,6 +340,6 @@ Which populations of moving objects does LSST not detect?
 
 3.2. Explore and adjust the color-color plot.
 To zoom in, click on the the magnifying glass with the + symbol above the plot panel, then click-and-drag in the plot.
-Reopen the plot parameter pop-up window and use 200 bins instead of 100. 
+Reopen the plot parameter pop-up window and use 500 bins instead of 200. 
 Try different color scales.
 Try plotting different color combinations or create a color-magnitude diagram.
