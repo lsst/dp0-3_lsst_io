@@ -239,7 +239,7 @@ Step 2. Create a color-color diagram from the ``SSObject`` table
 **A random sample of DP0.3 SSObjects:** 
 As mentioned under step 1.4 above, subsets returned by applying a row limit to Portal queries are not random.
 To retrieve a random subset, make use of the fact that ``ssObjectId`` is a randomly assigned 64-bit long unsigned integer. 
-Since ADQL interprets a 64-bit long unsigned integer as a 63-bit _signed_ integer, 
+Since ADQL interprets a 64-bit long unsigned integer as a 63-bit *signed* integer, 
 these range from a very large negative integer value to a very large positive integer value.
 This will be fixed in the future so that all identifiers are positive numbers.
 
