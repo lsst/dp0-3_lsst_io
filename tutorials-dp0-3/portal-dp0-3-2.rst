@@ -15,30 +15,265 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-####################################################################
-02. Introduction to DP0.3: the ``SSSource`` and ``DiaSource`` tables
-####################################################################
+###############################################################################
+02. Introduction to DP0.3: the ``SSSource`` and ``DiaSource`` tables (beginner)
+###############################################################################
 
 .. This section should provide a brief, top-level description of the page.
 
-**Contact authors:** Greg Madejski
+**Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:** 
+**Last verified to run:** Thu July 27 2023
 
 **Targeted learning level:** beginner
-
-
-.. _DP0-3-Portal-2-Intro:
 
 Introduction
 ============
 
+This tutorial is a direct sequel to Portal tutorial 01: Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables.
+Those two tables contain derived parameters for individial simulated Solar System objects.
+
+This tutorial focuses on the DP0.3 ``SSSource`` and ``DiaSource`` tables, which contain measured and derived
+values for individial simulated Solar System objects on a per-observation basis.
+
+
+The ``SSSource`` table
+----------------------
+
+The daytime Solar System Processing will also report discoveries and data for moving objects
+to the Minor Planet Center (MPC; minorplanetcenter.net), which computes the orbital elements
+(eccentricity, inclination, etc.).
+These orbital elements are then used to compute the instantaneous 3D sky location, distances, and velocities
+at the time of each observation.
+These results are stored in the ``SSSource`` table, which has a 1:1 relationship with the ``DiaSource`` table.
+
+
+The ``DiaSource`` table
+-----------------------
+
+During Rubin Operations, Prompt Processing will occur during the night, detecting sources in 
+difference images with signal-to-noise ratio > 5 (``DiaSources``).
+DIA stands for difference image analysis.
+After detection, the Prompt pipelines associate them into static-sky transients
+and variables (``DiaObjects``, not included in DP0.3).
+The Solar System Processing occurs in the daytime, after a night of observing,
+links together the ``DiaSources`` for moving objects into ``SSObjects``.
+
+With real data, the ``DiaSource`` catalog would contain sources due to artifacts (spurious sources), 
+static-sky variables and transients, and moving objects.
+However, the DP0.3 ``DiaSource`` catalog contains only moving objects.
+Thus every DP0.3 ``DiaSource`` (every row of the table) has a ``ssObjectId``, an 
+identifier that associates the source with the object in the ``SSObject`` table.
+
+The DP0.3 ``DiaSource`` catalog contains the measured quantities (sky coordinates, apparent magnitude, error),
+metadata (filter, time of observation),
+and true values (true sky coordinates, true V-band apparent magnitude) for 
+every difference-image detection.
+
+
+TAP and ADQL
+------------
+
+The DP0.3 data sets are available via the Table Access Protocol (TAP) service via the Portal Aspect,
+and can be queried via either the "UI Assisted" table interface, 
+or via the ADQL (Astronomical Data Query Language) interface.
+This tutorial assumes completion of Portal Tutorial 01 and only demonstrates
+the ADQL interface.
+ADQL is similar to SQL (Structured Query Langage).
+The `documentation for ADQL <http://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
 
 
 .. _DP0-3-Portal-2-Step-1:
 
-Step 1. Here
-============
+Step 1. Identify an object to explore
+=====================================
 
-1.1. TBD
+1.1. Log in to the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
+
+1.2. To access the DP0.3 TAP Service (DP0.2 is the default), in the upper right corner next to "TAP Services" click "Show". 
+A new option will appear at the top, called "Select TAP Service".
+Click on where it says "Using LSST DP0.2 DC2", and select "LSST DP0.3 SSO" from the drop-down menu.
+In the upper right corner next to "TAP Services" click "Hide".
+The top of the page now displays "LSST DP0.3 SSO Tables".
+The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the default "Table" will be "dp03_catalogs_10yr.DiaSource".
+
+1.3. At upper right, click "Edit ADQL", and enter the following query into the box. 
+This query retrieves a random subset of ``SSObjects`` that were observed between 100 and 300 times
+over the 10-year LSST survey simulation, 
+are bright (``g_H`` < 20 mag) but would never saturate with LSST (``g_H`` > 17 mag),
+are in the inner Solar System (``q`` < 3),
+and have orbits that are inclined by at least 20 degrees and eccentricities between 0.1 and 0.5.
+
+.. code-block:: SQL 
+
+    SELECT sso.numObs, sso.g_H, sso.ssObjectId, mpc.e, mpc.incl, mpc.q 
+    FROM dp03_catalogs_10yr.ssObject AS sso
+    JOIN dp03_catalogs_10yr.MPCORB AS mpc ON sso.ssObjectId = mpc.ssObjectId 
+    WHERE (sso.ssObjectId BETWEEN 7500000000000000000 AND 8500000000000000000) 
+    AND (sso.numObs > 100) AND (sso.numObs < 300) 
+    AND (sso.g_H > 17) AND (sso.g_H < 20) 
+    AND (mpc.q < 3) AND (mpc.incl > 20) AND (mpc.e > 0.1) AND (mpc.e < 0.5)
+
+
+1.4. The default results view will plot the g-band absolute H magnitude versus the number of observations for the 4150 objects.
+
+1.5. In the upper-right corner of the plot panel, click the settings icon (double gears) to open the plot parameters pop-up window.
+Change the y-axis column to eccentricity (``e``), click "Apply" and then "Close".
+Click on an object of interest and the point will turn orange and it will be highlighted in the table.
+Record the ``ssObjectID`` of the chosen object.
+
+.. figure:: /_static/portal_tut02_step01a.png
+    :name: portal_tut02_step01a
+    :alt: A screenshot of the results view plotting eccentricity versus number of observations.
+
+    A screenshot of the results view, with the plot altered to show eccentricy versus number of observations.
+
+
+.. _DP0-3-Portal-2-Step-2:
+
+Step 2. Visualize the object's orbit
+====================================
+
+2.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+Submit the following query, using the ``ssObjectId`` as below (or one of your choosing).
+This query returns the heliocentric (sun-centered) and topocentric (Earth-centered) 3D distances
+of the object at the time of every simulated LSST observation from the ``SSSource`` table.
+
+.. code-block:: SQL 
+
+    SELECT heliocentricX, heliocentricY, heliocentricZ, 
+    topocentricX, topocentricY, topocentricZ, ssObjectId 
+    FROM dp03_catalogs_10yr.SSSource 
+    WHERE ssObjectId = 8416929992792689125
+
+
+2.2. View the default results view, which plots the sun-centered orbit of ``heliocentricY`` versus ``heliocentricX``.
+Click on the plot settings icon and in the pop-up window, select "Chart Options" and then add a grid
+to the x and y axis to more easily identify the Sun's location at (0, 0).
+Click "Apply" and "Close".
+
+.. figure:: /_static/portal_tut02_step02a.png
+    :width: 400
+    :name: portal_tut02_step02a
+    :alt: A screenshot showing the plot of heliocentricX versus heliocentricY with grid lines.
+
+    A visualization of the object's orbit projected onto the plane of the Solar System.
+
+
+2.3. Click again on the plot settings icon and in the pop-up window, select "Add New Chart". 
+Create a plot of the ``heliocentricZ`` verus ``heliocentricX`` to see how this object travels out of 
+the plane of the Solar System due to its orbital inclination.
+
+2.4. Add two more charts for the topocentric distances.
+Notice that in the topocentric distance, the object does not come near Earth (0, 0),
+so this is just a regular asteroid and not a hazardous one!
+
+.. figure:: /_static/portal_tut02_step02b.png
+    :width: 600
+    :name: portal_tut02_step02b
+    :alt: A screenshot showing a grid of plots of the object's distance from the Sun and Earth over time.
+
+    A visualization of the object's orbits in heliocentric and topocentric distances.
+
+
+.. _DP0-3-Portal-2-Step-3:
+
+Step 3. Visualize the object's 2d sky motion
+============================================
+
+3.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+Submit the following query, using the same ``ssObjectId`` as above (or one of your choosing).
+This query returns the right ascension (``ra``), declination (``dec``), and modified julian date 
+(``midPointMjdTai``) of every observation.
+
+.. code-block:: SQL 
+
+   SELECT ra, dec, midPointMjdTai 
+   FROM dp03_catalogs_10yr.DiaSource 
+   WHERE ssObjectId = 8416929992792689125
+
+
+3.2. The default results view will probably include a sky image, but since there were no
+images simulated for DP0.3 (catalogs only), it will be all black.
+At upper right, click on "Bi-View Tables" to display only the default xy plot and the results table.
+
+3.3. The plot of declination versus right ascension shows how the object moves on the sky over the 10-year LSST.
+Click on the settings icon in the plot panel and in the plot parameters pop-up window, 
+under "Trace Options" next to "Color Map" enter ``midPointMjdTai``, and from the drop-down menu for 
+"Color Scale" choose "Rainbow".
+Click "Apply" and then "Close".
+
+.. figure:: /_static/portal_tut02_step03a.png
+    :width: 400
+    :name: portal_tut02_step03a
+    :alt: A screenshot showing a plot of right ascension versus declination, with points colored by date.
+
+    A visualization of the object's motion across the sky and LSST's detections.
+
+3.4. In the plot above, notice how the points are in four clusters of RA, Dec, and color.
+This demonstrates how the LSST observing strategy covers the moving object's location in four
+years out of the ten.
+
+
+.. _DP0-3-Portal-2-Step-4:
+
+Step 4. Visualize the object's photometry
+=========================================
+
+4.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+Submit the following query, using the same ``ssObjectId`` as above (or one of your choosing).
+This query returns the magnitude, filter, and modified julian date (``midPointMjdTai``) of every 
+observation that was obtained in the r-band from the ``DiaSource`` table, 
+and the phase angle from the ``SSSource`` table. 
+The two tables are joined on the ``diaSourceId`` column.
+
+.. code-block:: SQL 
+
+   SELECT dia.mag, dia.band, dia.midPointMjdTai, ss.phaseAngle 
+   FROM dp03_catalogs_10yr.DiaSource AS dia 
+   JOIN dp03_catalogs_10yr.SSSource AS ss ON dia.diaSourceId = ss.diaSourceId 
+   WHERE dia.ssObjectId = 8416929992792689125
+   AND dia.band = 'r'
+
+4.2. Use the plot settings icon to open the plot parameters pop-up window, and modify the trace to
+plot ``mag`` versus ``midPointMjdTai``.
+Click "Apply" but not "Close", and instead choose to "Add New Chart" and plot the ``mag`` as a function
+of ``phaseAngle``.
+
+.. figure:: /_static/portal_tut02_step04a.png
+    :width: 600
+    :name: portal_tut02_step04a
+    :alt: A screenshot showing two plots, one of magnitude versus time and one versus phaseAngle.
+
+    A visualization of the object's magnitude changes versus time (left) and phase angle (right).
+
+4.3. Notice there is no trend in the magnitude as a function of time, and recall that the DP0.3
+simulation does not include any time-domain changes in the photometry (e.g., rotation curves). 
+The magnitude only depends on the distance from Earth, and the phase angle as seen from Earth.
+Thus, a trend emerges in the right plot, and would be clearer if the apparent magnitudes were 
+corrected for distance.
+Doing this will be covered in a future tutorial.
+
+
+.. _DP0-3-Portal-2-Step-5:
+
+Step 5. Exercises for the learner
+=================================
+
+5.1. If you used ``ssObjectId`` 8416929992792689125, repeat the exercise for a different object.
+
+5.2. The ``SSSource`` table contains instantaneous xyz velocities in addition to xyz distance.
+Plot the heliocentric velocities as a function of heliocentric distance, and see the object
+move slower when it is further from the Sun.
+
+5.3. The ``DiaSource`` table contains four truth columns: ``raTrue``, ``decTrue``, ``magTrueVband``, 
+and ``nameTrue``. 
+Make a plot of the astrometric scatter in the observations (e.g., ``decTrue``-``dec`` versus
+``raTrue``-``ra``). 
+
+5.4. Did the object with ``ssObjectId`` 8416929992792689125 have a designation or proper name in the MPC?
+
+
+
+
 
