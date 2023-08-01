@@ -186,6 +186,7 @@ In the plot panel, click on the "Settings" icon (double gears) to get the "Plot 
 Click on "Add New Chart".
 Next to "Plot Type", select "Histogram" from the drop-down menu.
 Next to "Column or expression" enter "e", the column name containing the eccentricity values.
+Set the "Min" and "Max" values to 0 and 1, and the "Bin width" will automatically update to 0.02.
 
 .. figure:: /_static/portal_tut01_step01e.png
     :width: 400
