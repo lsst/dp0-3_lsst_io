@@ -62,7 +62,7 @@ from which source detection and measurement were simulated using the
 
 The simulation includes astrometric scatter and photometric variations based on the objects' color class 
 (silicaceous and carbonaceous, see below), 
-the exposure’s telescope filter, and the object’s phase angle. 
+the exposure’s filter, and the object’s phase angle. 
 However, rotation curves or complex geometry are not included.
 In other words, each DP0.3 object is a uniform, textured sphere in one of two colors.
 Any changes over time in an object's apparent magnitude are due only to changes in its distance and phase angle. 
@@ -84,7 +84,7 @@ Real objects from the MPC
 
 The DP0.3 simulation contains all objects in the `Minor Planet Center Orbit (MPCORB) Database <https://www.minorplanetcenter.net/iau/MPCORB.html>`_
 as of May 1 2023, except for the ~400 objects that have no absolute magnitudes. 
-Out of these objects, the Rubin detects 97% (1.2 million) of them in the simulated 10-year survey.
+Out of these objects, Rubin detects 97% (1.2 million) of them in the simulated 10-year survey.
 
 
 .. _Data-Products-DP0-3-Data-Simulation-Fake-Objects:
