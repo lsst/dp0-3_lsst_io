@@ -119,7 +119,7 @@ Combining real and synthetic moving objects
 -------------------------------------------
 
 To combine the real and synthetic populations while maintaining S3M’s well-chosen orbital distributions, 
-the Hybrid Solar System Catalogue Creator (Hybridcat) was used. 
+the Hybrid Solar System Catalogue Creator (`Hybridcat <https://github.com/dirac-institute/hybrid_sso_catalogue>`_) was used. 
 Hybridcat removes the closest-matching synthetic object to each real object, creating a population with all 
 of MPCORB and most of S3M that closely match S3M’s orbital distributions.
 
