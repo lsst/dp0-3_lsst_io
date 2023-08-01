@@ -40,16 +40,17 @@ This tutorial demonstrates how to access the simulated Data Preview 0.3 (DP0.3) 
 For the DP0.3 simulation, only moving objects were simulated, and only catalogs were created (there are no images). 
 The DP0.3 simulation is entirely independent of and separate from the DP0.2 simulation.
 DP0.3 is a hybrid catalog that contains both real and simulated Solar System objects 
-(asteroids, near-Earth objects, Trojans, trans-Neptunian objects, and even a simulated spaceship... but no comets, major planets, or the Moon). 
+(asteroids, near-Earth objects, Trojans, trans-Neptunian objects, comets, and even a few spaceships... but no major planets). 
 See :ref:`DP0-3-Data-Products-Introduction` for more information about how the hybrid catalog was created.
 
-Note that there are actually two distinct catalog products in the DP0.3 - one is for the 1-year simulation, and the other - for the 10-year simulation.  
-Here, we will be working with the 10-year simulation, namely ``dp03_catalogs_10yr``. 
+For DP0.3 there are two catalogs, one is representative of the Solar System data products after one year of the LSST,
+and the other after 10 years (``dp03_catalogs_1yr`` and ``dp03_catalogs_10yr``, respectively).
+This tutorial uses the 10-year simulation. 
 
-Both (1-yr and 10-yr) DP0.3 catalog data contain four tables: ``MPCORB``, ``SSObject``, ``SSSource``, and ``DiaSource``.
+Both DP0.3 catalogs contain four tables: ``MPCORB``, ``SSObject``, ``SSSource``, and ``DiaSource``.
 Their contents are described in the :ref:`DP0-3-Data-Products-DPDD`.
 In Rubin Operations, these tables would be constantly changing, updated every day with the results of the previous night's observations. 
-However, for DP0.3, a static 10-year catalog (as well as a 1-year catalog) has been simulated.  
+However, for DP0.3, static catalogs have been simulated.  
 
 This tutorial focuses on the first two tables, ``MPCORB`` and ``SSObject``, and 
 :ref:`Tutorials-Examples-DP0-3-Portal-2` will focus on ``SSSource`` and ``DiaSource``.
@@ -59,9 +60,9 @@ The ``MPCORB`` table
 --------------------
 
 During Rubin Operations, Solar System Processing will occur in the daytime, after a night of observing.
-It will link together the difference-image detections of moving objects and report discoveries
+This processing will link together the difference-image detections of moving objects and report discoveries
 to the Minor Planet Center (MPC; minorplanetcenter.net),
-as well as computer-derived properties (magnitudes, phase-curve fits, coordinates in various systems).
+as well as compute derived properties (magnitudes, phase-curve fits, coordinates in various systems).
 
 The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored
 and made available to users as the ``MPCORB`` table 
@@ -301,10 +302,8 @@ table at right shows that absolute magnitudes (and thus colors) could not be der
 
 2.8. In the plot panel, click on the "Settings" icon at upper right (the double gears) and in the
 "Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``g_H - r_H`` and "Y" be ``i_H - z_H``.
-Set the "Color Scale" to Earth.  
-The examination of the entries in the table on the right-hand side suggests that most of the g-r colors hover between 0 and 1.5, while the i-z colors hover between -2 and 1.  
-To see the distribution of colors in more detail, when you are selecting the "Plot Parameters" you need to restrict the range of X and Y on the plot, such that 0.0 < x < 1.5 and -2 < Y < 1.0.  
-Do this by clicking on the "Chart Options" arrow, and entering the respective ``X Min``, ``X Max``, ``Y Min`` and ``Y Max`` values as in the screenshot below.  
+Set the "Color Scale" to Earth.
+Set the "X Min", "X Max", "Y Min", and "Y Max" values as in the screenshot below.  
 
 .. figure:: /_static/portal_tut01_step02d.png
     :width: 400
@@ -312,6 +311,7 @@ Do this by clicking on the "Chart Options" arrow, and entering the respective ``
     :alt: A screenshot of the plot parameters pop-up window set to make a color-color diagram.
 
     Adjust the "Plot Parameters" to create a color-color diagram.
+
 
 2.9. Click "Apply" and view the color-color diagram.
 
@@ -323,7 +323,7 @@ Do this by clicking on the "Chart Options" arrow, and entering the respective ``
     The color-color diagram for a random subset of ``SSObjects``.
 
 
-2.10. View the plot, and notice that there are only two predominant populations of colors in the simulation.
+2.10. View the plot, and notice that there are two populations of colors in the simulation.
 This is not the case for real Solar System objects.
 These plots will look very different in the future, when they are made with real Rubin data.
 Adjusting the plot parameters is left as an exercise for the learner.
