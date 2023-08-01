@@ -141,9 +141,7 @@ The following truth parameters *per observation* can be found in the ``DiaSource
 **magTrueVband**: The true V-band apparent magnitude for each observation.
 Use the color terms in Table 1 to recover the true apparent magnitude in the band of the observation.
 
-
-
-
+Furthermore, the ``MPCORB`` tables contain injected rather than measured orbital parameters, so in this sense the ``MPCORB`` tables can be thought of as "truth tables".
 
 
 
