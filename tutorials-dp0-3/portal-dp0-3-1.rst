@@ -40,7 +40,7 @@ This tutorial demonstrates how to access the simulated Data Preview 0.3 (DP0.3) 
 For the DP0.3 simulation, only moving objects were simulated, and only catalogs were created (there are no images). 
 The DP0.3 simulation is entirely independent of and separate from the DP0.2 simulation.
 DP0.3 is a hybrid catalog that contains both real and simulated Solar System objects 
-(asteroids, near-earth objects, Trojans, trans-Neptunian objects, and even a simulated spaceship... but no comets, major planets, or the Moon). 
+(asteroids, near-Earth objects, Trojans, trans-Neptunian objects, and even a simulated spaceship... but no comets, major planets, or the Moon). 
 See :ref:`DP0-3-Data-Products-Introduction` for more information about how the hybrid catalog was created.
 
 Note that there are actually two distinct catalog products in the DP0.3 - one is for the 1-year simulation, and the other - for the 10-year simulation.  
