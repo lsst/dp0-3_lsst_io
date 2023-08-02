@@ -2,16 +2,6 @@
 
 from documenteer.conf.guide import *
 
-html_theme = "pydata_sphinx_theme"
-
-exclude_patterns = [
-    r"_build",
-    r"README.rst",
-    r"README.md",
-    r".venv",
-    r"venv",
-    r"requirements.txt",
-    r".github",
-    r".tox",
+exclude_patterns.extend([
     r"project/templates/template-folder",
-]
+])
