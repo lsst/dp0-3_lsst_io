@@ -43,6 +43,7 @@ TAP and ADQL can be used in both the Notebook and Portal aspects.
     or post in the "Support - Data Preview 0" category of the `Rubin Community Forum <https://community.lsst.org/>`_.
     Rubin staff are happy to investigate and to help tweak queries for optimal execution.
 
+
 Table sizes
 ~~~~~~~~~~~
 
@@ -51,6 +52,7 @@ one for every detection of every moving object in the ``SSObject`` table.
 
 The ``SSObject`` table has ~2.0 million (~4.4 million) rows in the 1-year (10-year) DP0.3 dataset. The ``MPCORB`` table has ~14.5 million rows, regardless of whether the 1-year or 10-year data set is used.
 The ``SSObject`` table is a subset of all objects in ``MPCORB`` which were detected by LSST in the simulation.
+
 
 Column summary values
 ~~~~~~~~~~~~~~~~~~~~~
@@ -62,6 +64,25 @@ The following ADQL functionality (at least) is available with the RSP TAP Servic
 
     SELECT COUNT(numObs), MIN(numObs), MAX(numObs), AVG(numObs), SUM(numObs) 
     FROM dp03_catalogs_1yr.SSObject
+
+
+.. _DP0-3-Table-Access-semi-major-axis:
+
+Semi-Major Axis
+~~~~~~~~~~~~~~~
+
+The orbital element of semi-major axis ($a$) is not pre-computed in the `MPCORB` table because it can be derived from 
+the orbit’s ellipticiy ($e$) and perihelion distance ($q$), as :math:`a = q /(1 - e)`.
+
+For example, to get eccentricity, perihelion distance, and semi-major axis for any (not necessarily random) 1000 rows,
+use the ADQL statement below.
+
+.. code-block:: SQL
+
+    SELECT TOP 1000 e, q, q/(1-e) AS a 
+    FROM dp03_catalogs_10yr.MPCORB 
+
+
 
 .. _Unpopulated-Columns:
 
