@@ -21,11 +21,13 @@
 
 .. This section should provide a brief, top-level description of the page.
 
-**Contact authors:** Greg Madejski and Melissa Graham
+**Contact authors:** Melissa Graham and Greg Madejski
 
 **Last verified to run:** Thu July 27 2023
 
 **Targeted learning level:** beginner
+
+**Credits:** This tutorial incorporates material from the introductory DP0.3 tutorial notebook by Douglas Tucker and Bob Abel.
 
 Introduction
 ============
