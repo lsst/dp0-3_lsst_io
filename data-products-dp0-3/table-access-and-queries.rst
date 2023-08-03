@@ -71,8 +71,8 @@ The following ADQL functionality (at least) is available with the RSP TAP Servic
 Semi-Major Axis
 ~~~~~~~~~~~~~~~
 
-The orbital element of semi-major axis ($a$) is not pre-computed in the `MPCORB` table because it can be derived from 
-the orbit’s ellipticiy ($e$) and perihelion distance ($q$), as :math:`a = q /(1 - e)`.
+The orbital element of semi-major axis (``a``) is not pre-computed in the `MPCORB` table because it can be derived from 
+the orbit’s ellipticiy (``e``) and perihelion distance (``q``), as :math:`a = q /(1 - e)`.
 
 For example, to get eccentricity, perihelion distance, and semi-major axis for any (not necessarily random) 1000 rows,
 use the ADQL statement below.
