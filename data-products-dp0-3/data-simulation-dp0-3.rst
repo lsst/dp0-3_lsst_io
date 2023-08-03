@@ -96,8 +96,8 @@ The DP0.3 simulation includes 91% of the objects in the
 `Synthetic Solar System Model (S3M) catalog <https://iopscience.iop.org/article/10.1086/659833/pdf>`_ 
 and 12,148 simulated ISOs, and `two long-period comet populations from LSST SSSC Cadence Optimization: <https://github.com/lsst-sssc/SSSC_test_populations_gitlfs>`_
 5,000 with q < 5 au and 5,000 with q < 20 au. 
-Of the S3M objects, Rubin detects 24% (3.2 million) of them in the simulated 10-year survey,
-and of the simulated ISOs, Rubin detects 20% (2,429). 
+In the simulated 10-year survey, Rubin detects 24% (3.2 million) S3M objects, 20% (2,429) of the simulated ISOs,
+68% (3,395) of the q < 5 au long-period comets and <1% (39) of the q< 20 au long-period comets. 
 
 Objects were simulated in two color classes: S and C 
 (silicaceous and carbonaceous, see `Veres <https://arxiv.org/pdf/1706.09398.pdf>`_ for more details), 
