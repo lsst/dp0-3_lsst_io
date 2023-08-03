@@ -98,7 +98,7 @@ the ``SSObjects`` contains the Rubin-measured properties such as phase curve fit
 
 Note that no artifacts or spurious difference-image sources have been injected into the DP0.3 catalogs.
 
-**Absolute magnitudes:** For Solar System objects, absolute magnitudes are defined to be for an object 1 AU from the Sun and 1 AU 
+**Absolute magnitudes:** For Solar System objects, absolute magnitudes are defined to be for an object at a distance 1 au from the Sun and 1 au 
 from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
 Absolute magnitudes are derived by correcting for distance, fitting a function to the relationship between 
 absolute magnitude and phase, and evaluating the function at a phase of 0 deg.
@@ -149,7 +149,7 @@ automatically updates to display the columns of the ``MPCORB`` table.
 
     The Portal interface is prepared to query the ``MPCORB`` table.
 
-1.4. Set up a query to retrieve the eccentricity, inclination, and absolution magnitude H for 
+1.4. Set up a query to retrieve the eccentricity, inclination, and absolute magnitude H for 
 50000 bright objects in the ``MPCORB`` table.
 First, click the selection box next to each column name to be returned: 
 eccentricity (``e``), inclination (``incl``), and absolute magnitude H (``mpcH``).
@@ -276,7 +276,7 @@ Comparing this to the size of the ``MPCORB`` table is left as an exercise for th
 
 2.4. As the maximum value of the ``ssObjectId`` is ``9223370430250665087``, a random subset of ``SSObjects`` 
 that contains no more than 3% of the total number (about 120,000) can be returned by applying a constraint that 
-``ssObjectId`` must be greater than ``8660000000000000000`` (i.e., because :math:`922 - 0.06 \times 922 \approx 866`).
+``ssObjectId`` must be greater than ``8660000000000000000`` (i.e., because 922 - 0.06 * 922 is roughly 866).
 
 2.5. As in step 1.11 above, delete the results of this query and return to the Portal's search interface.
 Clear the past query from the ADQL box.
@@ -325,7 +325,7 @@ Under "Chart Options", set the "X Label", "Y Label", "X Min", "X Max", "Y Min", 
     The color-color diagram for a random subset of ``SSObjects``.
 
 
-2.10. View the plot, and notice that there are two populations of colors in the simulation.
+2.10. View the plot, and notice that there are two sets of object colors in the simulation.
 This is not the case for real Solar System objects.
 These plots will look very different in the future, when they are made with real Rubin data.
 Adjusting the plot parameters is left as an exercise for the learner.
