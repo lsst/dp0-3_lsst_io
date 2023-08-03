@@ -11,4 +11,6 @@ version = "Current"
 ignore = [
     "https://arxiv.org/pdf/.*#",
     "http://localhost",
+    "https://minorplanetcenter.net//iau/info/MPOrbitFormat.html",
+    "https://www.minorplanetcenter.net/iau/MPCORB.html"
 ]
