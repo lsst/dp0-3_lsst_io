@@ -23,7 +23,7 @@
 
 **Contact authors:** Melissa Graham and Greg Madejski
 
-**Last verified to run:** Thu July 27 2023
+**Last verified to run:** Fri Aug 4 2023
 
 **Targeted learning level:** beginner
 
@@ -36,7 +36,7 @@ This tutorial is a direct sequel to Portal tutorial 01: Introduction to DP0.3: t
 Those two tables contain derived parameters for individial simulated Solar System objects.
 
 This tutorial focuses on the DP0.3 ``SSSource`` and ``DiaSource`` tables, which contain measured and derived
-values for individial simulated Solar System objects on a per-observation basis.
+values for individial simulated Solar System objects on a per-observation basis.  
 
 
 The ``SSSource`` table
@@ -79,9 +79,9 @@ TAP and ADQL
 The DP0.3 data sets are available via the Table Access Protocol (TAP) service via the Portal Aspect,
 and can be queried via either the "UI Assisted" table interface, 
 or via the ADQL (Astronomical Data Query Language) interface.
-This tutorial assumes completion of Portal Tutorial 01 and only demonstrates
-the ADQL interface.
-ADQL is similar to SQL (Structured Query Langage).
+This tutorial assumes completion of Portal Tutorial 01 and only demonstrates the ADQL interface.  
+It also llustrates how to perform table joins.  
+ADQL is similar to SQL (Structured Query Langage).  
 The `documentation for ADQL <http://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
 
 
