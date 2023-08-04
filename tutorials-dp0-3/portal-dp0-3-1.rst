@@ -52,8 +52,9 @@ Their contents are described in the :ref:`DP0-3-Data-Products-DPDD`.
 In Rubin Operations, these tables would be constantly changing, updated every day with the results of the previous night's observations. 
 However, for DP0.3, static catalogs have been simulated.  
 
-This tutorial focuses on the first two tables, ``MPCORB`` and ``SSObject``, and 
-:ref:`Tutorials-Examples-DP0-3-Portal-2` will focus on ``SSSource`` and ``DiaSource``.
+This tutorial focuses on the first two tables, ``MPCORB`` and ``SSObject`` and it will explore these tables individually.  The table joins will be demonstrated in 
+:ref:`Tutorials-Examples-DP0-3-Portal-2` which will focus on ``SSSource`` and ``DiaSource`` tables.  That tutorial will illustrate, among others, how to extract and plot the magnitude, 
+the heliocentric, and the topocentric position of an object vs. time.  
 
 
 The ``MPCORB`` table
