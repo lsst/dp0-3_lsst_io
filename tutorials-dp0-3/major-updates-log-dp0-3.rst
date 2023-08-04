@@ -50,6 +50,12 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Aug 04 2023
+-----------
+
+DP0.3 notebook tutorial 02 on the Main Belt Asteroids is released.
+
+
 July 31 2023
 ------------
 
