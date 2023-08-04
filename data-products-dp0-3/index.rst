@@ -65,7 +65,7 @@ Due to time constraints, DP0.3 does not contain u- or y-band detections. This de
 Schema browser
 --------------
 
-A  :doc:`schema browser </data-products-dp0-3/schema>` for the four DP0.3 solar system tables (``DiaSource``, ``SSSource``, ``SSObject``, ``MPCORB``) is available.
+A  `schema browser <https://dm.lsst.org/sdm_schemas/browser/dp03.html>`_ for the four DP0.3 solar system tables (``DiaSource``, ``SSSource``, ``SSObject``, ``MPCORB``) is available. Note that the 1-year and 10-year versions of each DP0.3 table have the same schema in the sense that all column names and descriptions are identical for the 1-year and 10-year versions.
 
 The `RSP Portal aspect <https://data.lsst.cloud>`_ includes lists of column names and their descriptions for DP0.3 tables, and so can also be used as a schema browser.
 
