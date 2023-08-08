@@ -36,7 +36,7 @@ This tutorial is a direct sequel to Portal tutorial 01: Introduction to DP0.3: t
 Those two tables contain derived parameters for individual simulated Solar System objects.
 
 This tutorial focuses on the DP0.3 ``SSSource`` and ``DiaSource`` tables, which contain measured and derived
-values for individial simulated Solar System objects on a per-observation basis.  
+values for individial simulated Solar System objects on a per-observation basis.  Note that there are two separate DP0.3 catalogs, dp03_catalogs_1yr and dp03_catalogs_10yr, respectively. This tutorial uses the tables in the catalog resulting from the 10-year simulation.
 
 
 The ``SSSource`` table
@@ -152,7 +152,9 @@ of the object at the time of every simulated LSST observation from the ``SSSourc
 2.2. View the default results view, which plots the sun-centered orbit of ``heliocentricY`` versus ``heliocentricX``.
 Click on the plot settings icon and in the pop-up window, select "Chart Options" and then add a grid
 to the x and y axis to more easily identify the Sun's location at (0, 0).
-Click "Apply" and "Close".
+Click "Apply" and "Close".  
+
+Note that the defalt axis labels here use the "AU" description for the distance in astronomical units.  The official, IAU-sanctioned abbreviation of an astronomical unit is "au" (lower case), not "AU."  If you plan to use those (or equivalent) plots for publication, you need to edit the lables accordingly by clicking on the "Chart Options" for each plot.  
 
 .. figure:: /_static/portal_tut02_step02a.png
     :width: 400
