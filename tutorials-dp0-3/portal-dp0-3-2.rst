@@ -33,7 +33,7 @@ Introduction
 ============
 
 This tutorial is a direct sequel to Portal tutorial 01: Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables.
-Those two tables contain derived parameters for individial simulated Solar System objects.
+Those two tables contain derived parameters for individual simulated Solar System objects.
 
 This tutorial focuses on the DP0.3 ``SSSource`` and ``DiaSource`` tables, which contain measured and derived
 values for individial simulated Solar System objects on a per-observation basis.  
