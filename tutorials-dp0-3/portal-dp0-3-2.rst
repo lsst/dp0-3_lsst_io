@@ -23,7 +23,7 @@
 
 **Contact authors:** Melissa Graham and Greg Madejski
 
-**Last verified to run:** Thu July 27 2023
+**Last verified to run:** Fri Aug 4 2023
 
 **Targeted learning level:** beginner
 
@@ -33,10 +33,10 @@ Introduction
 ============
 
 This tutorial is a direct sequel to Portal tutorial 01: Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables.
-Those two tables contain derived parameters for individial simulated Solar System objects.
+Those two tables contain derived parameters for individual simulated Solar System objects.
 
 This tutorial focuses on the DP0.3 ``SSSource`` and ``DiaSource`` tables, which contain measured and derived
-values for individial simulated Solar System objects on a per-observation basis.
+values for individial simulated Solar System objects on a per-observation basis.  Note that there are two separate DP0.3 catalogs, dp03_catalogs_1yr and dp03_catalogs_10yr, respectively. This tutorial uses the tables in the catalog resulting from the 10-year simulation.
 
 
 The ``SSSource`` table
@@ -79,9 +79,9 @@ TAP and ADQL
 The DP0.3 data sets are available via the Table Access Protocol (TAP) service via the Portal Aspect,
 and can be queried via either the "UI Assisted" table interface, 
 or via the ADQL (Astronomical Data Query Language) interface.
-This tutorial assumes completion of Portal Tutorial 01 and only demonstrates
-the ADQL interface.
-ADQL is similar to SQL (Structured Query Langage).
+This tutorial assumes completion of Portal Tutorial 01 and only demonstrates the ADQL interface.  
+It also llustrates how to perform table joins.  
+ADQL is similar to SQL (Structured Query Langage).  
 The `documentation for ADQL <http://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
 
 
@@ -152,7 +152,12 @@ of the object at the time of every simulated LSST observation from the ``SSSourc
 2.2. View the default results view, which plots the sun-centered orbit of ``heliocentricY`` versus ``heliocentricX``.
 Click on the plot settings icon and in the pop-up window, select "Chart Options" and then add a grid
 to the x and y axis to more easily identify the Sun's location at (0, 0).
-Click "Apply" and "Close".
+Click "Apply" and "Close".  
+
+Note that the defalt axis labels here use the "AU" description for the distance in astronomical units.  
+The official, IAU-sanctioned abbreviation of an astronomical unit is "au" (lower case), not "AU."  
+If you are interested in the details - you can check out the article on "Astronomical unit" on Wikipedia.  
+If you plan to use those (or equivalent) plots for publication, you need to edit the lables accordingly by clicking on the "Chart Options" for each plot.  
 
 .. figure:: /_static/portal_tut02_step02a.png
     :width: 400
