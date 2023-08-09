@@ -154,7 +154,10 @@ Click on the plot settings icon and in the pop-up window, select "Chart Options"
 to the x and y axis to more easily identify the Sun's location at (0, 0).
 Click "Apply" and "Close".  
 
-Note that the defalt axis labels here use the "AU" description for the distance in astronomical units.  The official, IAU-sanctioned abbreviation of an astronomical unit is "au" (lower case), not "AU."  If you plan to use those (or equivalent) plots for publication, you need to edit the lables accordingly by clicking on the "Chart Options" for each plot.  
+Note that the defalt axis labels here use the "AU" description for the distance in astronomical units.  
+The official, IAU-sanctioned abbreviation of an astronomical unit is "au" (lower case), not "AU."  
+If you are interested in the details - you can check out the article on "Astronomical unit" on Wikipedia.  
+If you plan to use those (or equivalent) plots for publication, you need to edit the lables accordingly by clicking on the "Chart Options" for each plot.  
 
 .. figure:: /_static/portal_tut02_step02a.png
     :width: 400
