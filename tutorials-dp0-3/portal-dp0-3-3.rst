@@ -75,7 +75,7 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
 .. code-block:: SQL 
 
     SELECT e, q, incl 
-    FROM dp03_catalogs.MPCORB 
+    FROM dp03_catalogs_10yr.MPCORB 
     WHERE ssObjectId > 9000000000000000000 
 
 1.3. Set the "Row Limit" to be 200000 and click "Search".
