@@ -143,8 +143,8 @@ Three, it uses a different constraint on ``ssObjectId`` to return a different ra
 .. code-block:: SQL 
 
     SELECT mpc.ssObjectId, COUNT(ds.ssObjectId), mpc.e, mpc.q 
-    FROM dp03_catalogs.MPCORB AS mpc 
-    JOIN dp03_catalogs.DiaSource AS ds ON mpc.ssObjectId = ds.ssObjectId 
+    FROM dp03_catalogs_10yr.MPCORB AS mpc 
+    JOIN dp03_catalogs_10yr.DiaSource AS ds ON mpc.ssObjectId = ds.ssObjectId 
     WHERE mpc.ssObjectId < -7000000000000000000 
     AND mpc.q > 30 * (1 - mpc.e) 
     AND mpc.q < 100 * (1 - mpc.e) 
@@ -177,7 +177,7 @@ the oft-observed TNO with ``ssObjectId`` = -735085100561880491.
 .. code-block:: SQL 
 
     SELECT ra, decl, mag, filter, midPointTai 
-    FROM dp03_catalogs.DiaSource 
+    FROM dp03_catalogs_10yr.DiaSource 
     WHERE ssObjectId = -735085100561880491
 
 
@@ -227,12 +227,12 @@ heliocentric and topocentric distances, and time of the observations for the TNO
 
 .. code-block:: SQL 
 
-    SELECT ds.mag, ds.filter, ds.midPointTai, 
+    SELECT ds.mag, ds.band, ds.midPointMjdTai, 
     ss.phaseAngle, ss.topocentricDist, ss.heliocentricDist 
-    FROM dp03_catalogs.DiaSource AS ds 
-    JOIN dp03_catalogs.SSSource AS ss ON ds.diaSourceId = ss.diaSourceId
+    FROM dp03_catalogs_10yr.DiaSource AS ds 
+    JOIN dp03_catalogs_10yr.SSSource AS ss ON ds.diaSourceId = ss.diaSourceId
     WHERE ss.ssObjectId = -735085100561880491
-    AND ds.filter = 'r'
+    AND ds.band = 'r'
 
 3.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
 as a function of time (right two plots, below), and see that these quantities are not correlated with time.
