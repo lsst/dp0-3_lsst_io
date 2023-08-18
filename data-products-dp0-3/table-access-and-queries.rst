@@ -124,12 +124,11 @@ Advice for passing an existing list to a new query
 ~~~~~~~~~~~
 
 LSST Query Services (Qserv) do not support subqueries. Thus, using subqueries are **not recommended** 
-although DP0.3 is not hosted on Qserv, but on the Rubin Science Platform (RSP). Instead, when having 
-a list of objects in hand either from a previous query or a user-provided catalog, the list, formatted 
-as a python tuple, can be passed to a new query for table joins. The example query below is to retrieve 
-information about individual observations from the ``DiaSource`` and ``SSSource`` tables for indivdual 
-unique objects selected from the ``SSObject`` table and stored in a ``df_uniqueObj`` table from a previous 
-query.
+although DP0.3 is not hosted on Qserv. Instead, when having a list of objects in hand either from a 
+previous query or a user-provided catalog, the list, formatted as a python tuple, can be passed to a 
+new query for table joins. The example query below is to retrieve information about individual observations 
+from the ``DiaSource`` and ``SSSource`` tables for indivdual unique objects selected from the ``SSObject`` 
+table and stored in a ``df_uniqueObj`` table from a previous query.
 
 .. code-block:: python
 
