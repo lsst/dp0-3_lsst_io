@@ -101,6 +101,7 @@ DP0.3 has been simulated and provided on a best-effort basis. There are at prese
 
 These columns may be updated in the future to fill in their values.
 
+
 Table joins
 ~~~~~~~~~~~
 
@@ -115,6 +116,41 @@ The ``DiaSource`` and ``SSSource`` tables are N:1 with both the ``SSObject`` and
 They *can* be joined on the ``ssObjectId`` column, but caution and testing should be used here.
 The N:1 nature of these joins means that the data retrieved can contain columns of repeated values,
 be larger than expected, and take a long time to execute.
+
+
+.. _DP0-3-Table-Access-ADQL-passing-list:
+
+Advice for passing an existing object list to a new query
+~~~~~~~~~~~
+
+LSST Query Services (Qserv) do not support subqueries. Thus, using subqueries are **not recommended** 
+although DP0.3 is not hosted on Qserv, but on the Rubin Science Platform (RSP). Instead, when having 
+a list of objects in hand either from a previous query or a user-provided catalog, the list, formatted 
+as a python tuple, can be passed to a new query for table joins. The example query below is to retrieve 
+information about individual observations from the ``DiaSource`` and ``SSSource`` tables for each unique 
+object selected from the ``SSObject`` table in a previous query.
+
+.. code-block:: python
+
+    from lsst.rsp import get_tap_service, retrieve_query
+    service = get_tap_service()
+
+    query = """SELECT dia.ssObjectId, dia.diaSourceId, dia.mag,
+    dia.magErr, dia.band, dia.midPointMjdTai,
+    sss.phaseAngle, sss.topocentricDist, sss.heliocentricDist
+    FROM dp03_catalogs_10yr.DiaSource as dia
+    INNER JOIN dp03_catalogs_10yr.SSSource as sss
+    ON dia.diaSourceId = sss.diaSourceId
+    WHERE dia.ssObjectId
+    IN {}
+    """.format(tuple(df_uniqueObj['ssObjectId']))
+
+    results = service.search(query).to_table()
+
+
+A relevent example for DP0.2 can be found `here <https://dp0-2.lsst.io/data-access-analysis-tools/adql-recipes.html#individual-objects>`__. 
+Refer `DP0.2 ADQL Recipes <https://dp0-2.lsst.io/data-access-analysis-tools/adql-recipes.html>`__ 
+for more general ADQL advice.
 
 
 Non-random subsets
