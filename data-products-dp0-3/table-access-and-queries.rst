@@ -135,6 +135,8 @@ table and stored in a ``df_uniqueObj`` table from a previous query.
     from lsst.rsp import get_tap_service, retrieve_query
     service = get_tap_service()
 
+    sId_list = [-9222537907249304995, -9222483995821535577, -9221971933016733299]
+
     query = """SELECT dia.ssObjectId, dia.diaSourceId, dia.mag,
     dia.magErr, dia.band, dia.midPointMjdTai,
     sss.phaseAngle, sss.topocentricDist, sss.heliocentricDist
@@ -143,12 +145,9 @@ table and stored in a ``df_uniqueObj`` table from a previous query.
     ON dia.diaSourceId = sss.diaSourceId
     WHERE dia.ssObjectId
     IN {}
-    """.format(tuple(df_uniqueObj['ssObjectId']))
+    """.format(tuple(sId_list))
 
     results = service.search(query).to_table()
-
-
-A relevent example for DP0.2 can be found `here <https://dp0-2.lsst.io/data-access-analysis-tools/adql-recipes.html#individual-objects>`__. 
 
 
 Non-random subsets
