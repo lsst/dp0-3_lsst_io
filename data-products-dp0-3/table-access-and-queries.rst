@@ -121,9 +121,9 @@ be larger than expected, and take a long time to execute.
 .. _DP0-3-Table-Access-ADQL-passing-list:
 
 Advice for passing an existing list to a new query
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-LSST Query Services (Qserv) do not support subqueries. Thus, using subqueries are **not recommended** 
+LSST Query Services (Qserv) do not support subqueries. Thus, using subqueries is **not recommended** 
 although DP0.3 is not hosted on Qserv. Instead, when having a list of objects in hand either from a 
 previous query or a user-provided catalog, the list, formatted as a python tuple, can be passed to a 
 new query for table joins. The example query below is to retrieve information about individual observations 
