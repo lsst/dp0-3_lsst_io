@@ -38,7 +38,9 @@ This tutorial demonstrates how to identify a population of `Trans-Neptunian Obje
 TNOs are defined by having orbits with semi-major axes beyond the orbit of Neputne (> 30.1 AU).
 As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) as
 ``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
-a sample of TNOs can be identified in the DP0.3 data set (see Step 1).
+a sample of TNOs can be identified in the DP0.3 data set (see Step 1).  
+Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System).  
+We will exclude those in our analysis, as application of the formula above would result in a negative value of ``a``.  
 
 Compared to Solar System objects closer to Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs),
 TNOs move relatively slowly across the sky.
@@ -86,12 +88,16 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
     :name: MLG_portal_tut03_step01a
     :alt: A screenshot of the default results view for the query.
 
-    The default results view for the query, with heatmap at left and table at right.
+The default results view for the query, with the table at left and the heatmap at right.  
 
-1.5. Create a column of semi-major axis, ``a``.
+1.5.  Exclude the object moving on unbound orbits.  
+Note that a small fraction of the objects - roughly one in a thousand - have derived eccentricities > 1 meaning those are not bound to the Solar System.  
+You can exclude those objects from your analysis by entering ``< 1`` in the box below the table heading ``e``, and hitting the carriage return.  
+
+1.6. Create a column of semi-major axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
-In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" to "q/(1-e)", the "Units" to "AU",
-and the "Description" to "semi-major axis".
+In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" to "q/(1-e)", the "Units" to "au",
+and the "Description" to "semi-major axis".  
 Click "Add Column", and see the new column appear in the table.
 
 .. figure:: /_static/MLG_portal_tut03_step01b.png
@@ -99,9 +105,9 @@ Click "Add Column", and see the new column appear in the table.
     :name: MLG_portal_tut03_step01b
     :alt: A screenshot of the pop-up window to add a column.
 
-    The "Add a column" pop-up window.
+The "Add a column" pop-up window.  
 
-1.6. Create a scatter plot of inclination vs. semi-major axis.
+1.7. Create a scatter plot of inclination vs. semi-major axis.
 In the plot panel, click the "Settings" icon (double gears), and select "Add New Chart".
 Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
 Set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.
@@ -115,7 +121,7 @@ Click "OK".
 
     Create a new plot with these parameters.
 
-1.7. Delete the default plot by clicking on the blue cross in the upper right corner, so that only
+1.8. Delete the default plot by clicking on the blue cross in the upper right corner, so that only
 the newly-created plot appears (it should look like the plot below).
 TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter space.
 
@@ -124,10 +130,9 @@ TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter spac
     :name: MLG_portal_tut03_step01d
     :alt: A screenshot of the inclination versus semi-major axis showing a clear population of TNOs.
 
-    The population of TNOs has x-values greater than 30 AU.
+    The population of TNOs has x-values greater than 30 au.
 
-1.8. Clear the query and results and return to the RSP TAP Search form.
-
+1.9. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-2:
 
@@ -258,7 +263,10 @@ Add a new scatter plot showing the r-band magnitude as a function of phase angle
 Step 4.  Exercises for the learner: 
 ===================================
 
-(1) Plot the histogram of the number of visits to the solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
+(1) Plot the distribution of the objects you've made in Step 1.8 as a heatmap.  
+Such a plot will show more clearly the density of the objects in the "a"  vs. "incl" plane.  
 
-(2) Repeat the steps above for another object with a large number of observations (say another one with ``numObs`` > 10,000).  
+(2) Plot the histogram of the number of visits to the solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
+
+(3) Repeat the steps above for another object with a large number of observations (say another one with ``numObs`` > 10,000).  
 
