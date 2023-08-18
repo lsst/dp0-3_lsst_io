@@ -150,8 +150,6 @@ query.
 
 
 A relevent example for DP0.2 can be found `here <https://dp0-2.lsst.io/data-access-analysis-tools/adql-recipes.html#individual-objects>`__. 
-Refer `DP0.2 ADQL Recipes <https://dp0-2.lsst.io/data-access-analysis-tools/adql-recipes.html>`__ 
-for more general ADQL advice.
 
 
 Non-random subsets
