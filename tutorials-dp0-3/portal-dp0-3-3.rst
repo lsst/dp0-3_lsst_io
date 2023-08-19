@@ -39,7 +39,7 @@ TNOs are defined by having orbits with semi-major axes beyond the orbit of Neput
 As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) as
 ``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
 a sample of TNOs can be identified in the DP0.3 data set (see Step 1).  
-Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System).  
+Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on pafrabolic or hyperbolic orbits).  
 We will exclude those in our analysis, as application of the formula above would result in a negative value of ``a``.  
 
 Compared to Solar System objects closer to Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs),
