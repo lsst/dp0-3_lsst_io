@@ -150,11 +150,12 @@ Three, it uses a different constraint on ``ssObjectId`` to return a different ra
     SELECT mpc.ssObjectId, COUNT(ds.ssObjectId), mpc.e, mpc.q 
     FROM dp03_catalogs_10yr.MPCORB AS mpc 
     JOIN dp03_catalogs_10yr.DiaSource AS ds ON mpc.ssObjectId = ds.ssObjectId 
-    WHERE mpc.ssObjectId < -7000000000000000000 
+    WHERE mpc.ssObjectId < -700000000000000000 
     AND mpc.q > 30 * (1 - mpc.e) 
     AND mpc.q < 100 * (1 - mpc.e) 
     GROUP BY mpc.ssObjectId, mpc.e, mpc.q 
 
+This search might take up to a minute.  
 
 2.2. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
 which is not particularly useful but it does show the number of detections for the most oft-detected TNOs 
@@ -167,17 +168,12 @@ Click twice on the ``COUNT`` in the table to short descending by count.
 
     The default results view from the ADQL query above.
 
+2.3. The query returns about 12,600 objects.  
+We will continue with the object with the largest number of observations - one with 12,103 observations, one with with ``ssObjectId`` = -735085100561880491.  
 
-**WHY DOES THIS QUERY NOT CONTAIN ``ssObjectId`` = -735085100561880491 ????**
-
-**IT SHOULD CONTAIN IT. IT'S HOW I WAS GOING TO SEGUAY FROM STEP 1 TO 2!! :(**
-
-2.3. **SKIP THIS STEP FOR NOW; FIGURE OUT HOW TO GO FROM THE ABOVE TO BELOW LATER**
-
-
-2.4. Return to the ADQL query interface and use the following statement to retrieve the
+Return to the ADQL query interface and use the following statement to retrieve the
 sky coordinates, magnitudes, filter, and time of observations (``midPointTai``) for 
-the oft-observed TNO with ``ssObjectId`` = -735085100561880491.
+the oft-observed TNO with ``ssObjectId`` as above.  
 
 .. code-block:: SQL 
 
@@ -186,10 +182,9 @@ the oft-observed TNO with ``ssObjectId`` = -735085100561880491.
     WHERE ssObjectId = -735085100561880491
 
 
-2.5. The default results view will show the "Coverage" map at upper left.
+2.4. The default results view will show the "Coverage" map at upper left.
 In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
-Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is
-redundant with the default plot.
+Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is redundant with the default plot.
 At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
 
 .. figure:: /_static/MLG_portal_tut03_step02b.png
@@ -199,7 +194,7 @@ At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show on
     The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
 
 
-2.6. Set the color of individual points to represent the time of the observation to 
+2.5. Set the color of individual points to represent the time of the observation to 
 better illustrate how the object moves across the sky.
 In the plot panel, click on the "Settings" icon (double gears) to open the "Plot Parameters"
 pop-up window.
@@ -213,7 +208,7 @@ Then click "Apply".
 
     The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
 
-2.7. Clear the query and results and return to the RSP TAP Search form.
+2.6. Clear the query and results and return to the RSP TAP Search form.
 
 
 
