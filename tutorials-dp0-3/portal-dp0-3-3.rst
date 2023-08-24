@@ -169,7 +169,7 @@ Click twice on the ``COUNT`` in the table to short descending by count.
     The default results view from the ADQL query above.
 
 2.3. The query returns about 12,600 objects.  
-We will continue with the object with the largest number of observations - one with 12,103 observations, one with with ``ssObjectId`` = -735085100561880491.  
+We will continue with the object with the largest number of observations - the one with 12,103 observations, with ``ssObjectId`` = -735085100561880491.  
 
 Return to the ADQL query interface and use the following statement to retrieve the
 sky coordinates, magnitudes, filter, and time of observations (``midPointTai``) for 
