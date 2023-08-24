@@ -39,7 +39,7 @@ TNOs are defined by having orbits with semi-major axes beyond the orbit of Neput
 As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) as
 ``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
 a sample of TNOs can be identified in the DP0.3 data set (see Step 1).  
-Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on pafrabolic or hyperbolic orbits).  
+Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on parabolic or hyperbolic orbits).  
 We will exclude those in our analysis, as application of the formula above would result in a negative value of ``a``.  
 
 Compared to Solar System objects closer to Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs),
@@ -92,7 +92,7 @@ The default results view for the query, with the table at left and the heatmap a
 
 1.5.  Exclude the object moving on unbound orbits.  
 Note that a small fraction of the objects - roughly one in a thousand - have derived eccentricities > 1 meaning those are not bound to the Solar System.  
-You can exclude those objects from your analysis by entering ``< 1`` in the box below the table heading ``e``, and hitting the carriage return.  
+You can exclude those objects from your analysis by entering ``< 1`` in the box underneath the table heading ``e``, and hitting the carriage return.  
 
 1.6. Create a column of semi-major axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
@@ -169,7 +169,7 @@ Click twice on the ``COUNT`` in the table to short descending by count.
     The default results view from the ADQL query above.
 
 2.3. The query returns about 12,600 objects.  
-We will continue with the object with the largest number of observations - the one with 12,103 observations, with ``ssObjectId`` = -735085100561880491.  
+We will continue with the object with the largest number of observations - 12,103 of them! - with the ``ssObjectId`` = -735085100561880491.  
 
 Return to the ADQL query interface and use the following statement to retrieve the
 sky coordinates, magnitudes, filter, and time of observations (``midPointTai``) for 
@@ -243,6 +243,18 @@ Add a new scatter plot showing the r-band magnitude as a function of phase angle
     :alt: A screenshot of three plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle.
 
     Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
+
+3.3.  Plot the topocentric and heliocentric distances of the object as a function of time.  
+Here, you will use the columns in the table which you generated in Step 3.1.  .  
+First, delete two of the the three plots prepared in Step 3.2 by clicking on the blue ``X`` in the upper right-hand part of the plot panels to make space for new plots.  
+Then add a pair of new plots, using the plot "settings" as above.  
+In both cases, enter ``midPointMjdTai`` for X-axis, but for Y axis - enter ``topocentricDist`` for one plot, and ``heliocentricDist`` for the other.  
+After you remove the panel containing the plot made in the previous step, you will see the plots as below.  
+Note the periodic change of the topocentric distance with time - resulting from the Earth's motion around the Sun.  
+
+.. figure:: /_static/MLG_portal_tut03_step03a.png
+    :name: portal_tut03_step03a
+    :alt: A screenshot of three plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle.
 
 
 **FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
