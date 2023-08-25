@@ -84,8 +84,8 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
 
 1.4. The default results view will show a heatmap plot of ``q`` vs. ``e`` at left, and the table view at right.
 
-.. figure:: /_static/MLG_portal_tut03_step01a.png
-    :name: MLG_portal_tut03_step01a
+.. figure:: /_static/portal_tut03_step01a.png
+    :name: portal_tut03_step01a
     :alt: A screenshot of the default results view for the query.
 
 The default results view for the query, with the table at left and the heatmap at right.  
@@ -93,6 +93,12 @@ The default results view for the query, with the table at left and the heatmap a
 1.5.  Exclude the object moving on unbound orbits.  
 Note that a small fraction of the objects - roughly one in a thousand - have derived eccentricities > 1 meaning those are not bound to the Solar System.  
 You can exclude those objects from your analysis by entering ``< 1`` in the box underneath the table heading ``e``, and hitting the carriage return.  
+To see the distribution of ``q`` vs. ``e`` more clearly, also restrict the range of ``q`` by entering ``< 50`` and hitting the carriage return.  
+This will result in a slightly modified display as below.  
+
+.. figure:: /_static/portal_tut03_step01b.png
+    :name: portal_tut03_step01b
+    :alt: A screenshot of the default results view for the query.
 
 1.6. Create a column of semi-major axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
@@ -100,9 +106,9 @@ In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" 
 and the "Description" to "semi-major axis".  
 Click "Add Column", and see the new column appear in the table.
 
-.. figure:: /_static/MLG_portal_tut03_step01b.png
+.. figure:: /_static/portal_tut03_step01c.png
     :width: 400
-    :name: MLG_portal_tut03_step01b
+    :name: portal_tut03_step01c
     :alt: A screenshot of the pop-up window to add a column.
 
 The "Add a column" pop-up window.  
@@ -114,9 +120,9 @@ Set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 
 Set the axis labels as shown in the figure below.
 Click "OK".
 
-.. figure:: /_static/MLG_portal_tut03_step01c.png
+.. figure:: /_static/portal_tut03_step01d.png
     :width: 400
-    :name: MLG_portal_tut03_step01c
+    :name: portal_tut03_step01d
     :alt: A screenshot of the plot parameters pop-up window.
 
     Create a new plot with these parameters.
@@ -125,9 +131,9 @@ Click "OK".
 the newly-created plot appears (it should look like the plot below).
 TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter space.
 
-.. figure:: /_static/MLG_portal_tut03_step01d.png
+.. figure:: /_static/portal_tut03_step01e.png
     :width: 600
-    :name: MLG_portal_tut03_step01d
+    :name: portal_tut03_step01e
     :alt: A screenshot of the inclination versus semi-major axis showing a clear population of TNOs.
 
     The population of TNOs has x-values greater than 30 au.
@@ -162,8 +168,8 @@ which is not particularly useful but it does show the number of detections for t
 is in the thousands.
 Click twice on the ``COUNT`` in the table to short descending by count.
 
-.. figure:: /_static/MLG_portal_tut03_step02a.png
-    :name: MLG_portal_tut03_step02a
+.. figure:: /_static/portal_tut03_step02a.png
+    :name: portal_tut03_step02a
     :alt: A screenshot of the default results view with the table sorted by count.
 
     The default results view from the ADQL query above.
@@ -171,13 +177,12 @@ Click twice on the ``COUNT`` in the table to short descending by count.
 2.3. The query returns about 12,600 objects.  
 We will continue with the object with the largest number of observations - 12,103 of them! - with the ``ssObjectId`` = -735085100561880491.  
 
-Return to the ADQL query interface and use the following statement to retrieve the
-sky coordinates, magnitudes, filter, and time of observations (``midPointTai``) for 
+Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter, and time of observations (``midPointTai``) for 
 the oft-observed TNO with ``ssObjectId`` as above.  
 
 .. code-block:: SQL 
 
-    SELECT ra, decl, mag, filter, midPointTai 
+    SELECT ra, dec, mag, band, midPointMjdTai 
     FROM dp03_catalogs_10yr.DiaSource 
     WHERE ssObjectId = -735085100561880491
 
@@ -187,8 +192,8 @@ In the future, with real LSST data, this map would have an underlay of the LSST 
 Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is redundant with the default plot.
 At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
 
-.. figure:: /_static/MLG_portal_tut03_step02b.png
-    :name: MLG_portal_tut03_step02b
+.. figure:: /_static/portal_tut03_step02b.png
+    :name: portal_tut03_step02b
     :alt: The default results view after clicking on bi-view tables.
 
     The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
@@ -201,9 +206,9 @@ pop-up window.
 Under "Trace Options", for "Color Map" enter ``midPointTai`` and for "Color Scale" enter "Rainbow".
 Then click "Apply".
 
-.. figure:: /_static/MLG_portal_tut03_step02c.png
+.. figure:: /_static/portal_tut03_step02c.png
     :width: 600
-    :name: MLG_portal_tut03_step02c
+    :name: portal_tut03_step02c
     :alt: A screenshot of the plot of sky coordinates colored as a function of time.
 
     The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
