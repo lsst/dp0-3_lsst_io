@@ -83,6 +83,7 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
 1.4. The default results view will show a heatmap plot of ``q`` vs. ``e`` at left, and the table view at right.
 
 .. figure:: /_static/portal_tut03_step01a.png
+    :width: 600
     :name: portal_tut03_step01a
     :alt: A screenshot of the default results view for the query.
 
@@ -95,6 +96,7 @@ To see the distribution of ``q`` vs. ``e`` more clearly, also restrict the range
 This will result in a slightly modified display as below.  
 
 .. figure:: /_static/portal_tut03_step01b.png
+    :width: 600
     :name: portal_tut03_step01b
     :alt: A screenshot of the default results view for the modified query.
 
@@ -169,7 +171,7 @@ is in the thousands.
 Click twice on the ``COUNT`` in the table to short descending by count.
 
 .. figure:: /_static/portal_tut03_step02a.png
-    :width: 400
+    :width: 600
     :name: portal_tut03_step02a
     :alt: A screenshot of the default results view with the table sorted by count.
 
@@ -194,7 +196,7 @@ Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. D
 At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
 
 .. figure:: /_static/portal_tut03_step02b.png
-    :width: 400
+    :width: 600
     :name: portal_tut03_step02b
     :alt: The default results view after clicking on bi-view tables.
 
@@ -245,6 +247,7 @@ Add a new scatter plot showing the r-band magnitude as a function of phase angle
 
 .. figure:: /_static/portal_tut03_step03a.png
     :name: portal_tut03_step03a
+    :width: 600
     :alt: A screenshot of three plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle.
 
     Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
@@ -257,7 +260,7 @@ In both cases, enter ``midPointMjdTai`` for X-axis, but for Y axis - enter ``top
 After you remove the panel containing the plot made in the previous step, you will see the plots as below.  
 
 .. figure:: /_static/portal_tut03_step03b.png
-    :width: 400
+    :width: 600
     :name: portal_tut03_step03b
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
@@ -285,6 +288,7 @@ You can also plot the ``topocentricX`` vs. ``heliocentricX`` where you can clear
 
  .. figure:: /_static/portal_tut03_step04a.png
     :name: portal_tut03_step04a
+    :width: 600
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
 Visualization of the TNO's trajectory
