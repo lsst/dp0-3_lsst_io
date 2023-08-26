@@ -177,7 +177,7 @@ Click twice on the ``COUNT`` in the table to short descending by count.
 2.3. The query returns about 12,600 objects.  
 We will continue with the object with the largest number of observations - 12,103 of them! - with the ``ssObjectId`` = -735085100561880491.  
 
-Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter, and time of observations (``midPointTai``) for 
+Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter, and time of observations (``midPointMjdTai``) for 
 the oft-observed TNO with ``ssObjectId`` as above.  
 
 .. code-block:: SQL 
@@ -203,7 +203,7 @@ At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show on
 better illustrate how the object moves across the sky.
 In the plot panel, click on the "Settings" icon (double gears) to open the "Plot Parameters"
 pop-up window.
-Under "Trace Options", for "Color Map" enter ``midPointTai`` and for "Color Scale" enter "Rainbow".
+Under "Trace Options", for "Color Map" enter ``midPointMjdTai`` and for "Color Scale" enter "Rainbow".
 Then click "Apply".
 
 .. figure:: /_static/portal_tut03_step02c.png
