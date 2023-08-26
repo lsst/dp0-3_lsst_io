@@ -98,7 +98,10 @@ This will result in a slightly modified display as below.
 
 .. figure:: /_static/portal_tut03_step01b.png
     :name: portal_tut03_step01b
-    :alt: A screenshot of the default results view for the query.
+    :alt: A screenshot of the default results view for the modified query.
+
+The view for the query with e < 1 and q < 50.  
+
 
 1.6. Create a column of semi-major axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
