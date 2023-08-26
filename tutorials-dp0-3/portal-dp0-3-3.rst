@@ -243,23 +243,24 @@ heliocentric and topocentric distances, and time of the observations for the TNO
 as a function of time (right two plots, below), and see that these quantities are not correlated with time.
 Add a new scatter plot showing the r-band magnitude as a function of phase angle, which are correlated.
 
-.. figure:: /_static/MLG_portal_tut03_step03a.png
+.. figure:: /_static/portal_tut03_step03a.png
     :name: portal_tut03_step03a
     :alt: A screenshot of three plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle.
 
     Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
 
 3.3.  Plot the topocentric and heliocentric distances of the object as a function of time.  
-Here, you will use the columns in the table which you generated in Step 3.1.  .  
+Here, you will use the columns in the table which you generated in Step 3.1.  
 First, delete two of the the three plots prepared in Step 3.2 by clicking on the blue ``X`` in the upper right-hand part of the plot panels to make space for new plots.  
-Then add a pair of new plots, using the plot "settings" as above.  
+Then add a pair of new plots, clicking on the "plot settings."  
 In both cases, enter ``midPointMjdTai`` for X-axis, but for Y axis - enter ``topocentricDist`` for one plot, and ``heliocentricDist`` for the other.  
 After you remove the panel containing the plot made in the previous step, you will see the plots as below.  
-Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 2.5.  
 
-.. figure:: /_static/MLG_portal_tut03_step03b.png
+.. figure:: /_static/portal_tut03_step03b.png
     :name: portal_tut03_step03b
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
+
+Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 2.5.  
 
 .. _DP0-3-Portal-3-Step-4:
 
@@ -275,12 +276,13 @@ Step 4. Visualize the TNO's trajectory in 3-D
     FROM dp03_catalogs_10yr.SSSource
     WHERE ssObjectId = -735085100561880491
 
-4.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` as a function of ``heliocentricY``.  
-Note that the object moves relatively slowly in X (as well as in Y), covering only a few au in 10 years - this is expected given its distance from the Sun, which you saw in Step 3.  
+4.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` for y and ``heliocentricY`` for x.  
+Note that the object moves relatively slowly in heliocentric coordinates X (as well as in Y), covering only a few au in 10 years.  
+This is expected given its distance from the Sun, which you saw in Step 3.  
 Now observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic.  
 You can also plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see the effect of position of the TNO on the sky as a result of Earth's orbital motion.  
 
- .. figure:: /_static/MLG_portal_tut03_step04a.png
+ .. figure:: /_static/portal_tut03_step04a.png
     :name: portal_tut03_step04a
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
