@@ -23,7 +23,7 @@
 
 **Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:** July 6, 2023
+**Last verified to run:** August 25, 2023
 
 **Targeted learning level:** Intermediate
 
@@ -56,8 +56,6 @@ Note that DP0.2 did not include DDF observations, so the ability to explore scie
 This tutorial assumes the successful completion of the beginner-level DP0.3 Portal tutorials,
 and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
 For more information about the DP0.3 catalogs, tables, and columns, see the :ref:`DP0-3-Data-Products-DPDD`.  
-
-
 
 .. _DP0-3-Portal-3-Step-1:
 
@@ -101,7 +99,6 @@ This will result in a slightly modified display as below.
     :alt: A screenshot of the default results view for the modified query.
 
 The view for the query with e < 1 and q < 50.  
-
 
 1.6. Create a column of semi-major axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
@@ -172,6 +169,7 @@ is in the thousands.
 Click twice on the ``COUNT`` in the table to short descending by count.
 
 .. figure:: /_static/portal_tut03_step02a.png
+    :width: 400
     :name: portal_tut03_step02a
     :alt: A screenshot of the default results view with the table sorted by count.
 
@@ -196,6 +194,7 @@ Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. D
 At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
 
 .. figure:: /_static/portal_tut03_step02b.png
+    :width: 400
     :name: portal_tut03_step02b
     :alt: The default results view after clicking on bi-view tables.
 
@@ -217,8 +216,6 @@ Then click "Apply".
     The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
 
 2.6. Clear the query and results and return to the RSP TAP Search form.
-
-
 
 .. _DP0-3-Portal-3-Step-3:
 
@@ -260,6 +257,7 @@ In both cases, enter ``midPointMjdTai`` for X-axis, but for Y axis - enter ``top
 After you remove the panel containing the plot made in the previous step, you will see the plots as below.  
 
 .. figure:: /_static/portal_tut03_step03b.png
+    :width: 400
     :name: portal_tut03_step03b
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
