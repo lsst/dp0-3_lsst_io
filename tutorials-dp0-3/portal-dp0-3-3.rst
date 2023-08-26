@@ -280,7 +280,7 @@ Step 4. Visualize the TNO's trajectory in 3-D
     WHERE ssObjectId = -735085100561880491
 
 4.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` for y and ``heliocentricY`` for x.  
-Note that the object moves relatively slowly in heliocentric coordinates X (as well as in Y), covering only a few au in 10 years.  
+Note that the object moves relatively slowly in heliocentric coordinate X (as well as in Y), covering only a few au in 10 years.  
 This is expected given its distance from the Sun, which you saw in Step 3.  
 Now observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic.  
 You can also plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see the effect of position of the TNO on the sky as a result of Earth's orbital motion.  
@@ -289,6 +289,7 @@ You can also plot the ``topocentricX`` vs. ``heliocentricX`` where you can clear
     :name: portal_tut03_step04a
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
+Visualization of the TNO's trajectory
 
 **FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
 
