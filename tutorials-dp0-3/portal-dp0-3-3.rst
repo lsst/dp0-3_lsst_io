@@ -87,7 +87,7 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
     :name: portal_tut03_step01a
     :alt: A screenshot of the default results view for the query.
 
-The default results view for the query, with the table at left and the heatmap at right.  
+    The default results view for the query, with the table at left and the heatmap at right.  
 
 1.5.  Exclude the object moving on unbound orbits.  
 Note that a small fraction of the objects - roughly one in a thousand - have derived eccentricities > 1 meaning those are not bound to the Solar System.  
@@ -100,7 +100,7 @@ This will result in a slightly modified display as below.
     :name: portal_tut03_step01b
     :alt: A screenshot of the default results view for the modified query.
 
-The view for the query with e < 1 and q < 50.  
+    The view for the query with e < 1 and q < 50.  
 
 1.6. Create a column of semi-major axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
@@ -113,7 +113,7 @@ Click "Add Column", and see the new column appear in the table.
     :name: portal_tut03_step01c
     :alt: A screenshot of the pop-up window to add a column.
 
-The "Add a column" pop-up window.  
+    The "Add a column" pop-up window.  
 
 1.7. Create a scatter plot of inclination vs. semi-major axis.
 In the plot panel, click the "Settings" icon (double gears), and select "Add New Chart".
@@ -264,7 +264,7 @@ After you remove the panel containing the plot made in the previous step, you wi
     :name: portal_tut03_step03b
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
-Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 2.5.  
+    Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 2.5.  
 
 .. _DP0-3-Portal-3-Step-4:
 
@@ -291,7 +291,7 @@ You can also plot the ``topocentricX`` vs. ``heliocentricX`` where you can clear
     :width: 600
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
-Visualization of the TNO's trajectory
+    Visualization of the TNO's trajectory
 
 **FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
 
