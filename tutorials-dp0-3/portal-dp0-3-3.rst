@@ -140,7 +140,23 @@ TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter spac
 
     The population of TNOs has x-values greater than 30 au.
 
-1.9. Clear the query and results and return to the RSP TAP Search form.
+1.9.  Now that you've identified the population of the trans-Neptunian objects, you can further study their properties.  
+You can re-execute the query from Step 1.2, but now include in your query _all_ objects with ``a > 30.1``, with bound orbits (``e < 1``)
+ and those were more than 10 observations.  
+For this last restriction, you will have to perform a table join on the ``dp03_catalogs_10yr.SSObject`` table.  
+
+.. code-block:: SQL 
+
+    SELECT mpc.ssObjectId, mpc.e, mpc.incl, mpc.q, mpc.node, mpc.peri, mpc.mpcH, mpc.mpcG 
+    FROM dp03_catalogs_10yr.MPCORB as mpc 
+    JOIN dp03_catalogs_10yr.SSObject as sso 
+    ON mpc.ssObjectId = sso.ssObjectId 
+    WHERE mpc.q / (1 - mpc.e) > 30.1 AND sso.numObs > 10 AND mpc.e < 1 
+
+To be able to corrrelate any 
+ 
+
+1.10. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-2:
 
