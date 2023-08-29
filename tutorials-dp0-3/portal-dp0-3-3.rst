@@ -15,9 +15,9 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-######################################################
-03. Explore a well-sampled TNO in a DDF (Intermediate)
-######################################################
+#################################################################################################################
+03. Study the population of Trans-Neptunian Objects (TNOs) and explore a well-sampled TNO in a DDF (Intermediate)
+#################################################################################################################
 
 .. This section should provide a brief, top-level description of the page.
 
@@ -59,15 +59,15 @@ For more information about the DP0.3 catalogs, tables, and columns, see the :ref
 
 .. _DP0-3-Portal-3-Step-1:
 
-Step 1. Identify a population of TNOs
-=====================================
+Step 1. Identify and explore a population of TNOs
+=================================================
 
 1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 At upper right, next to "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top.
 
 1.2. At upper right, next to "View" choose "Edit ADQL".
 Enter the following ADQL statement into the ADQL Query box.
-It will return the ellipticiety (``e``), perihelion distance (``q``), and inclination (``incl``) for a
+It will return the ellipticity (``e``), perihelion distance (``q``), and inclination (``incl``) for a
 random subset of objects in the ``MPCORB`` table.
 For an explanation of why this constraint on ``ssObjectId`` returns a random sample, see Step 2 of
 DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables".
@@ -136,16 +136,15 @@ TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter spac
 .. figure:: /_static/portal_tut03_step01e.png
     :width: 600
     :name: portal_tut03_step01e
-    :alt: A screenshot of the inclination versus semi-major axis showing a clear population of TNOs.
+    :alt: A screenshot of the inclination versus semi-major axis plot, showing a clear population of TNOs.
 
     The population of TNOs has x-values greater than 30 au.
 
-1.9.  Now that you've identified the population of the trans-Neptunian objects, you can further study their properties.  
+1.9.  Now that you've identified the population of the Trans-Neptunian Objects, you can further study their properties.  
 To begin with, we will plot the eccentricity ``e`` vs. semi-major axis ``a`` of the orbit.  
 You can re-execute the query from Step 1.2, but now include in your query all objects with ``a > 30.1``, with bound orbits (``e < 1``) and those with more than 10 observations 
 (note no restriction ``WHERE ssObjectId > 9000000000000000000`` which we used in Section 1.2).  
-For this last restriction, you will have to perform a table join on the ``dp03_catalogs_10yr.SSObject`` table as below.  
-We anticipate we will need to study additional parameters - so in this query we also include the H magnitude and inclination of the object's orbit.  
+Note that requring more than 10 observations, you will have to perform a table join on the ``dp03_catalogs_10yr.SSObject`` table as below.  
 
 .. code-block:: SQL 
 
@@ -156,15 +155,15 @@ We anticipate we will need to study additional parameters - so in this query we 
     WHERE mpc.q / (1 - mpc.e) > 30.1 AND sso.numObs > 10 AND mpc.e < 1 
 
 Now plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
-This time, (in contrast to Step 1.6 but accomplishing the same goal) you will calculate ``a`` from ``e`` and ``q`` via 
+This time (in contrast to Step 1.6 but accomplishing the same goal) you will calculate ``a`` from ``e`` and ``q`` via 
 setting derived plot parameters rather than creating another column in the right-hand table.  
 To do so, click on the "plot settings" (two gears) on the left-hand panel, click on "add new chart."  
-Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  You can any color map you find compelling.  
+Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  You can chose any color map you find compelling.  
 The plot parameters used here are below.  
-In particular, the X-axis is restricted to ``a < 100`` to illustrate the region about 3 x the Neptune's orbit.  
+In particular, the X-axis is restricted to ``a < 100`` to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
 
 .. figure:: /_static/portal_tut03_step01f.png
-    :width: 600
+    :width: 400
     :name: portal_tut03_step01f
     :alt: A screenshot of the plot parameters for the eccentricity vs. semi-major axis plot 
 
@@ -182,6 +181,16 @@ The plot resulting from applying the plot settings above is below.
 Note that there is a clear indication of two distinct populations.  
 The majority of the objects have low eccentricity, and are reasonably close past Neptune.  
 In addition, there is a separate population of high-eccentricity objects, and those are most likely comets.  
+
+And now for something that I can't explain:  distribution of H magnitudes as a functon of semi-major axis of the orbit.  
+In the previous plot, replace the "plot settings" with "q/(1-e)" for the x-axis, and H magnitude for y axis.  This results in the plot below.    
+
+.. figure:: /_static/portal_tut03_step01h.png
+    :width: 600
+    :name: portal_tut03_step01h
+    :alt: A screenshot of the plot of H magnitude vs. semi-major axis 
+
+Why are there so many objects with H magnitude exactly at 15?  
  
 1.10. Clear the query and results and return to the RSP TAP Search form.
 
@@ -219,6 +228,7 @@ Click twice on the ``COUNT`` in the table to short descending by count.
     :alt: A screenshot of the default results view with the table sorted by count.
 
     The default results view from the ADQL query above.
+
 
 2.3. The query returns about 12,600 objects.  
 We will continue with the object with the largest number of observations - 12,103 of them! - with the ``ssObjectId`` = -735085100561880491.  
@@ -259,6 +269,7 @@ Then click "Apply".
     :alt: A screenshot of the plot of sky coordinates colored as a function of time.
 
     The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
+
 
 2.6. Clear the query and results and return to the RSP TAP Search form.
 
@@ -312,7 +323,7 @@ After you remove the panel containing the plot made in the previous step, you wi
 .. _DP0-3-Portal-3-Step-4:
 
 Step 4. Visualize the TNO's trajectory in 3-D 
-===================================================
+=============================================
 
 4.1.  Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory:  
 
