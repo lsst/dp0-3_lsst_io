@@ -141,18 +141,47 @@ TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter spac
     The population of TNOs has x-values greater than 30 au.
 
 1.9.  Now that you've identified the population of the trans-Neptunian objects, you can further study their properties.  
-You can re-execute the query from Step 1.2, but now include in your query _all_ objects with ``a > 30.1``, with bound orbits (``e < 1``) and those with more than 10 observations.  
+To begin with, we will plot the eccentricity ``e`` vs. semi-major axis ``a`` of the orbit.  
+You can re-execute the query from Step 1.2, but now include in your query all objects with ``a > 30.1``, with bound orbits (``e < 1``) and those with more than 10 observations 
+(note no restriction ``WHERE ssObjectId > 9000000000000000000`` which we used in Section 1.2).  
 For this last restriction, you will have to perform a table join on the ``dp03_catalogs_10yr.SSObject`` table as below.  
+We anticipate we will need to study additional parameters - so in this query we also include the H magnitude and inclination of the object's orbit.  
 
 .. code-block:: SQL 
 
-    SELECT mpc.ssObjectId, mpc.e, mpc.incl, mpc.q, mpc.node, mpc.peri, mpc.mpcH, mpc.mpcG 
+    SELECT mpc.ssObjectId, mpc.e, mpc.incl, mpc.q, mpc.mpcH 
     FROM dp03_catalogs_10yr.MPCORB as mpc 
     JOIN dp03_catalogs_10yr.SSObject as sso 
     ON mpc.ssObjectId = sso.ssObjectId 
     WHERE mpc.q / (1 - mpc.e) > 30.1 AND sso.numObs > 10 AND mpc.e < 1 
 
-To be able to corrrelate any 
+Now plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
+This time, (in contrast to Step 1.6 but accomplishing the same goal) you will calculate ``a`` from ``e`` and ``q`` via 
+setting derived plot parameters rather than creating another column in the right-hand table.  
+To do so, click on the "plot settings" (two gears) on the left-hand panel, click on "add new chart."  
+Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  You can any color map you find compelling.  
+The plot parameters used here are below.  
+In particular, the X-axis is restricted to ``a < 100`` to illustrate the region about 3 x the Neptune's orbit.  
+
+.. figure:: /_static/portal_tut03_step01f.png
+    :width: 600
+    :name: portal_tut03_step01f
+    :alt: A screenshot of the plot parameters for the eccentricity vs. semi-major axis plot 
+
+    The plot parameters for the eccentricity vs. semi-major axis plot 
+
+The plot resulting from applying the plot settings above is below.  
+
+.. figure:: /_static/portal_tut03_step01g.png
+    :width: 600
+    :name: portal_tut03_step01g
+    :alt: A screenshot of the plot of the eccentricity vs. semi-major axis 
+
+    The plot of the distribution of the eccentricity vs. semi-major axis of trans-Neptunian objects.  
+
+Note that there is a clear indication of two distinct populations.  
+The majority of the objects have low eccentricity, and are reasonably close past Neptune.  
+In addition, there is a separate population of high-eccentricity objects, and those are most likely comets.  
  
 1.10. Clear the query and results and return to the RSP TAP Search form.
 
