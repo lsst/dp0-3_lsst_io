@@ -169,21 +169,20 @@ In particular, the X-axis is restricted to ``a < 100`` to illustrate at more det
 
     The plot parameters for the eccentricity vs. semi-major axis plot 
 
-The plot resulting from applying the plot settings above is below.  
-
 .. figure:: /_static/portal_tut03_step01g.png
     :width: 600
     :name: portal_tut03_step01g
     :alt: A screenshot of the plot of the eccentricity vs. semi-major axis 
 
-    The plot of the distribution of the eccentricity vs. semi-major axis of trans-Neptunian objects.  
+    The plot of the distribution of the eccentricity vs. semi-major axis of Trans-Neptunian Objects.  
 
 Note that there is a clear indication of two distinct populations.  
 The majority of the objects have low eccentricity, and are reasonably close past Neptune.  
 In addition, there is a separate population of high-eccentricity objects, and those are most likely comets.  
 
-1.10.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes.  
+1.10.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes. 
 For this you will need to use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
+Note that the query you executed in Step 1.9 already returned a column with the H magnitude, so you won't need to execute a new query for this step.  
 For the purpose of this demonstration, we will use the albedo of 0.15, which is a common value in literature.  
 We note that the derived diameter depends only weakly on the adopted albedo.  
 The equation is below, and gives the diameter in kilometers.  
@@ -191,25 +190,54 @@ The equation is below, and gives the diameter in kilometers.
 .. figure:: /_static/portal_tut03_step01h.png
     :width: 600
     :name: portal_tut03_step01h
-    :alt: The equation relading the diameter of a smll Solar system object as a function of its albedo and H-magnitude
+    :alt: The equation relating the diameter of a small Solar system object as a function of its albedo and H-magnitude
 
     The equation relating the diameter of a small Solar system object as a function of its albedo A and H-magnitude.  
 
-In order to be able to plot the distribution of derived diameters of the Solar System objects, we will need to convert the above equation.  
-This is because the ``10^()`` expression is not available as an option in the "plot parameters" of the portal, but the ``exp()`` is available.  
-We will assume the albedo of 0.15.  The equivalent "legal" expression is ``3418 * exp(-0.46 * H)``
+In order to be able to plot the distribution of derived diameters of the Solar System objects, we will need to modify the above equation.  
+This is because the ``10^()`` expression is not available as an option for the expression for the content of the new column in the portal, but the ``exp()`` is available.  
+We will assume the albedo of 0.15.  The equivalent "legal" expression is ``3418 * exp(-0.46 * H)``.  
+Add an additional column by clicking on the "add column" icon above the table (the icon has a little "+" sign on it).  
+Enter ``D`` in the "name" field, and ``3418 * exp(-0.46 * mpcH)``in the expression field, as below.  
 
-And now for something that I can't explain:  distribution of H magnitudes as a functon of semi-major axis of the orbit.  
+.. figure:: /_static/portal_tut03_step01j.png
+    :width: 600
+    :name: portal_tut03_step01j
+    :alt: screenshot illustrating the expression needed to make the new column containing the diameter of the TNO
+
+    The screenshot illustrating the parameters for the new column containing the TNO's diameter
+
+Now you can plot the distribution of diameters of TNOs extracted in the query of Step 1.9.  
+To do so, in "Plot parameters" select "Histogram" and enter the parameters as below.  
+Selecting logarithmic y axis might be more illustrative.  
+
+.. figure:: /_static/portal_tut03_step01k.png
+    :width: 600
+    :name: portal_tut03_step01k
+    :alt: screenshot illustrating the plot parameters for displaying the distribution of TNO's diameters
+
+    The screenshot illustrating the parameters for the new column containing the TNO's diameter
+
+Clicking on the "Apply" button will result in the plot showing the distribution of TNO diameters extracted via your query.  
+
+.. figure:: /_static/portal_tut03_step01l.png
+    :width: 600
+    :name: portal_tut03_step01l
+    :alt: screenshot illustrating the distribution of TNO's diameters
+
+    The screenshot illustrating the distribution of the TNO diameters in your sample
+
+1.11.  And now for something that I can't explain:  distribution of H magnitudes as a functon of semi-major axis of the orbit.  
 In the previous plot, replace the "plot settings" with "q/(1-e)" for the x-axis, and H magnitude for y axis.  This results in the plot below.    
 
-.. figure:: /_static/portal_tut03_step01h.png
+.. figure:: /_static/portal_tut03_step01m.png
     :width: 600
-    :name: portal_tut03_step01h
+    :name: portal_tut03_step01m
     :alt: A screenshot of the plot of H magnitude vs. semi-major axis 
 
 Why are there so many objects with H magnitude exactly at 15?  
  
-1.10. Clear the query and results and return to the RSP TAP Search form.
+1.12. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-2:
 
