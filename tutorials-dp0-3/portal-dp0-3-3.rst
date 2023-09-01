@@ -182,6 +182,23 @@ Note that there is a clear indication of two distinct populations.
 The majority of the objects have low eccentricity, and are reasonably close past Neptune.  
 In addition, there is a separate population of high-eccentricity objects, and those are most likely comets.  
 
+1.10.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes.  
+For this you will need to use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
+For the purpose of this demonstration, we will use the albedo of 0.15, which is a common value in literature.  
+We note that the derived diameter depends only weakly on the adopted albedo.  
+The equation is below, and gives the diameter in kilometers.  
+
+.. figure:: /_static/portal_tut03_step01h.png
+    :width: 600
+    :name: portal_tut03_step01h
+    :alt: The equation relading the diameter of a smll Solar system object as a function of its albedo and H-magnitude
+
+    The equation relating the diameter of a small Solar system object as a function of its albedo A and H-magnitude.  
+
+In order to be able to plot the distribution of derived diameters of the Solar System objects, we will need to convert the above equation.  
+This is because the ``10^()`` expression is not available as an option in the "plot parameters" of the portal, but the ``exp()`` is available.  
+The equivalent "legal" expression is ``3418 * exp(-0.46 * H)``
+
 And now for something that I can't explain:  distribution of H magnitudes as a functon of semi-major axis of the orbit.  
 In the previous plot, replace the "plot settings" with "q/(1-e)" for the x-axis, and H magnitude for y axis.  This results in the plot below.    
 
