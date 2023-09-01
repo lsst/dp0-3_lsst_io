@@ -50,6 +50,11 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Sep 01 2023
+-----------
+
+DP0.3 notebook tutorial 03 on Trans-Neptunian Objects is released.
+
 Aug 04 2023
 -----------
 
