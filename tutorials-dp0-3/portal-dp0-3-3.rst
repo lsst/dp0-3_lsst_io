@@ -78,7 +78,9 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
     FROM dp03_catalogs_10yr.MPCORB 
     WHERE ssObjectId > 9000000000000000000 
 
+
 1.3. Set the "Row Limit" to be 200000 and click "Search".
+
 
 1.4. The default results view will show a heatmap plot of ``q`` vs. ``e`` at left, and the table view at right.
 
@@ -88,6 +90,7 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
     :alt: A screenshot of the default results view for the query.
 
     The default results view for the query, with the table at left and the heatmap at right.  
+
 
 1.5.  Exclude the object moving on unbound orbits.  
 Note that a small fraction of the objects - roughly one in a thousand - have derived eccentricities > 1 meaning those are not bound to the Solar System.  
@@ -102,6 +105,7 @@ This will result in a slightly modified display as below.
 
     The view for the query with e < 1 and q < 50.  
 
+
 1.6. Create a column of semi-major axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
 In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" to "q/(1-e)", the "Units" to "au",
@@ -114,6 +118,7 @@ Click "Add Column", and see the new column appear in the table.
     :alt: A screenshot of the pop-up window to add a column.
 
     The "Add a column" pop-up window.  
+
 
 1.7. Create a scatter plot of inclination vs. semi-major axis.
 In the plot panel, click the "Settings" icon (double gears), and select "Add New Chart".
@@ -129,8 +134,8 @@ Click "OK".
 
     Create a new plot with these parameters.
 
-1.8. Delete the default plot by clicking on the blue cross in the upper right corner, so that only
-the newly-created plot appears (it should look like the plot below).
+
+1.8. Delete the default plot by clicking on the blue cross in the upper right corner, so that only the newly-created plot appears (it should look like the plot below).
 TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter space.
 
 .. figure:: /_static/portal_tut03_step01e.png
@@ -139,6 +144,7 @@ TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter spac
     :alt: A screenshot of the inclination versus semi-major axis plot, showing a clear population of TNOs.
 
     The population of TNOs has x-values greater than 30 au.
+
 
 1.9.  Now that you've identified the population of the Trans-Neptunian Objects, you can further study their properties.  
 To begin with, we will plot the eccentricity ``e`` vs. semi-major axis ``a`` of the orbit.  
@@ -160,7 +166,7 @@ setting derived plot parameters rather than creating another column in the right
 To do so, click on the "plot settings" (two gears) on the left-hand panel, click on "add new chart."  
 Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  You can chose any color map you find compelling.  
 The plot parameters used here are below.  
-In particular, the X-axis is restricted to ``a < 100`` to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
+In particular, the X-axis is restricted to ``a < 100`` au to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
 
 .. figure:: /_static/portal_tut03_step01f.png
     :width: 400
@@ -180,6 +186,7 @@ Note that there is a clear indication of two distinct populations.
 The majority of the objects have low eccentricity, and are reasonably close past Neptune.  
 In addition, there is a separate population of high-eccentricity objects, and those are most likely comets.  
 
+
 1.10.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes. 
 For this you will need to use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
 Note that the query you executed in Step 1.9 already returned a column with the H magnitude, so you won't need to execute a new query for this step.  
@@ -188,7 +195,7 @@ We note that the derived diameter depends only weakly on the adopted albedo.
 The equation is below, and gives the diameter in kilometers.  
 
 .. figure:: /_static/portal_tut03_step01h.png
-    :width: 600
+    :width: 400
     :name: portal_tut03_step01h
     :alt: The equation relating the diameter of a small Solar system object as a function of its albedo and H-magnitude
 
@@ -196,12 +203,13 @@ The equation is below, and gives the diameter in kilometers.
 
 In order to be able to plot the distribution of derived diameters of the Solar System objects, we will need to modify the above equation.  
 This is because the ``10^()`` expression is not available as an option for the expression for the content of the new column in the portal, but the ``exp()`` is available.  
-We will assume the albedo of 0.15.  The equivalent "legal" expression is ``3418 * exp(-0.46 * H)``.  
+We will assume the albedo of 0.15.  
+The equivalent "legal" expression is ``3418 * exp(-0.46 * H)``.  
 Add an additional column by clicking on the "add column" icon above the table (the icon has a little "+" sign on it).  
-Enter ``D`` in the "name" field, and ``3418 * exp(-0.46 * mpcH)``in the expression field, as below.  
+Enter ``D`` in the "name" field, and ``3418 * exp(-0.46 * mpcH)`` in the expression field, as below.  
 
 .. figure:: /_static/portal_tut03_step01j.png
-    :width: 600
+    :width: 400
     :name: portal_tut03_step01j
     :alt: screenshot illustrating the expression needed to make the new column containing the diameter of the TNO
 
@@ -212,7 +220,7 @@ To do so, in "Plot parameters" select "Histogram" and enter the parameters as be
 Selecting logarithmic y axis might be more illustrative.  
 
 .. figure:: /_static/portal_tut03_step01k.png
-    :width: 600
+    :width: 400
     :name: portal_tut03_step01k
     :alt: screenshot illustrating the plot parameters for displaying the distribution of TNO's diameters
 
@@ -227,6 +235,7 @@ Clicking on the "Apply" button will result in the plot showing the distribution 
 
     The screenshot illustrating the distribution of the TNO diameters in your sample
 
+
 1.11.  And now for something that I can't explain:  distribution of H magnitudes as a functon of semi-major axis of the orbit.  
 In the previous plot, replace the "plot settings" with "q/(1-e)" for the x-axis, and H magnitude for y axis.  This results in the plot below.    
 
@@ -235,8 +244,9 @@ In the previous plot, replace the "plot settings" with "q/(1-e)" for the x-axis,
     :name: portal_tut03_step01m
     :alt: A screenshot of the plot of H magnitude vs. semi-major axis 
 
-Why are there so many objects with H magnitude exactly at 15?  
- 
+Why are there so many objects with H magnitude exactly at 15, over a wide range of heliocentric distances?  
+
+
 1.12. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-2:
@@ -261,6 +271,7 @@ Three, it uses a different constraint on ``ssObjectId`` to return a different ra
     GROUP BY mpc.ssObjectId, mpc.e, mpc.q 
 
 This search might take up to a minute.  
+
 
 2.2. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
 which is not particularly useful but it does show the number of detections for the most oft-detected TNOs 
@@ -392,11 +403,11 @@ You can also plot the ``topocentricX`` vs. ``heliocentricX`` where you can clear
 
     Visualization of the TNO's trajectory
 
-**FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
+.. **FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
 
-**PLOT DISTANCES OVER TIME, OR MAYBE GET THE HELIO XYZ AND PLOT OUT ORBITAL ARCS, ETC.**
+.. **PLOT DISTANCES OVER TIME, OR MAYBE GET THE HELIO XYZ AND PLOT OUT ORBITAL ARCS, ETC.**
 
-**CONSULT WITH ANDRES WHO IS WORKING ON A TNO NB**
+.. **CONSULT WITH ANDRES WHO IS WORKING ON A TNO NB**
 
 
 
