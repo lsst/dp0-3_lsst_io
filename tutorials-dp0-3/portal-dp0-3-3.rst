@@ -197,7 +197,7 @@ The equation is below, and gives the diameter in kilometers.
 
 In order to be able to plot the distribution of derived diameters of the Solar System objects, we will need to convert the above equation.  
 This is because the ``10^()`` expression is not available as an option in the "plot parameters" of the portal, but the ``exp()`` is available.  
-The equivalent "legal" expression is ``3418 * exp(-0.46 * H)``
+We will assume the albedo of 0.15.  The equivalent "legal" expression is ``3418 * exp(-0.46 * H)``
 
 And now for something that I can't explain:  distribution of H magnitudes as a functon of semi-major axis of the orbit.  
 In the previous plot, replace the "plot settings" with "q/(1-e)" for the x-axis, and H magnitude for y axis.  This results in the plot below.    
