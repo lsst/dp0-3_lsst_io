@@ -23,7 +23,7 @@
 
 **Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:** August 25, 2023
+**Last verified to run:** September 1, 2023
 
 **Targeted learning level:** Intermediate
 
@@ -233,7 +233,7 @@ Clicking on the "Apply" button will result in the plot showing the distribution 
     :name: portal_tut03_step01l
     :alt: screenshot illustrating the distribution of TNO's diameters
 
-    The screenshot illustrating the distribution of the TNO diameters in your sample
+    The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of TNOs are in the range of a few hundred kilometers.  
 
 
 1.11.  And now for something that I can't explain:  distribution of H magnitudes as a functon of semi-major axis of the orbit.  
