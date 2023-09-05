@@ -90,6 +90,14 @@ However, it is important to understand that there are other options for fitting 
 Step 3. Plot the phase curve for the TNO
 ========================================
 
+Step 3.1.  Explore the population of the Main Belt Asteroids.  
+The Main Belt Asteroids (MBAs) are located, roughly, in the band of semi-major axes ``a`` between 1.6 au and 4.2 au - the definition is not uniform in the literature.  
+The location is between Mars's and Jupiter's orbits.  
+Here, we will plot the distribution of the number of MBAs as a function of ``a`` in the region above.  
+First, execute the query below to select a good number of MBAs.  
+
+
+
 **CANNOT BE DONE WITH SSOBJECTID = -735085100561880491**
 
 **DO NOT USE TNO; USE MBA WITH A GOOD PHASE-CURVE FIT.**
