@@ -82,25 +82,44 @@ However, it is important to understand that there are other options for fitting 
 **Note** that no time domain evolution in object brightness was included in the DP0.3 simulation
 (e.g., rotation curves for non-spherical objects, outgassing events).
 
+.. _DP0-3-Portal-4-Step-2:  
+
+Step 2. Explore the population of the Main Belt Asteroids
+=========================================================
+
+Step 2.1.  The Main Belt Asteroids (MBAs) are located, roughly, in the band of semi-major axes ``a`` between 1.6 au and 4.2 au - the definition is not uniform in the literature.  
+The location of the Belt is between Mars's and Jupiter's orbits.  
+Here, we will plot the distribution of the number of MBAs as a function of ``a`` and eccentricities ``e`` in the region above.  
+Note that semi-major axes are not directly available in the ``dp03_catalogs_10yr.MPCORB`` table, so the constraint on ``a`` is derived from perihelion ``q`` nd eccentricity ``e``.  
+First, execute the query below to select a good number of MBAs, in the range 1.6 au < ``a`` < 5.5 au (somewhat larger than the definition above), to explore the properties. 
+
+.. code-block:: SQL 
+
+    SELECT mpc.ssObjectId, mpc.e, mpc.incl, mpc.q, mpc.peri, 
+    sso.numObs, sso.ssObjectId, sso.g_H, sso.r_H, sso.i_H, sso.z_H 
+    FROM dp03_catalogs_10yr.MPCORB as mpc 
+    JOIN dp03_catalogs_10yr.SSObject as sso 
+    ON mpc.ssObjectId = sso.ssObjectId 
+    WHERE mpc.ssObjectId < 9223370875126069107 
+    AND mpc.ssObjectId > 7331137166374808576 
+    AND (mpc.q / (1-mpc.e))  > 1.6 
+    AND (mpc.q / (1-mpc.e))< 5,2
+    AND sso.numObs > 200 
+
+In the query above, in order to have the query execution not to take too long, we restrict the number of returned objects to have their ``mpc.ssObjectId`` in the limited range.  
+We also select only the objects with more than 200 observations.  
+
+Step 2.2.  Plot the distribution of semi-major axes ``a`` and eccentricities ``e`` of object in your query.  
 
 
+.. **CANNOT BE DONE WITH SSOBJECTID = -735085100561880491**
 
-.. _DP0-3-Portal-3-Step-3:
+.. **DO NOT USE TNO; USE MBA WITH A GOOD PHASE-CURVE FIT.**
 
-Step 3. Plot the phase curve for the TNO
-========================================
+.. _DP0-3-Portal-4-Step-3:  
 
-Step 3.1.  Explore the population of the Main Belt Asteroids.  
-The Main Belt Asteroids (MBAs) are located, roughly, in the band of semi-major axes ``a`` between 1.6 au and 4.2 au - the definition is not uniform in the literature.  
-The location is between Mars's and Jupiter's orbits.  
-Here, we will plot the distribution of the number of MBAs as a function of ``a`` in the region above.  
-First, execute the query below to select a good number of MBAs.  
-
-
-
-**CANNOT BE DONE WITH SSOBJECTID = -735085100561880491**
-
-**DO NOT USE TNO; USE MBA WITH A GOOD PHASE-CURVE FIT.**
+Step 3. Select a well-observed MBA, and plot its phase curve
+============================================================
 
 3.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
 heliocentric and topocentric distances, and time of the observations for the TNO.
