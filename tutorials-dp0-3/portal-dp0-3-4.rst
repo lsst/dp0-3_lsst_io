@@ -89,9 +89,10 @@ Step 2. Explore the population of the Main Belt Asteroids
 
 Step 2.1.  The Main Belt Asteroids (MBAs) are located, roughly, in the band of semi-major axes ``a`` between 1.6 au and 4.2 au - the definition is not uniform in the literature.  
 The location of the Belt is between Mars's and Jupiter's orbits.  
-Here, we will plot the distribution of the number of MBAs as a function of ``a`` and eccentricities ``e`` in the region above.  
-Note that semi-major axes are not directly available in the ``dp03_catalogs_10yr.MPCORB`` table, so the constraint on ``a`` is derived from perihelion ``q`` nd eccentricity ``e``.  
-First, execute the query below to select a good number of MBAs, in the range 1.6 au < ``a`` < 5.5 au (somewhat larger than the definition above), to explore the properties. 
+Here, we will plot the distribution of the number of MBAs as a function of ``a``, eccentricities ``e`` and inclinations ``incl`` in the region above.  
+Note that semi-major axes are not directly available in the ``dp03_catalogs_10yr.MPCORB`` table, so the constraint on ``a`` is derived from perihelion ``q`` and eccentricity ``e``.  
+First, execute the query below to select a good number of MBAs, in the range 1.6 au < ``a`` < 5.5 au (somewhat larger than the definition above), to explore the distribution of their properties.  
+You might want to increase the "Row limit" to 200,000 to have an appreciable sample of objects by entering this number in the box on lhe lower left.  
 
 .. code-block:: SQL 
 
@@ -107,9 +108,27 @@ First, execute the query below to select a good number of MBAs, in the range 1.6
     AND sso.numObs > 200 
 
 In the query above, in order to have the query execution not to take too long, we restrict the number of returned objects to have their ``mpc.ssObjectId`` in the limited range.  
-We also select only the objects with more than 200 observations.  
+We also select only the objects with more than 200 observations.  The query will return about 130,000 objects.  
 
-Step 2.2.  Plot the distribution of semi-major axes ``a`` and eccentricities ``e`` of object in your query.  
+Step 2.2.  Plot the distribution of semi-major axes ``a``, eccentricities ``e`` and inclinations ``incl`` of orbits of the objects in your query.  
+The execution of the query will result in a blank panel for the plot, with a comment "Cannot display the requested data."  
+To plot the disctribution of ``a`` you need to click on the "plot settings" icon (two gears), click on "add a new chart,"  select "Histogram" for "Plot Type."  
+Enter "q / (1-e)" as the "column or expression" and "100" for number of bins as on the screenshot below.  
+
+**SCREENSHOT**
+
+Clicking "Apply" will result in the following table + plot below.  
+You should close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.  
+Note that the distribution of asteroids is not uniform, but it reveals a number of peaks and gaps where there are very few (or no) objects. 
+These are known as Kirkwood gaps, which arise due to resonances between the asteroid's and Jupiter's orbital periods.  
+
+**SCREENSHOT**
+
+You can also explore the eccentricities of asteroids' orbits, by "adding a new chart" with "e" as the "column or expression.  
+This will appear as a new plot revealing the distribution of ``e``.  
+There are only a few high-eccentricity objects extracted via your query - you can see those more clearly by selecting "log" for "Y" under chart options.  
+Finally, produce the third plot, revealing the distribution of orbital inclinatons.  
+Do so by clicking again on two gears, "adding a new plot" and selecting "incl" as the expression.  
 
 
 .. **CANNOT BE DONE WITH SSOBJECTID = -735085100561880491**
