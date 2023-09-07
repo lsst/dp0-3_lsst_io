@@ -130,6 +130,24 @@ There are only a few high-eccentricity objects extracted via your query - you ca
 Finally, produce the third plot, revealing the distribution of orbital inclinatons.  
 Do so by clicking again on two gears, "adding a new plot" and selecting "incl" as the expression.  
 
+**SCREENSHOT**
+
+Plots of the distribution of semi-major axes, ecenticities, and orbital inclinations of objects located between 1.6 and 5.5 au.  
+Note a small population of objects with high eccentricities (``e`` > 0.4).  
+Those are probably comets which happen to be travelling in the region selected by you.  
+Also note an increased number of objects arounf 5.5 au - those are Trojan Asteroids, not considered to be a part of the MBA population.  
+
+Step 2.3.  Explore the relationship between inclination as well as eccentricity as a function of semi-major axis.  
+You don't have to re-execture the ADQL query as all parameters are already extracted.  
+Make another plot by clicking the two gears, and select "Add new chart" and enter "Heatmap" as the "Plot type."  
+As an aside, selecting "Heatmap" is more illustrative than plotting individual points.  
+First select "q / (1-e)" for X-axis, and "e" for Y-axis, and click on "OK."  Then repeat, by clicking on two gears, and selecting "Add new chart."  
+This time, select "q / (1-e)" for X-axis, and "incl" for Y-axis, and click on "OK."  
+You will need to get rid of the three charts from Step 2.2 - to do so, close the three plots you've made in 2.2 by clicking the blue "X" on each of them.  
+This will result in the plot as below.  
+
+**SCREENSHOT**
+
 
 .. **CANNOT BE DONE WITH SSOBJECTID = -735085100561880491**
 
@@ -141,7 +159,11 @@ Step 3. Select a well-observed MBA, and plot its phase curve
 ============================================================
 
 3.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
-heliocentric and topocentric distances, and time of the observations for the TNO.
+heliocentric and topocentric distances, and time of the observations for the MBA.  
+We selected that specific MBA - with ssObjectId = 8810278553610239375 - in the previous Step, by double-clicking on the column label numObs.  
+First click orders the rows in the table in the ascending order and the second click provides the descending order.  
+We arbitrarily selected the sixth most-observed object in the Table.  
+
 
 .. code-block:: SQL 
 
