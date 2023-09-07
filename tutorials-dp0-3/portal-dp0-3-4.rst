@@ -116,6 +116,7 @@ To plot the distribution of ``a`` you need to click on the "plot settings" icon 
 Enter "q / (1-e)" as the "column or expression" and "100" for number of bins as on the screenshot below.  
 
 .. figure:: /_static/portal_tut04_step02a.png
+    :width: 400
     :name: portal_tut04_step02a
     :alt: A screenshot illustrating the selection of plot parameters to plot the histogram of the distribution of semi-major axes of the Main Belt Asteroids.
 
@@ -126,6 +127,7 @@ Note that the distribution of asteroids as a function of semi-major axis is not 
 These are known as Kirkwood gaps, which arise due to resonances between the asteroid's and Jupiter's orbital periods.  
 
 .. figure:: /_static/portal_tut04_step02b.png
+    :width: 600
     :name: portal_tut04_step02b
     :alt: A screenshot illustrating the the distribution of semi-major axes of the Main Belt Asteroids.  
 
@@ -138,6 +140,7 @@ Finally, produce the third plot, revealing the distribution of orbital inclinato
 Do so by clicking again on two gears, "adding a new plot" and selecting "incl" as the expression.  
 
 .. figure:: /_static/portal_tut04_step02c.png
+    :width: 600
     :name: portal_tut04_step02b
     :alt: A screenshot illustrating the the distribution of semi-major axes, orbital ellipticities, and orbital inclinations of the Main Belt Asteroids.  
 
@@ -157,6 +160,7 @@ You will need to get rid of the three charts from Step 2.2 - to do so, close the
 This will result in the plot as below.  
 
 .. figure:: /_static/portal_tut04_step02d.png
+    :width: 600
     :name: portal_tut04_step02d
     :alt: A screenshot illustrating the the distribution eccentricity (left) and orbital inclination (right) as a function of semi-major axes of the Main Belt Asteroids.  
 
