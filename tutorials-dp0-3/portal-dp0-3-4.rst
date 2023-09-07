@@ -164,7 +164,7 @@ This will result in the plot as below.
     :name: portal_tut04_step02d
     :alt: A screenshot illustrating the the distribution eccentricity (left) and orbital inclination (right) as a function of semi-major axes of the Main Belt Asteroids.  
 
-
+**COMMENTS FROM MLG BELOW.  GM'S FIX IS IN 3.1**
 
 **CANNOT BE DONE WITH SSOBJECTID = -735085100561880491**
 
@@ -176,19 +176,24 @@ Step 3. Select a well-observed MBA, and plot its phase curve
 ============================================================
 
 3.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
-heliocentric and topocentric distances, and time of the observations for the MBA.  
-We selected that specific MBA - with ssObjectId = 8810278553610239375 - in the previous Step, by double-clicking on the column label numObs.  
-First click orders the rows in the table in the ascending order and the second click provides the descending order.  
+heliocentric and topocentric distances, and time of the observations for a well-observed MBA.  
+We need an object with large number of observations.  
+To identify one, return to the table retrieved in Step 2.  
+Click on the header of the column "numObs" - this orders the rows in the table in the ascending order of the number of obsservations.  
+The second click provides the descending order.  
 We arbitrarily selected the sixth most-observed object in the Table.  
+We selected that specific MBA - with ``ssObjectId`` = ``8810278553610239375``.
 
 .. code-block:: SQL 
 
-    SELECT ds.mag, ds.filter, ds.midPointTai, 
+    SELECT ds.mag, ds.band, ds.midPointMjdTai, 
     ss.phaseAngle, ss.topocentricDist, ss.heliocentricDist 
-    FROM dp03_catalogs.DiaSource AS ds 
-    JOIN dp03_catalogs.SSSource AS ss ON ds.diaSourceId = ss.diaSourceId
-    WHERE ss.ssObjectId = -735085100561880491
-    AND ds.filter = 'r'
+    FROM dp03_catalogs_10yr.DiaSource AS ds 
+    JOIN dp03_catalogs_10yr.SSSource AS ss ON ds.diaSourceId = ss.diaSourceId
+    WHERE ss.ssObjectId = 8810278553610239375
+    AND ds.band = 'r'
+
+**GM:  Got only this far**
 
 3.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
 as a function of time (right two plots, below), and see that these quantities are not correlated with time.
