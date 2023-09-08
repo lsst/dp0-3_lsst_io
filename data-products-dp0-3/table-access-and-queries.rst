@@ -120,8 +120,8 @@ be larger than expected, and take a long time to execute.
 
 .. _DP0-3-Table-Access-ADQL-passing-list:
 
-Advice for passing a list to a query
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Query a list of objects
+~~~~~~~~~~~~~~~~~~~~~~~
 
 LSST Query Services (Qserv) do not support subqueries. 
 Thus, using subqueries is **not recommended** although DP0.3 is not hosted on Qserv. 
