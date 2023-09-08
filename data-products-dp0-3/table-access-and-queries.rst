@@ -101,6 +101,7 @@ DP0.3 has been simulated and provided on a best-effort basis. There are at prese
 
 These columns may be updated in the future to fill in their values.
 
+
 Table joins
 ~~~~~~~~~~~
 
@@ -115,6 +116,45 @@ The ``DiaSource`` and ``SSSource`` tables are N:1 with both the ``SSObject`` and
 They *can* be joined on the ``ssObjectId`` column, but caution and testing should be used here.
 The N:1 nature of these joins means that the data retrieved can contain columns of repeated values,
 be larger than expected, and take a long time to execute.
+
+
+.. _DP0-3-Table-Access-ADQL-passing-list:
+
+Query a list of objects
+~~~~~~~~~~~~~~~~~~~~~~~
+
+LSST Query Services (Qserv) do not support subqueries. 
+Thus, using subqueries is **not recommended** although DP0.3 is not hosted on Qserv. 
+
+Instead, when having a list of objects in hand either from a previous query or a user-provided catalog,
+the list, formatted as a python tuple, can be passed to a new query for table joins. 
+The example query below is to retrieve information about individual observations from the ``DiaSource`` 
+and ``SSSource`` tables for indivdual unique objects selected from the ``SSObject`` table and stored 
+in ``sId_list`` from a previous query. 
+
+The example uses only three objects, but the list can be relatively long (verified up to 50,000).
+
+
+.. code-block:: python
+
+    from lsst.rsp import get_tap_service, retrieve_query
+    service = get_tap_service("ssotap")
+
+    sId_list = [-9222537907249304995, -9222483995821535577, -9221971933016733299]
+
+    query = """SELECT dia.ssObjectId, dia.diaSourceId, dia.mag,
+    dia.magErr, dia.band, dia.midPointMjdTai,
+    sss.phaseAngle, sss.topocentricDist, sss.heliocentricDist
+    FROM dp03_catalogs_10yr.DiaSource as dia
+    INNER JOIN dp03_catalogs_10yr.SSSource as sss
+    ON dia.diaSourceId = sss.diaSourceId
+    WHERE dia.ssObjectId
+    IN {}
+    """.format(tuple(sId_list))
+
+    results = service.search(query).to_table()
+
+This returns a ``results`` table with 1915 rows; each of three unique objects has 597, 572, and 746 rows, respectively.
 
 
 Non-random subsets
