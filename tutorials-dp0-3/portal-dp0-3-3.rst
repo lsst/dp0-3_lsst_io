@@ -39,7 +39,7 @@ TNOs are defined by having orbits with semi-major axes beyond the orbit of Neput
 As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) via
 ``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
 a sample of TNOs can be identified in the DP0.3 data set (see Step 1).  
-Their properties (relationship between their semi-major axis and eccentricity, as well as distribution of their derived diameters) will be explored in Step 2.  
+Their properties (specifically, relationship between their semi-major axis and eccentricity, as well as distribution of their derived diameters) will be explored in Step 2.  
 Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on parabolic or hyperbolic orbits).  
 Such objects will be excluded in our analysis, as an application of the formula above would result in a negative value of ``a``.  
 
@@ -47,12 +47,12 @@ Compared to Solar System objects closer to the Earth, such as Main Belt Asteroid
 This relatively slow movement means that TNOs that fall within an LSST Deep Drilling Field (DDF) can stay within that
 field, and LSST can accumulate thousands of observations of them.
 This tutorial explores the position on the sky of one such TNO (Step 3) and plots time-domain quantities such as magnitude and phase angle (Step 4).  
-Finally, it provides a visualization of its trajectory projected into 2D (see Step 4).  
+Finally, it provides a visualization of its trajectory projected into 2D (see Step 5).  
 
 More information about the LSST DDFs can be found on the `LSST DDF webpage <https://www.lsst.org/scientists/survey-design/ddf>`_
 and in Section 2.6 of the Survey Cadence Optimization Committee's Phase 2 Recommendations report 
 (`PSTN-055 <https://pstn-055.lsst.io/>`_).
-Note that DP0.2 did not include DDF observations, so the ability to explore science with a DDF-like cadence this is unique to the DP0.3 simulation.
+Note that DP0.2 did not include DDF observations, so the ability to explore science with a DDF-like cadence is unique to the DP0.3 simulation.
 
 This tutorial assumes the successful completion of the beginner-level DP0.3 Portal tutorials,
 and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
@@ -156,6 +156,7 @@ Step 2. Explore the properties of a population of TNOs
 
 2.1.  Now that the population of the Trans-Neptunian Objects has been identified, it is possible to further explore their properties.  
 The plot above indicates that majority of objects returned in our query were closer to the Sun than 30 au, and only about 600 are TNOs.  
+First, clear your previous query - return to the "Edit ADQL" 
 To study the properties of a larger sample of TNOs, execute a query simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
 Also include the absolute H magnitude ``mpcH`` which we will use in the derivation of diameters of TNOs in the subsequent step (2.4) below.  
 
