@@ -40,7 +40,7 @@ As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``
 ``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
 a sample of TNOs can be identified in the DP0.3 data set (see Step 1).  
 Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on parabolic or hyperbolic orbits).  
-We will exclude those in our analysis, as application of the formula above would result in a negative value of ``a``.  
+Such objects will be excluded in our analysis, as an application of the formula above would result in a negative value of ``a``.  
 
 Compared to Solar System objects closer to Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs),
 TNOs move relatively slowly across the sky.
@@ -59,8 +59,8 @@ For more information about the DP0.3 catalogs, tables, and columns, see the :ref
 
 .. _DP0-3-Portal-3-Step-1:
 
-Step 1. Identify and explore a population of TNOs
-=================================================
+Step 1. Identify a population of TNOs
+=====================================
 
 1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 At upper right, next to "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top.
@@ -92,10 +92,10 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
     The default results view for the query, with the table at left and the heatmap at right.  
 
 
-1.5.  Exclude the object moving on unbound orbits.  
+1.5.  Exclude the objects moving on unbound orbits.  
 Note that a small fraction of the objects - roughly one in a thousand - have derived eccentricities > 1 meaning those are not bound to the Solar System.  
-You can exclude those objects from your analysis by entering ``< 1`` in the box underneath the table heading ``e``, and hitting the carriage return.  
-To see the distribution of ``q`` vs. ``e`` more clearly, also restrict the range of ``q`` by entering ``< 50`` and hitting the carriage return.  
+Those objects can be excluded from further analysis by entering ``< 1`` in the box underneath the table heading ``e``, and hitting "enter."  
+To see the distribution of ``q`` vs. ``e`` more clearly, also restrict the range of ``q`` by entering ``< 50`` and hitting "enter."   
 This will result in a slightly modified display as below.  
 
 .. figure:: /_static/portal_tut03_step01b.png
@@ -125,7 +125,7 @@ In the plot panel, click the "Settings" icon (double gears), and select "Add New
 Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
 Set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.
 Set the axis labels as shown in the figure below.
-Click "OK".
+Click "Apply".
 
 .. figure:: /_static/portal_tut03_step01d.png
     :width: 400
@@ -136,7 +136,7 @@ Click "OK".
 
 
 1.8. Delete the default plot by clicking on the blue cross in the upper right corner, so that only the newly-created plot appears (it should look like the plot below).
-TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter space.
+TNOs appear as a distinct population with ``a`` > 30.1 au in this parameter space.
 
 .. figure:: /_static/portal_tut03_step01e.png
     :width: 600
@@ -146,35 +146,39 @@ TNOs appear as a distinct population with ``a`` > 30.1 AU in this parameter spac
     The population of TNOs has x-values greater than 30 au.
 
 
-1.9.  Now that you've identified the population of the Trans-Neptunian Objects, you can further study their properties.  
-To begin with, we will plot the eccentricity ``e`` vs. semi-major axis ``a`` of the orbit.  
-You can re-execute the query from Step 1.2, but now include in your query all objects with ``a > 30.1``, with bound orbits (``e < 1``) and those with more than 10 observations 
-(note no restriction ``WHERE ssObjectId > 9000000000000000000`` which we used in Section 1.2).  
-Note that requring more than 10 observations, you will have to perform a table join on the ``dp03_catalogs_10yr.SSObject`` table as below.  
+.. _DP0-3-Portal-3-Step-2:
+
+Step 2. Explore the properties of a population of TNOs
+======================================================
+
+2.1.  Now that the population of the Trans-Neptunian Objects has been identified, it is possible to further explore their properties.  
+The plot above indicates that majority of objects returned in our query were closer to the Sun than 30 au, and only about 600 are TNOs.  
+To study the properties of a larger sample of TNOs, execute a query simiar to the one in Step 1.2, but include only objects at ``a`` > 30.1 au.  
+Also include the absolute H magnitude ``mpcH`` which we will use in the derivation of diameters of TNOs in the subsequent step below.  
 
 .. code-block:: SQL 
 
-    SELECT mpc.ssObjectId, mpc.e, mpc.incl, mpc.q, mpc.mpcH 
-    FROM dp03_catalogs_10yr.MPCORB as mpc 
-    JOIN dp03_catalogs_10yr.SSObject as sso 
-    ON mpc.ssObjectId = sso.ssObjectId 
-    WHERE mpc.q / (1 - mpc.e) > 30.1 AND sso.numObs > 10 AND mpc.e < 1 
+    SELECT e, incl, q, mpcH 
+    FROM dp03_catalogs_10yr.MPCORB
+    WHERE q / (1 - e) > 30.1 AND e < 1 
 
-Now plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
+2.2.  Plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
 This time (in contrast to Step 1.6 but accomplishing the same goal) you will calculate ``a`` from ``e`` and ``q`` via 
 setting derived plot parameters rather than creating another column in the right-hand table.  
 To do so, click on the "plot settings" (two gears) on the left-hand panel, click on "add new chart."  
-Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  You can chose any color map you find compelling.  
+Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  
+You can chose any color map you find compelling.  
 The plot parameters used here are below.  
-In particular, the X-axis is restricted to ``a < 100`` au to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
+In particular, the X-axis is restricted to ``10 < a < 100`` au to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
 
 .. figure:: /_static/portal_tut03_step01f.png
     :width: 400
     :name: portal_tut03_step01f
     :alt: A screenshot of the plot parameters for the eccentricity vs. semi-major axis plot 
 
-    The plot parameters for the eccentricity vs. semi-major axis plot 
+    The plot parameters for the eccentricity vs. semi-major axis plot.  
 
+2.3.  Click on "Apply" in the "Plot Parameters" window.  This will result in the plot as below.  
 .. figure:: /_static/portal_tut03_step01g.png
     :width: 600
     :name: portal_tut03_step01g
@@ -184,7 +188,7 @@ In particular, the X-axis is restricted to ``a < 100`` au to illustrate at more 
 
 Note that there is a clear indication of two distinct populations.  
 The majority of the objects have low eccentricity, and are reasonably close past Neptune.  
-In addition, there is a separate population of high-eccentricity objects, and those are most likely comets.  
+In addition, there is a separate population of high-eccentricity objects, and those are comets.  
 
 
 1.10.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes. 
@@ -213,7 +217,7 @@ Enter ``D`` in the "name" field, and ``3418 * exp(-0.46 * mpcH)`` in the express
     :name: portal_tut03_step01j
     :alt: screenshot illustrating the expression needed to make the new column containing the diameter of the TNO
 
-    The screenshot illustrating the parameters for the new column containing the TNO's diameter
+    The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
 
 Now you can plot the distribution of diameters of TNOs extracted in the query of Step 1.9.  
 To do so, in "Plot parameters" select "Histogram" and enter the parameters as below.  
@@ -224,7 +228,7 @@ Selecting logarithmic y axis might be more illustrative.
     :name: portal_tut03_step01k
     :alt: screenshot illustrating the plot parameters for displaying the distribution of TNO's diameters
 
-    The screenshot illustrating the parameters for the new column containing the TNO's diameter
+    The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
 
 Clicking on the "Apply" button will result in the plot showing the distribution of TNO diameters extracted via your query.  
 
@@ -236,18 +240,7 @@ Clicking on the "Apply" button will result in the plot showing the distribution 
     The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of TNOs are in the range of a few hundred kilometers.  
 
 
-1.11.  And now for something that I can't explain:  distribution of H magnitudes as a functon of semi-major axis of the orbit.  
-In the previous plot, replace the "plot settings" with "q/(1-e)" for the x-axis, and H magnitude for y axis.  This results in the plot below.    
-
-.. figure:: /_static/portal_tut03_step01m.png
-    :width: 600
-    :name: portal_tut03_step01m
-    :alt: A screenshot of the plot of H magnitude vs. semi-major axis 
-
-Why are there so many objects with H magnitude exactly at 15, over a wide range of heliocentric distances?  
-
-
-1.12. Clear the query and results and return to the RSP TAP Search form.
+1.11. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-2:
 
