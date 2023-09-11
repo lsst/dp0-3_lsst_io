@@ -33,20 +33,21 @@
 Introduction
 ============
 
-This tutorial demonstrates how to identify a population of `Trans-Neptunian Objects <https://en.wikipedia.org/wiki/Trans-Neptunian_object>`_ 
+This tutorial demonstrates how to identify and explore a population of `Trans-Neptunian Objects <https://en.wikipedia.org/wiki/Trans-Neptunian_object>`_ 
 (TNOs) in the simulated DP0.3 catalogs.
 TNOs are defined by having orbits with semi-major axes beyond the orbit of Neputne (> 30.1 AU).
-As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) as
+As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) via
 ``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
 a sample of TNOs can be identified in the DP0.3 data set (see Step 1).  
+Their properties (relationship between their semi-major axis and eccentricity, as well as distribution of their derived diameters) will be explored in Step 2.  
 Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on parabolic or hyperbolic orbits).  
 Such objects will be excluded in our analysis, as an application of the formula above would result in a negative value of ``a``.  
 
-Compared to Solar System objects closer to Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs),
-TNOs move relatively slowly across the sky.
+Compared to Solar System objects closer to the Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs), TNOs move relatively slowly across the sky.
 This relatively slow movement means that TNOs that fall within an LSST Deep Drilling Field (DDF) can stay within that
 field, and LSST can accumulate thousands of observations of them.
-This tutorial explores one such TNO (see Step 2).
+This tutorial explores the position on the sky of one such TNO (Step 3) and plots time-domain quantities such as magnitude and phase angle (Step 4).  
+Finally, it provides a visualization of its trajectory projected into 2D (see Step 4).  
 
 More information about the LSST DDFs can be found on the `LSST DDF webpage <https://www.lsst.org/scientists/survey-design/ddf>`_
 and in Section 2.6 of the Survey Cadence Optimization Committee's Phase 2 Recommendations report 
@@ -57,6 +58,7 @@ This tutorial assumes the successful completion of the beginner-level DP0.3 Port
 and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
 For more information about the DP0.3 catalogs, tables, and columns, see the :ref:`DP0-3-Data-Products-DPDD`.  
 
+
 .. _DP0-3-Portal-3-Step-1:
 
 Step 1. Identify a population of TNOs
@@ -64,6 +66,7 @@ Step 1. Identify a population of TNOs
 
 1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 At upper right, next to "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top.
+
 
 1.2. At upper right, next to "View" choose "Edit ADQL".
 Enter the following ADQL statement into the ADQL Query box.
@@ -153,8 +156,8 @@ Step 2. Explore the properties of a population of TNOs
 
 2.1.  Now that the population of the Trans-Neptunian Objects has been identified, it is possible to further explore their properties.  
 The plot above indicates that majority of objects returned in our query were closer to the Sun than 30 au, and only about 600 are TNOs.  
-To study the properties of a larger sample of TNOs, execute a query simiar to the one in Step 1.2, but include only objects at ``a`` > 30.1 au.  
-Also include the absolute H magnitude ``mpcH`` which we will use in the derivation of diameters of TNOs in the subsequent step below.  
+To study the properties of a larger sample of TNOs, execute a query simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
+Also include the absolute H magnitude ``mpcH`` which we will use in the derivation of diameters of TNOs in the subsequent step (2.4) below.  
 
 .. code-block:: SQL 
 
@@ -178,6 +181,7 @@ In particular, the X-axis is restricted to ``10 < a < 100`` au to illustrate at 
 
     The plot parameters for the eccentricity vs. semi-major axis plot.  
 
+
 2.3.  Click on "Apply" in the "Plot Parameters" window.  This will result in the plot as below.  
 .. figure:: /_static/portal_tut03_step01g.png
     :width: 600
@@ -194,9 +198,9 @@ In addition, there is a separate population of high-eccentricity objects, and th
 
 2.4.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes. 
 For this you will need to use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
-The equation which gives the diameter d in kilometers  is ``d = 10^(3.1236 - 0.5log(A) - 0.2H) .  
+The equation which gives the diameter d in kilometers  is ``d = 10^(3.1236 - 0.5log(A) - 0.2H)`` .  
 Note that the query you executed in Step 2.1 already returned a column with the H magnitude, so you won't need to execute a new query for this step.  
-For the purpose of this demonstration, we will use the albedo of 0.15, which is a common value in literature.  
+For the purpose of this demonstration, we will use the albedo of 0.15, which is a common value in literature (Ref. XXX).  
 We note that the derived diameter depends only weakly on the adopted albedo.  
 
 
@@ -207,12 +211,9 @@ We note that the derived diameter depends only weakly on the adopted albedo.
 
 ..    The equation relating the diameter of a small Solar system object as a function of its albedo A and H-magnitude.  
 
-In order to be able to plot the distribution of derived diameters of the Solar System objects, we will need to modify the above equation.  
-This is because the ``10^()`` expression is not available as an option for the expression for the content of the new column in the portal, but the ``exp()`` is available.  
-We will assume the albedo of 0.15, the commonly adopted value (see REF.).  With this, the equation above simplifies to 
-The equivalent "legal" expression is ``3418 * exp(-0.46 * H)``.  
-Add an additional column by clicking on the "add column" icon above the table (the icon has a little "+" sign on it).  
-Enter ``D`` in the "name" field, and ``3418 * exp(-0.46 * mpcH)`` in the expression field, as below.  
+Adopting albedo of 0.15, the above expression for ``d`` reduces to ``d = 10^2.7116 - 0.2 H``
+Add an additional column by clicking on the "add column" icon above the table.  
+Enter ``D`` in the "name" field, and ``power(10,(2.7116 - 0.2 * mpcH))`` in the expression field, as below.  
 
 .. figure:: /_static/portal_tut03_step01j.png
     :width: 400
