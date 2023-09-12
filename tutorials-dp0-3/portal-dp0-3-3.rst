@@ -165,6 +165,9 @@ Also include the absolute H magnitude ``mpcH`` which we will use in the derivati
     FROM dp03_catalogs_10yr.MPCORB
     WHERE q / (1 - e) > 30.1 AND e < 1 
 
+Keep the "Row limit" to 200000, and click "Search."  By default, you will generate a plot of inclination vs. eccentricity.  
+
+
 2.2.  Plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
 This time (in contrast to Step 1.6 but accomplishing the same goal) you will calculate ``a`` from ``e`` and ``q`` via 
 setting derived plot parameters rather than creating another column in the right-hand table.  
@@ -174,18 +177,19 @@ You can chose any color map you find compelling.
 The plot parameters used here are below.  
 In particular, the X-axis is restricted to ``10 < a < 100`` au to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
 
-.. figure:: /_static/portal_tut03_step01f.png
+.. figure:: /_static/portal_tut03_step02a.png
     :width: 400
-    :name: portal_tut03_step01f
+    :name: portal_tut03_step02a
     :alt: A screenshot of the plot parameters for the eccentricity vs. semi-major axis plot 
 
     The plot parameters for the eccentricity vs. semi-major axis plot.  
 
 
 2.3.  Click on "Apply" in the "Plot Parameters" window.  This will result in the plot as below.  
-.. figure:: /_static/portal_tut03_step01g.png
+
+.. figure:: /_static/portal_tut03_step02b.png
     :width: 600
-    :name: portal_tut03_step01g
+    :name: portal_tut03_step02b
     :alt: A screenshot of the plot of the eccentricity vs. semi-major axis 
 
     The plot of the distribution of the eccentricity vs. semi-major axis of Trans-Neptunian Objects.  
@@ -243,14 +247,14 @@ Clicking on the "Apply" button will result in the plot showing the distribution 
     The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of TNOs are in the range of a few hundred kilometers.  
 
 
-1.11. Clear the query and results and return to the RSP TAP Search form.
+2.5. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-2:
 
-Step 2. Find and explore a well-observed TNO
+Step 3. Find and explore a well-observed TNO
 ============================================
 
-2.1. Follow steps 1.1 and 1.2 above to navigate to the ADQL query interface, and enter the query below.
+3.1. Follow steps 1.1 and 1.2 above to navigate to the ADQL query interface, and enter the query below.
 This query has the same basis as the one used above in step 1.2, with three changes.
 One, it joins with the ``DiaSource`` table to retrive the number of ``DiaSources`` (i.e., detections) associated with each object.
 Two, it applies a constraint that the semi-major axis be between 30 and 100 AU.
@@ -269,7 +273,7 @@ Three, it uses a different constraint on ``ssObjectId`` to return a different ra
 This search might take up to a minute.  
 
 
-2.2. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
+3.2. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
 which is not particularly useful but it does show the number of detections for the most oft-detected TNOs 
 is in the thousands.
 Click twice on the ``COUNT`` in the table to short descending by count.
@@ -282,7 +286,7 @@ Click twice on the ``COUNT`` in the table to short descending by count.
     The default results view from the ADQL query above.
 
 
-2.3. The query returns about 12,600 objects.  
+3.3. The query returns about 12,600 objects.  
 We will continue with the object with the largest number of observations - 12,103 of them! - with the ``ssObjectId`` = -735085100561880491.  
 
 Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter, and time of observations (``midPointMjdTai``) for 
@@ -295,7 +299,7 @@ the oft-observed TNO with ``ssObjectId`` as above.
     WHERE ssObjectId = -735085100561880491
 
 
-2.4. The default results view will show the "Coverage" map at upper left.
+3.4. The default results view will show the "Coverage" map at upper left.
 In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
 Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is redundant with the default plot.
 At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
@@ -308,7 +312,7 @@ At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show on
     The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
 
 
-2.5. Set the color of individual points to represent the time of the observation to 
+3.5. Set the color of individual points to represent the time of the observation to 
 better illustrate how the object moves across the sky.
 In the plot panel, click on the "Settings" icon (double gears) to open the "Plot Parameters"
 pop-up window.
@@ -323,11 +327,11 @@ Then click "Apply".
     The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
 
 
-2.6. Clear the query and results and return to the RSP TAP Search form.
+3.6. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-3:
 
-Step 3. Plot the time-domain quantities for the TNO
+Step 4. Plot the time-domain quantities for the TNO
 ===================================================
 
 **Note** that no time domain evolution in object brightness was included in the DP0.3 simulation
@@ -335,7 +339,7 @@ Step 3. Plot the time-domain quantities for the TNO
 All changes in the brightness of DP0.3 objects with time are due to changes in the 
 distance and phase angle from Earth.
 
-3.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
+4.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
 heliocentric and topocentric distances, and time of the observations for the TNO.
 
 .. code-block:: SQL 
@@ -347,7 +351,7 @@ heliocentric and topocentric distances, and time of the observations for the TNO
     WHERE ss.ssObjectId = -735085100561880491
     AND ds.band = 'r'
 
-3.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
+4.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
 as a function of time (right two plots, below), and see that these quantities are not correlated with time.
 Add a new scatter plot showing the r-band magnitude as a function of phase angle, which are correlated.
 
@@ -358,7 +362,7 @@ Add a new scatter plot showing the r-band magnitude as a function of phase angle
 
     Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
 
-3.3.  Plot the topocentric and heliocentric distances of the object as a function of time.  
+4.3.  Plot the topocentric and heliocentric distances of the object as a function of time.  
 Here, you will use the columns in the table which you generated in Step 3.1.  
 First, delete two of the the three plots prepared in Step 3.2 by clicking on the blue ``X`` in the upper right-hand part of the plot panels to make space for new plots.  
 Then add a pair of new plots, clicking on the "plot settings."  
@@ -374,10 +378,10 @@ After you remove the panel containing the plot made in the previous step, you wi
 
 .. _DP0-3-Portal-3-Step-4:
 
-Step 4. Visualize the TNO's trajectory in 3-D 
+Step 5. Visualize the TNO's trajectory in 3-D 
 =============================================
 
-4.1.  Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory:  
+5.1.  Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory:  
 
 .. code-block:: SQL 
 
@@ -386,7 +390,7 @@ Step 4. Visualize the TNO's trajectory in 3-D
     FROM dp03_catalogs_10yr.SSSource
     WHERE ssObjectId = -735085100561880491
 
-4.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` for y and ``heliocentricY`` for x.  
+5.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` for y and ``heliocentricY`` for x.  
 Note that the object moves relatively slowly in heliocentric coordinate X (as well as in Y), covering only a few au in 10 years.  
 This is expected given its distance from the Sun, which you saw in Step 3.  
 Now observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic.  
@@ -409,7 +413,7 @@ You can also plot the ``topocentricX`` vs. ``heliocentricX`` where you can clear
 
 .. _DP0-3-Portal-3-Step-5:
 
-Step 5.  Exercises for the learner: 
+Step 6.  Exercises for the learner: 
 ===================================
 
 (1) Plot the distribution of the objects you've made in Step 1.8 as a heatmap.  
