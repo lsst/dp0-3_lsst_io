@@ -92,7 +92,7 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
     :name: portal_tut03_step01a
     :alt: A screenshot of the default results view for the query.
 
-    The default results view for the query, with the table at left and the heatmap at right.  
+    The default results view for the query, with the table at right and the heatmap at left.    
 
 
 1.5.  Exclude the objects moving on unbound orbits.  
@@ -109,7 +109,7 @@ This will result in a slightly modified display as below.
     The view for the query with e < 1 and q < 50.  
 
 
-1.6. Create a column of semi-major axis, ``a``.
+1.6. Create a new column in the table, containing semi-major axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
 In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" to "q/(1-e)", the "Units" to "au",
 and the "Description" to "semi-major axis".  
@@ -126,9 +126,9 @@ Click "Add Column", and see the new column appear in the table.
 1.7. Create a scatter plot of inclination vs. semi-major axis.
 In the plot panel, click the "Settings" icon (double gears), and select "Add New Chart".
 Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
-Set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.
+In the "Chart Options" dropdown menu, set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.
 Set the axis labels as shown in the figure below.
-Click "Apply".
+Click "OK".
 
 .. figure:: /_static/portal_tut03_step01d.png
     :width: 400
@@ -155,9 +155,8 @@ Step 2. Explore the properties of a population of TNOs
 ======================================================
 
 2.1.  Now that the population of the Trans-Neptunian Objects has been identified, it is possible to further explore their properties.  
-The plot above indicates that majority of objects returned in our query were closer to the Sun than 30 au, and only about 600 are TNOs.  
-First, clear your previous query - return to the "Edit ADQL" 
-To study the properties of a larger sample of TNOs, execute a query simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
+The plot above indicates that majority of objects returned in our query were closer to the Sun than 30 au, and only about 600 were TNOs.  
+To study the properties of a larger sample of TNOs, clear the ADQL query, and execute a query simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
 Also include the absolute H magnitude ``mpcH`` which we will use in the derivation of diameters of TNOs in the subsequent step (2.4) below.  
 
 .. code-block:: SQL 
