@@ -208,9 +208,9 @@ For the purpose of this demonstration, we will use the albedo of 0.15, which is 
 We note that the derived diameter depends only weakly on the adopted albedo.  
 
 
-.. figure:: /_static/portal_tut03_step01h.png
+.. figure:: /_static/portal_tut03_step02c.png
 ..    :width: 400
-..    :name: portal_tut03_step01h
+..    :name: portal_tut03_step02c
 ..    :alt: The equation relating the diameter of a small Solar system object as a function of its albedo and H-magnitude
 
 ..    The equation relating the diameter of a small Solar system object as a function of its albedo A and H-magnitude.  
@@ -219,9 +219,9 @@ Adopting albedo of 0.15, the above expression for ``d`` reduces to ``d = 10^2.71
 Add an additional column by clicking on the "add column" icon above the table.  
 Enter ``D`` in the "name" field, and ``power(10,(2.7116 - 0.2 * mpcH))`` in the expression field, as below.  
 
-.. figure:: /_static/portal_tut03_step01j.png
+.. figure:: /_static/portal_tut03_step02d.png
     :width: 400
-    :name: portal_tut03_step01j
+    :name: portal_tut03_step02d
     :alt: screenshot illustrating the expression needed to make the new column containing the diameter of the TNO
 
     The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
@@ -230,18 +230,18 @@ Now you can plot the distribution of diameters of TNOs extracted in the query of
 To do so, in "Plot parameters" select "Histogram" and enter the parameters as below.  
 Selecting logarithmic y axis might be more illustrative.  
 
-.. figure:: /_static/portal_tut03_step01k.png
+.. figure:: /_static/portal_tut03_step02e.png
     :width: 400
-    :name: portal_tut03_step01k
+    :name: portal_tut03_step02e
     :alt: screenshot illustrating the plot parameters for displaying the distribution of TNO's diameters
 
     The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
 
 Clicking on the "Apply" button will result in the plot showing the distribution of TNO diameters extracted via your query.  
 
-.. figure:: /_static/portal_tut03_step01l.png
+.. figure:: /_static/portal_tut03_step02f.png
     :width: 600
-    :name: portal_tut03_step01l
+    :name: portal_tut03_step02f
     :alt: screenshot illustrating the distribution of TNO's diameters
 
     The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of TNOs are in the range of a few hundred kilometers.  
@@ -278,9 +278,9 @@ which is not particularly useful but it does show the number of detections for t
 is in the thousands.
 Click twice on the ``COUNT`` in the table to short descending by count.
 
-.. figure:: /_static/portal_tut03_step02a.png
+.. figure:: /_static/portal_tut03_step03a.png
     :width: 600
-    :name: portal_tut03_step02a
+    :name: portal_tut03_step03a
     :alt: A screenshot of the default results view with the table sorted by count.
 
     The default results view from the ADQL query above.
@@ -304,9 +304,9 @@ In the future, with real LSST data, this map would have an underlay of the LSST 
 Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is redundant with the default plot.
 At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
 
-.. figure:: /_static/portal_tut03_step02b.png
+.. figure:: /_static/portal_tut03_step03b.png
     :width: 600
-    :name: portal_tut03_step02b
+    :name: portal_tut03_step03b
     :alt: The default results view after clicking on bi-view tables.
 
     The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
@@ -319,9 +319,9 @@ pop-up window.
 Under "Trace Options", for "Color Map" enter ``midPointMjdTai`` and for "Color Scale" enter "Rainbow".
 Then click "Apply".
 
-.. figure:: /_static/portal_tut03_step02c.png
+.. figure:: /_static/portal_tut03_step03c.png
     :width: 600
-    :name: portal_tut03_step02c
+    :name: portal_tut03_step03c
     :alt: A screenshot of the plot of sky coordinates colored as a function of time.
 
     The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
@@ -355,8 +355,8 @@ heliocentric and topocentric distances, and time of the observations for the TNO
 as a function of time (right two plots, below), and see that these quantities are not correlated with time.
 Add a new scatter plot showing the r-band magnitude as a function of phase angle, which are correlated.
 
-.. figure:: /_static/portal_tut03_step03a.png
-    :name: portal_tut03_step03a
+.. figure:: /_static/portal_tut03_step04a.png
+    :name: portal_tut03_step04a
     :width: 600
     :alt: A screenshot of three plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle.
 
@@ -369,12 +369,13 @@ Then add a pair of new plots, clicking on the "plot settings."
 In both cases, enter ``midPointMjdTai`` for X-axis, but for Y axis - enter ``topocentricDist`` for one plot, and ``heliocentricDist`` for the other.  
 After you remove the panel containing the plot made in the previous step, you will see the plots as below.  
 
-.. figure:: /_static/portal_tut03_step03b.png
+.. figure:: /_static/portal_tut03_step04b.png
     :width: 600
-    :name: portal_tut03_step03b
+    :name: portal_tut03_step04b
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
-    Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 2.5.  
+    Heliocentric and topocentric distance of the TNO as a function of time.  
+Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 2.5.  
 
 .. _DP0-3-Portal-3-Step-4:
 
@@ -396,12 +397,12 @@ This is expected given its distance from the Sun, which you saw in Step 3.
 Now observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic.  
 You can also plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see the effect of position of the TNO on the sky as a result of Earth's orbital motion.  
 
- .. figure:: /_static/portal_tut03_step04a.png
-    :name: portal_tut03_step04a
+ .. figure:: /_static/portal_tut03_step05a.png
+    :name: portal_tut03_step05a
     :width: 600
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
-    Visualization of the TNO's trajectory
+    2d visualization of the TNO's trajectory.
 
 .. **FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
 
