@@ -207,9 +207,9 @@ Note that the query you executed in Step 2.1 already returned a column with the 
 For the purpose of this demonstration, we will use the albedo of 0.15, which is a common value in literature (Ref. XXX).  
 We note that the derived diameter depends only weakly on the adopted albedo.  
 
-Adopting albedo of 0.15, the above expression for ``d`` reduces to ``d = 10^(2.7116 - 0.2 H)``
+Adopting albedo of 0.15, the above expression for ``d`` reduces to ``d = 10^(3.536 - 0.2 H)``
 Add an additional column by clicking on the "add column" icon above the table.  
-Enter ``D`` in the "name" field, and ``power(10,(2.7116 - 0.2 * mpcH))`` in the expression field, as below.  
+Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the expression field, as below.  
 
 .. figure:: /_static/portal_tut03_step02c.png
     :width: 400
@@ -218,8 +218,8 @@ Enter ``D`` in the "name" field, and ``power(10,(2.7116 - 0.2 * mpcH))`` in the 
 
     The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
 
-Now you can plot the distribution of diameters of TNOs extracted in the query of Step 1.9.  
-To do so, in "Plot parameters" select "Histogram" and enter the parameters as below.  
+Now you can plot the distribution of diameters of TNOs extracted in the query of Step 2.1.  
+To do so, in "Plot parameters" click on "add new chart," select "Histogram" and enter the parameters as below.  
 Selecting logarithmic y axis might be more illustrative.  
 
 .. figure:: /_static/portal_tut03_step02d.png
@@ -227,7 +227,7 @@ Selecting logarithmic y axis might be more illustrative.
     :name: portal_tut03_step02d
     :alt: screenshot illustrating the plot parameters for displaying the distribution of TNO's diameters
 
-    The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
+    The screenshot illustrating the plot parameters for the distribution of the TNO's diameters.  
 
 Clicking on the "Apply" button will result in the plot showing the distribution of TNO diameters extracted via your query.  
 
