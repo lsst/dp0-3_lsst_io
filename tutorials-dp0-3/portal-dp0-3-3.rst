@@ -185,7 +185,7 @@ In particular, the X-axis is restricted to ``10 < a < 100`` au to illustrate at 
     The plot parameters for the eccentricity vs. semi-major axis plot.  
 
 
-2.3.  Click on "Apply" in the "Plot Parameters" window.  This will result in the plot as below.  
+2.3.  Click on "Apply" in the "Plot Parameters" window.  Then delete the "incl vs. e" plot (the rightmost panel).  This will result in the plot as below.  
 
 .. figure:: /_static/portal_tut03_step02b.png
     :width: 600
@@ -207,21 +207,13 @@ Note that the query you executed in Step 2.1 already returned a column with the 
 For the purpose of this demonstration, we will use the albedo of 0.15, which is a common value in literature (Ref. XXX).  
 We note that the derived diameter depends only weakly on the adopted albedo.  
 
-
-.. figure:: /_static/portal_tut03_step02c.png
-..    :width: 400
-..    :name: portal_tut03_step02c
-..    :alt: The equation relating the diameter of a small Solar system object as a function of its albedo and H-magnitude
-
-..    The equation relating the diameter of a small Solar system object as a function of its albedo A and H-magnitude.  
-
-Adopting albedo of 0.15, the above expression for ``d`` reduces to ``d = 10^2.7116 - 0.2 H``
+Adopting albedo of 0.15, the above expression for ``d`` reduces to ``d = 10^(2.7116 - 0.2 H)``
 Add an additional column by clicking on the "add column" icon above the table.  
 Enter ``D`` in the "name" field, and ``power(10,(2.7116 - 0.2 * mpcH))`` in the expression field, as below.  
 
-.. figure:: /_static/portal_tut03_step02d.png
+.. figure:: /_static/portal_tut03_step02c.png
     :width: 400
-    :name: portal_tut03_step02d
+    :name: portal_tut03_step02c
     :alt: screenshot illustrating the expression needed to make the new column containing the diameter of the TNO
 
     The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
@@ -230,18 +222,18 @@ Now you can plot the distribution of diameters of TNOs extracted in the query of
 To do so, in "Plot parameters" select "Histogram" and enter the parameters as below.  
 Selecting logarithmic y axis might be more illustrative.  
 
-.. figure:: /_static/portal_tut03_step02e.png
+.. figure:: /_static/portal_tut03_step02d.png
     :width: 400
-    :name: portal_tut03_step02e
+    :name: portal_tut03_step02d
     :alt: screenshot illustrating the plot parameters for displaying the distribution of TNO's diameters
 
     The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
 
 Clicking on the "Apply" button will result in the plot showing the distribution of TNO diameters extracted via your query.  
 
-.. figure:: /_static/portal_tut03_step02f.png
+.. figure:: /_static/portal_tut03_step02e.png
     :width: 600
-    :name: portal_tut03_step02f
+    :name: portal_tut03_step02e
     :alt: screenshot illustrating the distribution of TNO's diameters
 
     The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of TNOs are in the range of a few hundred kilometers.  
