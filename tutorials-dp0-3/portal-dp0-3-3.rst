@@ -43,7 +43,7 @@ Their properties (specifically, relationship between their semi-major axis and e
 Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on parabolic or hyperbolic orbits).  
 Such objects will be excluded in our analysis, as an application of the formula above would result in a negative value of ``a``.  
 
-Compared to Solar System objects closer to the Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs), TNOs move relatively slowly across the sky.
+Compared to the Solar System objects closer to the Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs), TNOs move relatively slowly across the sky.
 This relatively slow movement means that TNOs that fall within an LSST Deep Drilling Field (DDF) can stay within that
 field, and LSST can accumulate thousands of observations of them.
 This tutorial explores the position on the sky of one such TNO (Step 3) and plots time-domain quantities such as magnitude and phase angle (Step 4).  
@@ -156,8 +156,8 @@ Step 2. Explore the properties of a population of TNOs
 
 2.1.  Now that the population of the Trans-Neptunian Objects has been identified, it is possible to further explore their properties.  
 The plot above indicates that majority of objects returned in our query were closer to the Sun than 30 au, and only about 600 were TNOs.  
-To study the properties of a larger sample of TNOs, clear the ADQL query, and execute a query simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
-Also include the absolute H magnitude ``mpcH`` which we will use in the derivation of diameters of TNOs in the subsequent step (2.4) below.  
+To study the properties of a larger sample of TNOs, clear the ADQL query, and execute a query below, simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
+Also include the absolute H magnitude ``mpcH`` which will be used in the derivation of diameters of TNOs in the subsequent step (2.4) below.  
 
 .. code-block:: SQL 
 
@@ -185,7 +185,7 @@ In particular, the X-axis is restricted to ``10 < a < 100`` au to illustrate at 
     The plot parameters for the eccentricity vs. semi-major axis plot.  
 
 
-2.3.  Click on "Apply" in the "Plot Parameters" window.  Then delete the "incl vs. e" plot (the rightmost panel).  This will result in the plot as below.  
+2.3.  Click on "OK" or "Apply" in the "Plot Parameters" window.  Then delete the "incl vs. e" plot (the rightmost panel).  This will result in the plot as below.  
 
 .. figure:: /_static/portal_tut03_step02b.png
     :width: 600
@@ -202,12 +202,12 @@ In addition, there is a separate population of high-eccentricity objects, and th
 
 2.4.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes. 
 For this you will need to use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
-The equation which gives the diameter d in kilometers  is ``d = 10^(3.1236 - 0.5log(A) - 0.2H)`` .  
+The equation which gives the diameter d in kilometers  is :math:`d = 10^(3.1236 - 0.5 \times log(A) - 0.2 \times H)` .  
 Note that the query you executed in Step 2.1 already returned a column with the H magnitude, so you won't need to execute a new query for this step.  
-For the purpose of this demonstration, we will use the albedo of 0.15, which is a common value in literature (Ref. XXX).  
+For the purpose of this demonstration, we will use the albedo of 0.15, which is a common value in literature (see, e. g., Vilenius et al. 2012, A & A, 541, 94).  
 We note that the derived diameter depends only weakly on the adopted albedo.  
 
-Adopting albedo of 0.15, the above expression for ``d`` reduces to ``d = 10^(3.536 - 0.2 H)``
+Adopting albedo of 0.15, the above expression for ``d`` reduces to :math:`d = 10^(3.536 - (0.2 \times H))``
 Add an additional column by clicking on the "add column" icon above the table.  
 Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the expression field, as below.  
 
