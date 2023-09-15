@@ -309,7 +309,7 @@ At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show on
 better illustrate how the object moves across the sky.
 In the plot panel, click on the "Settings" icon (double gears) to open the "Plot Parameters"
 pop-up window.
-Under "Trace Options", for "Color Map" enter ``midPointMjdTai`` and for "Color Scale" enter "Rainbow".
+Under "Trace Options", for "Color Map" enter "midPointMjdTai" and for "Color Scale" enter "Rainbow".
 Then click "Apply".
 
 .. figure:: /_static/portal_tut03_step03c.png
@@ -317,7 +317,8 @@ Then click "Apply".
     :name: portal_tut03_step03c
     :alt: A screenshot of the plot of sky coordinates colored as a function of time.
 
-    The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.
+    The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.  
+    Purple color corresponds to earlier observtations, and the red color corresponds to the later observations.  
 
 
 3.6. Clear the query and results and return to the RSP TAP Search form.
