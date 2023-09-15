@@ -156,7 +156,8 @@ Step 2. Explore the properties of a population of TNOs
 
 2.1.  Now that the population of the Trans-Neptunian Objects has been identified, it is possible to further explore their properties.  
 The plot above indicates that majority of objects returned in our query were closer to the Sun than 30 au, and only about 600 were TNOs.  
-To study the properties of a larger sample of TNOs, clear the ADQL query, and execute a query below, simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
+To study the properties of a larger sample of TNOs, follow steps 1.1 and 1.2 above to navigate to the ADQL query interface.  
+Clear the ADQL query, and execute a query below, simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
 Also include the absolute H magnitude ``mpcH`` which will be used in the derivation of diameters of TNOs in the subsequent step (2.4) below.  
 
 .. code-block:: SQL 
@@ -236,7 +237,7 @@ Clicking on the "Apply" button will result in the plot showing the distribution 
     :name: portal_tut03_step02e
     :alt: screenshot illustrating the distribution of TNO's diameters
 
-    The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of TNOs are in the range of a few hundred kilometers.  
+    The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of most TNOs are in the range of a few hundred kilometers.  
 
 
 2.5. Clear the query and results and return to the RSP TAP Search form.
