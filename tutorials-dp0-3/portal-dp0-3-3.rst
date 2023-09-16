@@ -376,7 +376,8 @@ Note the periodic change of the topocentric distance with time resulting from th
 Step 5. Visualize the TNO's trajectory in 3-D 
 =============================================
 
-5.1.  Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory:  
+5.1.  Navigate again to the ADQL query interface.  
+Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory:  
 
 .. code-block:: SQL 
 
@@ -385,11 +386,11 @@ Step 5. Visualize the TNO's trajectory in 3-D
     FROM dp03_catalogs_10yr.SSSource
     WHERE ssObjectId = -735085100561880491
 
-5.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` for y and ``heliocentricY`` for x.  
+5.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` for y and ``heliocentricX`` for x.  
 Note that the object moves relatively slowly in heliocentric coordinate X (as well as in Y), covering only a few au in 10 years.  
 This is expected given its distance from the Sun, which you saw in Step 3.  
 Now observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic.  
-You can also plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see the effect of position of the TNO on the sky as a result of Earth's orbital motion.  
+Next, plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see the effect of position of the TNO on the sky as a result of Earth's orbital motion.  
 
  .. figure:: /_static/portal_tut03_step05a.png
     :name: portal_tut03_step05a
