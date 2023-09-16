@@ -345,7 +345,7 @@ heliocentric and topocentric distances, and time of the observations for the TNO
     AND ds.band = 'r'
 
 4.2. The default plot will have the r-band magnitude as a function of time.  
-Use the plot "Settings" function to add new scatter plots showing the phase angle as a function of time
+Use the plot "Settings" function to add new scatter plots showing the phase angle as a function of time, ``midPointMjdTai - 60000``.  
 This will result in the left two plots, as on the screenshot below.   Note that these quantities are not correlated with time.
 Add a new scatter plot showing the r-band magnitude as a function of phase angle (right plot), showing that the phase angle and r-band magnitude are correlated.
 
