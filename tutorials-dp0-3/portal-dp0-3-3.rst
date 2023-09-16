@@ -415,7 +415,7 @@ Step 6.  Exercises for the learner:
 (1) Plot the distribution of the objects you've made in Step 1.8 as a heatmap.  
 Such a plot will show more clearly the density of the objects in the "a"  vs. "incl" plane.  
 
-(2) Plot the histogram of the number of visits to the solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
+(2) Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
 
-(3) Repeat the steps above for another object with a large number of observations (say another one with ``numObs`` > 10,000).  
+(3) Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 10,000).  
 
