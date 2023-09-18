@@ -41,7 +41,7 @@ As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``
 a sample of TNOs can be identified in the DP0.3 data set (see Step 1).  
 Their properties (specifically, relationship between their semi-major axis and eccentricity, as well as distribution of their derived diameters) will be explored in Step 2.  
 Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on parabolic or hyperbolic orbits).  
-Such objects will be excluded in our analysis, as an application of the formula above would result in a negative value of ``a``.  
+Such objects will be excluded from this tutorial, as an application of the formula above would result in a negative value of ``a``.  
 
 Compared to the Solar System objects closer to the Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs), TNOs move relatively slowly across the sky.
 This relatively slow movement means that TNOs that fall within an LSST Deep Drilling Field (DDF) can stay within that
@@ -414,11 +414,8 @@ Next, plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see 
 Step 6.  Exercises for the learner: 
 ===================================
 
-(1) Plot the distribution of the objects you've made in Step 1.8 as a heatmap.  
-Such a plot will show more clearly the density of the objects in the ``a``  vs. ``incl``plane.  
+(1) Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
 
-(2) Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
-
-(3) Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2,000).  
+(2) Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2,000).  
 Note that you already identified objects with large number of observations in Steps 3.1 and 3.2.  
 
