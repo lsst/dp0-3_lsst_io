@@ -169,12 +169,12 @@ Keep the "Row limit" to 200000, and click "Search."  By default, you will genera
 
 
 2.2.  Plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
-This time (in contrast to Step 1.6 but accomplishing the same goal) you will calculate ``a`` from ``e`` and ``q`` via 
+This time (in contrast to Step 1.6 but accomplishing the same goal), calculate ``a`` from ``e`` and ``q`` via 
 setting derived plot parameters rather than creating another column in the right-hand table.  
-To do so, click on the "plot settings" (two gears) on the left-hand panel, click on "add new chart."  
+To do so, click on the "plot settings" (two gears) on the left-hand panel, and click on "add new chart."  
 Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  
 Increase the number of bins to 200 for both x and y to improve the resolution of the heatmap.  
-You can chose any color map you find compelling.  
+Chose any color map you find compelling.  
 The plot parameters used here are below.  
 In particular, the X-axis is restricted to ``10 < a < 100`` au to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
 
