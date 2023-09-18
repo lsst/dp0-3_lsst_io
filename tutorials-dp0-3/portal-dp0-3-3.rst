@@ -374,7 +374,7 @@ Note the periodic change of the topocentric distance with time resulting from th
 
 .. _DP0-3-Portal-3-Step-5:
 
-Step 5. Visualize in 3-D trajectory of the TNO by viewing the 2-D projection of its orbit
+Step 5. Visualize in 3-D the trajectory of the TNO by viewing the 2-D projection of its orbit
 =========================================================================================
 
 5.1.  Navigate again to the ADQL query interface.  
@@ -399,7 +399,7 @@ Next, plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see 
     :width: 600
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
-    2d visualization of the TNO's trajectory.
+    Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory.  
 
 .. **FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
 
