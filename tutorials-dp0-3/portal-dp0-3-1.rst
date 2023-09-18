@@ -53,7 +53,7 @@ In Rubin Operations, these tables would be constantly changing, updated every da
 However, for DP0.3, static catalogs have been simulated.  
 
 This tutorial focuses on the first two tables, ``MPCORB`` and ``SSObject`` and it will explore these tables individually.  The table joins will be demonstrated in 
-:ref:`Tutorials-Examples-DP0-3-Portal-2` which will focus on ``SSSource`` and ``DiaSource`` tables.  That tutorial will illustrate, among others, how to extract and plot the magnitude, 
+:ref:`https://dp0-3.lsst.io/v/main/tutorials-dp0-3/portal-dp0-3-2.html` which will focus on ``SSSource`` and ``DiaSource`` tables.  That tutorial will illustrate, among others, how to extract and plot the magnitude, 
 the heliocentric, and the topocentric position of an object vs. time.  
 
 
