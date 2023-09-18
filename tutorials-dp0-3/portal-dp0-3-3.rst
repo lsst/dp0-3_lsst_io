@@ -105,7 +105,7 @@ This will result in a slightly modified display as below.
     :name: portal_tut03_step01b
     :alt: A screenshot of the default results view for the modified query.
 
-    The view for the query with e < 1 and q < 50.  
+    The view for the query with ``e < 1``.    
 
 
 1.6. Create a new column in the table, containing semi-major axis, ``a``.
