@@ -97,7 +97,7 @@ and variables (``DiaObjects``, not included in DP0.3).
 The Solar System Processing which occurs in the daytime, after a night of observing, 
 links together the ``DiaSources`` for moving objects into ``SSObjects``.
 Whereas the ``MPCORB`` table contains the orbital elements for these moving objects, 
-the ``SSObjects`` contains the Rubin-measured properties such as phase curve fits and absolute magnitudes.
+the ``SSObject`` table contains the Rubin-measured properties such as phase curve fits and absolute magnitudes.
 
 Note that no artifacts or spurious difference-image sources have been injected into the DP0.3 catalogs.
 
@@ -105,7 +105,8 @@ Note that no artifacts or spurious difference-image sources have been injected i
 from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
 Absolute magnitudes are derived by correcting for distance, fitting a function to the relationship between 
 absolute magnitude and phase, and evaluating the function at a phase of 0 deg.
-The results of phase-curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.
+During the LSST survey, the results of phase-curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.  
+However, the DP0.3 tables contain only four filters, griz.  
 
 
 TAP and ADQL
