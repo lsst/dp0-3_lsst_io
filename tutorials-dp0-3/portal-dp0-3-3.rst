@@ -414,8 +414,8 @@ Next, plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see 
 Step 6.  Exercises for the learner: 
 ===================================
 
-(1) Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
+6.1. Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
 
-(2) Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2,000).  
+6.2. Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2,000).  
 Note that you already identified objects with large number of observations in Steps 3.1 and 3.2.  
 
