@@ -71,18 +71,19 @@ and made available to users as the ``MPCORB`` table
 (the other derived properties are stored in the other three tables explored below).
 Wikipedia provides a decent
 `beginner-level guide to orbital elements <https://en.wikipedia.org/wiki/Orbital_elements>`_.
-The DP0.3 ``MPCORB`` table is a simulation of what this data product will be like after 10 years of LSST.
+The DP0.3 ``MPCORB`` table is a simulation of what this data product will be like after 10 years of LSST.  
+Note that the ```MPCORB`` table is a table of simulated input orbital elements rather than actual orbit fit results.  
 
-The MPC contains all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
-Thus, the ``MPCORB`` table will have more rows than the ``SSObject`` table.
+The MPC tabulates all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
+Thus, the ``DP0.3 MPCORB`` table will have more rows than the ``SSObject`` table.
 
-For DP0.3, the MPC did not actually recompute orbital elements by incorporating on the simulated LSST data, but rather
+For DP0.3, the MPC did not actually recompute orbital elements by incorporating the simulated LSST data, but rather
 vice versa: LSST observations were simulated based on the MPC's orbital elements.
 Thus, the ``MPCORB`` table can be considered a truth table.
 
 For more information about Rubin's plans for Solar System Processing, see Section 3.2.2 of the 
 `Data Products Definitions Document <https://docushare.lsstcorp.org/docushare/dsweb/Get/LSE-163/LSE-163_DataProductsDefinitionDocumentDPDD.pdf>`_.
-Note that there remain differences between Table 4 of the DPDD, which contain the anticipated schema 
+Note that there remain differences between Table 4 of the DPDD, which contains the anticipated schema 
 for the moving object tables, and the DP0.3 table schemas.
 
 
