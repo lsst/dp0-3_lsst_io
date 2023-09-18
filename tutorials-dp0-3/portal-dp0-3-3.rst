@@ -98,7 +98,6 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
 1.5.  Exclude the objects moving on unbound orbits.  
 Note that a small fraction of the objects - roughly one in a thousand - have derived eccentricities > 1 meaning those are not bound to the Solar System.  
 Those objects can be excluded from further analysis by entering ``< 1`` in the box underneath the table heading ``e``, and hitting "enter."  
-To see the distribution of ``q`` vs. ``e`` more clearly, also restrict the range of ``q`` by entering ``< 50`` and hitting "enter."   
 This will result in a slightly modified display as below.  
 
 .. figure:: /_static/portal_tut03_step01b.png
@@ -174,6 +173,7 @@ This time (in contrast to Step 1.6 but accomplishing the same goal) you will cal
 setting derived plot parameters rather than creating another column in the right-hand table.  
 To do so, click on the "plot settings" (two gears) on the left-hand panel, click on "add new chart."  
 Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  
+Increase the number of bins to 200 for both x and y to improve the resolution of the heatmap.  
 You can chose any color map you find compelling.  
 The plot parameters used here are below.  
 In particular, the X-axis is restricted to ``10 < a < 100`` au to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
@@ -203,13 +203,13 @@ In addition, there is a separate population of high-eccentricity objects, and th
 
 2.4.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes. 
 For this you will need to use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
-The equation which gives the diameter d in kilometers  is :math:`d = 10^(3.1236 - 0.5 \times log(A) - 0.2 \times H)` .  
+The equation which gives the diameter d in kilometers  is :math:`d = 10^{(3.1236 - 0.5 \times log(A) - 0.2 \times H)}` .  
 Note that the query you executed in Step 2.1 already returned a column with the H magnitude, so you won't need to execute a new query for this step.  
 For the purpose of this demonstration, we will use the albedo of 0.15, which is a common value in literature (see, e. g., Vilenius et al. 2012, A & A, 541, 94).  
 We note that the derived diameter depends only weakly on the adopted albedo.  
+Adopting albedo of 0.15, the above expression for ``d`` reduces to :math:`d = 10^{(3.536 - (0.2 \times H))}`.  
 
-Adopting albedo of 0.15, the above expression for ``d`` reduces to :math:`d = 10^(3.536 - (0.2 \times H))``
-Add an additional column by clicking on the "add column" icon above the table.  
+2.5.  Add an additional column by clicking on the "add column" icon above the table.  
 Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the expression field, as below.  
 
 .. figure:: /_static/portal_tut03_step02c.png
@@ -219,7 +219,8 @@ Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the e
 
     The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
 
-Now you can plot the distribution of diameters of TNOs extracted in the query of Step 2.1.  
+
+2.6.  Plot the distribution of diameters of TNOs extracted in the query of Step 2.1.  
 To do so, in "Plot parameters" click on "add new chart," select "Histogram" and enter the parameters as below.  
 Selecting logarithmic y axis might be more illustrative.  
 
@@ -240,7 +241,7 @@ Clicking on the "Apply" button will result in the plot showing the distribution 
     The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of most TNOs are in the range of a few hundred kilometers.  
 
 
-2.5. Clear the query and results and return to the RSP TAP Search form.
+2.7. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-2:
 
