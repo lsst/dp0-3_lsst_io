@@ -23,7 +23,7 @@
 
 **Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:** September 1, 2023
+**Last verified to run:** September 15, 2023
 
 **Targeted learning level:** Intermediate
 
@@ -243,7 +243,7 @@ Clicking on the "Apply" button will result in the plot showing the distribution 
 
 2.7. Clear the query and results and return to the RSP TAP Search form.
 
-.. _DP0-3-Portal-3-Step-2:
+.. _DP0-3-Portal-3-Step-3:
 
 Step 3. Find and explore a well-observed TNO
 ============================================
@@ -280,10 +280,10 @@ Click twice on the ``COUNT`` column header in the table to order the entries by 
     The default results view from the ADQL query above.
 
 
-3.3. The query returns about 12,600 objects.  
+The query returns about 12,600 objects.  
 We will continue with the object with the largest number of observations - 12,103 of them! - with the ``ssObjectId`` = -735085100561880491.  
 
-Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter, and time of observations (``midPointMjdTai``) for 
+3.3.  Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter (``band``), and time of observations (``midPointMjdTai``) for 
 the oft-observed TNO with ``ssObjectId`` as above.  
 
 .. code-block:: SQL 
@@ -324,7 +324,7 @@ Then click "Apply".
 
 3.6. Clear the query and results and return to the RSP TAP Search form.
 
-.. _DP0-3-Portal-3-Step-3:
+.. _DP0-3-Portal-3-Step-4:
 
 Step 4. Plot the time-domain quantities for the TNO
 ===================================================
@@ -372,10 +372,10 @@ After you remove the panel containing the plot made in the previous step, you wi
     Heliocentric and topocentric distance of the TNO as a function of time.  
 Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 3.5.  
 
-.. _DP0-3-Portal-3-Step-4:
+.. _DP0-3-Portal-3-Step-5:
 
-Step 5. Visualize in 2D the 3-D trajectory of the TNO
-=====================================================
+Step 5. Visualize in 3-D trajectory of the TNO by viewing the 2-D projection of its orbit
+=========================================================================================
 
 5.1.  Navigate again to the ADQL query interface.  
 Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory:  
@@ -388,9 +388,9 @@ Execute the query below to extract the helio- and topocentric distances of the T
     WHERE ssObjectId = -735085100561880491
 
 5.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` for y and ``heliocentricX`` for x.  
-Note that the object moves relatively slowly in heliocentric coordinate X (as well as in Y), covering only a few au in 10 years.  
-This is expected given its distance from the Sun, which you saw in Step 3.  
-Now observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic.  
+Note that the object moves slowly in heliocentric coordinate X as well as in Y (by a comparison to, e.g., Earth's motion), covering only a few au in 10 years.  
+This is expected given its multi-au distance from the Sun.  
+Now observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic during the simunated Rubin observation, but the object does pass through the ecliptic plane when Z = 0.  
 Next, plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see the effect of position of the TNO on the sky as a result of Earth's orbital motion.  
 
  .. figure:: /_static/portal_tut03_step05a.png
@@ -408,13 +408,13 @@ Next, plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see 
 
 
 
-.. _DP0-3-Portal-3-Step-5:
+.. _DP0-3-Portal-3-Step-6:
 
 Step 6.  Exercises for the learner: 
 ===================================
 
 (1) Plot the distribution of the objects you've made in Step 1.8 as a heatmap.  
-Such a plot will show more clearly the density of the objects in the "a"  vs. "incl" plane.  
+Such a plot will show more clearly the density of the objects in the ``a``  vs. ``incl``plane.  
 
 (2) Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
 
