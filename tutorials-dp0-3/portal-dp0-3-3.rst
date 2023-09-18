@@ -387,6 +387,7 @@ Execute the query below to extract the helio- and topocentric distances of the T
     FROM dp03_catalogs_10yr.SSSource
     WHERE ssObjectId = -735085100561880491
 
+
 5.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` for y and ``heliocentricX`` for x.  
 Note that the object moves slowly in heliocentric coordinate X as well as in Y (by a comparison to, e.g., Earth's motion), covering only a few au in 10 years.  
 This is expected given its multi-au distance from the Sun.  
@@ -418,5 +419,6 @@ Such a plot will show more clearly the density of the objects in the ``a``  vs. 
 
 (2) Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
 
-(3) Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 10,000).  
+(3) Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2,000).  
+Note that you already identified objects with large number of observations in Steps 3.1 and 3.2.  
 
