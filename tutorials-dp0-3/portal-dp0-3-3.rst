@@ -270,7 +270,7 @@ This search might take up to a minute.
 3.2. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
 which is not particularly useful but it does show the number of detections for the most oft-detected TNOs 
 is in the thousands.
-Click twice on the ``COUNT`` in the table to short descending by count.
+Click twice on the ``COUNT`` column header in the table to order the entries by descending count.
 
 .. figure:: /_static/portal_tut03_step03a.png
     :width: 600
@@ -334,7 +334,7 @@ Step 4. Plot the time-domain quantities for the TNO
 All changes in the brightness of DP0.3 objects with time are due to changes in the distance and phase angle from Earth.  
 
 4.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
-heliocentric and topocentric distances, and time of the observations for the TNO.
+heliocentric and topocentric distances, and time of the observations for the TNO explored in Step 3.
 
 .. code-block:: SQL 
 
@@ -346,7 +346,7 @@ heliocentric and topocentric distances, and time of the observations for the TNO
     AND ds.band = 'r'
 
 4.2. The default plot will have the r-band magnitude as a function of time.  
-Use the plot "Settings" function to add new scatter plots showing the phase angle as a function of time, ``midPointMjdTai - 60000``.  
+Use the plot "Settings" function to add new scatter plots showing the magnitude and the phase angle as a function of time, ``midPointMjdTai - 60000``.  
 This will result in the left two plots, as on the screenshot below.   Note that these quantities are not correlated with time.
 Add a new scatter plot showing the r-band magnitude as a function of phase angle (right plot), showing that the phase angle and r-band magnitude are correlated.
 
@@ -374,8 +374,8 @@ Note the periodic change of the topocentric distance with time resulting from th
 
 .. _DP0-3-Portal-3-Step-4:
 
-Step 5. Visualize the TNO's trajectory in 3-D 
-=============================================
+Step 5. Visualize in 2D the 3-D trajectory of the TNO
+=====================================================
 
 5.1.  Navigate again to the ADQL query interface.  
 Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory:  
