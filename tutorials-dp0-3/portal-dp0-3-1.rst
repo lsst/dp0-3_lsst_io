@@ -105,7 +105,7 @@ Note that no artifacts or spurious difference-image sources have been injected i
 from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
 Absolute magnitudes are derived by correcting for distance, fitting a function to the relationship between 
 absolute magnitude and phase, and evaluating the function at a phase of 0 deg.
-During the LSST survey, the results of phase-curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.  
+During the LSST survey, the results of phase-curve fits in each of the LSST's six filters, ugrizy, will be stored in the ``SSObject`` table.  
 However, the DP0.3 tables contain only four filters, griz.  
 
 
@@ -118,7 +118,7 @@ or via the ADQL (Astronomical Data Query Language) interface.
 This tutorial will demonstrate both interfaces.
 TAP provides standardized access to catalog data for discovery, search, and retrieval.
 Full `documentation for TAP <http://www.ivoa.net/documents/TAP>`_ is provided by the International Virtual Observatory Alliance (IVOA).
-ADQL is similar to SQL (Structured Query Langage).
+ADQL is similar to SQL (Structured Query Language).
 The `documentation for ADQL <http://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
 
 
@@ -217,7 +217,7 @@ making more room for the three plots.
 and adjust the "Plot Parameters".
 Change the number of bins to 30.
 Under "Trace Options", next to "Color", click on the magnifying glass to select a new hue from the Color Picker pop-up window.
-Under "Chart Options", set the title to "H Histogram" and select box to log the y-axis.
+Under "Chart Options", set the title to "H Histogram" and select the box to log the y-axis.
 
 .. figure:: /_static/portal_tut01_step01g.png
     :width: 400
@@ -345,7 +345,7 @@ detected by LSST.
 Which populations of moving objects does LSST not detect?
 
 3.2. Explore and adjust the color-color plot.
-To zoom in, click on the the magnifying glass with the + symbol above the plot panel, then click-and-drag in the plot.
+To zoom in, click on the magnifying glass with the + symbol above the plot panel, then click-and-drag in the plot.
 Reopen the plot parameter pop-up window and use 500 bins instead of 200. 
 Try different color scales.
 Try plotting different color combinations or create a color-magnitude diagram.
