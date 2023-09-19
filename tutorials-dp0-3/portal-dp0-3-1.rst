@@ -63,7 +63,7 @@ The ``MPCORB`` table
 
 During Rubin Operations, Solar System Processing will occur in the daytime, after a night of observing.
 This processing will link together the difference-image detections of moving objects and report discoveries
-to the `Minor Planet Center (MPC) <https://minorplanetcenter.net>`_),
+to the `Minor Planet Center (MPC) <https://minorplanetcenter.net>`_,
 as well as compute derived properties (magnitudes, phase-curve fits, coordinates in various systems).
 
 The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored
@@ -91,8 +91,7 @@ The ``SSObject`` table
 ----------------------
 
 During Rubin Operations, Prompt Processing will occur during the night, detecting sources in 
-difference images (``DiaSources``, see Section 6) and associating them into static-sky transients
-and variables (``DiaObjects``, not included in DP0.3).
+difference images (``DiaSources``) and associating them into static-sky transients and variables (``DiaObjects``, not included in DP0.3).
 
 The Solar System Processing which occurs in the daytime, after a night of observing, 
 links together the ``DiaSources`` for moving objects into ``SSObjects``.
