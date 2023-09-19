@@ -262,18 +262,18 @@ Click "Search" in the lower left corner.
     :name: portal_tut01_step02a
     :alt: A screenshot of the ADQL query to obtain table information.
 
-    Note that there has to be a space after ``MAX(ssObjectId)``.
+    A screenshot of the ADQL entry to select the number of observations, and the range of ``ssObjectId`` values on the SSObject table.  
 
 
-2.2. The results view will look similar that in step 1.5 above, but for this query the default plot is not helpful.
-Obtaining the values in the table were the only objective of this first query.
+2.2. The results view will look similar to that in step 1.5 above, but for this query the default plot is not helpful.
+Obtaining the values in the table was the only objective of this first query.
 
 .. figure:: /_static/portal_tut01_step02b.png
     :width: 400
     :name: portal_tut01_step02b
     :alt: A screenshot of the results showing count, minimum, and maximum for ssObjectId.
 
-    The results view table of the counts, minimum, and maximum values of ``ssObjectId``.
+    The results view table of the object count, as well as the minimum and the maximum values of ``ssObjectId``.
 
 2.3. Notice that the ``SSObject`` table contains roughly 4.4 million moving objects. 
 Comparing this to the size of the ``MPCORB`` table is left as an exercise for the learner, below.
@@ -303,12 +303,13 @@ At right, the table shows that absolute H magnitudes were not derived for all ob
     :name: portal_tut01_step02c
     :alt: A screenshot of the default results view for the SSObject table query.
 
-    The default results view for the retrived subset of 136,134 random ``SSObjects``.
+    The default results view for the retrieved subset of 136,134 random ``SSObjects``.
 
 2.8. In the plot panel, click on the "Settings" icon at upper right (the double gears) and in the
 "Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``g_H - r_H`` and "Y" be ``i_H - z_H``.
 Set the "Color Scale" to Earth.
 Set the "Number of X-Bins" and "Number of Y-Bins" to be 200.
+Note that the maximum number of bins in such "heatmap" plots in both X and Y is 300.  
 Under "Chart Options", set the "X Label", "Y Label", "X Min", "X Max", "Y Min", and "Y Max" values as in the screenshot below.  
 
 .. figure:: /_static/portal_tut01_step02d.png
