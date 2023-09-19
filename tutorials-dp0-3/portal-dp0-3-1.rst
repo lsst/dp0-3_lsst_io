@@ -347,6 +347,6 @@ Which populations of moving objects does LSST not detect?
 
 3.2. Explore and adjust the color-color plot.
 To zoom in, click on the magnifying glass with the + symbol above the plot panel, then click-and-drag in the plot.
-Reopen the plot parameter pop-up window and use 500 bins instead of 200. 
+Reopen the plot parameter pop-up window and use 300 bins instead of 200. 
 Try different color scales.
 Try plotting different color combinations or create a color-magnitude diagram.
