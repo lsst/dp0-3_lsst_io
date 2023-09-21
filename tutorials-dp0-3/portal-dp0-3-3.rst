@@ -180,7 +180,7 @@ Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" 
 Increase the number of bins to 200 for both x and y to improve the resolution of the heatmap.  
 Chose any color map you find compelling.  
 The plot parameters used here are below.  
-In particular, the X-axis is restricted to ``10 < a < 100`` au to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
+In particular, the X-axis is restricted to ``30 < a < 100`` au to illustrate at more detail the region from 1 x to about 3 x the Neptune's orbit.  
 
 .. figure:: /_static/portal_tut03_step02a.png
     :width: 400
@@ -197,10 +197,10 @@ In particular, the X-axis is restricted to ``10 < a < 100`` au to illustrate at 
     :name: portal_tut03_step02b
     :alt: A screenshot of the plot of the eccentricity vs. semi-major axis 
 
-    The plot of the distribution of the eccentricity vs. semi-major axis of Solar System objects at semi-major axis > 30 au.  
+    The plot of the distribution of the eccentricity vs. semi-major axis of Solar System objects at semi-major axis beyond 30 au.  
 
 Note that there is a clear indication of two distinct populations.  
-The majority of the objects have low eccentricity, and are reasonably close past Neptune.  
+The majority of the objects have low eccentricity, and a semi-major axis of about 80 au.   
 Those are commonly known as Trans-Neptunian Objects (TNOs).  
 In addition, there is a separate population of high-eccentricity objects, and those are comets.  
 
