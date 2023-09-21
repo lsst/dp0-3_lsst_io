@@ -23,7 +23,7 @@
 
 **Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:** July 31, 2023
+**Last verified to run:** September 19, 2023
 
 **Targeted learning level:** Beginner
 
@@ -52,9 +52,10 @@ Their contents are described in the :ref:`DP0-3-Data-Products-DPDD`.
 In Rubin Operations, these tables would be constantly changing, updated every day with the results of the previous night's observations. 
 However, for DP0.3, static catalogs have been simulated.  
 
-This tutorial focuses on the first two tables, ``MPCORB`` and ``SSObject`` and it will explore these tables individually.  The table joins will be demonstrated in 
-:ref:`Tutorials-Examples-DP0-3-Portal-2` which will focus on ``SSSource`` and ``DiaSource`` tables.  That tutorial will illustrate, among others, how to extract and plot the magnitude, 
-the heliocentric, and the topocentric position of an object vs. time.  
+This tutorial focuses on the first two tables, ``MPCORB`` and ``SSObject`` and it will explore these tables individually.  
+The table joins will be demonstrated in `DP0.3 Portal Tutorial 02 <https://dp0-3.lsst.io/v/main/tutorials-dp0-3/portal-dp0-3-2.html>`_.
+That tutorial will focus on ``SSSource`` and ``DiaSource`` tables.  
+It will also illustrate, among other things, how to extract and plot the magnitude, the heliocentric, and the topocentric position of an object vs. time.  
 
 
 The ``MPCORB`` table
@@ -62,7 +63,7 @@ The ``MPCORB`` table
 
 During Rubin Operations, Solar System Processing will occur in the daytime, after a night of observing.
 This processing will link together the difference-image detections of moving objects and report discoveries
-to the Minor Planet Center (MPC; minorplanetcenter.net),
+to the `Minor Planet Center (MPC) <https://minorplanetcenter.net>`_,
 as well as compute derived properties (magnitudes, phase-curve fits, coordinates in various systems).
 
 The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored
@@ -70,18 +71,19 @@ and made available to users as the ``MPCORB`` table
 (the other derived properties are stored in the other three tables explored below).
 Wikipedia provides a decent
 `beginner-level guide to orbital elements <https://en.wikipedia.org/wiki/Orbital_elements>`_.
-The DP0.3 ``MPCORB`` table is a simulation of what this data product will be like after 10 years of LSST.
+The DP0.3 ``MPCORB`` table is a simulation of what this data product will be like after 10 years of LSST.  
+Note that the ```MPCORB`` table is a table of simulated input orbital elements rather than actual orbit fit results.  
 
-The MPC contains all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
-Thus, the ``MPCORB`` table will have more rows than the ``SSObject`` table.
+The MPC tabulates all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
+Thus, the ``DP0.3 MPCORB`` table will have more rows than the ``SSObject`` table.
 
-For DP0.3, the MPC did not actually recompute orbital elements by incorporating on the simulated LSST data, but rather
+For DP0.3, the MPC did not actually recompute orbital elements by incorporating the simulated LSST data, but rather
 vice versa: LSST observations were simulated based on the MPC's orbital elements.
 Thus, the ``MPCORB`` table can be considered a truth table.
 
 For more information about Rubin's plans for Solar System Processing, see Section 3.2.2 of the 
 `Data Products Definitions Document <https://docushare.lsstcorp.org/docushare/dsweb/Get/LSE-163/LSE-163_DataProductsDefinitionDocumentDPDD.pdf>`_.
-Note that there remain differences between Table 4 of the DPDD, which contain the anticipated schema 
+Note that there remain differences between Table 4 of the DPDD, which contains the anticipated schema 
 for the moving object tables, and the DP0.3 table schemas.
 
 
@@ -89,13 +91,12 @@ The ``SSObject`` table
 ----------------------
 
 During Rubin Operations, Prompt Processing will occur during the night, detecting sources in 
-difference images (``DiaSources``, see Section 6) and associating them into static-sky transients
-and variables (``DiaObjects``, not included in DP0.3).
+difference images (``DiaSources``) and associating them into static-sky transients and variables (``DiaObjects``, not included in DP0.3).
 
 The Solar System Processing which occurs in the daytime, after a night of observing, 
 links together the ``DiaSources`` for moving objects into ``SSObjects``.
 Whereas the ``MPCORB`` table contains the orbital elements for these moving objects, 
-the ``SSObjects`` contains the Rubin-measured properties such as phase curve fits and absolute magnitudes.
+the ``SSObject`` table contains the Rubin-measured properties such as phase curve fits and absolute magnitudes.
 
 Note that no artifacts or spurious difference-image sources have been injected into the DP0.3 catalogs.
 
@@ -103,7 +104,8 @@ Note that no artifacts or spurious difference-image sources have been injected i
 from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
 Absolute magnitudes are derived by correcting for distance, fitting a function to the relationship between 
 absolute magnitude and phase, and evaluating the function at a phase of 0 deg.
-The results of phase-curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.
+During the LSST survey, the results of phase-curve fits in each of the LSST's six filters, ugrizy, will be stored in the ``SSObject`` table.  
+However, the DP0.3 tables contain only four filters, griz.  
 
 
 TAP and ADQL
@@ -115,7 +117,7 @@ or via the ADQL (Astronomical Data Query Language) interface.
 This tutorial will demonstrate both interfaces.
 TAP provides standardized access to catalog data for discovery, search, and retrieval.
 Full `documentation for TAP <http://www.ivoa.net/documents/TAP>`_ is provided by the International Virtual Observatory Alliance (IVOA).
-ADQL is similar to SQL (Structured Query Langage).
+ADQL is similar to SQL (Structured Query Language).
 The `documentation for ADQL <http://www.ivoa.net/documents/latest/ADQL.html>`_ includes more information about syntax and keywords.
 
 
@@ -214,7 +216,7 @@ making more room for the three plots.
 and adjust the "Plot Parameters".
 Change the number of bins to 30.
 Under "Trace Options", next to "Color", click on the magnifying glass to select a new hue from the Color Picker pop-up window.
-Under "Chart Options", set the title to "H Histogram" and select box to log the y-axis.
+Under "Chart Options", set the title to "H Histogram" and select the box to log the y-axis.
 
 .. figure:: /_static/portal_tut01_step01g.png
     :width: 400
@@ -259,18 +261,18 @@ Click "Search" in the lower left corner.
     :name: portal_tut01_step02a
     :alt: A screenshot of the ADQL query to obtain table information.
 
-    Note that there has to be a space after ``MAX(ssObjectId)``.
+    A screenshot of the ADQL entry to select the number of observations, and the range of ``ssObjectId`` values on the SSObject table.  
 
 
-2.2. The results view will look similar that in step 1.5 above, but for this query the default plot is not helpful.
-Obtaining the values in the table were the only objective of this first query.
+2.2. The results view will look similar to that in step 1.5 above, but for this query the default plot is not helpful.
+Obtaining the values in the table was the only objective of this first query.
 
 .. figure:: /_static/portal_tut01_step02b.png
     :width: 400
     :name: portal_tut01_step02b
     :alt: A screenshot of the results showing count, minimum, and maximum for ssObjectId.
 
-    The results view table of the counts, minimum, and maximum values of ``ssObjectId``.
+    The results view table of the object count, as well as the minimum and the maximum values of ``ssObjectId``.
 
 2.3. Notice that the ``SSObject`` table contains roughly 4.4 million moving objects. 
 Comparing this to the size of the ``MPCORB`` table is left as an exercise for the learner, below.
@@ -300,12 +302,13 @@ At right, the table shows that absolute H magnitudes were not derived for all ob
     :name: portal_tut01_step02c
     :alt: A screenshot of the default results view for the SSObject table query.
 
-    The default results view for the retrived subset of 136,134 random ``SSObjects``.
+    The default results view for the retrieved subset of 136,134 random ``SSObjects``.
 
 2.8. In the plot panel, click on the "Settings" icon at upper right (the double gears) and in the
 "Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``g_H - r_H`` and "Y" be ``i_H - z_H``.
 Set the "Color Scale" to Earth.
 Set the "Number of X-Bins" and "Number of Y-Bins" to be 200.
+Note that the maximum number of bins in such "heatmap" plots in both X and Y is 300.  
 Under "Chart Options", set the "X Label", "Y Label", "X Min", "X Max", "Y Min", and "Y Max" values as in the screenshot below.  
 
 .. figure:: /_static/portal_tut01_step02d.png
@@ -342,7 +345,7 @@ detected by LSST.
 Which populations of moving objects does LSST not detect?
 
 3.2. Explore and adjust the color-color plot.
-To zoom in, click on the the magnifying glass with the + symbol above the plot panel, then click-and-drag in the plot.
-Reopen the plot parameter pop-up window and use 500 bins instead of 200. 
+To zoom in, click on the magnifying glass with the + symbol above the plot panel, then click-and-drag in the plot.
+Reopen the plot parameter pop-up window and use 300 bins instead of 200. 
 Try different color scales.
 Try plotting different color combinations or create a color-magnitude diagram.
