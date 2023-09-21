@@ -389,7 +389,7 @@ Step 5. View the 2-D projection of the TNO's orbit to visualize its 3-D trajecto
 ==================================================================================
 
 5.1.  Navigate again to the ADQL query interface.  
-Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory:  
+Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory/  
 
 .. code-block:: SQL 
 
@@ -422,8 +422,8 @@ Next, plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see 
 
 .. _DP0-3-Portal-3-Step-6:
 
-Step 6.  Exercises for the learner: 
-===================================
+Step 6.  Exercises for the learner 
+==================================
 
 6.1. Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
 
