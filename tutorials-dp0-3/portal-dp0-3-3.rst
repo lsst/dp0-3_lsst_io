@@ -253,8 +253,9 @@ Select log for y axis.
 Step 3. Find and explore a well-observed TNO
 ============================================
 
-3.1. Return to the ADQL query interface by clicking on "RSP TAP Search" tab, and clicking on "Edit ADQL" button.  
-The goal of Step 3 is to identify a distant object with a large number of observations, so its position on the sky as a function of time can be plotted.  
+3.1. The goal of Step 3 is to identify a distant object with a large number of observations, so its position on the sky as a function of time can be plotted.  
+Return to the ADQL query interface by clicking on "RSP TAP Search" tab, and clicking on "Edit ADQL" button.  
+Enter the query below.  
 This query has the same basis as the one used above in step 1.2, with three changes.
 One, it joins with the ``DiaSource`` table to retrive the number of ``DiaSources`` (i.e., detections) associated with each object.
 Two, it applies a constraint that the semi-major axis be between 30 and 100 AU.
@@ -270,6 +271,7 @@ Three, it uses a different constraint on ``ssObjectId`` to return a different ra
     AND mpc.q < 100 * (1 - mpc.e) 
     GROUP BY mpc.ssObjectId, mpc.e, mpc.q 
 
+
 3.2.  Click on "Search" -  this search might take up to a minute.  
 
 
@@ -284,7 +286,6 @@ Click twice on the ``COUNT`` column header to order the entries by descending co
     :alt: A screenshot of the default results view with the table sorted by count.
 
     The default results view from the ADQL query above.
-
 
 The query returns about 12,600 objects.  
 
@@ -302,7 +303,7 @@ Examine its eccentricity.  Its modest eccentricity ``e = 0.1512`` implies that t
     WHERE ssObjectId = -735085100561880491
 
 
-3.4. The default results view will show the "Coverage" map at upper left.
+3.6. The default results view will show the "Coverage" map at upper left.
 In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
 Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is redundant with the default plot.
 At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
@@ -315,7 +316,7 @@ At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show on
     The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
 
 
-3.5. Set the color of individual points to represent the time of the observation to 
+3.7. Set the color of individual points to represent the time of the observation to 
 better illustrate how the object moves across the sky.
 In the plot panel, click on the "Settings" icon (double gears) to open the "Plot Parameters"
 pop-up window.
@@ -331,7 +332,7 @@ Then click "Apply".
     Purple color corresponds to earlier observtations, and the red color corresponds to the later observations.  
 
 
-3.6. Clear the query and results and return to the RSP TAP Search form.
+3.8. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-4:
 
@@ -355,7 +356,7 @@ heliocentric and topocentric distances, and time of the observations for the TNO
     AND ds.band = 'r'
 
 4.2. The default plot will have the r-band magnitude as a function of time.  
-Use the plot "Settings" function to add new scatter plots showing the magnitude and the phase angle as a function of time, ``midPointMjdTai - 60000``.  
+Use the plot "Settings" function to add new scatter plots showing the phase angle as a function of time, ``midPointMjdTai - 60000``.  
 This will result in the left two plots, as on the screenshot below.   Note that these quantities are not correlated with time.
 Add a new scatter plot showing the r-band magnitude as a function of phase angle (right plot), showing that the phase angle and r-band magnitude are correlated.
 
@@ -370,7 +371,8 @@ Add a new scatter plot showing the r-band magnitude as a function of phase angle
 Here, use the columns in the table which you generated in Step 4.1.  
 First, delete two of the the three plots prepared in Step 4.2 by clicking on the blue ``X`` in the upper right-hand part of the plot panels to make space for new plots.  
 Then add a pair of new plots, clicking on the "plot settings."  
-In both cases, enter ``midPointMjdTai - 60000`` for X-axis, but for Y axis - enter ``topocentricDist`` for one plot, and ``heliocentricDist`` for the other.  
+In both cases, enter ``midPointMjdTai - 60000`` for X-axis, to show more clearly the time of observation.  
+For Y axis - enter ``topocentricDist`` for one plot, and ``heliocentricDist`` for the other.  
 After you remove the panel containing the plot made in the previous step, you will see the plots as below.  
 
 .. figure:: /_static/portal_tut03_step04b.png
