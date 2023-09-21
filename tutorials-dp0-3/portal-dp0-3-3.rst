@@ -212,10 +212,10 @@ Note that the query you executed in Step 2.1 already returned a column with the 
 For the purpose of this demonstration, we will use the albedo of 0.15.  
 This is a common value in literature (see, e. g., `Vilenius et al. 2012. <https://arxiv.org/pdf/1204.0697.pdf>`_ 
 We note that the derived diameter depends only weakly on the adopted albedo.  
-Adopting albedo of 0.15, the above expression for ``d`` reduces to :math:`d = 10^{(3.536 - (0.2 \times H))}`.  
+Adopting albedo of 0.15, the above expression for ``d`` reduces to :math:`d = 10^{(3.536 - (0.2 \times H))}` km.  
 
 2.6.  Add an additional column by clicking on the "add column" icon above the table.  
-Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the expression field, as below.  
+Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the expression field, as below, and click the "Add Column" button.  
 
 .. figure:: /_static/portal_tut03_step02c.png
     :width: 400
@@ -236,7 +236,7 @@ Selecting logarithmic y axis might be more illustrative.
 
     The screenshot illustrating the plot parameters for the distribution of the TNO's diameters.  
 
-Clicking on the "Apply" button will result in the plot showing the distribution of TNO diameters extracted via your query.  
+2..8.  Click on the "Apply" or "OK" button.  This will result in the plot showing the distribution of TNO diameters extracted via your query.  
 
 .. figure:: /_static/portal_tut03_step02e.png
     :width: 600
