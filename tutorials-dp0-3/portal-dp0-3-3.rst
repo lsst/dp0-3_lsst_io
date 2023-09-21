@@ -367,9 +367,8 @@ Add a new scatter plot showing the r-band magnitude as a function of phase angle
 
     Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
 
-4.3.  Plot the topocentric and heliocentric distances of the object as a function of time.  
-Here, use the columns in the table which you generated in Step 4.1.  
-First, delete two of the the three plots prepared in Step 4.2 by clicking on the blue ``X`` in the upper right-hand part of the plot panels to make space for new plots.  
+4.3.  Plot the topocentric and heliocentric distances of the object as a function of time already retrieved in Step 4.1.  
+First, delete two of the the three plots prepared in Step 4.2 by clicking on the blue X in the upper right-hand part of the plot panels to make space for new plots.  
 Then add a pair of new plots, clicking on the "plot settings."  
 In both cases, enter ``midPointMjdTai - 60000`` for X-axis, to show more clearly the time of observation.  
 For Y axis - enter ``topocentricDist`` for one plot, and ``heliocentricDist`` for the other.  
@@ -381,12 +380,13 @@ After you remove the panel containing the plot made in the previous step, you wi
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
     Heliocentric and topocentric distance of the TNO as a function of time.  
-Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 3.5.  
+
+4.4.  Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 3.5.  
 
 .. _DP0-3-Portal-3-Step-5:
 
-Step 5. Visualize in 3-D the trajectory of the TNO by viewing the 2-D projection of its orbit
-=========================================================================================
+Step 5. View the 2-D projection of the TNO's orbit to visualize its 3-D trajectory
+==================================================================================
 
 5.1.  Navigate again to the ADQL query interface.  
 Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory:  
