@@ -15,9 +15,9 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-#################################################################################################################
-03. Study the population of Trans-Neptunian Objects (TNOs) and explore a well-sampled TNO in a DDF (Intermediate)
-#################################################################################################################
+##################################################################
+03. Explore Trans-Neptunian Objects (TNOs) in DP0.3 (Intermediate)
+##################################################################
 
 .. This section should provide a brief, top-level description of the page.
 
@@ -39,7 +39,7 @@ TNOs are defined by having orbits with semi-major axes beyond the orbit of Neput
 As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) via
 ``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
 a sample of TNOs can be identified in the DP0.3 data set (see Step 1).  
-Their properties (specifically, relationship between their semi-major axis and eccentricity, as well as distribution of their derived diameters) will be explored in Step 2.  
+Their properties (specifically, the relationship between their semi-major axis and eccentricity, as well as the distribution of their derived diameters) will be explored in Step 2.  
 Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on parabolic or hyperbolic orbits).  
 Such objects will be excluded from this tutorial, as an application of the formula above would result in a negative value of ``a``.  
 
