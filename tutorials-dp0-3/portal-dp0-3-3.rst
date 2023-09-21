@@ -226,8 +226,8 @@ Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the e
 
 
 2.7.  Plot the distribution of diameters of TNOs extracted in the query of Step 2.1.  
-To do so, in "Plot parameters" click on "add new chart," select "Histogram" and enter the parameters as below.  
-Selecting logarithmic y axis might be more illustrative.  
+To do so, in "Plot parameters" click on "Add New Chart," select "Histogram" and enter the parameters as below.  
+Select log for y axis.  
 
 .. figure:: /_static/portal_tut03_step02d.png
     :width: 400
@@ -236,7 +236,7 @@ Selecting logarithmic y axis might be more illustrative.
 
     The screenshot illustrating the plot parameters for the distribution of the TNO's diameters.  
 
-2..8.  Click on the "Apply" or "OK" button.  This will result in the plot showing the distribution of TNO diameters extracted via your query.  
+2.8.  Click on the "Apply" or "OK" button.  This will result in the plot showing the distribution of TNO diameters extracted via your query.  
 
 .. figure:: /_static/portal_tut03_step02e.png
     :width: 600
@@ -246,14 +246,15 @@ Selecting logarithmic y axis might be more illustrative.
     The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of most TNOs are in the range of a few hundred kilometers.  
 
 
-2.8. Clear the query and results and return to the RSP TAP Search form.
+2.9. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-3:
 
 Step 3. Find and explore a well-observed TNO
 ============================================
 
-3.1. Follow steps 1.1 and 1.2 above to navigate to the ADQL query interface, and enter the query below.
+3.1. Return to the ADQL query interface by clicking on "RSP TAP Search" tab, and clicking on "Edit ADQL" button.  
+The goal of Step 3 is to identify a distant object with a large number of observations, so its position on the sky as a function of time can be plotted.  
 This query has the same basis as the one used above in step 1.2, with three changes.
 One, it joins with the ``DiaSource`` table to retrive the number of ``DiaSources`` (i.e., detections) associated with each object.
 Two, it applies a constraint that the semi-major axis be between 30 and 100 AU.
@@ -269,13 +270,13 @@ Three, it uses a different constraint on ``ssObjectId`` to return a different ra
     AND mpc.q < 100 * (1 - mpc.e) 
     GROUP BY mpc.ssObjectId, mpc.e, mpc.q 
 
-This search might take up to a minute.  
+3.2.  Click on "Search" -  this search might take up to a minute.  
 
 
-3.2. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
-which is not particularly useful but it does show the number of detections for the most oft-detected TNOs 
+3.3. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
+which is not a particularly useful plot aside from showing that the number of detections for the most oft-detected objects in the outer Solar System 
 is in the thousands.
-Click twice on the ``COUNT`` column header in the table to order the entries by descending count.
+Click twice on the ``COUNT`` column header to order the entries by descending count and identify the most oft-detected outer Solar System object.  
 
 .. figure:: /_static/portal_tut03_step03a.png
     :width: 600
@@ -286,10 +287,13 @@ Click twice on the ``COUNT`` column header in the table to order the entries by 
 
 
 The query returns about 12,600 objects.  
-We will continue with the object with the largest number of observations - 12,103 of them! - with the ``ssObjectId`` = -735085100561880491.  
 
-3.3.  Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter (``band``), and time of observations (``midPointMjdTai``) for 
-the oft-observed TNO with ``ssObjectId`` as above.  
+
+3.4.  Continue with the object with the largest number of observations - 12,103 of them! - with the ``ssObjectId`` = -735085100561880491.  
+Examine its eccentricity.  Its modest eccentricity ``e = 0.1512`` implies that this is not a comet.  
+
+
+3.5.  Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter (``band``), and time of observations (``midPointMjdTai``) for the oft-observed TNO with ``ssObjectId`` as above.  
 
 .. code-block:: SQL 
 
