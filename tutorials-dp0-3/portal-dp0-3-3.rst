@@ -125,8 +125,7 @@ Click "Add Column", and see the new column appear in the table.
 1.7. Create a scatter plot of inclination vs. semi-major axis.
 In the plot panel, click the "Settings" icon (double gears), and select "Add New Chart".
 Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
-In the "Chart Options" dropdown menu, set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.
-Set the axis labels as shown in the figure below.
+In the "Chart Options" dropdown menu, set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.  
 Click "OK".
 
 .. figure:: /_static/portal_tut03_step01d.png
@@ -145,7 +144,12 @@ TNOs appear as a distinct population with ``a`` > 30.1 au in this parameter spac
     :name: portal_tut03_step01e
     :alt: A screenshot of the inclination versus semi-major axis plot, showing a clear population of TNOs.
 
-    The population of TNOs has x-values greater than 30 au.
+    The population of TNOs has x-values greater than 30 au.  
+
+1.9.  Notice how in the plot above, the majority of objects returned by the query were closer to the Sun than 30.1 au.  
+In fact, only about 600 of the moving objects from the query were TNOs.
+The total number of TNOs is estimated to be far less than Main Belt Asteroids, and due to their distance they move more slowly and are fainter, and so are harder to detect and characterize.
+In the next step, a revised query will be used to only retrieve objects with semi-major axis greater than 30.1 au.
 
 
 .. _DP0-3-Portal-3-Step-2:
@@ -154,7 +158,6 @@ Step 2. Explore the properties of a population of TNOs
 ======================================================
 
 2.1.  Now that the population of the Trans-Neptunian Objects has been identified, it is possible to further explore their properties.  
-The plot above indicates that majority of objects returned in our query were closer to the Sun than 30 au, and only about 600 were TNOs.  
 To study the properties of a larger sample of TNOs, follow steps 1.1 and 1.2 above to navigate to the ADQL query interface.  
 Clear the ADQL query, and execute a query below, simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
 Also include the absolute H magnitude ``mpcH`` which will be used in the derivation of diameters of TNOs in the subsequent step (2.4) below.  
