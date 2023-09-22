@@ -386,14 +386,14 @@ After you remove the panel containing the plot made in the previous step, you wi
     Heliocentric and topocentric distance of the TNO as a function of time.  
 
 
-4.5.  Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 3.5.  
+4.5.  Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 3.  
 
 .. _DP0-3-Portal-3-Step-5:
 
 Step 5. View the 2-D projection of the TNO's orbit to visualize its 3-D trajectory
 ==================================================================================
 
-5.1.  The goal of Step 5 is to visualize the 3-D trajectory of the well-observed trans-Neptunian object, via viewing the projections of its helio- and topocentric distances as a function of time. 
+5.1.  The goal of Step 5 is to visualize the 3-D trajectory of the well-observed trans-Neptunian object, via viewing the projections of its 3-D helio- and topocentric distances as a function of time into 2-D.  
 Navigate to the ADQL query interface.  
 Execute the query below to extract the helio- and topocentric X, Y, and Z distances of the TNO - so you can visualize its trajectory.  
 
