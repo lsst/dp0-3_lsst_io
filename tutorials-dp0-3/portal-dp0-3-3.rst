@@ -275,7 +275,7 @@ Three, it uses a different constraint on ``ssObjectId`` to return a different ra
 3.2.  Click on "Search" -  this search might take up to a minute.  
 
 
-3.3. The default results view plots the first two columns against each other, ``ssObjectId`` and ``COUNT``,
+3.3. The default view of the search above is a plot the first two columns against each other, ``ssObjectId`` and ``COUNT``,
 which is not a particularly useful plot aside from showing that the number of detections for the most oft-detected objects in the outer Solar System 
 is in the thousands.
 Click twice on the ``COUNT`` column header to order the entries by descending count and identify the most oft-detected outer Solar System object.  
