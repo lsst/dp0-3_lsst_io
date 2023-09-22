@@ -206,12 +206,12 @@ In addition, there is a separate population of high-eccentricity objects, and th
 
 
 2.6.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes. 
-For this you will need to use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
+For this, use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
 The equation which gives the diameter d in kilometers  is :math:`d = 10^{(3.1236 - 0.5 \times log(A) - 0.2 \times H)}` .  
-Recall that the query you executed in Step 2.1 already returned a column with the H magnitude, so you won't need to execute a new query for this step.  
-For the purpose of this demonstration, we will use the albedo of 0.15.  
+Recall that the query executed in Step 2.1 already returned a column with the H magnitude, so it won't be necessary to execute a new query for this step.  
+For the purpose of this demonstration, the albedo of 0.15 will be adopted.  
 This is a common value in literature - see, e. g., `Vilenius et al. 2012. <https://arxiv.org/pdf/1204.0697.pdf>`_ 
-We note that the derived diameter depends only weakly on the adopted albedo.  
+Note that the derived diameter depends only weakly on the adopted albedo.  
 Adopting albedo of 0.15, the above expression for ``d`` reduces to :math:`d = 10^{(3.536 - (0.2 \times H))}` km.  
 
 2.7.  Add an additional column by clicking on the "add column" icon above the table.  
