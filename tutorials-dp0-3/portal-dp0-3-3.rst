@@ -421,7 +421,7 @@ Heliocentric Y vs. X distance of the trans-Neptunian object as a function of tim
 Select ``heliocentricZ`` for y and ``heliocentricX`` for x.  
 Click on "Apply" or "OK."  
 Observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic during the 
-simunated Rubin observation, but the object does pass through the ecliptic plane when Z = 0.  
+simulated Rubin observation, but the object does pass through the ecliptic plane when Z = 0.  
 
 .. figure:: /_static/portal_tut03_step05b.png
     :name: portal_tut03_step05b
