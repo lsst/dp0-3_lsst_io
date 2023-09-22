@@ -414,11 +414,12 @@ This is expected given its multi-au distance from the Sun.
     :width: 600
     :alt: A screenshot of a plot showing the heliocentric Y vs. heliocentric X distance of the trans-Neptunian object as a function of time.
 
-Heliocentric X and Y distance of the trans-Neptunian object as a function of time.  
+Heliocentric Y vs. X distance of the trans-Neptunian object as a function of time.  
 
 
 5.3.  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "Plot Settings" and click on "Add New Chart."  
-Select ``heliocenticZ`` for y and ``heliocentricX`` for x.
+Select ``heliocentricZ`` for y and ``heliocentricX`` for x.  
+Click on "Apply" or "OK."  
 Observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic during the 
 simunated Rubin observation, but the object does pass through the ecliptic plane when Z = 0.  
 
@@ -427,15 +428,21 @@ simunated Rubin observation, but the object does pass through the ecliptic plane
     :width: 600
     :alt: A screenshot of a plot showing the heliocentric Z vs. heliocentric Y distance of the trans-Neptunian object as a function of time.
 
+Heliocentric Y vs. X distance of the trans-Neptunian object as a function of time. 
 
-Next, plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see the effect of position of the TNO on the sky as a result of Earth's orbital motion.  
 
- .. figure:: /_static/portal_tut03_step05a.png
-    :name: portal_tut03_step05a
+5.4  Next, plot the ``topocentricY`` vs. ``topocentricX`` and ``topocentricZ`` vs. ``topocentricX`` distances.   
+On the same screen where you generated the plots in previous two steps, click on "Plot Settings" and click on "Add New Chart." 
+First, select ``topocentricY`` for y and ``topocentricX`` for x. and click "Apply" or "OK."   
+Next, click on "Plot Settings" and click on "Add New Chart."
+There, the effect of position of the TNO on the sky as a result of Earth's orbital motion is clearly apparent.  
+
+ .. figure:: /_static/portal_tut03_step05c.png
+    :name: portal_tut03_step05c
     :width: 600
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
-    Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory.  
+    Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots).   
 
 .. **FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
 
