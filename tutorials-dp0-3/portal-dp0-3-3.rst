@@ -405,7 +405,7 @@ Execute the query below to extract the helio- and topocentric X, Y, and Z distan
     WHERE ssObjectId = -735085100561880491
 
 
-5.2.  Plot the heliocentric Y distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticY`` for y and ``heliocentricX`` for x. 
+5.2.  The default plot will be the heliocentric Y distance as a function of heliocentic X distance as in the screenshot below.  
 Note that the object moves slowly in heliocentric coordinate X as well as in Y (by a comparison to, e.g., Earth's motion), covering only a few au in 10 years.  
 This is expected given its multi-au distance from the Sun.  
 
