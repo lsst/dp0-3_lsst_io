@@ -343,6 +343,7 @@ Step 4. Plot the time-domain quantities for the TNO
 (e.g., rotation curves for non-spherical objects, outgassing events).
 All changes in the brightness of DP0.3 objects with time are due to changes in the distance and phase angle from Earth.  
 
+
 4.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
 heliocentric and topocentric distances, and time of the observations for the TNO explored in Step 3.
 
@@ -355,8 +356,9 @@ heliocentric and topocentric distances, and time of the observations for the TNO
     WHERE ss.ssObjectId = -735085100561880491
     AND ds.band = 'r'
 
+
 4.2. The default plot will have the r-band magnitude as a function of time.  
-Use the plot "Settings" function to add new scatter plots showing the phase angle as a function of time, ``midPointMjdTai - 60000``.  
+Use the plot "Settings" function to add new scatter plots showing the phase angle as a function of time, ``midPointMjdTai - 60000``  o show more clearly the time of observation.  
 This will result in the left two plots, as on the screenshot below.   Note that these quantities are not correlated with time.
 Add a new scatter plot showing the r-band magnitude as a function of phase angle (right plot), showing that the phase angle and r-band magnitude are correlated.
 
@@ -367,10 +369,11 @@ Add a new scatter plot showing the r-band magnitude as a function of phase angle
 
     Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
 
+
 4.3.  Plot the topocentric and heliocentric distances of the object as a function of time already retrieved in Step 4.1.  
 First, delete two of the the three plots prepared in Step 4.2 by clicking on the blue X in the upper right-hand part of the plot panels to make space for new plots.  
 Then add a pair of new plots, clicking on the "plot settings."  
-In both cases, enter ``midPointMjdTai - 60000`` for X-axis, to show more clearly the time of observation.  
+In both cases, enter ``midPointMjdTai - 60000`` for X-axis.  
 For Y axis - enter ``topocentricDist`` for one plot, and ``heliocentricDist`` for the other.  
 After you remove the panel containing the plot made in the previous step, you will see the plots as below.  
 
@@ -381,6 +384,7 @@ After you remove the panel containing the plot made in the previous step, you wi
 
     Heliocentric and topocentric distance of the TNO as a function of time.  
 
+
 4.4.  Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 3.5.  
 
 .. _DP0-3-Portal-3-Step-5:
@@ -388,8 +392,9 @@ After you remove the panel containing the plot made in the previous step, you wi
 Step 5. View the 2-D projection of the TNO's orbit to visualize its 3-D trajectory
 ==================================================================================
 
-5.1.  Navigate again to the ADQL query interface.  
-Execute the query below to extract the helio- and topocentric distances of the TNO - so you can visualize its trajectory/  
+5.1.  The goal of Step 5 is to visualize the 3-D trajectory of the well-observed trans-Neptunian object, via viewing the projections of its helio- and topocentric distances as a function of time. 
+Navigate to the ADQL query interface.  
+Execute the query below to extract the helio- and topocentric X, Y, and Z distances of the TNO - so you can visualize its trajectory.  
 
 .. code-block:: SQL 
 
@@ -399,10 +404,28 @@ Execute the query below to extract the helio- and topocentric distances of the T
     WHERE ssObjectId = -735085100561880491
 
 
-5.2.  Plot the heliocentric Z distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticZ`` for y and ``heliocentricX`` for x.  
+5.2.  Plot the heliocentric Y distance as a function of heliocentic X distance by clicking on the "plot setings" icon and selecting ``heliocenticY`` for y and ``heliocentricX`` for x. 
 Note that the object moves slowly in heliocentric coordinate X as well as in Y (by a comparison to, e.g., Earth's motion), covering only a few au in 10 years.  
 This is expected given its multi-au distance from the Sun.  
-Now observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic during the simunated Rubin observation, but the object does pass through the ecliptic plane when Z = 0.  
+
+ .. figure:: /_static/portal_tut03_step05a.png
+    :name: portal_tut03_step05a
+    :width: 600
+    :alt: A screenshot of a plot showing the heliocentric Y vs. heliocentric X distance of the trans-Neptunian object as a function of time.
+
+Heliocentric X and Y distance of the trans-Neptunian object as a function of time.  
+
+
+5.3.  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "Plot Settings" and click on "Add New Chart."  
+Observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic during the 
+simunated Rubin observation, but the object does pass through the ecliptic plane when Z = 0.  
+
+.. figure:: /_static/portal_tut03_step05b.png
+    :name: portal_tut03_step05b
+    :width: 600
+    :alt: A screenshot of a plot showing the heliocentric Z vs. heliocentric Y distance of the trans-Neptunian object as a function of time.
+
+
 Next, plot the ``topocentricX`` vs. ``heliocentricX`` where you can clearly see the effect of position of the TNO on the sky as a result of Earth's orbital motion.  
 
  .. figure:: /_static/portal_tut03_step05a.png
