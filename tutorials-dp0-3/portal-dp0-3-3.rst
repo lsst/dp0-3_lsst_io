@@ -358,9 +358,10 @@ heliocentric and topocentric distances, and time of the observations for the TNO
 
 
 4.2. The default plot will have the r-band magnitude as a function of time.  
-Use the plot "Settings" function to add new scatter plots showing the phase angle as a function of time, ``midPointMjdTai - 60000``  o show more clearly the time of observation.  
+Use the plot "Settings" function to add new scatter plots showing the phase angle as a function of time, ``midPointMjdTai - 60000``  to show more clearly the time of observation.  
 This will result in the left two plots, as on the screenshot below.   Note that these quantities are not correlated with time.
-Add a new scatter plot showing the r-band magnitude as a function of phase angle (right plot), showing that the phase angle and r-band magnitude are correlated.
+
+4.3.  Add a new scatter plot showing the r-band magnitude as a function of phase angle (right plot), showing that the phase angle and r-band magnitude are correlated.
 
 .. figure:: /_static/portal_tut03_step04a.png
     :name: portal_tut03_step04a
@@ -370,7 +371,7 @@ Add a new scatter plot showing the r-band magnitude as a function of phase angle
     Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
 
 
-4.3.  Plot the topocentric and heliocentric distances of the object as a function of time already retrieved in Step 4.1.  
+4.4.  Plot the topocentric and heliocentric distances of the object as a function of time already retrieved in Step 4.1.  
 First, delete two of the the three plots prepared in Step 4.2 by clicking on the blue X in the upper right-hand part of the plot panels to make space for new plots.  
 Then add a pair of new plots, clicking on the "plot settings."  
 In both cases, enter ``midPointMjdTai - 60000`` for X-axis.  
@@ -385,7 +386,7 @@ After you remove the panel containing the plot made in the previous step, you wi
     Heliocentric and topocentric distance of the TNO as a function of time.  
 
 
-4.4.  Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 3.5.  
+4.5.  Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 3.5.  
 
 .. _DP0-3-Portal-3-Step-5:
 
@@ -417,6 +418,7 @@ Heliocentric X and Y distance of the trans-Neptunian object as a function of tim
 
 
 5.3.  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "Plot Settings" and click on "Add New Chart."  
+Select ``heliocenticZ`` for y and ``heliocentricX`` for x.
 Observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic during the 
 simunated Rubin observation, but the object does pass through the ecliptic plane when Z = 0.  
 
