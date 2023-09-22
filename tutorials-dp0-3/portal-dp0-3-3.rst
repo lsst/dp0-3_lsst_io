@@ -372,11 +372,11 @@ This will result in the left two plots, as on the screenshot below.   Note that 
 
 
 4.4.  Plot the topocentric and heliocentric distances of the object as a function of time already retrieved in Step 4.1.  
-First, delete two of the the three plots prepared in Step 4.2 by clicking on the blue X in the upper right-hand part of the plot panels to make space for new plots.  
+First, delete two of the the three plots prepared in Step 4.3 by clicking on the blue X in the upper right-hand part of the plot panels to make space for new plots.  
 Then add a pair of new plots, clicking on the "plot settings."  
 In both cases, enter ``midPointMjdTai - 60000`` for X-axis.  
 For Y axis - enter ``topocentricDist`` for one plot, and ``heliocentricDist`` for the other.  
-After you remove the panel containing the plot made in the previous step, you will see the plots as below.  
+After you remove the panels containing the plots made in the previous steps, you will see the plots as below.  
 
 .. figure:: /_static/portal_tut03_step04b.png
     :width: 600
@@ -420,7 +420,9 @@ Heliocentric Y vs. X distance of the trans-Neptunian object as a function of tim
 5.3.  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "Plot Settings" and click on "Add New Chart."  
 Select ``heliocentricZ`` for y and ``heliocentricX`` for x.  
 Click on "Apply" or "OK."  
-Observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic during the 
+
+
+5.4.  Observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic during the 
 simulated Rubin observation, but the object does pass through the ecliptic plane when Z = 0.  
 
 .. figure:: /_static/portal_tut03_step05b.png
@@ -431,7 +433,7 @@ simulated Rubin observation, but the object does pass through the ecliptic plane
 Heliocentric Y vs. X distance as well as helliocentric Z vs. X distance of the trans-Neptunian object as a function of time. 
 
 
-5.4  Next, plot the ``topocentricY`` vs. ``topocentricX`` and ``topocentricZ`` vs. ``topocentricX`` distances.   
+5.5  Next, plot the ``topocentricY`` vs. ``topocentricX`` and ``topocentricZ`` vs. ``topocentricX`` distances.   
 On the same screen where you generated the plots in previous two steps, click on "Plot Settings" and click on "Add New Chart." 
 First, select ``topocentricY`` for y and ``topocentricX`` for x. and click "Apply" or "OK."   
 Next, click on "Plot Settings" and click on "Add New Chart."
@@ -462,5 +464,5 @@ Step 6.  Exercises for the learner
 6.1. Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
 
 6.2. Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2,000).  
-Note that you already identified objects with large number of observations in Steps 3.1 and 3.2.  
+Note that you already identified objects with large number of observations in Steps 3.1, 3.2, and 3.3.  
 
