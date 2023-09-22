@@ -426,9 +426,9 @@ simunated Rubin observation, but the object does pass through the ecliptic plane
 .. figure:: /_static/portal_tut03_step05b.png
     :name: portal_tut03_step05b
     :width: 600
-    :alt: A screenshot of a plot showing the heliocentric Z vs. heliocentric Y distance of the trans-Neptunian object as a function of time.
+    :alt: A screenshot of plots showing the heliocentric Y and heliocentric Z vs. heliocentric X distance of the trans-Neptunian object as a function of time.
 
-Heliocentric Y vs. X distance of the trans-Neptunian object as a function of time. 
+Heliocentric Y vs. X distance as well as helliocentric Z vs. X distance of the trans-Neptunian object as a function of time. 
 
 
 5.4  Next, plot the ``topocentricY`` vs. ``topocentricX`` and ``topocentricZ`` vs. ``topocentricX`` distances.   
