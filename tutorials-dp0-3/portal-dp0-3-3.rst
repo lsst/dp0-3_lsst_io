@@ -200,7 +200,7 @@ In particular, the X-axis is restricted to ``30 < a < 100`` au to illustrate at 
     The plot of the distribution of the eccentricity vs. semi-major axis of Solar System objects at semi-major axis beyond 30 au.  
 
 Note that there is a clear indication of two distinct populations.  
-The majority of the objects have low eccentricity, and a semi-major axis of about 80 au.   
+The majority of the objects have low eccentricity, and a semi-major axis of about 30 to about 50 au.   
 Those are commonly known as Trans-Neptunian Objects (TNOs).  
 In addition, there is a separate population of high-eccentricity objects, and those are comets.  
 
