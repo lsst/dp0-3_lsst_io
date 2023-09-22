@@ -442,7 +442,9 @@ There, the effect of position of the TNO on the sky as a result of Earth's orbit
     :width: 600
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
-    Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots).   
+    Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots).  
+
+Note that the RSP Portal automatically displays four plots as a 2 x 2 grid.  
 
 .. **FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
 
