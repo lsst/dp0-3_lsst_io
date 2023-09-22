@@ -436,7 +436,7 @@ Heliocentric Y vs. X distance as well as helliocentric Z vs. X distance of the t
 5.5  Next, plot the ``topocentricY`` vs. ``topocentricX`` and ``topocentricZ`` vs. ``topocentricX`` distances.   
 On the same screen where you generated the plots in previous two steps, click on "Plot Settings" and click on "Add New Chart." 
 First, select ``topocentricY`` for y and ``topocentricX`` for x. and click "Apply" or "OK."   
-Next, click on "Plot Settings" and click on "Add New Chart."
+Next, click on "Plot Settings" and click on "Add New Chart."  Select ``topocentricZ`` for y and ``topocentricX`` for x, and click "Apply" or "OK."   
 There, the effect of position of the TNO on the sky as a result of Earth's orbital motion is clearly apparent.  
 
  .. figure:: /_static/portal_tut03_step05c.png
