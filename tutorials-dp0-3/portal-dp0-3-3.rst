@@ -175,8 +175,8 @@ Keep the "Row limit" to 200000, and click "Search."  By default, you will genera
 2.3.  Plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
 This time (in contrast to Step 1.6 but accomplishing the same goal), calculate ``a`` from ``e`` and ``q`` via 
 setting appropriate plot parameters rather than creating another column in the right-hand table.  
-To do so, click on the "plot settings" (two gears) on the left-hand panel, and click on "add new chart."  
-Select "heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  
+To do so, click on the "plot settings" (two gears) on the left-hand panel, and click on "Add New Chart."  
+Select "Heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  
 Increase the number of bins to 200 for both x and y to improve the resolution of the heatmap.  
 Chose any color map you find compelling.  
 The plot parameters used here are below.  
@@ -208,7 +208,7 @@ In addition, there is a separate population of high-eccentricity objects, and th
 2.6.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes. 
 For this you will need to use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
 The equation which gives the diameter d in kilometers  is :math:`d = 10^{(3.1236 - 0.5 \times log(A) - 0.2 \times H)}` .  
-Note that the query you executed in Step 2.1 already returned a column with the H magnitude, so you won't need to execute a new query for this step.  
+Recall that the query you executed in Step 2.1 already returned a column with the H magnitude, so you won't need to execute a new query for this step.  
 For the purpose of this demonstration, we will use the albedo of 0.15.  
 This is a common value in literature (see, e. g., `Vilenius et al. 2012. <https://arxiv.org/pdf/1204.0697.pdf>`_ 
 We note that the derived diameter depends only weakly on the adopted albedo.  
@@ -243,7 +243,7 @@ Select log for y axis.
     :name: portal_tut03_step02e
     :alt: screenshot illustrating the distribution of TNO's diameters
 
-    The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of most TNOs are in the range of a few hundred kilometers.  
+    The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of most TNOs are in the range of 50 to a few hundred kilometers.  
 
 
 2.10. Clear the query and results and return to the RSP TAP Search form.
