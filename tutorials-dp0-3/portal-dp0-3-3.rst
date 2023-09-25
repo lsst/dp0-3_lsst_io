@@ -372,25 +372,29 @@ heliocentric and topocentric distances, and time of the observations for the TNO
 
 
 4.2. The default plot will have the r-band magnitude as a function of time.  
-Use the plot "Settings" function to add new scatter plots showing the phase angle as a function of time, ``midPointMjdTai - 60000``  to show more clearly the time of observation.  
-This will result in the left two plots, as on the screenshot below.   Note that these quantities are not correlated with time.
+Use the plot "Settings" function to add a scatter plot showing the phase angle as a function of time.
+For the x-axis, use ``midPointMjdTai - 60000``  to show more clearly the timescales between observations.
 
-4.3.  Add a new scatter plot showing the r-band magnitude as a function of phase angle (right plot), showing that the phase angle and r-band magnitude are correlated.
+4.3. As mentioned above, the simulated solar system data does not include any time-varying features.
+The changes in apparent magnitude are due to the object changing in phase angle
+and distance from Earth as a function of time.
+Add two new scatter plots showing the r-band magnitude as a function of phase angle and as a function
+of topocentric (Earth-centered) distance, as is shown below.
+The results view for four plots automatically reconfigures to a two-by-two grid.  
+Notice how the magnitude is a monotonic function of phase angle and distance, but not time.
 
 .. figure:: /_static/portal_tut03_step04a.png
     :name: portal_tut03_step04a
     :width: 600
-    :alt: A screenshot of three plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle.
+    :alt: A screenshot of four plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle and distance from Earth.
 
-    Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
-
+    Four plots demonstrating that the apparent magnitude depends on phase angle and distance from Earth.
 
 4.4.  Plot the topocentric and heliocentric distances of the object as a function of time already retrieved in Step 4.1.  
-First, delete two of the the three plots prepared in Step 4.3 by clicking on the blue X in the upper right-hand part of the plot panels to make space for new plots.  
-Then add a pair of new plots, clicking on the "plot settings."  
-In both cases, enter ``midPointMjdTai - 60000`` for X-axis.  
-For Y axis - enter ``topocentricDist`` for one plot, and ``heliocentricDist`` for the other.  
-After you remove the panels containing the plots made in the previous steps, you will see the plots as below.  
+First, delete all but one of the plots prepared in Step 4.3 by clicking on the blue X in the upper right-hand part of the plot panels to make space for new plots.  
+Then add a pair of new scatter plots that show ``topocentricDist`` and ``heliocentricDist``
+as a function of ``midPointMjdTai - 60000``.
+Then delete the remaining old plot so that only the two new plots are displayed.
 
 .. figure:: /_static/portal_tut03_step04b.png
     :width: 600
@@ -400,7 +404,9 @@ After you remove the panels containing the plots made in the previous steps, you
     Heliocentric and topocentric distance of the TNO as a function of time.  
 
 
-4.5.  Note the periodic change of the topocentric distance with time resulting from the Earth's motion around the Sun - a different view of the same effect you saw in Step 3.  
+4.5. The left plot shows the periodic change of the topocentric distance with time 
+resulting from the Earth's motion around the Sun - a different view of the same effect seen in Step 3.
+The right plot shows that this object is on a slightly inbound trajectory with respect to the Sun.
 
 .. _DP0-3-Portal-3-Step-5:
 
@@ -461,7 +467,6 @@ There, the effect of position of the TNO on the sky as a result of Earth's orbit
     Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots).  
 
 
-Note that the RSP Portal automatically displays four plots as a 2 x 2 grid.  
 
 .. **FIND MORE INTERESTING THINGS TO DO AND EXPLORE WITH THIS TNO!**
 
