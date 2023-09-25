@@ -160,27 +160,31 @@ Step 2. Explore the properties of a population of TNOs
 2.1.  Now that the population of the Trans-Neptunian Objects has been identified, it is possible to further explore their properties.  
 To study the properties of a larger sample of TNOs, return to the ADQL query interface by clicking on "RSP TAP Search" tab, and clicking on "Edit ADQL" button.  
 
-2.2.  Clear the ADQL query, and execute a query below, simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.  
-Also include the absolute H magnitude ``mpcH`` which will be used in the derivation of diameters of TNOs in the subsequent step (2.6) below.  
+2.2.  Clear the ADQL query, and execute a query below, simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.
+Also include the absolute H magnitude ``mpcH`` which will be used in the derivation of diameters of TNOs in the subsequent step (2.6) below.
+As the H magnitude will be used to estimate diameters, include a restriction to return well-measured H magnitudes only (between 3 and 12 mag).
 
 .. code-block:: SQL 
 
     SELECT e, incl, q, mpcH 
     FROM dp03_catalogs_10yr.MPCORB
     WHERE q / (1 - e) > 30.1 AND e < 1 
+    AND mpcH > 3 AND mpcH < 12
 
-Keep the "Row limit" to 200000, and click "Search."  By default, you will generate a plot of inclination vs. eccentricity.  
+2.3. Keep the "Row limit" to 200000, and click "Search."
+The default plot in the results view will be a heatmap of inclination vs. eccentricity.  
 
-
-2.3.  Plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
+2.4.  Plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
 This time (in contrast to Step 1.6 but accomplishing the same goal), calculate ``a`` from ``e`` and ``q`` via 
 setting appropriate plot parameters rather than creating another column in the right-hand table.  
-To do so, click on the "plot settings" (two gears) on the left-hand panel, and click on "Add New Chart."  
-Select "Heatmap" for the plot type, and enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  
-Increase the number of bins to 200 for both x and y to improve the resolution of the heatmap.  
-Chose any color map you find compelling.  
-The plot parameters used here are below.  
-In particular, the X-axis is restricted to ``30 < a < 100`` au to illustrate at more detail the region from Neptune's orbit to about three times its orbit.  
+Start by clicking on the "plot settings" (two gears) on the left-hand panel, and click on "Add New Chart."  
+
+2.5. In the "Plot Parameters" pop-up window, select "Heatmap" for the plot type.
+Enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  
+Choose the "YlOrRd" (yellow-orange-red) color scale.
+Increase the number of bins to 200 for both x and y to improve the resolution of the heatmap.
+Expand the "Chart Options" and set the titles and labels as below.
+Restrict the x-axis to ``30 < a < 100`` au to illustrate in more detail the region of 1 to three times Neptune's semi-major axis.  
 
 .. figure:: /_static/portal_tut03_step02a.png
     :width: 400
@@ -190,63 +194,62 @@ In particular, the X-axis is restricted to ``30 < a < 100`` au to illustrate at 
     The plot parameters for the eccentricity vs. semi-major axis plot.  
 
 
-2.4.  Click on "OK" or "Apply" in the "Plot Parameters" window.  Then delete the "incl vs. e" plot (the leftmost panel).  This will result in the plot as below.  
+2.6.  Click on "OK" or "Apply" in the "Plot Parameters" window.
+Delete the "incl vs. e" plot (the leftmost panel) as it is not needed.
+This will result in the view as below.  
 
 .. figure:: /_static/portal_tut03_step02b.png
     :width: 600
     :name: portal_tut03_step02b
     :alt: A screenshot of the plot of the eccentricity vs. semi-major axis 
 
-    The plot of the distribution of the eccentricity vs. semi-major axis of Solar System objects at semi-major axis beyond 30 au.  
+    The plot of the distribution of the eccentricity vs. semi-major axis of solar system objects at semi-major axis beyond 30 au.  
 
-2.5.  Note that there is a clear indication of two distinct populations.  
-The majority of the objects have low eccentricity, and a semi-major axis of about 30 to about 50 au.   
-Those are commonly known as Trans-Neptunian Objects (TNOs).  
-In addition, there is a separate population of high-eccentricity objects, and those are comets.  
+2.7. Multiple populations are apparent in the above plot.
+The majority of the objects have low eccentricity and a semi-major axis of about 30 to about 50 au.
+There are several sub-populations of Trans-Neptunian Objects (TNOs), such as the classical, resonant, scattered-disk, and detached.
+A full review of all TNO populations is beyond the scope of this tutorial.
+It is important to note that this plot also includes any comets with semi-major axes between 30 and 100 au.
 
-
-2.6.  Plot the distribution of diameters of the Trans-Neptunian Objects derived from their absolute H magnitudes. 
-For this, use the formula below, where ``H`` is the absolute H magnitude, and ``A`` is the albedo.  
-The equation which gives the diameter d in kilometers  is :math:`d = 10^{(3.1236 - 0.5 \times log(A) - 0.2 \times H)}` .  
-Recall that the query executed in Step 2.1 already returned a column with the H magnitude, so it won't be necessary to execute a new query for this step.  
-For the purpose of this demonstration, the albedo of 0.15 will be adopted.  
-This is a common value in literature - see, e. g., `Vilenius et al. 2012. <https://arxiv.org/pdf/1204.0697.pdf>`_ 
-Note that the derived diameter depends only weakly on the adopted albedo.  
-Adopting albedo of 0.15, the above expression for ``d`` reduces to :math:`d = 10^{(3.536 - (0.2 \times H))}` km.  
-
-2.7.  Add an additional column by clicking on the "add column" icon above the table.  
-Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the expression field, as below, and click the "Add Column" button.  
+2.8.  Estimate the diameters of the objects using their absolute H magnitudes. 
+Where ``H`` is the absolute H magnitude (column ``mpcH``), and ``A`` is the albedo, the diameter :math:`d` 
+in kilometers is :math:`d = 10^{(3.1236 - 0.5 \times log(A) - 0.2 \times H)}`.
+This tutorial adopts an albedo value of 0.15 (as is commonly adopted, e.g., `Vilenius et al. 2012 <https://arxiv.org/pdf/1204.0697.pdf>`_;
+the diameter depends only weakly on the albedo),
+with which the expression reduces to :math:`d = 10^{(3.536 - (0.2 \times H))}` km.  
+Click on the "add column" icon.
+Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the expression field, as below.
+Click the "Add Column" button.  
 
 .. figure:: /_static/portal_tut03_step02c.png
     :width: 400
     :name: portal_tut03_step02c
-    :alt: screenshot illustrating the expression needed to make the new column containing the diameter of the TNO
+    :alt: screenshot illustrating the expression needed to make the new column containing the diameter
 
-    The screenshot illustrating the parameters for the new column containing the TNO's diameter.  
+    The screenshot illustrating the parameters for the new column containing the estimated diameter.  
 
-
-2.8.  Plot the distribution of diameters of TNOs extracted in the query of Step 2.1.  
-To do so, in "Plot parameters" click on "Add New Chart," select "Histogram" and enter the parameters as below.  
-Select log for y axis.  
+2.9.  Plot the distribution of estimated diameters in log-space.
+Open the "Plot Parameters" pop-up window, click on "Add New Chart," select "Histogram", and enter the parameters as below.  
 
 .. figure:: /_static/portal_tut03_step02d.png
     :width: 400
     :name: portal_tut03_step02d
-    :alt: screenshot illustrating the plot parameters for displaying the distribution of TNO's diameters
+    :alt: screenshot illustrating the plot parameters for displaying the distribution of estimated diameters
 
-    The screenshot illustrating the plot parameters for the distribution of the TNO's diameters.  
+    The screenshot illustrating the plot parameters for the distribution of the estimated diameters.  
 
-2.9.  Click on the "Apply" or "OK" button.  This will result in the plot showing the distribution of TNO diameters extracted via your query.  
+2.10.  Click on the "Apply" or "OK" button.
+This will result in the plot showing the distribution of estimated diameters extracted via your query.  
 
 .. figure:: /_static/portal_tut03_step02e.png
     :width: 600
     :name: portal_tut03_step02e
-    :alt: screenshot illustrating the distribution of TNO's diameters
+    :alt: screenshot illustrating the distribution of estimated diameters
 
-    The screenshot illustrating the distribution of the TNO diameters in your sample, revealing that diameters of most TNOs are in the range of 50 to a few hundred kilometers.  
+    The screenshot illustrating the distribution of the estimated diameters.  
 
 
-2.10. Clear the query and results and return to the RSP TAP Search form.
+2.11. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-3:
 
