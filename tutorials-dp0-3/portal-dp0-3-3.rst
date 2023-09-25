@@ -432,9 +432,9 @@ This is expected given its multi-au distance from the Sun.
  .. figure:: /_static/portal_tut03_step05a.png
     :name: portal_tut03_step05a
     :width: 600
-    :alt: A screenshot of a plot showing the heliocentric Y vs. heliocentric X distance of the trans-Neptunian object as a function of time.
+    :alt: A screenshot of a plot showing the heliocentric Y vs. heliocentric X distance of the trans-Neptunian object.
 
-    Heliocentric Y vs. X distance of the trans-Neptunian object as a function of time.  
+    Heliocentric Y vs. X distance of the trans-Neptunian object.  
 
 
 5.3.  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "Plot Settings" and click on "Add New Chart."  
