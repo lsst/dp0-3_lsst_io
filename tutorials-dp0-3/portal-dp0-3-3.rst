@@ -162,18 +162,19 @@ To study the properties of a larger sample of TNOs, return to the ADQL query int
 
 2.2.  Clear the ADQL query, and execute a query below, simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.
 Also include the absolute H magnitude ``mpcH`` which will be used in the derivation of diameters of TNOs in the subsequent step (2.6) below.
-As the H magnitude will be used to estimate diameters, include a restriction to return well-measured H magnitudes only (between 3 and 12 mag;
-for more information about bad H magnitude measurements see `the documentation for H magnitude flags <https://dp0-3.lsst.io/data-products-dp0-3/table-access-and-queries.html#flagged-rows>`_).
+As TNOs aren't the only solar system objects beyond Neptune, reject objects with `mpcDesignation` as
+Long Period Comets (LPC).
 
 .. code-block:: SQL 
 
-    SELECT e, incl, q, mpcH 
+    SELECT e, incl, q, mpcH, mpcDesignation  
     FROM dp03_catalogs_10yr.MPCORB
-    WHERE q / (1 - e) > 30.1 AND e < 1 
-    AND mpcH > 3 AND mpcH < 12
+    WHERE q / (1 - e) > 30.1 
+    AND SUBSTRING(mpcDesignation, 1, 3) != 'LPC'
 
 
-2.3. Keep the "Row limit" to 200000, and click "Search."
+2.3. Keep the "Row limit" to 200000, and click "Search".
+This query will return 62,961 objects.
 The default plot in the results view will be a heatmap of inclination vs. eccentricity.  
 
 2.4.  Plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
@@ -195,7 +196,6 @@ Restrict the x-axis to ``30 < a < 100`` au to illustrate in more detail the regi
 
     The plot parameters for the eccentricity vs. semi-major axis plot.  
 
-
 2.6.  Click on "OK" or "Apply" in the "Plot Parameters" window, and view the plot (see below).
 Delete the default plot of inclination vs. eccentricity as it is not needed.
 
@@ -211,7 +211,6 @@ Delete the default plot of inclination vs. eccentricity as it is not needed.
 The majority of the objects have low eccentricity and a semi-major axis of about 30 to about 50 au.
 There are several sub-populations of Trans-Neptunian Objects (TNOs), such as the classical, resonant, scattered-disk, and detached.
 A full review of all TNO populations is beyond the scope of this tutorial.
-It is important to note that this plot also includes any comets with semi-major axes between 30 and 100 au.
 
 2.8.  Estimate the diameters of the objects using their absolute H magnitudes. 
 Where ``H`` is the absolute H magnitude (column ``mpcH``), and ``A`` is the albedo, the diameter :math:`d` 
@@ -241,7 +240,7 @@ Open the "Plot Parameters" pop-up window, click on "Add New Chart," select "Hist
     The plot parameters for the distribution of estimated diameters.  
 
 2.10.  Click on the "Apply" or "OK" button.
-This will result in the plot showing the distribution of estimated diameters extracted via your query.  
+This will result in the plot showing the distribution of estimated diameters.  
 
 .. figure:: /_static/portal_tut03_step02e.png
     :width: 600
@@ -251,7 +250,14 @@ This will result in the plot showing the distribution of estimated diameters ext
     The distribution of estimated diameters.  
 
 
-2.11. Clear the query and results and return to the RSP TAP Search form.
+2.11. Notice that the tail of the distribution extends to very small diameters.
+This is suprising, as detecting kilometer-sized objects at the distance of Neptune 
+should be quite challenging.
+This illustrates, in part, some of the shortcomings of the assumptions (such as albedo)
+which were used to estimate the diameters.
+See also the first exercise for the learner in Step 6.
+
+2.12. Return to the RSP TAP Search form by clicking on the RSP TAP Search button at upper left.
 
 
 .. _DP0-3-Portal-3-Step-3:
@@ -468,8 +474,14 @@ Note that the RSP Portal automatically displays four plots as a 2 x 2 grid.
 Step 6.  Exercises for the learner 
 ==================================
 
-6.1. Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
+6.1. In Step 2, some of the sizes of the TNOs were on order one kilometer, quite small for objects
+at the distance of Neptune.
+However, objects with high eccentricities could come closer to Earth, and be detected despite their small size.
+For the objects returned by the query in Step 2, plot the eccentricity vs. estimated diameter.
+Explore whether some of the smallest objects have large eccentricities.
 
-6.2. Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2,000).  
+6.2. Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
+
+6.3. Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2,000).  
 Note that you already identified objects with large number of observations in Steps 3.1, 3.2, and 3.3.  
 
