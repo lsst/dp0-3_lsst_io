@@ -162,7 +162,8 @@ To study the properties of a larger sample of TNOs, return to the ADQL query int
 
 2.2.  Clear the ADQL query, and execute a query below, simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.
 Also include the absolute H magnitude ``mpcH`` which will be used in the derivation of diameters of TNOs in the subsequent step (2.6) below.
-As the H magnitude will be used to estimate diameters, include a restriction to return well-measured H magnitudes only (between 3 and 12 mag).
+As the H magnitude will be used to estimate diameters, include a restriction to return well-measured H magnitudes only (between 3 and 12 mag;
+for more information about bad H magnitude measurements see `the documentation for H magnitude flags <https://dp0-3.lsst.io/data-products-dp0-3/table-access-and-queries.html#flagged-rows>`_).
 
 .. code-block:: SQL 
 
@@ -170,6 +171,7 @@ As the H magnitude will be used to estimate diameters, include a restriction to 
     FROM dp03_catalogs_10yr.MPCORB
     WHERE q / (1 - e) > 30.1 AND e < 1 
     AND mpcH > 3 AND mpcH < 12
+
 
 2.3. Keep the "Row limit" to 200000, and click "Search."
 The default plot in the results view will be a heatmap of inclination vs. eccentricity.  
@@ -194,16 +196,16 @@ Restrict the x-axis to ``30 < a < 100`` au to illustrate in more detail the regi
     The plot parameters for the eccentricity vs. semi-major axis plot.  
 
 
-2.6.  Click on "OK" or "Apply" in the "Plot Parameters" window.
-Delete the "incl vs. e" plot (the leftmost panel) as it is not needed.
-This will result in the view as below.  
+2.6.  Click on "OK" or "Apply" in the "Plot Parameters" window, and view the plot (see below).
+Delete the default plot of inclination vs. eccentricity as it is not needed.
 
 .. figure:: /_static/portal_tut03_step02b.png
     :width: 600
     :name: portal_tut03_step02b
     :alt: A screenshot of the plot of the eccentricity vs. semi-major axis 
 
-    The plot of the distribution of the eccentricity vs. semi-major axis of solar system objects at semi-major axis beyond 30 au.  
+    The plot of eccentricity vs. semi-major axis of solar system objects with a semi-major axis > 30 au.  
+
 
 2.7. Multiple populations are apparent in the above plot.
 The majority of the objects have low eccentricity and a semi-major axis of about 30 to about 50 au.
@@ -226,7 +228,7 @@ Click the "Add Column" button.
     :name: portal_tut03_step02c
     :alt: screenshot illustrating the expression needed to make the new column containing the diameter
 
-    The screenshot illustrating the parameters for the new column containing the estimated diameter.  
+    How to add a new column containing the estimated diameter.  
 
 2.9.  Plot the distribution of estimated diameters in log-space.
 Open the "Plot Parameters" pop-up window, click on "Add New Chart," select "Histogram", and enter the parameters as below.  
@@ -236,7 +238,7 @@ Open the "Plot Parameters" pop-up window, click on "Add New Chart," select "Hist
     :name: portal_tut03_step02d
     :alt: screenshot illustrating the plot parameters for displaying the distribution of estimated diameters
 
-    The screenshot illustrating the plot parameters for the distribution of the estimated diameters.  
+    The plot parameters for the distribution of estimated diameters.  
 
 2.10.  Click on the "Apply" or "OK" button.
 This will result in the plot showing the distribution of estimated diameters extracted via your query.  
@@ -246,10 +248,11 @@ This will result in the plot showing the distribution of estimated diameters ext
     :name: portal_tut03_step02e
     :alt: screenshot illustrating the distribution of estimated diameters
 
-    The screenshot illustrating the distribution of the estimated diameters.  
+    The distribution of estimated diameters.  
 
 
 2.11. Clear the query and results and return to the RSP TAP Search form.
+
 
 .. _DP0-3-Portal-3-Step-3:
 
