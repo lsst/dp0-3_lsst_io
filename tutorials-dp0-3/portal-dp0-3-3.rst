@@ -257,21 +257,21 @@ This illustrates, in part, some of the shortcomings of the assumptions (such as 
 which were used to estimate the diameters.
 See also the first exercise for the learner in Step 6.
 
-2.12. Return to the RSP TAP Search form by clicking on the RSP TAP Search button at upper left.
-
 
 .. _DP0-3-Portal-3-Step-3:
 
 Step 3. Find and explore a well-observed TNO
 ============================================
 
-3.1. The goal of Step 3 is to identify a distant object with a large number of observations, so its position on the sky as a function of time can be plotted.  
-Return to the ADQL query interface by clicking on "RSP TAP Search" tab, and clicking on "Edit ADQL" button.  
-Enter the query below.  
-This query has the same basis as the one used above in step 1.2, with three changes.
-One, it joins with the ``DiaSource`` table to retrive the number of ``DiaSources`` (i.e., detections) associated with each object.
-Two, it applies a constraint that the semi-major axis be between 30 and 100 AU.
-Three, it uses a different constraint on ``ssObjectId`` to return a different random subset.
+3.1. Return to the RSP TAP Search form by clicking on the RSP TAP Search button at upper left.
+Navigate to the ADQL interface by clicking on the "Edit ADQL" button.
+
+3.2. To identify a distant solar system object with a large number of observations, enter the query below.
+This query joins the `MPCORB` table with the ``DiaSource`` table in order to retrive the number 
+of detections: the count of the number of ``DiaSource`` table rows for a given solar system object,
+each of which has a unique ``ssObjectId``.
+This query also applies a constraint that the semi-major axis be between 30 and 100 AU,
+and a constraint on the ``ssObjectId`` to return a random subset (similar to Step 1.2).
 
 .. code-block:: SQL 
 
@@ -284,10 +284,11 @@ Three, it uses a different constraint on ``ssObjectId`` to return a different ra
     GROUP BY mpc.ssObjectId, mpc.e, mpc.q 
 
 
-3.2.  Click on "Search" -  this search might take up to a minute.  
+3.3.  Click on "Search".
+This search might take up to a minute.  
+The query returns 12,589 objects.  
 
-
-3.3. The default view of the search above is a plot the first two columns against each other, ``ssObjectId`` and ``COUNT``,
+3.4. The default view of the search above is a plot the first two columns against each other, ``ssObjectId`` and ``COUNT``,
 which is not a particularly useful plot aside from showing that the number of detections for the most oft-detected objects in the outer Solar System 
 is in the thousands.
 Click twice on the ``COUNT`` column header to order the entries by descending count and identify the most oft-detected outer Solar System object.  
@@ -299,14 +300,11 @@ Click twice on the ``COUNT`` column header to order the entries by descending co
 
     The default results view from the ADQL query above.
 
-The query returns about 12,600 objects.  
 
+3.5.  Continue with the object with the largest number of observations: ``ssObjectId`` = -735085100561880491, which was detected 12,103 times.
+Its modest eccentricity of 0.1512 implies that this is a TNO (unlikely to be a comet).  
 
-3.4.  Continue with the object with the largest number of observations - 12,103 of them! - with the ``ssObjectId`` = -735085100561880491.  
-Examine its eccentricity.  Its modest eccentricity ``e = 0.1512`` implies that this is not a comet.  
-
-
-3.5.  Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter (``band``), and time of observations (``midPointMjdTai``) for the oft-observed TNO with ``ssObjectId`` as above.  
+3.6.  Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter (``band``), and time of observations (``midPointMjdTai``) for the oft-observed TNO with ``ssObjectId`` as above.  
 
 .. code-block:: SQL 
 
@@ -315,7 +313,7 @@ Examine its eccentricity.  Its modest eccentricity ``e = 0.1512`` implies that t
     WHERE ssObjectId = -735085100561880491
 
 
-3.6. The default results view will show the "Coverage" map at upper left.
+3.7. The default results view will show the "Coverage" map at upper left.
 In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
 Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is redundant with the default plot.
 At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
@@ -328,7 +326,7 @@ At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show on
     The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
 
 
-3.7. Set the color of individual points to represent the time of the observation to 
+3.8. Set the color of individual points to represent the time of the observation to 
 better illustrate how the object moves across the sky.
 In the plot panel, click on the "Settings" icon (double gears) to open the "Plot Parameters"
 pop-up window.
@@ -339,12 +337,16 @@ Then click "Apply".
     :width: 600
     :name: portal_tut03_step03c
     :alt: A screenshot of the plot of sky coordinates colored as a function of time.
+ 
+    Purple color corresponds to earlier observtations, and the red color corresponds to later observations.  
 
-    The 10 loops in the object's path on the sky is a result of Earth's orbital period and the 10-year LSST duration.  
-    Purple color corresponds to earlier observtations, and the red color corresponds to the later observations.  
 
+3.9. In the plot above, the 10 loops in the object's path on the sky is a result of 
+Earth's orbital period and the 10-year LSST duration.
+As described in the introduction, this particular TNO was detected by LSST over ten thousand
+times because it happened to be in a deep drilling field.
+This will not be the case for the majority of solar system objects.
 
-3.8. Clear the query and results and return to the RSP TAP Search form.
 
 .. _DP0-3-Portal-3-Step-4:
 
@@ -356,7 +358,7 @@ Step 4. Plot the time-domain quantities for the TNO
 All changes in the brightness of DP0.3 objects with time are due to changes in the distance and phase angle from Earth.  
 
 
-4.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
+4.1. Return to the search form and execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
 heliocentric and topocentric distances, and time of the observations for the TNO explored in Step 3.
 
 .. code-block:: SQL 
