@@ -32,7 +32,7 @@ Before following these tutorials, delegates should follow the `getting started c
 
 All RSP tutorials are created by Rubin staff and adhere to
 the set of guidelines and best practices described in `RTN-045 <https://rtn-045.lsst.io/>`_,
-unless otherwise noted (e.g., the :ref:`DP0-2-Tutorials-Contributed`).
+unless otherwise noted (e.g., the `contributed tutorials <https://dp0-2.lsst.io/tutorials-examples/index.html#contributed-tutorials>`_).
 
 `Suggest a new tutorial topic <https://community.lsst.org/t/suggest-a-new-dp0-2-tutorial/6556>`_.
 
