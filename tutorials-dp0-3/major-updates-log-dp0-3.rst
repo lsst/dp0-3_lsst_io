@@ -50,6 +50,11 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Sep 25 2023
+-----------
+
+DP0.3 Portal tutorial 03 on trans-Neptunian objects (TNOs) released.
+
 Sep 21 2023
 -----------
 

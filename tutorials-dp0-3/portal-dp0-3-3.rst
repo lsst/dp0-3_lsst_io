@@ -266,7 +266,7 @@ Step 3. Find and explore a well-observed TNO
 3.1. Return to the RSP TAP Search form by clicking on the RSP TAP Search button at upper left.
 Navigate to the ADQL interface by clicking on the "Edit ADQL" button.
 
-3.2. To identify a distant solar system object with a large number of observations, enter the query below.
+3.2. To identify a distant Solar System object with a large number of observations, enter the query below.
 This query joins the `MPCORB` table with the ``DiaSource`` table in order to retrive the number 
 of detections: the count of the number of ``DiaSource`` table rows for a given solar system object,
 each of which has a unique ``ssObjectId``.
@@ -375,7 +375,7 @@ heliocentric and topocentric distances, and time of the observations for the TNO
 Use the plot "Settings" function to add a scatter plot showing the phase angle as a function of time.
 For the x-axis, use ``midPointMjdTai - 60000``  to show more clearly the timescales between observations.
 
-4.3. As mentioned above, the simulated solar system data does not include any time-varying features.
+4.3. As mentioned above, the simulated Solar System data does not include any time-varying features.
 The changes in apparent magnitude are due to the object changing in phase angle
 and distance from Earth as a function of time.
 Add two new scatter plots showing the r-band magnitude as a function of phase angle and as a function
