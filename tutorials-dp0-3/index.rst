@@ -24,10 +24,10 @@ These tutorials are for DP0 delegates using the Rubin Science Platform (RSP) dep
 
 Before following these tutorials, delegates should follow the `getting started checklist in the documentation for DP0.2 <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-started-with-dp0-checklist>`_ and:
 
-| 1. have gotten their :ref:`Delegate-Homepage-RSP-Accounts` and be able to log in at `data.lsst.cloud <https://data.lsst.cloud/>`_,
-| 2. be familiar with this list of :doc:`/data-access-analysis-tools/rsp-warnings`,
-| 3. have reviewed the basic introductions to the RSP's :ref:`Tools-RSP-Portal` or :ref:`Tools-RSP-Notebook`, and
-| 4. know their options for :ref:`Delegate-Homepage-Getting-Support`.
+| 1. have gotten their `RSP accounts <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#delegate-homepage-rsp-accounts>`_ and be able to log in at `data.lsst.cloud <https://data.lsst.cloud/>`_,
+| 2. be familiar with this list of `risks and caveats <https://dp0-2.lsst.io/data-access-analysis-tools/rsp-warnings.html>`_ for the DP0-era RSP,
+| 3. have reviewed the basic introductions to the RSP's `Portal Aspect <https://dp0-2.lsst.io/data-access-analysis-tools/portal-intro.html>`_ and `Notebook Aspect <https://dp0-2.lsst.io/data-access-analysis-tools/nb-intro.html>`_, and
+| 4. know their options for `getting support <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-support>`_.
 
 
 All RSP tutorials are created by Rubin staff and adhere to
