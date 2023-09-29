@@ -169,8 +169,8 @@ object identification rates.
 There is an issue with trailed magnitudes that leads to overly dim detections (e.g., by up to 10 mag).
 This is an issue for only a few to ten thousand detections out of billions.
 
-**The camera footprint used a simplified shape.**
-However, it does have the correct size. 
+**The camera footprint was slightly inaccurate.**
+However, the size was approximately correct. 
 This means that while the total number of detections are still representative of the future LSST,
 individual objects might not have been detected for a given visit when they should have been.
 
