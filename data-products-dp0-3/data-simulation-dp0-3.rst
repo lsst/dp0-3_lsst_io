@@ -33,7 +33,7 @@ Lynne Jones, Siegfried Eggl, Meg Schwamb, Grigori Fedorets, and Mario Juric.
 
 .. _Data-Products-DP0-3-Data-Simulation-OpSim:
 
-Observing Strategy
+Observing strategy
 ==================
 
 The DP0.3 simulation uses the LSST baseline v3.0 cadence 
@@ -144,5 +144,42 @@ Use the color terms in Table 1 to recover the true apparent magnitude in the ban
 
 Furthermore, the ``MPCORB`` tables contain injected rather than measured orbital parameters, so in this sense the ``MPCORB`` tables can be thought of as "truth tables".
 
+
+.. _Data-Products-DP0-3-Data-Simulation-Issues:
+
+Known issues
+============
+
+There are several known issues with the DP0.3 simulation.
+
+**Color classes.**
+Only two color classes have been simulated, with no variance, which is not realistic.
+There is also an issue in that objects are about 0.2 mag fainter than they should be
+across the board, because of an error that set :math:`V-r = 0`.
+These too-faint magnitudes mean that source detection rates especially for
+outer solar system objects will be underestimated with DP0.3.
+
+**Missing u and y band.**
+The *u* and *y* band detections were not simulated for solar system objects in DP0.3.
+As SS objects are typically quite faint in *u* and *y*, and there are fewer visits
+in these filters than in *griz*, this has only a small (if any) impact on moving
+object identification rates.
+
+**Overly dim detection magnitudes.**
+There is an issue with trailed magnitudes that leads to overly dim detections (e.g., by up to 10 mag).
+This is an issue for only a few to ten thousand detections out of billions.
+
+**The camera footprint was slightly inaccurate.**
+However, the size was approximately correct. 
+This means that while the total number of detections are still representative of the future LSST,
+individual objects might not have been detected for a given visit when they should have been.
+
+**All ISOs are similar.**
+They all have similar dates of perihelion passage (pass the Sun at similar times)
+and they do not have a distribution of absolute H magnitudes (they are all bright).
+
+**The number of ISO and LPC objects exceeds predictions.**
+There are many more ISO and LPC objects in the simulation than the LSST is projected to observe, by orders of magnitude (only a few are expected).
+This is not exactly an issue: these populations were inflated on purpose so that a diversity of properties could be simulated.
 
 
