@@ -66,16 +66,6 @@ Step 3. More advanced stuff
 ============================================
 
 
-.. _DP0-3-Portal-4-Step-4:
-
-Step 4. Plot the time-domain quantities for the TNO
-===================================================
-
-
-.. _DP0-3-Portal-4-Step-5:
-
-Step 5. View the 2-D projection of the TNO's orbit to visualize its 3-D trajectory
-==================================================================================
 
 
 
