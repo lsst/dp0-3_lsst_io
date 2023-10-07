@@ -56,13 +56,13 @@ At upper right, next to "TAP Services" choose to "Show", and then select "LSST D
 
 .. _DP0-3-Portal-4-Step-2:
 
-Step 2. Explore the properties of a population of TNOs
+Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ======================================================
 
 
 .. _DP0-3-Portal-4-Step-3:
 
-Step 3. Find and explore a well-observed TNO
+Step 3. More advanced stuff
 ============================================
 
 
