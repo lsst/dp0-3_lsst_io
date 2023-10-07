@@ -33,13 +33,12 @@
 Introduction
 ============
 
-This tutorial demonstrates
+This tutorial demonstrates a functionality of the Portal aspect for user-uploaded tables and their use in queries for DP0.3 (postgres only, not qserve, so not available for DP0.2 yet)
 
 
-More information about the LSST DDFs can be found on the `LSST DDF webpage <https://www.lsst.org/scientists/survey-design/ddf>`_
+How to make weblinks: `LSST DDF webpage <https://www.lsst.org/scientists/survey-design/ddf>`_
 and in Section 2.6 of the Survey Cadence Optimization Committee's Phase 2 Recommendations report 
 (`PSTN-055 <https://pstn-055.lsst.io/>`_).
-Note that DP0.2 did not include DDF observations, so the ability to explore science with a DDF-like cadence is unique to the DP0.3 simulation.
 
 This tutorial assumes the successful completion of the beginner-level DP0.3 Portal tutorials,
 and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
@@ -48,7 +47,7 @@ For more information about the DP0.3 catalogs, tables, and columns, see the :ref
 
 .. _DP0-3-Portal-4-Step-1:
 
-Step 1. Identify a population of TNOs
+Step 1. Upload a user-supplied table of coordinates for use in cone searches
 =====================================
 
 1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
