@@ -53,7 +53,11 @@ Step 1. Upload a user-supplied table of coordinates for use in cone searches
 1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 At upper right, next to "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top.
 
-1.2 In the "Enter Constraints" box, under "spatial constraints" click on the multi-object button. A window will pop up to allow one to upload a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, we will use an ascii catalog in tab separated format (TSV). 
+1.2 In the "Enter Constraints" box, under "spatial constraints" click on the multi-object button. A window will pop up to allow one to upload a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, we will use an ascii catalog with columns of RA and Dec in tab separated format (TSV). Other columns can also be present in the file. [do we attach the example file here?] Click the browse button to find the file on your machine and click the upload button.
+
+1.3 After uploading, the window will show a list of the columns it found, named according to the header. Make sure that the ra and dec columns in your file are labeled "ra" and "dec" and are displayed in the list. Then click the "Load Table" button.
+
+1.4 If the table loaded the ra and dec correctly, you should see the table filename displayed next to "Upload Table", and listed next to "position columns" should show "ra, dec (from the uploaded table)".
 
 .. _DP0-3-Portal-4-Step-2:
 
