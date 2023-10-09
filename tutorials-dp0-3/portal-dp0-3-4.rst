@@ -41,7 +41,7 @@ Phase curve fits and absolute magnitudes
 For Solar System objects, absolute magnitudes (`H`) are defined to be for an object 1 AU from the Sun and 1 AU 
 from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
 Absolute magnitudes are derived by fitting a function (the slope parameter `G12`) to the relationship between 
-reduced magnitude `H($\alpha$)` and phase angle `\alpha` (i.e., the phase curve), and evaluating the function at a phase angle of 0 deg.
+reduced magnitude $`H(\alpha)`$ and phase angle `\alpha` (i.e., the phase curve), and evaluating the function at a phase angle of 0 deg.
 The results of phase curve fits in each of the LSST's four filters, griz, are stored in the ``SSObject`` table.
 Note that rotation curves or complex geometry of solar system objects are not included in DP0.3 simulations. 
 Thus, any changes over time in an object’s apparent magnitude are due only to changes in its distance and phase angle.
