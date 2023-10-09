@@ -59,6 +59,12 @@ At upper right, next to "TAP Services" choose to "Show", and then select "LSST D
 
 1.4 If the table loaded the ra and dec correctly, you should see the table filename displayed next to "Upload Table", and listed next to "position columns" should show "ra, dec (from the uploaded table)".
 
+.. figure:: /_static/portal_tut04_step01a.png
+    :width: 600
+    :name: portal_tut04_step01a
+    :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
+
+
 .. _DP0-3-Portal-4-Step-2:
 
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
