@@ -21,7 +21,7 @@
 
 .. This section should provide a brief, top-level description of the page.
 
-**Contact authors:** Melissa Graham
+**Contact authors:** Melissa Graham and Yumi Choi
 
 **Last verified to run:** 
 
@@ -40,13 +40,15 @@ Phase curve fits and absolute magnitudes
 
 For Solar System objects, absolute magnitudes (`H`) are defined to be for an object 1 AU from the Sun and 1 AU 
 from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
-Absolute magnitudes are derived by correcting for distance, fitting a function (the `G` parameter) to the relationship between 
-absolute magnitude and phase (i.e., the phase curve), and evaluating the function at a phase of 0 deg.
-The results of phase curve fits in each of the LSST's six filters, ugrizy, are stored in the ``SSObject`` table.
+Absolute magnitudes are derived by fitting a function (the slope parameter `G12`) to the relationship between 
+reduced magnitude `H(\alpha)` and phase angle `\alpha` (i.e., the phase curve), and evaluating the function at a phase angle of 0 deg.
+The results of phase curve fits in each of the LSST's four filters, griz, are stored in the ``SSObject`` table.
+Note that rotation curves or complex geometry of solar system objects are not included in DP0.3 simulations. 
+Thus, any changes over time in an object’s apparent magnitude are due only to changes in its distance and phase angle.
 
-A suitable beginner-level reference to the H and G magnitude system for asteroids is
+A suitable beginner-level reference to the simple H and G magnitude system (`HG model`) for asteroids is
 `Dymock 2007 <https://adsabs.harvard.edu/full/2007JBAA..117..342D>`_. 
-This paper describes the "reduced magnitude", which is corrected for distance, :math:`H(\alpha)`, as:
+This paper describes the reduced magnitude, which is corrected for distance, :math:`H(\alpha)`, as:
 
 .. math::
 
@@ -56,17 +58,18 @@ where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric dista
 `r` is the heliocentric distance, and `V` is the apparent magnitude.
 
 The absolute magnitude `H` can be derived by fitting a function, where the choice of 
-form for this function has several options.
+form for this function has several options 
+(see `Muinonen et al. 2010 <https://ui.adsabs.harvard.edu/abs/2010Icar..209..542M>)`_. 
 Dymock (2007) presents a simpler version with a single parameter `G`, using the equation:
 
 .. math::
 
-    H = H(\alpha) + 2.5 log((1-G)\phi_1(\alpha) +G \phi_2(\alpha)),
+    H = H(\alpha) + 2.5 log((1-G)\phi_1(\alpha) + G\phi_2(\alpha)),
 
 where:
 
 .. math::
-    \phi_i (\alpha) = exp(-A_i tan(0.5 \alpha)^{Bi}).
+    \phi_i(\alpha) = exp(-A_i tan(0.5\alpha)^{Bi}).
 
 In the above equation, 
 :math:`A_1` = 3.33, 
@@ -74,7 +77,27 @@ In the above equation,
 :math:`A_2` = 1.87, and 
 :math:`B_2` = 1.22.
 
-However, it is important to understand that there are other options for fitting phase curves.
+To better accommodate various observational effects (e.g., photometric quality, incomplete phase angle sampling) 
+a more sophisticated `HG1G2 model` (a linear three-parameter function) and its nonlinear two-parameter version 
+`HG12 model` were developed by Muinonen et al. (2010). The two-parameter `HG12 model` is generally very effective
+for deriving reliable values of absolute magnitude when the phase angle sampling is not optimal (e.g., poor phase
+angle coverage at a range of phase angle). Thus, the LSST data products will compute estimated parameters of the
+`HG12 model` and this will be the focus of this tutorial. The `HG12 model` expresses the $G_1$ and $G_2$ parameters
+as a piecewise linear function of a single parameter, $G_{12}$:
+
+.. math::
+
+    H(\alpha) = H − 2.5 log[G_1\phi_1(\alpha)+G_2\phi_2(\alpha) + (1-G_1-G_2)\phi_3(\alpha)], 
+
+where:
+
+.. math::
+    for G_{12} \ge 0.2,
+    G_1 = 0.9529\times G_{12} + 0.02162
+    G_2 = -0.6125\times G_{12} + 0.5572, and
+    for G_{12} < 0.2,
+    G_1 = 0.7527\times G_{12} + 0.06164
+    G_2 = -0.9612\times G_{12} + 0.6270.
 
 **MENTION WHAT WAS USED TO GET THE FIT RESULTS IN SSOBJECT, WHICH IS G12 NOT G. DESCRIBE HOW DIFFERENT.**
 **IF THEY'RE REALLY DIFFERENT, REPLACE THE ABOVE WITH A DESCRIPTION OF G12, NOT JUST G.**
