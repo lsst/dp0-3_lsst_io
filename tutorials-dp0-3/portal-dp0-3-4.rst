@@ -67,6 +67,8 @@ A screenshot of the search query if the user-supplied catalog has uploaded and i
 
 TBD: Why can't you manually specify the header name of the ra/dec columns if they don't comply with the expected format?
 
+1.5 Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the header names listed to the right below "output column selection and constraints". Here, click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column".
+
 .. _DP0-3-Portal-4-Step-2:
 
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
