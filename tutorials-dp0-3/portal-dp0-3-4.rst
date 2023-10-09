@@ -41,7 +41,7 @@ Phase curve fits and absolute magnitudes
 For Solar System objects, absolute magnitudes (`H`) are defined to be for an object 1 AU from the Sun and 1 AU 
 from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
 Absolute magnitudes are derived by fitting a function (the slope parameter `G12`) to the relationship between 
-reduced magnitude :match:`H(\alpha)` and phase angle :math:`\alpha` (i.e., the phase curve), and evaluating the function at a phase angle of 0 deg.
+reduced magnitude :math:`H(\alpha)` and phase angle :math:`\alpha` (i.e., the phase curve), and evaluating the function at a phase angle of 0 deg.
 The results of phase curve fits in each of the LSST's four filters, griz, are stored in the ``SSObject`` table.
 Note that rotation curves or complex geometry of solar system objects are not included in DP0.3 simulations. 
 Thus, any changes over time in an object’s apparent magnitude are due only to changes in its distance and phase angle.
@@ -82,23 +82,18 @@ a more sophisticated `HG1G2 model` (a linear three-parameter function) and its n
 `HG12 model` were developed by Muinonen et al. (2010). The two-parameter `HG12 model` is generally very effective
 for deriving reliable values of absolute magnitude when the phase angle sampling is not optimal (e.g., poor phase
 angle coverage at a range of phase angle). Thus, the LSST data products will compute estimated parameters of the
-`HG12 model` and this will be the focus of this tutorial. The `HG12 model` expresses the $G_1$ and $G_2$ parameters
-as a piecewise linear function of a single parameter, $G_{12}$:
+`HG12 model` and this will be the focus of this tutorial. The `HG12 model` expresses the `G1` and `G2` parameters
+as a piecewise linear function of a single parameter, `G12`:
 
 .. math::
 
-    H(\alpha) = H − 2.5 \log_{10}[G_1\phi_1(\alpha)+G_2\phi_2(\alpha) + (1-G_1-G_2)\phi_3(\alpha)], 
+    H(\alpha) = H − 2.5 \log_{10}[G1\phi_1(\alpha)+G2\phi_2(\alpha) + (1-G1-G2)\phi_3(\alpha)], 
 
 where:
 
-.. math::
-    for G_{12} \ge 0.2,
-    G_1 = 0.9529\times G_{12} + 0.02162
-    G_2 = -0.6125\times G_{12} + 0.5572, and
-    for G_{12} < 0.2,
-    G_1 = 0.7527\times G_{12} + 0.06164
-    G_2 = -0.9612\times G_{12} + 0.6270.
-
+:math:`G1 = 0.9529 \times G12 + 0.02162 and G2 = -0.6125 \times G12 + 0.5572 for G12 \ge 0.2` and 
+:math:`G1 = 0.7527 \times G12 + 0.06164 and G2 = -0.9612 \times G12 + 0.6270 for G12 < 0.2`.
+  
 **MENTION WHAT WAS USED TO GET THE FIT RESULTS IN SSOBJECT, WHICH IS G12 NOT G. DESCRIBE HOW DIFFERENT.**
 **IF THEY'RE REALLY DIFFERENT, REPLACE THE ABOVE WITH A DESCRIPTION OF G12, NOT JUST G.**
 
