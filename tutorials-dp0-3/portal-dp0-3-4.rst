@@ -63,7 +63,7 @@ At upper right, next to "TAP Services" choose to "Show", and then select "LSST D
     :width: 600
     :name: portal_tut04_step01a
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
-
+A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 
 .. _DP0-3-Portal-4-Step-2:
 
