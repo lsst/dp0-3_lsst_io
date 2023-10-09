@@ -91,8 +91,8 @@ as a piecewise linear function of a single parameter, `G12`:
 
 where:
 
-:math:`G1 = 0.9529 \times G12 + 0.02162 and G2 = -0.6125 \times G12 + 0.5572 for G12 \ge 0.2` and 
-:math:`G1 = 0.7527 \times G12 + 0.06164 and G2 = -0.9612 \times G12 + 0.6270 for G12 < 0.2`.
+:math:`G1 = 0.9529 \times G12 + 0.02162`, :math:`G2 = -0.6125 \times G12 + 0.5572` for G12 :math:`\ge 0.2`, and 
+:math:`G1 = 0.7527 \times G12 + 0.06164`, :math:`G2 = -0.9612 \times G12 + 0.6270` for G12 < 0.2.
   
 **MENTION WHAT WAS USED TO GET THE FIT RESULTS IN SSOBJECT, WHICH IS G12 NOT G. DESCRIBE HOW DIFFERENT.**
 **IF THEY'RE REALLY DIFFERENT, REPLACE THE ABOVE WITH A DESCRIPTION OF G12, NOT JUST G.**
