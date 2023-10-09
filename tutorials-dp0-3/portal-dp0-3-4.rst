@@ -52,7 +52,7 @@ This paper describes the reduced magnitude, which is corrected for distance, :ma
 
 .. math::
 
-    H(\alpha) = V - 5 log(r \Delta),
+    H($\alpha$) = V - 5 log(r $\Delta$),
 
 where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric distance, 
 `r` is the heliocentric distance, and `V` is the apparent magnitude.
