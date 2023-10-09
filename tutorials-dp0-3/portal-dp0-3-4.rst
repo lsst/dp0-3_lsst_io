@@ -52,7 +52,7 @@ This paper describes the reduced magnitude, which is corrected for distance, :ma
 
 .. math::
 
-    H(\alpha) = V - 5 log(r \Delta),
+    H(\alpha) = V - 5 \log_{10}(r \Delta),
 
 where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric distance, 
 `r` is the heliocentric distance, and `V` is the apparent magnitude.
@@ -64,7 +64,7 @@ Dymock (2007) presents a simpler version with a single parameter `G`, using the 
 
 .. math::
 
-    H = H(\alpha) + 2.5 log((1-G)\phi_1(\alpha) + G\phi_2(\alpha)),
+    H = H(\alpha) + 2.5 \log_{10}((1-G)\phi_1(\alpha) + G\phi_2(\alpha)),
 
 where:
 
@@ -87,7 +87,7 @@ as a piecewise linear function of a single parameter, $G_{12}$:
 
 .. math::
 
-    H(\alpha) = H − 2.5 log[G_1\phi_1(\alpha)+G_2\phi_2(\alpha) + (1-G_1-G_2)\phi_3(\alpha)], 
+    H(\alpha) = H − 2.5 \log_{10}[G_1\phi_1(\alpha)+G_2\phi_2(\alpha) + (1-G_1-G_2)\phi_3(\alpha)], 
 
 where:
 
