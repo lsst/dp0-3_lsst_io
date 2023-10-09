@@ -65,6 +65,8 @@ At upper right, next to "TAP Services" choose to "Show", and then select "LSST D
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 
+TBD: Why can't you manually specify the header name of the ra/dec columns if they don't comply with the expected format?
+
 .. _DP0-3-Portal-4-Step-2:
 
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
