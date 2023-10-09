@@ -24,10 +24,17 @@ These tutorials are for DP0 delegates using the Rubin Science Platform (RSP) dep
 
 Before following these tutorials, delegates should follow the `getting started checklist in the documentation for DP0.2 <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-started-with-dp0-checklist>`_ and:
 
-| 1. have gotten their RSP account and be able to log in at `data.lsst.cloud <https://data.lsst.cloud/>`_, 
-| 2. be familiar with this `list of DP0-era RSP warnings <https://dp0-2.lsst.io/data-access-analysis-tools/rsp-warnings.html>`_, 
-| 3. reviewed the basic introductions to the RSP's `Portal <https://dp0-2.lsst.io/data-access-analysis-tools/index.html#portal-aspect>`_ and `Notebook <https://dp0-2.lsst.io/data-access-analysis-tools/index.html#notebook-aspect>`_ Aspects, and 
-| 4. know their options for `getting support and asking questions <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-support>`_.
+| 1. have gotten their `RSP accounts <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#delegate-homepage-rsp-accounts>`_ and be able to log in at `data.lsst.cloud <https://data.lsst.cloud/>`_,
+| 2. be familiar with this list of `risks and caveats <https://dp0-2.lsst.io/data-access-analysis-tools/rsp-warnings.html>`_ for the DP0-era RSP,
+| 3. have reviewed the basic introductions to the RSP's `Portal Aspect <https://dp0-2.lsst.io/data-access-analysis-tools/portal-intro.html>`_ and `Notebook Aspect <https://dp0-2.lsst.io/data-access-analysis-tools/nb-intro.html>`_, and
+| 4. know their options for `getting support <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-support>`_.
+
+
+All RSP tutorials are created by Rubin staff and adhere to
+the set of guidelines and best practices described in `RTN-045 <https://rtn-045.lsst.io/>`_,
+unless otherwise noted (e.g., the `contributed tutorials <https://dp0-2.lsst.io/tutorials-examples/index.html#contributed-tutorials>`_).
+
+`Suggest a new tutorial topic <https://community.lsst.org/t/suggest-a-new-dp0-2-tutorial/6556>`_.
 
 
 .. _DP0-3-Tutorials-Whats-New:
@@ -56,6 +63,7 @@ Step-by-step demonstrations of how to use the DP0.3 data products in the Portal 
 
     portal-dp0-3-1
     portal-dp0-3-2
+    portal-dp0-3-3
 
 
 
@@ -81,15 +89,27 @@ list of available tutorials with descriptions.
 Contributed tutorials
 =====================
 
-Everyone is welcome to contribute tutorials or science demonstrations to the shared GitHub repository `delegate-contributions-dp03 <https://github.com/rubin-dp0/delegate-contributions-dp03>`_.
+**Where do contributed tutorials go?** 
+In the shared GitHub repository `delegate-contributions-dp03 <https://github.com/rubin-dp0/delegate-contributions-dp03>`_.
+Contributions are stored in sub-directories by topic; view the readme files in each sub-directory for more information 
+about the contents and who contributed them.
 
-The `README <https://github.com/rubin-dp0/delegate-contributions-dp03/blob/main/README.md>`_ file for that repo contains instructions
-and best practices for contributions.
-Contributions are stored in sub-directories by topic, such as "extendedness" or "photo-z".
-View the readme files in each sub-directory for more information about the contents and who contributed them.
+**Who can contribute a tutorial?**
+Everyone is welcome to contribute tutorials or science demonstrations to this repo.
+All are welcome to drop in to a `Stack Club <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#stack-club>`_ session 
+to workshop a tutorial topic or get assistance.
 
-Rubin staff do not apply any quality control reviews to the contributed content in
-the `delegate-contributions-dp03 <https://github.com/rubin-dp0/delegate-contributions-dp03>`_ repo.
-In contrast, the Portal and Notebook Aspect tutorials in the sections above are created by Rubin staff and adhere to
-the set of guidelines and best practices described in `RTN-045 <https://rtn-045.lsst.io/>`_.
-Anyone who wants to contribute to these formal tutorial sets should get in touch with the Lead Community Scientist (Melissa Graham).
+**How are contributions made?**
+The `README <https://github.com/rubin-dp0/delegate-contributions-dp03/blob/main/README.md>`_ file for this repo 
+contains instructions and best practices for contributions.
+Rubin staff do not apply any quality control reviews to the contributed content in this repo.
+
+**What topics can be contributed?**
+Any and all topics are welcome, so long as they can be covered by the DP0.3 data set. 
+Here is a short list of potential science topics that DP0.3 could be useful for.
+
+ * analysis of the comet population
+ * identifying interstellar objects
+ * searching for alien spacecraft (no really!)
+ * identifying sub-populations of main-belt asteroids or TNOs
+ * correlating astrometric/photometric uncertainties with the accuracy of derived properties

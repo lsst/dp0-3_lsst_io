@@ -32,9 +32,8 @@ Notebook tutorials
 A full history for all tutorial notebooks can be accessed in GitHub via this `direct link to the commit log for the
 tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/commits/main>`_.
 
-The full history for any given tutorial notebook can be accessed via GitHub by going to the notebook of interest in the repo
-(e.g., the `introduction to DP0.2 notebook <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/01_Introduction_to_DP02.ipynb>`_),
-and clicking on "history" (near upper-right).
+The full history for any given tutorial notebook can be accessed via GitHub by going to the notebook of interest in 
+`the repo tutorial-notebooks repo <https://github.com/rubin-dp0/tutorial-notebooks>`_ and clicking on "history" (near upper-right).
 
 
 Portal and command line tutorials
@@ -51,8 +50,29 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
-July X 2023
+Sep 25 2023
 -----------
 
-First release of all DP0.3 tutorials.
+DP0.3 Portal tutorial 03 on trans-Neptunian objects (TNOs) released.
+
+Sep 21 2023
+-----------
+
+The recommended image of the RSP at data.lsst.cloud was bumped to Weekly 2023_37.
+
+Sep 01 2023
+-----------
+
+DP0.3 notebook tutorial 03 on Trans-Neptunian Objects is released.
+
+Aug 04 2023
+-----------
+
+DP0.3 notebook tutorial 02 on the Main Belt Asteroids is released.
+
+
+July 31 2023
+------------
+
+First release of DP0.3 introductory tutorials: Portal tutorials 01 and 02, and Notebook tutorial 01.
 
