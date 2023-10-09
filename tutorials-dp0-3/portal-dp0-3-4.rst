@@ -69,6 +69,8 @@ TBD: Why can't you manually specify the header name of the ra/dec columns if the
 
 1.5 Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the header names listed to the right below "output column selection and constraints". Here, click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column".
 
+1.6 For this example, we will also set a "Temporal" constraint for the search, since we are interested to know if there were there moving objects identified in the survey at these coordinates on a specific night (for this example, we will pick a day for which we know this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaObject table to use for temporal matching).
+
 .. _DP0-3-Portal-4-Step-2:
 
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
