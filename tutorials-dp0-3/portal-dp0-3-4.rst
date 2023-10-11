@@ -67,9 +67,11 @@ A screenshot of the search query if the user-supplied catalog has uploaded and i
 
 TBD: Why can't you manually specify the header name of the ra/dec columns if they don't comply with the expected format?
 
-1.5 Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the header names listed to the right below "output column selection and constraints". Here, click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column".
+1.5 Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the header names listed to the right below "output column selection and constraints". Here, click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
 
-1.6 For this example, we will also set a "Temporal" constraint for the search, since we are interested to know if there were there moving objects identified in the survey at these coordinates on a specific night (for this example, we will pick a day for which we know this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaObject table to use for temporal matching).
+1.6 For a first look, lets ignore the "Temporal" constraint and make sure the box is unchecked. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. 
+
+1.7 Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box. We are now interested to know if there were there moving objects identified in the survey at these coordinates on a specific night (for this example, we will pick a day for which we know this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaObject table to use for temporal matching). Enter a 
 
 .. _DP0-3-Portal-4-Step-2:
 
