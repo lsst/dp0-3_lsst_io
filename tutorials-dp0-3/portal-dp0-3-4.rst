@@ -71,6 +71,12 @@ TBD: Why can't you manually specify the header name of the ra/dec columns if the
 
 1.6 For a first look, lets ignore the "Temporal" constraint and make sure the box is unchecked. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. 
 
+.. figure:: /_static/portal_tut04_step01b.png
+    :width: 600
+    :name: portal_tut04_step01b
+    :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
+A screenshot of the search query result. The multiple observations of 3 SSObjects from the user-uploaded table can be seen as the clustered objects
+
 1.7 Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box. We are now interested to know if there were there moving objects identified in the survey at these coordinates on a specific night (for this example, we will pick a day for which we know this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaObject table to use for temporal matching). Enter a 
 
 .. _DP0-3-Portal-4-Step-2:
