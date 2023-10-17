@@ -81,7 +81,14 @@ A screenshot of the search query result. The multiple observations of 3 SSObject
 
 1.7 Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box. We are now interested to know if there were there moving objects identified in the survey at these coordinates on a specific night (for this example, we will pick a day for which we know this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaObject table to use for temporal matching). Click the MJD specification and enter an MJD (62000, a day that we know one of our sample objects was observed in the catalog).
 
-1.8 It can be useful to save the search for later. In this case it can be automated with search query commands that are output by the "populate and edit ADQL query" button. 
+1.8 It can be useful to save the search for later. In this case it can be automated with search query commands that are output by the "populate and edit ADQL query" button. Repeat Step 7, but instead of hitting the "search" button, hit the "populate and edit ADQL" button on the bottom right. This will take you to "advanced ADQL interface" where you can see the reproducible search code snippet to perform the search (e.g. in a notebook) on the right. In the schema browser on the left you can see the user-supplied catalog as a searchable table under TAP_UPLOAD. 
+
+.. figure:: /_static/portal_tut04_step01c.png
+    :width: 600
+    :name: portal_tut04_step01c
+    :alt: A screenshot of the "advanced ADQL interface".
+A screenshot of the "advanced ADQL interface" which allows one to see the ADQL search corresponding to the one entered into the portal user interface, for future use with a TAP service.
+
 
 .. _DP0-3-Portal-4-Step-2:
 
