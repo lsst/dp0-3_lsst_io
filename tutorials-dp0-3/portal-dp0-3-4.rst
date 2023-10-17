@@ -95,6 +95,9 @@ A screenshot of the "advanced ADQL interface" which allows one to see the ADQL s
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ======================================================
 
+2.1 Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. Clicking the down arrow then gives access to the upload button to supply a catalog containing IDs. Click the "add" button and navigate on your machine to the catalog of IDs to be used. Then click the "load table" button. 
+
+2.2 Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default will say ccdVisitId, but for this exercise we will instead match on SSObjectId, since we want to retrieve information for specific solar system bodies identififed by their unique identifier. 
 
 .. _DP0-3-Portal-4-Step-3:
 
