@@ -99,15 +99,24 @@ Step 2. ADQL table join with user-uploaded list of SSObject IDs
 
 2.2 Back on the main user interface click the arrow next to "uploaded object id" where it says "unset". This will lower the option to select which column to use as the ID. Click the magnifying glass near "ID" and in the window that pops open, select the "SSObjectID" header keyword from the table you uploaded, and hit OK. The object ID box should now contain ssObjectId (or whatever header label is used for ID in the user suppled catalog). 
 
+
+2.3 Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default will say ccdVisitId, but for this exercise we will instead match on SSObjectId, since we want to retrieve information for specific solar system bodies identififed by their unique identifier. Click the magnifying glass to open a navigation window to choose which ID from the DP0.3 table to use, and select SSObjectId.
+
+
 .. figure:: /_static/portal_tut04_step02a.png
     :width: 600
     :name: portal_tut04_step02a
     :alt: A screenshot .
 A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
 
-2.3 Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default will say ccdVisitId, but for this exercise we will instead match on SSObjectId, since we want to retrieve information for specific solar system bodies identififed by their unique identifier. Click the magnifying glass to open a navigation window to choose which ID from the DP0.3 table to use, and select SSObjectId.
+2.4 Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is [parsed by area TBD correct description]. In this example we search for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. You can see the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and you can filter by one ID or the other to plot single objects. 
 
-2.4 Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is [parsed by area TBD correct description]. 
+.. figure:: /_static/portal_tut04_step02b.png
+    :width: 600
+    :name: portal_tut04_step02a
+    :alt: A screenshot .
+A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
+
 
 .. _DP0-3-Portal-4-Step-3:
 
