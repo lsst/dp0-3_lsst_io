@@ -23,9 +23,9 @@
 
 **Contact authors:** Christina Williams and Melissa Graham
 
-**Last verified to run:** October 8, 2023
+**Last verified to run:** October 17, 2023
 
-**Targeted learning level:** Intermediate
+**Targeted learning level:** Beginner
 
 
 .. _DP0-3-Portal-4-Intro:
