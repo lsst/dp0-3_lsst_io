@@ -117,6 +117,8 @@ A screenshot of the portal user interface demonstrating the view after correctly
     :alt: A screenshot .
 A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
 
+2.5 Now lets use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table.
+
 
 .. _DP0-3-Portal-4-Step-3:
 
