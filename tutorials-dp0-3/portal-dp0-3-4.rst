@@ -97,7 +97,11 @@ Step 2. ADQL table join with user-uploaded list of SSObject IDs
 
 2.1 Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. Clicking the down arrow then gives access to the upload button to supply a catalog containing IDs. Click the "add" button and navigate on your machine to the catalog of IDs to be used. Then click the "load table" button. 
 
-2.2 Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default will say ccdVisitId, but for this exercise we will instead match on SSObjectId, since we want to retrieve information for specific solar system bodies identififed by their unique identifier. 
+2.2 Back on the main user interface click the arrow next to "uploaded object id" where it says "unset". This will lower the option to select which column to use as the ID. Click the magnifying glass near "ID" and in the window that pops open, select the "SSObjectID" header keyword from the table you uploaded, and hit OK. The object ID box should now contain ssObjectId (or whatever header label is used for ID in the user suppled catalog). 
+
+2.2 Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default will say ccdVisitId, but for this exercise we will instead match on SSObjectId, since we want to retrieve information for specific solar system bodies identififed by their unique identifier. Click the magnifying glass to open a navigation window to choose which ID from the DP0.3 table to use, and select SSObjectId.
+
+2.3
 
 .. _DP0-3-Portal-4-Step-3:
 
