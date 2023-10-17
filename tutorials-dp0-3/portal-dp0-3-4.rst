@@ -77,7 +77,7 @@ TBD: Why can't you manually specify the header name of the ra/dec columns if the
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 A screenshot of the search query result. The multiple observations of 3 SSObjects from the user-uploaded table can be seen as the clustered objects
 
-1.7 Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box. We are now interested to know if there were there moving objects identified in the survey at these coordinates on a specific night (for this example, we will pick a day for which we know this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaObject table to use for temporal matching). Enter a 
+1.7 Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box. We are now interested to know if there were there moving objects identified in the survey at these coordinates on a specific night (for this example, we will pick a day for which we know this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaObject table to use for temporal matching). Click the MJD specification and enter an MJD (62000, a day that we know one of our sample objects was observed in the catalog).
 
 .. _DP0-3-Portal-4-Step-2:
 
