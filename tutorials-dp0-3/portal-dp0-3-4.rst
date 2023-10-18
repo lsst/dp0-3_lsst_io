@@ -117,7 +117,9 @@ A screenshot of the portal user interface demonstrating the view after correctly
     :alt: A screenshot .
 A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
 
-2.5 Now lets use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table.
+2.5 Now lets use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. [NOTE: Not sure exactly what there is to do here. You can hit search fromt he ADQL interface once you upload table and hit "populate and edit ADQL"... is that what is meant to do here or should we demonstrate how to alter the ADQL code?]
+
+
 
 
 .. _DP0-3-Portal-4-Step-3:
