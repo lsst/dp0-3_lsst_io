@@ -57,7 +57,7 @@ TBD: Why can't one do this with DP0.2 searches?
 
 1.2 In the "Enter Constraints" box, under "spatial constraints" click on the multi-object button. A window will pop up to allow one to upload a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, we will use an ascii catalog with columns of RA and Dec in tab separated format (TSV). Other columns can also be present in the file. [do we attach the example file here?] Click the browse button to find the file on your machine and click the upload button.
 
-:ref:`link catalog for user upload<https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-3619/_static/portal_tut04_useruploadcat1.cat>`.
+.. ref::`link catalog for user upload<https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-3619/_static/portal_tut04_useruploadcat1.cat>`.
 
 1.3 After uploading, the window will show a list of the columns it found, named according to the header. Make sure that the ra and dec columns in your file are labeled "ra" and "dec" and are displayed in the list. Then click the "Load Table" button.
 
