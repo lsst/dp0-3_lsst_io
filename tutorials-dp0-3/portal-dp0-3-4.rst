@@ -121,7 +121,10 @@ A screenshot of the portal user interface demonstrating the view after correctly
     :alt: A screenshot .
 A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
 
-2.5 Now lets use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. [NOTE: Not sure exactly what there is to do here. You can hit search fromt he ADQL interface once you upload table and hit "populate and edit ADQL"... is that what is meant to do here or should we demonstrate how to alter the ADQL code?]
+2.5 Now lets use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. Start over at the main portal interface and click the upper right botton called "Edit ADQL". It will take you to a page where you can manually type in the ADQL query. Make sure the button is clicked that says "Insert fully-qualified column names (recommended for table joins)". Click the "Add" button and navigate to your catalog (Here you can use the above catalog of IDs from earlier in Step 2). Once loaded, you should see it appear in the schema browser on the left under the "TAP_UPLOAD" folder. 
+
+
+[NOTE: Not sure exactly what else there is to do for this step. is the above what is meant to do here or should we demonstrate how to alter the ADQL code?]
 
 
 
