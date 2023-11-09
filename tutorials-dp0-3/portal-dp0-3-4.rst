@@ -151,6 +151,6 @@ Step 3. More advanced stuff
 
 .. _DP0-3-Portal-4-Step-4:
 
-Step 6.  Exercises for the learner 
+Step 4.  Exercises for the learner 
 ==================================
 
