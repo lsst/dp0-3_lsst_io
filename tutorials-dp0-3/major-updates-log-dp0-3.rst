@@ -50,6 +50,11 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Sep 28 2023
+-----------
+
+DP0.3 Notebook tutorials 04a and 04b on phase curves released.
+
 Sep 25 2023
 -----------
 
