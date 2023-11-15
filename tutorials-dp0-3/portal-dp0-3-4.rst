@@ -123,7 +123,12 @@ A screenshot of the portal user interface after searching the 10 year catlaog fo
 
 2.5 Now lets use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. Start over at the main portal interface and click the upper right botton called "Edit ADQL". It will take you to a page where you can manually type in the ADQL query. Make sure the button is clicked that says "Insert fully-qualified column names (recommended for table joins)". Click the "Add" button and navigate to your catalog (Here you can use the above catalog of IDs from earlier in Step 2). Once loaded, you should see it appear in the schema browser on the left under the "TAP_UPLOAD" folder. 
 
-2.6 Add the uploaded table to the ADQL query build. Click the + box next to TAP_UPLOAD in the browser schema, and click the "upload_table" folder. It sound populate the ADQL code to search the catalog that was uploaded to the right (clicking search now will just return the list of IDs contained in the catalog). 
+2.6 Add the uploaded table to the ADQL query build. Click the + box next to TAP_UPLOAD in the browser schema, and click the "upload_table" folder. It should populate the ADQL code to search the catalog that was uploaded to the right (clicking search now will just return the list of IDs contained in the catalog). Then, you can type in your query to search the DP0.3 catalogs for objects that match ssObjectIds, using a JOIN:
+
+SELECT tab.ssObjectId_user, sso.ssObjectId, sso.numObs
+FROM TAP_UPLOAD.upload_table as tab
+JOIN dp03_catalogs_10yr.SSObject as sso 
+ON tab.ssObjectId_user = sso.ssObjectId 
 
 
 
