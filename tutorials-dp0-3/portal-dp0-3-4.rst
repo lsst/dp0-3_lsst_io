@@ -129,7 +129,7 @@ SELECT tab.ssObjectId_user, sso.ssObjectId, sso.numObs
 FROM TAP_UPLOAD.upload_table as tab
 JOIN dp03_catalogs_10yr.SSObject as sso 
 ON tab.ssObjectId_user = sso.ssObjectId 
-
+ 
 
 
 
