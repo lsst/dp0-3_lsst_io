@@ -126,8 +126,6 @@ A screenshot of the portal user interface after searching the 10 year catlaog fo
 2.6 Add the uploaded table to the ADQL query build. Click the + box next to TAP_UPLOAD in the browser schema, and click the "upload_table" folder. It sound populate the ADQL code to search the catalog that was uploaded to the right (clicking search now will just return the list of IDs contained in the catalog). 
 
 
-[NOTE: Not sure exactly what else there is to do for this step. is the above what is meant to do here or should we demonstrate how to alter the ADQL code?] Yes (see notes)
-
 
 
 
