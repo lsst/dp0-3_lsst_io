@@ -55,7 +55,7 @@ At upper right, next to "TAP Services" choose to "Show", and then select "LSST D
 
 TBD: Why can't one do this with DP0.2 searches?
 
-1.2 In the "Enter Constraints" box, under "spatial constraints" click on the multi-object button. A window will pop up to allow one to upload a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, we will use an ascii catalog with columns of RA and Dec in tab separated format (TSV). Other columns can also be present in the file. [do we attach the example file here?] Click the browse button to find the file on your machine and click the upload button.
+1.2 In the "Enter Constraints" box, under "spatial constraints" click on the multi-object button. A window will pop up to allow one to upload a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, we will use an ascii catalog with columns of RA and Dec in tab separated format (TSV). Other columns can also be present in the file, but note that the header names and columns must not have multiple spaces or tabs. The uploader is agnostic about header labels, because you can choose which columns to use later (i.e. ra and dec can be labeled in whatever way you like). Click the browse button to find the file on your machine and click the upload button.
 
 `link catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-3619/_static/portal_tut04_useruploadcat1.cat>`_
 
