@@ -150,6 +150,10 @@ Step 3. More advanced stuff
 
         
 - first do a query to generate results that include list of SSObject Id of interest
+
+3.1 Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left.
+
+3.2 Then, click the "multi-object" button under the spatial constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up. 
         
 - then return to query, use the "Loaded Table" option
         
