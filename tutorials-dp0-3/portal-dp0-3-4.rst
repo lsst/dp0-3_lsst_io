@@ -27,22 +27,28 @@
 
 **Targeted learning level:** Advanced
 
+**Credits:** This tutorial incorporates material from the DP0.3 tutorial notebook on the introduction 
+to phase curves by Christina Williams and Yumi Choi.
+
 
 .. _DP0-3-Portal-3-Intro:
 
 Introduction
 ============
 
-_TBD_
+placeholder: This is the same demonstration used to illustrate the phase curves of solar system objects 
+in the tutorial notebook DP03_04a.
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
 
-For Solar System objects, absolute magnitudes (`H`) are defined to be for an object 1 AU from the Sun and 1 AU 
-from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
-Absolute magnitudes are derived by fitting a function (the slope parameter `G12`) to the relationship between 
-reduced magnitude :math:`H(\alpha)` and phase angle :math:`\alpha` (i.e., the phase curve), and evaluating the function at a phase angle of 0 deg.
-The results of phase curve fits in each of the LSST's four filters, griz, are stored in the ``SSObject`` table.
+Solar system objects in the DP0.3 catalogs change position and brightness between each Rubin image as they orbit about the Sun over time. In the DP0.3 catalogs, the intrinsic properties and orbital parameters are known, and are used to estimate what the measurements would be in a given image, and how they change between images. From these simulated observations, it is possible to reconstruct their intrinsic properties and orbital parameters in the same way as will be done using the real LSST data. An important way to characterize intrinsic properties of a solar system object is by measuring its "phase curve", which is the object brightness as a function of its "solar phase angle" (the angle made between the line of sight from the object to the Sun, and the line of sight from the object to Earth;
+For Solar System objects, absolute magnitudes (`H`) are defined to be for an object 1 au from the Sun and 1 au 
+from the observer, and at a phase angle :math:`\alpha` (the angle Sun-object-Earth) of 0 degrees.
+Absolute magnitudes are derived by fitting a function to the relationship between 
+reduced magnitude :math:`H(\alpha)` and phase angle :math:`\alpha` (i.e., the phase curve), and evaluating 
+the function at a phase angle of 0 degrees.
+The results of phase curve fits in the four LSST filters, griz, are stored in the ``SSObject`` table.
 Note that rotation curves or complex geometry of solar system objects are not included in DP0.3 simulations. 
 Thus, any changes over time in an object’s apparent magnitude are due only to changes in its distance and phase angle.
 
