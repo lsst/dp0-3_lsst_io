@@ -162,38 +162,42 @@ These are known as Kirkwood gaps, which arise due to resonances between the aste
 Step 2. Select a well-observed MBA, and plot its phase curve
 ============================================================
 
-2.1. Unique solar system objects in the ``SSObject`` and ``MPCORB`` tables will be observed many times over the full LSST survey. 
+Step 2.1. Unique solar system objects in the ``SSObject`` and ``MPCORB`` tables will be observed many times over the full LSST survey. 
 Individual observations of each unique object in each filter are recorded in the ``SSSource`` and ``diaSource`` tables. 
 Below, we query these tables to obtain all of the individual observed time series data (we call indivObs) for an MBA that has 
 more than 2000 observations. 
 
-First, select MBAs with 2000 or more observations by entering >2000 in the box underneath the table heading ``numObs`` 
-and hitting "enter". This will leave a small fraction of queried 100,000 MBAs above, resulting in a modified display as below.
+First, select MBAs with 2000 or more observations by entering ">2000" in the box underneath the table heading ``numObs`` 
+and hitting "enter" as shown as below. This will leave only a small fraction of queried 100,000 MBAs above, 25 MBAs in this tutorial.
+To go back to the originally retreived table by removing the applied filter, click the banned filter icon on the top right of the table.
 
 .. figure:: /_static/portal_tut04_step02a.png
     :width: 600
     :name: portal_tut04_step02a
     :alt: A screenshot selecting MBAs that have more than 2000 observations.
 
-Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
-heliocentric and topocentric distances, and time of the observations for a well-observed MBA.  
-We need an object with large number of observations.  
-To identify one, return to the table retrieved in Step 2.  
-Click on the header of the column "numObs" - this orders the rows in the table in the ascending order of the number of obsservations.  
-The second click provides the descending order.  
-We arbitrarily selected the sixth most-observed object in the Table.  
-We selected that specific MBA - with ``ssObjectId`` = ``8810278553610239375``.
+Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. If you right click that box, there are two 
+options pop up: "Copy to clipboard" and "View as plain text". Here, copy ``ssObjectId`` = ``7470575696289418102`` to clipboard and click 
+"RSP TAP Search" button on the top left to go back to the ADQL Query page. 
+
+.. figure:: /_static/portal_tut04_step02b.png
+    :width: 300
+    :name: portal_tut04_step02b
+    :alt: A screenshot copying ssObjectId for a well-observed MBA.
+
+Execute the following ADQL query to retrieve the apparent magnitudes, magnitude errors, filters, phase angles,
+topocentric and heliocentric distances of the individual observations for a well-observed MBA.  
 
 .. code-block:: SQL 
 
-    SELECT ds.mag, ds.band, ds.midPointMjdTai, 
-    ss.phaseAngle, ss.topocentricDist, ss.heliocentricDist 
-    FROM dp03_catalogs_10yr.DiaSource AS ds 
-    JOIN dp03_catalogs_10yr.SSSource AS ss ON ds.diaSourceId = ss.diaSourceId
-    WHERE ss.ssObjectId = 8810278553610239375
-    AND ds.band = 'r'
+    SELECT
+    dia.ssObjectId, dia.mag, dia.magErr, dia.band, 
+    sss.phaseAngle, sss.topocentricDist, sss.heliocentricDist
+    FROM dp03_catalogs_10yr.DiaSource as dia
+    INNER JOIN dp03_catalogs_10yr.SSSource as sss ON dia.diaSourceId = sss.diaSourceId
+    WHERE dia.ssObjectId = 7470575696289418102
 
-2.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
+Step 2.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
 as a function of time (right two plots, below), and see that these quantities are not correlated with time.
 Add a new scatter plot showing the r-band magnitude as a function of phase angle, which are correlated.
 
