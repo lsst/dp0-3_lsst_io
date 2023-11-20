@@ -66,7 +66,7 @@ where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric dista
 
 The absolute magnitude `H` can be derived by fitting a function, where the choice of 
 form for this function has several options 
-(see `Muinonen et al. 2010 <https://ui.adsabs.harvard.edu/abs/2010Icar..209..542M>)`_. 
+(see `Muinonen et al. 2010 <https://ui.adsabs.harvard.edu/abs/2010Icar..209..542M>`_). 
 The simple two-parameter H and G magnitude system (`HG model`) for asteroids has the form:
 
 .. math::
