@@ -37,13 +37,13 @@ Introduction
 ============
 
 This portal tutorial is the same demonstration used in the tutorial notebook DP03_04a to illustrate the 
-phase curves of solar system objects, but only fouces on main belt asteroids.
+phase curves of solar system objects, but fouces on main belt asteroids.
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
 
 Solar system objects in the DP0.3 catalogs change position and brightness between each Rubin image as they orbit about
-the Sun over time. In the DP0.3 catalogs, the intrinsic properties and orbital parameters are known, and are used to 
+the Sun over time. In the DP0.3 catalogs, their intrinsic properties and orbital parameters are known, and are used to 
 estimate what the measurements would be in a given image, and how they change between images. From these simulated 
 observations, it is possible to reconstruct their intrinsic properties and orbital parameters in the same way as will 
 be done using the real LSST data. 
@@ -59,15 +59,18 @@ which is corrected for distance, :math:`H(\alpha)`, as:
 
 .. math::
 
-    H(\alpha) = V - 5 \log_{10}(r \Delta),
+    H(\alpha) = m - 5 \log_{10}(d_{t} d_{h}),
 
-where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric distance, 
-`r` is the heliocentric distance, and `V` is the apparent magnitude.
+where :math:`\alpha` is the phase angle, :math:`d_{t}` is the topocentric distance, 
+`d_{h}` is the heliocentric distance, and `m` is the apparent magnitude.
 
 The absolute magnitude `H` can be derived by fitting a function, where the choice of 
 form for this function has several options 
 (see `Muinonen et al. 2010 <https://ui.adsabs.harvard.edu/abs/2010Icar..209..542M>`_). 
-The simple two-parameter H and G magnitude system (`HG model`) for asteroids has the form:
+The simple two-parameter model (`HG model`) for asteroids provides a best fit for the absolute magnitude `H` and
+the slope parameter `G`. The `HG model` parameters were used to predict the observed parameters for each object. 
+These truth values are defined in the ``MPCORB`` table as `mpcH` (intrinsic absolute magnitude in `V` band) and 
+`mpcG` (intrinsic slope, which has a constant value of 0.15 for all DP0.3 objects). The `HG model` has the form:
 
 .. math::
 
@@ -75,11 +78,11 @@ The simple two-parameter H and G magnitude system (`HG model`) for asteroids has
 
 To better accommodate various observational effects (e.g., photometric quality, incomplete phase angle sampling) 
 a more sophisticated `HG1G2 model` (a linear three-parameter function) and its nonlinear two-parameter version 
-`HG12 model` were developed (see Muinonen et al. (2010)). The two-parameter `HG12 model` is generally very effective
-for deriving reliable values of absolute magnitude when the phase angle sampling is not optimal (e.g., poor phase
-angle coverage at a range of phase angle). Thus, the LSST data products will compute estimated parameters of the
-`HG12 model` and this will be the focus of this tutorial. The `HG12 model` expresses the `G1` and `G2` parameters
-as a piecewise linear function of a single parameter, `G12`:
+`HG12 model` were developed (`Muinonen et al. 2010 <https://ui.adsabs.harvard.edu/abs/2010Icar..209..542M>`_). 
+The two-parameter `HG12 model` is generally very effective for deriving reliable values of absolute magnitude when 
+the phase angle sampling is not optimal (e.g., poor phase angle coverage at a range of phase angle). Thus, the LSST 
+data products will compute estimated parameters of the `HG12 model` and this will be the focus of this tutorial. 
+The `HG12 model` expresses the `G1` and `G2` parameters as a piecewise linear function of a single parameter, `G12`:
 
 .. math::
 
@@ -87,10 +90,10 @@ as a piecewise linear function of a single parameter, `G12`:
 
 where:
 
-:math:`G1 = 0.9529 \times G12 + 0.02162`, :math:`G2 = -0.6125 \times G12 + 0.5572` for G12 :math:`\ge 0.2`, and 
-:math:`G1 = 0.7527 \times G12 + 0.06164`, :math:`G2 = -0.9612 \times G12 + 0.6270` for G12 < 0.2.
+:math:`G1 = 0.9529 \times G12 + 0.02162`, :math:`G2 = -0.6125 \times G12 + 0.5572` for :math:`G12 \ge 0.2`, and 
+:math:`G1 = 0.7527 \times G12 + 0.06164`, :math:`G2 = -0.9612 \times G12 + 0.6270` for :math:`G12 < 0.2`.
 
-The results of phase curve fits in the four LSST filters, `griz`, are stored in the ``SSObject`` table. 
+The results of phase curve fits (`H` and `G12`) in the four LSST filters, `griz`, are stored in the ``SSObject`` table. 
 The explanation for the absence of `u` and `y` bands in DP0.3 catalogs can be found in the `DP0.3 documentation 
 <https://dp0-3.lsst.io/data-products-dp0-3/data-simulation-dp0-3.html>`_.
 Note that rotation curves or complex geometry of solar system objects are not included in DP0.3 simulations. 
@@ -101,17 +104,24 @@ Thus, any changes over time in an object’s apparent magnitude are due only to 
 Step 2. Explore the population of the Main Belt Asteroids
 =========================================================
 
-Step 2.1.  The Main Belt Asteroids (MBAs) are located, roughly, in the band of semi-major axes ``a`` between 1.6 au and 4.2 au - the definition is not uniform in the literature.  
-The location of the Belt is between Mars's and Jupiter's orbits.  
-Here, we will plot the distribution of the number of MBAs as a function of ``a``, eccentricities ``e`` and inclinations ``incl`` in the region above.  
-Note that semi-major axes are not directly available in the ``dp03_catalogs_10yr.MPCORB`` table, so the constraint on ``a`` is derived from perihelion ``q`` and eccentricity ``e``.  
-First, execute the query below to select a good number of MBAs, in the range 1.6 au < ``a`` < 5.5 au (somewhat larger than the definition above), to explore the distribution of their properties.  
-You might want to increase the "Row limit" to 200,000 to have an appreciable sample of objects by entering this number in the box on the lower left.  
+Step 2.1. Following the population definitions used by the `JPL Horizons small body database query tool 
+<https://ssd.jpl.nasa.gov/tools/sbdb_query.html>`_, we select the main belt asteroids (MBAs) as objects with 
+semi-major axes ``a`` between 2.0 au and 3.25 au and perihelion distance ``q`` > 1.666 au.
+  
+Note that semi-major axes are not directly available in the ``dp03_catalogs_10yr.MPCORB`` table, so the constraint 
+on ``a`` is derived from perihelion ``q`` and eccentricity ``e``.  
+First, execute the query below to select a good number of MBAs with a fair number of total observations (``numObs`` > 100) 
+to explore the distribution of their properties. You might want to increase the "Row limit" to 200,000 to have an appreciable sample 
+of objects by entering this number in the box on the lower left.  
 
 .. code-block:: SQL 
 
-    SELECT mpc.ssObjectId, mpc.e, mpc.incl, mpc.q, mpc.peri, 
-    sso.numObs, sso.ssObjectId, sso.g_H, sso.r_H, sso.i_H, sso.z_H 
+    SELECT mpc.ssObjectId, mpc.e, mpc.q, mpc.mpcG, mpcH, 
+    sso.numObs,
+    sso.g_H, sso.g_Herr, sso.g_G12, sso.g_G12err, sso.g_Ndata, 
+    sso.r_H, sso.r_Herr, sso.r_G12, sso.r_G12err, sso.r_Ndata,
+    sso.i_H, sso.i_Herr, sso.i_G12, sso.i_G12err, sso.i_Ndata, 
+    sso.z_H, sso.z_Herr, sso.z_G12, sso.z_G12err, so.z_Ndata
     FROM dp03_catalogs_10yr.MPCORB as mpc 
     JOIN dp03_catalogs_10yr.SSObject as sso 
     ON mpc.ssObjectId = sso.ssObjectId 
@@ -119,7 +129,8 @@ You might want to increase the "Row limit" to 200,000 to have an appreciable sam
     AND mpc.ssObjectId > 7331137166374808576 
     AND (mpc.q / (1-mpc.e)) > 1.6 
     AND (mpc.q / (1-mpc.e)) < 5.2
-    AND sso.numObs > 200 
+    ADN (mpc.q > 1.666)
+    AND sso.numObs > 100 
 
 In the query above, in order to have the query execution not to take too long, we restrict the number of returned objects to have their ``mpc.ssObjectId`` in the limited range.  
 We also select only the objects with more than 200 observations.  The query will return about 130,000 objects.  
