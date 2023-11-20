@@ -155,7 +155,7 @@ Step 3. More advanced stuff
 
 - then return to query, use the "Loaded Table" option
 
-3.2 Then, click the "multi-object" button under the spatial constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up. 
+3.2 Then, click the "multi-object" button under the spatial constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where you will see a list of the tables that have been uploaded by the user (which remain loaded in the system for timeframe TBD). 
 
 [This does not seem right, and not sure what is purpose of going back to original search to identify some SSObjects, and also uploading the list of SSObjects from the user supplied table]
 
