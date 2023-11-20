@@ -36,25 +36,26 @@ to phase curves by Christina Williams and Yumi Choi.
 Introduction
 ============
 
-placeholder: This is the same demonstration used to illustrate the phase curves of solar system objects 
-in the tutorial notebook DP03_04a.
+This portal tutorial is the same demonstration used in the tutorial notebook DP03_04a to illustrate the 
+phase curves of solar system objects, but only fouces on main belt asteroids.
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
 
-Solar system objects in the DP0.3 catalogs change position and brightness between each Rubin image as they orbit about the Sun over time. In the DP0.3 catalogs, the intrinsic properties and orbital parameters are known, and are used to estimate what the measurements would be in a given image, and how they change between images. From these simulated observations, it is possible to reconstruct their intrinsic properties and orbital parameters in the same way as will be done using the real LSST data. An important way to characterize intrinsic properties of a solar system object is by measuring its "phase curve", which is the object brightness as a function of its "solar phase angle" (the angle made between the line of sight from the object to the Sun, and the line of sight from the object to Earth;
-For Solar System objects, absolute magnitudes (`H`) are defined to be for an object 1 au from the Sun and 1 au 
-from the observer, and at a phase angle :math:`\alpha` (the angle Sun-object-Earth) of 0 degrees.
-Absolute magnitudes are derived by fitting a function to the relationship between 
-reduced magnitude :math:`H(\alpha)` and phase angle :math:`\alpha` (i.e., the phase curve), and evaluating 
-the function at a phase angle of 0 degrees.
-The results of phase curve fits in the four LSST filters, griz, are stored in the ``SSObject`` table.
-Note that rotation curves or complex geometry of solar system objects are not included in DP0.3 simulations. 
-Thus, any changes over time in an object’s apparent magnitude are due only to changes in its distance and phase angle.
+Solar system objects in the DP0.3 catalogs change position and brightness between each Rubin image as they orbit about
+the Sun over time. In the DP0.3 catalogs, the intrinsic properties and orbital parameters are known, and are used to 
+estimate what the measurements would be in a given image, and how they change between images. From these simulated 
+observations, it is possible to reconstruct their intrinsic properties and orbital parameters in the same way as will 
+be done using the real LSST data. 
 
-A suitable beginner-level reference to the simple H and G magnitude system (`HG model`) for asteroids is
-`Dymock 2007 <https://adsabs.harvard.edu/full/2007JBAA..117..342D>`_. 
-This paper describes the reduced magnitude, which is corrected for distance, :math:`H(\alpha)`, as:
+An important way to characterize intrinsic properties of a solar system object is by measuring its "phase curve", 
+which is the object brightness as a function of its "solar phase angle" (the angle made between the line of sight 
+from the object to the Sun, and the line of sight from the object to Earth). For Solar System objects, absolute 
+magnitudes (`H`) are defined to be for an object 1 au from the Sun and 1 au from the observer, and at a phase 
+angle :math:`\alpha` (the angle Sun-object-Earth) of 0 degrees. Absolute magnitudes are derived by fitting a 
+function to the relationship between reduced magnitude :math:`H(\alpha)` and phase angle :math:`\alpha` 
+(i.e., the phase curve), and evaluating the function at a phase angle of 0 degrees. The reduced magnitude, 
+which is corrected for distance, :math:`H(\alpha)`, as:
 
 .. math::
 
@@ -66,26 +67,15 @@ where :math:`\alpha` is the phase angle, :math:`\Delta` is the topocentric dista
 The absolute magnitude `H` can be derived by fitting a function, where the choice of 
 form for this function has several options 
 (see `Muinonen et al. 2010 <https://ui.adsabs.harvard.edu/abs/2010Icar..209..542M>)`_. 
-Dymock (2007) presents a simpler version with a single parameter `G`, using the equation:
+The simple two-parameter H and G magnitude system (`HG model`) for asteroids has the form:
 
 .. math::
 
-    H = H(\alpha) + 2.5 \log_{10}((1-G)\phi_1(\alpha) + G\phi_2(\alpha)),
-
-where:
-
-.. math::
-    \phi_i(\alpha) = exp(-A_i tan(0.5\alpha)^{Bi}).
-
-In the above equation, 
-:math:`A_1` = 3.33, 
-:math:`B_1` = 0.63, 
-:math:`A_2` = 1.87, and 
-:math:`B_2` = 1.22.
+    H = H(\alpha) + 2.5 \log_{10}((1-G)\phi_1(\alpha) + G\phi_2(\alpha)).
 
 To better accommodate various observational effects (e.g., photometric quality, incomplete phase angle sampling) 
 a more sophisticated `HG1G2 model` (a linear three-parameter function) and its nonlinear two-parameter version 
-`HG12 model` were developed by Muinonen et al. (2010). The two-parameter `HG12 model` is generally very effective
+`HG12 model` were developed (see Muinonen et al. (2010)). The two-parameter `HG12 model` is generally very effective
 for deriving reliable values of absolute magnitude when the phase angle sampling is not optimal (e.g., poor phase
 angle coverage at a range of phase angle). Thus, the LSST data products will compute estimated parameters of the
 `HG12 model` and this will be the focus of this tutorial. The `HG12 model` expresses the `G1` and `G2` parameters
@@ -99,12 +89,12 @@ where:
 
 :math:`G1 = 0.9529 \times G12 + 0.02162`, :math:`G2 = -0.6125 \times G12 + 0.5572` for G12 :math:`\ge 0.2`, and 
 :math:`G1 = 0.7527 \times G12 + 0.06164`, :math:`G2 = -0.9612 \times G12 + 0.6270` for G12 < 0.2.
-  
-**MENTION WHAT WAS USED TO GET THE FIT RESULTS IN SSOBJECT, WHICH IS G12 NOT G. DESCRIBE HOW DIFFERENT.**
-**IF THEY'RE REALLY DIFFERENT, REPLACE THE ABOVE WITH A DESCRIPTION OF G12, NOT JUST G.**
 
-**Note** that no time domain evolution in object brightness was included in the DP0.3 simulation
-(e.g., rotation curves for non-spherical objects, outgassing events).
+The results of phase curve fits in the four LSST filters, `griz`, are stored in the ``SSObject`` table. 
+The explanation for the absence of `u` and `y` bands in DP0.3 catalogs can be found in the `DP0.3 documentation 
+<https://dp0-3.lsst.io/data-products-dp0-3/data-simulation-dp0-3.html>`_.
+Note that rotation curves or complex geometry of solar system objects are not included in DP0.3 simulations. 
+Thus, any changes over time in an object’s apparent magnitude are due only to changes in its distance and phase angle.
 
 .. _DP0-3-Portal-4-Step-2:  
 
