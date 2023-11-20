@@ -151,15 +151,19 @@ Step 3. More advanced stuff
         
 - first do a query to generate results that include list of SSObject Id of interest
 
-3.1 Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left.
+3.1 Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left.
 
-- then return to query, use the "Loaded Table" option
+- then return to query, use the "Loaded Table" option - do not delete query results first!! must keep them as "active result"
 
-3.2 Then, click the "multi-object" button under the spatial constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where you will see a list of the tables that have been uploaded by the user (which remain loaded in the system for timeframe TBD). 
+3.2 Then, click the "multi-object" button under the Object ID Search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where you will see a list of "tables" that are stored from recent searches. These will have a title labeled as the TAP catalog that was searched above (in this case, in 3.1 we searched the DiaSource catalog). You can see that it is the return of the search query since it will have the same number of rows returned (in this example, 38 DiaObjects were returned).  
 
-[This does not seem right, and not sure what is purpose of going back to original search to identify some SSObjects, and also uploading the list of SSObjects from the user supplied table]
+3.3 Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID under Upload Table. Select SSObjectId, since we will now search the SSSource table for all individual observations of objects which have these SSObjectIds from our query in 3.1.
 
-- do not delete query results first!! must keep them as "active result"
+3.4 Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. 
+
+3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what we will match on, and hit the Search button. The query will return all SSSource observation entries for the list of 38 SSObjectIds. In this case, there are 8,922 individual observations of each of the 38 individual solar system bodies. 
+
+
 
 - do a new query (e.g., on SSSource) to get data for the SSOjbect Ids of interest identified with the first query
 
