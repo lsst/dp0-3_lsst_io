@@ -106,17 +106,17 @@ Step 1. Query the DP0.3 tables for the Main Belt Asteroids
 
 Step 1.1. Log into the Rubin Science Platform at data.lsst.cloud and select the Portal Aspect. At upper right, next to 
 "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top. 
-Following the population definitions used by the 
-`JPL Horizons small body database query tool <https://ssd.jpl.nasa.gov/tools/sbdb_query.html>`_, we select MBAs
-as objects with semi-major axes ``a`` between 2.0 au and 3.25 au and perihelion distance ``q`` > 1.666 au.
-Note that semi-major axes are not directly available in the ``MPCORB`` table, so the constraint 
-on ``a`` is derived from perihelion ``q`` and eccentricity ``e``.  
 
 Step 1.2. At upper right, next to "View" choose "Edit ADQL". Enter the query statement below into the ADQL Query box and  
 execute the query to select a good number of MBAs with a fair number of total observations (``numObs`` > 100) 
-to explore the distribution of their properties. You might want to increase the "Row limit" to 100,000 to have an appreciable sample 
-of objects by entering this number in the box on the lower left. In order to have the query execution not to take too long, 
-we restrict the number of returned objects to have their ``mpc.ssObjectId`` in the limited range.   
+to explore the distribution of their properties. Following the population definitions used by the 
+`JPL Horizons small body database query tool <https://ssd.jpl.nasa.gov/tools/sbdb_query.html>`_, we select MBAs
+as objects with semi-major axes ``a`` between 2.0 au and 3.25 au and perihelion distance ``q`` > 1.666 au.
+Note that semi-major axes are not directly available in the ``MPCORB`` table, so the constraint 
+on ``a`` is derived from perihelion ``q`` and eccentricity ``e``. You might want to increase the "Row limit" to 
+100,000 to have an appreciable sample of objects by entering this number in the box on the lower left. 
+In order to have the query execution not to take too long, we restrict the number of returned objects to have their 
+``mpc.ssObjectId`` in the limited range.   
 
 .. code-block:: SQL 
 
@@ -131,12 +131,12 @@ we restrict the number of returned objects to have their ``mpc.ssObjectId`` in t
     ON mpc.ssObjectId = sso.ssObjectId 
     WHERE mpc.ssObjectId < 9223370875126069107 
     AND mpc.ssObjectId > 7331137166374808576 
-    AND (mpc.q / (1-mpc.e)) > 1.6 
-    AND (mpc.q / (1-mpc.e)) < 5.2
+    AND (mpc.q / (1-mpc.e)) > 2.0 
+    AND (mpc.q / (1-mpc.e)) < 3.25
     AND (mpc.q > 1.666)
     AND sso.numObs > 100 
 
-Step 1.3.  Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  
+Step 1.3. Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  
 The execution of the query will result in a blank panel for the plot, with a comment "Cannot display the requested data."  
 To plot the distribution of ``a`` you need to click on the "Chart options and tools" icon (two gears), click on "add a new chart", 
 select "Histogram" for "Plot Type", enter "q / (1-e)" as the "column or expression" and "100" for number of bins as on the screenshot below.  
@@ -144,11 +144,12 @@ select "Histogram" for "Plot Type", enter "q / (1-e)" as the "column or expressi
 .. figure:: /_static/portal_tut04_step01a.png
     :width: 400
     :name: portal_tut04_step01a
-    :alt: A screenshot illustrating the selection of plot parameters to plot the histogram of the distribution of semi-major axes of the Main Belt Asteroids.
+    :alt: A screenshot illustrating the selection of plot parameters to plot the histogram of the distribution of semi-major axes of MBAs.
 
-Clicking "Apply" will result in the following table + plot below.  
-You should close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.  
-Note that the distribution of asteroids as a function of semi-major axis is not uniform, but it reveals a number of peaks and gaps where there are very few (or no) objects. 
+Clicking "Ok" will result in the following table + plot below.  
+Close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.  
+Note that the distribution of asteroids as a function of semi-major axis is not uniform, but it reveals a number of peaks and gaps 
+where there are very few (or no) objects. 
 These are known as Kirkwood gaps, which arise due to resonances between the asteroid's and Jupiter's orbital periods.  
 
 .. figure:: /_static/portal_tut04_step01b.png
@@ -161,7 +162,20 @@ These are known as Kirkwood gaps, which arise due to resonances between the aste
 Step 2. Select a well-observed MBA, and plot its phase curve
 ============================================================
 
-2.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
+2.1. Unique solar system objects in the ``SSObject`` and ``MPCORB`` tables will be observed many times over the full LSST survey. 
+Individual observations of each unique object in each filter are recorded in the ``SSSource`` and ``diaSource`` tables. 
+Below, we query these tables to obtain all of the individual observed time series data (we call indivObs) for an MBA that has 
+more than 2000 observations. 
+
+First, select MBAs with 2000 or more observations by entering >2000 in the box underneath the table heading ``numObs`` 
+and hitting "enter". This will leave a small fraction of queried 100,000 MBAs above, resulting in a modified display as below.
+
+.. figure:: /_static/portal_tut04_step02a.png
+    :width: 600
+    :name: portal_tut04_step02a
+    :alt: A screenshot selecting MBAs that have more than 2000 observations.
+
+Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
 heliocentric and topocentric distances, and time of the observations for a well-observed MBA.  
 We need an object with large number of observations.  
 To identify one, return to the table retrieved in Step 2.  
