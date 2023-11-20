@@ -149,7 +149,7 @@ Step 3. More advanced stuff
 
 3.1 Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left.
 
-3.2 Then, click the "multi-object" button under the Object ID Search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where you will see a list of "tables" that are stored from recent searches. These will have a title labeled as the TAP catalog that was searched above (in this case, in 3.1 we searched the DiaSource catalog). You can see that it is the return of the search query since it will have the same number of rows returned (in this example, 38 DiaObjects were returned).  
+3.2 Then, unclick the Spatial and Temporal boxes, and click the "multi-object" button under the Object ID Search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where you will see a list of "tables" that are stored from recent searches. These will have a title labeled as the TAP catalog that was searched above (in this case, in 3.1 we searched the DiaSource catalog). You can see that it is the return of the search query since it will have the same number of rows returned (in this example, 38 DiaObjects were returned).  
 
 .. figure:: /_static/portal_tut04_step03a.png
     :width: 600
@@ -163,6 +163,11 @@ A screenshot of how to use the "Loaded Tables" option to access the previous que
 
 3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what we will match on, and hit the Search button. The query will return all SSSource observation entries for the list of 38 SSObjectIds. In this case, there are 8,922 individual observations of each of the 38 individual solar system bodies. 
 
+.. figure:: /_static/portal_tut04_step03b.png
+    :width: 600
+    :name: portal_tut04_step03b
+    :alt: A screenshot of the fully populated "Object ID Search" section of the UI.
+A screenshot the fully populated "Object ID Search" section of the UI.
 
  
 
