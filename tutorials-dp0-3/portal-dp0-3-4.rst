@@ -113,7 +113,7 @@ Step 2. ADQL table join with user-uploaded list of SSObject IDs
     :alt: A screenshot .
 A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
 
-2.4 Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is [parsed by area TBD correct description]. In this example we search for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. You can see the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and you can filter by one ID or the other to plot single objects. 
+2.4 Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. In this example we search for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. You can see the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and you can filter by one ID or the other to plot single objects. 
 
 .. figure:: /_static/portal_tut04_step02b.png
     :width: 600
