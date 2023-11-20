@@ -99,7 +99,7 @@ The explanation for the absence of `u` and `y` bands in DP0.3 catalogs can be fo
 Note that rotation curves or complex geometry of solar system objects are not included in DP0.3 simulations. 
 Thus, any changes over time in an object’s apparent magnitude are due only to changes in its distance and phase angle.
 
-.. _DP0-3-Portal-4-Step-2:  
+.. _DP0-3-Portal-4-Step-1:  
 
 Step 1. Query the DP0.3 tables for the Main Belt Asteroids
 ==========================================================
@@ -136,72 +136,32 @@ we restrict the number of returned objects to have their ``mpc.ssObjectId`` in t
     AND (mpc.q > 1.666)
     AND sso.numObs > 100 
 
-Step 2.2.  Plot the distribution of semi-major axes ``a``, eccentricities ``e`` and inclinations ``incl`` of orbits of the objects in your query.  
+Step 1.3.  Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  
 The execution of the query will result in a blank panel for the plot, with a comment "Cannot display the requested data."  
-To plot the distribution of ``a`` you need to click on the "plot settings" icon (two gears), click on "add a new chart,"  select "Histogram" for "Plot Type."  
-Enter "q / (1-e)" as the "column or expression" and "100" for number of bins as on the screenshot below.  
+To plot the distribution of ``a`` you need to click on the "Chart options and tools" icon (two gears), click on "add a new chart", 
+select "Histogram" for "Plot Type", enter "q / (1-e)" as the "column or expression" and "100" for number of bins as on the screenshot below.  
 
-.. figure:: /_static/portal_tut04_step02a.png
+.. figure:: /_static/portal_tut04_step01a.png
     :width: 400
-    :name: portal_tut04_step02a
+    :name: portal_tut04_step01a
     :alt: A screenshot illustrating the selection of plot parameters to plot the histogram of the distribution of semi-major axes of the Main Belt Asteroids.
-
 
 Clicking "Apply" will result in the following table + plot below.  
 You should close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.  
 Note that the distribution of asteroids as a function of semi-major axis is not uniform, but it reveals a number of peaks and gaps where there are very few (or no) objects. 
 These are known as Kirkwood gaps, which arise due to resonances between the asteroid's and Jupiter's orbital periods.  
 
-.. figure:: /_static/portal_tut04_step02b.png
+.. figure:: /_static/portal_tut04_step01b.png
     :width: 600
-    :name: portal_tut04_step02b
-    :alt: A screenshot illustrating the the distribution of semi-major axes of the Main Belt Asteroids.  
+    :name: portal_tut04_step01b
+    :alt: A screenshot illustrating the the distribution of semi-major axes of MBAs.  
 
+.. _DP0-3-Portal-4-Step-2:  
 
-You can also explore the eccentricities of asteroids' orbits, by "adding a new chart" with "e" as the "column or expression.  
-("Histogram" as the plot type will be selected automatically as youve chose it in the previous part.)  
-This will appear as a new plot revealing the distribution of ``e``.  
-There are only a few high-eccentricity objects extracted via your query - you can see those more clearly by selecting "log" for "Y" under chart options.  
-Finally, produce the third plot, revealing the distribution of orbital inclinatons.  
-Do so by clicking again on two gears, "adding a new plot" and selecting "incl" as the expression.  
-
-.. figure:: /_static/portal_tut04_step02c.png
-    :width: 600
-    :name: portal_tut04_step02b
-    :alt: A screenshot illustrating the the distribution of semi-major axes, orbital ellipticities, and orbital inclinations of the Main Belt Asteroids.  
-
-
-Plots of the distribution of semi-major axes, ecenticities, and orbital inclinations of objects located between 1.6 and 5.5 au.  
-Note a small population of objects with high eccentricities (``e`` > 0.4).  
-Those are probably comets which happen to be travelling in the region selected by you.  
-Also note an increased number of objects arounf 5.5 au - those are Trojan Asteroids, not considered to be a part of the MBA population.  
-
-Step 2.3.  Explore the relationship between inclination as well as eccentricity as a function of semi-major axis.  
-You don't have to re-execture the ADQL query as all parameters are already extracted.  
-Make another plot by clicking the two gears, and select "Add new chart" and enter "Heatmap" as the "Plot type."  
-As an aside, selecting "Heatmap" is more illustrative than plotting individual points.  
-First select "q / (1-e)" for X-axis, and "e" for Y-axis, and click on "OK."  Then repeat, by clicking on two gears, and selecting "Add new chart."  
-This time, select "q / (1-e)" for X-axis, and "incl" for Y-axis, and click on "OK."  
-You will need to get rid of the three charts from Step 2.2 - to do so, close the three plots you've made in 2.2 by clicking the blue "X" on each of them.  
-This will result in the plot as below.  
-
-.. figure:: /_static/portal_tut04_step02d.png
-    :width: 600
-    :name: portal_tut04_step02d
-    :alt: A screenshot illustrating the the distribution eccentricity (left) and orbital inclination (right) as a function of semi-major axes of the Main Belt Asteroids.  
-
-**COMMENTS FROM MLG BELOW.  GM'S FIX IS IN 3.1**
-
-**CANNOT BE DONE WITH SSOBJECTID = -735085100561880491**
-
-**DO NOT USE TNO; USE MBA WITH A GOOD PHASE-CURVE FIT.**
-
-.. _DP0-3-Portal-4-Step-3:  
-
-Step 3. Select a well-observed MBA, and plot its phase curve
+Step 2. Select a well-observed MBA, and plot its phase curve
 ============================================================
 
-3.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
+2.1. Execute the following ADQL query to retrieve the r-band magnitudes, phase angles,
 heliocentric and topocentric distances, and time of the observations for a well-observed MBA.  
 We need an object with large number of observations.  
 To identify one, return to the table retrieved in Step 2.  
@@ -219,9 +179,7 @@ We selected that specific MBA - with ``ssObjectId`` = ``8810278553610239375``.
     WHERE ss.ssObjectId = 8810278553610239375
     AND ds.band = 'r'
 
-**GM:  Got only this far**
-
-3.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
+2.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
 as a function of time (right two plots, below), and see that these quantities are not correlated with time.
 Add a new scatter plot showing the r-band magnitude as a function of phase angle, which are correlated.
 
@@ -231,18 +189,18 @@ Add a new scatter plot showing the r-band magnitude as a function of phase angle
 
     Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
 
-3.3. Delete the two plots with time on the x-axis, leaving only the magnitude vs. phase angle plot.
+2.3. Delete the two plots with time on the x-axis, leaving only the magnitude vs. phase angle plot.
 
-3.4. Create a new column to hold the distance-corrected r-band magnitudes.
+2.4. Create a new column to hold the distance-corrected r-band magnitudes.
 In the table panel, click on the icon to add a new column (the narrow rectangle to the left of a + sign).
 In the pop-up window, set the "Name" to "reduced_mag" and the "Expression" to be ``mag - 5 * log10(topocentricDist * heliocentricDist)``.
 Click "Add Column".
 
-3.5. Use the plot "Settings" funtion to plot reduced magnitude as a function of phase angle.
+2.5. Use the plot "Settings" funtion to plot reduced magnitude as a function of phase angle.
 
-3.6. _Create new columns to hold :math:`\phi_1(\alpha)` and :math:`\phi_2(\alpha)`._
+2.6. _Create new columns to hold :math:`\phi_1(\alpha)` and :math:`\phi_2(\alpha)`._
 
-3.7. _Get the G and H parametrs for r-band from the ``SSObject`` table._
+2.7. _Get the G and H parametrs for r-band from the ``SSObject`` table._
 
 3.8. _Create another new column that is :math:`H_{fit}(\alpha) = H - 2.5 log((1-G)\phi_1(\alpha) +G \phi_2(\alpha))`._
 _The right side of that equation is now just based on phase angle and the fit H and G from ``SSObject``._
