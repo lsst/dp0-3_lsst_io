@@ -164,8 +164,6 @@ A screenshot of how to use the "Loaded Tables" option to access the previous que
 3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what we will match on, and hit the Search button. The query will return all SSSource observation entries for the list of 38 SSObjectIds. In this case, there are 8,922 individual observations of each of the 38 individual solar system bodies. 
 
 
-
-3.3 
  
 
 .. _DP0-3-Portal-4-Step-4:
