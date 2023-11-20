@@ -104,9 +104,9 @@ Thus, any changes over time in an object’s apparent magnitude are due only to 
 Step 2. Explore the population of the Main Belt Asteroids
 =========================================================
 
-Step 2.1. Following the population definitions used by the `JPL Horizons small body database query tool 
-<https://ssd.jpl.nasa.gov/tools/sbdb_query.html>`_, we select the main belt asteroids (MBAs) as objects with 
-semi-major axes ``a`` between 2.0 au and 3.25 au and perihelion distance ``q`` > 1.666 au.
+Step 2.1. Following the population definitions used by the 
+`JPL Horizons small body database query tool <https://ssd.jpl.nasa.gov/tools/sbdb_query.html>`_, we select the main belt asteroids (MBAs) 
+as objects with semi-major axes ``a`` between 2.0 au and 3.25 au and perihelion distance ``q`` > 1.666 au.
   
 Note that semi-major axes are not directly available in the ``dp03_catalogs_10yr.MPCORB`` table, so the constraint 
 on ``a`` is derived from perihelion ``q`` and eccentricity ``e``.  
