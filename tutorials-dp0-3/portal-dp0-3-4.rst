@@ -42,7 +42,7 @@ and in Section 2.6 of the Survey Cadence Optimization Committee's Phase 2 Recomm
 
 This tutorial assumes the successful completion of the beginner-level DP0.3 Portal tutorials,
 and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
-For more information about the DP0.3 catalogs, tables, and columns, see the :ref:`DP0-3-Data-Products-DPDD`.  
+For more information about the DP0.3 catalogs, tables, and columns, see the `DP0-3-Data-Products-DPDD <https://dp0-3.lsst.io/data-products-dp0-3/index.html>`_.  
 
 
 .. _DP0-3-Portal-4-Step-1:
