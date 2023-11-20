@@ -153,14 +153,17 @@ Step 3. More advanced stuff
 
 3.1 Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left.
 
-3.2 Then, click the "multi-object" button under the spatial constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up. 
-        
 - then return to query, use the "Loaded Table" option
-        
+
+3.2 Then, click the "multi-object" button under the spatial constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up. 
+
+[This does not seem right, and not sure what is purpose of going back to original search to identify some SSObjects, and also uploading the list of SSObjects from the user supplied table]
+
 - do not delete query results first!! must keep them as "active result"
-        
+
 - do a new query (e.g., on SSSource) to get data for the SSOjbect Ids of interest identified with the first query
 
+3.3 
  
 
 .. _DP0-3-Portal-4-Step-4:
