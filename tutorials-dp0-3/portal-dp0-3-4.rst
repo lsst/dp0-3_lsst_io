@@ -37,7 +37,7 @@ Introduction
 ============
 
 This portal tutorial is the same demonstration used in the tutorial notebook DP03_04a to illustrate the 
-phase curves of solar system objects, but fouces on main belt asteroids.
+phase curves of solar system objects, but fouces on Main Belt Asteroids (MBAs).
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
@@ -101,18 +101,22 @@ Thus, any changes over time in an object’s apparent magnitude are due only to 
 
 .. _DP0-3-Portal-4-Step-2:  
 
-Step 2. Explore the population of the Main Belt Asteroids
-=========================================================
+Step 1. Query the DP0.3 tables for the Main Belt Asteroids
+==========================================================
 
-Step 2.1. Following the population definitions used by the 
-`JPL Horizons small body database query tool <https://ssd.jpl.nasa.gov/tools/sbdb_query.html>`_, we select the main belt asteroids (MBAs) 
+Step 1.1. Log into the Rubin Science Platform at data.lsst.cloud and select the Portal Aspect. At upper right, next to 
+"TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top. 
+Following the population definitions used by the 
+`JPL Horizons small body database query tool <https://ssd.jpl.nasa.gov/tools/sbdb_query.html>`_, we select MBAs
 as objects with semi-major axes ``a`` between 2.0 au and 3.25 au and perihelion distance ``q`` > 1.666 au.
-  
-Note that semi-major axes are not directly available in the ``dp03_catalogs_10yr.MPCORB`` table, so the constraint 
+Note that semi-major axes are not directly available in the ``MPCORB`` table, so the constraint 
 on ``a`` is derived from perihelion ``q`` and eccentricity ``e``.  
-First, execute the query below to select a good number of MBAs with a fair number of total observations (``numObs`` > 100) 
-to explore the distribution of their properties. You might want to increase the "Row limit" to 200,000 to have an appreciable sample 
-of objects by entering this number in the box on the lower left.  
+
+Step 1.2. At upper right, next to "View" choose "Edit ADQL". Enter the query statement below into the ADQL Query box and  
+execute the query to select a good number of MBAs with a fair number of total observations (``numObs`` > 100) 
+to explore the distribution of their properties. You might want to increase the "Row limit" to 100,000 to have an appreciable sample 
+of objects by entering this number in the box on the lower left. In order to have the query execution not to take too long, 
+we restrict the number of returned objects to have their ``mpc.ssObjectId`` in the limited range.   
 
 .. code-block:: SQL 
 
@@ -121,7 +125,7 @@ of objects by entering this number in the box on the lower left.
     sso.g_H, sso.g_Herr, sso.g_G12, sso.g_G12err, sso.g_Ndata, 
     sso.r_H, sso.r_Herr, sso.r_G12, sso.r_G12err, sso.r_Ndata,
     sso.i_H, sso.i_Herr, sso.i_G12, sso.i_G12err, sso.i_Ndata, 
-    sso.z_H, sso.z_Herr, sso.z_G12, sso.z_G12err, so.z_Ndata
+    sso.z_H, sso.z_Herr, sso.z_G12, sso.z_G12err, sso.z_Ndata
     FROM dp03_catalogs_10yr.MPCORB as mpc 
     JOIN dp03_catalogs_10yr.SSObject as sso 
     ON mpc.ssObjectId = sso.ssObjectId 
@@ -129,11 +133,8 @@ of objects by entering this number in the box on the lower left.
     AND mpc.ssObjectId > 7331137166374808576 
     AND (mpc.q / (1-mpc.e)) > 1.6 
     AND (mpc.q / (1-mpc.e)) < 5.2
-    ADN (mpc.q > 1.666)
+    AND (mpc.q > 1.666)
     AND sso.numObs > 100 
-
-In the query above, in order to have the query execution not to take too long, we restrict the number of returned objects to have their ``mpc.ssObjectId`` in the limited range.  
-We also select only the objects with more than 200 observations.  The query will return about 130,000 objects.  
 
 Step 2.2.  Plot the distribution of semi-major axes ``a``, eccentricities ``e`` and inclinations ``incl`` of orbits of the objects in your query.  
 The execution of the query will result in a blank panel for the plot, with a comment "Cannot display the requested data."  
