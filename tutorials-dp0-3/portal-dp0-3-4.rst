@@ -151,6 +151,12 @@ Step 3. More advanced stuff
 
 3.2 Then, click the "multi-object" button under the Object ID Search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where you will see a list of "tables" that are stored from recent searches. These will have a title labeled as the TAP catalog that was searched above (in this case, in 3.1 we searched the DiaSource catalog). You can see that it is the return of the search query since it will have the same number of rows returned (in this example, 38 DiaObjects were returned).  
 
+.. figure:: /_static/portal_tut04_step01b.png
+    :width: 600
+    :name: portal_tut04_step03a
+    :alt: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
+A screenshot of how to use the "Loaded Tables" option to access the previous query result.
+
 3.3 Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID under Upload Table. Select SSObjectId, since we will now search the SSSource table for all individual observations of objects which have these SSObjectIds from our query in 3.1.
 
 3.4 Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. 
