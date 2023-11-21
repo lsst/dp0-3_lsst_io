@@ -123,10 +123,10 @@ A screenshot of the portal user interface after searching the 10 year catlaog fo
 
 .. code-block:: SQL 
 
-SELECT tab.ssObjectId_user, sso.ssObjectId, sso.numObs
-FROM TAP_UPLOAD.upload_table as tab
-JOIN dp03_catalogs_10yr.SSObject as sso 
-ON tab.ssObjectId_user = sso.ssObjectId 
+	SELECT tab.ssObjectId_user, sso.ssObjectId, sso.numObs
+	FROM TAP_UPLOAD.upload_table as tab
+	JOIN dp03_catalogs_10yr.SSObject as sso 
+	ON tab.ssObjectId_user = sso.ssObjectId 
 
 .. figure:: /_static/portal_tut04_step02c.png
     :width: 600
