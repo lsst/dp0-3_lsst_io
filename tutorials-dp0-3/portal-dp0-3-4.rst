@@ -171,4 +171,4 @@ A screenshot the fully populated "Object ID Search" section of the UI.
 Step 4.  Exercises for the learner 
 ==================================
 
-4.1 Pick a favorite solar system object (for example, this asteroid [quote ssObjectId]
+4.1 Pick a favorite solar system object (for example, the first asteroid in the user uploaded table from step 2) and create a table that includes both the DiaSource table contents, and the SSSource table contents for the one object. 
