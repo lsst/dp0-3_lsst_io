@@ -255,3 +255,25 @@ properties was fixed across the population to a constant value of `G` = 0.15. Th
 and the scatter in measured `G12` starts to deviate more substantially at fainter magnitudes where its likely harder to recover 
 the intrinsic value. 
 
+Step 3.2. This section explores the impact of the total number of observations for a given source (`numObs`) and 
+the perihelion distance (`q`) on the quality of phase curve fitting in `i`-band as an example. First close any open plots except 
+for one any heatmap, and then click on "Chart options and tools" icon to make new plots. Select "Modify Trace", set the "X" 
+to ``numObs``, "Y" to ``i_Herr``, the number of "X"- and "Y"-bins to 200. Lastly, set the min and max for the y-axis under the 
+"Chart Options" to be 0 and 0.05 as follows. Make a new plot by repeating the same paramter setting, but with ``q`` on the x-axis.
+
+.. figure:: /_static/portal_tut04_step03c.png
+    :width: 400
+    :name: portal_tut04_step03c
+    :alt: A screenshot of the plot parameters for the ``numObs`` vs. ``i_Herr`` plot.
+
+Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``. This will generate four panels showing how the `H` 
+and `G12` paramter uncertainties vary with the total number of observations and the perihelion distance for MBAs.
+
+.. figure:: /_static/portal_tut04_step03d.png
+    :width: 600
+    :name: portal_tut04_step03d
+    :alt: `i_Herr` and `i_G12err` versus the total number of observations and the perihelion distance.
+
+In left panels, it is clear that the phase curve fit uncertainties decrease with number of observations of each source. 
+So as LSST accumulates data over time, precision in the phase curve modeling will improve. The right panels show that uncertainties 
+in the phase curve parameters modestly increase for objects with larger perihelion distances. 
