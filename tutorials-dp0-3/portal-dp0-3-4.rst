@@ -171,4 +171,6 @@ A screenshot the fully populated "Object ID Search" section of the UI.
 Step 4.  Exercises for the learner 
 ==================================
 
-4.1 Pick a favorite solar system object (for example, the first asteroid in the user uploaded table from step 2) and create a table that includes both the DiaSource table contents, and the SSSource table contents for the one object (with procedure similar to section 3 above). Note that after the first search, one can select one row and remove the others using the "filter" option after the query completes.
+4.1 Generate your own user table: perform a spatial and temporal search of the DiaSource table to look for a sample of solar system bodies observed in a specific part of the sky at a specific time. Save the query result table as a tsv, and use it to search the SSSource table for all observations that exist, by matching on SSObjectId. 
+
+4.2 Pick a favorite solar system object (for example, the first asteroid in the user uploaded table from step 2) and create a table that includes both the DiaSource table contents, and the SSSource table contents for the one object (with procedure similar to section 3 above). Note that after the first search, one can select one row and remove the others using the "filter" option after the query completes.
