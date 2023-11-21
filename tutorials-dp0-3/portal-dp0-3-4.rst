@@ -145,7 +145,7 @@ select "Histogram" for "Plot Type", enter "q / (1-e)" as the "column or expressi
 .. figure:: /_static/portal_tut04_step01a.png
     :width: 400
     :name: portal_tut04_step01a
-    :alt: A screenshot illustrating the selection of plot parameters to plot the histogram of the distribution of semi-major axes of MBAs.
+    :alt: A screenshot illustrating the selection of plot parameters to plot the histogram of semi-major axes of MBAs.
 
 Clicking "Ok" will result in the following table + plot below.  
 Close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.  
@@ -206,12 +206,14 @@ and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "E
 Check the "reverse" box for the y-axis option. 
 
 .. figure:: /_static/portal_tut04_step02c.png
+    :width: 400
     :name: portal_tut04_step02c
     :alt: A screenshot of the plot parameters for the phase curve plot.
 
 Click on the "Apply" button. This will result in the `g`-band phase curve plot with error bars as shown below.
 
 .. figure:: /_static/portal_tut04_step02d.png
+    :width: 600
     :name: portal_tut04_step02d
     :alt: A the `g`-band phase curve plot.
 
@@ -221,9 +223,35 @@ It is clear that the phase curves of the source are offset from each other in th
 of asteroids in different filters. Also the reduced magnitude qualities (i.e., uncertainties) are significantly different.
 
 .. figure:: /_static/portal_tut04_step02e.png
+    :width: 600
     :name: portal_tut04_step02e
     :alt: A the `z`-band phase curve plot.
 
+.. _DP0-3-Portal-4-Step-3: 
+
 Step 3. Exploring phase curve data products from the DP0.3 catalogs
 ===================================================================
+
+Step 3.1. This section explores the distribution of typical values of the `G12` slope parameter as a function of absolute magnitudes 
+`H` for MBAs in `griz` bands. Go back to the originally retrived table in Step 1.2 and lift the ``numObs`` > 2000 condition. 
+Add a new plot for the `G12` vs. `H` in `g`-band with the plot settings as shown below.  
+
+.. figure:: /_static/portal_tut04_step03a.png
+    :width: 400
+    :name: portal_tut04_step03a
+    :alt: A screenshot of the plot parameters for the `G12` vs. `H` plot.
+
+Once creating the `G12` vs. `H` plot for `g`-band, close the histogram of semi-major axes of MBAs we made in Step 1.3, and 
+add three more new plots for `riz` bands. This will generate four panels. 
+
+.. figure:: /_static/portal_tut04_step03b.png
+    :width: 600
+    :name: portal_tut04_step03b
+    :alt: The slope `G12` versus absolute magnitude `H` plot in `griz` bands.
+
+Recall that the input (truth) `G` value using the `HG_model` that was used to generate the DP0.3 simulated object's observed 
+properties was fixed across the population to a constant value of `G` = 0.15. The DP0.3 automated phase curve fitting 
+(which uses `HG12_model`) produces a nearly constant value for `G12` with a relatively small spread at bright magnitudes, 
+and the scatter in measured `G12` starts to deviate more substantially at fainter magnitudes where its likely harder to recover 
+the intrinsic value. 
 
