@@ -224,23 +224,6 @@ of asteroids in different filters. Also the reduced magnitude qualities (i.e., u
     :name: portal_tut04_step02e
     :alt: A the `z`-band phase curve plot.
 
-2.3. Delete the two plots with time on the x-axis, leaving only the magnitude vs. phase angle plot.
-
-2.4. Create a new column to hold the distance-corrected r-band magnitudes.
-In the table panel, click on the icon to add a new column (the narrow rectangle to the left of a + sign).
-In the pop-up window, set the "Name" to "reduced_mag" and the "Expression" to be ``mag - 5 * log10(topocentricDist * heliocentricDist)``.
-Click "Add Column".
-
-2.5. Use the plot "Settings" funtion to plot reduced magnitude as a function of phase angle.
-
-2.6. _Create new columns to hold :math:`\phi_1(\alpha)` and :math:`\phi_2(\alpha)`._
-
-2.7. _Get the G and H parametrs for r-band from the ``SSObject`` table._
-
-3.8. _Create another new column that is :math:`H_{fit}(\alpha) = H - 2.5 log((1-G)\phi_1(\alpha) +G \phi_2(\alpha))`._
-_The right side of that equation is now just based on phase angle and the fit H and G from ``SSObject``._
-
-3.9. _Overplot :math:`H_{fit}(\alpha)` as a new trace on the existing :math:`H(\alpha)` vs. phase angle plot._
-_All the points should look line a "line". Does it look like a "fit" to the data?_
-
+Step 3. Exploring phase curve data products from the DP0.3 catalogs
+===================================================================
 
