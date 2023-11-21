@@ -121,12 +121,11 @@ A screenshot of the portal user interface after searching the 10 year catlaog fo
 
 2.6 Add the uploaded table to the ADQL query build. Click the + box next to TAP_UPLOAD in the browser schema, and click the "upload_table" folder. It should populate the ADQL code to search the catalog that was uploaded to the right (clicking search now will just return the list of IDs contained in the catalog). Then, you can type in your query to search the DP0.3 catalogs for objects that match ssObjectIds, using a JOIN:
 
+.. code-block:: SQL 
+
 SELECT tab.ssObjectId_user, sso.ssObjectId, sso.numObs
-
 FROM TAP_UPLOAD.upload_table as tab
-
 JOIN dp03_catalogs_10yr.SSObject as sso 
-
 ON tab.ssObjectId_user = sso.ssObjectId 
 
 .. figure:: /_static/portal_tut04_step02c.png
@@ -172,3 +171,4 @@ A screenshot the fully populated "Object ID Search" section of the UI.
 Step 4.  Exercises for the learner 
 ==================================
 
+4.1 Pick a favorite solar system object (for example, this asteroid [quote ssObjectId]
