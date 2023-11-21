@@ -138,7 +138,7 @@ A screenshot of the portal user interface after searching the 10 year catlaog fo
 
 .. _DP0-3-Portal-4-Step-3:
 
-Step 3. More advanced stuff
+Step 3. Two-step search process using the "Loaded Table" option
 ============================================
 
 
