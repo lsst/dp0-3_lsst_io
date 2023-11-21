@@ -177,8 +177,8 @@ To go back to the originally retreived table by removing the applied filter, cli
     :name: portal_tut04_step02a
     :alt: A screenshot selecting MBAs that have more than 2000 observations.
 
-Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. If you right click that box, there are two 
-options pop up: "Copy to clipboard" and "View as plain text". Here, copy ``ssObjectId`` = ``7470575696289418102`` to clipboard and click 
+Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. Right-click on that box, two options will 
+pop up: "Copy to clipboard" and "View as plain text". Here, copy ``ssObjectId`` = ``7470575696289418102`` to clipboard and click 
 "RSP TAP Search" button on the top left to go back to the ADQL Query page. 
 
 .. figure:: /_static/portal_tut04_step02b.png
@@ -198,17 +198,31 @@ topocentric and heliocentric distances of the individual observations for a well
     INNER JOIN dp03_catalogs_10yr.SSSource as sss ON dia.diaSourceId = sss.diaSourceId
     WHERE dia.ssObjectId = 7470575696289418102
 
-Step 2.2. To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), 
-in the "Plot Parameters" pop-up window, set the "X" to ``phaseAngle`` and "Y" to 
-``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
-"Symm" and put ``magErr``. Set the "X Label" to be "Phase angle [deg]" and the "Y Label" to be "Reduced magnitude". 
+Step 2.2. To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
+data by entering "='g'" in the box underneath the table heading ``band`` and hitting "enter".
+Then open the “Plot Parameters” pop-up window (click on the two-gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
+and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
+"Symm", and put ``magErr``. Set the "X Label" to be "Phase angle [deg]" and the "Y Label" to be "Reduced magnitude". 
 Check the "reverse" box for the y-axis option. 
 
-.. figure:: /_static/MLG_portal_tut04_step02a.png
-    :name: portal_tut03_step03a
-    :alt: A screenshot of three plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle.
+.. figure:: /_static/portal_tut04_step02c.png
+    :name: portal_tut04_step02c
+    :alt: A screenshot of the plot parameters for the phase curve plot.
 
-    Three plots demonstrating that magnitude and phase angle are correlated with each other, but not with time.
+Click on the "Apply" button. This will result in the `g`-band phase curve plot with error bars as shown below.
+
+.. figure:: /_static/portal_tut04_step02d.png
+    :name: portal_tut04_step02d
+    :alt: A the `g`-band phase curve plot.
+
+In order to plot a phase curve in a different band, for example in `z`-band, enter "='z'" in the box underneath the table heading 
+``band`` and hitting "enter". The `g`-band phase curve plot will be replaced with the `z`-band phase curve plot as shown below. 
+It is clear that the phase curves of the source are offset from each other in these two filters, reflecting the variation in brightness 
+of asteroids in different filters. Also the reduced magnitude qualities (i.e., uncertainties) are significantly different.
+
+.. figure:: /_static/portal_tut04_step02e.png
+    :name: portal_tut04_step02e
+    :alt: A the `z`-band phase curve plot.
 
 2.3. Delete the two plots with time on the x-axis, leaving only the magnitude vs. phase angle plot.
 
