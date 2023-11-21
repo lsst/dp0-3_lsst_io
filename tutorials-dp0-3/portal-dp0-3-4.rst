@@ -36,8 +36,9 @@ to phase curves by Christina Williams and Yumi Choi.
 Introduction
 ============
 
-This portal tutorial is the same demonstration used in the tutorial notebook DP03_04a to illustrate the 
-phase curves of solar system objects, but fouces on Main Belt Asteroids (MBAs).
+This portal tutorial is the same demonstration used in the tutorial notebook 
+`DP03_04a <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP03_04a_Introduction_to_Phase_Curves.ipynb>`_ 
+to illustrate the phase curves of solar system objects, but fouces on Main Belt Asteroids (MBAs).
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
@@ -197,11 +198,13 @@ topocentric and heliocentric distances of the individual observations for a well
     INNER JOIN dp03_catalogs_10yr.SSSource as sss ON dia.diaSourceId = sss.diaSourceId
     WHERE dia.ssObjectId = 7470575696289418102
 
-Step 2.2. Use the plot "Settings" function to add new scatter plots showing the r-band magnitude and phase angle
-as a function of time (right two plots, below), and see that these quantities are not correlated with time.
-Add a new scatter plot showing the r-band magnitude as a function of phase angle, which are correlated.
+Step 2.2. To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), 
+in the "Plot Parameters" pop-up window, set the "X" to ``phaseAngle`` and "Y" to 
+``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
+"Symm" and put ``magErr``. Set the "X Label" to be "Phase angle [deg]" and the "Y Label" to be "Reduced magnitude". 
+Check the "reverse" box for the y-axis option. 
 
-.. figure:: /_static/MLG_portal_tut03_step03a.png
+.. figure:: /_static/MLG_portal_tut04_step02a.png
     :name: portal_tut03_step03a
     :alt: A screenshot of three plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle.
 
