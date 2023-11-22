@@ -277,3 +277,26 @@ and `G12` paramter uncertainties vary with the total number of observations and 
 In left panels, it is clear that the phase curve fit uncertainties decrease with number of observations of each source. 
 So as LSST accumulates data over time, precision in the phase curve modeling will improve. The right panels show that uncertainties 
 in the phase curve parameters modestly increase for objects with larger perihelion distances. 
+
+Step 3.3. The above plots compare ``numObs`` (total in all bands) with model fits, which may not be the ideal metric since the quality 
+of phase curves can vary quite a bit between filters. Instead, one can look at the number of datapoints included in the phase curve 
+modeling on a per filter basis (e.g., ``rNdata`` for the `r`-band in the ``SSObject`` table). 
+
+To making a plot showing the distribution of the number of observations in each filter, again first close any open plots except for one, 
+and then click on "Chart options and tools" icon. Select "Modify Trace", set the "Plot Type" to "Histogram", the "Column or expression" 
+to ``gNdata``. Select the "Uniform binning" algorithm, set the number of bins to 100 with the min and max to be 0 and 1300, respectively. 
+Under the "Chart Options", and check the "log" box for the y-axis. It will plot the histogram of the `g`-band number of observations. 
+To overplot the histogram for `rNdata`, select "Overplot New Trace" on the "Plot Parameters" pop-up window. Use the same parameters, 
+but change the "Column or expression" to ``rNdata``. Now you can see the "Name" box under the "Trace Options", where you can set legend 
+for each histogram. Repeat this process for the `i` and `z` bands as well. For the `z` band plot, set the "Y Label" to "Number of observations".
+
+.. figure:: /_static/portal_tut04_step03e.png
+    :width: 600
+    :name: portal_tut04_step03e
+    :alt: Histograms of the number of observations in each filter on the left and `z_Herr` versus `i_Herr` on the right.
+
+`r`- and `i`-bands produce the most data points for recovering phase curves, while `g`- and `z`-band produce much less. Phase curves measured 
+in `r`- and `i`-bands will thus be better sampled. 
+
+Thus in the second panel, one can see that poorer sampling drives higher uncertainty in the derived absolute magnitude `H` using `z`-band 
+compared to `i`-band for MBAs. 
