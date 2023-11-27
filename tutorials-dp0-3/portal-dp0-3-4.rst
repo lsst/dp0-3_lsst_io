@@ -36,10 +36,6 @@ Introduction
 This tutorial demonstrates a functionality of the Portal aspect for user-uploaded tables and their use in queries for DP0.3 (postgres only, not qserve, so not available for DP0.2 yet)
 
 
-How to make weblinks: `LSST DDF webpage <https://www.lsst.org/scientists/survey-design/ddf>`_
-and in Section 2.6 of the Survey Cadence Optimization Committee's Phase 2 Recommendations report 
-(`PSTN-055 <https://pstn-055.lsst.io/>`_).
-
 This tutorial assumes the successful completion of the beginner-level DP0.3 Portal tutorials,
 and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
 For more information about the DP0.3 catalogs, tables, and columns, see the `DP0-3-Data-Products-DPDD <https://dp0-3.lsst.io/data-products-dp0-3/index.html>`_.  
