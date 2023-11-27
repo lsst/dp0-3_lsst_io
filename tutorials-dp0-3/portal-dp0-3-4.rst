@@ -115,7 +115,7 @@ A screenshot of the portal user interface after searching the 10 year catlaog fo
 
 2.5 Now use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. Start over at the main portal interface and click the upper right botton called "Edit ADQL". It will navigate to a page to manually type in the ADQL query. Make sure the button is clicked that says "Insert fully-qualified column names (recommended for table joins)". Click the "Add" button and navigate to the user-supplied catalog (Here, use the above catalog of IDs from earlier in Step 2). Once loaded, the catalog should appear in the schema browser on the left under the "TAP_UPLOAD" folder. 
 
-2.6 Add the uploaded table to the ADQL query build. Click the + box next to TAP_UPLOAD in the browser schema, and click the "upload_table" folder. It should populate the ADQL code to search the catalog that was uploaded to the right (clicking search now will just return the list of IDs contained in the catalog). Then, you can type in your query to search the DP0.3 catalogs for objects that match ssObjectIds, using a JOIN:
+2.6 Add the uploaded table to the ADQL query build. Click the + box next to TAP_UPLOAD in the browser schema, and click the "upload_table" folder. It should populate the ADQL code to search the catalog that was uploaded to the right (clicking search now will just return the list of IDs contained in the catalog). Then, type in the following query to search the DP0.3 catalogs for objects that match ssObjectIds, using a JOIN:
 
 .. code-block:: SQL 
 
@@ -140,7 +140,7 @@ Step 3. Two-step search process using the "Loaded Table" option
 
 3.1 Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left.
 
-3.2 Then, unclick the Spatial and Temporal boxes, and click the "multi-object" button under the Object ID Search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where you will see a list of "tables" that are stored from recent searches. These will have a title labeled as the TAP catalog that was searched above (in this case, in 3.1 we searched the DiaSource catalog). You can see that it is the return of the search query since it will have the same number of rows returned (in this example, 38 DiaObjects were returned).  
+3.2 Then, unclick the Spatial and Temporal boxes, and click the "multi-object" button under the Object ID Search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 38 DiaObjects were returned).  
 
 .. figure:: /_static/portal_tut04_step03a.png
     :width: 600
@@ -148,11 +148,11 @@ Step 3. Two-step search process using the "Loaded Table" option
     :alt: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
 A screenshot of how to use the "Loaded Tables" option to access the previous query result.
 
-3.3 Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID under Upload Table. Select SSObjectId, since we will now search the SSSource table for all individual observations of objects which have these SSObjectIds from our query in 3.1.
+3.3 Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID under Upload Table. Select SSObjectId. The query will now search the SSSource table for all individual observations of objects which have these SSObjectIds from the query in 3.1.
 
 3.4 Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. 
 
-3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what we will match on, and hit the Search button. The query will return all SSSource observation entries for the list of 38 SSObjectIds. In this case, there are 8,922 individual observations of each of the 38 individual solar system bodies. 
+3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what the parameter that will be matched on, and hit the Search button. The query will return all SSSource observation entries for the list of 38 SSObjectIds. In this case, there are 8,922 individual observations of each of the 38 individual solar system bodies. 
 
 .. figure:: /_static/portal_tut04_step03b.png
     :width: 600
@@ -169,4 +169,4 @@ Step 4.  Exercises for the learner
 
 4.1 Generate your own user table: perform a spatial and temporal search of the DiaSource table to look for a sample of solar system bodies observed in a specific part of the sky at a specific time. Save the query result table as a tsv, and use it to search the SSSource table for all observations that exist, by matching on SSObjectId. 
 
-4.2 Pick a favorite solar system object (for example, the first asteroid in the user uploaded table from step 2) and create a table that includes both the DiaSource table contents, and the SSSource table contents for the one object (with procedure similar to section 3 above). Note that after the first search, one can select one row and remove the others using the "filter" option after the query completes.
+4.2 Pick a favorite solar system object (for example, the first asteroid in the user uploaded table from step 2) and create a table that includes both the DiaSource table contents, and the SSSource table contents for the one object (with procedure similar to section 3 above). Note that after the first search, it is possible to select one row and remove the others using the "filter" option after the query completes.
