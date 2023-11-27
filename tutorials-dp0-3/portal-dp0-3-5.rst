@@ -16,7 +16,7 @@
 
 
 ##################################################################
-04. Using user-supplied catalogs in in DP0.3 (beginner)
+05. Using user-supplied catalogs in in DP0.3 (beginner)
 ##################################################################
 
 .. This section should provide a brief, top-level description of the page.
@@ -28,7 +28,7 @@
 **Targeted learning level:** Beginner
 
 
-.. _DP0-3-Portal-4-Intro:
+.. _DP0-3-Portal-5-Intro:
 
 Introduction
 ============
