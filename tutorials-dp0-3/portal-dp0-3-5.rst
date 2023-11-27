@@ -41,7 +41,7 @@ and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Stru
 For more information about the DP0.3 catalogs, tables, and columns, see the `DP0-3-Data-Products-DPDD <https://dp0-3.lsst.io/data-products-dp0-3/index.html>`_.  
 
 
-.. _DP0-3-Portal-4-Step-1:
+.. _DP0-3-Portal-5-Step-1:
 
 Step 1. Upload a user-supplied table of coordinates for use in cone searches
 =====================================
@@ -51,15 +51,15 @@ At upper right, next to "TAP Services" choose to "Show", and then select "LSST D
 
 1.2 In the "Enter Constraints" box, under "spatial constraints" click on the multi-object button. A window will pop up to allow the upload of a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, the file is an ascii catalog with columns of RA and Dec in tab separated format (TSV). Other columns can also be present in the file, but note that the header names and columns must not have multiple spaces or tabs. The uploader is agnostic about header labels, because you can choose which columns to use later (i.e. ra and dec do not necessarily have to be labeled as such). Click the browse button to find the file on your machine and click the upload button.
 
-`link catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-3619/_static/portal_tut04_useruploadcat1.cat>`_
+`link catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-3619/_static/portal_tut05_useruploadcat1.cat>`_
 
 1.3 After uploading, the window will show a list of the columns it found, named according to the header. Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. Then click the "Load Table" button.
 
 1.4 If the table loaded the ra and dec correctly, the table filename should be displayed next to "Upload Table", and listed next to "position columns" should show "ra, dec (from the uploaded table)".
 
-.. figure:: /_static/portal_tut04_step01a.png
+.. figure:: /_static/portal_tut05_step01a.png
     :width: 600
-    :name: portal_tut04_step01a
+    :name: portal_tut05_step01a
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 
@@ -67,9 +67,9 @@ A screenshot of the search query if the user-supplied catalog has uploaded and i
 
 1.6 For a first look, ignore the "Temporal" constraint and make sure the box is unchecked. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. 
 
-.. figure:: /_static/portal_tut04_step01b.png
+.. figure:: /_static/portal_tut05_step01b.png
     :width: 600
-    :name: portal_tut04_step01b
+    :name: portal_tut05_step01b
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 A screenshot of the search query result. The multiple observations of 3 SSObjects from the user-uploaded table can be seen as the clustered objects
 
@@ -77,14 +77,14 @@ A screenshot of the search query result. The multiple observations of 3 SSObject
 
 1.8 It can be useful to save the search for later. In this case it can be automated with search query commands that are output by the "populate and edit ADQL query" button. Repeat Step 7, but instead of hitting the "search" button, hit the "populate and edit ADQL" button on the bottom right. This will navigate to the "advanced ADQL interface" where the reproducible search code snippet to perform the search (e.g. in a notebook) is shown on the right. In the schema browser on the left, the user-supplied catalog is displayed as a searchable table under TAP_UPLOAD. 
 
-.. figure:: /_static/portal_tut04_step01c.png
+.. figure:: /_static/portal_tut05_step01c.png
     :width: 600
-    :name: portal_tut04_step01c
+    :name: portal_tut05_step01c
     :alt: A screenshot of the "advanced ADQL interface".
 A screenshot of the "advanced ADQL interface" which shows the ADQL search corresponding to the one entered into the portal user interface, for future use with a TAP service.
 
 
-.. _DP0-3-Portal-4-Step-2:
+.. _DP0-3-Portal-5-Step-2:
 
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ======================================================
@@ -99,17 +99,17 @@ Step 2. ADQL table join with user-uploaded list of SSObject IDs
 2.3 Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default will say ccdVisitId, but this exercise will instead match on SSObjectId, which will retrieve information for specific solar system bodies identififed by their unique identifier. Click the magnifying glass to open a navigation window to choose which ID from the DP0.3 table to use, and select SSObjectId.
 
 
-.. figure:: /_static/portal_tut04_step02a.png
+.. figure:: /_static/portal_tut05_step02a.png
     :width: 600
-    :name: portal_tut04_step02a
+    :name: portal_tut05_step02a
     :alt: A screenshot .
 A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
 
 2.4 Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. This example searchs for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. It will return the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and you can filter by one ID or the other to plot single objects. 
 
-.. figure:: /_static/portal_tut04_step02b.png
+.. figure:: /_static/portal_tut05_step02b.png
     :width: 600
-    :name: portal_tut04_step02a
+    :name: portal_tut05_step02a
     :alt: A screenshot .
 A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
 
@@ -124,15 +124,15 @@ A screenshot of the portal user interface after searching the 10 year catlaog fo
 	JOIN dp03_catalogs_10yr.SSObject as sso 
 	ON tab.ssObjectId_user = sso.ssObjectId 
 
-.. figure:: /_static/portal_tut04_step02c.png
+.. figure:: /_static/portal_tut05_step02c.png
     :width: 600
-    :name: portal_tut04_step02c
+    :name: portal_tut05_step02c
     :alt: A screenshot .
 
 
 
 
-.. _DP0-3-Portal-4-Step-3:
+.. _DP0-3-Portal-5-Step-3:
 
 Step 3. Two-step search process using the "Loaded Table" option
 ============================================
@@ -142,9 +142,9 @@ Step 3. Two-step search process using the "Loaded Table" option
 
 3.2 Then, unclick the Spatial and Temporal boxes, and click the "multi-object" button under the Object ID Search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 38 DiaObjects were returned).  
 
-.. figure:: /_static/portal_tut04_step03a.png
+.. figure:: /_static/portal_tut05_step03a.png
     :width: 600
-    :name: portal_tut04_step03a
+    :name: portal_tut05_step03a
     :alt: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
 A screenshot of how to use the "Loaded Tables" option to access the previous query result.
 
@@ -154,15 +154,15 @@ A screenshot of how to use the "Loaded Tables" option to access the previous que
 
 3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what the parameter that will be matched on, and hit the Search button. The query will return all SSSource observation entries for the list of 38 SSObjectIds. In this case, there are 8,922 individual observations of each of the 38 individual solar system bodies. 
 
-.. figure:: /_static/portal_tut04_step03b.png
+.. figure:: /_static/portal_tut05_step03b.png
     :width: 600
-    :name: portal_tut04_step03b
+    :name: portal_tut05_step03b
     :alt: A screenshot of the fully populated "Object ID Search" section of the UI.
 A screenshot the fully populated "Object ID Search" section of the UI.
 
  
 
-.. _DP0-3-Portal-4-Step-4:
+.. _DP0-3-Portal-5-Step-4:
 
 Step 4.  Exercises for the learner 
 ==================================
