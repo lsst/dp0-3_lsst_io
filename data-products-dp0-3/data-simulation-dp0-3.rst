@@ -152,6 +152,10 @@ Known issues
 
 There are several known issues with the DP0.3 simulation.
 
+**Underestimated number of detections.**
+DP0.3 is known to underestimate the number of observations by up to 20 or 30%.
+This is a result of the combination of issues mentioned below.
+
 **Color classes.**
 Only two color classes have been simulated, with no variance, which is not realistic.
 There is also an issue in that objects are about 0.2 mag fainter than they should be

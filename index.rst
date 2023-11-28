@@ -35,11 +35,11 @@ Joachim Moeyens, Samuel Cornwall, Ari Heinze, Steph Merritt, Lynne Jones, Siegfr
 .. Important::
 
     This website describes only the DP0.3 data products and tutorials.
-	Visit the `documentation for DP0.2 <https://dp0-2.lsst.io>`_ pages for:
-	  - `getting an RSP account to access the DP0.3 data (becoming a DP0 delegate) <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-started-with-dp0-checklist>`_,
-	  - `asking questions, getting help, and reporting bugs <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-support>`_,
-	  - `collaborating with others and joining virtual seminars <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#dp0-virtual-seminars>`_, and
-	  - `accessing Galactic and extragalactic simulated data products <https://dp0-2.lsst.io/data-products-dp0-2/index.html>`_.
+    Visit the `documentation for DP0.2 <https://dp0-2.lsst.io>`_ pages for:
+     - `getting an RSP account to access the DP0.3 data (becoming a DP0 delegate) <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-started-with-dp0-checklist>`_,
+     - `asking questions, getting help, and reporting bugs <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-support>`_,
+     - `collaborating with others and joining virtual seminars <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#dp0-virtual-seminars>`_, and
+     - `accessing Galactic and extragalactic simulated data products <https://dp0-2.lsst.io/data-products-dp0-2/index.html>`_.
 
 
 .. toctree::
@@ -58,6 +58,8 @@ DP0.3 data products
 The DP0.3 simulation was created by LSST Solar System Science Collaboration members,
 and only contains catalog data products for Solar System objects.
 For simulated Galactic and extragalactic data products, see the `documentation for DP0.2 <https://dp0-2.lsst.io>`_.
+
+**Be aware of these** :ref:`Data-Products-DP0-3-Data-Simulation-Issues` **with the DP0.3 simulation.**
 
 .. toctree::
     :maxdepth: 2
