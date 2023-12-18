@@ -37,8 +37,8 @@ Introduction
 ============
 
 This portal tutorial is the same demonstration used in the tutorial notebook 
-`DP03_04a <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP03_04a_Introduction_to_Phase_Curves.ipynb>`_ 
-to illustrate the phase curves of solar system objects, but fouces on Main Belt Asteroids (MBAs).
+`Introduction to Phase Curves <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP03_04a_Introduction_to_Phase_Curves.ipynb>`_ 
+to illustrate the phase curves of solar system objects, but focuses on Main Belt Asteroids (MBAs).
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
@@ -63,7 +63,7 @@ which is corrected for distance, :math:`H(\alpha)`, as:
     H(\alpha) = m - 5 \log_{10}(d_{t} d_{h}),
 
 where :math:`\alpha` is the phase angle, :math:`d_{t}` is the topocentric distance, 
-`d_{h}` is the heliocentric distance, and `m` is the apparent magnitude.
+:math:`d_{h}` is the heliocentric distance, and `m` is the apparent magnitude.
 
 The absolute magnitude `H` can be derived by fitting a function, where the choice of 
 form for this function has several options 
@@ -170,7 +170,7 @@ more than 2000 observations.
 
 First, select MBAs with 2000 or more observations by entering ">2000" in the box underneath the table heading ``numObs`` 
 and hitting "enter" as shown as below. This will leave only a small fraction of queried 100,000 MBAs above, 25 MBAs in this tutorial.
-To go back to the originally retreived table by removing the applied filter, click the banned filter icon on the top right of the table.
+To go back to the originally retreived table by removing the applied filter, click the remove filter icon on the top right of the table.
 
 .. figure:: /_static/portal_tut04_step02a.png
     :width: 600
@@ -233,7 +233,7 @@ Step 3. Exploring phase curve data products from the DP0.3 catalogs
 ===================================================================
 
 Step 3.1. This section explores the distribution of typical values of the `G12` slope parameter as a function of absolute magnitudes 
-`H` for MBAs in `griz` bands. Go back to the originally retrived table in Step 1.2 and lift the ``numObs`` > 2000 condition. 
+`H` for MBAs in `griz` bands. Go back to the originally retrieved table in Step 1.2 and remove the ``numObs`` > 2000 condition. 
 Add a new plot for the `G12` vs. `H` in `g`-band with the plot settings as shown below.  
 
 .. figure:: /_static/portal_tut04_step03a.png
@@ -280,14 +280,14 @@ in the phase curve parameters modestly increase for objects with larger periheli
 
 Step 3.3. The above plots compare ``numObs`` (total in all bands) with model fits, which may not be the ideal metric since the quality 
 of phase curves can vary quite a bit between filters. Instead, one can look at the number of datapoints included in the phase curve 
-modeling on a per filter basis (e.g., ``rNdata`` for the `r`-band in the ``SSObject`` table). 
+modeling on a per filter basis (e.g., ``r_Ndata`` for the `r`-band in the ``SSObject`` table). 
 
 To making a plot showing the distribution of the number of observations in each filter, again first close any open plots except for one, 
 and then click on "Chart options and tools" icon. Select "Modify Trace", set the "Plot Type" to "Histogram", the "Column or expression" 
-to ``gNdata``. Select the "Uniform binning" algorithm, set the number of bins to 100 with the min and max to be 0 and 1300, respectively. 
+to ``g_Ndata``. Select the "Uniform binning" algorithm, set the number of bins to 100 with the min and max to be 0 and 1300, respectively. 
 Under the "Chart Options", and check the "log" box for the y-axis. It will plot the histogram of the `g`-band number of observations. 
-To overplot the histogram for `rNdata`, select "Overplot New Trace" on the "Plot Parameters" pop-up window. Use the same parameters, 
-but change the "Column or expression" to ``rNdata``. Now you can see the "Name" box under the "Trace Options", where you can set legend 
+To overplot the histogram for `r_Ndata`, select "Overplot New Trace" on the "Plot Parameters" pop-up window. Use the same parameters, 
+but change the "Column or expression" to ``r_Ndata``. Now you can see the "Name" box under the "Trace Options", where you can set legend 
 for each histogram. Repeat this process for the `i` and `z` bands as well. For the `z` band plot, set the "Y Label" to "Number of observations".
 
 .. figure:: /_static/portal_tut04_step03e.png
