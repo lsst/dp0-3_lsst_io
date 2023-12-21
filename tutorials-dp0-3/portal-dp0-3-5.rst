@@ -63,7 +63,7 @@ ADD CLARIFICATION OF HEADER REQUIREMENTS
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 
-1.5 Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the header names listed to the right below "output column selection and constraints". Here, click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
+1.5 Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the header names listed to the right below "output column selection and constraints". Here, click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds. CHECK IF RADEC GOES INTO LATLONG BY DEFAULT
 
 1.6 For a first look, ignore the "Temporal" constraint and make sure the box is unchecked. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. 
 
