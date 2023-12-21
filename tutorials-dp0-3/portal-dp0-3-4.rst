@@ -159,8 +159,7 @@ between the asteroid's and Jupiter's orbital periods.
     :name: portal_tut04_step01b
     :alt: A screenshot illustrating the distribution of semi-major axes of MBAs.  
 
-    **Figure 2:** The distribution of semi-major axes for MBAs. The prominent Kirkwood gaps in this plot are located at 2.065 au (4:1 resonance), 
-2.502 au (3:1 resonance), 2.825 au (5:2 resonance), and 2.958 au (7:3 resonance). 
+    **Figure 2:** The distribution of semi-major axes for MBAs. The prominent Kirkwood gaps in this plot are located at 2.065 au (4:1 resonance), 2.502 au (3:1 resonance), 2.825 au (5:2 resonance), and 2.958 au (7:3 resonance). 
 
 .. _DP0-3-Portal-4-Step-2:  
 
