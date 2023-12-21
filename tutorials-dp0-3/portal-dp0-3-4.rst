@@ -23,9 +23,9 @@
 
 **Contact authors:** Melissa Graham and Yumi Choi
 
-**Last verified to run:** 
+**Last verified to run:** 2023-12-21
 
-**Targeted learning level:** Advanced
+**Targeted learning level:** Intermediate
 
 **Credits:** This tutorial incorporates material from the DP0.3 tutorial notebook on the introduction 
 to phase curves by Christina Williams and Yumi Choi.
@@ -105,10 +105,10 @@ Thus, any changes over time in an object’s apparent magnitude are due only to 
 Step 1. Query the DP0.3 tables for the Main Belt Asteroids
 ==========================================================
 
-Step 1.1. Log into the Rubin Science Platform at data.lsst.cloud and select the Portal Aspect. At upper right, next to 
+**Step 1.1.** Log into the Rubin Science Platform at data.lsst.cloud and select the Portal Aspect. At upper right, next to 
 "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top. 
 
-Step 1.2. At upper right, next to "View" choose "Edit ADQL". Enter the query statement below into the ADQL Query box and  
+**Step 1.2.** At upper right, next to "View" choose "Edit ADQL". Enter the query statement below into the ADQL Query box and  
 execute the query to select a good number of MBAs with a fair number of total observations (``numObs`` > 100) 
 to explore the distribution of their properties. Following the population definitions used by the 
 `JPL Horizons small body database query tool <https://ssd.jpl.nasa.gov/tools/sbdb_query.html>`_, we select MBAs
@@ -137,56 +137,63 @@ In order to have the query execution not to take too long, we restrict the numbe
     AND (mpc.q > 1.666)
     AND sso.numObs > 100 
 
-Step 1.3. Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  
+**Step 1.3.** Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  
 The execution of the query will result in a blank panel for the plot, with a comment "Cannot display the requested data."  
-To plot the distribution of ``a`` you need to click on the "Chart options and tools" icon (two gears), click on "add a new chart", 
-select "Histogram" for "Plot Type", enter "q / (1-e)" as the "column or expression" and "100" for number of bins as on the screenshot below.  
+To plot the distribution of ``a`` you need to click on the "Chart options and tools" icon (two gears), click on "Add New Chart", 
+select "Histogram" for "Plot Type", enter "q / (1-e)" as the "Column or expression" and "100" for number of bins as on the screenshot below.  
 
 .. figure:: /_static/portal_tut04_step01a.png
     :width: 400
     :name: portal_tut04_step01a
     :alt: A screenshot illustrating the selection of plot parameters to plot the histogram of semi-major axes of MBAs.
 
-Clicking "Ok" will result in the following table + plot below.  
-Close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.  
-Note that the distribution of asteroids as a function of semi-major axis is not uniform, but it reveals a number of peaks and gaps 
-where there are very few (or no) objects. 
-These are known as Kirkwood gaps, which arise due to resonances between the asteroid's and Jupiter's orbital periods.  
+    **Figure 1:** The "Plot Parameters" pop-up window to set parameters for making a histogram of semi-major axes for MBAs. 
+
+**Step 1.4.** Click "Ok" and close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.
+It will result in the following plot and table below. Note that the distribution of asteroids as a function of semi-major axis is not uniform, 
+but it reveals a number of peaks and gaps where there are very few (or no) objects. These are known as Kirkwood gaps, which arise due to resonances 
+between the asteroid's and Jupiter's orbital periods.  
 
 .. figure:: /_static/portal_tut04_step01b.png
     :width: 600
     :name: portal_tut04_step01b
-    :alt: A screenshot illustrating the the distribution of semi-major axes of MBAs.  
+    :alt: A screenshot illustrating the distribution of semi-major axes of MBAs.  
+
+    **Figure 2:** The distribution of semi-major axes for MBAs. The prominent Kirkwood gaps in this plot are located at 2.065 au (4:1 resonance), 
+2.502 au (3:1 resonance), 2.825 au (5:2 resonance), and 2.958 au (7:3 resonance). 
 
 .. _DP0-3-Portal-4-Step-2:  
 
 Step 2. Select a well-observed MBA, and plot its phase curve
 ============================================================
 
-Step 2.1. Unique solar system objects in the ``SSObject`` and ``MPCORB`` tables will be observed many times over the full LSST survey. 
+**Step 2.1.** Unique solar system objects in the ``SSObject`` and ``MPCORB`` tables will be observed many times over the full LSST survey. 
 Individual observations of each unique object in each filter are recorded in the ``SSSource`` and ``diaSource`` tables. 
 Below, we query these tables to obtain all of the individual observed time series data (we call indivObs) for an MBA that has 
-more than 2000 observations. 
-
-First, select MBAs with 2000 or more observations by entering ">2000" in the box underneath the table heading ``numObs`` 
-and hitting "enter" as shown as below. This will leave only a small fraction of queried 100,000 MBAs above, 25 MBAs in this tutorial.
-To go back to the originally retreived table by removing the applied filter, click the remove filter icon on the top right of the table.
+more than 2000 observations. First, select MBAs with 2000 or more observations by entering ">2000" in the box underneath the table heading 
+``numObs`` and hitting "enter" as shown as below. This will leave only a small fraction of queried 100,000 MBAs above, 23 MBAs in this tutorial.
+To go back to the originally retreived table by removing the applied filter, click the remove filter icon, which is the first icon on the top 
+right of the table.
 
 .. figure:: /_static/portal_tut04_step02a.png
     :width: 600
     :name: portal_tut04_step02a
     :alt: A screenshot selecting MBAs that have more than 2000 observations.
 
-Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. Right-click on that box, two options will 
-pop up: "Copy to clipboard" and "View as plain text". Here, copy ``ssObjectId`` = ``7470575696289418102`` to clipboard and click 
-"RSP TAP Search" button on the top left to go back to the ADQL Query page. 
+    **Figure 3:** The resulting table of 23 MBAs with 2000 or more observations out of the retrieved 100,000 MBAs in Step 1.2.
+
+**Step 2.2.** Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. Right-click on that box, 
+two options will pop up: "Copy to clipboard" and "View as plain text". Here, copy ``ssObjectId`` = ``7470575696289418102`` 
+to clipboard and click "RSP TAP Search" button on the top left to go back to the ADQL Query page. 
 
 .. figure:: /_static/portal_tut04_step02b.png
     :width: 300
     :name: portal_tut04_step02b
-    :alt: A screenshot copying ssObjectId for a well-observed MBA.
+    :alt: A screenshot copying ssObjectId to clipboard for a well-observed MBA.
 
-Execute the following ADQL query to retrieve the apparent magnitudes, magnitude errors, filters, phase angles,
+    **Figure 4:** How to copy a selected ``ssObjectId`` to clipboard.
+
+**Step 2.3** Execute the following ADQL query to retrieve the apparent magnitudes, magnitude errors, filters, phase angles,
 topocentric and heliocentric distances of the individual observations for a well-observed MBA.  
 
 .. code-block:: SQL 
@@ -198,34 +205,41 @@ topocentric and heliocentric distances of the individual observations for a well
     INNER JOIN dp03_catalogs_10yr.SSSource as sss ON dia.diaSourceId = sss.diaSourceId
     WHERE dia.ssObjectId = 7470575696289418102
 
-Step 2.2. To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
+**Step 2.4.** To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
 data by entering "='g'" in the box underneath the table heading ``band`` and hitting "enter".
 Then open the “Plot Parameters” pop-up window (click on the two-gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
 and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
-"Symm", and put ``magErr``. Set the "X Label" to be "Phase angle [deg]" and the "Y Label" to be "Reduced magnitude". 
-Check the "reverse" box for the y-axis option. 
+"Symm", and put ``magErr``. Click on the "Chart Options" arrow, and set the "X Label" to be "Phase angle [deg]" and the "Y Label" 
+to be "Reduced magnitude". Check the "reverse" box for the y-axis option.
 
 .. figure:: /_static/portal_tut04_step02c.png
     :width: 400
     :name: portal_tut04_step02c
     :alt: A screenshot of the plot parameters for the phase curve plot.
 
-Click on the "Apply" button. This will result in the `g`-band phase curve plot with error bars as shown below.
+    **Figure 5:** The "Plot Parameters" pop-up window to plot the phase curve in `g`-band.
+
+**Step 2.5.** Click on the "Apply" button. This will result in the `g`-band phase curve plot with error bars for the MBA with 
+``ssObjectId`` = ``7470575696289418102`` as shown below.
 
 .. figure:: /_static/portal_tut04_step02d.png
     :width: 600
     :name: portal_tut04_step02d
     :alt: A the `g`-band phase curve plot.
 
-In order to plot a phase curve in a different band, for example in `z`-band, enter "='z'" in the box underneath the table heading 
+    **Figure 6:** The `g`-band phase curve for the MBA with ``ssObjectId`` = ``7470575696289418102``.
+
+**Step 2.6.** In order to plot a phase curve in a different band, for example in `z`-band, enter "='z'" in the box underneath the table heading 
 ``band`` and hitting "enter". The `g`-band phase curve plot will be replaced with the `z`-band phase curve plot as shown below. 
 It is clear that the phase curves of the source are offset from each other in these two filters, reflecting the variation in brightness 
-of asteroids in different filters. Also the reduced magnitude qualities (i.e., uncertainties) are significantly different.
+of asteroids in different filters. Also the reduced magnitude qualities (i.e., photometric uncertainties) are significantly different.
 
 .. figure:: /_static/portal_tut04_step02e.png
     :width: 600
     :name: portal_tut04_step02e
     :alt: A the `z`-band phase curve plot.
+
+    **Figure 7:** Same as Figure 6, but in `z`-band.
 
 .. _DP0-3-Portal-4-Step-3: 
 
