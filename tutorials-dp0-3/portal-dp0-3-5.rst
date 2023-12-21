@@ -89,7 +89,7 @@ A screenshot of the "advanced ADQL interface" which shows the ADQL search corres
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ======================================================
 
-2.1 Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. Clicking the down arrow then gives access to the upload button to supply a catalog containing IDs. Click the "add" button and navigate on your machine to the catalog of IDs to be used. Then click the "load table" button. EXPLICITLY STATE ID MUST BE RUBIN DIASOURCE ID
+2.1 Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. Clicking the down arrow then gives access to the upload button to supply a catalog containing IDs. Click the "add" button and navigate on your machine to the catalog of IDs to be used. Then click the "load table" button. To use this feature, the IDs listed must correspond to a Rubin table ID (in this case, the SSObjectId).
 
 `link catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-3619/_static/portal_tut05_useruploadcat2.cat>`_
 
