@@ -49,13 +49,13 @@ Step 1. Upload a user-supplied table of coordinates for use in cone searches
 1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal aspect.
 At upper right, next to "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu for "Select TAP Service" at the top left. The default settings for the Tables can be left for the menus listed to the right of "LSST DP0.3 SSO Tables".
 
-1.2 In the "Enter Constraints" box, under "spatial constraints" click on the multi-object button. A window will pop up to allow the upload of a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, the file is an ascii catalog with columns of RA and Dec in tab separated format (TSV). Other columns can also be present in the file, but note that the header names and columns must not have multiple spaces or tabs. The uploader is agnostic about header labels, because you can choose which columns to use later (i.e. ra and dec do not necessarily have to be labeled as such). Click the browse button to find the file on your machine and click the upload button.
-
+1.2 In the "Enter Constraints" box, under "Spatial" search click on the multi-object button. A window will pop up to allow the upload of a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, the file is an ascii catalog with columns of RA and Dec in tab separated format (TSV). Other columns can also be present in the file, but note that the header names and columns must not have multiple spaces or tabs. The uploader is agnostic about header labels, because you can choose which columns to use later (i.e. ra and dec do not necessarily have to be labeled as such). Click the browse button to find the file on your machine and click the upload button.
+ADD CLARIFICATION OF HEADER REQUIREMENTS
 `link catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-3619/_static/portal_tut05_useruploadcat1.cat>`_
 
 1.3 After uploading, the window will show a list of the columns it found, named according to the header. Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. Then click the "Load Table" button.
 
-1.4 If the table loaded the ra and dec correctly, the table filename should be displayed next to "Upload Table", and listed next to "position columns" should show "ra, dec (from the uploaded table)".
+1.4 If the table loaded the ra and dec correctly, the table filename should be displayed next to "Upload Table", and listed next to "Position Columns" should show "ra, dec (from the uploaded table)".
 
 .. figure:: /_static/portal_tut05_step01a.png
     :width: 600
