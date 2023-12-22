@@ -140,7 +140,7 @@ Step 3. Two-step search process using the "Loaded Table" option
 
 3.1 Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. Make sure the "Spatial" box is checked and the "Temporal" box is unchecked. Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left. 
 
-3.2 Then, click the "multi-object" button at "Spatial type" under the Spatial search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in step 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 110 DiaSources were returned).
+3.2 Then, click the "multi-object" button at "Spatial type" under the Spatial search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in step 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 110 DiaSources were returned). Click the "Load Table" button.
 
 3.2 DELETE: Then, unclick the Spatial box, and click the "multi-object" button under the Object ID Search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 38 DiaSources were returned).  NO MULTI_OBJ BUTTON UNDER OBJ ID SEARCH? ALSO # OF ROWS RETURNED DIFFERENT?
 
@@ -148,7 +148,7 @@ Step 3. Two-step search process using the "Loaded Table" option
     :width: 600
     :name: portal_tut05_step03a
     :alt: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
-A screenshot of how to use the "Loaded Tables" option to access the previous query result.
+UPDATE FIG: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
 
 3.3 Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID under Upload Table. Select SSObjectId.  MISSING STEP TO UPLOAD TABLE? NO MAGNIF GLASS
 
