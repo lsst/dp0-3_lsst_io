@@ -155,7 +155,7 @@ UPDATE FIG: A screenshot of how to use the "Loaded Tables" option to access the 
 
 3.4 Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. The query will now search the SSSource table for all individual observations of objects which have these SSObjectIds from the query in 3.1.
 
-3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what the parameter that will be matched on, and hit the Search button. The query will return all SSSource observation entries for the list of 38 SSObjectIds. In this case, there are 8,922 individual observations of each of the 38 individual solar system bodies. ROW NUMBER DOESNT MATCH?
+3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what the parameter that will be matched on, and hit the Search button. The query will return all SSSource observation entries for the list of 110 SSObjectIds. In this case, there are 19,077 individual observations of each of the 110 individual solar system bodies. ROW NUMBER DOESNT MATCH?
 
 .. figure:: /_static/portal_tut05_step03b.png
     :width: 600
