@@ -338,3 +338,11 @@ one can see that poorer sampling drives higher uncertainty in the derived absolu
     :alt: Heatmap of ``z_Herr`` vs. ``i_Herr``.
 
     **Figure 13:** Comparison of the uncertainty in the measured `H` values in `i` and `z` bands. 
+
+.. _DP0-3-Portal-4-Step-4:
+
+Step 4.  Exercises for the learner 
+==================================
+
+**4.1** Explore phase curves for objects with less phase angle coverage and compare them with those for MBAs. 
+For example, Trans-Neptunian Objecs (refer the portal tutorial `03. Explore Trans-Neptunian Objects (TNOs) in DP0.3 (Intermediate) <https://dp0-3.lsst.io/tutorials-dp0-3/portal-dp0-3-3.html>`_) or Jupiter Trojans (refer the notebook tutorial `DP03_04a_Introduction_to_Phase_Curves <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP03_04a_Introduction_to_Phase_Curves.ipynb>`_). 
