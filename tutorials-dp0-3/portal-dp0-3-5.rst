@@ -146,7 +146,7 @@ Step 3. Two-step search process using the "Loaded Table" option
     :width: 600
     :name: portal_tut05_step03a
     :alt: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
-UPDATE FIG: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
+A screenshot of how to use the "Loaded Tables" option to access the previous query result.
  
 
 3.3 Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID under Upload Table. Select SSObjectId. Below, where it says "Object ID (from table)" (in this case referring to the DP0.3 table whose columns are listed on the right), click the magnifying glass and also select SSObjectId.  
