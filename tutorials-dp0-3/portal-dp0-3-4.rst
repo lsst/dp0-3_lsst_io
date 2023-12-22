@@ -170,7 +170,7 @@ Step 2. Select a well-observed MBA, and plot its phase curve
 Individual observations of each unique object in each filter are recorded in the ``SSSource`` and ``diaSource`` tables. 
 Below, we query these tables to obtain all of the individual observed time series data (we call indivObs) for an MBA that has 
 more than 2000 observations. First, select MBAs with 2000 or more observations by entering ">2000" in the box underneath the table heading 
-``numObs`` and hitting "enter" as shown as below. This will leave only a small fraction of queried 100,000 MBAs above, 23 MBAs in this tutorial.
+``numObs`` as shown as below and hitting the return key. This will leave only a small fraction of queried 100,000 MBAs above, 23 MBAs in this tutorial.
 To go back to the originally retreived table by removing the applied filter, click the remove filter icon, which is the first icon on the top 
 right of the table.
 
@@ -205,7 +205,7 @@ topocentric and heliocentric distances of the individual observations for a well
     WHERE dia.ssObjectId = 7470575696289418102
 
 **Step 2.4.** To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
-data by entering "='g'" in the box underneath the table heading ``band`` and hitting "enter".
+data by entering "='g'" in the box underneath the table heading ``band`` and hitting the return key.
 Then open the “Plot Parameters” pop-up window (click on the two-gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
 and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
 "Symm", and put ``magErr``. Click on the "Chart Options" arrow, and set the "X Label" to be "Phase angle [deg]" and the "Y Label" 
@@ -229,7 +229,7 @@ to be "Reduced magnitude". Check the "reverse" box for the y-axis option.
     **Figure 6:** The `g`-band phase curve for the MBA with ``ssObjectId`` = ``7470575696289418102``.
 
 **Step 2.6.** In order to plot a phase curve in a different band, for example in `z`-band, enter "='z'" in the box underneath the table heading 
-``band`` and hitting "enter". The `g`-band phase curve plot will be replaced with the `z`-band phase curve plot as shown below. 
+``band`` and hitting the return key. The `g`-band phase curve plot will be replaced with the `z`-band phase curve plot as shown below. 
 It is clear that the phase curves of the source are offset from each other in these two filters, reflecting the variation in brightness 
 of asteroids in different filters. Also the reduced magnitude qualities (i.e., photometric uncertainties) are significantly different.
 
@@ -245,16 +245,21 @@ of asteroids in different filters. Also the reduced magnitude qualities (i.e., p
 Step 3. Exploring phase curve data products from the DP0.3 catalogs
 ===================================================================
 
-Step 3.1. This section explores the distribution of typical values of the `G12` slope parameter as a function of absolute magnitudes 
-`H` for MBAs in `griz` bands. Go back to the originally retrieved table in Step 1.2 and remove the ``numObs`` > 2000 condition. 
-Add a new plot for the `G12` vs. `H` in `g`-band with the plot settings as shown below.  
+**Step 3.1.** This section explores the distribution of `G12` slope parameter values as a function of absolute magnitudes 
+`H` for MBAs in `griz` bands. Return to the originally retrieved table in Step 1.2 by clicking the first table tab. 
+Remove the ``numObs`` > 2000 condition either by clicking the remove filter icon on the top right or by deleting the 
+condition and hitting the return key. Then, open the “Plot Parameters” pop-up window (click on the two-gear icon), 
+choose “Add New Chart”, opt for "Heatmap" as the "Plot Type", and create a new plot for the `G12` vs. `H` in `g`-band, 
+adhering to the specified plot settings below.  
 
 .. figure:: /_static/portal_tut04_step03a.png
     :width: 400
     :name: portal_tut04_step03a
     :alt: A screenshot of the plot parameters for the `G12` vs. `H` plot.
 
-Once creating the `G12` vs. `H` plot for `g`-band, close the histogram of semi-major axes of MBAs we made in Step 1.3, and 
+    **Figure 8:** The "Plot Parameters" pop-up window to plot the `G12` vs. `H` in `g`-band.
+
+**Step 3.2.** Once creating the `G12` vs. `H` plot for `g`-band, close the histogram of semi-major axes of MBAs we made in Step 1.3, and 
 add three more new plots for `riz` bands. This will generate four panels. 
 
 .. figure:: /_static/portal_tut04_step03b.png
@@ -262,13 +267,13 @@ add three more new plots for `riz` bands. This will generate four panels.
     :name: portal_tut04_step03b
     :alt: The slope `G12` versus absolute magnitude `H` plot in `griz` bands.
 
-Recall that the input (truth) `G` value using the `HG_model` that was used to generate the DP0.3 simulated object's observed 
+**Step 3.3.** Recall that the input (truth) `G` value using the `HG_model` that was used to generate the DP0.3 simulated object's observed 
 properties was fixed across the population to a constant value of `G` = 0.15. The DP0.3 automated phase curve fitting 
 (which uses `HG12_model`) produces a nearly constant value for `G12` with a relatively small spread at bright magnitudes, 
 and the scatter in measured `G12` starts to deviate more substantially at fainter magnitudes where its likely harder to recover 
 the intrinsic value. 
 
-Step 3.2. This section explores the impact of the total number of observations for a given source (`numObs`) and 
+**Step 3.4.** This section explores the impact of the total number of observations for a given source (`numObs`) and 
 the perihelion distance (`q`) on the quality of phase curve fitting in `i`-band as an example. First close any open plots except 
 for one any heatmap, and then click on "Chart options and tools" icon to make new plots. Select "Modify Trace", set the "X" 
 to ``numObs``, "Y" to ``i_Herr``, the number of "X"- and "Y"-bins to 200. Lastly, set the min and max for the y-axis under the 
@@ -279,7 +284,7 @@ to ``numObs``, "Y" to ``i_Herr``, the number of "X"- and "Y"-bins to 200. Lastly
     :name: portal_tut04_step03c
     :alt: A screenshot of the plot parameters for the ``numObs`` vs. ``i_Herr`` plot.
 
-Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``. This will generate four panels showing how the `H` 
+**Step 3.5.** Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``. This will generate four panels showing how the `H` 
 and `G12` paramter uncertainties vary with the total number of observations and the perihelion distance for MBAs.
 
 .. figure:: /_static/portal_tut04_step03d.png
@@ -287,7 +292,7 @@ and `G12` paramter uncertainties vary with the total number of observations and 
     :name: portal_tut04_step03d
     :alt: `i_Herr` and `i_G12err` versus the total number of observations and the perihelion distance.
 
-In left panels, it is clear that the phase curve fit uncertainties decrease with number of observations of each source. 
+**Step 3.6.** In left panels, it is clear that the phase curve fit uncertainties decrease with number of observations of each source. 
 So as LSST accumulates data over time, precision in the phase curve modeling will improve. The right panels show that uncertainties 
 in the phase curve parameters modestly increase for objects with larger perihelion distances. 
 
