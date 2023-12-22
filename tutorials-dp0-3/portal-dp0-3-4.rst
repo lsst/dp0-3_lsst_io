@@ -16,7 +16,7 @@
 
 
 #######################################
-04. Phase curve fit analysis (Advanced)
+04. Phase curve fit analysis (Intermediate)
 #######################################
 
 .. This section should provide a brief, top-level description of the page.
