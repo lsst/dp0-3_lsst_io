@@ -142,8 +142,6 @@ Step 3. Two-step search process using the "Loaded Table" option
 
 3.2 Then, go down to the Object ID Search section of the UI, and click the box to the left of Object ID Search, and click the arrow to expand the search options below. Click the "Add..." button next to Upload Table. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in step 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 110 DiaSources were returned). Click the "Load Table" button.
 
-3.2 DELETE: Then, unclick the Spatial box, and click the "multi-object" button under the Object ID Search constraints area of the UI. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up, where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 38 DiaSources were returned).  NO MULTI_OBJ BUTTON UNDER OBJ ID SEARCH? ALSO # OF ROWS RETURNED DIFFERENT?
-
 .. figure:: /_static/portal_tut05_step03a.png
     :width: 600
     :name: portal_tut05_step03a
@@ -155,7 +153,7 @@ UPDATE FIG: A screenshot of how to use the "Loaded Tables" option to access the 
 
 3.4 Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. The query will now search the SSSource table for all individual observations of objects which have these SSObjectIds from the query in 3.1.
 
-3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what the parameter that will be matched on, and hit the Search button. The query will return all SSSource observation entries for the list of 110 SSObjectIds. In this case, there are 19,077 individual observations of each of the 110 individual solar system bodies. ROW NUMBER DOESNT MATCH?
+3.5 Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what the parameter that will be matched on, and hit the Search button. The query will return all SSSource observation entries for the list of 110 SSObjectIds. In this case, there are 19,077 individual observations of each of the 110 individual solar system bodies. 
 
 .. figure:: /_static/portal_tut05_step03b.png
     :width: 600
