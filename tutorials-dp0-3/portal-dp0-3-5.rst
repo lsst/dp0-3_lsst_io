@@ -102,7 +102,7 @@ Step 2. ADQL table join with user-uploaded list of SSObject IDs
 .. figure:: /_static/portal_tut05_step02a.png
     :width: 600
     :name: portal_tut05_step02a
-    :alt: A screenshot .
+    :alt: A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
 A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
 
 2.4 Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. This example searchs for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. It will return the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and click the downward arrow. This will pop up a window listing the unique SSObjectIds. Clicking the box next to an SSObjectId and clicking "filter" will plot the data for that single object. 
@@ -110,7 +110,7 @@ A screenshot of the portal user interface demonstrating the view after correctly
 .. figure:: /_static/portal_tut05_step02b.png
     :width: 600
     :name: portal_tut05_step02a
-    :alt: A screenshot .
+    :alt: A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
 A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
 
 2.5 Now use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. Start over at the main portal interface and click the upper right botton called "Edit ADQL". It will navigate to a page to manually type in the ADQL query. Make sure the button is clicked that says "Insert fully-qualified column names (recommended for table joins)". Click the "Add" button and navigate to the user-supplied catalog (Here, use the above catalog of IDs from earlier in Step 2). Once loaded, the catalog should appear in the schema browser on the left under the "TAP_UPLOAD" folder. 
