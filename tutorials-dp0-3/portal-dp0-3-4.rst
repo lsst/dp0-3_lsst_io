@@ -249,7 +249,7 @@ Step 3. Exploring phase curve data products from the DP0.3 catalogs
 `H` for MBAs in `griz` bands. Return to the originally retrieved table in Step 1.2 by clicking the first table tab. 
 Remove the ``numObs`` > 2000 condition either by clicking the remove filter icon on the top right or by deleting the 
 condition and hitting the return key. Then, open the “Plot Parameters” pop-up window (click on the two-gear icon), 
-choose “Add New Chart”, opt for "Heatmap" as the "Plot Type", and create a new plot for the `G12` vs. `H` in `g`-band, 
+choose “Add New Chart”, opt for "Heatmap" as the "Plot Type", and create a new plot for the `G12` vs. `H` in `g` band, 
 adhering to the specified plot settings below.  
 
 .. figure:: /_static/portal_tut04_step03a.png
@@ -257,64 +257,84 @@ adhering to the specified plot settings below.
     :name: portal_tut04_step03a
     :alt: A screenshot of the plot parameters for the `G12` vs. `H` plot.
 
-    **Figure 8:** The "Plot Parameters" pop-up window to plot the `G12` vs. `H` in `g`-band.
+    **Figure 8:** The "Plot Parameters" pop-up window to plot the `G12` vs. `H` in `g` band.
 
-**Step 3.2.** Once creating the `G12` vs. `H` plot for `g`-band, close the histogram of semi-major axes of MBAs we made in Step 1.3, and 
-add three more new plots for `riz` bands. This will generate four panels. 
+**Step 3.2.** Once creating the `G12` vs. `H` plot for `g`-band, close the histogram of semi-major axes of MBAs we made in Step 1.4,
+and add three more new plots for `riz` bands by repeating the creation of the `G12` vs. `H` plot in Step 3.1, but going through 
+the `riz` bands. This will generate four panels as shown below. 
 
 .. figure:: /_static/portal_tut04_step03b.png
     :width: 600
     :name: portal_tut04_step03b
     :alt: The slope `G12` versus absolute magnitude `H` plot in `griz` bands.
 
-**Step 3.3.** Recall that the input (truth) `G` value using the `HG_model` that was used to generate the DP0.3 simulated object's observed 
-properties was fixed across the population to a constant value of `G` = 0.15. The DP0.3 automated phase curve fitting 
-(which uses `HG12_model`) produces a nearly constant value for `G12` with a relatively small spread at bright magnitudes, 
-and the scatter in measured `G12` starts to deviate more substantially at fainter magnitudes where its likely harder to recover 
+    **Figure 9:** The `G12` vs. `H` plots in `griz` from top left to bottom right clockwise.
+
+**Step 3.3.** Recall that the input (truth) `G` value using the `HG_model` that was used to generate the DP0.3 simulated object's 
+observed properties was fixed across the population to a constant value of `G` = 0.15 (refer 
+`The DP0.3 Simulation <https://dp0-3.lsst.io/data-products-dp0-3/data-simulation-dp0-3.html>`_). The DP0.3 automated phase curve 
+fitting (which uses `HG12_model`) produces a nearly constant value for `G12` with a relatively small spread at bright magnitudes, 
+and the scatter in measured `G12` starts to deviate more substantially at fainter magnitudes where it is likely harder to recover 
 the intrinsic value. 
 
 **Step 3.4.** This section explores the impact of the total number of observations for a given source (`numObs`) and 
 the perihelion distance (`q`) on the quality of phase curve fitting in `i`-band as an example. First close any open plots except 
-for one any heatmap, and then click on "Chart options and tools" icon to make new plots. Select "Modify Trace", set the "X" 
+for one heatmap, and then click on "Chart options and tools" icon to make a new plot. Select "Modify Trace", set the "X" 
 to ``numObs``, "Y" to ``i_Herr``, the number of "X"- and "Y"-bins to 200. Lastly, set the min and max for the y-axis under the 
-"Chart Options" to be 0 and 0.05 as follows. Make a new plot by repeating the same paramter setting, but with ``q`` on the x-axis.
+"Chart Options" to be 0 and 0.05 as follows. Make another plot by repeating the same paramter setting, but selecting "Add New Chart" 
+and entering ``q`` on the x-axis.
 
 .. figure:: /_static/portal_tut04_step03c.png
     :width: 400
     :name: portal_tut04_step03c
-    :alt: A screenshot of the plot parameters for the ``numObs`` vs. ``i_Herr`` plot.
+    :alt: A screenshot of the plot parameters for the ``i_Herr`` vs. ``numObs`` plot.
 
-**Step 3.5.** Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``. This will generate four panels showing how the `H` 
-and `G12` paramter uncertainties vary with the total number of observations and the perihelion distance for MBAs.
+    **Figure 10:** The "Plot Parameters" pop-up window to plot the ``i_Herr`` vs. ``numObs``.
+
+**Step 3.5.** Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``. This will generate four panels showing 
+how the `H` and `G12` parameter uncertainties vary with the total number of observations and the perihelion distance for MBAs.
+In left panels, it is clear that the phase curve fit uncertainties decrease with the number of observations of each source. 
+So as LSST accumulates data over time, precision in the phase curve modeling will improve. The right panels show that uncertainties 
+in the phase curve parameters modestly increase for objects with larger perihelion distances. 
 
 .. figure:: /_static/portal_tut04_step03d.png
     :width: 600
     :name: portal_tut04_step03d
     :alt: `i_Herr` and `i_G12err` versus the total number of observations and the perihelion distance.
 
-**Step 3.6.** In left panels, it is clear that the phase curve fit uncertainties decrease with number of observations of each source. 
-So as LSST accumulates data over time, precision in the phase curve modeling will improve. The right panels show that uncertainties 
-in the phase curve parameters modestly increase for objects with larger perihelion distances. 
+    **Figure 11:** Uncertainties in ``i_Herr`` and ``i_G12err`` as a function of the total number of observations and the perihelion distance.
 
-Step 3.3. The above plots compare ``numObs`` (total in all bands) with model fits, which may not be the ideal metric since the quality 
+**Step 3.6.** The above plots compare ``numObs`` (total in all bands) with model fits, which may not be the ideal metric since the quality 
 of phase curves can vary quite a bit between filters. Instead, one can look at the number of datapoints included in the phase curve 
-modeling on a per filter basis (e.g., ``r_Ndata`` for the `r`-band in the ``SSObject`` table). 
-
-To making a plot showing the distribution of the number of observations in each filter, again first close any open plots except for one, 
-and then click on "Chart options and tools" icon. Select "Modify Trace", set the "Plot Type" to "Histogram", the "Column or expression" 
-to ``g_Ndata``. Select the "Uniform binning" algorithm, set the number of bins to 100 with the min and max to be 0 and 1300, respectively. 
-Under the "Chart Options", and check the "log" box for the y-axis. It will plot the histogram of the `g`-band number of observations. 
-To overplot the histogram for `r_Ndata`, select "Overplot New Trace" on the "Plot Parameters" pop-up window. Use the same parameters, 
-but change the "Column or expression" to ``r_Ndata``. Now you can see the "Name" box under the "Trace Options", where you can set legend 
-for each histogram. Repeat this process for the `i` and `z` bands as well. For the `z` band plot, set the "Y Label" to "Number of observations".
+modeling on a per filter basis (e.g., ``r_Ndata`` for the `r`-band in the ``SSObject`` table). To make a plot showing the distribution of 
+the number of observations in each filter, again first close any open plots except for one, and then click on the "Chart options and tools" icon. 
+Select "Add New Chart", set the "Plot Type" to "Histogram", the "Column or expression" to ``g_Ndata``. Select the "Uniform binning" algorithm, 
+set the number of bins to 100 with the min and max to be 0 and 1300, respectively. Under the "Chart Options", check the "log" box for the y-axis. 
+It will plot the histogram of the `g`-band number of observations. Once creating the ``g_Ndata`` histogram, close the remaining plot from 
+Step 3.5. To overplot the histogram for ``r_Ndata``, select "Overplot New Trace" on the "Plot Parameters" pop-up window, and use the same 
+plot parameters, but change the "Column or expression" to ``r_Ndata``. Now the "Name" box under the "Trace Options" will appear, where you can 
+set legend for each histogram. Once overplotting the ``r_Ndata`` histogram, the "Choose Trace" field with a drop-down menu becomes available 
+when you reopen the "Plot Parameters" pop-up window. Choose "Trace 0" and enter a label for the ``g_Ndata`` histogram in the "Name" box under the 
+"Trace Options". Repeat this process for the `i` and `z` bands as well. For the `z` band plot, set the "X Label" to "Number of observations". 
+Note that `r`- and `i`-bands produce the most data points for recovering phase curves, while `g`- and `z`-band produce much less. Phase curves 
+measured in `r`- and `i`-bands will thus be better sampled. Clicking the labels in the legend makes it possible to show and hide each histogram.
 
 .. figure:: /_static/portal_tut04_step03e.png
     :width: 600
     :name: portal_tut04_step03e
-    :alt: Histograms of the number of observations in each filter on the left and `z_Herr` versus `i_Herr` on the right.
+    :alt: Histograms of the number of observations in each filter.
 
-`r`- and `i`-bands produce the most data points for recovering phase curves, while `g`- and `z`-band produce much less. Phase curves measured 
-in `r`- and `i`-bands will thus be better sampled. 
+    **Figure 12:** Histograms of the number of observations in each filter.
 
-Thus in the second panel, one can see that poorer sampling drives higher uncertainty in the derived absolute magnitude `H` using `z`-band 
-compared to `i`-band for MBAs. 
+**Step 3.7.** To confirm whether phase curve fitting in `i` band is indeed more precise than in `z` band, let's compare the uncertainty 
+in `H` values for `i` and `z` bands by adding a new plot. Click on the two-gear icon, select "Add New Chart" and "Heatamp". Set the "X" 
+to ``i_Herr`` and "Y" to ``z_Herr`` with the X and Y MIN/MAX of 0 and 0.1. To make the plot with a more proper display ratio, set the 
+"X/Y ratio" under the "Chart Options" to be 1, check the "width" box, and hit the apply button. The right panel in the figure below, 
+one can see that poorer sampling drives higher uncertainty in the derived absolute magnitude `H` using `z` band compared to `i` band for MBAs. 
+
+.. figure:: /_static/portal_tut04_step03f.png
+    :width: 600
+    :name: portal_tut04_step03f
+    :alt: Heatmap of ``z_Herr`` vs. ``i_Herr``.
+
+    **Figure 13:** Comparison of the uncertainty in the measured `H` values in `i` and `z` bands. 
