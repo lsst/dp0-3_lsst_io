@@ -51,7 +51,7 @@ At upper right, next to "TAP Services" choose to "Show", and then select "LSST D
 
 1.2 In the "Enter Constraints" box, in the "Spatial" section, click on the multi-object button. A window will pop up to allow the upload of a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, the file is an ascii catalog with columns of RA and Dec in tab separated format (TSV). Other columns can also be present in the file, but note that the header names and columns must not have multiple spaces or tabs between them. The uploader is agnostic about header labels, because you can choose which columns to use later (i.e. ra and dec do not necessarily have to be labeled as such), but remove any pound sign (#) from the header before uploading. Click the browse button to find the file on your machine and click the upload button.
 
-`link catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-3619/_static/portal_tut05_useruploadcat1.cat>`_
+`Link to catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat1.cat>`_.
 
 1.3 After uploading, the window will show a list of the columns it found, named according to the header. Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. Then click the "Load Table" button.
 
@@ -91,7 +91,7 @@ Step 2. ADQL table join with user-uploaded list of SSObject IDs
 
 2.1 Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. Clicking the down arrow then gives access to the upload button to supply a catalog containing IDs. Click the "add" button and navigate on your machine to the catalog of IDs to be used. Then click the "load table" button. To use this feature, the IDs listed must correspond to a Rubin table ID (in this case, the SSObjectId).
 
-`link catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-3619/_static/portal_tut05_useruploadcat2.cat>`_
+`Link to catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat2.cat>`_.
 
 2.2 Back on the main user interface click the arrow next to "uploaded object id" where it says "unset". This will lower the option to select which column to use as the ID. Click the magnifying glass near "ID" and in the window that pops open, select the "SSObjectId" header keyword from the table that was uploaded, and hit OK. The object ID box should now contain ssObjectId (or whatever header label is used for ID in the user suppled catalog). 
 
