@@ -50,6 +50,12 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Jan 30 2024
+-----------
+
+The DP0.3 notebook tutorials 04a and 04b on phase curves have been updated to use the ``sbpy`` package, 
+which is now included in the default user environment.
+
 Nov 30 2023
 -----------
 
