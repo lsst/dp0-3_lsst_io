@@ -152,9 +152,9 @@ Known issues
 
 There are several known issues with the DP0.3 simulation.
 
-**Problems with the designation columns in the ``MPCORB`` table.**
+**Problems with the designation columns in the MPCORB table.**
 The ``MPCORB`` table has two columns for the designation of a moving object,
-``fullDesignation`` and `mpcDesignation``, and they each have known issues.
+``fullDesignation`` and ``mpcDesignation``, and they each have known issues.
 First, the ``fullDesignation`` values appear to have a prefix of "2011" which should not be there.
 Second, the ``mpcDesignation`` column has not been "packed" as expected, 
 but still has an ``arraysize`` parameter of 8.
