@@ -162,6 +162,12 @@ When values from this column are returned via a query, they are truncated versio
 of the full designation (without the 2011) with all characters after the eigth removed.
 The recommendation for now is to use the full designation and ignore the prefixed "2011".
 
+Relatedly, note that some objects which are purely simulated (and not clones of real objects)
+have designation formats that do not match real moving object designations
+(e.g., spaceships have prefix "ET"). 
+These are not issues and not mistakes, but also do not necessarily represent future designations
+of real LSST-detected moving objects.
+
 **Underestimated number of detections.**
 DP0.3 is known to underestimate the number of observations by up to 20 or 30%.
 This is a result of the combination of issues mentioned below.
