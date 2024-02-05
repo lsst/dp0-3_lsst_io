@@ -159,7 +159,7 @@ First, the ``fullDesignation`` values appear to have a prefix of "2011" which sh
 Second, the ``mpcDesignation`` column has not been "packed" as expected, 
 but still has an ``arraysize`` parameter of 8.
 When values from this column are returned via a query, they are truncated versions
-of the full designation (without the 2011) with all characters after the eigth removed.
+of the full designation (without the 2011) with all characters after the eighth removed.
 The recommendation for now is to use the full designation and ignore the prefixed "2011".
 
 Relatedly, note that some objects which are purely simulated (and not clones of real objects)
