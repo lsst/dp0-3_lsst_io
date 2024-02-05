@@ -152,6 +152,22 @@ Known issues
 
 There are several known issues with the DP0.3 simulation.
 
+**Problems with the designation columns in the MPCORB table.**
+The ``MPCORB`` table has two columns for the designation of a moving object,
+``fullDesignation`` and ``mpcDesignation``, and they each have known issues.
+First, the ``fullDesignation`` values appear to have a prefix of "2011" which should not be there.
+Second, the ``mpcDesignation`` column has not been "packed" as expected, 
+but still has an ``arraysize`` parameter of 8.
+When values from this column are returned via a query, they are truncated versions
+of the full designation (without the 2011) with all characters after the eighth removed.
+The recommendation for now is to use the full designation and ignore the prefixed "2011".
+
+Relatedly, note that some objects which are purely simulated (and not clones of real objects)
+have designation formats that do not match real moving object designations
+(e.g., spaceships have prefix "ET"). 
+These are not issues and not mistakes, but also do not necessarily represent future designations
+of real LSST-detected moving objects.
+
 **Underestimated number of detections.**
 DP0.3 is known to underestimate the number of observations by up to 20 or 30%.
 This is a result of the combination of issues mentioned below.
@@ -186,7 +202,7 @@ and they do not have a distribution of absolute H magnitudes (they are all brigh
 There are many more ISO and LPC objects in the simulation than the LSST is projected to observe, by orders of magnitude (only a few are expected).
 This is not exactly an issue: these populations were inflated on purpose so that a diversity of properties could be simulated.
 
-**Small biases in the reported PSF magnidues.**
+**Small biases in the reported PSF magnitudes.**
 A small bias (roughly 0.02 mag) was identified in the slope parameter `G` (i.e., measured value - truth value of G) in all *griz* bands. 
 Also, offsets between the intrinsic absolute magnitude in `V` band and recovered absolute magnitude in the LSST filters were found to be 
 larger than listed in the filter-conversion table above (Table 1). Section 4 in the notebook tutorial 
