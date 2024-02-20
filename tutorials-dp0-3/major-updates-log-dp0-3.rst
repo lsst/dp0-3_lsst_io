@@ -50,11 +50,21 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Feb 1 2024
+-----------
+
+The recommended image of the RSP at data.lsst.cloud was bumped to Weekly 2024_04.
+
 Jan 30 2024
 -----------
 
 The DP0.3 notebook tutorials 04a and 04b on phase curves have been updated to use the ``sbpy`` package, 
 which is now included in the default user environment.
+
+Dec 30 2023
+-----------
+
+Portal tutorials on phase curves (04) and user-uploaded tables (05) released.
 
 Nov 30 2023
 -----------
