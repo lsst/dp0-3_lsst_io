@@ -37,9 +37,11 @@ Joachim Moeyens, Samuel Cornwall, Ari Heinze, Steph Merritt, Lynne Jones, Siegfr
     This website describes only the DP0.3 data products and tutorials.
     Visit `dp0-2.lsst.io <https://dp0-2.lsst.io/index.html>`__ for information about the galactic and extragalactic simulated data products.
     Visit `dp0.lsst.io <https://dp0.lsst.io/index.html>`__ for information about how to:
-     - `get an RSP account to access the DP0 data (become a DP0 delegate) <https://dp0.lsst.io/delegate-resources/getting-started.html#new-delegate-checklist>`__,
-     - `ask questions, get help, and report bugs <https://dp0.lsst.io/delegate-resources/support.html>`__,
-     - `participate in virtual events <https://dp0.lsst.io/delegate-resources/virtual-events.html>`__ (e.g., hands-on tutorials for DP0).
+
+    * `get an RSP account to access the DP0 data <https://dp0.lsst.io/delegate-resources/getting-started.html#new-delegate-checklist>`__  (become a DP0 delegate),
+    * `ask questions, get help, and report bugs <https://dp0.lsst.io/delegate-resources/support.html>`__, or to 
+    * `participate in virtual events <https://dp0.lsst.io/delegate-resources/virtual-events.html>`__ (e.g., hands-on tutorials for DP0).
+
 
 
 .. toctree::
