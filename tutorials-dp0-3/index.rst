@@ -22,13 +22,12 @@ DP0.3 Tutorials
 
 These tutorials are for DP0 delegates using the Rubin Science Platform (RSP) deployed at the Interim Data Facility (IDF; the Google Cloud).
 
-Before following these tutorials, delegates should follow the `getting started checklist in the documentation for DP0.2 <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-started-with-dp0-checklist>`_ and:
+Before following these tutorials, delegates should have followed the
+`getting started with DP0 checklist <https://dp0.lsst.io/delegate-resources/getting-started.html#new-delegate-checklist>`_
+and be able to log in at `data.lsst.cloud <https://data.lsst.cloud/>`_.
 
-| 1. have gotten their `RSP accounts <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#delegate-homepage-rsp-accounts>`_ and be able to log in at `data.lsst.cloud <https://data.lsst.cloud/>`_,
-| 2. be familiar with this list of `risks and caveats <https://dp0-2.lsst.io/data-access-analysis-tools/rsp-warnings.html>`_ for the DP0-era RSP,
-| 3. have reviewed the basic introductions to the RSP's `Portal Aspect <https://dp0-2.lsst.io/data-access-analysis-tools/portal-intro.html>`_ and `Notebook Aspect <https://dp0-2.lsst.io/data-access-analysis-tools/nb-intro.html>`_, and
-| 4. know their options for `getting support <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#getting-support>`_.
-
+It is also important to review the list of `risks and caveats <https://dp0-2.lsst.io/data-access-analysis-tools/rsp-warnings.html>`_ for the DP0-era RSP,
+and to know the options for `getting support <https://dp0.lsst.io/delegate-resources/support.html>`_.
 
 All RSP tutorials are created by Rubin staff and adhere to
 the set of guidelines and best practices described in `RTN-045 <https://rtn-045.lsst.io/>`_,
@@ -98,8 +97,8 @@ about the contents and who contributed them.
 
 **Who can contribute a tutorial?**
 Everyone is welcome to contribute tutorials or science demonstrations to this repo.
-All are welcome to drop in to a `Stack Club <https://dp0-2.lsst.io/dp0-delegate-resources/index.html#stack-club>`_ session 
-to workshop a tutorial topic or get assistance.
+All are welcome to drop in to a `Rubin Science Assembly <https://dp0.lsst.io/delegate-resources/virtual-events.html#rubin-science-assemblies>`_
+session during "office hour" drop-in weeks to workshop a tutorial topic or get assistance.
 
 **How are contributions made?**
 The `README <https://github.com/rubin-dp0/delegate-contributions-dp03/blob/main/README.md>`_ file for this repo 
