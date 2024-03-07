@@ -24,8 +24,8 @@ DP0.3 Data Products
 .. _DP0-3-Data-Products-Introduction:
 
 
-The SSSC Simulated Data Set
-===========================
+The Simulated Data Set
+======================
 
 Information about the simulated data set which is being used for DP0.3. 
 
