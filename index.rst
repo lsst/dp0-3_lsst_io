@@ -57,8 +57,7 @@ Joachim Moeyens, Samuel Cornwall, Ari Heinze, Steph Merritt, Lynne Jones, Siegfr
 DP0.3 data products
 ===================
 
-The DP0.3 simulation was created by LSST Solar System Science Collaboration members,
-and only contains catalog data products for Solar System objects.
+The DP0.3 simulation only contains catalog data products for Solar System objects.
 For simulated Galactic and extragalactic data products, see the `documentation for DP0.2 <https://dp0-2.lsst.io>`_.
 
 **Be aware of these** :ref:`Data-Products-DP0-3-Data-Simulation-Issues` **with the DP0.3 simulation.**
