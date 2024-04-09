@@ -16,7 +16,7 @@
 
 
 ##################################################################
-05. Using user-supplied catalogs in in DP0.3 (beginner)
+05. Using user-supplied catalogs in DP0.3 (beginner)
 ##################################################################
 
 .. This section should provide a brief, top-level description of the page.
