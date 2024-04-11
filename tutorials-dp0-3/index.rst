@@ -83,7 +83,13 @@ which appears in all users' home directories.
 See the repository's `README file <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/README.md>`_ for the most up-to-date
 list of available tutorials with descriptions.
 
+DP03 tutorial notebooks rendered in HTML.
 
+  * `NB 01 Introduction to DP03 <https://dp0-3_lsst_io/_static/nb_html/DP03_01_Introduction_to_DP03.html>`_
+  * `NB 02 Main Belt Asteroids <https://dp0-3_lsst_io/_static/nb_html/DP03_02_Main_Belt_Asteroids.html>`_
+  * `NB 03 Trans-Neptunian Objects <https://dp0-3.lsst.io/_static/nb_html/DP03_03_Trans-Neptunian_Objects.html>`_
+  * `NB 04a Introduction to Phase Curves <https://dp0-3.lsst.io/_static/nb_html/DP03_4a_Introduction_to_Phase_Curves.html>`_
+  * `NB 04b Advanced Phase Curve Modeling <https://dp0-3.lsst.io/_static/nb_html/DP03_4b_Advanced_Phase_Curve_Modeling.html>`_
 
 .. _DP0-3-Tutorials-Contributed:
 
