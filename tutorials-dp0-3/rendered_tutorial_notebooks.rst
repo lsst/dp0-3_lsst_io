@@ -19,3 +19,5 @@ Rendered tutorial notebooks
 ###########################
 
 DP03 tutorial notebooks rendered in HTML.
+
+  * `NB 01 Introduction to DP03 <https://dp0-3_lsst_io/_static/nb_html/DP03_01_Introduction_to_DP03.html>`_
