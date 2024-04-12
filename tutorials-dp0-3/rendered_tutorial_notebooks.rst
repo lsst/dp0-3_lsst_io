@@ -21,7 +21,7 @@ Rendered tutorial notebooks
 DP03 tutorial notebooks rendered in HTML.
 
 | Title | Description  |
-|---|---|
+| --- | --- |
 | NB 01 Introduction to DP03 | add description |
 | NB 02 Main Belt Asteroids | add description |
 | NB 03 Trans-Neptunian Objects | add description |
