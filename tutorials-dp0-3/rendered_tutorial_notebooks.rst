@@ -21,10 +21,16 @@ Rendered tutorial notebooks
 DP03 tutorial notebooks rendered in HTML.
 
 
-| Title | Description  |
-|---|---|
-| NB 01 Introduction to DP03 | add description |
-| NB 02 Main Belt Asteroids | add description |
-| NB 03 Trans-Neptunian Objects | add description |
-| NB 04a Introduction to Phase Curves | add description |
-| NB 04b Advanced Phase Curve Modeling | add description |
++---------------------------------------+----------+
+| Header 1                              | Header 2 |
++=======================================+==========+
+| NB 01 Introduction to DP03            | add description      |
++----------+----------+
+| NB 02 Main Belt Asteroids             | add description      |
++----------+----------+
+| NB 03 Trans-Neptunian Objects         | add description |
++----------+----------+
+| NB 04a Introduction to Phase Curves   | add description |
++----------+----------+
+| NB 04b Advanced Phase Curve Modeling  | add description |
++----------+----------+
