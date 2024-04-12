@@ -26,7 +26,7 @@ DP03 tutorial notebooks rendered in HTML.
 +==============================================================================================================================+===================+
 | `NB 01 Introduction to DP03 <https://dp0-3.lsst.io/_static/nb_html/DP03_01_Introduction_to_DP03.html>`_                      | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
-| `NB 02 Main Belt Asteroids <https://dp0-3.lsst.io/_static/nb_html/DP03_02_Main_Belt_Asteroids.html>`_                         | add description   |
+| `NB 02 Main Belt Asteroids <https://dp0-3.lsst.io/_static/nb_html/DP03_02_Main_Belt_Asteroids.html>`_                        | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
 | `NB 03 Trans-Neptunian Objects <https://dp0-3.lsst.io/_static/nb_html/DP03_03_Trans-Neptunian_Object.html>`_                 | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
