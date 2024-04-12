@@ -37,3 +37,4 @@ DP03 tutorial notebooks rendered in HTML.
 
 More tutorials to come!
 
+https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-4989/_static/nb_html/DP03_01_Introduction_to_DP03.html
