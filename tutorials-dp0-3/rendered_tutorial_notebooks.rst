@@ -20,4 +20,4 @@ Rendered tutorial notebooks
 
 DP03 tutorial notebooks rendered in HTML.
 
-  * NB 01 Introduction to DP03 
+  * `NB 01 Introduction to DP03 <https://dp0-3.lsst.io/tutorials-dp0-3/portal-dp0-3-2.html>`_
