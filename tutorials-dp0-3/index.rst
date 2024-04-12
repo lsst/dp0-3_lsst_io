@@ -83,6 +83,13 @@ which appears in all users' home directories.
 See the repository's `README file <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/README.md>`_ for the most up-to-date
 list of available tutorials with descriptions.
 
+Tutorial notebooks rendered in html
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    rendered_tutorial_notebooks
+
 .. _DP0-3-Tutorials-Contributed:
 
 Contributed tutorials
