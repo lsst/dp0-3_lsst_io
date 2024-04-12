@@ -24,17 +24,17 @@ DP03 tutorial notebooks rendered in HTML.
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
 | Title                                                                                                                        | Brief Description |
 +==============================================================================================================================+===================+
-| NB 01 Introduction to DP03 dp0-3.lsst.io/_static/nb_html/DP03_01_Introduction_to_DP03.html                                   | add description   |
+| NB 01 Introduction to DP03                                                                                                   | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
-| NB 02 Main Belt Asteroids dp0-3.lsst.io/_static/nb_html/DP03_02_Main_Belt_Asteroids.html                                     | add description   |
+| NB 02 Main Belt Asteroids                                                                                                    | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
-| NB 03 Trans-Neptunian Objects dp0-3.lsst.io/_static/nb_html/DP03_03_Trans-Neptunian_Object.html                              | add description   |
+| NB 03 Trans-Neptunian Objects                                                                                                | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
-| NB 04a Introduction to Phase Curves p0-3.lsst.io/_static/nb_html/DP03_04a_Introduction_to_Phase_Curves.html                  | add description   |
+| NB 04a Introduction to Phase Curves                                                                                          | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
-| NB 04b Advanced Phase Curve Modeling dp0-3.lsst.io/_static/nb_html/DP03_04b_Advanced_Phase_Curve_Modeling.html               | add description   |
+| NB 04b Advanced Phase Curve Modeling                                                                                         | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
 
 More tutorials to come!
 
-https://github.com/lsst/dp0-3_lsst_io/blob/tickets/PREOPS-4989/_static/nb_html/DP03_01_Introduction_to_DP03.html
+test link: https://dp0-3.lsst.io/_static/nb_html/DP03_01_Introduction_to_DP03.html
