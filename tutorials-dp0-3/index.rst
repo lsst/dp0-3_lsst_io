@@ -84,11 +84,12 @@ See the repository's `README file <https://github.com/rubin-dp0/tutorial-noteboo
 list of available tutorials with descriptions.
 
 Tutorial notebooks rendered in html
+
 .. toctree::
     :titlesonly:
     :glob:
 
-    rendered_tutorial_notebooks
+    rendered_tutorial_notebooks.rst
 
 .. _DP0-3-Tutorials-Contributed:
 
