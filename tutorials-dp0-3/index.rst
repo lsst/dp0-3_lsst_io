@@ -90,6 +90,7 @@ list of available tutorials with descriptions.
     :glob:
 
     rendered_tutorial_notebooks.rst
+    rendered_nb_03_01.rst
 
 .. _DP0-3-Tutorials-Contributed:
 
