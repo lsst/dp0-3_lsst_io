@@ -90,7 +90,8 @@ list of available tutorials with descriptions.
     :glob:
 
     rendered_tutorial_notebooks.rst
-    rendered_nb_03_01.rst
+    rendered_nb_03_01
+    portal-dp0-3-1
 
 
 
