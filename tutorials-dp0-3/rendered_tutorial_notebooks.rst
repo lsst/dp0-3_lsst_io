@@ -36,7 +36,8 @@ DP03 tutorial notebooks rendered in HTML.
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
 
 
-https://dp0-3.lsst.io/v/main/_static/nb_html/DP03_01_Introduction_to_DP03.html
+.. raw:: html
+    :file: DP03_01_Introduction_to_DP03.html
 
 
 More tutorials to come!
