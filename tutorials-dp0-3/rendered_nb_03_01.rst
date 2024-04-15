@@ -15,7 +15,6 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-.. raw:: html
-    :file: DP03_01_Introduction_to_DP03.html
+Test File
 
 
