@@ -15,9 +15,9 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-##################################
-02. DP03 NB 02 Main Belt Asteroids
-##################################
+#######################
+02. Main Belt Asteroids
+#######################
 
 
 .. raw:: html
