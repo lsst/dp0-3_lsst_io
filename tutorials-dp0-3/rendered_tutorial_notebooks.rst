@@ -35,6 +35,7 @@ DP03 tutorial notebooks rendered in HTML.
 | NB 04b Advanced Phase Curve Modeling                                                                                         | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
 
+
 https://dp0-3.lsst.io/v/main/tutorials-dp0-3/portal-dp0-3-2.html
 
 https://dp0-3.lsst.io/_images/portal_tut01_step01b.png
