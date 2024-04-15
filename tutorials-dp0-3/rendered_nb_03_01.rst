@@ -15,9 +15,9 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-###################################
-01. DP03 NB 01 Introduction to DP03
-###################################
+###########################
+01. Introduction to DP03
+###########################
 
 
 .. raw:: html
