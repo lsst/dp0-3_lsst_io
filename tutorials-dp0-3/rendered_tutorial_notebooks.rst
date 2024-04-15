@@ -35,5 +35,7 @@ DP03 tutorial notebooks rendered in HTML.
 | NB 04b Advanced Phase Curve Modeling                                                                                         | add description   |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
 
+test
+
 More tutorials to come!
 
