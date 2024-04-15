@@ -36,5 +36,8 @@ DP03 tutorial notebooks rendered in HTML.
 +------------------------------------------------------------------------------------------------------------------------------+-------------------+
 
 
+https://dp0-3.lsst.io/v/main/tutorials-dp0-3/portal-dp0-3-2.html
+
+
 More tutorials to come!
 
