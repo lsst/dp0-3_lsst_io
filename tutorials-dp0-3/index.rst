@@ -83,6 +83,20 @@ which appears in all users' home directories.
 See the repository's `README file <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/README.md>`_ for the most up-to-date
 list of available tutorials with descriptions.
 
+**Tutorial notebooks rendered in html:**
+Note that the overlapping columns in printed tables is a known issue.
+Apologies for the inconvenience that some table contents are not readable in the html files at this time.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    rendered_nb_03_01
+    rendered_nb_03_02
+    rendered_nb_03_03
+    rendered_nb_03_04a
+    rendered_nb_03_04b    
+
 
 
 .. _DP0-3-Tutorials-Contributed:
