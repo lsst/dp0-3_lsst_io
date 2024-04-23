@@ -84,6 +84,8 @@ See the repository's `README file <https://github.com/rubin-dp0/tutorial-noteboo
 list of available tutorials with descriptions.
 
 **Tutorial notebooks rendered in html:**
+Note that the overlapping columns in printed tables is a known issue.
+Apologies for the inconvenience that some table contents are not readable in the html files at this time.
 
 .. toctree::
     :titlesonly:
