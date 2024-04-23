@@ -95,7 +95,6 @@ list of available tutorials with descriptions.
     rendered_nb_03_04a
     rendered_nb_03_04b    
 
-test link https://dp0-3.lsst.io/tutorials-dp0-3/DP03_01_Introduction_to_DP03.html
 
 
 .. _DP0-3-Tutorials-Contributed:
