@@ -50,6 +50,11 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Apr 24 2024
+-----------
+
+DP0.3 Notebook tutorial 05 on near-Earth objects (NEOs) released.
+
 Feb 1 2024
 -----------
 
