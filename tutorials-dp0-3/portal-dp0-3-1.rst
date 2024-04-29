@@ -74,7 +74,7 @@ and made available to users as the ``MPCORB`` table
 Wikipedia provides a decent
 `beginner-level guide to orbital elements <https://en.wikipedia.org/wiki/Orbital_elements>`_.
 The DP0.3 ``MPCORB`` table is a simulation of what this data product will be like after 10 years of LSST.  
-Note that the ```MPCORB`` table is a table of simulated input orbital elements rather than actual orbit fit results.  
+Note that the ``MPCORB`` table is a table of simulated input orbital elements rather than actual orbit fit results.  
 
 The MPC tabulates all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
 Thus, the ``DP0.3 MPCORB`` table will have more rows than the ``SSObject`` table.
@@ -128,22 +128,19 @@ The `documentation for ADQL <http://www.ivoa.net/documents/latest/ADQL.html>`_ i
 Step 1. Plot histograms of orbital elements in the ``MPCORB`` table
 ===================================================================
 
-1.1. Log in to the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
+1.1. Log in to the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.  
+
+1.2. Since you will be working with the DP0.3 data, select the "DP0.3 Catalogs" tab on top of the page.  This will brong you to the default landing page of Portal's DP0.3 page.  
 
 .. figure:: /_static/portal_tut01_step01a.png
     :name: portal_tut01_step01a
     :alt: A screenshot of the default view of the Portal Aspect.
 
-    The default view of the Portal Aspect.
+    The default view of the Portal Aspect after selecting the "DP0.3 Catalogs" tab in the RSP Portal aspect
 
-1.2. To access the DP0.3 TAP Service (DP0.2 is the default), in the upper right corner next to "TAP Services" click "Show". 
-A new option will appear at the top, called "Select TAP Service".
-Click on where it says "Using LSST DP0.2 DC2", and select "LSST DP0.3 SSO" from the drop-down menu.
-In the upper right corner next to "TAP Services" click "Hide".
-
-1.3. The top of the page now displays "LSST DP0.3 SSO Tables".
-The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the default "Table" will be "dp03_catalogs_10yr.DiaSource".
-Change the "Table" to be "dp03_catalogs_10yr.MPCORB". 
+1.3. The top left part of the page now displays "LSST DP0.3 SSO Tables".
+The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the default "Table" will be "dp03_catalogs_10yr.SSObject".
+Click the double-arrow and in the "Table" tab and change the "Table" to be "dp03_catalogs_10yr.MPCORB". 
 Notice how the area under "Enter Constraints" automatically un-checks the "Spatial Constraints" box, as the 
 ``MPCORB`` table does not contain sky coordinates, and how the table under "Output Column Selection and Constraints"
 automatically updates to display the columns of the ``MPCORB`` table.
