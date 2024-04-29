@@ -25,7 +25,7 @@
 
 **Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:** September 19, 2023;  udpates to reflect the changes to the Portal UI - April 30, 2024
+**Last verified to run:** September 19, 2023;  udpated to reflect the changes to the Portal UI - started on April 30, 2024
 
 **Targeted learning level:** Beginner
 
