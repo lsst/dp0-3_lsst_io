@@ -184,8 +184,8 @@ The default plot is a 2-d histogram for the first two columns, eccentricity and 
     The default results view, with a plot at left and the table of results at right.
 
 1.6. Create a histogram of the eccentricity values.
-In the plot panel, click on the "Settings" icon (double gears) to get the "Plot Parameters" pop-up window.
-Click on "Add New Chart".
+Add a new chart by clicking on the "+ sign on the upper left.  
+This will bring up a new "Add a new chart" pop-up window.
 Next to "Plot Type", select "Histogram" from the drop-down menu.
 Next to "Column or expression" enter "e", the column name containing the eccentricity values.
 Set the "Min" and "Max" values to 0 and 1, and the "Bin width" will automatically update to 0.02.
@@ -198,7 +198,7 @@ Set the "Min" and "Max" values to 0 and 1, and the "Bin width" will automaticall
     The "Plot Parameters" pop-up window set to create a histogram of eccentricities.
 
 1.7. Click "OK" and a new plot panel containing the eccentricity histogram will appear next to the default plot panel.
-To get rid of the default histogram, click on the blue cross in the upper right corner of that plot to close it.
+To get rid of the default histogram, click on the black cross in the upper right corner of that plot to close it.
 Now only the eccentricity histogram appears.
 
 1.8. Repeat steps 1.6 and 1.7 to add new plots containing the histograms for inclination and absolute magnitude.
