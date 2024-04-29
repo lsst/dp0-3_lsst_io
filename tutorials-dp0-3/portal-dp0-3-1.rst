@@ -230,9 +230,9 @@ Follow step 1.9 to adjust the appearance of the other two histograms.
 
 1.11. To delete these search results and return to the query interface, click on the 'x' in the tab in the table,
 next to where it says "dp03_catalogs_10yr.MPCORB".
-The Portal will return to the query interface.
+The Portal will return to the interface where you select the catalog set.  
 Click on "Reset Column Selections & Constraints" above the table interface to remove the previous query.
-Refreshing the browser window is another way to return the Portal to its default, pre-query state.
+Refreshing the browser window is another way to return the Portal to the state corresponding to clicking on "DP0.3 Catalogs" tab.
 
 
 Step 2. Create a color-color diagram from the ``SSObject`` table 
