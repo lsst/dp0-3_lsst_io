@@ -50,6 +50,11 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Apr 30 2024
+-----------
+
+Released one introductory-level :ref:`DP0-3-Tutorials-ES`. 
+
 Apr 24 2024
 -----------
 
