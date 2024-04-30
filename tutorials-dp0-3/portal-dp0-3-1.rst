@@ -136,7 +136,7 @@ Step 1. Plot histograms of orbital elements in the ``MPCORB`` table
     :name: portal_tut01_step01a
     :alt: A screenshot of the default view of the Portal Aspect.
 
-    The default view of the Portal Aspect after selecting the "DP0.3 Catalogs" tab in the RSP Portal aspect
+    **The default view of the Portal Aspect after selecting the "DP0.3 Catalogs" tab in the RSP Portal aspect**
 
 1.3. The top left part of the page now displays "LSST DP0.3 SSO Tables".
 The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the default "Table" will be "dp03_catalogs_10yr.SSObject".
@@ -149,7 +149,7 @@ automatically updates to display the columns of the ``MPCORB`` table.
     :name: portal_tut01_step01b
     :alt: A screenshot of the Portal interface when it is prepared to query the MPCORB table.
 
-    The Portal interface is prepared to query the ``MPCORB`` table.
+    **The Portal interface, prepared to query the ``MPCORB`` table**
 
 1.4. Set up a query to retrieve the eccentricity, inclination, and absolute magnitude H for 
 50000 bright objects in the ``MPCORB`` table.
@@ -171,7 +171,7 @@ Step 2 will demonstrate a way of obtaining a random sample of DP0.3 objects.
     :name: portal_tut01_step01c
     :alt: A screenshot of the Portal's table interface showing the query set up.
 
-    The Portal interface with the described query set up.
+    **The Portal interface with the described query set up**
 
 1.5. At lower left, click on "Search", and the Portal will execute the query and display
 the default results view.
@@ -181,7 +181,7 @@ The default plot is a 2-d histogram for the first two columns, eccentricity and 
     :name: portal_tut01_step01d
     :alt: A screenshot of the Portal's default results view for the query submitted.
 
-    The default results view, with a plot at left and the table of results at right.
+    **The default results view, with a plot at left and the table of results at right**
 
 1.6. Create a histogram of the eccentricity values.
 Add a new chart by clicking on the "+ sign on the upper left.  
@@ -195,7 +195,7 @@ Set the "Min" and "Max" values to 0 and 1, and the "Bin width" will automaticall
     :name: portal_tut01_step01e
     :alt: A screenshot of the Plot Parameters pop-up window set to create a histogram of eccentricities.
 
-    The "Plot Parameters" pop-up window set to create a histogram of eccentricities.
+    **The "Plot Parameters" pop-up window set to create a histogram of eccentricities**
 
 1.7. Click "OK" and a new plot panel containing the eccentricity histogram will appear next to the default plot panel.
 To get rid of the default histogram, click on the black cross in the upper right corner of that plot to close it.
@@ -209,7 +209,7 @@ making more room for the three plots.
     :name: portal_tut01_step01f
     :alt: A screenshot of the Portal view with three histograms on the right and a narrow table on the left.
 
-    The adjusted Portal results viewer, with three histograms and a narrow table.
+    **The adjusted Portal results viewer, with three histograms and a narrow table**
 
 1.9. With the absolute magnitude plot selected (it will have an orange boundary), click on the "Settings" icon
 and adjust the "Plot Parameters".
@@ -222,7 +222,7 @@ Under "Chart Options", set the title to "H Histogram" and select the box to log 
     :name: portal_tut01_step01g
     :alt: A screenshot of the Plot Parameters and Color Picker pop-up windows.
 
-    Use the "Plot Parameters" and "Color Picker" pop-up windows to adjust the appearance.
+    **The use of the "Plot Parameters" and "Color Picker" pop-up windows to adjust the appearance**
 
 1.10. Click "Apply", and close the pop-up windows.
 The absolute magnitude histogram will have the changes applied.
@@ -260,7 +260,7 @@ Click "Search" in the lower left corner.
     :name: portal_tut01_step02a
     :alt: A screenshot of the ADQL query to obtain table information.
 
-    A screenshot of the ADQL entry to select the number of observations, and the range of ``ssObjectId`` values on the SSObject table.  
+**A screenshot of the ADQL entry to select the number of observations, and the range of ``ssObjectId`` values on the SSObject table**
 
 
 2.2. The results view will look similar to that in step 1.5 above, but for this query the default plot is not helpful.
@@ -271,7 +271,7 @@ Obtaining the values in the table was the only objective of this first query.
     :name: portal_tut01_step02b
     :alt: A screenshot of the results showing count, minimum, and maximum for ssObjectId.
 
-    The results view table of the object count, as well as the minimum and the maximum values of ``ssObjectId``.
+**The results view table of the object count, as well as the minimum and the maximum values of ``ssObjectId``**
 
 2.3. Notice that the ``SSObject`` table contains roughly 4.4 million moving objects. 
 Comparing this to the size of the ``MPCORB`` table is left as an exercise for the learner, below.
@@ -294,14 +294,15 @@ Before clicking "Search", increase the row limit to 200000.
     WHERE ssObjectId > 8660000000000000000
 
 
-2.7. The default results view displays a plot of the r- vs. the g-band absolute H magnitude at left.
-At right, the table shows that absolute H magnitudes were not derived for all objects.
+2.7. The default display on the right-hand window will be "Coverage" which is not applicable in the DP0.3 work.  
+Click on the "Active Chart" tab.  The resulting view displays a plot of the r- vs. the g-band absolute H magnitude at left.
+At left, the table shows that absolute H magnitudes were not derived for all objects.
 
 .. figure:: /_static/portal_tut01_step02c.png
     :name: portal_tut01_step02c
     :alt: A screenshot of the default results view for the SSObject table query.
 
-    The default results view for the retrieved subset of 136,134 random ``SSObjects``.
+**The default results view for the retrieved subset of 136,134 random ``SSObjects``**
 
 2.8. In the plot panel, click on the "Settings" icon at upper right (the double gears) and in the
 "Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``g_H - r_H`` and "Y" be ``i_H - z_H``.
@@ -315,7 +316,7 @@ Under "Chart Options", set the "X Label", "Y Label", "X Min", "X Max", "Y Min", 
     :name: portal_tut01_step02d
     :alt: A screenshot of the plot parameters pop-up window set to make a color-color diagram.
 
-    Adjust the "Plot Parameters" to create a color-color diagram.
+**Pop-up window with the "Plot Parameters" to create a color-color diagram**
 
 
 2.9. Click "Apply" and view the color-color diagram.
@@ -325,7 +326,7 @@ Under "Chart Options", set the "X Label", "Y Label", "X Min", "X Max", "Y Min", 
     :name: portal_tut01_step02e
     :alt: A screenshot of the color-color diagram.
 
-    The color-color diagram for a random subset of ``SSObjects``.
+**The color-color diagram for a random subset of ``SSObjects``**
 
 
 2.10. View the plot, and notice that there are two sets of object colors in the simulation.
