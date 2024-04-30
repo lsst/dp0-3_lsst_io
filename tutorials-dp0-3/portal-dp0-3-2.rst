@@ -135,7 +135,7 @@ Record the ``ssObjectID`` of the chosen object.
 Step 2. Visualize the object's orbit
 ====================================
 
-2.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+2.1. Click on "DP0.3 Catalogs" tab at the top to return to the main search page, and then "Edit ADQL".
 Submit the following query, using the ``ssObjectId`` as below (or one of your choosing).
 This query returns the heliocentric (sun-centered) and topocentric (Earth-centered) 3D distances
 of the object at the time of every simulated LSST observation from the ``SSSource`` table.
@@ -148,7 +148,7 @@ of the object at the time of every simulated LSST observation from the ``SSSourc
     WHERE ssObjectId = 8416929992792689125
 
 
-2.2. View the default results view, which plots the sun-centered orbit of ``heliocentricY`` versus ``heliocentricX``.
+2.2. The "Results" tab at the top will display the results from the query, which plots the sun-centered orbit of ``heliocentricY`` versus ``heliocentricX``.
 Click on the plot settings icon and in the pop-up window, select "Chart Options" and then add a grid
 to the x and y axis to more easily identify the Sun's location at (0, 0).
 Click "Apply" and "Close".  
