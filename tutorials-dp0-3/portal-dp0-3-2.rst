@@ -123,8 +123,8 @@ Change the y-axis column to eccentricity (``e``), click "Apply" and then "Close"
 Click on an object of interest and the point will turn orange and it will be highlighted in the table.
 Record the ``ssObjectID`` of the chosen object.
 
-.. figure:: /_static/portal_tut02_step01a.png
-    :name: portal_tut02_step01a
+.. figure:: /_static/dp03_portal_tut02_step01_05.png
+    :name: dp03_portal_tut02_step01_05
     :alt: A screenshot of the results view plotting eccentricity versus number of observations.
 
     A screenshot of the results view, with the plot altered to show eccentricy versus number of observations.
