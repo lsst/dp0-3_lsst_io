@@ -118,7 +118,7 @@ and have orbits that are inclined by at least 20 degrees and eccentricities betw
 
 1.4. The default results view will plot the g-band absolute H magnitude versus the number of observations for the 4150 objects.
 
-1.5. In the upper-right corner of the plot panel, click the settings icon (double gears) to open the plot parameters pop-up window.
+1.5. In the upper-right corner of the Active Chart panel, click the settings icon (single gear) to open the plot parameters pop-up window.
 Change the y-axis column to eccentricity (``e``), click "Apply" and then "Close".
 Click on an object of interest and the point will turn orange and it will be highlighted in the table.
 Record the ``ssObjectID`` of the chosen object.
