@@ -160,7 +160,7 @@ Step 2. Explore the properties of a population of TNOs
 ======================================================
 
 2.1.  Now that the population of the Trans-Neptunian Objects has been identified, it is possible to further explore their properties.  
-To study the properties of a larger sample of TNOs, return to the ADQL query interface by clicking on "RSP TAP Search" tab, and clicking on "Edit ADQL" button.  
+To study the properties of a larger sample of TNOs, return to the ADQL query interface by clicking on "DP0.3 Catalogs" tab, and clicking on "Edit ADQL" button.  
 
 2.2.  Clear the ADQL query, and execute a query below, simiar to the one in Step 1.2, but which includes only objects at ``a`` > 30.1 au.
 Also include the absolute H magnitude ``mpcH`` which will be used in the derivation of diameters of TNOs in the subsequent step (2.6) below.
@@ -182,7 +182,7 @@ The default plot in the results view will be a heatmap of inclination vs. eccent
 2.4.  Plot the eccentricity of the orbit ``e`` as a function of the semi-major axis ``a``.  
 This time (in contrast to Step 1.6 but accomplishing the same goal), calculate ``a`` from ``e`` and ``q`` via 
 setting appropriate plot parameters rather than creating another column in the right-hand table.  
-Start by clicking on the "plot settings" (two gears) on the left-hand panel, and click on "Add New Chart."  
+Start by clicking on the "+" sign on the left-hand panel to add a new chart.  
 
 2.5. In the "Plot Parameters" pop-up window, select "Heatmap" for the plot type.
 Enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  
@@ -265,7 +265,7 @@ See also the first exercise for the learner in Step 6.
 Step 3. Find and explore a well-observed TNO
 ============================================
 
-3.1. Return to the RSP TAP Search form by clicking on the RSP TAP Search button at upper left.
+3.1. Return to the RSP TAP Search form by clicking on the 'dp0.3 Catalogs" tab.
 Navigate to the ADQL interface by clicking on the "Edit ADQL" button.
 
 3.2. To identify a distant Solar System object with a large number of observations, enter the query below.
