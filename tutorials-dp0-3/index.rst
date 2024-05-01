@@ -99,6 +99,24 @@ Apologies for the inconvenience that some table contents are not readable in the
     rendered_nb_03_05
 
 
+.. _DP0-3-Tutorials-ES:
+
+Spanish-language tutorials
+==========================
+
+**Credit:** The Argentinian International In-Kind Program team, in particular Dante Paz, Carolina Villalón, and Marco Augusto Rocchietti,
+have translated the introductory DP0.3 tutorial into Spanish.
+
+The introductory DP0.2 Notebook tutorial (DP03_01_Introduccion_a_DP03_ES.ipynb) is available in the
+`tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_ repository.
+An executed version of this notebook, rendered in html, is available in the list above.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    rendered_nb_03_01_es
+
 
 .. _DP0-3-Tutorials-Contributed:
 
