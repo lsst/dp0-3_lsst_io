@@ -130,7 +130,7 @@ Step 1. Plot histograms of orbital elements in the ``MPCORB`` table
 
 1.1. Log in to the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.  
 
-1.2. Since you will be working with the DP0.3 data, select the "DP0.3 Catalogs" tab on top of the page.  This will brong you to the default landing page of Portal's DP0.3 page.  
+1.2. Since you will be working with the DP0.3 data, select the "DP0.3 Catalogs" tab on top of the page.  This will bring you to the default landing page of Portal's DP0.3 page.  
 
 .. figure:: /_static/portal_tut01_step01a.png
     :name: portal_tut01_step01a
@@ -140,7 +140,7 @@ Step 1. Plot histograms of orbital elements in the ``MPCORB`` table
 
 1.3. The top left part of the page now displays "LSST DP0.3 SSO Tables".
 The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the default "Table" will be "dp03_catalogs_10yr.SSObject".
-Click the double-arrow and in the "Table" tab and change the "Table" to be "dp03_catalogs_10yr.MPCORB". 
+Click the double-arrow in the "Tables" tab and change the table to be "dp03_catalogs_10yr.MPCORB". 
 Notice how the area under "Enter Constraints" automatically un-checks the "Spatial Constraints" box, as the 
 ``MPCORB`` table does not contain sky coordinates, and how the table under "Output Column Selection and Constraints"
 automatically updates to display the columns of the ``MPCORB`` table.
@@ -185,7 +185,7 @@ The default plot is a 2-d histogram for the first two columns, eccentricity and 
 
 1.6. Create a histogram of the eccentricity values.
 Add a new chart by clicking on the "+ sign on the upper left.  
-This will bring up a new "Add a new chart" pop-up window.
+This will bring up a new "Add new chart" pop-up window.
 Next to "Plot Type", select "Histogram" from the drop-down menu.
 Next to "Column or expression" enter "e", the column name containing the eccentricity values.
 Set the "Min" and "Max" values to 0 and 1, and the "Bin width" will automatically update to 0.02.
@@ -306,7 +306,7 @@ At left, the table shows that absolute H magnitudes were not derived for all obj
 
 2.8. In the plot panel, click on the "Settings" icon at upper right (the double gears) and in the
 "Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``g_H - r_H`` and "Y" be ``i_H - z_H``.
-Set the "Color Scale" to Earth.
+Set the "Color Scale" to "YlGnBu".
 Set the "Number of X-Bins" and "Number of Y-Bins" to be 200.
 Note that the maximum number of bins in such "heatmap" plots in both X and Y is 300.  
 Under "Chart Options", set the "X Label", "Y Label", "X Min", "X Max", "Y Min", and "Y Max" values as in the screenshot below.  
