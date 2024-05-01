@@ -111,6 +111,12 @@ The introductory DP0.2 Notebook tutorial (DP03_01_Introduccion_a_DP03_ES.ipynb) 
 `tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_ repository.
 An executed version of this notebook, rendered in html, is available in the list above.
 
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    rendered_nb_03_01_es
+
 
 .. _DP0-3-Tutorials-Contributed:
 
