@@ -25,7 +25,7 @@
 
 **Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:** September 15, 2023
+**Last verified to run:** September 15, 2023;  updates to reflect new UI started May 1 2024
 
 **Targeted learning level:** Intermediate
 
