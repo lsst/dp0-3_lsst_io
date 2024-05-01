@@ -83,7 +83,7 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
     WHERE ssObjectId > 9000000000000000000 
 
 
-1.3. Set the "Row Limit" to be 200000 and click "Search".
+1.3. Set the "Row Limit" to be 200000 and click "Search".  
 
 
 1.4. The default results view will show a heatmap plot of ``q`` vs. ``e`` at left, and the table view at right.
