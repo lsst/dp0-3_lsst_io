@@ -67,8 +67,7 @@ Step 1. Identify a population of TNOs
 =====================================
 
 1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
-At upper right, next to "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top.
-
+Click on "DP0.3 Catalogs" tab.  This will bring you to the "dp03_catalogs_10yr" table collection.  
 
 1.2. At upper right, next to "View" choose "Edit ADQL".
 Enter the following ADQL statement into the ADQL Query box.
@@ -125,7 +124,8 @@ Click "Add Column", and see the new column appear in the table.
 
 
 1.7. Create a scatter plot of inclination vs. semi-major axis.
-In the plot panel, click the "Settings" icon (double gears), and select "Add New Chart".
+In the plot panel, click on the "+" sign.  
+This will bring up a new "Add New Chart" pop-up window.  
 Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
 In the "Chart Options" dropdown menu, set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.  
 Click "OK".
