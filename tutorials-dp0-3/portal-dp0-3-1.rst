@@ -256,7 +256,7 @@ Click "Search" in the lower left corner.
     FROM dp03_catalogs_10yr.SSObject
 
 .. figure:: /_static/portal_tut01_step02a.png
-    :width: 600
+    :width: 800
     :name: portal_tut01_step02a
     :alt: A screenshot of the ADQL query to obtain table information.
 
@@ -267,7 +267,7 @@ Click "Search" in the lower left corner.
 Obtaining the values in the table was the only objective of this first query.
 
 .. figure:: /_static/portal_tut01_step02b.png
-    :width: 400
+    :width: 800
     :name: portal_tut01_step02b
     :alt: A screenshot of the results showing count, minimum, and maximum for ssObjectId.
 
