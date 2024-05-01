@@ -25,7 +25,7 @@
 
 **Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:** September 19, 2023;  udpated to reflect the changes to the Portal UI - started on April 30, 2024
+**Last verified to run:** September 19, 2023;  udpdated to reflect the changes to the Portal UI - started on April 30, 2024
 
 **Targeted learning level:** Beginner
 
@@ -184,7 +184,7 @@ The default plot is a 2-d histogram for the first two columns, eccentricity and 
     **The default results view, with a plot at left and the table of results at right**
 
 1.6. Create a histogram of the eccentricity values.
-Add a new chart by clicking on the "+ sign on the upper left.  
+Add a new chart by clicking on the "+" sign on the upper left.  
 This will bring up a new "Add new chart" pop-up window.
 Next to "Plot Type", select "Histogram" from the drop-down menu.
 Next to "Column or expression" enter "e", the column name containing the eccentricity values.
@@ -304,7 +304,7 @@ At left, the table shows that absolute H magnitudes were not derived for all obj
 
 **The default results view for the retrieved subset of 136,134 random ``SSObjects``**
 
-2.8. In the plot panel, click on the "Settings" icon at upper right (the double gears) and in the
+2.8. In the plot panel, click on the "Settings" icon at upper right (the single gear) and in the
 "Plot Parameters" pop-up window, "Modify Trace" to have "X" be ``g_H - r_H`` and "Y" be ``i_H - z_H``.
 Set the "Color Scale" to "YlGnBu".
 Set the "Number of X-Bins" and "Number of Y-Bins" to be 200.
