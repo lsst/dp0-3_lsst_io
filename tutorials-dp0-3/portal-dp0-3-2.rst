@@ -95,7 +95,7 @@ Step 1. Identify an object to explore
 1.1. Log in to the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 
 1.2. To access the DP0.3 TAP Service, click on the DP0.3 Catalogs tab at the top of the screen. 
-The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" will be used for this tutorial. 
+The default "Table Collection (Schema)" which is "dp03_catalogs_10yr" will be for this tutorial. 
 Change default "Table" will be "dp03_catalogs_10yr.SSObject" to "dp03_catalogs_10yr.DiaSource" by clicking on the down arrow and selecting the table.
 
 1.3. At upper right, click "Edit ADQL", and enter the following query into the box. 
@@ -208,7 +208,7 @@ Click on "Active Chart" to switch between the blank "Coverage" tab and the "Acti
 Click on the settings icon (single gear) in the plot panel and in the plot parameters pop-up window, 
 under "Trace Options" next to "Color Map" enter ``midPointMjdTai``, and from the drop-down menu for 
 "Color Scale" choose "Rainbow".
-Click "Apply" and then "Close".
+Click "Apply" and then "Close". This will illustrate two-dimensional motion as a function of time, which is marked as a changing color.
 
 .. figure:: /_static/portal_tut02_step03a.png
     :width: 400
