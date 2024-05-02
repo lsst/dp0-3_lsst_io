@@ -392,10 +392,10 @@ Notice how the magnitude is a monotonic function of phase angle and distance, bu
     :width: 600
     :alt: A screenshot of four plots showing magnitude and phase angle are not correlated with time, and that magnitude is correlated with phase angle and distance from Earth.
 
-    Four plots demonstrating that the apparent magnitude depends on phase angle and distance from Earth.
+    **Four plots demonstrating that the apparent magnitude depends on phase angle and distance from Earth**
 
 4.4.  Plot the topocentric and heliocentric distances of the object as a function of time already retrieved in Step 4.1.  
-First, delete all but one of the plots prepared in Step 4.3 by clicking on the blue X in the upper right-hand part of the plot panels to make space for new plots.  
+First, delete all but one of the plots prepared in Step 4.3 by clicking on the blue X in the upper right-hand part of any three of the four plot panels to make space for new plots.  
 Then add a pair of new scatter plots that show ``topocentricDist`` and ``heliocentricDist``
 as a function of ``midPointMjdTai - 60000``.
 Then delete the remaining old plot so that only the two new plots are displayed.
@@ -405,7 +405,7 @@ Then delete the remaining old plot so that only the two new plots are displayed.
     :name: portal_tut03_step04b
     :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
 
-    Heliocentric and topocentric distance of the TNO as a function of time.  
+    **Heliocentric and topocentric distance of the TNO as a function of time**
 
 
 4.5. The left plot shows the periodic change of the topocentric distance with time 
