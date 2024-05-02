@@ -441,7 +441,7 @@ This is expected given its multi-au distance from the Sun.
     Heliocentric Y vs. X distance of the trans-Neptunian object.  
 
 
-5.3.  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "Plot Settings" and click on "Add New Chart."  
+5.3.  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "+" button to add a new chart. 
 Select ``heliocentricZ`` for y and ``heliocentricX`` for x.  
 Click on "Apply" or "OK."  
 
@@ -458,9 +458,9 @@ simulated Rubin observation, but the object does pass through the ecliptic plane
 
 
 5.5.  Next, plot the ``topocentricY`` vs. ``topocentricX`` and ``topocentricZ`` vs. ``topocentricX`` distances.   
-On the same screen where you generated the plots in previous two steps, click on "Plot Settings" and click on "Add New Chart." 
+On the same screen where you generated the plots in previous two steps, click on "+" button to add a new chart.   
 First, select ``topocentricY`` for y and ``topocentricX`` for x. and click "Apply" or "OK."   
-Next, click on "Plot Settings" and click on "Add New Chart."  Select ``topocentricZ`` for y and ``topocentricX`` for x, and click "Apply" or "OK."   
+Next, click again on "+" button to add a new chart.    Select ``topocentricZ`` for y and ``topocentricX`` for x, and click "Apply" or "OK."   
 There, the effect of position of the TNO on the sky as a result of Earth's orbital motion is clearly apparent.  
 
  .. figure:: /_static/portal_tut03_step05c.png
@@ -468,7 +468,7 @@ There, the effect of position of the TNO on the sky as a result of Earth's orbit
     :width: 600
     :alt: A screenshot of four plots showing the heliocentric and topocentric distances of the trans-Neptunian object as a function of time.
 
-    Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots).  
+**Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots)**
 
 
 
