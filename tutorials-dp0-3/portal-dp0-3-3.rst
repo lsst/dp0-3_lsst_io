@@ -124,7 +124,7 @@ Click "Add Column", and see the new column appear in the table.
 
 
 1.7. Create a scatter plot of inclination vs. semi-major axis.
-In the plot panel, click on the "+" sign.  
+In the plot panel, click on the "+" signpn the upper right side.  
 This will bring up a new "Add New Chart" pop-up window.  
 Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
 In the "Chart Options" dropdown menu, set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.  
@@ -374,7 +374,9 @@ heliocentric and topocentric distances, and time of the observations for the TNO
 
 
 4.2. The default plot will have the r-band magnitude as a function of time.  
-Use the plot "Settings" function to add a scatter plot showing the phase angle as a function of time.
+Click on the "hamburger" menu (three horizontal lines) and in the "results Layout" click on the double-arrow, and select "Tables coverage images charts" box.  
+In the right-hand panel, click the "Active Chart" tab.  
+Click on the "+" sign in the plot panel to add a scatter plot showing the phase angle as a function of time.
 For the x-axis, use ``midPointMjdTai - 60000``  to show more clearly the timescales between observations.
 
 4.3. As mentioned above, the simulated Solar System data does not include any time-varying features.
