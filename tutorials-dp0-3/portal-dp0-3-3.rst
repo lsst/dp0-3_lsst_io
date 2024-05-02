@@ -438,7 +438,7 @@ This is expected given its multi-au distance from the Sun.
     :width: 600
     :alt: A screenshot of a plot showing the heliocentric Y vs. heliocentric X distance of the trans-Neptunian object.
 
-    Heliocentric Y vs. X distance of the trans-Neptunian object.  
+**Heliocentric Y vs. X distance of the trans-Neptunian object** 
 
 
 5.3.  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "+" button to add a new chart. 
@@ -454,7 +454,7 @@ simulated Rubin observation, but the object does pass through the ecliptic plane
     :width: 600
     :alt: A screenshot of plots showing the heliocentric Y and heliocentric Z vs. heliocentric X distance of the trans-Neptunian object as a function of time.
 
-    Heliocentric Y vs. X distance as well as helliocentric Z vs. X distance of the trans-Neptunian object as a function of time. 
+**Heliocentric Y vs. X distance as well as helliocentric Z vs. X distance of the trans-Neptunian object as a function of time**
 
 
 5.5.  Next, plot the ``topocentricY`` vs. ``topocentricX`` and ``topocentricZ`` vs. ``topocentricX`` distances.   
