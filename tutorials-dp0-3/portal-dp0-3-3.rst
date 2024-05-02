@@ -186,7 +186,6 @@ Start by clicking on the "+" sign on the left-hand panel to add a new chart.
 
 2.5. In the "Plot Parameters" pop-up window, select "Heatmap" for the plot type.
 Enter "q/(1-e)" for the X-axis, and "e" for the y-axis.  
-Choose the "YlOrRd" (yellow-orange-red) color scale.
 Increase the number of bins to 200 for both x and y to improve the resolution of the heatmap.
 Expand the "Chart Options" and set the titles and labels as below.
 Restrict the x-axis to ``30 < a < 100`` au to illustrate in more detail the region of 1 to three times Neptune's semi-major axis.  
@@ -232,7 +231,7 @@ Click the "Add Column" button.
     How to add a new column containing the estimated diameter.  
 
 2.9.  Plot the distribution of estimated diameters in log-space.
-Open the "Plot Parameters" pop-up window, click on "Add New Chart," select "Histogram", and enter the parameters as below.  
+Click on the "+" sign in the pop-up window, click on "Add New Chart," select "Histogram", and enter the parameters as below.  
 
 .. figure:: /_static/portal_tut03_step02d.png
     :width: 400
