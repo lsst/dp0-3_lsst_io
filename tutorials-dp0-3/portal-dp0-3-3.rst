@@ -318,19 +318,19 @@ Its modest eccentricity of 0.1512 implies that this is a TNO (unlikely to be a c
 In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
 Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is redundant with the default plot.
 Click on the "hamburger" icon (three horizontal lines) on the upper left, and click on the "Results Layout" box.  
-Select the "Coverage Charts Tables" box (second from the bottom).  In the wndow on the left, click on "Active Chart" tab.  
+In the left-hand window, select the "Coverage Charts Tables" box (second from the bottom).  In the wndow on the left, click on "Active Chart" tab.  
 
 .. figure:: /_static/portal_tut03_step03b.png
     :width: 600
     :name: portal_tut03_step03b
-    :alt: The default results view after clicking on bi-view tables.
+    :alt: The default results view of the ressulting plot and the tables.
 
     The "Charts Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
 
 
 3.8. Set the color of individual points to represent the time of the observation to 
-better illustrate how the object moves across the sky.
-In the plot panel, click on the "Settings" icon (double gears) to open the "Plot Parameters"
+better illustrate how the object moves across the sky as a function of time.
+In the plot panel, click on the "Settings" icon (a gear) to open the "Plot Parameters"
 pop-up window.
 Under "Trace Options", for "Color Map" enter "midPointMjdTai" and for "Color Scale" enter "Rainbow".
 Then click "Apply".
