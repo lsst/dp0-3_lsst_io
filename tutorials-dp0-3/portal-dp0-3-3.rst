@@ -325,7 +325,7 @@ In the left-hand window, select the "Coverage Charts Tables" box (second from th
     :name: portal_tut03_step03b
     :alt: The default results view of the ressulting plot and the tables.
 
-    **The "Charts Tables" results view for the query of ``ssObjectId`` = -735085100561880491 illustratinng the movement of the object on the sky as seen from the Earth**
+    **The "Charts Tables" results view for the query of ``ssObjectId`` = -735085100561880491 illustrating the movement of the object on the sky as seen from the Earth**
 
 
 3.8. Set the color of individual points to represent the time of the observation to 
