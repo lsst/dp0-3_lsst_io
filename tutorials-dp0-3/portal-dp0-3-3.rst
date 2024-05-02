@@ -93,7 +93,7 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
     :name: portal_tut03_step01a
     :alt: A screenshot of the default results view for the query.
 
-    The default results view for the query, with the table at right and the heatmap at left.    
+    **The default results view for the query, with the table at right and the heatmap at left**
 
 
 1.5.  Exclude the objects moving on unbound orbits.  
@@ -106,7 +106,7 @@ This will result in a slightly modified display as below.
     :name: portal_tut03_step01b
     :alt: A screenshot of the default results view for the modified query.
 
-    The view for the query with ``e < 1``.    
+    **The view for the query with ``e < 1``**   
 
 
 1.6. Create a new column in the table, containing semi-major axis, ``a``.
@@ -120,7 +120,7 @@ Click "Add Column", and see the new column appear in the table.
     :name: portal_tut03_step01c
     :alt: A screenshot of the pop-up window to add a column.
 
-    The "Add a column" pop-up window.  
+    **The "Add a column" pop-up window**
 
 
 1.7. Create a scatter plot of inclination vs. semi-major axis.
@@ -135,7 +135,7 @@ Click "OK".
     :name: portal_tut03_step01d
     :alt: A screenshot of the plot parameters pop-up window.
 
-    Create a new plot with these parameters.
+    **Create a new plot with these parameters**
 
 
 1.8. Delete the default plot by clicking on the blue cross in the upper right corner, so that only the newly-created plot appears (it should look like the plot below).
@@ -146,7 +146,7 @@ TNOs appear as a distinct population with ``a`` > 30.1 au in this parameter spac
     :name: portal_tut03_step01e
     :alt: A screenshot of the inclination versus semi-major axis plot, showing a clear population of TNOs.
 
-    The population of TNOs has x-values greater than 30 au.  
+    **The population of TNOs has x-values greater than 30 au**
 
 1.9.  Notice how in the plot above, the majority of objects returned by the query were closer to the Sun than 30.1 au.  
 In fact, only about 600 of the moving objects from the query were TNOs.
@@ -195,7 +195,7 @@ Restrict the x-axis to ``30 < a < 100`` au to illustrate in more detail the regi
     :name: portal_tut03_step02a
     :alt: A screenshot of the plot parameters for the eccentricity vs. semi-major axis plot 
 
-    The plot parameters for the eccentricity vs. semi-major axis plot.  
+    **The plot parameters for the eccentricity vs. semi-major axis plot**  
 
 2.6.  Click on "OK" or "Apply" in the "Plot Parameters" window, and view the plot (see below).
 Delete the default plot of inclination vs. eccentricity as it is not needed.
@@ -205,7 +205,7 @@ Delete the default plot of inclination vs. eccentricity as it is not needed.
     :name: portal_tut03_step02b
     :alt: A screenshot of the plot of the eccentricity vs. semi-major axis 
 
-    The plot of eccentricity vs. semi-major axis of solar system objects with a semi-major axis > 30 au.  
+    **The plot of eccentricity vs. semi-major axis of solar system objects with a semi-major axis > 30 au**
 
 
 2.7. Multiple populations are apparent in the above plot.
@@ -228,7 +228,7 @@ Click the "Add Column" button.
     :name: portal_tut03_step02c
     :alt: screenshot illustrating the expression needed to make the new column containing the diameter
 
-    How to add a new column containing the estimated diameter.  
+    **How to add a new column containing the estimated diameter**  
 
 2.9.  Plot the distribution of estimated diameters in log-space.
 Click on the "+" sign in the pop-up window, click on "Add New Chart," select "Histogram", and enter the parameters as below.  
@@ -238,7 +238,7 @@ Click on the "+" sign in the pop-up window, click on "Add New Chart," select "Hi
     :name: portal_tut03_step02d
     :alt: screenshot illustrating the plot parameters for displaying the distribution of estimated diameters
 
-    The plot parameters for the distribution of estimated diameters.  
+    **The plot parameters for the distribution of estimated diameters**  
 
 2.10.  Click on the "Apply" or "OK" button.
 This will result in the plot showing the distribution of estimated diameters.  
@@ -248,7 +248,7 @@ This will result in the plot showing the distribution of estimated diameters.
     :name: portal_tut03_step02e
     :alt: screenshot illustrating the distribution of estimated diameters
 
-    The distribution of estimated diameters.  
+    **The distribution of estimated diameters** 
 
 
 2.11. Notice that the tail of the distribution extends to very small diameters.
@@ -299,7 +299,7 @@ Click twice on the ``COUNT`` column header to order the entries by descending co
     :name: portal_tut03_step03a
     :alt: A screenshot of the default results view with the table sorted by count.
 
-    The default results view from the ADQL query above.
+    **The default results view from the ADQL query above**
 
 
 3.5.  Continue with the object with the largest number of observations: ``ssObjectId`` = -735085100561880491, which was detected 12,103 times.
@@ -325,7 +325,7 @@ In the left-hand window, select the "Coverage Charts Tables" box (second from th
     :name: portal_tut03_step03b
     :alt: The default results view of the ressulting plot and the tables.
 
-    The "Charts Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
+    **The "Charts Tables" results view for the query of ``ssObjectId`` = -735085100561880491 illustratinng the movement of the object on the sky as seen from the Earth**
 
 
 3.8. Set the color of individual points to represent the time of the observation to 
@@ -340,7 +340,7 @@ Then click "Apply".
     :name: portal_tut03_step03c
     :alt: A screenshot of the plot of sky coordinates colored as a function of time.
  
-    Purple color corresponds to earlier observtations, and the red color corresponds to later observations.  
+    **Purple color corresponds to earlier observtations, and the red color corresponds to later observations**  
 
 
 3.9. In the plot above, the 10 loops in the object's path on the sky is a result of 
