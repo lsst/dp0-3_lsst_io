@@ -264,7 +264,7 @@ See also the first exercise for the learner in Step 6.
 Step 3. Find and explore a well-observed TNO
 ============================================
 
-3.1. Return to the RSP TAP Search form by clicking on the 'dp0.3 Catalogs" tab.
+3.1. Return to the RSP TAP Search form by clicking on the 'DP0.3 Catalogs" tab.
 Navigate to the ADQL interface by clicking on the "Edit ADQL" button.
 
 3.2. To identify a distant Solar System object with a large number of observations, enter the query below.
@@ -317,14 +317,15 @@ Its modest eccentricity of 0.1512 implies that this is a TNO (unlikely to be a c
 3.7. The default results view will show the "Coverage" map at upper left.
 In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
 Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is redundant with the default plot.
-At upper right, click on "Bi-view Tables" to hide the "Coverage" map and show only the table and plot.
+Click on the "hamburger" icon (three horizontal lines) on the upper left, and click on the "Results Layout" box.  
+Select the "Coverage Charts Tables" box (second from the bottom).  In the wndow on the left, click on "Active Chart" tab.  
 
 .. figure:: /_static/portal_tut03_step03b.png
     :width: 600
     :name: portal_tut03_step03b
     :alt: The default results view after clicking on bi-view tables.
 
-    The "Bi-view Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
+    The "Charts Tables" results view for the query of ``ssObjectId`` = -735085100561880491.
 
 
 3.8. Set the color of individual points to represent the time of the observation to 
