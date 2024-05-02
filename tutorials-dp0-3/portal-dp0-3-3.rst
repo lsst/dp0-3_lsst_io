@@ -124,7 +124,7 @@ Click "Add Column", and see the new column appear in the table.
 
 
 1.7. Create a scatter plot of inclination vs. semi-major axis.
-In the plot panel, click on the "+" signpn the upper right side.  
+In the plot panel, click on the "+" sign the upper right side.  
 This will bring up a new "Add New Chart" pop-up window.  
 Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
 In the "Chart Options" dropdown menu, set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.  
@@ -197,7 +197,7 @@ Restrict the x-axis to ``30 < a < 100`` au to illustrate in more detail the regi
 
     **The plot parameters for the eccentricity vs. semi-major axis plot**  
 
-2.6.  Click on "OK" or "Apply" in the "Plot Parameters" window, and view the plot (see below).
+2.6.  Click on the "OK" button in the "Plot Parameters" window, and view the plot (see below).
 Delete the default plot of inclination vs. eccentricity as it is not needed.
 
 .. figure:: /_static/portal_tut03_step02b.png
@@ -240,7 +240,7 @@ Click on the "+" sign in the pop-up window, click on "Add New Chart," select "Hi
 
     **The plot parameters for the distribution of estimated diameters**  
 
-2.10.  Click on the "Apply" or "OK" button.
+2.10.  Click on the "Apply" button.
 This will result in the plot showing the distribution of estimated diameters.  
 
 .. figure:: /_static/portal_tut03_step02e.png
@@ -268,7 +268,7 @@ Step 3. Find and explore a well-observed TNO
 Navigate to the ADQL interface by clicking on the "Edit ADQL" button.
 
 3.2. To identify a distant Solar System object with a large number of observations, enter the query below.
-This query joins the `MPCORB` table with the ``DiaSource`` table in order to retrive the number 
+This query joins the ``MPCORB`` table with the ``DiaSource`` table in order to retrive the number 
 of detections: the count of the number of ``DiaSource`` table rows for a given solar system object,
 each of which has a unique ``ssObjectId``.
 This query also applies a constraint that the semi-major axis be between 30 and 100 AU,
