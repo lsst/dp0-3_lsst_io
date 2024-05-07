@@ -192,7 +192,7 @@ to clipboard and click "RSP TAP Search" button on the top left to go back to the
 
     **Figure 4:** How to copy a selected ``ssObjectId`` to clipboard.
 
-**2.3.** Return to the page where you can select the DP0.3 Catalogs" by refreshing your browser, and select it.  
+**2.3.** Return to the page where you can select the "DP0.3 Catalogs" by refreshing your browser, and select it.  
 Click on the "Edit ADQL" tab.  
 Execute the following ADQL query to retrieve the apparent magnitudes, magnitude errors, filters, phase angles,
 topocentric and heliocentric distances of the individual observations for a well-observed MBA.  
