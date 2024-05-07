@@ -105,8 +105,7 @@ Thus, any changes over time in an object’s apparent magnitude are due only to 
 Step 1. Query the DP0.3 tables for the Main Belt Asteroids
 ==========================================================
 
-**1.1.** Log into the Rubin Science Platform at data.lsst.cloud and select the Portal Aspect. At upper right, next to 
-"TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top. 
+**1.1.** Log into the Rubin Science Platform at data.lsst.cloud and select the Portal Aspect. On top, select the "DP0.3 Catalogs" tab.  
 
 **1.2.** At upper right, next to "View" choose "Edit ADQL". Enter the query statement below into the ADQL Query box and  
 execute the query to select a good number of MBAs with a fair number of total observations (``numObs`` > 100) 
@@ -137,9 +136,10 @@ In order to have the query execution not to take too long, we restrict the numbe
     AND (mpc.q > 1.666)
     AND sso.numObs > 100 
 
-**1.3.** Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  
+**1.3.** Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  Select the "Active Chart" tab on the right-hand panel.  
 The execution of the query will result in a blank panel for the plot, with a comment "Cannot display the requested data."  
-To plot the distribution of ``a`` you need to click on the "Chart options and tools" icon (two gears), click on "Add New Chart", 
+To plot the distribution of ``a`` you need to add another plot panel by clicking on the "+" button on the upper left side of the plot window.  
+click on the "Chart options and tools" icon (a single gear), click on "Modify Trace", 
 select "Histogram" for "Plot Type", enter "q / (1-e)" as the "Column or expression" and "100" for number of bins as on the screenshot below.  
 
 .. figure:: /_static/portal_tut04_step01a.png
