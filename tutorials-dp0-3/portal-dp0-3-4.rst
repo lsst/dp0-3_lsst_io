@@ -15,15 +15,15 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-#######################################
+###########################################
 04. Phase curve fit analysis (Intermediate)
-#######################################
+###########################################
 
 .. This section should provide a brief, top-level description of the page.
 
 **Contact authors:** Yumi Choi and Melissa Graham
 
-**Last verified to run:** 2023-12-22
+**Last verified to run:** 2023-12-22;  updated to reflect the new UI starting May 6 2024
 
 **Targeted learning level:** Intermediate
 
@@ -38,7 +38,7 @@ Introduction
 
 This portal tutorial is the same demonstration used in the tutorial notebook 
 `Introduction to Phase Curves <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP03_04a_Introduction_to_Phase_Curves.ipynb>`_ 
-to illustrate the phase curves of solar system objects, but focuses on Main Belt Asteroids (MBAs).
+aimed to illustrate the phase curves of solar system objects, but focuses on Main Belt Asteroids (MBAs).
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
@@ -56,7 +56,7 @@ magnitudes (`H`) are defined to be for an object 1 au from the Sun and 1 au from
 angle :math:`\alpha` (the angle Sun-object-Earth) of 0 degrees. Absolute magnitudes are derived by fitting a 
 function to the relationship between reduced magnitude :math:`H(\alpha)` and phase angle :math:`\alpha` 
 (i.e., the phase curve), and evaluating the function at a phase angle of 0 degrees. The reduced magnitude, 
-which is corrected for distance, :math:`H(\alpha)`, as:
+which is corrected for distance, :math:`H(\alpha)`, is:
 
 .. math::
 
