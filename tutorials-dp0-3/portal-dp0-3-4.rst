@@ -192,7 +192,9 @@ to clipboard and click "RSP TAP Search" button on the top left to go back to the
 
     **Figure 4:** How to copy a selected ``ssObjectId`` to clipboard.
 
-**2.3** Execute the following ADQL query to retrieve the apparent magnitudes, magnitude errors, filters, phase angles,
+**2.3.** Return to the page where you can select the DP0.3 Catalogs" by refreshing your browser, and select it.  
+Click on the "Edit ADQL" tab.  
+Execute the following ADQL query to retrieve the apparent magnitudes, magnitude errors, filters, phase angles,
 topocentric and heliocentric distances of the individual observations for a well-observed MBA.  
 
 .. code-block:: SQL 
@@ -204,7 +206,8 @@ topocentric and heliocentric distances of the individual observations for a well
     INNER JOIN dp03_catalogs_10yr.SSSource as sss ON dia.diaSourceId = sss.diaSourceId
     WHERE dia.ssObjectId = 7470575696289418102
 
-**2.4.** To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
+**2.4.** The default plot is the first column of the table in X-axis, and the seconnd column in y-axis - not very useful.  
+To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
 data by entering "='g'" in the box underneath the table heading ``band`` and hitting the return key.
 Then open the “Plot Parameters” pop-up window (click on the two-gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
 and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
