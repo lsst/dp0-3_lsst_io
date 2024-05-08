@@ -136,11 +136,12 @@ In order to have the query execution not to take too long, we restrict the numbe
     AND (mpc.q > 1.666)
     AND sso.numObs > 100 
 
-**1.3.** Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  Select the "Active Chart" tab on the right-hand panel.  
+**1.3.** Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  Select the "Active Chart" tab on the panel containing the plot.  
+(You can chose to have the plot to appear on the left or the right side of your window - this can be changed by clicking the 
+"hamburger" icon on the upper left corner of the Portal screen, and selecting the layout of your choice in the "Results Layout" tab.)
 The execution of the query will result in a blank panel for the plot, with a comment "Cannot display the requested data."  
 To plot the distribution of ``a`` you need to add another plot panel by clicking on the "+" button on the upper left side of the plot window.  
-click on the "Chart options and tools" icon (a single gear), click on "Modify Trace", 
-select "Histogram" for "Plot Type", enter "q / (1-e)" as the "Column or expression" and "100" for number of bins as on the screenshot below.  
+In the new window, select "Histogram" for "Plot Type", enter "q / (1-e)" as the "Column or expression" and "100" for number of bins as on the screenshot below.  
 
 .. figure:: /_static/portal_tut04_step01a.png
     :width: 400
@@ -149,7 +150,7 @@ select "Histogram" for "Plot Type", enter "q / (1-e)" as the "Column or expressi
 
     **Figure 1:** The "Plot Parameters" pop-up window to set parameters for making a histogram of semi-major axes for MBAs. 
 
-**1.4.** Click "Ok" and close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.
+**1.4.** Click "Ok" in the pop-up window.  Also, close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.
 It will result in the following plot and table below. Note that the distribution of asteroids as a function of semi-major axis is not uniform, 
 but it reveals a number of peaks and gaps where there are very few (or no) objects. These are known as Kirkwood gaps, which arise due to resonances 
 between the asteroid's and Jupiter's orbital periods.  
@@ -209,7 +210,7 @@ topocentric and heliocentric distances of the individual observations for a well
 **2.4.** The default plot is the first column of the table in X-axis, and the second column in Y-axis - not very useful.  
 To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
 data by clicking on the down-arrow in the box underneath the table heading ``band`` checking the box by the "g" entry.
-Then open the “Plot Parameters” pop-up window (click on the two-gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
+Then open the “Plot Parameters” pop-up window (click on the single gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
 and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
 "Symm", and put ``magErr``. Click on the "Chart Options" arrow, and set the "X Label" to be "Phase angle [deg]" and the "Y Label" 
 to be "Reduced magnitude". Check the "reverse" box for the y-axis option.
@@ -232,7 +233,8 @@ to be "Reduced magnitude". Check the "reverse" box for the y-axis option.
     **Figure 6:** The `g`-band phase curve for the MBA with ``ssObjectId`` = ``7470575696289418102``.
 
 **2.6.** In order to plot a phase curve in a different band, for example in `z`-band, select the `z`-band 
-data by clicking on the down-arrow in the box underneath the table heading ``band`` and checking the box by the "z" entry.  
+data by clicking on the down-arrow in the box underneath the table heading ``band``.  
+Check the box by the "z" entry and un-check the "g" entry.  
 The `g`-band phase curve plot will be replaced with the `z`-band phase curve plot as shown below. 
 It is clear that the phase curves of the source are offset from each other in these two filters, reflecting the variation in brightness 
 of asteroids in different filters. Also the reduced magnitude qualities (i.e., photometric uncertainties) are significantly different.
