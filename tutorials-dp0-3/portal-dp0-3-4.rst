@@ -150,7 +150,7 @@ In the new window, select "Histogram" for "Plot Type", enter "q / (1-e)" as the 
 
     **Figure 1:** The "Plot Parameters" pop-up window to set parameters for making a histogram of semi-major axes for MBAs. 
 
-**1.4.** Click "Ok" in the pop-up window.  Also, close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.
+**1.4.** Click "OK" in the pop-up window.  Also, close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.
 It will result in the following plot and table below. Note that the distribution of asteroids as a function of semi-major axis is not uniform, 
 but it reveals a number of peaks and gaps where there are very few (or no) objects. These are known as Kirkwood gaps, which arise due to resonances 
 between the asteroid's and Jupiter's orbital periods.  
@@ -170,9 +170,10 @@ Step 2. Select a well-observed MBA, and plot its phase curve
 **2.1.** Unique solar system objects in the ``SSObject`` and ``MPCORB`` tables will be observed many times over the full LSST survey. 
 Individual observations of each unique object in each filter are recorded in the ``SSSource`` and ``diaSource`` tables. 
 Below, we query these tables to obtain all of the individual observed time series data (we call indivObs) for an MBA that has 
-more than 2000 observations. First, select MBAs with 2000 or more observations by entering ">2000" in the box underneath the table heading 
-``numObs`` as shown as below and hitting the return key. This will leave only a small fraction of queried 100,000 MBAs above, 23 MBAs in this tutorial.
-To go back to the originally retreived table by removing the applied filter, click the remove filter icon, which is the first icon on the top 
+more than 2000 observations. First, in the Table resulting from the last search in Step 1, select MBAs with 2000 or more 
+observations by entering ">2000" in the box underneath the table heading ``numObs`` as shown as below and hitting the return key. 
+This will leave only a small fraction of queried 100,000 MBAs above, 23 MBAs in this tutorial.
+To go back to the originally retrieved table by removing the applied filter, click the remove filter icon, which is the first icon on the top 
 right of the table.
 
 .. figure:: /_static/portal_tut04_step02a.png
@@ -182,9 +183,9 @@ right of the table.
 
     **Figure 3:** The resulting table of 23 MBAs with 2000 or more observations out of the retrieved 100,000 MBAs in Step 1.2.
 
-**2.2.** Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. Right-click on that box, 
+**2.2.** Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. Click on that box, 
 two options will pop up: "Copy to clipboard" and "View as plain text". Here, copy ``ssObjectId`` = ``7470575696289418102`` 
-to clipboard and click "RSP TAP Search" button on the top left to go back to the ADQL Query page. 
+to clipboard. 
 
 .. figure:: /_static/portal_tut04_step02b.png
     :width: 300
@@ -209,10 +210,10 @@ topocentric and heliocentric distances of the individual observations for a well
 
 **2.4.** The default plot is the first column of the table in X-axis, and the second column in Y-axis - not very useful.  
 To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
-data by clicking on the down-arrow in the box underneath the table heading ``band`` checking the box by the "g" entry.
+data by clicking on the down-arrow in the box underneath the table heading ``band`` checking the box by the "g" entry (see the Figure below Step 2.5).
 Then open the “Plot Parameters” pop-up window (click on the single gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
 and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
-"Symm", and put ``magErr``. Click on the "Chart Options" arrow, and set the "X Label" to be "Phase angle [deg]" and the "Y Label" 
+"Symm", and put ``magErr``. Click on the "Chart Options" arrow, and set the "X Label" to be "Phase angle (deg)" and the "Y Label" 
 to be "Reduced magnitude". Check the "reverse" box for the y-axis option.
 
 .. figure:: /_static/portal_tut04_step02c.png
