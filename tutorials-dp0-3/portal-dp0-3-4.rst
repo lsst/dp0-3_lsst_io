@@ -206,9 +206,9 @@ topocentric and heliocentric distances of the individual observations for a well
     INNER JOIN dp03_catalogs_10yr.SSSource as sss ON dia.diaSourceId = sss.diaSourceId
     WHERE dia.ssObjectId = 7470575696289418102
 
-**2.4.** The default plot is the first column of the table in X-axis, and the seconnd column in y-axis - not very useful.  
+**2.4.** The default plot is the first column of the table in X-axis, and the second column in Y-axis - not very useful.  
 To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
-data by entering "='g'" in the box underneath the table heading ``band`` and hitting the return key.
+data by clicking on the down-arrow in the box underneath the table heading ``band`` checking the box by the "g" entry.
 Then open the “Plot Parameters” pop-up window (click on the two-gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
 and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
 "Symm", and put ``magErr``. Click on the "Chart Options" arrow, and set the "X Label" to be "Phase angle [deg]" and the "Y Label" 
@@ -231,8 +231,9 @@ to be "Reduced magnitude". Check the "reverse" box for the y-axis option.
 
     **Figure 6:** The `g`-band phase curve for the MBA with ``ssObjectId`` = ``7470575696289418102``.
 
-**2.6.** In order to plot a phase curve in a different band, for example in `z`-band, enter "='z'" in the box underneath the table heading 
-``band`` and hitting the return key. The `g`-band phase curve plot will be replaced with the `z`-band phase curve plot as shown below. 
+**2.6.** In order to plot a phase curve in a different band, for example in `z`-band, select the `z`-band 
+data by clicking on the down-arrow in the box underneath the table heading ``band`` and checking the box by the "z" entry.  
+The `g`-band phase curve plot will be replaced with the `z`-band phase curve plot as shown below. 
 It is clear that the phase curves of the source are offset from each other in these two filters, reflecting the variation in brightness 
 of asteroids in different filters. Also the reduced magnitude qualities (i.e., photometric uncertainties) are significantly different.
 
