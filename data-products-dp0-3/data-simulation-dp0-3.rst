@@ -211,3 +211,9 @@ describes these two biases. The DP0.3 simulation team found out that this is bec
 magnitudes without considering the apparent motion of solar system objecst. Moving objects appear in an image as trailed sources, resulting in 
 underestimation of the source's true flux as well as lower photometric signal-to-noise ratio (S/N) when conducting standard PSF photometry. 
 Once object trailing is taken into account in photometry, these biases disappear and will be fixed in subsequent releases. 
+
+**A small number of objects (~10,000) have duplicated orbits.**
+All objects are Jupiter trojans with ``mpcDesignation`` starting with ``St5``, though only a few percent of such objects are duplicated.
+This leads to some near-identical detections for which astrometric scatter is the only positional difference.
+This can affect linking algorithms and any analysis looking into close encounters or collisions.
+However, most DP0.3 users are likely to be unaffected by this bug in the simulation.
