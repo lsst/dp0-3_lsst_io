@@ -336,8 +336,8 @@ measured in `r`- and `i`-bands will thus be better sampled. Clicking the labels 
 
 **3.7.** To confirm whether phase curve fitting in `i` band is indeed more precise than in `z` band, let's compare the uncertainty 
 in `H` values for `i` and `z` bands by adding a new plot. Add a new chart by clicking the "+" on the upper left" and select "Heatamp". Set the "X" 
-to ``i_Herr`` and "Y" to ``z_Herr`` with the X and Y MIN/MAX of 0 and 0.1. To make the plot with a more proper display ratio, set the 
-"X/Y ratio" under the "Chart Options" to be 1, check the "width" box, and hit the apply button. The right panel in the figure below, 
+to ``i_Herr`` and "Y" to ``z_Herr`` with the X and Y MIN/MAX of 0 and 0.1. To make the plot with a more proper display ratio, slide the 
+dividing line between the table and the charts to reduce the size of the table panel.  In the right panel in the "Active Charts" panel below, 
 one can see that poorer sampling drives higher uncertainty in the derived absolute magnitude `H` using `z` band compared to `i` band for MBAs. 
 
 .. figure:: /_static/portal_tut04_step03f.png
