@@ -265,7 +265,7 @@ adhering to the specified plot settings below.
     :name: portal_tut04_step03a
     :alt: A screenshot of the plot parameters for the `G12` vs. `H` plot.
 
-    **Figure 8:** The "Plot Parameters" pop-up window to plot the `G12` vs. `H` in `g` band.
+    **Figure 8:** The plot parameters in the "Add New Chart" pop-up window to plot the `G12` vs. `H` in `g` band.
 
 **3.2.** Once you've created the `G12` vs. `H` plot for `g`-band, add three more new plots for `riz` bands by repeating the 
 creation of the `G12` vs. `H` plot in Step 3.1, but going through the `riz` bands. This will generate four panels as shown below. 
