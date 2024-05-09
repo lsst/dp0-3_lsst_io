@@ -315,8 +315,8 @@ in the phase curve parameters modestly increase for objects with larger periheli
 **3.6.** The above plots compare ``numObs`` (total in all bands) with model fits, which may not be the ideal metric since the quality 
 of phase curves can vary quite a bit between filters. Instead, one can look at the number of datapoints included in the phase curve 
 modeling on a per filter basis (e.g., ``r_Ndata`` for the `r`-band in the ``SSObject`` table). To make a plot showing the distribution of 
-the number of observations in each filter, again first close any open plots except for one, and then click on the "Chart options and tools" icon. 
-Select "Add New Chart", set the "Plot Type" to "Histogram", the "Column or expression" to ``g_Ndata``. Select the "Uniform binning" algorithm, 
+the number of observations in each filter, again first close any open plots except for one, and then click on the "+" icon to add a chart.  
+In the "Add New Chart" pop-up window, set the "Plot Type" to "Histogram", the "Column or expression" to ``g_Ndata``. Select the "Uniform binning" algorithm, 
 set the number of bins to 100 with the min and max to be 0 and 1300, respectively. Under the "Chart Options", check the "log" box for the y-axis. 
 It will plot the histogram of the `g`-band number of observations. Once creating the ``g_Ndata`` histogram, close the remaining plot from 
 Step 3.5. To overplot the histogram for ``r_Ndata``, select "Overplot New Trace" on the "Plot Parameters" pop-up window, and use the same 
@@ -335,7 +335,7 @@ measured in `r`- and `i`-bands will thus be better sampled. Clicking the labels 
     **Figure 12:** Histograms of the number of observations in each filter.
 
 **3.7.** To confirm whether phase curve fitting in `i` band is indeed more precise than in `z` band, let's compare the uncertainty 
-in `H` values for `i` and `z` bands by adding a new plot. Click on the two-gear icon, select "Add New Chart" and "Heatamp". Set the "X" 
+in `H` values for `i` and `z` bands by adding a new plot. Add a new chart by clicking the "+" on the upper left" and select "Heatamp". Set the "X" 
 to ``i_Herr`` and "Y" to ``z_Herr`` with the X and Y MIN/MAX of 0 and 0.1. To make the plot with a more proper display ratio, set the 
 "X/Y ratio" under the "Chart Options" to be 1, check the "width" box, and hit the apply button. The right panel in the figure below, 
 one can see that poorer sampling drives higher uncertainty in the derived absolute magnitude `H` using `z` band compared to `i` band for MBAs. 
