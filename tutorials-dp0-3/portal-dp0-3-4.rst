@@ -253,9 +253,10 @@ Step 3. Exploring phase curve data products from the DP0.3 catalogs
 ===================================================================
 
 **3.1.** This section explores the distribution of `G12` slope parameter values as a function of absolute magnitudes 
-`H` for MBAs in `griz` bands. Return to the originally retrieved table in Step 1.2 by clicking the first table tab. 
+`H` for MBAs in `griz` bands. Return to the originally retrieved table in Step 1.2 by clicking the first table tabb 
+(if you closed that tab, reissue the ADQL search from Step 1.2).  
 Remove the ``numObs`` > 2000 condition either by clicking the remove filter icon on the top right or by deleting the 
-condition and hitting the return key. Then, open the “Plot Parameters” pop-up window (click on the two-gear icon), 
+condition and hitting the return key. Then, add a new chart by clicking the "+" button above the plot panel 
 choose “Add New Chart”, opt for "Heatmap" as the "Plot Type", and create a new plot for the `G12` vs. `H` in `g` band, 
 adhering to the specified plot settings below.  
 
@@ -266,9 +267,8 @@ adhering to the specified plot settings below.
 
     **Figure 8:** The "Plot Parameters" pop-up window to plot the `G12` vs. `H` in `g` band.
 
-**3.2.** Once creating the `G12` vs. `H` plot for `g`-band, close the histogram of semi-major axes of MBAs we made in Step 1.4,
-and add three more new plots for `riz` bands by repeating the creation of the `G12` vs. `H` plot in Step 3.1, but going through 
-the `riz` bands. This will generate four panels as shown below. 
+**3.2.** Once you've created the `G12` vs. `H` plot for `g`-band, add three more new plots for `riz` bands by repeating the 
+creation of the `G12` vs. `H` plot in Step 3.1, but going through the `riz` bands. This will generate four panels as shown below. 
 
 .. figure:: /_static/portal_tut04_step03b.png
     :width: 600
