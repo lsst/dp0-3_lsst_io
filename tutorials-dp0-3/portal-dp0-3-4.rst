@@ -286,9 +286,9 @@ the intrinsic value.
 
 **3.4.** This section explores the impact of the total number of observations for a given source (`numObs`) and 
 the perihelion distance (`q`) on the quality of phase curve fitting in `i`-band as an example. First close any open plots except 
-for one heatmap, and then click on "Chart options and tools" icon to make a new plot. Select "Modify Trace", set the "X" 
+for one heatmap, and then click on "Chart options and tools" icon (single gear)to make a new plot. Select "Modify Trace", set the "X" 
 to ``numObs``, "Y" to ``i_Herr``, the number of "X"- and "Y"-bins to 200. Lastly, set the min and max for the y-axis under the 
-"Chart Options" to be 0 and 0.05 as follows. Make another plot by repeating the same paramter setting, but selecting "Add New Chart" 
+"Chart Options" to be 0 and 0.05 as follows. Make another plot by repeating the same paramter setting, by clicking on the "+" button, and this time  
 and entering ``q`` on the x-axis.
 
 .. figure:: /_static/portal_tut04_step03c.png
@@ -298,7 +298,8 @@ and entering ``q`` on the x-axis.
 
     **Figure 10:** The "Plot Parameters" pop-up window to plot the ``i_Herr`` vs. ``numObs``.
 
-**3.5.** Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``. This will generate four panels showing 
+**3.5.** Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``.  This time, 
+set the min and max for the y-axis under the "Chart Options" to be 0 and 0.5.  This will generate four panels showing 
 how the `H` and `G12` parameter uncertainties vary with the total number of observations and the perihelion distance for MBAs.
 In left panels, it is clear that the phase curve fit uncertainties decrease with the number of observations of each source. 
 So as LSST accumulates data over time, precision in the phase curve modeling will improve. The right panels show that uncertainties 
