@@ -47,12 +47,19 @@ Step 1. Upload a user-supplied table of coordinates for use in cone searches
 ============================================================================
 
 1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal aspect.  
-Click on "DP0.3 Catalogs" tab on top of the window.  
-The default settings for the Tables can be left for the menus listed to the right of "LSST DP0.3 SSO Tables".
+Click on "DP0.3 Catalogs" tab on top of the window.  The Table Collection (Schema) tab should default to "dp03_catlogs_10yr".  
+Select "dp03_catalogs_10yr.DiaSource" table in the right-hand tab.  
 
-1.2 In the "Enter Constraints" box, in the "Spatial" section, click on the multi-object button. A window will pop up to allow the upload of a text file containing ra and dec coordinates for sources of interest. The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). For this example, the file is an ascii catalog with columns of RA and Dec in tab separated format (TSV). Other columns can also be present in the file, but note that the header names and columns must not have multiple spaces or tabs between them. The uploader is agnostic about header labels, because you can choose which columns to use later (i.e. ra and dec do not necessarily have to be labeled as such), but remove any pound sign (#) from the header before uploading. Click the browse button to find the file on your machine and click the upload button.
+1.2 In the "Enter Constraints" box, check only the box to the left of the "Spatial" section (uncheck the other two if checked), and click on the multi-object button. 
+A window will pop up to allow the upload of a text file containing ra and dec coordinates for sources of interest. 
+The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). 
+For this example, we prepared a file which is is an ascii catalog with columns of RA and Dec in tab separated format (TSV). 
+The name of the file is ``portal_tut05_useruploadcat1.cat``.
+Other columns can also be present in the file, but note that the header names and columns must not have multiple spaces or tabs between them.  
+The uploader is agnostic about header labels, because you can choose which columns to use later (i.e. ra and dec do not necessarily have to be labeled as such).  
+Make sure to remove any pound sign (#) from the header before uploading.  
 
-`Link to catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat1.cat>`_.
+Download the file to your computer using the `link to file containing the catalog <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat1.cat>`_.
 
 1.3 After uploading, the window will show a list of the columns it found, named according to the header. Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. Then click the "Load Table" button.
 
