@@ -59,15 +59,26 @@ Other columns can also be present in the file, but note that the header names an
 The uploader is agnostic about header labels, because you can choose which columns to use later (i.e. ra and dec do not necessarily have to be labeled as such).  
 Make sure to remove any pound sign (#) from the header before uploading.  
 
-Download the file to your computer using the `link to file containing the catalog <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat1.cat>`_.
+1.3.  Download the file to your computer using the `link to file in GitHub containing the catalog <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat1.cat>`_.  
+If you are a novice using GitHub - click on this link which will take you to the GitHub repository containing the file, and click on the "download" tab (an arrow pointing down into an open box).  
 
-1.3 After uploading, the window will show a list of the columns it found, named according to the header. Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. Then click the "Load Table" button.
-
-1.4 If the table loaded the ra and dec correctly, the table filename should be displayed next to "Upload Table", and listed next to "Position Columns" should show "ra, dec (from the uploaded table)".
+1.4.  Upload the file from your computer to the Portal.  Click on the "Multi-object" button, which will result in a pop-up window as illustrated below.  
+Click on "upload file".  
 
 .. figure:: /_static/portal_tut05_step01a.png
     :width: 600
     :name: portal_tut05_step01a
+    :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
+A screenshot of the Portal screen - ready to upload a table - with the "Upload" pop-up window.  
+
+1.5 After uploading, the pop-up window will show a list of the columns it found, named according to the header. 
+Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. 
+Then click the "Load Table" button.  
+If the table loaded the ra and dec correctly, the table filename should be displayed next to "Change Upload Table", and listed next to "Position Columns" should show "ra, dec (from the uploaded table)".
+
+.. figure:: /_static/portal_tut05_step01b.png
+    :width: 600
+    :name: portal_tut05_step01b
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 
