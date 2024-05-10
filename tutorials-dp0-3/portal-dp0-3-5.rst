@@ -23,7 +23,7 @@
 
 **Contact authors:** Christina Williams and Melissa Graham
 
-**Last verified to run:** December 22, 2023
+**Last verified to run:** December 22, 2023;  update to reflect the new UI started on May 9 2024
 
 **Targeted learning level:** Beginner
 
@@ -44,7 +44,7 @@ For more information about the DP0.3 catalogs, tables, and columns, see the `DP0
 .. _DP0-3-Portal-5-Step-1:
 
 Step 1. Upload a user-supplied table of coordinates for use in cone searches
-=====================================
+============================================================================
 
 1.1. Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal aspect.
 At upper right, next to "TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu next to "Select TAP Service" at the top left. The default settings for the Tables can be left for the menus listed to the right of "LSST DP0.3 SSO Tables".
@@ -87,7 +87,7 @@ A screenshot of the "advanced ADQL interface" which shows the ADQL search corres
 .. _DP0-3-Portal-5-Step-2:
 
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
-======================================================
+===============================================================
 
 2.1 Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. Clicking the down arrow then gives access to the upload button to supply a catalog containing IDs. Click the "add" button and navigate on your machine to the catalog of IDs to be used. Then click the "load table" button. To use this feature, the IDs listed must correspond to a Rubin table ID (in this case, the SSObjectId).
 
