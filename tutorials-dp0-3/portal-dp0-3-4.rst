@@ -253,7 +253,7 @@ Step 3. Exploring phase curve data products from the DP0.3 catalogs
 ===================================================================
 
 **3.1.** This section explores the distribution of `G12` slope parameter values as a function of absolute magnitudes 
-`H` for MBAs in `griz` bands. Return to the originally retrieved table in Step 1.2 by clicking the first table tabb 
+`H` for MBAs in `griz` bands. Return to the originally retrieved table in Step 1.2 by clicking the first table tab 
 (if you closed that tab, reissue the ADQL search from Step 1.2).  
 Remove the ``numObs`` > 2000 condition either by clicking the remove filter icon on the top right or by deleting the 
 condition and hitting the return key. Then, add a new chart by clicking the "+" button above the plot panel 
