@@ -51,7 +51,7 @@ Click on "DP0.3 Catalogs" tab on top of the window.  The Table Collection (Schem
 Select "dp03_catalogs_10yr.DiaSource" table in the right-hand tab.  
 
 1.2 In the "Enter Constraints" box, check only the box to the left of the "Spatial" section (uncheck the other two if checked), and click on the multi-object button. 
-A window will pop up to allow the upload of a text file containing ra and dec coordinates for sources of interest. 
+A window will pop u.p to allow the upload of a text file containing ra and dec coordinates for sources of interest. 
 The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). 
 For this example, we prepared a file which is is an ascii catalog with columns of RA and Dec in tab separated format (TSV). 
 The name of the file is ``portal_tut05_useruploadcat1.cat``.
@@ -71,7 +71,7 @@ Click on "upload file".
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 A screenshot of the Portal screen - ready to upload a table - with the "Upload" pop-up window.  
 
-1.5 After uploading, the pop-up window will show a list of the columns it found, named according to the header. 
+1.5. After uploading, the pop-up window will show a list of the columns it found, named according to the header. 
 Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. 
 Then click the "Load Table" button.  
 If the table loaded the ra and dec correctly, the table filename should be displayed next to "Change Upload Table", and listed next to "Position Columns" should show "ra, dec (from the uploaded table)".
@@ -79,26 +79,28 @@ If the table loaded the ra and dec correctly, the table filename should be displ
 .. figure:: /_static/portal_tut05_step01b.png
     :width: 600
     :name: portal_tut05_step01b
-    :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
+    :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search. 
+
 A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 
-1.5 Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the header names listed to the right below "output column selection and constraints". If the header names are recognized as ra and dec then they may auto-populate into the "Lon Column" and "Lat Column" boxes. If they do not (e.g. the header uses different labels than ra/dec), then click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
+1.6. Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the header names listed to the right below "output column selection and constraints". If the header names are recognized as ra and dec then they may auto-populate into the "Lon Column" and "Lat Column" boxes. If they do not (e.g. the header uses different labels than ra/dec), then click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
 
 1.6 For a first look, ignore the "Temporal" constraint and make sure the box is unchecked, and click the "Search" button. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. (Note: leaving the "Row Limit" set to 50000 during the search will prevent the search from taking too long. This example returns fewer than the row limit.)
-
-.. figure:: /_static/portal_tut05_step01b.png
-    :width: 600
-    :name: portal_tut05_step01b
-    :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
-A screenshot of the search query result. The multiple observations of 3 solar system objects from the user-uploaded table can be seen as the clustered points.
-
-1.7 Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box (leaving the Spatial box also checked). This example demonstrates how to know if there were moving objects identified in the survey at these coordinates on a specific night (for this example, pick a day for which it is known that this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaSource table to use for temporal matching). Click the MJD specification and enter an MJD range (start date 62000 and end date 63000, a range that we know our sample objects was observed in the catalog). The search returns an observation of 4 unique solar system objects, one of which is observed twice during the MJD range.
-
-1.8 It can be useful to save the search for later. In this case it can be automated with search query commands that are output by the "populate and edit ADQL query" button. Repeat Step 1.7, but instead of hitting the "search" button, hit the "populate and edit ADQL" button on the bottom right. This will navigate to the "advanced ADQL interface" where the reproducible search code snippet to perform the search (e.g. in a notebook) is shown on the right. In the schema browser on the left, the user-supplied catalog is displayed as a searchable table under TAP_UPLOAD. 
 
 .. figure:: /_static/portal_tut05_step01c.png
     :width: 600
     :name: portal_tut05_step01c
+    :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.  
+
+A screenshot of the search query result, showing the multiple observations of 3 solar system objects from the user-uploaded table - those can be seen as the clustered points.
+
+1.7 Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box (leaving the Spatial box also checked). This example demonstrates how to know if there were moving objects identified in the survey at these coordinates on a specific night (for this example, pick a day for which it is known that this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaSource table to use for temporal matching). Click the MJD specification and enter an MJD range (start date 62000 and end date 63000, a range that we know our sample objects was observed in the catalog). The search returns an observation of 4 unique solar system objects, one of which is observed twice during the MJD range.
+
+1.8 It can be useful to save the search for later. In this case it can be automated with search query commands that are output by the "populate and edit ADQL query" button. Repeat Step 1.7, but instead of hitting the "search" button, hit the "populate and edit ADQL" button on the bottom right. This will navigate to the "advanced ADQL interface" where the reproducible search code snippet to perform the search (e.g. in a notebook) is shown on the right. In the schema browser on the left, the name of the user-supplied catalog is displayed as a searchable table under TAP_UPLOAD. 
+
+.. figure:: /_static/portal_tut05_step01d.png
+    :width: 600
+    :name: portal_tut05_step01d
     :alt: A screenshot of the "advanced ADQL interface".
 A screenshot of the "advanced ADQL interface" which shows the ADQL search corresponding to the one entered into the portal user interface, for future use with a TAP service.
 
