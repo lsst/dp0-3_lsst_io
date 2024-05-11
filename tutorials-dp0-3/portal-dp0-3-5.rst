@@ -116,7 +116,7 @@ Clicking the down arrow then gives access to the upload button to supply a catal
 
 `Link to catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat2.cat>`_.
 
-2.2 Back on the main user interface click the arrow next to "uploaded object id" where it says "unset". This will lower the option to select which column to use as the ID. Click the magnifying glass near "ID" and in the window that pops open, select the "SSObjectId" header keyword from the table that was uploaded, and hit OK. The object ID box should now contain ssObjectId (or whatever header label is used for ID in the user suppled catalog). 
+2.2.  Return to the main user interface and, in the "Object ID Search" box, click the arrow in the box next to "Uploaded Object ID".  Click the magnifying glass near "ID" and in the window that pops open, select the "SSObjectId" header keyword from the table that was uploaded, and hit OK. The object ID box should now contain ssObjectId (or whatever header label is used for ID in the user suppled catalog). 
 
 
 2.3 Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default Object ID type that is listed will be based on the DP0.3 table that is selected in the menu above (LSST DP0.3 SSO Tables), which is by default the DiaSourceId from the DiaSource Table. But this exercise will instead match on SSObjectId, which will retrieve information for specific solar system bodies identififed by their unique identifier. Click the magnifying glass to open a navigation window to choose which ID from the DP0.3 table to use, and select SSObjectId.
