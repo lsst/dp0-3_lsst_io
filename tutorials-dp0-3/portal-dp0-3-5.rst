@@ -50,8 +50,8 @@ Step 1. Upload a user-supplied table of coordinates for use in cone searches
 Click on "DP0.3 Catalogs" tab on top of the window.  The Table Collection (Schema) tab should default to "dp03_catlogs_10yr".  
 Select "dp03_catalogs_10yr.DiaSource" table in the right-hand tab.  
 
-1.2 In the "Enter Constraints" box, check only the box to the left of the "Spatial" section (uncheck the other two if checked), and click on the multi-object button. 
-A window will pop u.p to allow the upload of a text file containing ra and dec coordinates for sources of interest. 
+1.2 In the "Enter Constraints" box, check only the box to the left of the "Spatial" section (uncheck the other two if checked), and click on the "Multi-object" button. 
+A window will pop up to allow the upload of a text file containing ra and dec coordinates for sources of interest. 
 The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). 
 For this example, we prepared a file which is is an ascii catalog with columns of RA and Dec in tab separated format (TSV). 
 The name of the file is ``portal_tut05_useruploadcat1.cat``.
