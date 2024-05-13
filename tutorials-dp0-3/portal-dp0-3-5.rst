@@ -86,7 +86,10 @@ A screenshot of the search query if the user-supplied catalog has uploaded and i
 1.6. Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the row names listed right below "output column selection and constraints").  
 If the header names are recognized as ra and dec then they may auto-populate into the "Lon Column" and "Lat Column" boxes. If they do not (e.g. the header uses different labels than ra/dec), then click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
 
-1.6 For a first look, ignore the "Temporal" constraint and make sure the box is unchecked, and click the "Search" button. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. (Note: leaving the "Row Limit" set to 50000 during the search will prevent the search from taking too long. This example returns fewer than the row limit.)
+1.6 For a first look, ignore the "Temporal" constraint and make sure the box is unchecked.  
+Select the format of the display by clicking on the "hamburger" icon (three horizontal lines on the upper left), and select the "Coverage / Charts / Tables" in the "Results Layout" box.  
+Click the "Search" button. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. 
+(Note: leaving the "Row Limit" set to 50000 during the search will prevent the search from taking too long. This example returns fewer than the row limit.)
 
 .. figure:: /_static/portal_tut05_step01c.png
     :width: 600
@@ -112,7 +115,7 @@ Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ===============================================================
 
 2.1 Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. 
-Download to your computer a sample catalog prepared by us for this exercise - named ``portal_tut05_useruploadcat2.cat``- by using the steps in Step 1.3 (the link is below).  
+Download to your computer a sample catalog prepared by us for this exercise from the link below - named ``portal_tut05_useruploadcat2.cat``- by using the steps in Step 1.3 and Step 1.4.   
 Clicking the down arrow then gives access to the upload button to supply a catalog containing IDs. Click the "Add " button and navigate on your machine to the catalog of IDs to be used. Then click the "load table" button. To use this feature, the IDs listed must correspond to a Rubin table ID (in this case, the SSObjectId).
 
 `Link to catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat2.cat>`_.
