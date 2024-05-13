@@ -214,7 +214,7 @@ data by clicking on the down-arrow in the box underneath the table heading ``ban
 Then open the “Plot Parameters” pop-up window (click on the single gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
 and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
 "Symm", and put ``magErr``. Click on the "Chart Options" arrow, and set the "X Label" to be "Phase angle (deg)" and the "Y Label" 
-to be "Reduced magnitude". Check the "reverse" box for the y-axis option.
+to be "Reduced g magnitude". Check the "reverse" box for the y-axis option.
 
 .. figure:: /_static/portal_tut04_step02c.png
     :width: 400
