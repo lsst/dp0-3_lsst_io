@@ -86,7 +86,7 @@ A screenshot of the search query if the user-supplied catalog has uploaded and i
 1.6. Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the row names listed right below "output column selection and constraints").  
 If the header names are recognized as ra and dec then they may auto-populate into the "Lon Column" and "Lat Column" boxes. If they do not (e.g. the header uses different labels than ra/dec), then click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
 
-1.6 For a first look, ignore the "Temporal" constraint and make sure the box is unchecked.  
+1.7. For a first look, ignore the "Temporal" constraint and make sure the box is unchecked.  
 Select the format of the display by clicking on the "hamburger" icon (three horizontal lines on the upper left), and select the "Coverage / Charts / Tables" in the "Results Layout" box.  
 Click the "Search" button. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. 
 (Note: leaving the "Row Limit" set to 50000 during the search will prevent the search from taking too long. This example returns fewer than the row limit.)
@@ -98,9 +98,9 @@ Click the "Search" button. This search will return whether any moving object was
 
 A screenshot of the search query result, showing the multiple observations of 3 solar system objects from the user-uploaded table - those can be seen as the clustered points.
 
-1.7 Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box (leaving the Spatial box also checked). This example demonstrates how to know if there were moving objects identified in the survey at these coordinates on a specific night (for this example, pick a day for which it is known that this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaSource table to use for temporal matching). Click the MJD specification and enter an MJD range (start date 62000 and end date 63000, a range that we know our sample objects was observed in the catalog). The search returns an observation of 4 unique solar system objects, one of which is observed twice during the MJD range.
+1.8. Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box (leaving the Spatial box also checked). This example demonstrates how to know if there were moving objects identified in the survey at these coordinates on a specific night (for this example, pick a day for which it is known that this is the case from the mjd column of the user-supplied catalog). Click the Temporal box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaSource table to use for temporal matching). Click the MJD specification and enter an MJD range (start date 62000 and end date 63000, a range that we know our sample objects was observed in the catalog). The search returns an observation of 4 unique solar system objects, one of which is observed twice during the MJD range.
 
-1.8 It can be useful to save the search for later. In this case it can be automated with search query commands that are output by the "populate and edit ADQL query" button. Repeat Step 1.7, but instead of hitting the "search" button, hit the "populate and edit ADQL" button on the bottom right. This will navigate to the "advanced ADQL interface" where the reproducible search code snippet to perform the search (e.g. in a notebook) is shown on the right. In the schema browser on the left, the name of the user-supplied catalog is displayed as a searchable table under TAP_UPLOAD. 
+1.9. It can be useful to save the search for later. In this case it can be automated with search query commands that are output by the "populate and edit ADQL query" button. Repeat Step 1.7, but instead of hitting the "search" button, hit the "populate and edit ADQL" button on the bottom right. This will navigate to the "advanced ADQL interface" where the reproducible search code snippet to perform the search (e.g. in a notebook) is shown on the right. In the schema browser on the left, the name of the user-supplied catalog is displayed as a searchable table under TAP_UPLOAD. 
 
 .. figure:: /_static/portal_tut05_step01d.png
     :width: 600
@@ -115,8 +115,11 @@ Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ===============================================================
 
 2.1 Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. 
-Download to your computer a sample catalog prepared by us for this exercise from the link below - named ``portal_tut05_useruploadcat2.cat``- by using the steps in Step 1.3 and Step 1.4.   
-Clicking the down arrow then gives access to the upload button to supply a catalog containing IDs. Click the "Add " button and navigate on your machine to the catalog of IDs to be used. Then click the "load table" button. To use this feature, the IDs listed must correspond to a Rubin table ID (in this case, the SSObjectId).
+Download to your computer a sample catalog prepared by us for this exercise from the link below - named ``portal_tut05_useruploadcat2.cat``- using the procedure in Step 1.3.   
+Clicking the down arrow in the "Object ID Search" box then gives access to the upload button to supply a catalog containing IDs. 
+Click the "Add " button and navigate on your machine to the file containing the catalog of IDs to be used. 
+Then click the "Add upload table" button and click on "Load Table" button in the pop-up window.  
+To use this feature, the IDs listed must correspond to a Rubin table ID (in this case, the SSObjectId).-up window.  
 
 `Link to catalog for user upload <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat2.cat>`_.
 
