@@ -69,7 +69,7 @@ Click on "upload file".
     :width: 600
     :name: portal_tut05_step01a
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
-A screenshot of the Portal screen - ready to upload a table - with the "Upload" pop-up window.  
+**A screenshot of the Portal screen - ready to upload a table - with the "Upload" pop-up window.  **
 
 1.5. After uploading, the pop-up window will show a list of the columns it found, named according to the header. 
 Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. 
@@ -81,7 +81,7 @@ If the table loaded the ra and dec correctly, the table filename should be displ
     :name: portal_tut05_step01b
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search. 
 
-A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
+**A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.**
 
 1.6. Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the row names listed right below "output column selection and constraints").  
 If the header names are recognized as ra and dec then they may auto-populate into the "Lon Column" and "Lat Column" boxes. If they do not (e.g. the header uses different labels than ra/dec), then click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
@@ -96,7 +96,7 @@ Click the "Search" button. This search will return whether any moving object was
     :name: portal_tut05_step01c
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.  
 
-A screenshot of the search query result, showing the multiple observations of 3 solar system objects from the user-uploaded table - those can be seen as the clustered points.
+**A screenshot of the search query result, showing the multiple observations of 3 solar system objects from the user-uploaded table - those can be seen as the clustered points.**
 
 1.8. Now, hit the back button and return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box (leaving the Spatial box also checked). This example demonstrates how to know if there were moving objects identified in the survey at these coordinates on a specific night (for this example, pick a day for which it is known that this is the case from the mjd column of the user-supplied catalog). Click the "Temporal" box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaSource table to use for temporal matching). Click the MJD specification and enter an MJD range (start date 62000 and end date 63000, a range that we know our sample objects was observed in the catalog). The search returns an observation of 4 unique solar system objects, one of which is observed twice during the MJD range.
 
@@ -106,7 +106,7 @@ A screenshot of the search query result, showing the multiple observations of 3 
     :width: 600
     :name: portal_tut05_step01d
     :alt: A screenshot of the "advanced ADQL interface".
-A screenshot of the "advanced ADQL interface" which shows the ADQL search corresponding to the one entered into the portal user interface, for future use with a TAP service.
+**A screenshot of the "advanced ADQL interface" which shows the ADQL search corresponding to the one entered into the portal user interface, for future use with a TAP service.**
 
 
 .. _DP0-3-Portal-5-Step-2:
@@ -133,7 +133,7 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
     :width: 600
     :name: portal_tut05_step02a
     :alt: A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
-A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
+**A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.**
 
 2.4 Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. This example searchs for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. It will return the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and click the downward arrow. This will pop up a window listing the unique SSObjectIds. Clicking the box next to an SSObjectId and clicking "filter" will plot the data for that single object. 
 
@@ -141,7 +141,7 @@ A screenshot of the portal user interface demonstrating the view after correctly
     :width: 600
     :name: portal_tut05_step02a
     :alt: A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
-A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
+**A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.**
 
 2.5 Now use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. Start over at the main portal interface and click the upper right botton called "Edit ADQL". It will navigate to a page to manually type in the ADQL query. Make sure the button is clicked that says "Insert fully-qualified column names (recommended for table joins)". Click the "Add" button and navigate to the user-supplied catalog (Here, use the above catalog of IDs from earlier in Step 2). Once loaded, the catalog should appear in the schema browser on the left under the "TAP_UPLOAD" folder. 
 
