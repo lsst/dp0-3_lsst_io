@@ -50,7 +50,7 @@ Step 1. Upload a user-supplied table of coordinates for use in cone searches
 Click on "DP0.3 Catalogs" tab on top of the window.  The Table Collection (Schema) tab should default to "dp03_catlogs_10yr".  
 Select "dp03_catalogs_10yr.DiaSource" table in the right-hand tab.  
 
-1.2 In the "Enter Constraints" box, check only the box to the left of the "Spatial" section (uncheck the other two if checked), and click on the "Multi-object" button. 
+1.2. In the "Enter Constraints" box, check only the box to the left of the "Spatial" section (uncheck the other two if checked), and click on the "Multi-object" button. 
 A window will pop up to allow the upload of a text file containing ra and dec coordinates for sources of interest. 
 The format of this catalog must be one of those listed (IPAC, CSV, TSV, VOTABLE, or FITS table format). 
 For this example, we prepared a file which is is an ascii catalog with columns of RA and Dec in tab separated format (TSV). 
@@ -114,7 +114,7 @@ Click the "Search" button. This search will return whether any moving object was
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ===============================================================
 
-2.1 Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. 
+2.1. Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. 
 Download to your computer a sample catalog named ``portal_tut05_useruploadcat2.cat`` prepared by us for this exercise (from this 
 ` link <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat2.cat>`_) - using the procedure in Step 1.3.   
 Clicking the down arrow in the "Object ID Search" box then gives access to the upload button to supply a catalog containing IDs. 
@@ -126,7 +126,7 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
 2.2.  Return to the main user interface and, in the "Object ID Search" box, click the arrow in the box next to "Uploaded Object ID".  Click the magnifying glass near "ID" and in the window that pops open, select the "SSObjectId" header keyword from the table that was uploaded, and hit OK. The object ID box should now contain ssObjectId (or whatever header label is used for ID in the user suppled catalog). 
 
 
-2.3 Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default Object ID type that is listed will be based on the DP0.3 table that is selected in the menu above (LSST DP0.3 SSO Tables), which is by default the DiaSourceId from the DiaSource Table. But this exercise will instead match on SSObjectId, which will retrieve information for specific solar system bodies identififed by their unique identifier. Click the magnifying glass to open a navigation window to choose which ID from the DP0.3 table to use, and select SSObjectId.
+2.3. Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default Object ID type that is listed will be based on the DP0.3 table that is selected in the menu above (LSST DP0.3 SSO Tables), which is by default the DiaSourceId from the DiaSource Table. But this exercise will instead match on SSObjectId, which will retrieve information for specific solar system bodies identififed by their unique identifier. Click the magnifying glass to open a navigation window to choose which ID from the DP0.3 table to use, and select SSObjectId.
 
 
 .. figure:: /_static/portal_tut05_step02a.png
@@ -135,7 +135,7 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
     :alt: A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
 **A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.**
 
-2.4 Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. This example searchs for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. It will return the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and click the downward arrow. This will pop up a window listing the unique SSObjectIds. Clicking the box next to an SSObjectId and clicking "filter" will plot the data for that single object. 
+2.4. Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. This example searchs for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. It will return the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and click the downward arrow. This will pop up a window listing the unique SSObjectIds. Clicking the box next to an SSObjectId and clicking "filter" will plot the data for that single object. 
 
 .. figure:: /_static/portal_tut05_step02b.png
     :width: 600
@@ -143,7 +143,12 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
     :alt: A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
 **A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.**
 
-2.5 Now use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. Start over at the main portal interface and click the upper right botton called "Edit ADQL". It will navigate to a page to manually type in the ADQL query. Make sure the button is clicked that says "Insert fully-qualified column names (recommended for table joins)". Click the "Add" button and navigate to the user-supplied catalog (Here, use the above catalog of IDs from earlier in Step 2). Once loaded, the catalog should appear in the schema browser on the left under the "TAP_UPLOAD" folder. 
+2.5. Now use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. 
+Start over at the main portal interface by clicking the DP0.3 Catalogs" tab and click the upper right botton called "Edit ADQL". 
+It will navigate to a page to manually type in the ADQL query. 
+Make sure the button is clicked that says "Insert fully-qualified column names (recommended for table joins)". 
+Click the "Add" button and navigate to the user-supplied catalog (Here, use the above catalog of IDs from earlier in Step 2). 
+Once loaded, the catalog should appear in the schema browser on the left under the "TAP_UPLOAD" folder. 
 
 2.6 Add the uploaded table to the ADQL query build. Click the + box next to TAP_UPLOAD in the browser schema, and click the "upload_table" folder. It should populate the ADQL code to search the catalog that was uploaded to the right (clicking search now will just return the list of IDs contained in the catalog). Then, type in the following query to search the DP0.3 catalogs for objects that match ssObjectIds, using a JOIN: 
 
