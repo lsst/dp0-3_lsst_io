@@ -144,13 +144,17 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
 **A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.**
 
 2.5. Now use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. 
-Start over at the main portal interface by clicking the DP0.3 Catalogs" tab and click the upper right botton called "Edit ADQL". 
+Start over at the main portal interface by clicking the "DP0.3 Catalogs" tab and click the upper right botton called "Edit ADQL". 
 It will navigate to a page to manually type in the ADQL query. 
 Make sure the button is clicked that says "Insert fully-qualified column names (recommended for table joins)". 
-Click the "Add" button and navigate to the user-supplied catalog (Here, use the above catalog of IDs from earlier in Step 2). 
+Click the "Add Upload Table" button and navigate to the user-supplied catalog (here, use the above catalog of IDs from earlier in Step 2). 
+Click "Load Table".  
 Once loaded, the catalog should appear in the schema browser on the left under the "TAP_UPLOAD" folder. 
 
-2.6 Add the uploaded table to the ADQL query build. Click the + box next to TAP_UPLOAD in the browser schema, and click the "upload_table" folder. It should populate the ADQL code to search the catalog that was uploaded to the right (clicking search now will just return the list of IDs contained in the catalog). Then, type in the following query to search the DP0.3 catalogs for objects that match ssObjectIds, using a JOIN: 
+2.6. Add the uploaded table to the ADQL query build. 
+Click the + box next to TAP_UPLOAD in the browser schema, and click the "upload_table" folder. 
+It should populate the ADQL code to search the catalog that was uploaded to the right (clicking search now will just return the list of IDs contained in the catalog). 
+Then, type in the following query to search the DP0.3 catalogs for objects that match ssObjectIds, using a JOIN: 
 
 .. code-block:: SQL 
 
@@ -162,18 +166,18 @@ Once loaded, the catalog should appear in the schema browser on the left under t
 .. figure:: /_static/portal_tut05_step02c.png
     :width: 600
     :name: portal_tut05_step02c
-    :alt: A screenshot .
-
-
-
+    :alt: A screenshot 
+**A screenshot of the portal user interface, ready to issue the query in the ADQL box.**
 
 .. _DP0-3-Portal-5-Step-3:
 
 Step 3. Two-step search process using the "Loaded Table" option
-============================================
+===============================================================
 
 
-3.1 Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. Make sure the "Spatial" box is checked and the "Temporal" box is unchecked. Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left. 
+3.1 Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. 
+Make sure the "Spatial" box is checked and the "Temporal" box is unchecked. 
+Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left. 
 
 3.2 Then, go down to the Object ID Search section of the UI, and click the box to the left of Object ID Search, and click the arrow to expand the search options below. Click the "Add..." button next to Upload Table. A new window will open to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in step 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 110 DiaSources were returned). Click the "Load Table" button.
 
