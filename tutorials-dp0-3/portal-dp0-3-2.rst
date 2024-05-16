@@ -25,7 +25,7 @@
 
 **Contact authors:** Melissa Graham and Greg Madejski
 
-**Last verified to run:** Fri Aug 4 2023
+**Last verified to run:** 2024-04-30
 
 **Targeted learning level:** beginner
 
@@ -94,19 +94,16 @@ Step 1. Identify an object to explore
 
 1.1. Log in to the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 
-1.2. To access the DP0.3 TAP Service (DP0.2 is the default), in the upper right corner next to "TAP Services" click "Show". 
-A new option will appear at the top, called "Select TAP Service".
-Click on where it says "Using LSST DP0.2 DC2", and select "LSST DP0.3 SSO" from the drop-down menu.
-In the upper right corner next to "TAP Services" click "Hide".
-The top of the page now displays "LSST DP0.3 SSO Tables".
-The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the default "Table" will be "dp03_catalogs_10yr.DiaSource".
+1.2. To access the DP0.3 TAP Service, click on the DP0.3 Catalogs tab at the top of the screen. 
+The default "Table Collection (Schema)" which is "dp03_catalogs_10yr" will be for this tutorial. 
+Change default "Table" will be "dp03_catalogs_10yr.SSObject" to "dp03_catalogs_10yr.DiaSource" by clicking on the down arrow and selecting the table.
 
 1.3. At upper right, click "Edit ADQL", and enter the following query into the box. 
 This query retrieves a random subset of ``SSObjects`` that were observed between 100 and 300 times
 over the 10-year LSST survey simulation, 
 are bright (``g_H`` < 20 mag) but would never saturate with LSST (``g_H`` > 17 mag),
 are in the inner Solar System (``q`` < 3),
-and have orbits that are inclined by at least 20 degrees and eccentricities between 0.1 and 0.5.
+and have orbits that are inclined by at least 20 degrees and eccentricities between 0.1 and 0.5. Click the "Search" button in the lower left-hand corner.
 
 .. code-block:: SQL 
 
@@ -121,16 +118,16 @@ and have orbits that are inclined by at least 20 degrees and eccentricities betw
 
 1.4. The default results view will plot the g-band absolute H magnitude versus the number of observations for the 4150 objects.
 
-1.5. In the upper-right corner of the plot panel, click the settings icon (double gears) to open the plot parameters pop-up window.
+1.5. In the upper-right corner of the Active Chart panel, click the settings icon (single gear) to open the plot parameters pop-up window.
 Change the y-axis column to eccentricity (``e``), click "Apply" and then "Close".
 Click on an object of interest and the point will turn orange and it will be highlighted in the table.
 Record the ``ssObjectID`` of the chosen object.
 
-.. figure:: /_static/portal_tut02_step01a.png
-    :name: portal_tut02_step01a
+.. figure:: /_static/dp03_portal_tut02_step01_05.png
+    :name: dp03_portal_tut02_step01_05
     :alt: A screenshot of the results view plotting eccentricity versus number of observations.
 
-    A screenshot of the results view, with the plot altered to show eccentricy versus number of observations.
+**A screenshot of the results view, with the plot altered to show eccentricy versus number of observations.**
 
 
 .. _DP0-3-Portal-2-Step-2:
@@ -138,7 +135,7 @@ Record the ``ssObjectID`` of the chosen object.
 Step 2. Visualize the object's orbit
 ====================================
 
-2.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+2.1. Click on "DP0.3 Catalogs" tab at the top to return to the main search page, and then "Edit ADQL".
 Submit the following query, using the ``ssObjectId`` as below (or one of your choosing).
 This query returns the heliocentric (sun-centered) and topocentric (Earth-centered) 3D distances
 of the object at the time of every simulated LSST observation from the ``SSSource`` table.
@@ -151,7 +148,7 @@ of the object at the time of every simulated LSST observation from the ``SSSourc
     WHERE ssObjectId = 8416929992792689125
 
 
-2.2. View the default results view, which plots the sun-centered orbit of ``heliocentricY`` versus ``heliocentricX``.
+2.2. The "Results" tab at the top will display the results from the query, which plots the sun-centered orbit of ``heliocentricY`` versus ``heliocentricX``.
 Click on the plot settings icon and in the pop-up window, select "Chart Options" and then add a grid
 to the x and y axis to more easily identify the Sun's location at (0, 0).
 Click "Apply" and "Close".  
@@ -166,7 +163,7 @@ If you plan to use those (or equivalent) plots for publication, you need to edit
     :name: portal_tut02_step02a
     :alt: A screenshot showing the plot of heliocentricX versus heliocentricY with grid lines.
 
-    A visualization of the object's orbit projected onto the plane of the Solar System.
+**A visualization of the object's orbit projected onto the plane of the Solar System.**
 
 
 2.3. Click again on the plot settings icon and in the pop-up window, select "Add New Chart". 
@@ -182,7 +179,7 @@ so this is just a regular asteroid and not a hazardous one!
     :name: portal_tut02_step02b
     :alt: A screenshot showing a grid of plots of the object's distance from the Sun and Earth over time.
 
-    A visualization of the object's orbits in heliocentric and topocentric distances.
+**A visualization of the object's orbits in heliocentric and topocentric distances.**
 
 
 .. _DP0-3-Portal-2-Step-3:
@@ -190,7 +187,7 @@ so this is just a regular asteroid and not a hazardous one!
 Step 3. Visualize the object's 2d sky motion
 ============================================
 
-3.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+3.1. Click on "DP0.3 Catalogs" tab at the top to return to the main search page, and then "Edit ADQL".
 Submit the following query, using the same ``ssObjectId`` as above (or one of your choosing).
 This query returns the right ascension (``ra``), declination (``dec``), and modified julian date 
 (``midPointMjdTai``) of every observation.
@@ -204,20 +201,21 @@ This query returns the right ascension (``ra``), declination (``dec``), and modi
 
 3.2. The default results view will probably include a sky image, but since there were no
 images simulated for DP0.3 (catalogs only), it will be all black.
-At upper right, click on "Bi-View Tables" to display only the default xy plot and the results table.
+Click on the "hamburger icon" (three lines in a box) at the upper left of the screen and scroll down to "Results Layout" and select "Tables and Coverage Charts" option.  
+Click on "Active Chart" to switch between the blank "Coverage" tab and the "Active Chart Tab".
 
 3.3. The plot of declination versus right ascension shows how the object moves on the sky over the 10-year LSST.
-Click on the settings icon in the plot panel and in the plot parameters pop-up window, 
+Click on the settings icon (single gear) in the plot panel and in the plot parameters pop-up window, 
 under "Trace Options" next to "Color Map" enter ``midPointMjdTai``, and from the drop-down menu for 
 "Color Scale" choose "Rainbow".
-Click "Apply" and then "Close".
+Click "Apply" and then "Close". This will illustrate two-dimensional motion as a function of time, which is marked as a changing color.
 
 .. figure:: /_static/portal_tut02_step03a.png
     :width: 400
     :name: portal_tut02_step03a
     :alt: A screenshot showing a plot of right ascension versus declination, with points colored by date.
 
-    A visualization of the object's motion across the sky and LSST's detections.
+**A visualization of the object's motion across the sky and LSST's detections.**
 
 3.4. In the plot above, notice how the points are in four clusters of RA, Dec, and color.
 This demonstrates how the LSST observing strategy covers the moving object's location in four
@@ -229,7 +227,7 @@ years out of the ten.
 Step 4. Visualize the object's photometry
 =========================================
 
-4.1. At upper left, click "RSP TAP Search" to return to the main search page, and then "Edit ADQL".
+4.1. Click on DP0.3 Catalogs to return to the search screen, and then "Edit ADQL".
 Submit the following query, using the same ``ssObjectId`` as above (or one of your choosing).
 This query returns the magnitude, filter, and modified julian date (``midPointMjdTai``) of every 
 observation that was obtained in the r-band from the ``DiaSource`` table, 
@@ -244,9 +242,9 @@ The two tables are joined on the ``diaSourceId`` column.
    WHERE dia.ssObjectId = 8416929992792689125
    AND dia.band = 'r'
 
-4.2. Use the plot settings icon to open the plot parameters pop-up window, and modify the trace to
+4.2. Use the plot settings icon (single gear) to open the plot parameters pop-up window, and modify the trace to
 plot ``mag`` versus ``midPointMjdTai``.
-Click "Apply" but not "Close", and instead choose to "Add New Chart" and plot the ``mag`` as a function
+Click "Apply" and "Close". Click the plus sign in the circle to "Add New Chart" and plot the ``mag`` as a function
 of ``phaseAngle``.
 
 .. figure:: /_static/portal_tut02_step04a.png
@@ -254,7 +252,7 @@ of ``phaseAngle``.
     :name: portal_tut02_step04a
     :alt: A screenshot showing two plots, one of magnitude versus time and one versus phaseAngle.
 
-    A visualization of the object's magnitude changes versus time (left) and phase angle (right).
+**A visualization of the object's magnitude changes versus time (left) and phase angle (right).**
 
 4.3. Notice there is no trend in the magnitude as a function of time, and recall that the DP0.3
 simulation does not include any time-domain changes in the photometry (e.g., rotation curves). 
