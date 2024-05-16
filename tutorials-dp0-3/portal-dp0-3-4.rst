@@ -15,15 +15,15 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-#######################################
+###########################################
 04. Phase curve fit analysis (Intermediate)
-#######################################
+###########################################
 
 .. This section should provide a brief, top-level description of the page.
 
 **Contact authors:** Yumi Choi and Melissa Graham
 
-**Last verified to run:** 2023-12-22
+**Last verified to run:** 2023-12-22;  updated to reflect the new UI starting May 6 2024
 
 **Targeted learning level:** Intermediate
 
@@ -38,7 +38,7 @@ Introduction
 
 This portal tutorial is the same demonstration used in the tutorial notebook 
 `Introduction to Phase Curves <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP03_04a_Introduction_to_Phase_Curves.ipynb>`_ 
-to illustrate the phase curves of solar system objects, but focuses on Main Belt Asteroids (MBAs).
+aimed to illustrate the phase curves of solar system objects, but focuses on Main Belt Asteroids (MBAs).
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
@@ -56,7 +56,7 @@ magnitudes (`H`) are defined to be for an object 1 au from the Sun and 1 au from
 angle :math:`\alpha` (the angle Sun-object-Earth) of 0 degrees. Absolute magnitudes are derived by fitting a 
 function to the relationship between reduced magnitude :math:`H(\alpha)` and phase angle :math:`\alpha` 
 (i.e., the phase curve), and evaluating the function at a phase angle of 0 degrees. The reduced magnitude, 
-which is corrected for distance, :math:`H(\alpha)`, as:
+which is corrected for distance, :math:`H(\alpha)`, is:
 
 .. math::
 
@@ -105,8 +105,7 @@ Thus, any changes over time in an object’s apparent magnitude are due only to 
 Step 1. Query the DP0.3 tables for the Main Belt Asteroids
 ==========================================================
 
-**1.1.** Log into the Rubin Science Platform at data.lsst.cloud and select the Portal Aspect. At upper right, next to 
-"TAP Services" choose to "Show", and then select "LSST DP0.3 SSO" from the drop-down menu that appears at the top. 
+**1.1.** Log into the Rubin Science Platform at data.lsst.cloud and select the Portal Aspect. On top, select the "DP0.3 Catalogs" tab.  
 
 **1.2.** At upper right, next to "View" choose "Edit ADQL". Enter the query statement below into the ADQL Query box and  
 execute the query to select a good number of MBAs with a fair number of total observations (``numObs`` > 100) 
@@ -137,10 +136,12 @@ In order to have the query execution not to take too long, we restrict the numbe
     AND (mpc.q > 1.666)
     AND sso.numObs > 100 
 
-**1.3.** Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  
+**1.3.** Plot the distribution of semi-major axes ``a`` of orbits of the objects in your query.  Select the "Active Chart" tab on the panel containing the plot.  
+(You can chose to have the plot to appear on the left or the right side of your window - this can be changed by clicking the 
+"hamburger" icon on the upper left corner of the Portal screen, and selecting the layout of your choice in the "Results Layout" tab.)
 The execution of the query will result in a blank panel for the plot, with a comment "Cannot display the requested data."  
-To plot the distribution of ``a`` you need to click on the "Chart options and tools" icon (two gears), click on "Add New Chart", 
-select "Histogram" for "Plot Type", enter "q / (1-e)" as the "Column or expression" and "100" for number of bins as on the screenshot below.  
+To plot the distribution of ``a`` you need to add another plot panel by clicking on the "+" button on the upper left side of the plot window.  
+In the new window, select "Histogram" for "Plot Type", enter "q / (1-e)" as the "Column or expression" and "100" for number of bins as on the screenshot below.  
 
 .. figure:: /_static/portal_tut04_step01a.png
     :width: 400
@@ -149,7 +150,7 @@ select "Histogram" for "Plot Type", enter "q / (1-e)" as the "Column or expressi
 
     **Figure 1:** The "Plot Parameters" pop-up window to set parameters for making a histogram of semi-major axes for MBAs. 
 
-**1.4.** Click "Ok" and close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.
+**1.4.** Click "OK" in the pop-up window.  Also, close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.
 It will result in the following plot and table below. Note that the distribution of asteroids as a function of semi-major axis is not uniform, 
 but it reveals a number of peaks and gaps where there are very few (or no) objects. These are known as Kirkwood gaps, which arise due to resonances 
 between the asteroid's and Jupiter's orbital periods.  
@@ -169,9 +170,10 @@ Step 2. Select a well-observed MBA, and plot its phase curve
 **2.1.** Unique solar system objects in the ``SSObject`` and ``MPCORB`` tables will be observed many times over the full LSST survey. 
 Individual observations of each unique object in each filter are recorded in the ``SSSource`` and ``diaSource`` tables. 
 Below, we query these tables to obtain all of the individual observed time series data (we call indivObs) for an MBA that has 
-more than 2000 observations. First, select MBAs with 2000 or more observations by entering ">2000" in the box underneath the table heading 
-``numObs`` as shown as below and hitting the return key. This will leave only a small fraction of queried 100,000 MBAs above, 23 MBAs in this tutorial.
-To go back to the originally retreived table by removing the applied filter, click the remove filter icon, which is the first icon on the top 
+more than 2000 observations. First, in the Table resulting from the last search in Step 1, select MBAs with 2000 or more 
+observations by entering ">2000" in the box underneath the table heading ``numObs`` as shown as below and hitting the return key. 
+This will leave only a small fraction of queried 100,000 MBAs above, 23 MBAs in this tutorial.
+To go back to the originally retrieved table by removing the applied filter, click the remove filter icon, which is the first icon on the top 
 right of the table.
 
 .. figure:: /_static/portal_tut04_step02a.png
@@ -181,9 +183,9 @@ right of the table.
 
     **Figure 3:** The resulting table of 23 MBAs with 2000 or more observations out of the retrieved 100,000 MBAs in Step 1.2.
 
-**2.2.** Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. Right-click on that box, 
+**2.2.** Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. Click on that box, 
 two options will pop up: "Copy to clipboard" and "View as plain text". Here, copy ``ssObjectId`` = ``7470575696289418102`` 
-to clipboard and click "RSP TAP Search" button on the top left to go back to the ADQL Query page. 
+to clipboard. 
 
 .. figure:: /_static/portal_tut04_step02b.png
     :width: 300
@@ -192,7 +194,9 @@ to clipboard and click "RSP TAP Search" button on the top left to go back to the
 
     **Figure 4:** How to copy a selected ``ssObjectId`` to clipboard.
 
-**2.3** Execute the following ADQL query to retrieve the apparent magnitudes, magnitude errors, filters, phase angles,
+**2.3.** Return to the page where you can select the "DP0.3 Catalogs" by refreshing your browser, and select it.  
+Click on the "Edit ADQL" tab.  
+Execute the following ADQL query to retrieve the apparent magnitudes, magnitude errors, filters, phase angles,
 topocentric and heliocentric distances of the individual observations for a well-observed MBA.  
 
 .. code-block:: SQL 
@@ -204,12 +208,13 @@ topocentric and heliocentric distances of the individual observations for a well
     INNER JOIN dp03_catalogs_10yr.SSSource as sss ON dia.diaSourceId = sss.diaSourceId
     WHERE dia.ssObjectId = 7470575696289418102
 
-**2.4.** To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
-data by entering "='g'" in the box underneath the table heading ``band`` and hitting the return key.
-Then open the “Plot Parameters” pop-up window (click on the two-gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
+**2.4.** The default plot is the first column of the table in X-axis, and the second column in Y-axis - not very useful.  
+To plot the phase curve in the `g`-band (i.e, reduced magnitude versus phase angle), first select the `g`-band 
+data by clicking on the down-arrow in the box underneath the table heading ``band`` checking the box by the "g" entry (see the Figure below Step 2.5).
+Then open the “Plot Parameters” pop-up window (click on the single gear icon), click on "Modify Trace", set the "X" to ``phaseAngle`` 
 and "Y" to ``mag - 5 * log10(topocentricDist * heliocentricDist)``. Check the "Error" box for the y-axis and select 
-"Symm", and put ``magErr``. Click on the "Chart Options" arrow, and set the "X Label" to be "Phase angle [deg]" and the "Y Label" 
-to be "Reduced magnitude". Check the "reverse" box for the y-axis option.
+"Symm", and put ``magErr``. Click on the "Chart Options" arrow, and set the "X Label" to be "Phase angle (deg)" and the "Y Label" 
+to be "Reduced g magnitude". Check the "reverse" box for the y-axis option.
 
 .. figure:: /_static/portal_tut04_step02c.png
     :width: 400
@@ -228,8 +233,10 @@ to be "Reduced magnitude". Check the "reverse" box for the y-axis option.
 
     **Figure 6:** The `g`-band phase curve for the MBA with ``ssObjectId`` = ``7470575696289418102``.
 
-**2.6.** In order to plot a phase curve in a different band, for example in `z`-band, enter "='z'" in the box underneath the table heading 
-``band`` and hitting the return key. The `g`-band phase curve plot will be replaced with the `z`-band phase curve plot as shown below. 
+**2.6.** In order to plot a phase curve in a different band, for example in `z`-band, select the `z`-band 
+data by clicking on the down-arrow in the box underneath the table heading ``band``.  
+Check the box by the "z" entry and un-check the "g" entry.  
+The `g`-band phase curve plot will be replaced with the `z`-band phase curve plot as shown below. 
 It is clear that the phase curves of the source are offset from each other in these two filters, reflecting the variation in brightness 
 of asteroids in different filters. Also the reduced magnitude qualities (i.e., photometric uncertainties) are significantly different.
 
@@ -246,9 +253,10 @@ Step 3. Exploring phase curve data products from the DP0.3 catalogs
 ===================================================================
 
 **3.1.** This section explores the distribution of `G12` slope parameter values as a function of absolute magnitudes 
-`H` for MBAs in `griz` bands. Return to the originally retrieved table in Step 1.2 by clicking the first table tab. 
+`H` for MBAs in `griz` bands. Return to the originally retrieved table in Step 1.2 by clicking the first table tab 
+(if you closed that tab, reissue the ADQL search from Step 1.2).  
 Remove the ``numObs`` > 2000 condition either by clicking the remove filter icon on the top right or by deleting the 
-condition and hitting the return key. Then, open the “Plot Parameters” pop-up window (click on the two-gear icon), 
+condition and hitting the return key. Then, add a new chart by clicking the "+" button above the plot panel 
 choose “Add New Chart”, opt for "Heatmap" as the "Plot Type", and create a new plot for the `G12` vs. `H` in `g` band, 
 adhering to the specified plot settings below.  
 
@@ -257,11 +265,10 @@ adhering to the specified plot settings below.
     :name: portal_tut04_step03a
     :alt: A screenshot of the plot parameters for the `G12` vs. `H` plot.
 
-    **Figure 8:** The "Plot Parameters" pop-up window to plot the `G12` vs. `H` in `g` band.
+    **Figure 8:** The plot parameters in the "Add New Chart" pop-up window to plot the `G12` vs. `H` in `g` band.
 
-**3.2.** Once creating the `G12` vs. `H` plot for `g`-band, close the histogram of semi-major axes of MBAs we made in Step 1.4,
-and add three more new plots for `riz` bands by repeating the creation of the `G12` vs. `H` plot in Step 3.1, but going through 
-the `riz` bands. This will generate four panels as shown below. 
+**3.2.** Once you've created the `G12` vs. `H` plot for `g`-band, add three more new plots for `riz` bands by repeating the 
+creation of the `G12` vs. `H` plot in Step 3.1, but going through the `riz` bands. This will generate four panels as shown below. 
 
 .. figure:: /_static/portal_tut04_step03b.png
     :width: 600
@@ -279,9 +286,9 @@ the intrinsic value.
 
 **3.4.** This section explores the impact of the total number of observations for a given source (`numObs`) and 
 the perihelion distance (`q`) on the quality of phase curve fitting in `i`-band as an example. First close any open plots except 
-for one heatmap, and then click on "Chart options and tools" icon to make a new plot. Select "Modify Trace", set the "X" 
+for one heatmap, and then click on "Chart options and tools" icon (single gear)to make a new plot. Select "Modify Trace", set the "X" 
 to ``numObs``, "Y" to ``i_Herr``, the number of "X"- and "Y"-bins to 200. Lastly, set the min and max for the y-axis under the 
-"Chart Options" to be 0 and 0.05 as follows. Make another plot by repeating the same paramter setting, but selecting "Add New Chart" 
+"Chart Options" to be 0 and 0.05 as follows. Make another plot by repeating the same paramter setting, by clicking on the "+" button, and this time  
 and entering ``q`` on the x-axis.
 
 .. figure:: /_static/portal_tut04_step03c.png
@@ -291,7 +298,8 @@ and entering ``q`` on the x-axis.
 
     **Figure 10:** The "Plot Parameters" pop-up window to plot the ``i_Herr`` vs. ``numObs``.
 
-**3.5.** Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``. This will generate four panels showing 
+**3.5.** Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``.  This time, 
+set the min and max for the y-axis under the "Chart Options" to be 0 and 0.5.  This will generate four panels showing 
 how the `H` and `G12` parameter uncertainties vary with the total number of observations and the perihelion distance for MBAs.
 In left panels, it is clear that the phase curve fit uncertainties decrease with the number of observations of each source. 
 So as LSST accumulates data over time, precision in the phase curve modeling will improve. The right panels show that uncertainties 
@@ -307,8 +315,8 @@ in the phase curve parameters modestly increase for objects with larger periheli
 **3.6.** The above plots compare ``numObs`` (total in all bands) with model fits, which may not be the ideal metric since the quality 
 of phase curves can vary quite a bit between filters. Instead, one can look at the number of datapoints included in the phase curve 
 modeling on a per filter basis (e.g., ``r_Ndata`` for the `r`-band in the ``SSObject`` table). To make a plot showing the distribution of 
-the number of observations in each filter, again first close any open plots except for one, and then click on the "Chart options and tools" icon. 
-Select "Add New Chart", set the "Plot Type" to "Histogram", the "Column or expression" to ``g_Ndata``. Select the "Uniform binning" algorithm, 
+the number of observations in each filter, again first close any open plots except for one, and then click on the "+" icon to add a chart.  
+In the "Add New Chart" pop-up window, set the "Plot Type" to "Histogram", the "Column or expression" to ``g_Ndata``. Select the "Uniform binning" algorithm, 
 set the number of bins to 100 with the min and max to be 0 and 1300, respectively. Under the "Chart Options", check the "log" box for the y-axis. 
 It will plot the histogram of the `g`-band number of observations. Once creating the ``g_Ndata`` histogram, close the remaining plot from 
 Step 3.5. To overplot the histogram for ``r_Ndata``, select "Overplot New Trace" on the "Plot Parameters" pop-up window, and use the same 
@@ -327,9 +335,9 @@ measured in `r`- and `i`-bands will thus be better sampled. Clicking the labels 
     **Figure 12:** Histograms of the number of observations in each filter.
 
 **3.7.** To confirm whether phase curve fitting in `i` band is indeed more precise than in `z` band, let's compare the uncertainty 
-in `H` values for `i` and `z` bands by adding a new plot. Click on the two-gear icon, select "Add New Chart" and "Heatamp". Set the "X" 
-to ``i_Herr`` and "Y" to ``z_Herr`` with the X and Y MIN/MAX of 0 and 0.1. To make the plot with a more proper display ratio, set the 
-"X/Y ratio" under the "Chart Options" to be 1, check the "width" box, and hit the apply button. The right panel in the figure below, 
+in `H` values for `i` and `z` bands by adding a new plot. Add a new chart by clicking the "+" on the upper left" and select "Heatamp". Set the "X" 
+to ``i_Herr`` and "Y" to ``z_Herr`` with the X and Y MIN/MAX of 0 and 0.1. To make the plot with a more proper display ratio, slide the 
+dividing line between the table and the charts to reduce the size of the table panel.  In the right panel in the "Active Charts" panel below, 
 one can see that poorer sampling drives higher uncertainty in the derived absolute magnitude `H` using `z` band compared to `i` band for MBAs. 
 
 .. figure:: /_static/portal_tut04_step03f.png
