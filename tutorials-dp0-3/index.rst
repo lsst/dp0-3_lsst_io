@@ -97,6 +97,7 @@ Apologies for the inconvenience that some table contents are not readable in the
     rendered_nb_03_04a
     rendered_nb_03_04b
     rendered_nb_03_05
+    rendered_nb_03_06
 
 
 .. _DP0-3-Tutorials-ES:
