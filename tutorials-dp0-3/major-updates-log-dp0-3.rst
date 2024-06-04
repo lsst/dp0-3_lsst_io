@@ -50,6 +50,11 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Jun 3 2024
+----------
+
+Released new beginner-level tutorial notebook 06 on user-uploaded tables in TAP.
+
 May 2 2024
 ----------
 
