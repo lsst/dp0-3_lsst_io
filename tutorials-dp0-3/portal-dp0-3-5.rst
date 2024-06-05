@@ -113,7 +113,7 @@ Click the "Search" button. This search will return whether any moving object was
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ===============================================================
 
-2.1. Return to the main portal user interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. 
+2.1. Return to the main DP0.3 Catalogs tab to go back to the search interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. 
 Download to your computer a sample catalog named ``portal_tut05_useruploadcat2.cat`` prepared by us for this exercise (from this 
 ` link <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat2.cat>`_) - using the procedure in Step 1.3.   
 Clicking the down arrow in the "Object ID Search" box then gives access to the upload button to supply a catalog containing IDs. 
