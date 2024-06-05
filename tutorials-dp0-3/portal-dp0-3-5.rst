@@ -174,7 +174,7 @@ Step 3. Two-step search process using the "Loaded Table" option
 ===============================================================
 
 
-3.1. Back on the main query page, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. 
+3.1. Return to the main DP0.3 Catalogs tab to go back to the search interface, and enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. 
 Make sure the "Spatial" box is checked and the "Temporal" box is unchecked. 
 Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "RSP TAP Search" button in the top left. 
 
