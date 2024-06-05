@@ -87,8 +87,7 @@ If the table loaded the ra and dec correctly, the table filename should be displ
 If the header names are recognized as ra and dec then they may auto-populate into the "Lon Column" and "Lat Column" boxes. If they do not (e.g. the header uses different labels than ra/dec), then click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
 
 1.7. For a first look, ignore the "Temporal" constraint and make sure the box is unchecked.  
-Select the format of the display by clicking on the "hamburger" icon (three horizontal lines on the upper left), and select the "Coverage / Charts / Tables" in the "Results Layout" box.  
-Click the "Search" button. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. 
+Click the "Search" button. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. Select the format of the display by clicking on the "hamburger" icon (three horizontal lines on the upper left), and select the "Coverage / Charts / Tables" in the "Results Layout" box.  
 (Note: leaving the "Row Limit" set to 50000 during the search will prevent the search from taking too long. This example returns fewer than the row limit.)
 
 .. figure:: /_static/portal_tut05_step01c.png
