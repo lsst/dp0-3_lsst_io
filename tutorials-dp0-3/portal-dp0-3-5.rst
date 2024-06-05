@@ -62,7 +62,8 @@ Make sure to remove any pound sign (#) from the header before uploading.
 1.3.  Download the file to your computer using the `link to file in GitHub containing the catalog <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat1.cat>`_.  
 If you are a novice using GitHub - click on this link which will take you to the GitHub repository containing the file, and click on the "download" tab (an arrow pointing down into an open box).  
 
-1.4.  Upload the file from your computer to the Portal.  Click on the "Multi-object" button, which will result in a pop-up window as illustrated below.  
+1.4.  Upload the file from your computer to the Portal.  
+If you haven't done so in Step 1.2 - click on the "Multi-object" button, which will result in a pop-up window as illustrated below.  
 Click on "upload file".  
 
 .. figure:: /_static/portal_tut05_step01a.png
@@ -83,7 +84,7 @@ If the table loaded the ra and dec correctly, the table filename should be displ
 
 **A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.**
 
-1.6. Still under the "spatial" constraint inputs but under the "Radius" box, click the arrow next to "position columns (from the selected table on the right)" and a sub-menu will lower. Here, the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the row names listed right below "output column selection and constraints").  
+1.6. Still under the "spatial" constraint inputs but under the "Radius" box, click the arrow next to "Position Columns (from the selected table on the right)" and a sub-menu will lower. Here, the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the row names listed right below "output column selection and constraints").  
 If the header names are recognized as ra and dec then they may auto-populate into the "Lon Column" and "Lat Column" boxes. If they do not (e.g. the header uses different labels than ra/dec), then click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
 
 1.7. For a first look, ignore the "Temporal" constraint and make sure the box is unchecked.  
@@ -113,13 +114,13 @@ Click the "Search" button. This search will return whether any moving object was
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ===============================================================
 
-2.1. Return to the main DP0.3 Catalogs tab to go back to the search interface, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. 
+2.1. Return to the main DP0.3 Catalogs tab to go back to the search interface by clicking the "UI assisted" buttom on the top right, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. 
 Download to your computer a sample catalog named ``portal_tut05_useruploadcat2.cat`` prepared by us for this exercise (from this 
-` link <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat2.cat>`_) - using the procedure in Step 1.3.   
+` link <https://github.com/lsst/dp0-3_lsst_io/blob/main/_static/portal_tut05_useruploadcat2.cat>`_) - using the procedure in Step 1.3.  Click on the "Change Upload Table" and replace the table you loaded in the Step 1 with the one you just uploaded to your computer.  Click on "Load Table" button.  
 Clicking the down arrow in the "Object ID Search" box, and clicking the "Load object IDs from a table" button will then give access to the upload button to supply a catalog containing IDs. 
 Click the "Add Upload Table" button and navigate on your machine to the file containing the catalog of IDs to be used. 
 A pop-up window will appear, where you can upload the file.  
-Then click on "Load Table" button in the pop-up window.  
+Then click on "Load" button in the pop-up window.  
 To use this feature, the IDs listed must correspond to a Rubin table ID (in this case, the SSObjectId).  
 
 2.2.  In the "Object ID Search" box, click the arrow in the box next to "Uploaded Object ID".  Click the magnifying glass near "ID" and in the window that pops open, select the "SSObjectId" header keyword from the table that was uploaded, and hit OK. The object ID box should now contain ssObjectId (or whatever header label is used for ID in the user suppled catalog). 
