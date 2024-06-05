@@ -83,7 +83,7 @@ If the table loaded the ra and dec correctly, the table filename should be displ
 
 **A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.**
 
-1.6. Still under the "spatial" constraint inputs but below where the table was uploaded, next to "position columns", the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the row names listed right below "output column selection and constraints").  
+1.6. Still under the "spatial" constraint inputs but under the "Radius" box, click the arrow next to "position columns (from the selected table on the right)" and a sub-menu will lower. Here, the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the row names listed right below "output column selection and constraints").  
 If the header names are recognized as ra and dec then they may auto-populate into the "Lon Column" and "Lat Column" boxes. If they do not (e.g. the header uses different labels than ra/dec), then click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
 
 1.7. For a first look, ignore the "Temporal" constraint and make sure the box is unchecked.  
