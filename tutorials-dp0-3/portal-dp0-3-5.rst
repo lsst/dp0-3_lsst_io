@@ -23,7 +23,7 @@
 
 **Contact authors:** Christina Williams and Melissa Graham
 
-**Last verified to run:** December 22, 2023;  update to reflect the new UI started on May 9 2024
+**Last verified to run:** December 22, 2023;  update to reflect the new user interface (UI) started on May 9 2024
 
 **Targeted learning level:** Beginner
 
