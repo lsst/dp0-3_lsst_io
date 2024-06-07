@@ -186,11 +186,11 @@ Step 3. Two-step search process using the "Loaded Table" option
 A screenshot of how to use the "Loaded Tables" option to access the previous query result.
  
 
-3.3. Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID under Upload Table. Select SSObjectId. Below, where it says "Object ID (from table)" (in this case referring to the DP0.3 table whose columns are listed on the right), click the magnifying glass and also select SSObjectId.  
+3.3. Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID (under the Change Upload Table button). Select SSObjectId, which loads the SSObjectId of the 110 returned entries from the search in Step 3.2.   
 
-3.4. Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. The query will now search the SSSource table for all individual observations of objects which have these SSObjectIds from the query in 3.1.
+3.4. Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. Back under Object ID search, where it says "Object ID (from table)" (in this case referring to the full DP0.3 table whose columns are listed on the right), click the magnifying glass and also select SSObjectId. 
 
-3.5. Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what the parameter that will be matched on, and hit the Search button. The query will return all SSSource observation entries for the list of 110 SSObjectIds. In this case, there are 19,077 individual observations of each of the 110 individual solar system bodies. 
+3.5. Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the SSObjectId, which is what the parameter that will be matched on, and hit the Search button. The query will now search the SSSource table for all individual observations of objects which have these SSObjectIds from the query in 3.1. The query will return all SSSource observation entries for the list of 110 SSObjectIds. In this case, there are 19,077 individual observations of each of the 110 individual solar system bodies. 
 
 .. figure:: /_static/portal_tut05_step03b.png
     :width: 600
