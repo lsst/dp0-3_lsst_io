@@ -207,7 +207,7 @@ The query will return all SSSource observation entries for the list of 110 SSObj
     :width: 600
     :name: portal_tut05_step03b
     :alt: A screenshot of the fully populated "Object ID Search" section of th.
-A screenshot the fully populated "Object ID Search" section of the UI.
+A screenshot of the fully populated "Object ID Search" section of the UI.
 
  3.6.  Click the "Search" button.  The resulting scatter plot - plotting the first two columns of the table - is not very interesting.  
 Modify the plot by clicking the single gear, and select, for instance, helicentricY vs. HeliocentricX as in the figure below.  
