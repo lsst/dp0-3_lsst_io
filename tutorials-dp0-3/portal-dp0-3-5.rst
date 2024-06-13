@@ -70,7 +70,8 @@ Click on "upload file".
     :width: 600
     :name: portal_tut05_step01a
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
-**A screenshot of the Portal screen - ready to upload a table - with the "Upload" pop-up window.  **
+
+**A screenshot of the Portal screen - ready to upload a table - with the "Upload" pop-up window.**
 
 1.5. After uploading, the pop-up window will show a list of the columns it found, named according to the header. 
 Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. 
@@ -133,6 +134,7 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
     :width: 600
     :name: portal_tut05_step02a
     :alt: A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
+
 **A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.**
 
 2.4. Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. This example searchs for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. It will return the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and click the downward arrow. This will pop up a window listing the unique SSObjectIds. Clicking the box next to an SSObjectId and clicking "filter" will plot the data for that single object. 
@@ -141,6 +143,7 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
     :width: 600
     :name: portal_tut05_step02a
     :alt: A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
+
 **A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.**
 
 2.5. Now use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. 
@@ -166,7 +169,7 @@ Then, type in the following query to search the DP0.3 catalogs for objects that 
 .. figure:: /_static/portal_tut05_step02c.png
     :width: 600
     :name: portal_tut05_step02c
-    :alt: A screenshot 
+    :alt: A screenshot of the portal user interface, ready to issue the query in the ADQL box
 **A screenshot of the portal user interface, ready to issue the query in the ADQL box.**
 
 .. _DP0-3-Portal-5-Step-3:
@@ -188,8 +191,7 @@ Do not delete the search results (they will stay active), but go back to the mai
     :width: 600
     :name: portal_tut05_step03a
     :alt: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
-A screenshot of how to use the "Loaded Tables" option to access the previous query result.
- 
+**A screenshot of how to use the "Loaded Tables" option to access the previous query result.**
 
 3.3. Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID (under the Change Upload Table button). 
 Select the "SSObjectId" row and click "OK", which loads the SSObjectId of the 110 returned entries from the search in Step 3.2.   
@@ -206,17 +208,17 @@ The query will return all SSSource observation entries for the list of 110 SSObj
 .. figure:: /_static/portal_tut05_step03b.png
     :width: 600
     :name: portal_tut05_step03b
-    :alt: A screenshot of the fully populated "Object ID Search" section of th.
-A screenshot of the fully populated "Object ID Search" section of the UI.
+    :alt: A screenshot of the fully populated "Object ID Search" section of the UI.
+**A screenshot of the fully populated "Object ID Search" section of the UI.**
 
- 3.6.  Click the "Search" button.  The resulting scatter plot - plotting the first two columns of the table - is not very interesting.  
+3.6.  Click the "Search" button.  The resulting scatter plot - plotting the first two columns of the table - is not very interesting.  
 Modify the plot by clicking the single gear, and select, for instance, helicentricY vs. HeliocentricX as in the figure below.  
 
 .. figure:: /_static/portal_tut05_step03c.png
     :width: 600
     :name: portal_tut05_step03c
-    :alt: A screenshot of the fully populated "Object ID Search" section of th.
-A screenshot showing the table resulting from your search, with the plot of helicentricY vs. HeliocentricX.  
+    :alt: A screenshot showing the table resulting from your search, with the plot of helicentricY vs. HeliocentricX.
+**A screenshot showing the table resulting from your search, with the plot of helicentricY vs. HeliocentricX.**
 
 
 
