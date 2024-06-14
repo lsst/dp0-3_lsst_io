@@ -64,7 +64,7 @@ If you are a novice using GitHub - click on this link which will take you to the
 
 1.4.  Upload the file from your computer to the Portal.  
 If you haven't done so in Step 1.2 - click on the "Multi-object" button, which will result in a pop-up window as illustrated below.  
-Click on "upload file". Either drag the file into the window, or click the choose file button and navigate to and select the file.
+Click on "upload file". Either drag the file into the window, or click the choose file button and navigate to and select the file. After loading, hit the blue Load Table button.
 
 .. figure:: /_static/portal_tut05_step01a.png
     :width: 600
