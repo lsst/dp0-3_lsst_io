@@ -144,7 +144,7 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
     :name: portal_tut05_step02a
     :alt: A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
 
-**A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.**
+**A screenshot of the portal user interface after searching the 10 year catalog for 2 unique solar system objects based on their SSObjectIDs.**
 
 2.5. Now use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. 
 Start over at the main portal interface by clicking the "DP0.3 Catalogs" tab and click the upper right botton called "Edit ADQL". 
