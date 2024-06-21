@@ -194,6 +194,8 @@ Make sure the "Spatial" box is checked and the "Temporal" box is unchecked.
 Click "Search".    
 Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "DP0.3 Catalogs" tab at the top. 
 
+If you recieve a search error "No coverage available" it is possible the uploaded tables were not properly cleared. Log out of the portal and log back in and repeat step 3.1.
+
 3.2. Then, go down to the Object ID Search section of the UI, and click the box to the left of Object ID Search, and click the arrow to expand the search options below. Click the "Load object IDs from a table" button which will lower a "Add Upload Table" button. Clicking that will open a new window to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in step 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 110 DiaSources were returned). Click the "Load Table" button.
 
 .. figure:: /_static/portal_tut05_step03a.png
@@ -220,14 +222,13 @@ The query will return all SSSource observation entries for the list of 110 SSObj
     :alt: A screenshot of the fully populated "Object ID Search" section of the UI.
 **A screenshot of the fully populated "Object ID Search" section of the UI.**
 
-3.6.  Click the "Search" button.  The resulting scatter plot - plotting the first two columns of the table - is not very interesting.  
-Modify the plot by clicking the single gear, and select, for instance, helicentricY vs. HeliocentricX as in the figure below.  
+3.6.  By default the search results will create a scatter plot using the first two columns of the table. Modify the plot by clicking the single gear, and select, for instance, helicentricY vs. heliocentricX as in the figure below.  
 
 .. figure:: /_static/portal_tut05_step03c.png
     :width: 600
     :name: portal_tut05_step03c
     :alt: A screenshot showing the table resulting from your search, with the plot of helicentricY vs. HeliocentricX.
-**A screenshot showing the table resulting from your search, with the plot of helicentricY vs. HeliocentricX.**
+**A screenshot showing the table resulting from your search, with the plot of helicentricY vs. heliocentricX.**
 
 
 
