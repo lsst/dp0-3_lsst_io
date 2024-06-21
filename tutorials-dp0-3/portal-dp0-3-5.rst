@@ -120,6 +120,9 @@ Click the "Search" button. This search will return whether any moving object was
 
 Step 2. ADQL table join with user-uploaded list of SSObject IDs
 ===============================================================
+This section demonstrates how to upload a user-supplied table and join it with a DP0.3 table.
+
+In this scenario, a list of identifiers (ssObjectId) for moving objects has been assembled by the user and stored in a file (one column, two rows of data, i.e. two independent objects).
 
 2.1. Return to the main DP0.3 Catalogs tab to go back to the search interface by clicking the "UI assisted" buttom on the top right, and unclick the spatial and temporal boxes. Make sure the box labeled "Object ID search" is clicked. 
 Download to your computer a sample catalog named ``portal_tut05_useruploadcat2.cat`` prepared by us for this exercise (from this 
@@ -182,9 +185,7 @@ Then, type in the following query to search the DP0.3 catalogs for objects that 
 
 Step 3. Two-step search process using the "Loaded Table" option
 ===============================================================
-This section demonstrates how to upload a user-supplied table and join it with a DP0.3 table.
 
-In this scenario, a list of identifiers (ssObjectId) for moving objects has been assembled by the user and stored in a file (one column, two rows of data, i.e. two independent objects).
 
 3.1. Return to the main DP0.3 Catalogs tab to go back to the search interface, and hit the "Reset Column Selections & Constraints" button on the top right. Also clear the previously uploaded table, by clicking the "Change Upload Table" button and in the pop-up window, click the "Clear File" gray button on the right.
 Make sure the Table Collection is still dp03_catalogs_10yr and the table is dp03_catalogs_10yr.DiaSource. 
