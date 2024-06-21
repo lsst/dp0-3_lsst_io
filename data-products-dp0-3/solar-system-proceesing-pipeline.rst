@@ -18,4 +18,4 @@
 Solar System Data Products and Processing
 #########################################
 
-.. image:: _static/LSST-Solar-System-Processing-Pipeline-Infographic.pdf
+.. image:: ../_static/LSST-Solar-System-Processing-Pipeline-Infographic.pdf
