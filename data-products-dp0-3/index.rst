@@ -131,3 +131,11 @@ For information and advice about accessing and querying the DP0.3 tables, please
     :glob:
 
     table-access-and-queries
+
+.. _DP0-3-Data-Products-Processing-Pipeline:
+
+The Solar System Processing (SSP) pipeline
+------------------------------------------
+
+For more information about the pipelines and processing that will be used to create the tables listed above but with real data, please see the :doc:`Solar System Processing pipeline page </data-products-dp0-3/solar-system-processing-pipeline>`.
+
