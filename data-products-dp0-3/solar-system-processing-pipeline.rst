@@ -20,4 +20,4 @@ Solar System Processing (SSP) Pipeline
 
 .. _DP0-3-Solar-System-Processing:
 
-.. image:: LSST-Solar-System-Processing-Pipeline-Infographic-Final.pdf
+.. image:: LSST-Solar-System-Processing-Pipeline-Infographic-Final.png
