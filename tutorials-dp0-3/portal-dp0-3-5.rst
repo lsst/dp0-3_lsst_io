@@ -94,7 +94,11 @@ If the header names are recognized as ra and dec then they may auto-populate int
 
 1.7. For a first look, ignore the "Temporal" constraint and make sure the box is unchecked.  
 Click the "Search" button. This search will return whether any moving object was ever detected within a search radius of 10 arcseconds of these locations in the uploaded table. Select the format of the display by clicking on the "hamburger" icon (three horizontal lines on the upper left), and select the "Coverage / Charts / Tables" in the "Results Layout" box.  
-(Note: leaving the "Row Limit" set to 50000 during the search will prevent the search from taking too long. This example returns fewer than the row limit.)
+(Note: leaving the "Row Limit" set to 50000 during the search will prevent the search from taking too long. This example returns fewer than the row limit.) 
+
+In the returned table, notice that the ssObjectId is all the same. This is because the file was created to contain the detections of a single moving object across multiple nights.
+
+Notice also that whereas the user-uploaded table had 9 rows, there are 15 matches to the diaSource table. Six of the rows had two matches. This means that six times, this moving object was detected twice within 10 arcseconds in the same night.
 
 .. figure:: /_static/portal_tut05_step01c.png
     :width: 600
