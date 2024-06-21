@@ -46,7 +46,7 @@ For more information about the DP0.3 catalogs, tables, and columns, see the `DP0
 Step 1. Upload a user-supplied table of coordinates for use in cone searches
 ============================================================================
 
-The scientific scenario used for this demonstration is to answer the question of whether LSST detected a moving object which, based on its known orbit, was expected to appear at given coordinates on nine different nights.
+The scientific scenario used for this demonstration is to answer the question of whether LSST detected a moving object which, based on its known orbit, was expected to appear at given coordinates.
 
 The list of expected coordinates and dates is provided in a file with nine rows (i.e., nine expected locations and times), with the format expected for user-uploaded tables: column names in the first row with no # symbol at the start of the row. The list contains columns of right ascension, declination, and modified julian date (ra, dec, and mjd).
 
