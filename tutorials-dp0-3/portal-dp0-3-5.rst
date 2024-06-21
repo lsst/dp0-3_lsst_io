@@ -222,7 +222,7 @@ The query will return all SSSource observation entries for the list of 110 SSObj
     :alt: A screenshot of the fully populated "Object ID Search" section of the UI.
 **A screenshot of the fully populated "Object ID Search" section of the UI.**
 
-3.6.  By default the search results will create a scatter plot using the first two columns of the table. Modify the plot by clicking the single gear, and select, for instance, helicentricY vs. heliocentricX as in the figure below.  
+3.6.  By default the search results will create a scatter plot using the first two columns of the table. Modify the plot by clicking the single gear in the active chart panel, and select, for instance, helicentricY vs. heliocentricX as in the figure below. This plot shows the part of the orbit in heliocentric coordinates that is traced by the matched data of the solar system bodies during the 10 year survey data. 
 
 .. figure:: /_static/portal_tut05_step03c.png
     :width: 600
