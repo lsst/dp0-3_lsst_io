@@ -14,8 +14,4 @@
 .. To reference a label that isn't associated with an reST object such as a title or figure, you must include the link and explicit title using the syntax :ref:`link text <label-name>`.
 .. A warning will alert you of identical labels during the linkcheck process.
 
-#########################################
-Solar System Data Products and Processing
-#########################################
-
 .. image:: LSST-Solar-System-Processing-Pipeline-Infographic-Final.pdf
