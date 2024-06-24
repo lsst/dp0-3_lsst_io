@@ -461,12 +461,12 @@ First, select ``topocentricY`` for y and ``topocentricX`` for x. and click "Appl
 Next, click again on "+" button to add a new chart.    Select ``topocentricZ`` for y and ``topocentricX`` for x, and click "Apply" or "OK."   
 There, the effect of position of the TNO on the sky as a result of Earth's orbital motion is clearly apparent.  
 
- .. figure:: /_static/portal_tut03_step05c.png
-    :name: portal_tut03_step05c
-    :width: 600
-    :alt: A screenshot of four plots showing the heliocentric and topocentric distances of the trans-Neptunian object as a function of time.
+.. figure:: /_static/portal_tut03_step05c.png
+   :name: portal_tut03_step05c
+   :width: 600
+   :alt: A screenshot of four plots showing the heliocentric and topocentric distances of the trans-Neptunian object as a function of time.
 
-    Figure 18: Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots).
+   Figure 18: Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots).
 
 
 
