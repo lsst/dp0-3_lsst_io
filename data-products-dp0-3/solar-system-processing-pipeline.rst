@@ -22,8 +22,8 @@ The Solar System Processing (SSP) Pipeline
 
 .. image:: LSST-Solar-System-Processing-Infographic-Final.png
 
-The Solar System Processing (SSP) pipeline
-==========================================
+Solar System Processing
+=======================
 
 The goal of the Solar System Processing pipeline is to link (identify) previously unknown SSObjects, 
 given an additional night of observing, 
