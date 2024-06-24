@@ -118,7 +118,7 @@ Click the "Search" button. This search will return whether any moving object was
 
 .. _DP0-3-Portal-5-Step-2:
 
-Step 2. ADQL table join with user-uploaded list of SSObject IDs
+Step 2. ADQL table join with user-uploaded list of ssObject IDs
 ===============================================================
 This section demonstrates how to upload a user-supplied table and join it with a DP0.3 table.
 
@@ -131,12 +131,12 @@ Clicking the down arrow in the "Object ID Search" box, and clicking the "Load ob
 Click the "Add Upload Table" button and navigate on your machine to the file containing the catalog of IDs to be used. 
 A pop-up window will appear, where you can upload the file.  
 Then click on "Load" button in the pop-up window.  
-To use this feature, the IDs listed must correspond to a Rubin table ID (in this case, the SSObjectId).  
+To use this feature, the IDs listed must correspond to a Rubin table ID (in this case, the ssObjectId).  
 
-2.2.  In the "Object ID Search" box, click the arrow in the box next to "Uploaded Object ID".  Click the magnifying glass near "ID" and in the window that pops open, select the "SSObjectId" header keyword from the table that was uploaded, and hit OK. The object ID box should now contain ssObjectId (or whatever header label is used for ID in the user suppled catalog). 
+2.2.  In the "Object ID Search" box, click the arrow in the box next to "Uploaded Object ID".  Click the magnifying glass near "ID" and in the window that pops open, select the "ssObjectId" header keyword from the table that was uploaded, and hit OK. The object ID box should now contain ssObjectId (or whatever header label is used for ID in the user suppled catalog). 
 
 
-2.3. Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default Object ID type that is listed will be based on the DP0.3 table that is selected in the menu above (LSST DP0.3 SSO Tables), which is by default the DiaSourceId from the DiaSource Table. But this exercise will instead match on SSObjectId, which will retrieve information for specific solar system bodies identified by their unique identifier. Click the magnifying glass to open a navigation window to choose which ID from the DP0.3 table to use, and select SSObjectId.
+2.3. Now go below to the "object ID (from table)" section and click the arrow to open the box that allows one to specify which type of ID in the catalog to the right to match on. The default Object ID type that is listed will be based on the DP0.3 table that is selected in the menu above (LSST DP0.3 SSO Tables), which is by default the DiaSourceId from the DiaSource Table. But this exercise will instead match on ssObjectId, which will retrieve information for specific solar system bodies identified by their unique identifier. Click the magnifying glass to open a navigation window to choose which ID from the DP0.3 table to use, and select ssObjectId.
 
 
 .. figure:: /_static/portal_tut05_step02a.png
@@ -146,16 +146,16 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
 
 **A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.**
 
-2.4. Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. This example searchs for 2 unique SSObjects from the user-supplied table, and the output looks as in the below screenshot. It will return the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column SSObjectID and click the downward arrow. This will pop up a window listing the unique SSObjectIds. Clicking the box next to an SSObjectId and clicking "filter" will plot the data for that single object. 
+2.4. Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. This example searchs for 2 unique ssObjects from the user-supplied table, and the output looks as in the below screenshot. It will return the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column ssObjectID and click the downward arrow. This will pop up a window listing the unique ssObjectIds. Clicking the box next to an ssObjectId and clicking "filter" will plot the data for that single object. 
 
 .. figure:: /_static/portal_tut05_step02b.png
     :width: 600
     :name: portal_tut05_step02a
-    :alt: A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their SSObjectIDs.
+    :alt: A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their ssObjectIDs.
 
-**A screenshot of the portal user interface after searching the 10 year catalog for 2 unique solar system objects based on their SSObjectIDs.**
+**A screenshot of the portal user interface after searching the 10 year catalog for 2 unique solar system objects based on their ssObjectIDs.**
 
-2.5. Now use the ADQL interace to perform the join on SSObjectID between the uploaded table and the DP0.3 table. 
+2.5. Now use the ADQL interace to perform the join on ssObjectID between the uploaded table and the DP0.3 table. 
 Start over at the main portal interface by clicking the "DP0.3 Catalogs" tab and click the upper right botton called "Edit ADQL". 
 It will navigate to a page to manually type in the ADQL query. 
 Make sure the button is clicked that says "Insert fully-qualified column names (recommended for table joins)". 
@@ -190,7 +190,7 @@ This section demonstrates a capability of the portal that enables analysis using
 
 3.1. Return to the main DP0.3 Catalogs tab to go back to the search interface, and hit the "Reset Column Selections & Constraints" button on the top right. Also clear the previously uploaded table, by clicking the "Change Upload Table" button and in the pop-up window, click the "Clear File" gray button on the right.
 Make sure the Table Collection is still dp03_catalogs_10yr and the table is dp03_catalogs_10yr.DiaSource. 
-In the Spatial section, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of SSObjectIds. 
+In the Spatial section, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of ssObjectIds. 
 Make sure the "Spatial" box is checked and the "Temporal" box is unchecked. 
 Click "Search".    
 Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "DP0.3 Catalogs" tab at the top. 
@@ -206,16 +206,16 @@ If you recieve a search error "No coverage available" it is possible the uploade
 **A screenshot of how to use the "Loaded Tables" option to access the previous query result.**
 
 3.3. Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID (under the Change Upload Table button). 
-Select the "SSObjectId" row and click "OK", which loads the SSObjectId of the 110 returned entries from the search in Step 3.2.   
+Select the "ssObjectId" row and click "OK", which loads the ssObjectId of the 110 returned entries from the search in Step 3.2.   
 
 3.4. Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. 
 The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. 
-Back under Object ID search, where it says "Object ID (from table)" (in this case referring to the full DP0.3 table whose columns are listed on the right), click the magnifying glass and also select SSObjectId. 
+Back under Object ID search, where it says "Object ID (from table)" (in this case referring to the full DP0.3 table whose columns are listed on the right), click the magnifying glass and also select ssObjectId. 
 
 3.5. Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". 
-Again select the SSObjectId, which is what the parameter that will be matched on, click OK, and hit the Search button. 
-The query will now search the SSSource table for all individual observations of objects which have these SSObjectIds from the query in 3.1. 
-The query will return all SSSource observation entries for the list of 110 SSObjectIds. In this case, there are 19,077 individual observations of each of the 110 individual solar system bodies. 
+Again select the ssObjectId, which is what the parameter that will be matched on, click OK, and hit the Search button. 
+The query will now search the SSSource table for all individual observations of objects which have these ssObjectIds from the query in 3.1. 
+The query will return all SSSource observation entries for the list of 110 ssObjectIds. In this case, there are 19,077 individual observations of each of the 110 individual solar system bodies. 
 
 .. figure:: /_static/portal_tut05_step03b.png
     :width: 600
@@ -238,6 +238,6 @@ The query will return all SSSource observation entries for the list of 110 SSObj
 Step 4.  Exercises for the learner 
 ==================================
 
-4.1 Generate your own user table: perform a spatial and temporal search of the DiaSource table to look for a sample of solar system bodies observed in a specific part of the sky at a specific time. Save the query result table as a tsv, and use it to search the SSSource table for all observations that exist, by matching on SSObjectId. 
+4.1 Generate your own user table: perform a spatial and temporal search of the DiaSource table to look for a sample of solar system bodies observed in a specific part of the sky at a specific time. Save the query result table as a tsv, and use it to search the SSSource table for all observations that exist, by matching on ssObjectId. 
 
 4.2 Pick a favorite solar system object (for example, the first asteroid in the user uploaded table from step 2) and create a table that includes both the DiaSource table contents, and the SSSource table contents for the one object (with procedure similar to section 3 above). Note that after the first search, it is possible to select one row and remove the others using the "filter" option after the query completes.
