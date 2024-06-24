@@ -14,19 +14,16 @@
 .. To reference a label that isn't associated with an reST object such as a title or figure, you must include the link and explicit title using the syntax :ref:`link text <label-name>`.
 .. A warning will alert you of identical labels during the linkcheck process.
 
-######################################
-Solar System Processing (SSP) Pipeline
-######################################
+##########################################
+The Solar System Processing (SSP) Pipeline
+##########################################
 
 .. _DP0-3-Solar-System-Processing:
-
-Solar System Processing and Prompt Data Products Infographic
-------------------------------------------------------------
 
 .. image:: LSST-Solar-System-Processing-Infographic-Final.png
 
 The Solar System Processing (SSP) pipeline
-------------------------------------------
+==========================================
 
 The goal of the Solar System Processing pipeline is to link (identify) previously unknown SSObjects, 
 given an additional night of observing, 
@@ -65,6 +62,8 @@ Acronym definitions:
    * DIA = difference image analysis
    * SNR = signal-to-noise ratio
 
-More information:
+More information
+================
+
    * `Data Products Definition Document <https://lse-163.lsst.io/>`_ (DPDD)
    * :doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation
