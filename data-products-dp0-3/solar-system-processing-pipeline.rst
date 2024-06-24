@@ -33,7 +33,7 @@ The pipeline will deliver
 Prompt Data Products for Solar System objects in the form of four catalogs:  
 ``SSObject``, ``SSSource``, ``DIASource``, and ``MPCORB``, which are described in the 
 :doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation and the 
-`Data Products Definition Document <https://lse-163.lsst.io>` (DPDD). 
+`Data Products Definition Document <https://lse-163.lsst.io>`_ (DPDD). 
 The Solar System Processing pipeline is illustrated in the infographic provided above.
 
 During operations, the pipeline will consist of the following steps that will repeat every 24 hours:
@@ -57,5 +57,5 @@ Acronym definitions:
    * SNR = signal-to-noise ratio
 
 More information:
-   * `Data Products Definition Document <https://lse-163.lsst.io/>` (DPDD)
+   * `Data Products Definition Document <https://lse-163.lsst.io/>`_ (DPDD)
    * :doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation
