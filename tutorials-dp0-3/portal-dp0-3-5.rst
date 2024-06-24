@@ -75,7 +75,7 @@ Click on "upload file". Either drag the file into the window, or click the choos
     :name: portal_tut05_step01a
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
     
-    **Figure 1: A screenshot of the Portal screen - ready to upload a table - with the "Upload" pop-up window.**
+    Figure 1: A screenshot of the Portal screen - ready to upload a table - with the "Upload" pop-up window.
 
 1.5. After uploading, the pop-up window will show a list of the columns it found, named according to the header. 
 Make sure that the ra and dec columns in the file are labeled "ra" and "dec" and are displayed in the list. 
@@ -87,7 +87,7 @@ If the table loaded the ra and dec correctly, the table filename should be displ
     :name: portal_tut05_step01b
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search. 
 
-    **Figure 2: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.**
+    Figure 2: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.
 
 1.6. Still under the "spatial" constraint inputs but under the "Radius" box, click the arrow next to "Position Columns (from the selected table on the right)" and a sub-menu will lower. Here, the user must indicate which of the DP0.3 catalog columns to use for the spatial matching (i.e. from among the row names listed right below "output column selection and constraints").  
 If the header names are recognized as ra and dec then they may auto-populate into the "Lon Column" and "Lat Column" boxes. If they do not (e.g. the header uses different labels than ra/dec), then click the arrow next to "position columns" and enter "ra" into the "Lon column" and "dec" into the "Lat column". Leave the search radius at the default of 10 arcseconds.
@@ -103,7 +103,7 @@ Click the "Search" button. This search will return whether any moving object was
     :name: portal_tut05_step01c
     :alt: A screenshot of the search query if the user-supplied catalog has uploaded and identified the correct columns for search.  
 
-    **Figure 3: A screenshot of the search query result, showing the multiple observations of 3 solar system objects from the user-uploaded table - those can be seen as the clustered points.**
+    Figure 3: A screenshot of the search query result, showing the multiple observations of 3 solar system objects from the user-uploaded table - those can be seen as the clustered points.
 
 1.8. Now, click the DP0.3 Catalogs tab to return to the search query page. For a second example, now also set a "Temporal" constraint for the search by clicking the box (leaving the Spatial box also checked). This example demonstrates how to know if there were moving objects identified in the survey at these coordinates on a specific night (for this example, pick a day for which it is known that this is the case from the mjd column of the user-supplied catalog). Click the "Temporal" box and make sure the "temporal column" box contains "midPointMjdTai" (referring again to the column in the DP0.3 DiaSource table to use for temporal matching). Click the MJD specification and enter an MJD range (start date 62000 and end date 63000, a range that we know our sample objects was observed in the catalog). The search returns an observation of 4 unique solar system objects, one of which is observed twice during the MJD range.
 
@@ -114,7 +114,7 @@ Click the "Search" button. This search will return whether any moving object was
     :name: portal_tut05_step01d
     :alt: A screenshot of the "advanced ADQL interface".
 
-    **Figure 4: A screenshot of the "advanced ADQL interface" which shows the ADQL search corresponding to the one entered into the portal user interface, for future use with a TAP service.**
+    Figure 4: A screenshot of the "advanced ADQL interface" which shows the ADQL search corresponding to the one entered into the portal user interface, for future use with a TAP service.
 
 
 .. _DP0-3-Portal-5-Step-2:
@@ -145,7 +145,7 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
     :name: portal_tut05_step02a
     :alt: A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
 
-    **Figure 5: A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.**
+    Figure 5: A screenshot of the portal user interface demonstrating the view after correctly uploading a table of IDs and identifying how to match to the DP0.3 catalog.
 
 2.4. Hit the search button. Note: searching on IDs without a spatial constraint included can take several minutes since the database is parsed by celestial coordinates. This example searchs for 2 unique ssObjects from the user-supplied table, and the output looks as in the below screenshot. It will return the moving source observations for both sources over the 10yr survey lifetime. To view each object separately, go to the table column ssObjectID and click the downward arrow. This will pop up a window listing the unique ssObjectIds. Clicking the box next to an ssObjectId and clicking "filter" will plot the data for that single object. 
 
@@ -154,7 +154,7 @@ To use this feature, the IDs listed must correspond to a Rubin table ID (in this
     :name: portal_tut05_step02a
     :alt: A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their ssObjectIDs.
 
-    **Figure 6: A screenshot of the portal user interface after searching the 10 year catalog for 2 unique solar system objects based on their ssObjectIDs.**
+    Figure 6: A screenshot of the portal user interface after searching the 10 year catalog for 2 unique solar system objects based on their ssObjectIDs.
 
 2.5. Now use the ADQL interace to perform the join on ssObjectID between the uploaded table and the DP0.3 table. 
 Start over at the main portal interface by clicking the "DP0.3 Catalogs" tab and click the upper right botton called "Edit ADQL". 
@@ -181,7 +181,7 @@ Then, type in the following query to search the DP0.3 catalogs for objects that 
     :name: portal_tut05_step02c
     :alt: A screenshot of the portal user interface, ready to issue the query in the ADQL box
 
-    **Figure 7: A screenshot of the portal user interface, ready to issue the query in the ADQL box.**
+    Figure 7: A screenshot of the portal user interface, ready to issue the query in the ADQL box.
 
 .. _DP0-3-Portal-5-Step-3:
 
@@ -206,7 +206,7 @@ If you recieve a search error "No coverage available" it is possible the uploade
     :name: portal_tut05_step03a
     :alt: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
 
-    **Figure 8: A screenshot of how to use the "Loaded Tables" option to access the previous query result.**
+    Figure 8: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
 
 3.3. Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID (under the Change Upload Table button). 
 Select the "ssObjectId" row and click "OK", which loads the ssObjectId of the 110 returned entries from the search in Step 3.2.   
@@ -225,7 +225,7 @@ The query will return all SSSource observation entries for the list of 110 ssObj
     :name: portal_tut05_step03b
     :alt: A screenshot of the fully populated "Object ID Search" section of the UI.
 
-    **Figure 9: A screenshot of the fully populated "Object ID Search" section of the UI.**
+    Figure 9: A screenshot of the fully populated "Object ID Search" section of the UI.
 
 3.6.  By default the search results will create a scatter plot using the first two columns of the table. Modify the plot by clicking the single gear in the active chart panel, and select, for instance, helicentricY vs. heliocentricX as in the figure below. This plot shows the part of the orbit in heliocentric coordinates that is traced by the matched data of the solar system bodies during the 10 year survey data. 
 
@@ -234,7 +234,7 @@ The query will return all SSSource observation entries for the list of 110 ssObj
     :name: portal_tut05_step03c
     :alt: A screenshot showing the table resulting from your search, with the plot of helicentricY vs. HeliocentricX.
 
-    **Figure 10: A screenshot showing the table resulting from your search, with the plot of helicentricY vs. heliocentricX.**
+    Figure 10: A screenshot showing the table resulting from your search, with the plot of helicentricY vs. heliocentricX.
 
 
 
