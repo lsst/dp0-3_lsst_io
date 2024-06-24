@@ -20,7 +20,13 @@ Solar System Processing (SSP) Pipeline
 
 .. _DP0-3-Solar-System-Processing:
 
+Solar System Processing and Prompt Data Products Infographic
+------------------------------------------------------------
+
 .. image:: LSST-Solar-System-Processing-Infographic-Final.png
+
+The Solar System Processing (SSP) pipeline
+------------------------------------------
 
 The goal of the Solar System Processing pipeline is to link (identify) previously unknown SSObjects, 
 given an additional night of observing, 
@@ -35,6 +41,9 @@ Prompt Data Products for Solar System objects in the form of four catalogs:
 :doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation and the 
 `Data Products Definition Document <https://lse-163.lsst.io>`_ (DPDD). 
 The Solar System Processing pipeline is illustrated in the infographic provided above.
+
+The Solar System Processing pipeline steps
+------------------------------------------
 
 During operations, the pipeline will consist of the following steps that will repeat every 24 hours:
 
