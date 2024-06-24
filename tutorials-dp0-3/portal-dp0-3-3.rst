@@ -432,12 +432,12 @@ Execute the query below to extract the helio- and topocentric X, Y, and Z distan
 Note that the object moves slowly in heliocentric coordinate X as well as in Y (by a comparison to, e.g., Earth's motion), covering only a few au in 10 years.  
 This is expected given its multi-au distance from the Sun.  
 
- .. figure:: /_static/portal_tut03_step05a.png
-    :name: portal_tut03_step05a
-    :width: 600
-    :alt: A screenshot of a plot showing the heliocentric Y vs. heliocentric X distance of the trans-Neptunian object.
+.. figure:: /_static/portal_tut03_step05a.png
+   :name: portal_tut03_step05a
+   :width: 600
+   :alt: A screenshot of a plot showing the heliocentric Y vs. heliocentric X distance of the trans-Neptunian object.
 
-    Figure 16: Heliocentric Y vs. X distance of the trans-Neptunian object.
+   Figure 16: Heliocentric Y vs. X distance of the trans-Neptunian object.
 
 **5.3.**  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "+" button to add a new chart. 
 Select ``heliocentricZ`` for y and ``heliocentricX`` for x.  
