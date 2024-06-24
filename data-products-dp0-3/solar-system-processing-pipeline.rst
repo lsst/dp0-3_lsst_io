@@ -21,3 +21,42 @@ Solar System Processing (SSP) Pipeline
 .. _DP0-3-Solar-System-Processing:
 
 .. image:: LSST-Solar-System-Processing-Infographic-Final.png
+
+The goal of the Solar System Processing pipeline is to link (identify) previously unknown SSObjects, 
+given an additional night of observing, 
+and report the discoveries to the Minor Planet Center (MPC), 
+as well as to compute physical (e.g., absolute magnitudes) and other auxiliary properties 
+(e.g., predicted apparent magnitudes and coordinates in various coordinate systems) 
+for known Solar System objects and their LSST observations. The majority of the 
+pipeline's processing occurs in daytime, after a night of observing. 
+The pipeline will deliver 
+Prompt Data Products for Solar System objects in the form of four catalogs:  
+``SSObject``, ``SSSource``, ``DIASource``, and ``MPCORB``, which are described in the 
+:doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation and the 
+`Data Products Definition Document <https://lse-163.lsst.io/>` (DPDD). 
+The Solar System Processing pipeline is illustrated in the infographic provided above.
+
+During operations, the pipeline will consist of the following steps that will repeat every 24 hours:
+
+During the day before the coming night’s observing:
+1. The most up-to-date MPCORB catalog is downloaded from the Minor Planet Center (MPC) and ingested into the Prompt Products database
+to obtain all previously submitted LSST discoveries and detections as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
+2. The Prompt Data Product catalogs are updated to include the new Solar System object discoveries included in the ingested MPCORB catalog. In particular, the ``SSObject`` catalog is updated to include the new discoveries from the ingested MPCORB catalog, and the ``SSSource`` and ``DIASource`` catalogs are updated to point to the relevant ``SSObject`` records for the new discoveries. In addition, the physical properties of all known SSObjects (e.g., absolute magnitudes, predicted apparent magnitudes, extendedness estimates, and light curve characteristics), as defined by the orbit catalog, are recomputed. Updated data are entered into the relevant tables.
+3. The Solar System Prompt Data Products (``MPCORB``, ``SSObject``, ``DIASource``, & ``SSSource`` tables) are released.
+4. Ephemerides for fast association of known Solar System objects during the coming night’s observations are generated.
+During nightly observing:
+5. Known Solar System objects are associated with difference image detections in real-time. Alerts are produced within 60 seconds by the Alert Processing pipeline for all signal-to-noise ratio (SNR)>=5 DIASources that include the matching SSObject tables for known Solar System objects.
+During the day following nightly observing:
+6. All DIASources detected on the previous night that have not been matched at a high confidence level (SNR>=5) to a known Object, DIAObject, SSObject, or an artifact, are analyzed by the HelioLinC3D moving object linking algorithm for potential pairs that form tracklets (consisting of detections in three pairs of images for a given visit within 15 days) that are consistent with being on the same Keplerian orbit around the Sun.
+7. (Precovery forced PSF photometry is performed on a roughly monthly basis at the location of all new sources on images taken prior to discovery over the past 30 days. These measurements will be stored in the DIAForcedSource table.)
+8. Measurements of known objects and new discoveries are submitted to the Minor Planet Center (MPC) using the standard data-exchange protocols (e.g., the ADES format). The measurements of all DIASources detected on the previous night that have been matched at a high level of confidence (SNR>=5) to a known SSObject are also submitted to the MPC.
+
+Acronym definitions:
+* MPC = Minor Planet Center
+* SS = Solar System
+* DIA = difference image analysis
+* SNR = signal-to-noise ratio
+
+More information:
+* `Data Products Definition Document <https://lse-163.lsst.io/>` (DPDD)
+* :doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation
