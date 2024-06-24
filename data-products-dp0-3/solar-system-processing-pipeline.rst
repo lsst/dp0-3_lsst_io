@@ -27,7 +27,7 @@ Solar System Processing
 
 The goal of the Solar System Processing pipeline is to link (identify) previously unknown SSObjects, 
 given an additional night of observing, 
-and report the discoveries to the Minor Planet Center (MPC), 
+and report the discoveries to the `Minor Planet Center <https://minorplanetcenter.net>`_ (MPC), 
 as well as to compute physical (e.g., absolute magnitudes) and other auxiliary properties 
 (e.g., predicted apparent magnitudes and coordinates in various coordinate systems) 
 for known Solar System objects and their LSST observations. The majority of the 
