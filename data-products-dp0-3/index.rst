@@ -139,3 +139,9 @@ The Solar System Processing (SSP) pipeline
 
 For more information about the pipelines and processing that will be used to create the tables listed above but with real data, please see the :doc:`Solar System Processing pipeline page </data-products-dp0-3/solar-system-processing-pipeline>`.
 
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    solar-system-processing-pipeline
+
