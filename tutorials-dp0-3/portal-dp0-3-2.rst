@@ -127,7 +127,7 @@ Record the ``ssObjectID`` of the chosen object.
     :name: dp03_portal_tut02_step01_05
     :alt: A screenshot of the results view plotting eccentricity versus number of observations.
 
-**A screenshot of the results view, with the plot altered to show eccentricy versus number of observations.**
+    Figure 1: A screenshot of the results view, with the plot altered to show eccentricy versus number of observations.
 
 
 .. _DP0-3-Portal-2-Step-2:
@@ -163,7 +163,7 @@ If you plan to use those (or equivalent) plots for publication, you need to edit
     :name: portal_tut02_step02a
     :alt: A screenshot showing the plot of heliocentricX versus heliocentricY with grid lines.
 
-**A visualization of the object's orbit projected onto the plane of the Solar System.**
+    Figure 2: A visualization of the object's orbit projected onto the plane of the Solar System.
 
 
 2.3. Click again on the plot settings icon and in the pop-up window, select "Add New Chart". 
@@ -179,7 +179,7 @@ so this is just a regular asteroid and not a hazardous one!
     :name: portal_tut02_step02b
     :alt: A screenshot showing a grid of plots of the object's distance from the Sun and Earth over time.
 
-**A visualization of the object's orbits in heliocentric and topocentric distances.**
+    Figure 3: A visualization of the object's orbits in heliocentric and topocentric distances.
 
 
 .. _DP0-3-Portal-2-Step-3:
@@ -215,7 +215,7 @@ Click "Apply" and then "Close". This will illustrate two-dimensional motion as a
     :name: portal_tut02_step03a
     :alt: A screenshot showing a plot of right ascension versus declination, with points colored by date.
 
-**A visualization of the object's motion across the sky and LSST's detections.**
+    Figure 4: A visualization of the object's motion across the sky and LSST's detections.
 
 3.4. In the plot above, notice how the points are in four clusters of RA, Dec, and color.
 This demonstrates how the LSST observing strategy covers the moving object's location in four
@@ -252,7 +252,7 @@ of ``phaseAngle``.
     :name: portal_tut02_step04a
     :alt: A screenshot showing two plots, one of magnitude versus time and one versus phaseAngle.
 
-**A visualization of the object's magnitude changes versus time (left) and phase angle (right).**
+    Figure 5: A visualization of the object's magnitude changes versus time (left) and phase angle (right).
 
 4.3. Notice there is no trend in the magnitude as a function of time, and recall that the DP0.3
 simulation does not include any time-domain changes in the photometry (e.g., rotation curves). 

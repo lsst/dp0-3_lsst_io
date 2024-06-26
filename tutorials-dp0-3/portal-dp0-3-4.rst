@@ -148,7 +148,7 @@ In the new window, select "Histogram" for "Plot Type", enter "q / (1-e)" as the 
     :name: portal_tut04_step01a
     :alt: A screenshot illustrating the selection of plot parameters to plot the histogram of semi-major axes of MBAs.
 
-    **Figure 1:** The "Plot Parameters" pop-up window to set parameters for making a histogram of semi-major axes for MBAs. 
+    Figure 1: The "Plot Parameters" pop-up window to set parameters for making a histogram of semi-major axes for MBAs. 
 
 **1.4.** Click "OK" in the pop-up window.  Also, close the chart stating "cannot display requested data" by clicking the blue "X" mark in its upper right hand corner.
 It will result in the following plot and table below. Note that the distribution of asteroids as a function of semi-major axis is not uniform, 
@@ -160,7 +160,7 @@ between the asteroid's and Jupiter's orbital periods.
     :name: portal_tut04_step01b
     :alt: A screenshot illustrating the distribution of semi-major axes of MBAs.  
 
-    **Figure 2:** The distribution of semi-major axes for MBAs. The prominent Kirkwood gaps in this plot are located at 2.065 au (4:1 resonance), 2.502 au (3:1 resonance), 2.825 au (5:2 resonance), and 2.958 au (7:3 resonance). 
+    Figure 2: The distribution of semi-major axes for MBAs. The prominent Kirkwood gaps in this plot are located at 2.065 au (4:1 resonance), 2.502 au (3:1 resonance), 2.825 au (5:2 resonance), and 2.958 au (7:3 resonance). 
 
 .. _DP0-3-Portal-4-Step-2:  
 
@@ -181,7 +181,7 @@ right of the table.
     :name: portal_tut04_step02a
     :alt: A screenshot selecting MBAs that have more than 2000 observations.
 
-    **Figure 3:** The resulting table of 23 MBAs with 2000 or more observations out of the retrieved 100,000 MBAs in Step 1.2.
+    Figure 3: The resulting table of 23 MBAs with 2000 or more observations out of the retrieved 100,000 MBAs in Step 1.2.
 
 **2.2.** Pick and copy one ``ssObjectId``. Hovering over a table cell shows you a triple-dot box. Click on that box, 
 two options will pop up: "Copy to clipboard" and "View as plain text". Here, copy ``ssObjectId`` = ``7470575696289418102`` 
@@ -192,7 +192,7 @@ to clipboard.
     :name: portal_tut04_step02b
     :alt: A screenshot copying ssObjectId to clipboard for a well-observed MBA.
 
-    **Figure 4:** How to copy a selected ``ssObjectId`` to clipboard.
+    Figure 4: How to copy a selected ``ssObjectId`` to clipboard.
 
 **2.3.** Return to the page where you can select the "DP0.3 Catalogs" by refreshing your browser, and select it.  
 Click on the "Edit ADQL" tab.  
@@ -221,7 +221,7 @@ to be "Reduced g magnitude". Check the "reverse" box for the y-axis option.
     :name: portal_tut04_step02c
     :alt: A screenshot of the plot parameters for the phase curve plot.
 
-    **Figure 5:** The "Plot Parameters" pop-up window to plot the phase curve in `g`-band.
+    Figure 5: The "Plot Parameters" pop-up window to plot the phase curve in `g`-band.
 
 **2.5.** Click on the "Apply" button. This will result in the `g`-band phase curve plot with error bars for the MBA with 
 ``ssObjectId`` = ``7470575696289418102`` as shown below.
@@ -231,7 +231,7 @@ to be "Reduced g magnitude". Check the "reverse" box for the y-axis option.
     :name: portal_tut04_step02d
     :alt: A the `g`-band phase curve plot.
 
-    **Figure 6:** The `g`-band phase curve for the MBA with ``ssObjectId`` = ``7470575696289418102``.
+    Figure 6: The `g`-band phase curve for the MBA with ``ssObjectId`` = ``7470575696289418102``.
 
 **2.6.** In order to plot a phase curve in a different band, for example in `z`-band, select the `z`-band 
 data by clicking on the down-arrow in the box underneath the table heading ``band``.  
@@ -245,7 +245,7 @@ of asteroids in different filters. Also the reduced magnitude qualities (i.e., p
     :name: portal_tut04_step02e
     :alt: A the `z`-band phase curve plot.
 
-    **Figure 7:** Same as Figure 6, but in `z`-band.
+    Figure 7: Same as Figure 6, but in `z`-band.
 
 .. _DP0-3-Portal-4-Step-3: 
 
@@ -265,7 +265,7 @@ adhering to the specified plot settings below.
     :name: portal_tut04_step03a
     :alt: A screenshot of the plot parameters for the `G12` vs. `H` plot.
 
-    **Figure 8:** The plot parameters in the "Add New Chart" pop-up window to plot the `G12` vs. `H` in `g` band.
+    Figure 8: The plot parameters in the "Add New Chart" pop-up window to plot the `G12` vs. `H` in `g` band.
 
 **3.2.** Once you've created the `G12` vs. `H` plot for `g`-band, add three more new plots for `riz` bands by repeating the 
 creation of the `G12` vs. `H` plot in Step 3.1, but going through the `riz` bands. This will generate four panels as shown below. 
@@ -275,7 +275,7 @@ creation of the `G12` vs. `H` plot in Step 3.1, but going through the `riz` band
     :name: portal_tut04_step03b
     :alt: The slope `G12` versus absolute magnitude `H` plot in `griz` bands.
 
-    **Figure 9:** The `G12` vs. `H` plots in `griz` from top left to bottom right clockwise.
+    Figure 9: The `G12` vs. `H` plots in `griz` from top left to bottom right clockwise.
 
 **3.3.** Recall that the input (truth) `G` value using the `HG_model` that was used to generate the DP0.3 simulated object's 
 observed properties was fixed across the population to a constant value of `G` = 0.15 (refer 
@@ -296,7 +296,7 @@ and entering ``q`` on the x-axis.
     :name: portal_tut04_step03c
     :alt: A screenshot of the plot parameters for the ``i_Herr`` vs. ``numObs`` plot.
 
-    **Figure 10:** The "Plot Parameters" pop-up window to plot the ``i_Herr`` vs. ``numObs``.
+    Figure 10: The "Plot Parameters" pop-up window to plot the ``i_Herr`` vs. ``numObs``.
 
 **3.5.** Make two new plots by repeating the above, but setting the "Y" to ``i_G12err``.  This time, 
 set the min and max for the y-axis under the "Chart Options" to be 0 and 0.5.  This will generate four panels showing 
@@ -310,7 +310,7 @@ in the phase curve parameters modestly increase for objects with larger periheli
     :name: portal_tut04_step03d
     :alt: `i_Herr` and `i_G12err` versus the total number of observations and the perihelion distance.
 
-    **Figure 11:** Uncertainties in ``i_Herr`` and ``i_G12err`` as a function of the total number of observations and the perihelion distance.
+    Figure 11: Uncertainties in ``i_Herr`` and ``i_G12err`` as a function of the total number of observations and the perihelion distance.
 
 **3.6.** The above plots compare ``numObs`` (total in all bands) with model fits, which may not be the ideal metric since the quality 
 of phase curves can vary quite a bit between filters. Instead, one can look at the number of datapoints included in the phase curve 
@@ -332,7 +332,7 @@ measured in `r`- and `i`-bands will thus be better sampled. Clicking the labels 
     :name: portal_tut04_step03e
     :alt: Histograms of the number of observations in each filter.
 
-    **Figure 12:** Histograms of the number of observations in each filter.
+    Figure 12: Histograms of the number of observations in each filter.
 
 **3.7.** To confirm whether phase curve fitting in `i` band is indeed more precise than in `z` band, let's compare the uncertainty 
 in `H` values for `i` and `z` bands by adding a new plot. Add a new chart by clicking the "+" on the upper left" and select "Heatamp". Set the "X" 
@@ -345,7 +345,7 @@ one can see that poorer sampling drives higher uncertainty in the derived absolu
     :name: portal_tut04_step03f
     :alt: Heatmap of ``z_Herr`` vs. ``i_Herr``.
 
-    **Figure 13:** Comparison of the uncertainty in the measured `H` values in `i` and `z` bands. 
+    Figure 13: Comparison of the uncertainty in the measured `H` values in `i` and `z` bands. 
 
 .. _DP0-3-Portal-4-Step-4:
 
