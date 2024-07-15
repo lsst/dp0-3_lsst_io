@@ -128,7 +128,7 @@ In this scenario, a list of identifiers (ssObjectId) for moving objects has been
 
 .. figure:: /_static/portal_tut05_step02b.png
     :width: 600
-    :name: portal_tut05_step02a
+    :name: portal_tut05_step02b
     :alt: A screenshot of the portal user interface after searching the 10 year catlaog for 2 unique solar system objects based on their ssObjectIDs.
 
     Figure 6: A screenshot of the portal user interface after searching the 10 year catalog for 2 unique solar system objects based on their ssObjectIDs.
