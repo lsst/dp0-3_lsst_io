@@ -31,7 +31,7 @@
 to phase curves by Christina Williams and Yumi Choi.
 
 
-.. _DP0-3-Portal-3-Intro:
+.. _DP0-3-Portal-4-Intro:
 
 Introduction
 ============
