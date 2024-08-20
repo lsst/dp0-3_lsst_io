@@ -33,7 +33,7 @@ as well as to compute physical (e.g., absolute magnitudes) and other auxiliary p
 for known Solar System objects and their LSST observations. The majority of the 
 pipeline's processing occurs in daytime, after a night of observing. 
 The pipeline will deliver 
-Prompt Data Products for Solar System objects in the form of four catalogs:  
+Daily Data Products for Solar System objects in the form of four catalogs:  
 ``SSObject``, ``SSSource``, ``DIASource``, and ``MPCORB``, which are described in the 
 :doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation and the 
 `Data Products Definition Document <https://lse-163.lsst.io>`_ (DPDD). 
@@ -51,8 +51,8 @@ During the day following nightly observing:
    3. Measurements of known objects and new discoveries are submitted to the Minor Planet Center (MPC) using the standard data-exchange protocols (e.g., the ADES format). The measurements of all ``DIASources`` detected on the previous night that have been matched at a high level of confidence (SNR>=5) to a known ``SSObject`` are also submitted to the MPC.
 During the day before the coming night’s observing:
    4. The most up-to-date ``MPCORB`` catalog is downloaded from the Minor Planet Center (MPC) and ingested into the Prompt Products database to obtain all previously submitted LSST discoveries and detections as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
-   5. The Prompt Data Product catalogs are updated to include the new Solar System object discoveries included in the ingested ``MPCORB`` catalog. In particular, the ``SSObject`` catalog is updated to include the new discoveries from the ingested ``MPCORB`` catalog, and the ``SSSource`` and ``DIASource`` catalogs are updated to point to the relevant ``SSObject`` records for the new discoveries. In addition, the physical properties of all known ``SSObjects`` (e.g., absolute magnitudes, predicted apparent magnitudes, extendedness estimates, and light curve characteristics), as defined by the orbit catalog, are recomputed. Updated data are entered into the relevant tables.
-   6. The Solar System Prompt Data Products (``MPCORB``, ``SSObject``, ``DIASource``, & ``SSSource`` tables) are released.
+   5. The Daily Data Product catalogs are updated to include the new Solar System object discoveries included in the ingested ``MPCORB`` catalog. In particular, the ``SSObject`` catalog is updated to include the new discoveries from the ingested ``MPCORB`` catalog, and the ``SSSource`` and ``DIASource`` catalogs are updated to point to the relevant ``SSObject`` records for the new discoveries. In addition, the physical properties of all known ``SSObjects`` (e.g., absolute magnitudes, predicted apparent magnitudes, extendedness estimates, and light curve characteristics), as defined by the orbit catalog, are recomputed. Updated data are entered into the relevant tables.
+   6. The Solar System Daily Data Products (``MPCORB``, ``SSObject``, ``DIASource``, & ``SSSource`` tables) are released.
    7. Precovery linking is attempted for all ``SSObjects`` whose orbits were updated in the above process (or are new). Where successful, newly discovered observations are queued up for submission to the Minor Planet Center.
 
 Acronym definitions:
@@ -64,5 +64,6 @@ Acronym definitions:
 More information
 ================
 
+   * `Data Products Datasheet <http://ls.st/doc-29545>`_
    * `Data Products Definition Document <https://lse-163.lsst.io/>`_ (DPDD)
    * :doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation
