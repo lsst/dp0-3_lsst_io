@@ -50,6 +50,11 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Sept 19 2024
+------------
+
+The recommended image of the RSP at data.lsst.cloud was bumped to Weekly 2024_37.
+
 Aug 22 2024
 -----------
 
