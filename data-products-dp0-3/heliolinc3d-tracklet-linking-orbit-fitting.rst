@@ -22,7 +22,7 @@ The HelioLinC3D Tracklet Linking and Orbit Fitting Software Package
 
 .. image:: LSST-HelioLinC3D-Infographic.png
 
-HelioLinC3D Small Body Tracklet Linking and Orbit Fitting
+Small Body Tracklet Linking and Orbit Fitting
 =========================================================
 
 The Vera C. Rubin Observatory will detect millions of sources each night. As part of the
@@ -45,16 +45,16 @@ The tracklet linking and orbit fitting procedure is illustrated in the infograph
 During operations, the tracklet linking and orbit fitting process will consist of the following steps
 that will repeat every 24 hours following nightly observing and before release of the Solar System
 Daily Data Products (for more information on the overall Solar System Processing pipeline and Daily
-Data Products, see the :doc:`Solar System Processing pipeline </data-products-dp0-3/solar-system-processing-pipeline>` web page):
+Data Products, see the :doc:`Solar System Processing pipeline </data-products-dp0-3/solar-system-processing-pipeline>` page):
 
-		1. The nightly DIASource catalog is ingested.
-		2. All stationary objects are removed from the nightly catalog of DIASources. In addition, any individual sources that can be attributed to known moving objects with high-confidence orbits where the astrometric match between the individual source and a known object has very low uncertainty (SNR>=5) are also removed from the nightly catalog of DIASources. In this manner, the moving object detections that are unattributed to any known sources are retrieved from the nightly DIASource catalog to be passed to candidate tracklet identification.
-		3. All DIASources detected on the previous night that have not been matched at a high confidence level (SNR>=5) to a known Object, DIAObject, SSObject, or an artifact, are analyzed for potential pairs that form tracklets. These tracklets span 5 - 90 minutes and consist of a minimum of 2 detections, which can be mostly spurious and have unlimited overlap.
-		4. Candidate tracklets are then passed to HelioLinC3D for linkage.
-		5. HelioLinC3D is run to produce linkages that include tracklets from at least three distinct nights within a period of 14 days, with unlimited overlap allowed. Each linkage must comprise at least three tracklets – that is, at least six distinct detections of the candidate asteroid.
-		6. The large catalog of overlapping linkages produced by HelioLinC3D is refined using Method of Herget orbit fitting, producing a final set of non-overlapping, high-purity linkages that have sub-arcsecond astrometric residuals relative to the best-fit orbit -- and still meet the requirement of including tracklets from at least three distinct nights within a 14-day time span.
-		7. Refined linkages are tested for associations to known objects. In this step, the short-arc orbits provided by the refined tracklet linkages are more confidently able to be associated with orbits of known objects than the individual sources tested for association prior to linking in Step 2 above. Searches for (p)recoveries and isolated detections that can be linked to the refined linkages made by HelioLinC3D are performed. And rare false linkages are identified and rejected.
-		8. New discoveries and measurements of known objects are submitted to the Minor Planet Center (MPC) using the standard data-exchange protocols (e.g., the ADES format). The measurements of all DIASources detected on the previous night that have been matched at a high level of confidence (SNR>=5) to a known SSObject are also submitted to the MP
+1. The nightly DIASource catalog is ingested.
+2. All stationary objects are removed from the nightly catalog of DIASources. In addition, any individual sources that can be attributed to known moving objects with high-confidence orbits where the astrometric match between the individual source and a known object has very low uncertainty (SNR>=5) are also removed from the nightly catalog of DIASources. In this manner, the moving object detections that are unattributed to any known sources are retrieved from the nightly DIASource catalog to be passed to candidate tracklet identification.
+3. All DIASources detected on the previous night that have not been matched at a high confidence level (SNR>=5) to a known Object, DIAObject, SSObject, or an artifact, are analyzed for potential pairs that form tracklets. These tracklets span 5 - 90 minutes and consist of a minimum of 2 detections, which can be mostly spurious and have unlimited overlap.
+4. Candidate tracklets are then passed to HelioLinC3D for linkage.
+5. HelioLinC3D is run to produce linkages that include tracklets from at least three distinct nights within a period of 14 days, with unlimited overlap allowed. Each linkage must comprise at least three tracklets – that is, at least six distinct detections of the candidate asteroid.
+6. The large catalog of overlapping linkages produced by HelioLinC3D is refined using Method of Herget orbit fitting, producing a final set of non-overlapping, high-purity linkages that have sub-arcsecond astrometric residuals relative to the best-fit orbit -- and still meet the requirement of including tracklets from at least three distinct nights within a 14-day time span.
+7. Refined linkages are tested for associations to known objects. In this step, the short-arc orbits provided by the refined tracklet linkages are more confidently able to be associated with orbits of known objects than the individual sources tested for association prior to linking in Step 2 above. Searches for (p)recoveries and isolated detections that can be linked to the refined linkages made by HelioLinC3D are performed. And rare false linkages are identified and rejected.
+8. New discoveries and measurements of known objects are submitted to the Minor Planet Center (MPC) using the standard data-exchange protocols (e.g., the ADES format). The measurements of all DIASources detected on the previous night that have been matched at a high level of confidence (SNR>=5) to a known SSObject are also submitted to the MPC.
 
 Acronym definitions:
    * MPC = Minor Planet Center
