@@ -69,4 +69,4 @@ More information
    * `Data Products Datasheet <http://ls.st/doc-29545>`_
    * `Data Products Definition Document <https://lse-163.lsst.io/>`_ (DPDD)
    * :doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation
-   * :doc:`HelioLinC3D Tracklet Linking and Orbit Fitting software package` documentation
+   * :doc:`HelioLinC3D Tracklet Linking and Orbit Fitting software package </data-products-dp0-3/heliolinc3d-tracklet-linking-orbit-fitting>` documentation
