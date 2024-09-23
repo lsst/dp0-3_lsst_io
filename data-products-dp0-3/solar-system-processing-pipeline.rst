@@ -49,8 +49,7 @@ During operations, the pipeline will consist of the following steps that will re
 During nightly observing:
    1. Known Solar System objects are associated with difference image detections in real-time. Alerts are produced within 60 seconds for all signal-to-noise ratio (SNR)>=5 ``DIASources``. The Alert Production pipeline attempts association of ``DIASources`` with known Solar System objects in real-time, and if a match is found then the alert includes the corresponding ``SSObject`` catalog.
 During the day following nightly observing:
-   2. All ``DIASources`` detected on the previous night that have not been matched at a high confidence level (SNR>=5) to a known Object, ``DIAObject``, ``SSObject``, or an artifact, are analyzed by the HelioLinC3D moving object linking algorithm for potential pairs that form tracklets (consisting of detections in three pairs of images for a given visit within 15 days) that are consistent with being on the same Keplerian orbit around the Sun. For more information on the moving object tracklet linking and orbit fitting
-algorithm, see the :doc:`HelioLinC3D Tracklet Linking and Orbit Fitting software package page </data-products-dp0-3/heliolinc3d-tracklet-linking-orbit-fitting>` page.
+   2. All ``DIASources`` detected on the previous night that have not been matched at a high confidence level (SNR>=5) to a known Object, ``DIAObject``, ``SSObject``, or an artifact, are analyzed by the HelioLinC3D moving object linking algorithm for potential pairs that form tracklets (consisting of detections in three pairs of images for a given visit within 15 days) that are consistent with being on the same Keplerian orbit around the Sun. For more information on the moving object tracklet linking and orbit fitting algorithm, see the :doc:`HelioLinC3D Tracklet Linking and Orbit Fitting software package page </data-products-dp0-3/heliolinc3d-tracklet-linking-orbit-fitting>` page.
    3. Measurements of known objects and new discoveries are submitted to the Minor Planet Center (MPC) using the standard data-exchange protocols (e.g., the ADES format). The measurements of all ``DIASources`` detected on the previous night that have been matched at a high level of confidence (SNR>=5) to a known ``SSObject`` are also submitted to the MPC.
 During the day before the coming night’s observing:
    4. The most up-to-date ``MPCORB`` catalog is downloaded from the Minor Planet Center (MPC) and ingested into the Prompt Products database to obtain all previously submitted LSST discoveries and detections as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
@@ -70,4 +69,4 @@ More information
    * `Data Products Datasheet <http://ls.st/doc-29545>`_
    * `Data Products Definition Document <https://lse-163.lsst.io/>`_ (DPDD)
    * :doc:`DP0.3 Data Products </data-products-dp0-3/index>` documentation
-   * :doc:`HelioLinC3D Tracklet Linking and Orbit Fitting software package documentation
+   * :doc:`HelioLinC3D Tracklet Linking and Orbit Fitting software package` documentation
