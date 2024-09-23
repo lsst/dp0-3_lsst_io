@@ -145,3 +145,16 @@ For more information about the pipelines and processing that will be used to cre
 
     solar-system-processing-pipeline
 
+.. _DP0-3-moving-object-linking-software:
+
+The HelioLinC3D Tracklet Linking and Orbit Fitting software package
+-------------------------------------------------------------------
+
+For more information about the software package that will be used for moving object tracklet linking and orbit fitting during operations, please see the :doc:`HelioLinC3D Tracklet Linking and Orbit Fitting software package page </data-products-dp0-3/heliolinc3d-tracklet-linking-orbit-fitting>`.
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    heliolinc3d-tracklet-linking-orbit-fitting
+
