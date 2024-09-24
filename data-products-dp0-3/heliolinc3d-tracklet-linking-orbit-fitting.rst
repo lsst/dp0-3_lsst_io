@@ -28,7 +28,7 @@ Small Body Tracklet Linking and Orbit Fitting
 The Vera C. Rubin Observatory will detect millions of sources each night. As part of the
 :doc:`Solar System Processing pipeline </data-products-dp0-3/solar-system-processing-pipeline>` (Step 2),
 the goal of the HelioLinC3D software package is to discover asteroids amid this flood of data.
-HelioLinC3D identifies and links together little sequences of typically 6-20 sources that could comprise
+The algorithm identifies and links together little sequences of typically 6-20 sources that could comprise
 repeated detections of a new asteroid moving in its orbit around the Sun. These sets of
 detections (called 'linkages') are formed in two stages. First, ‘tracklets’ of observations
 are identified, where a tracklet comprises at least two images within a single night. Next,
@@ -38,7 +38,7 @@ a 14-day period. Each linkage meeting these criteria constitutes a candidate ast
 After the full set of candidate linkages has been produced, they are culled and refined through
 orbit fitting and other analyses. The final product is a purified set of thousands of
 non-overlapping linkages, each of which has an orbit-fit with sub-arcsecond astrometric residuals.
-These linkages -- each constituting a probable new asteroid discovery -- are submitted to the
+These linkages -- each comprising a probable new asteroid discovery -- are submitted to the
 `Minor Planet Center <https://minorplanetcenter.net>`_ (MPC) for confirmation and publication.
 The tracklet linking and orbit fitting procedure is illustrated in the infographic provided above.
 
