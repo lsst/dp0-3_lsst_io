@@ -29,11 +29,11 @@ How to find version histories
 Notebook tutorials
 ------------------
 
-A full history for all tutorial notebooks can be accessed in GitHub via this `direct link to the commit log for the
-tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/commits/main>`_.
-
-The full history for any given tutorial notebook can be accessed via GitHub by going to the notebook of interest in 
-`the repo tutorial-notebooks repo <https://github.com/rubin-dp0/tutorial-notebooks>`_ and clicking on "history" (near upper-right).
+A full history for all tutorial notebooks can be accessed in GitHub by going to 
+`the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_
+and clicking on "commits" under the green "code" button.
+The history of a given tutorial can be accessed by clicking on its filename
+in the repository and then clicking on "history" (near upper-right).
 
 
 Portal and command line tutorials
