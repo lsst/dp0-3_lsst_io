@@ -1,1 +1,2 @@
 documenteer[guide]
+sphinx<8.1
