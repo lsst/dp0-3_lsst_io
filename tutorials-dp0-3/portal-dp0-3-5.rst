@@ -161,7 +161,7 @@ This section demonstrates a capability of the portal that enables analysis using
 
 3.1. Return to the main DP0.3 Catalogs tab to go back to the search interface, and hit the "Reset Column Selections & Constraints" button on the top right. Also clear the previously uploaded table, by clicking the "Change Upload Table" button and in the pop-up window, click the "Clear File" gray button on the right. Make sure the Table Collection is still dp03_catalogs_10yr and the table is dp03_catalogs_10yr.DiaSource. 
 
-3.1a. As of Oct 22, 2024, a known bug in the portal does not completely clear the user uploaded table. In the meantime it is recommended to log out of the portal and log back in and repeat step 3.1.
+3.1a. As of Oct 22, 2024, a known bug in the portal does not completely clear the user uploaded table. In the meantime, the recommended workaround is to log out of the portal and log back in and repeat step 3.1.
 
 3.2 In the Spatial section, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of ssObjectIds. Make sure the "Spatial" box is checked and the "Temporal" box is unchecked. Click "Search". Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "DP0.3 Catalogs" tab at the top.
 
