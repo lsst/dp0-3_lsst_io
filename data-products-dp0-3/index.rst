@@ -74,7 +74,7 @@ Catalogs
 --------
 
 .. list-table:: Catalog data available for DP0.3.
-   :widths: 100 300 50
+   :widths: 100 400 50
    :header-rows: 1
 
    * - TAP Name
