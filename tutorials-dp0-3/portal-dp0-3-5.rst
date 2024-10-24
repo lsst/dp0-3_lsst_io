@@ -159,11 +159,15 @@ Step 3. Two-step search process using the "Loaded Table" option
 
 This section demonstrates a capability of the portal that enables analysis using multiple or more complex searches that are based on existing search results.
 
-3.1. Return to the main DP0.3 Catalogs tab to go back to the search interface, and hit the "Reset Column Selections & Constraints" button on the top right. Also clear the previously uploaded table, by clicking the "Change Upload Table" button and in the pop-up window, click the "Clear File" gray button on the right. Make sure the Table Collection is still dp03_catalogs_10yr and the table is dp03_catalogs_10yr.DiaSource. In the Spatial section, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of ssObjectIds. Make sure the "Spatial" box is checked and the "Temporal" box is unchecked. Click "Search". Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "DP0.3 Catalogs" tab at the top.
+3.1. Return to the main DP0.3 Catalogs tab to go back to the search interface, and hit the "Reset Column Selections & Constraints" button on the top right. Also clear the previously uploaded table, by clicking the "Change Upload Table" button and in the pop-up window, click the "Clear File" gray button on the right. Make sure the Table Collection is still dp03_catalogs_10yr and the table is dp03_catalogs_10yr.DiaSource. 
 
-If you recieve a search error "No coverage available" it is possible the uploaded tables were not properly cleared. Log out of the portal and log back in and repeat step 3.1.
+3.1a. As of Oct 22, 2024, a known bug in the portal does not completely clear the user uploaded table. In the meantime, the recommended workaround is to log out of the portal and log back in and repeat step 3.1.
 
-3.2. Then, go down to the Object ID Search section of the UI, and click the box to the left of Object ID Search, and click the arrow to expand the search options below. Click the "Load object IDs from a table" button which will lower a "Add Upload Table" button. Clicking that will open a new window to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in step 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 110 DiaSources were returned). Click the "Load Table" button.
+3.2 In the Spatial section, enter some example coordinates (e.g. 314.9407129, -31.5520653 from the first table we uploaded in Section 1) and search the 10yr DiaSource catalog in a 100 arcsec radius cone, to retrieve a list of ssObjectIds. Make sure the "Spatial" box is checked and the "Temporal" box is unchecked. Click "Search". Do not delete the search results (they will stay active), but go back to the main query UI page by clicking the "DP0.3 Catalogs" tab at the top.
+
+If you recieve a search error "No coverage available" it is possible the uploaded tables were not properly cleared. Make sure you logged out of the portal and log back in and repeat step 3.1.
+
+3.3. Then, go down to the Object ID Search section of the UI, and click the box to the left of Object ID Search, and click the arrow to expand the search options below. Click the "Load object IDs from a table" button which will lower a "Add Upload Table" button. Clicking that will open a new window to interface with loaded tables. Click the "Loaded Tables" tab at the top of the pop-up where a list of "tables" that are stored from recent searches is displayed. These will have a title labeled as the TAP catalog that was searched above (in this case, the example in step 3.1 searched the DiaSource catalog). The return of the search query can be identified as the earlier search from 3.1, since it will have the same number of rows returned (in this example, 110 DiaSources were returned). Click the "Load Table" button.
 
 .. figure:: /_static/portal_tut05_step03a.png
     :width: 600
@@ -172,11 +176,11 @@ If you recieve a search error "No coverage available" it is possible the uploade
 
     Figure 8: A screenshot of how to use the "Loaded Tables" option to access the previous query result.
 
-3.3. Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID (under the Change Upload Table button). Select the "ssObjectId" row and click "OK", which loads the ssObjectId of the 110 returned entries from the search in Step 3.2.
+3.4. Click the magnifying glass next to the "Object ID" box to the right of where it says Uploaded Object ID (under the Change Upload Table button). Select the "ssObjectId" row and click "OK", which loads the ssObjectId of the 110 returned entries from the search in Step 3.3.
 
-3.4. Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. Back under Object ID search, where it says "Object ID (from table)" (in this case referring to the full DP0.3 table whose columns are listed on the right), click the magnifying glass and also select ssObjectId.
+3.5. Now in the panel labeled LSST DP0.3 SSO Tables at the top of the page, select the 10yr SSSource table. The Output Column Selection and Constraints table should update to reflect the column headers of the SSSource table. Back under Object ID search, where it says "Object ID (from table)" (in this case referring to the full DP0.3 table whose columns are listed on the right), click the magnifying glass and also select ssObjectId.
 
-3.5. Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the ssObjectId, which is what the parameter that will be matched on, click OK, and hit the Search button. The query will now search the SSSource table for all individual observations of objects which have these ssObjectIds from the query in 3.1. 
+3.6. Click the magnifying glass next to "Object ID" box, now to the right of where it says "Object ID (from table):". Again select the ssObjectId, which is what the parameter that will be matched on, click OK, and hit the Search button. The query will now search the SSSource table for all individual observations of objects which have these ssObjectIds from the query in 3.1. 
 The query will return all SSSource observation entries for the list of 110 ssObjectIds. In this case, there are 19,077 individual observations of each of the 110 individual solar system bodies.
 
 .. figure:: /_static/portal_tut05_step03b.png
@@ -186,7 +190,7 @@ The query will return all SSSource observation entries for the list of 110 ssObj
 
     Figure 9: A screenshot of the fully populated "Object ID Search" section of the UI.
 
-3.6.  By default the search results will create a scatter plot using the first two columns of the table. Modify the plot by clicking the single gear in the active chart panel, and select, for instance, helicentricY vs. heliocentricX as in the figure below. This plot shows the part of the orbit in heliocentric coordinates that is traced by the matched data of the solar system bodies during the 10 year survey data.
+3.7.  By default the search results will create a scatter plot using the first two columns of the table. Modify the plot by clicking the single gear in the active chart panel, and select, for instance, helicentricY vs. heliocentricX as in the figure below. This plot shows the part of the orbit in heliocentric coordinates that is traced by the matched data of the solar system bodies during the 10 year survey data.
 
 .. figure:: /_static/portal_tut05_step03c.png
     :width: 600
