@@ -74,18 +74,23 @@ Catalogs
 --------
 
 .. list-table:: Catalog data available for DP0.3.
-   :widths: 100 390
+   :widths: 30 40 30
    :header-rows: 1
 
-   * - TAP Name
-     - description
-   * - DiaSource
+   * - TAP Name 
+     - Link to Table
+     - Description
+   * - DiaSource 
+     - `1-yr <https://data.lsst.cloud/portal/app/?api=tap&service=https://data.lsst.cloud/api/ssotap&schema=dp03_catalogs_1yr&table=dp03_catalogs_1yr.DiaSource>`_, `10-yr <https://data.lsst.cloud/portal/app/?api=tap&service=https://data.lsst.cloud/api/ssotap&schema=dp03_catalogs_10yr&table=dp03_catalogs_10yr.DiaSource>`_
      - Astrometric and photometric measurements for solar system objects detected in difference images (19 columns).
-   * - SSSource
+   * - SSSource 
+     - `1-yr <https://data.lsst.cloud/portal/app/?api=tap&service=https://data.lsst.cloud/api/ssotap&schema=dp03_catalogs_1yr&table=dp03_catalogs_1yr.SSSource>`_, `10-yr <https://data.lsst.cloud/portal/app/?api=tap&service=https://data.lsst.cloud/api/ssotap&schema=dp03_catalogs_10yr&table=dp03_catalogs_10yr.SSSource>`_
      - Single-epoch solar system source information corresponding to a specific difference image detection (29 columns).
-   * - SSObject
+   * - SSObject 
+     - `1-yr <https://data.lsst.cloud/portal/app/?api=tap&service=https://data.lsst.cloud/api/ssotap&schema=dp03_catalogs_1yr&table=dp03_catalogs_1yr.SSObject>`_, `10-yr <https://data.lsst.cloud/portal/app/?api=tap&service=https://data.lsst.cloud/api/ssotap&schema=dp03_catalogs_10yr&table=dp03_catalogs_10yr.SSObject>`_
      - Table of linked solar system objects (groupings of difference image detections; 55 columns).
-   * - MPCORB
+   * - MPCORB 
+     - `1-yr <https://data.lsst.cloud/portal/app/?api=tap&service=https://data.lsst.cloud/api/ssotap&schema=dp03_catalogs_1yr&table=dp03_catalogs_1yr.MPCORB>`_, `10-yr <https://data.lsst.cloud/portal/app/?api=tap&service=https://data.lsst.cloud/api/ssotap&schema=dp03_catalogs_10yr&table=dp03_catalogs_10yr.MPCORB>`_
      - MPC-style information for injected solar system objects (27 columns).
 
 |
