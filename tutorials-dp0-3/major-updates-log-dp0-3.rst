@@ -50,6 +50,12 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Nov 22 2024
+-----------
+
+Released new intermediate-level tutorial notebook 07 on interactive catalog
+visualization with Bokeh, Holoviews, and Datashader.
+
 Oct 31 2024
 -----------
 
