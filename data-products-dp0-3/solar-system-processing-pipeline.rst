@@ -25,7 +25,7 @@ The Solar System Processing (SSP) Pipeline
 Solar System Prompt Processing
 ==============================
 
-The goal of the Solar System Processing pipeline is to link (identify) previously unknown ``SSObjects``, 
+The goal of the nightly Solar System Processing pipeline is to link (identify) previously unknown ``SSObjects``, 
 given an additional night of observing, 
 and report the discoveries to the `Minor Planet Center <https://minorplanetcenter.net>`_ (MPC), 
 as well as to compute physical (e.g., absolute magnitudes) and other auxiliary properties 
