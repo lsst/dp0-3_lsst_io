@@ -22,8 +22,8 @@ The Solar System Processing (SSP) Pipeline
 
 .. image:: LSST-Solar-System-Processing-Infographic.png
 
-Solar System Processing
-=======================
+Solar System Prompt Processing
+==============================
 
 The goal of the Solar System Processing pipeline is to link (identify) previously unknown ``SSObjects``, 
 given an additional night of observing, 
@@ -56,6 +56,12 @@ During the day before the coming night’s observing:
    5. The Daily Data Product catalogs are updated to include the new Solar System object discoveries included in the ingested ``MPCORB`` catalog. In particular, the ``SSObject`` catalog is updated to include the new discoveries from the ingested ``MPCORB`` catalog, and the ``SSSource`` and ``DIASource`` catalogs are updated to point to the relevant ``SSObject`` records for the new discoveries. In addition, the physical properties of all known ``SSObjects`` (e.g., absolute magnitudes, predicted apparent magnitudes, extendedness estimates, and light curve characteristics), as defined by the orbit catalog, are recomputed. Updated data are entered into the relevant tables.
    6. The Solar System Daily Data Products (``MPCORB``, ``SSObject``, ``DIASource``, & ``SSSource`` tables) are released.
    7. Precovery linking is attempted for all ``SSObjects`` whose orbits were updated in the above process (or are new). Where successful, newly discovered observations are queued up for submission to the Minor Planet Center.
+
+Solar System Data Release Processing
+====================================
+
+In addition to the prompt processing that will be performed on a daily basis, re-processing of the data will be performed annually to produce the Data Release Data Products; an exception to the annual re-processing timeline will be the first two Data Releases that will be created six months apart. In contrast to the Daily Data Products for Solar System objects that will include single visit images, difference images, catalogs
+of sources detected in difference images (``DIASources``) and detected objects that are associated with Solar System objects (``SSObjects``), which are described above and will be entered into the Prompt Products database and made available in near real time, the Data Release Data Products will use all data collected by the survey to date in order to perform a comprehensive analysis. The Data Release Data Producs for Solar System objects will include high-fidelity re-processing of all catalogs derived from re-reductions of all survey data using improved calibrations and a single, well-characterized, software release. In addition, the Data Release Data Products will include a LSST Catalog of Solar System Objects that will be suitable for population studies of objects detected by LSST with orbits estimated using only LSST data; this catalog will not rely on association of known objects using MPC orbit predictions. In contrast to the Prompt Products database, which is updated continuously during observing, the Data Release database is static and will not change after release.
 
 Acronym definitions:
    * MPC = Minor Planet Center
