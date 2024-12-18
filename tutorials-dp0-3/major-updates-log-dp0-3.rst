@@ -50,6 +50,14 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Dec 19 2024
+-----------
+
+The recommended image of the RSP at data.lsst.cloud was bumped to Weekly 2024_50,
+and some DP0.3 tutorials had minor updates (addition of captions for all plots,
+and a switch from synchronous to asynchronous TAP queries).
+
+
 Nov 22 2024
 -----------
 
