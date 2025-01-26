@@ -13,5 +13,7 @@ ignore = [
     "http://localhost",
     "https://minorplanetcenter.net//iau/info/MPOrbitFormat.html",
     "https://www.minorplanetcenter.net/iau/MPCORB.html",
-    "https://minorplanetcenter.net"
+    "https://minorplanetcenter.net",
+    "https://docushare.lsstcorp.org/docushare/dsweb/Get/LSE-163/LSE-163_DataProductsDefinitionDocumentDPDD.pdf",
+    "http://ls.st/doc-29545"
 ]
