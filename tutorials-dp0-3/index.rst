@@ -20,9 +20,9 @@ DP0.3 Tutorials
 
 .. This section should provide a brief, top-level description of the page.
 
-These tutorials are for DP0 delegates using the Rubin Science Platform (RSP) deployed at the Interim Data Facility (IDF; the Google Cloud).
+These tutorials are for DP0 users using the Rubin Science Platform (RSP) deployed at the Interim Data Facility (IDF; the Google Cloud).
 
-Before following these tutorials, delegates should have followed the
+Before following these tutorials, users should have followed the
 `getting started with DP0 checklist <https://dp0.lsst.io/delegate-resources/getting-started.html#new-delegate-checklist>`_
 and be able to log in at `data.lsst.cloud <https://data.lsst.cloud/>`_.
 
