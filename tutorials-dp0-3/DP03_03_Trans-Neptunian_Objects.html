@@ -7518,7 +7518,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Trans-Neptunian-Objects-(TNOs)">Trans-Neptunian Objects (TNOs)<a class="anchor-link" href="#Trans-Neptunian-Objects-(TNOs)">¶</a></h1><img align="left" alt="No description has been provided for this image" src="https://project.lsst.org/sites/default/files/Rubin-O-Logo_0.png" style="padding: 10px" width="250"/> 
 Contact author(s): Andrés A. Plazas Malagón<br/>
-Last verified to run: 2024-12-17 <br/>
+Last verified to run: 2025-01-27 <br/>
 LSST Science Pipelines version: Weekly 2024_50 <br/>
 Container Size: medium <br/>
 Targeted learning level: intermediate<br/>
@@ -8160,7 +8160,6 @@ was taken from <a href="https://stackoverflow.com/questions/29321835/is-it-possi
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plotHistogram</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">nbins</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="p">,</span>
-                  <span class="n">histtype</span><span class="o">=</span><span class="s1">'step'</span><span class="p">,</span>
                   <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                   <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Plot a histogram of the specified data for a given class label.</span>
@@ -8177,8 +8176,6 @@ was taken from <a href="https://stackoverflow.com/questions/29321835/is-it-possi
 <span class="sd">        The color of the histogram plot.</span>
 <span class="sd">    linestyle : str</span>
 <span class="sd">        The line style of the histogram plot.</span>
-<span class="sd">    histtype : str, optional</span>
-<span class="sd">        The type of histogram bars. Default is 'step'.</span>
 <span class="sd">    density : bool, optional</span>
 <span class="sd">        If True, the histogram is normalized to form a probability density.</span>
 <span class="sd">        Default is False.</span>
@@ -8187,11 +8184,22 @@ was taken from <a href="https://stackoverflow.com/questions/29321835/is-it-possi
 <span class="sd">    log : bool, optional</span>
 <span class="sd">        use logarithmic scale. Default is False.</span>
 <span class="sd">    """</span>
+    <span class="c1"># Filter data</span>
     <span class="n">tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tnos</span><span class="p">[</span><span class="s1">'class'</span><span class="p">]</span> <span class="o">==</span> <span class="n">label</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">tx</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">nbins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="n">histtype</span><span class="p">,</span>
-             <span class="n">density</span><span class="o">=</span><span class="n">density</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="n">cumulative</span><span class="p">,</span>
-             <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">,</span>
-             <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span>
+    <span class="n">filtered_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">tx</span><span class="p">]</span>
+
+    <span class="c1"># Plot the histogram, use 'step'</span>
+    <span class="n">histtype</span><span class="o">=</span><span class="s1">'step'</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+        <span class="n">filtered_data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">nbins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="n">histtype</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="n">density</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="n">cumulative</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Modify the linestyle for each patch (valid for histtype='step')</span>
+    <span class="k">if</span> <span class="n">histtype</span> <span class="o">==</span> <span class="s1">'step'</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">patch</span> <span class="ow">in</span> <span class="n">patches</span><span class="p">:</span>
+            <span class="n">patch</span><span class="o">.</span><span class="n">set_linestyle</span><span class="p">(</span><span class="n">linestyle</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
