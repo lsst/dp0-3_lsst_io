@@ -23,7 +23,7 @@ DP0.3 Tutorials
 These tutorials are for DP0 users using the Rubin Science Platform (RSP) deployed at the Interim Data Facility (IDF; the Google Cloud).
 
 Before following these tutorials, users should have followed the
-`getting started with DP0 checklist <https://dp0.lsst.io/delegate-resources/getting-started.html#new-delegate-checklist>`_
+`getting started with DP0 checklist <https://dp0.lsst.io/delegate-resources/getting-started.html#new-user-checklist>`_
 and be able to log in at `data.lsst.cloud <https://data.lsst.cloud/>`_.
 
 It is also important to review the list of `risks and caveats <https://dp0-2.lsst.io/data-access-analysis-tools/rsp-warnings.html>`_ for the DP0-era RSP,
