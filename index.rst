@@ -38,7 +38,7 @@ Joachim Moeyens, Samuel Cornwall, Ari Heinze, Steph Merritt, Lynne Jones, Siegfr
     Visit `dp0-2.lsst.io <https://dp0-2.lsst.io/index.html>`__ for information about the galactic and extragalactic simulated data products.
     Visit `dp0.lsst.io <https://dp0.lsst.io/index.html>`__ for information about how to:
 
-    * `get an RSP account to access the DP0 data <https://dp0.lsst.io/delegate-resources/getting-started.html#new-delegate-checklist>`__  (become a DP0 delegate),
+    * `get an RSP account to access the DP0 data <https://dp0.lsst.io/delegate-resources/getting-started.html#new-delegate-checklist>`__  (become a DP0 user),
     * `ask questions, get help, and report bugs <https://dp0.lsst.io/delegate-resources/support.html>`__, or to 
     * `participate in virtual events <https://dp0.lsst.io/delegate-resources/virtual-events.html>`__ (e.g., hands-on tutorials for DP0).
 
