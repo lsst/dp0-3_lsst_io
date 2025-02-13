@@ -228,7 +228,7 @@ Obtaining the values in the table was the only objective of this first query.
 Comparing this to the size of the ``MPCORB`` table is left as an exercise for the learner, below.
 
 **2.4.** As the maximum value of the ``ssObjectId`` is ``9223370430250665087``, a random subset of ``SSObjects`` 
-that contains no more than 3% of the total number (about 120,000) can be returned by applying a constraint that 
+that contains no more than 6% of the total number (about 120,000) can be returned by applying a constraint that 
 ``ssObjectId`` must be greater than ``8660000000000000000`` (i.e., because :math:`922 - 0.06 \times 922 \approx 866`).  
 
 **2.5.** As in step 1.11 above, delete the results of this query and return to the Portal's search interface.
@@ -245,8 +245,7 @@ Before clicking "Search", increase the row limit to 200000.
     WHERE ssObjectId > 8660000000000000000
 
 
-**2.7.** The default display on the right-hand window will be "Coverage" which is not applicable in the DP0.3 work.  
-Click on the "Active Chart" tab.  The resulting view displays a plot of the r- vs. the g-band absolute H magnitude at left.
+**2.7.** The resulting view displays a plot of the r- vs. the g-band absolute H magnitude at left.
 At left, the table shows that absolute H magnitudes were not derived for all objects.
 
 .. figure:: /_static/portal_tut01_step02c.png
