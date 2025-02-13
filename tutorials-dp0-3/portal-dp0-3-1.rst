@@ -93,9 +93,7 @@ Step 1. Plot histograms of orbital elements in the ``MPCORB`` table
 **1.3.** The top left part of the page now displays "LSST DP0.3 SSO Tables".
 The default "Table Collection (Schema)" will be "dp03_catalogs_10yr" and the default "Table" will be "dp03_catalogs_10yr.SSObject".
 Click the double-arrow in the "Tables" tab and change the table to be "dp03_catalogs_10yr.MPCORB". 
-Notice how the area under "Enter Constraints" automatically un-checks the "Spatial Constraints" box, as the 
-``MPCORB`` table does not contain sky coordinates, and how the table under "Output Column Selection and Constraints"
-automatically updates to display the columns of the ``MPCORB`` table.
+Notice how the table under "Output Column Selection and Constraints" automatically updates to display the columns of the ``MPCORB`` table.
 
 .. figure:: /_static/portal_tut01_step01b.png
     :name: portal_tut01_step01b
@@ -140,7 +138,7 @@ Add a new chart by clicking on the "+" sign on the upper left.
 This will bring up a new "Add new chart" pop-up window.
 Next to "Plot Type", select "Histogram" from the drop-down menu.
 Next to "Column or expression" enter "e", the column name containing the eccentricity values.
-Set the "Min" and "Max" values to 0 and 1, and the "Bin width" will automatically update to 0.02.
+Set the "Min" and "Max" values to 0 and 1, and select the "Bin width", which will automatically update to 0.02.
 
 .. figure:: /_static/portal_tut01_step01e.png
     :width: 400
@@ -153,7 +151,7 @@ Set the "Min" and "Max" values to 0 and 1, and the "Bin width" will automaticall
 To get rid of the default histogram, click on the black cross in the upper right corner of that plot to close it.
 Now only the eccentricity histogram appears.
 
-**1.8.** Repeat steps 1.6 and 1.7 to add new plots containing the histograms for inclination and absolute magnitude.
+**1.8.** Repeat steps 1.6 and 1.7 to add new plots containing the histograms for inclination and absolute magnitude, using the default "Min", "Max", and "Bin Width" values.
 Shrink the table horizontally by clicking on the left-hand edge of the table and sliding it over to the right,
 making more room for the three plots.
 
@@ -183,8 +181,9 @@ Follow step 1.9 to adjust the appearance of the other two histograms.
 **1.11.** To delete these search results and return to the query interface, click on the 'x' in the tab in the table,
 next to where it says "dp03_catalogs_10yr.MPCORB".
 The Portal will return to the interface where you select the catalog set.  
+Select the "DP0.3 Catalogs" tab once again.  
 Click on "Reset Column Selections & Constraints" above the table interface to remove the previous query.
-Refreshing the browser window is another way to return the Portal to the state corresponding to clicking on "DP0.3 Catalogs" tab.
+Refreshing the browser window is another way to return the Portal to the state corresponding to the first time you clicked on "DP0.3 Catalogs" tab upon logging into the RSP.
 
 
 Step 2. Create a color-color diagram from the ``SSObject`` table 
