@@ -25,7 +25,7 @@
 
 **Contact authors:** Greg Madejski and Melissa Graham
 
-**Last verified to run:** September 19, 2023;  udpdated to reflect the changes to the Portal UI - started on April 30, 2024
+**Last verified to run:** February 13, 2025
 
 **Targeted learning level:** Beginner
 
@@ -57,57 +57,9 @@ However, for DP0.3, static catalogs have been simulated.
 This tutorial focuses on the first two tables, ``MPCORB`` and ``SSObject`` and it will explore these tables individually.  
 The table joins will be demonstrated in `DP0.3 Portal Tutorial 02 <https://dp0-3.lsst.io/v/main/tutorials-dp0-3/portal-dp0-3-2.html>`_.
 That tutorial will focus on ``SSSource`` and ``DiaSource`` tables.  
-It will also illustrate, among other things, how to extract and plot the magnitude, the heliocentric, and the topocentric position of an object vs. time.  
+It will also illustrate, among other things, how to extract and plot the magnitude, the heliocentric, and the topocentric position of an object vs. time.
 
-
-The ``MPCORB`` table
---------------------
-
-During Rubin Operations, Solar System Processing will occur in the daytime, after a night of observing.
-This processing will link together the difference-image detections of moving objects and report discoveries
-to the `Minor Planet Center (MPC) <https://minorplanetcenter.net>`_,
-as well as compute derived properties (magnitudes, phase-curve fits, coordinates in various systems).
-
-The MPC will calculate the orbital parameters and these results will be passed back to Rubin, and stored
-and made available to users as the ``MPCORB`` table 
-(the other derived properties are stored in the other three tables explored below).
-Wikipedia provides a decent
-`beginner-level guide to orbital elements <https://en.wikipedia.org/wiki/Orbital_elements>`_.
-The DP0.3 ``MPCORB`` table is a simulation of what this data product will be like after 10 years of LSST.  
-Note that the ``MPCORB`` table is a table of simulated input orbital elements rather than actual orbit fit results.  
-
-The MPC tabulates all reported moving objects in the Solar System, and is not limited to those detected by LSST. 
-Thus, the ``DP0.3 MPCORB`` table will have more rows than the ``SSObject`` table.
-
-For DP0.3, the MPC did not actually recompute orbital elements by incorporating the simulated LSST data, but rather
-vice versa: LSST observations were simulated based on the MPC's orbital elements.
-Thus, the ``MPCORB`` table can be considered a truth table.
-
-For more information about Rubin's plans for Solar System Processing, see Section 3.2.2 of the 
-`Data Products Definitions Document <https://docushare.lsstcorp.org/docushare/dsweb/Get/LSE-163/LSE-163_DataProductsDefinitionDocumentDPDD.pdf>`_.
-Note that there remain differences between Table 4 of the DPDD, which contains the anticipated schema 
-for the moving object tables, and the DP0.3 table schemas.
-
-
-The ``SSObject`` table
-----------------------
-
-During Rubin Operations, Prompt Processing will occur during the night, detecting sources in 
-difference images (``DiaSources``) and associating them into static-sky transients and variables (``DiaObjects``, not included in DP0.3).
-
-The Solar System Processing which occurs in the daytime, after a night of observing, 
-links together the ``DiaSources`` for moving objects into ``SSObjects``.
-Whereas the ``MPCORB`` table contains the orbital elements for these moving objects, 
-the ``SSObject`` table contains the Rubin-measured properties such as phase curve fits and absolute magnitudes.
-
-Note that no artifacts or spurious difference-image sources have been injected into the DP0.3 catalogs.
-
-**Absolute magnitudes:** For Solar System objects, absolute magnitudes are defined to be for an object at a distance 1 au from the Sun and 1 au 
-from the observer, and at a phase angle (the angle Sun-object-Earth) of 0 degrees.
-Absolute magnitudes are derived by correcting for distance, fitting a function to the relationship between 
-absolute magnitude and phase, and evaluating the function at a phase of 0 deg.
-During the LSST survey, the results of phase-curve fits in each of the LSST's six filters, ugrizy, will be stored in the ``SSObject`` table.  
-However, the DP0.3 tables contain only four filters, griz.  
+For more information about Rubin's plans for Solar System Processing, see :doc:`The Solar System Processing (SSP) Pipeline </data-products-dp0-3/solar-system-processing-pipeline>` page.
 
 
 TAP and ADQL
