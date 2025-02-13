@@ -131,8 +131,8 @@ Click "Apply" and "Close".
 
 
 2.3. Add a new chart by clicking on the “+” sign on the upper left. This will bring up a new “Add new chart” pop-up window.
-Create a scatter plot of the ``heliocentricZ`` (y-axis) verus ``heliocentricX`` (x-axis) to see how this object travels out of 
-the plane of the Solar System due to its orbital inclination. Under "Chart Options", set the "X Label" to be "heliocentricX (AU)", "Y Label" to be "heliocentricZ (AU)", and add a grid to the x- and y-axis. Click "OK" and "Close".
+Create a scatter plot of the ``heliocentricZ`` (y-axis) verus ``heliocentricX`` (x-axis) with grid lines to see how this object travels out of 
+the plane of the Solar System due to its orbital inclination. Click "OK" and "Close".
 
 2.4. Add two more charts for the topocentric distances.
 Notice that in the topocentric distance, the object does not come near Earth (0, 0),
