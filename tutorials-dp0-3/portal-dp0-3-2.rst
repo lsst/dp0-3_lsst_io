@@ -38,41 +38,9 @@ This tutorial is a direct sequel to Portal tutorial 01: Introduction to DP0.3: t
 Those two tables contain derived parameters for individual simulated Solar System objects.
 
 This tutorial focuses on the DP0.3 ``SSSource`` and ``DiaSource`` tables, which contain measured and derived
-values for individial simulated Solar System objects on a per-observation basis.  Note that there are two separate DP0.3 catalogs, dp03_catalogs_1yr and dp03_catalogs_10yr, respectively. This tutorial uses the tables in the catalog resulting from the 10-year simulation.
+values for individial simulated Solar System objects on a per-observation basis.  Their contents are described in the :ref:`DP0-3-Data-Products-DPDD`. Note that there are two separate DP0.3 catalogs, dp03_catalogs_1yr and dp03_catalogs_10yr, respectively. This tutorial uses the tables in the catalog resulting from the 10-year simulation.
 
-
-The ``SSSource`` table
-----------------------
-
-The daytime Solar System Processing will also report discoveries and data for moving objects
-to the Minor Planet Center (MPC; minorplanetcenter.net), which computes the orbital elements
-(eccentricity, inclination, etc.).
-These orbital elements are then used to compute the instantaneous 3D sky location, distances, and velocities
-at the time of each observation.
-These results are stored in the ``SSSource`` table, which has a 1:1 relationship with the ``DiaSource`` table.
-
-
-The ``DiaSource`` table
------------------------
-
-During Rubin Operations, Prompt Processing will occur during the night, detecting sources in 
-difference images with signal-to-noise ratio > 5 (``DiaSources``).
-DIA stands for difference image analysis.
-After detection, the Prompt pipelines associate them into static-sky transients
-and variables (``DiaObjects``, not included in DP0.3).
-The Solar System Processing occurs in the daytime, after a night of observing,
-links together the ``DiaSources`` for moving objects into ``SSObjects``.
-
-With real data, the ``DiaSource`` catalog would contain sources due to artifacts (spurious sources), 
-static-sky variables and transients, and moving objects.
-However, the DP0.3 ``DiaSource`` catalog contains only moving objects.
-Thus every DP0.3 ``DiaSource`` (every row of the table) has a ``ssObjectId``, an 
-identifier that associates the source with the object in the ``SSObject`` table.
-
-The DP0.3 ``DiaSource`` catalog contains the measured quantities (sky coordinates, apparent magnitude, error),
-metadata (filter, time of observation),
-and true values (true sky coordinates, true V-band apparent magnitude) for 
-every difference-image detection.
+For more information about Rubin's plans for Solar System Processing and how these tables will be created, see :doc:`The Solar System Processing (SSP) Pipeline </data-products-dp0-3/solar-system-processing-pipeline>` page.
 
 
 TAP and ADQL
@@ -94,9 +62,9 @@ Step 1. Identify an object to explore
 
 1.1. Log in to the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 
-1.2. To access the DP0.3 TAP Service, click on the DP0.3 Catalogs tab at the top of the screen. 
-The default "Table Collection (Schema)" which is "dp03_catalogs_10yr" will be for this tutorial. 
-Change default "Table" will be "dp03_catalogs_10yr.SSObject" to "dp03_catalogs_10yr.DiaSource" by clicking on the down arrow and selecting the table.
+1.2. To access the DP0.3 TAP Service, click on the "DP0.3 Catalogs" tab at the top of the screen. 
+The default "Table Collection (Schema)", which is "dp03_catalogs_10yr", will be used for this tutorial. 
+To change the "Table" from the default "dp03_catalogs_10yr.SSObject", click on the down arrow and selecting one of the other tables, such as the "dp03_catalogs_10yr.DiaSource" table, which will be explored in this tutorial.
 
 1.3. At upper right, click "Edit ADQL", and enter the following query into the box. 
 This query retrieves a random subset of ``SSObjects`` that were observed between 100 and 300 times
@@ -150,13 +118,9 @@ of the object at the time of every simulated LSST observation from the ``SSSourc
 
 2.2. The "Results" tab at the top will display the results from the query, which plots the sun-centered orbit of ``heliocentricY`` versus ``heliocentricX``.
 Click on the plot settings icon and in the pop-up window, select "Chart Options" and then add a grid
-to the x and y axis to more easily identify the Sun's location at (0, 0).
+to the x- and y-axis to more easily identify the Sun's location at (0, 0).
 Click "Apply" and "Close".  
 
-Note that the defalt axis labels here use the "AU" description for the distance in astronomical units.  
-The official, IAU-sanctioned abbreviation of an astronomical unit is "au" (lower case), not "AU."  
-If you are interested in the details - you can check out the article on "Astronomical unit" on Wikipedia.  
-If you plan to use those (or equivalent) plots for publication, you need to edit the lables accordingly by clicking on the "Chart Options" for each plot.  
 
 .. figure:: /_static/portal_tut02_step02a.png
     :width: 400
@@ -166,9 +130,9 @@ If you plan to use those (or equivalent) plots for publication, you need to edit
     Figure 2: A visualization of the object's orbit projected onto the plane of the Solar System.
 
 
-2.3. Click again on the plot settings icon and in the pop-up window, select "Add New Chart". 
-Create a plot of the ``heliocentricZ`` verus ``heliocentricX`` to see how this object travels out of 
-the plane of the Solar System due to its orbital inclination.
+2.3. Add a new chart by clicking on the “+” sign on the upper left. This will bring up a new “Add new chart” pop-up window.
+Create a scatter plot of the ``heliocentricZ`` (y-axis) verus ``heliocentricX`` (x-axis) to see how this object travels out of 
+the plane of the Solar System due to its orbital inclination. Under "Chart Options", set the "X Label" to be "heliocentricX (AU)", "Y Label" to be "heliocentricZ (AU)", and add a grid to the x- and y-axis. Click "OK" and "Close".
 
 2.4. Add two more charts for the topocentric distances.
 Notice that in the topocentric distance, the object does not come near Earth (0, 0),
