@@ -35,28 +35,28 @@
 Introduction
 ============
 
-This tutorial demonstrates how to identify and explore a population of `Trans-Neptunian Objects <https://en.wikipedia.org/wiki/Trans-Neptunian_object>`_ 
-(TNOs) in the simulated DP0.3 catalogs.
-TNOs are defined by having orbits with semi-major axes beyond the orbit of Neputne (> 30.1 AU).
-As the semi-major axis (``a``) can be derived from the orbit's ellipticiy (``e``) and perihelion distance (``q``) via
-``a`` = ``q``/(1. - ``e``), and as both ellipticity and perihelion are available in the ``MPCORB`` table,
-a sample of TNOs can be identified in the DP0.3 data set (see Step 1).  
-Their properties (specifically, the relationship between their semi-major axis and eccentricity, as well as the distribution of their derived diameters) will be explored in Step 2.  
-Note that some of the objects might not be moving in elliptical orbits (``e > 1`` - meaning they are not bound to the Solar System, but moving on parabolic or hyperbolic orbits).  
+This tutorial demonstrates how to identify and explore a population of Transneptunian Objects (TNOs) in the simulated DP0.3 catalogs.
+TNOs are defined by having orbits with semimajor axes beyond the orbit of Neputne (``a`` > 30.1 AU).
+The DP0.3 simulated data set does not include the semimajor axis (``a``) in the ``MPCORB`` table, however it can be derived from the 
+orbit's eccentricity (``e``) and perihelion distance (``q``), which are both available in the ``MPCORB`` table, via ``a`` = ``q``/(1.0 - ``e``). 
+This allows for a sample of TNOs to be identified in the DP0.3 data set (see Step 1).  
+TNO properties (specifically, the relationship between their semimajor axis and eccentricity, as well as the distribution of their derived diameters) will be explored in Step 2.  
+Note that some of the objects might have ``e`` >= 1, which means they are not bound to the Solar System and are moving on parabolic or hyperbolic orbits.  
 Such objects will be excluded from this tutorial, as an application of the formula above would result in a negative value of ``a``.  
 
 Compared to the Solar System objects closer to the Earth, such as Main Belt Asteroids or Near-Earth Objects (NEOs), TNOs move relatively slowly across the sky.
 This relatively slow movement means that TNOs that fall within an LSST Deep Drilling Field (DDF) can stay within that
-field, and LSST can accumulate thousands of observations of them.
+field, and LSST can accumulate thousands of observations of those TNOs.
 This tutorial explores the position on the sky of one such TNO (Step 3) and plots time-domain quantities such as magnitude and phase angle (Step 4).  
 Finally, it provides a visualization of its trajectory projected into 2D (see Step 5).  
 
 More information about the LSST DDFs can be found on the `LSST DDF webpage <https://www.lsst.org/scientists/survey-design/ddf>`_
-and in Section 2.6 of the Survey Cadence Optimization Committee's Phase 2 Recommendations report 
-(`PSTN-055 <https://pstn-055.lsst.io/>`_).
+and in Section 3.7 of the Survey Cadence Optimization Committee's Phase 3 Recommendations report 
+(`PSTN-056 <https://pstn-056.lsst.io/>`_).
 Note that DP0.2 did not include DDF observations, so the ability to explore science with a DDF-like cadence is unique to the DP0.3 simulation.
 
-This tutorial assumes the successful completion of the beginner-level DP0.3 Portal tutorials,
+This tutorial assumes the successful completion of Portal tutorial 01: Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables 
+and Portal tutorial 02: Introduction to DP0.3: the ``SSSource`` and ``DiaSource`` tables, 
 and uses the Astronomy Data Query Language (ADQL), which is similar to SQL (Structured Query Language).
 For more information about the DP0.3 catalogs, tables, and columns, see the :ref:`DP0-3-Data-Products-DPDD`.  
 
@@ -71,10 +71,10 @@ Click on "DP0.3 Catalogs" tab.  This will bring you to the "dp03_catalogs_10yr" 
 
 **1.2.** At upper right, next to "View" choose "Edit ADQL".
 Enter the following ADQL statement into the ADQL Query box.
-It will return the ellipticity (``e``), perihelion distance (``q``), and inclination (``incl``) for a
+It will return the eccentricity (``e``), perihelion distance (``q``), and inclination (``incl``) for a
 random subset of objects in the ``MPCORB`` table.
 For an explanation of why this constraint on ``ssObjectId`` returns a random sample, see Step 2 of
-DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables".
+DP0.3 Portal tutorial 01: "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`` tables.
 
 .. code-block:: SQL 
 
@@ -97,7 +97,7 @@ DP0.3 Portal tutorial 01, "Introduction to DP0.3: the ``MPCORB`` and ``SSObject`
 
 
 **1.5.**  Exclude the objects moving on unbound orbits.  
-Note that a small fraction of the objects - roughly one in a thousand - have derived eccentricities > 1 meaning those are not bound to the Solar System.  
+Note that a small fraction of the objects - roughly one in a thousand - have derived eccentricities > 1, which means they are not bound to the Solar System.  
 Those objects can be excluded from further analysis by entering ``< 1`` in the box underneath the table heading ``e``, and hitting "enter."  
 This will result in a slightly modified display as below.  
 
@@ -112,7 +112,7 @@ This will result in a slightly modified display as below.
 **1.6.** Create a new column in the table, containing semi-major axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
 In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" to "q/(1-e)", the "Units" to "au",
-and the "Description" to "semi-major axis".  
+and the "Description" to "semimajor axis".  
 Click "Add Column", and see the new column appear in the table.
 
 .. figure:: /_static/portal_tut03_step01c.png
@@ -123,9 +123,9 @@ Click "Add Column", and see the new column appear in the table.
     Figure 3: Screenshot showing the "Add a column" pop-up window.
 
 
-**1.7.** Create a scatter plot of inclination vs. semi-major axis.
-In the plot panel, click on the "+" sign the upper right side.  
-This will bring up a new "Add New Chart" pop-up window.  
+**1.7.** Create a scatter plot of inclination vs. semimajor axis.
+In the plot panel, click on the "+" sign the upper left side.  
+This will bring up the "Add New Chart" pop-up window.  
 Set the "Plot Type" to "Scatter", the "X" to "a", "Y" to "incl".
 In the "Chart Options" dropdown menu, set the "X Min" to "0", the "X Max" to 60, the "Y Min" to 0, and the "Y Max" to 80.  
 Click "OK".
@@ -148,10 +148,11 @@ TNOs appear as a distinct population with ``a`` > 30.1 au in this parameter spac
 
     Figure 5: The population of TNOs has x-values greater than 30 au.
 
-**1.9.**  Notice how in the plot above, the majority of objects returned by the query were closer to the Sun than 30.1 au.  
-In fact, only about 600 of the moving objects from the query were TNOs.
-The total number of TNOs is estimated to be far less than Main Belt Asteroids, and due to their distance they move more slowly and are fainter, and so are harder to detect and characterize.
-In the next step, a revised query will be used to only retrieve objects with semi-major axis greater than 30.1 au.
+**1.9.**  Notice that in the plot above, the majority of objects returned by the query have semimajor axes less than 30.1 au.  
+In fact, only about 800 of the moving objects from the query were TNOs.
+TNOs are at much larger distances from the Sun than Main-Belt Asteroids, which make them fainter and harder to detect and characterize, 
+so fewer TNOs are expected to be detected than Main-Belt Asteroids.
+In the next step, a revised query will be used to only retrieve objects with semimajor axes greater than 30.1 au.
 
 
 .. _DP0-3-Portal-3-Step-2:
