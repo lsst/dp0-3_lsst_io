@@ -270,8 +270,8 @@ Navigate to the ADQL interface by clicking on the "Edit ADQL" button.
 This query joins the ``MPCORB`` table with the ``DiaSource`` table in order to retrive the number 
 of detections: the count of the number of ``DiaSource`` table rows for a given solar system object,
 each of which has a unique ``ssObjectId``.
-This query also applies a constraint that the semimajor axis be between 30 and 100 AU,
-and a constraint on the ``ssObjectId`` to return a random subset (similar to Step 1.2).
+This query also constrains the semimajor axis to between 30 and 100 AU,
+and constrains the ``ssObjectId`` to return a random subset (similar to Step 1.2).
 
 .. code-block:: SQL 
 
@@ -288,10 +288,10 @@ and a constraint on the ``ssObjectId`` to return a random subset (similar to Ste
 This search might take up to a minute.  
 The query returns 12,589 objects.  
 
-**3.4.** The default view of the search above is a plot the first two columns against each other, ``ssObjectId`` and ``COUNT``,
+**3.4.** The default plot generated for the query above shows the first two columns against each other, ``ssObjectId`` and ``COUNT``,
 which is not a particularly useful plot aside from showing that the number of detections for the most oft-detected objects in the outer Solar System 
 is in the thousands.
-Click twice on the ``COUNT`` column header to order the entries by descending count and identify the most oft-detected outer Solar System object.  
+Click twice on the ``COUNT2`` column header to order the entries by descending count and identify the most oft-detected outer Solar System object.  
 
 .. figure:: /_static/portal_tut03_step03a.png
     :width: 600
@@ -302,7 +302,7 @@ Click twice on the ``COUNT`` column header to order the entries by descending co
 
 
 **3.5.**  Continue with the object with the largest number of observations: ``ssObjectId`` = -735085100561880491, which was detected 12,103 times.
-Its modest eccentricity of 0.1512 implies that this is a TNO (unlikely to be a comet).  
+Its modest eccentricity of 0.152 implies that this is a TNO (unlikely to be a comet).  
 
 **3.6.**  Return to the ADQL query interface and use the following statement to retrieve the sky coordinates, magnitudes, filter (``band``), and time of observations (``midPointMjdTai``) for the oft-observed TNO with ``ssObjectId`` as above.  
 
@@ -317,7 +317,7 @@ Its modest eccentricity of 0.1512 implies that this is a TNO (unlikely to be a c
 In the future, with real LSST data, this map would have an underlay of the LSST deeply stacked image. 
 Since DP0.3 has no images, the "Coverage" map only shows the overlay of RA vs. Dec, which is redundant with the default plot.
 Click on the "hamburger" icon (three horizontal lines) on the upper left, and click on the "Results Layout" box.  
-In the left-hand window, select the "Coverage Charts Tables" box (second from the bottom).  In the wndow on the left, click on "Active Chart" tab.  
+In the left-hand window, select the "Coverage Charts Tables" box (at the bottom).  In the window on the left, click on "Active Chart" tab.  
 
 .. figure:: /_static/portal_tut03_step03b.png
     :width: 600
@@ -332,7 +332,7 @@ better illustrate how the object moves across the sky as a function of time.
 In the plot panel, click on the "Settings" icon (a gear) to open the "Plot Parameters"
 pop-up window.
 Under "Trace Options", for "Color Map" enter "midPointMjdTai" and for "Color Scale" enter "Rainbow".
-Then click "Apply".
+Then click "Apply" and "Close".
 
 .. figure:: /_static/portal_tut03_step03c.png
     :width: 600
