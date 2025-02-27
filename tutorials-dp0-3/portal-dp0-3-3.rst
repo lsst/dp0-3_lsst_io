@@ -35,7 +35,7 @@
 Introduction
 ============
 
-This tutorial demonstrates how to identify and explore a population of Transneptunian Objects (TNOs) in the simulated DP0.3 catalogs.
+This tutorial demonstrates how to identify and explore a population of transneptunian objects (TNOs) in the simulated DP0.3 catalogs.
 TNOs are defined by having orbits with semimajor axes beyond the orbit of Neputne (``a`` > 30.1 AU).
 The DP0.3 simulated data set does not include the semimajor axis (``a``) in the ``MPCORB`` table, however it can be derived from the 
 orbit's eccentricity (``e``) and perihelion distance (``q``), which are both available in the ``MPCORB`` table, via ``a`` = ``q``/(1.0 - ``e``). 
@@ -160,7 +160,7 @@ In the next step, a revised query will be used to only retrieve objects with sem
 Step 2. Explore the properties of a population of TNOs
 ======================================================
 
-**2.1.**  Now isolate the population of Transneptunian Objects and further explore their properties.  
+**2.1.**  Now isolate the population of transneptunian objects and further explore their properties.  
 To study the properties of a larger sample of TNOs, return to the ADQL query interface by clicking on "DP0.3 Catalogs" tab, and clicking on "Edit ADQL" button.  
 
 **2.2.**  Clear the ADQL query, and execute the query below, which is simiar to the one in Step 1.2 but includes only objects at ``a`` > 30.1 au.
@@ -206,11 +206,11 @@ Delete the default plot of inclination vs. eccentricity as it is not needed.
     :name: portal_tut03_step02b
     :alt: A screenshot of the plot of the eccentricity vs. semimajor axis 
 
-    Figure 7: The plot of eccentricity vs. semimajor axis of Transneptunian Objects (TNOs).
+    Figure 7: The plot of eccentricity vs. semimajor axis of transneptunian objects (TNOs).
 
 **2.7.** Multiple sub-populations are apparent in the above plot.
 The majority of the objects have low eccentricity (``e``<0.3) and a semimajor axis of about 30 to about 50 au.
-There are several sub-populations of Transneptunian Objects, such as the classical, resonant, scattered-disk, and detached sub-populations.
+There are several sub-populations of transneptunian objects, such as the classical, resonant, scattered-disk, and detached sub-populations.
 A full review of all TNO sub-populations is beyond the scope of this tutorial.
 
 **2.8.**  Estimate the diameters of the objects using their absolute H magnitudes. 
@@ -373,7 +373,6 @@ heliocentric and topocentric distances, and time of the observations for the TNO
 
 
 **4.2.** The default plot will have the r-band magnitude as a function of time.  
-Click on the "hamburger" menu (three horizontal lines) and in the "results Layout" click on the double-arrow, and select "Tables coverage images charts" box.  
 In the right-hand panel, click the "Active Chart" tab.  
 Click on the "+" sign in the plot panel to add a scatter plot showing the phase angle as a function of time.
 For the x-axis, use ``midPointMjdTai - 60000``  to show more clearly the timescales between observations.
@@ -416,9 +415,9 @@ The right plot shows that this object is on a slightly inbound trajectory with r
 Step 5. View the 2-D projection of the TNO's orbit to visualize its 3-D trajectory
 ==================================================================================
 
-**5.1.**  The goal of Step 5 is to visualize the 3-D trajectory of the well-observed trans-Neptunian object, via viewing the projections of its 3-D helio- and topocentric distances as a function of time into 2-D.  
+**5.1.**  The goal of Step 5 is to visualize the 3-D trajectory of the well-observed transneptunian object, via viewing the projections of its 3-D heliocentric and topocentric distances as a function of time into 2-D.  
 Navigate to the ADQL query interface.  
-Execute the query below to extract the helio- and topocentric X, Y, and Z distances of the TNO - so you can visualize its trajectory.  
+Execute the query below to extract the heliocentric and topocentric X, Y, and Z distances of the TNO needed to visualize its trajectory.  
 
 .. code-block:: SQL 
 
