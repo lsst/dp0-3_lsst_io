@@ -109,7 +109,7 @@ This will result in a slightly modified display as below.
     Figure 2: The view for the query with ``e < 1``.  
 
 
-**1.6.** Create a new column in the table, containing semi-major axis, ``a``.
+**1.6.** Create a new column in the table, containing semimajor axis, ``a``.
 In the upper right column of the table panel, click on the icon to add a column (a tall narrow rectangle to the left of a + sign).
 In the pop-up window to "Add a column", set the "Name" to "a", the "Expression" to "q/(1.0-e)", the "Units" to "au",
 and the "Description" to "semimajor axis".  
@@ -144,7 +144,7 @@ TNOs appear as a distinct population with ``a`` > 30.1 au in this parameter spac
 .. figure:: /_static/portal_tut03_step01e.png
     :width: 600
     :name: portal_tut03_step01e
-    :alt: A screenshot of the inclination versus semi-major axis plot, showing a clear population of TNOs.
+    :alt: A screenshot of the inclination versus semimajor axis plot, showing a clear population of TNOs.
 
     Figure 5: The population of TNOs has x-values greater than 30 au.
 
@@ -204,7 +204,7 @@ Delete the default plot of inclination vs. eccentricity as it is not needed.
 .. figure:: /_static/portal_tut03_step02b.png
     :width: 600
     :name: portal_tut03_step02b
-    :alt: A screenshot of the plot of the eccentricity vs. semi-major axis 
+    :alt: A screenshot of the plot of the eccentricity vs. semimajor axis 
 
     Figure 7: The plot of eccentricity vs. semimajor axis of Transneptunian Objects (TNOs).
 
@@ -270,7 +270,7 @@ Navigate to the ADQL interface by clicking on the "Edit ADQL" button.
 This query joins the ``MPCORB`` table with the ``DiaSource`` table in order to retrive the number 
 of detections: the count of the number of ``DiaSource`` table rows for a given solar system object,
 each of which has a unique ``ssObjectId``.
-This query also applies a constraint that the semi-major axis be between 30 and 100 AU,
+This query also applies a constraint that the semimajor axis be between 30 and 100 AU,
 and a constraint on the ``ssObjectId`` to return a random subset (similar to Step 1.2).
 
 .. code-block:: SQL 
