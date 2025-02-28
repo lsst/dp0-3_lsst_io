@@ -29,11 +29,12 @@ How to find version histories
 Notebook tutorials
 ------------------
 
-A full history for all tutorial notebooks can be accessed in GitHub by going to 
-`the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_
-and clicking on "commits" under the green "code" button.
-The history of a given tutorial can be accessed by clicking on its filename
-in the repository and then clicking on "history" (near upper-right).
+All Jupyter Notebook tutorial headers contain the date "last verified to run".
+If the date in the file you are using does not match the date shown in that file in `the "main" branch of the tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks>`_, your version is out of date.
+
+The history of a given tutorial can be accessed in GitHub by going to 
+`the tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks>`_,
+clicking on its file name and then clicking on "history" (near upper-right).
 
 
 Portal and command line tutorials
