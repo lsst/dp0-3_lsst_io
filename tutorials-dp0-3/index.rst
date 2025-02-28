@@ -73,15 +73,14 @@ Step-by-step demonstrations of how to use the DP0.3 data products in the Portal 
 Notebook tutorials
 ==================
 
-All Jupyter Notebook tutorials are kept in the `tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_
-of the ``rubin-dp0`` GitHub Organization.
+After logging in to the Notebook Aspect of the RSP, click on the "Tutorials" menu item and select the
+desired tutorial notebook from the drop-down list.
+A writeable version of the file will automatically open and be saved in the ``/notebooks/tutorials/`` folder.
+Spanish-language Jupyter Notebook tutorials have filenames ending in "ES.ipynb". 
 
-The contents of the ``prod`` branch of that repository are made available (and automatically updated) in the folder ``notebooks/tutorial-notebooks``
-which appears in all users' home directories.
-
-**List of Notebook tutorials:**
-See the repository's `README file <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/README.md>`_ for the most up-to-date
-list of available tutorials with descriptions.
+Jupyter Notebook tutorials are kept in the `tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks>`_.
+See that repo's `readme <https://github.com/lsst/tutorial-notebooks/blob/main/README.md>`_ file for details.
+Find further instructions and FAQ in the `Notebook Aspect user guide <https://rsp.lsst.io/guides/notebooks/index.html>`_.
 
 **Tutorial notebooks rendered in html:**
 Note that the overlapping columns in printed tables is a known issue.
@@ -109,9 +108,7 @@ Spanish-language tutorials
 **Credit:** The Argentinian International In-Kind Program team, in particular Dante Paz, Carolina Villalón, and Marco Augusto Rocchietti,
 have translated the introductory DP0.3 tutorial into Spanish.
 
-The introductory DP0.2 Notebook tutorial (DP03_01_Introduccion_a_DP03_ES.ipynb) is available in the
-`tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_ repository.
-An executed version of this notebook, rendered in html, is available in the list above.
+A Spanish version of the introductory DP0.3 Notebook tutorial (DP03_01_Introduccion_a_DP03_ES.ipynb) is available.
 
 .. toctree::
     :titlesonly:
