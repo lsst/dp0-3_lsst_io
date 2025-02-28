@@ -203,11 +203,11 @@ There are many more ISO and LPC objects in the simulation than the LSST is proje
 This is not exactly an issue: these populations were inflated on purpose so that a diversity of properties could be simulated.
 
 **Small biases in the reported PSF magnitudes.**
-A small bias (roughly 0.02 mag) was identified in the slope parameter `G` (i.e., measured value - truth value of G) in all *griz* bands. 
-Also, offsets between the intrinsic absolute magnitude in `V` band and recovered absolute magnitude in the LSST filters were found to be 
-larger than listed in the filter-conversion table above (Table 1). Section 4 in the notebook tutorial 
-`DP03_04b <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP03_04b_Advanced_Phase_Curve_Modeling.ipynb>`_ 
-describes these two biases. The DP0.3 simulation team found out that this is because the DP0.3 catalogs reported standard point-spread function (PSF)
+A small bias (roughly 0.02 mag) was identified in the slope parameter `G` (i.e., measured value - truth value of G) in all *griz* bands.
+Also, offsets between the intrinsic absolute magnitude in `V` band and recovered absolute magnitude in the LSST filters were found to be
+larger than listed in the filter-conversion table above (Table 1).
+Section 4 in the :ref:`notebook tutorial <DP0-3-Tutorials-Notebooks>` 04b (advanced phase curve modeling) describes these two biases.
+The DP0.3 simulation team found out that this is because the DP0.3 catalogs reported standard point-spread function (PSF)
 magnitudes without considering the apparent motion of solar system objecst. Moving objects appear in an image as trailed sources, resulting in 
 underestimation of the source's true flux as well as lower photometric signal-to-noise ratio (S/N) when conducting standard PSF photometry. 
 Once object trailing is taken into account in photometry, these biases disappear and will be fixed in subsequent releases. 
