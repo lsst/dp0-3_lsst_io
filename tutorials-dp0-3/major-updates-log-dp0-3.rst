@@ -50,6 +50,21 @@ and clicking on "history" (near upper-right).
 Major Updates Log
 =================
 
+Mar 6 2025
+----------
+
+All Jupyter Notebook tutorials were migrated to the new repository `lsst/tutorial-notebooks <https://github.com/lsst/tutorial-notebooks>`_.
+This repository no longer has a ``/data`` folder.
+Instead, input data for notebook tutorials is stored in the new Git LFS repository `lsst/tutorial-notebooks-data <https://github.com/lsst/tutorial-notebooks-data>`_.
+
+The tutorial notebook delivery mechanism in the Notebook Aspect of the RSP also changed.
+With the old way, latest version of all notebooks were copied as read-only files into the folder ``/notebooks/tutorial-notebooks/`` in
+all users' home directories whenever a new Notebook server was instantiated.
+With the new way, users have a new menu bar item "Tutorials" which provides a drop down menu of all
+the tutorials in the `tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks>`_.
+Users select the desired tutorial, and a writeable version automatically opens and is saved into
+the folder ``/notebooks/tutorials/``.
+
 Dec 19 2024
 -----------
 
