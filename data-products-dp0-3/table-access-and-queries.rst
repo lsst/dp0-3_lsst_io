@@ -39,8 +39,8 @@ Note that not all ADQL functionality is supported by the RSP for Data Preview 0.
 TAP and ADQL can be used in both the Notebook and Portal aspects.
 
 .. Important::
-    If a query takes longer than you expect, please submit a `GitHub Issue <https://github.com/rubin-dp0/Support>`__
-    or post in the "Support - Data Preview 0" category of the `Rubin Community Forum <https://community.lsst.org/>`_.
+    If a query takes longer than you expect, please raise the issue as a new topic in the
+    "Support - Data Preview 0" category of the `Rubin Community Forum <https://community.lsst.org/>`_.
     Rubin staff are happy to investigate and to help tweak queries for optimal execution.
 
 
