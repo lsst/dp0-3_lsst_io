@@ -36,9 +36,7 @@ to phase curves by Christina Williams and Yumi Choi.
 Introduction
 ============
 
-This portal tutorial is the same demonstration used in the tutorial notebook 
-`Introduction to Phase Curves <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP03_04a_Introduction_to_Phase_Curves.ipynb>`_ 
-aimed to illustrate the phase curves of solar system objects, but focuses on Main Belt Asteroids (MBAs).
+This portal tutorial illustrates the phase curves of solar system objects with a focus on Main Belt Asteroids (MBAs).
 
 Phase curve fits and absolute magnitudes
 ----------------------------------------
@@ -352,5 +350,4 @@ one can see that poorer sampling drives higher uncertainty in the derived absolu
 Step 4.  Exercises for the learner 
 ==================================
 
-**4.1** Explore phase curves for objects with less phase angle coverage and compare them with those for MBAs. 
-For example, Trans-Neptunian Objecs (refer the portal tutorial `03. Explore Trans-Neptunian Objects (TNOs) in DP0.3 (Intermediate) <https://dp0-3.lsst.io/tutorials-dp0-3/portal-dp0-3-3.html>`_) or Jupiter Trojans (refer the notebook tutorial `DP03_04a_Introduction_to_Phase_Curves <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP03_04a_Introduction_to_Phase_Curves.ipynb>`_). 
+**4.1** Explore phase curves for objects with less phase angle coverage (e.g., Trans-Neptunian Objecs or Jupiter Trojans) and compare them with those for MBAs. 
