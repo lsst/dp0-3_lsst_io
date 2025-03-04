@@ -208,7 +208,8 @@ Also, offsets between the intrinsic absolute magnitude in `V` band and recovered
 larger than listed in the filter-conversion table above (Table 1).
 Section 4 in the :ref:`notebook tutorial <DP0-3-Tutorials-Notebooks>` 04b (advanced phase curve modeling) describes these two biases.
 The DP0.3 simulation team found out that this is because the DP0.3 catalogs reported standard point-spread function (PSF)
-magnitudes without considering the apparent motion of solar system objecst. Moving objects appear in an image as trailed sources, resulting in 
+magnitudes without considering the apparent motion of solar system objects.
+Moving objects appear in an image as trailed sources, resulting in 
 underestimation of the source's true flux as well as lower photometric signal-to-noise ratio (S/N) when conducting standard PSF photometry. 
 Once object trailing is taken into account in photometry, these biases disappear and will be fixed in subsequent releases. 
 
