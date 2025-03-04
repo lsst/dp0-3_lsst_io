@@ -55,8 +55,10 @@ Mar 6 2025
 ----------
 
 All Jupyter Notebook tutorials were migrated to the new repository `lsst/tutorial-notebooks <https://github.com/lsst/tutorial-notebooks>`_.
-This repository no longer has a ``/data`` folder.
-Instead, input data for notebook tutorials is stored in the new Git LFS repository `lsst/tutorial-notebooks-data <https://github.com/lsst/tutorial-notebooks-data>`_.
+
+The new tutorial notebooks repository no longer has a ``/data`` folder.
+Instead, input data for notebook tutorials is stored in the new Git LFS repository `lsst/tutorial-notebooks-data <https://github.com/lsst/tutorial-notebooks-data>`_,
+which is already cloned into the ``/scratch`` directory and accessed by the tutorials (users do not need to obtain the contents of ``/data`` themselves).
 
 The tutorial notebook delivery mechanism in the Notebook Aspect of the RSP also changed.
 With the old way, latest version of all notebooks were copied as read-only files into the folder ``/notebooks/tutorial-notebooks/`` in
