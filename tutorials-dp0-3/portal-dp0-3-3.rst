@@ -209,7 +209,7 @@ Delete the default plot of inclination vs. eccentricity as it is not needed.
     Figure 7: The plot of eccentricity vs. semimajor axis of transneptunian objects (TNOs).
 
 **2.7.** Multiple sub-populations are apparent in the above plot.
-The majority of the objects have low eccentricity (``e``<0.3) and a semimajor axis of about 30 to about 50 au.
+The majority of the objects have low eccentricity (``e < 0.3``) and a semimajor axis of about 30 to about 50 au.
 There are several sub-populations of transneptunian objects, such as the classical, resonant, scattered-disk, and detached sub-populations.
 A full review of all TNO sub-populations is beyond the scope of this tutorial.
 
@@ -219,7 +219,7 @@ in kilometers is :math:`d = 10^{(3.1236 - 0.5 \times log(A) - 0.2 \times H)}`.
 This tutorial adopts an albedo value of 0.15 (as is commonly adopted, e.g., `Vilenius et al. 2012 <https://arxiv.org/pdf/1204.0697.pdf>`_),
 with which the expression reduces to :math:`d = 10^{(3.536 - (0.2 \times H))}` km.  
 Click on the "add column" icon.
-Enter ``D`` in the "name" field, and ``power(10,(3.536 - 0.2 * mpcH))`` in the expression field, as below.
+Enter ``D`` in the "name" field, ``power(10,(3.536 - 0.2 * mpcH))`` in the expression field, "km" as the units, and "diameter" as the description as below.
 Click the "Add Column" button.  
 
 .. figure:: /_static/portal_tut03_step02c.png
