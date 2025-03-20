@@ -16,7 +16,7 @@
 
 
 ##################################################################
-03. Explore Trans-Neptunian Objects (TNOs) in DP0.3 (Intermediate)
+03. Explore Transneptunian Objects (TNOs) in DP0.3 (Intermediate)
 ##################################################################
 
 .. This section should provide a brief, top-level description of the page.
@@ -67,7 +67,7 @@ Step 1. Identify a population of TNOs
 =====================================
 
 **1.1.** Log into the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
-Click on "DP0.3 Catalogs" tab.  This will bring you to the "dp03_catalogs_10yr" table collection.  
+Click on "DP0.3 Catalogs" tab to get to the "dp03_catalogs_10yr" table collection.  
 
 **1.2.** At upper right, next to "View" choose "Edit ADQL".
 Enter the following ADQL statement into the ADQL Query box.
@@ -401,7 +401,7 @@ Then delete the remaining old plot so that only the two new plots are displayed.
 .. figure:: /_static/portal_tut03_step04b.png
     :width: 600
     :name: portal_tut03_step04b
-    :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the trans-Neptunian object as a function of time.
+    :alt: A screenshot of two plots showing the heliocentric and topocentric distance of the transneptunian object as a function of time.
 
     Figure 15: Heliocentric and topocentric distance of the TNO as a function of time.
 
@@ -429,43 +429,43 @@ Execute the query below to extract the heliocentric and topocentric X, Y, and Z 
 
 **5.2.**  The default plot will be the heliocentric Y distance as a function of heliocentic X distance as in the screenshot below.  
 Note that the object moves slowly in heliocentric coordinate X as well as in Y (by a comparison to, e.g., Earth's motion), covering only a few au in 10 years.  
-This is expected given its multi-au distance from the Sun.  
+This is expected given its distance from the Sun.  
 
 .. figure:: /_static/portal_tut03_step05a.png
    :name: portal_tut03_step05a
    :width: 600
-   :alt: A screenshot of a plot showing the heliocentric Y vs. heliocentric X distance of the trans-Neptunian object.
+   :alt: A screenshot of a plot showing the heliocentric Y vs. heliocentric X distance of the transneptunian object.
 
-   Figure 16: Heliocentric Y vs. X distance of the trans-Neptunian object.
+   Figure 16: Heliocentric Y vs. X distance of the transneptunian object.
 
 **5.3.**  Now plot the heliocentric Z distance as a function of heliocentric X distance.  Click on "+" button to add a new chart. 
-Select ``heliocentricZ`` for y and ``heliocentricX`` for x.  
+Select ``heliocentricZ`` for "y" and ``heliocentricX`` for "x".  
 Click on "Apply" or "OK."  
 
 
-**5.4.**  Observe that the object's trajectory is not constant in Z - and that means that its orbit is not in the plane of the Ecliptic during the 
+**5.4.**  Observe that the object's trajectory is not constant in Z, which means that its orbit is not in the plane of the Ecliptic during the 
 simulated Rubin observation, but the object does pass through the ecliptic plane when Z = 0.  
 
 .. figure:: /_static/portal_tut03_step05b.png
     :name: portal_tut03_step05b
     :width: 600
-    :alt: A screenshot of plots showing the heliocentric Y and heliocentric Z vs. heliocentric X distance of the trans-Neptunian object as a function of time.
+    :alt: A screenshot of plots showing the heliocentric Y and heliocentric Z vs. heliocentric X distance of the transneptunian object as a function of time.
 
-    Figure 17: Heliocentric Y vs. X distance as well as helliocentric Z vs. X distance of the trans-Neptunian object as a function of time.
+    Figure 17: Heliocentric Y vs. X distance as well as helliocentric Z vs. X distance of the transneptunian object as a function of time.
 
 
 **5.5.**  Next, plot the ``topocentricY`` vs. ``topocentricX`` and ``topocentricZ`` vs. ``topocentricX`` distances.   
-On the same screen where you generated the plots in previous two steps, click on "+" button to add a new chart.   
-First, select ``topocentricY`` for y and ``topocentricX`` for x. and click "Apply" or "OK."   
-Next, click again on "+" button to add a new chart.    Select ``topocentricZ`` for y and ``topocentricX`` for x, and click "Apply" or "OK."   
-There, the effect of position of the TNO on the sky as a result of Earth's orbital motion is clearly apparent.  
+On the same screen with the generated plots from the previous two steps, click on the "+" button to add a new chart.   
+First, select ``topocentricY`` for "y" and ``topocentricX`` for "x". Click "OK."   
+Next, click again on "+" button to add a new chart. Select ``topocentricZ`` for "y" and ``topocentricX`` for "x", and click "OK."   
+The result shows the position of the TNO on the sky as a result of Earth's orbital motion.  
 
 .. figure:: /_static/portal_tut03_step05c.png
    :name: portal_tut03_step05c
    :width: 600
-   :alt: A screenshot of four plots showing the heliocentric and topocentric distances of the trans-Neptunian object as a function of time.
+   :alt: A screenshot of four plots showing the heliocentric and topocentric distances of the transneptunian object as a function of time.
 
-   Figure 18: Visualization of the 3-D TNO's trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots).
+   Figure 18: Visualization of the 3-D TNO trajectory by viewing the 2-D projections of its trajectory as measured from the Sun (top two plots) and the Earth (bottom two plots).
 
 
 
@@ -485,11 +485,11 @@ Step 6.  Exercises for the learner
 6.1. In Step 2, some of the sizes of the TNOs were on order one kilometer, quite small for objects
 at the distance of Neptune.
 However, objects with high eccentricities could come closer to Earth, and be detected despite their small size.
-For the objects returned by the query in Step 2, plot the eccentricity vs. estimated diameter.
+For the objects returned by the query in Step 2, plot the eccentricity vs estimated diameter.
 Explore whether some of the smallest objects have large eccentricities.
 
 6.2. Plot the histogram of the number of visits to the Solar System objects in the ``dp03_catalogs.SSObject`` for objects observed more than 1000 times.  
 
-6.3. Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2,000).  
-Note that you already identified objects with large number of observations in Steps 3.1, 3.2, and 3.3.  
+6.3. Repeat the steps 4 and 5 for another object with a large number of observations (say another one with ``numObs`` > 2000).  
+Note that objects with large numbers of observations were already identified in Steps 3.1, 3.2, and 3.3.  
 
