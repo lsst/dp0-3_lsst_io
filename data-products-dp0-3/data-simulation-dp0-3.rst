@@ -219,5 +219,5 @@ This leads to some near-identical detections for which astrometric scatter is th
 This can affect linking algorithms and any analysis looking into close encounters or collisions.
 However, most DP0.3 users are likely to be unaffected by this bug in the simulation.
 
-**HeliocentricZ coordinate bug.**
+**HeliocentricZ coordinate conversion.**
 There is a bug with the heliocentric Z-component position and velocity vectors in the ``SSSource`` table likely due to a missed coordinate system conversion. This can affect comparisons between the ``heliocentricZ`` and ``heliocentricVZ`` values with those computed analytically or through propogation of object orbits.
