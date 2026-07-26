@@ -20,6 +20,11 @@ DP0.3 Tutorials
 
 .. This section should provide a brief, top-level description of the page.
 
+.. important::
+
+   As of July 2026 the DP0 tutorials were deprecated. Notebooks are still available in the [tagged release r29.2.0](https://github.com/lsst/tutorial-notebooks/releases/tag/r29.2.0) but will only run with the v29.2.0 image on the RSP (not the current recommended). [Find more recent data releases](https://rubinobservatory.org/for-scientists/data-products/recent-data-releases).
+
+
 These tutorials are for DP0 users using the Rubin Science Platform (RSP) deployed at the Interim Data Facility (IDF; the Google Cloud).
 
 Before following these tutorials, users should have followed the
